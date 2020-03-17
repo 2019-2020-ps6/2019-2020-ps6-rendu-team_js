@@ -9,10 +9,8 @@ import { Question } from 'src/models/question.model';
   styleUrls: ['./question-list.component.scss']
 })
 export class QuestionListComponent implements OnInit {
-  
   @Input()
   quiz: Quiz;
-  
   constructor(private quizService: QuizService) { }
 
   ngOnInit() {
