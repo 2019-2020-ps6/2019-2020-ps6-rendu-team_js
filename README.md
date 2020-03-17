@@ -48,5 +48,4 @@ npm run dev
 - [NgOnInit](https://angular.io/docs/ts/latest/tutorial/toh-pt4.html#the-ngoninit-lifecycle-hook)
 - [@Input and @Ouput](https://angular.io/docs/ts/latest/cookbook/component-communication.html)
 
-
 ![Polytech_logo](http://unice.fr/polytechnice/fr/contenus-riches/images/logos/logo-uns-pns)
