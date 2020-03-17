@@ -10,6 +10,7 @@ import { QuizFormComponent } from './quizzes/quiz-form/quiz-form.component';
 import { EditQuizComponent } from './quizzes/edit-quiz/edit-quiz.component';
 import { AppRoutingModule } from './app.routing.module';
 import { QuestionListComponent } from './questions/question-list/question-list.component';
+import { AuthenticationComponent } from './authentication/authentication.component';
 import { QuestionFormComponent } from './questions/question-form/question-form.component';
 import { QuestionComponent } from './questions/question/question.component';
 import { HttpClientModule } from '@angular/common/http';
@@ -26,6 +27,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     EditQuizComponent,
     QuestionListComponent,
     QuestionFormComponent,
+    AuthenticationComponent,
     QuestionComponent
   ],
   imports: [

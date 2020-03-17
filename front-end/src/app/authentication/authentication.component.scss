@@ -1,0 +1,26 @@
+#appName {
+  color: #3D3D3D;
+  font-size: 1200%;
+  margin: 50px;
+}
+
+#connexionButton {
+  background-color: #5396EC;
+  font-size: 500%;
+  color: #f2f2f2;
+  padding: 16px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  margin: 4px 2px;
+  transition-duration: 0.4s;
+  cursor: pointer;
+  border: 2px solid #5396EC;
+  border-radius: 25px;
+}
+
+#connexionButton:hover {
+  background-color: #f2f2f2;
+  border: 2px solid #5396EC;
+  color: #5396EC;
+}
