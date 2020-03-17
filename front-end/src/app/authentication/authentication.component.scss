@@ -2,10 +2,13 @@
   color: #3D3D3D;
   font-size: 1200%;
   margin: 50px;
+  font-weight: 900;
+  font-family: "Segoe UI Black", serif;
 }
 
 #connexionButton {
   background-color: #5396EC;
+  font-family: "Segoe UI", serif;
   font-size: 500%;
   color: #f2f2f2;
   padding: 16px 32px;
@@ -17,6 +20,7 @@
   cursor: pointer;
   border: 2px solid #5396EC;
   border-radius: 25px;
+  font-weight: bold;
 }
 
 #connexionButton:hover {
