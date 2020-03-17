@@ -1,1 +1,19 @@
-.idea
+/dist/
+*.log
+node_modules
+
+.idea/
+
+# Don't check in secret files
+*secret.js
+
+# Ignore npm debug log
+npm-debug.log
+
+# build-analytics
+.build-analytics
+
+# rollup-test output
+/modules/rollup-test/dist/
+
+.notes.md
