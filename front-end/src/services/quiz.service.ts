@@ -72,8 +72,7 @@ export class QuizService {
     this.http.delete<Question>(questionUrl, this.httpOptions).subscribe(() => this.setSelectedQuiz(quiz.id));
   }
 
-  /** Note: The functions below don't interact with the server. It's an example of implementation for the exercice 10.
-
+  /* Note: The functions below don't interact with the server. It's an example of implementation for the exercice 10.
   addQuestion(quiz: Quiz, question: Question) {
     quiz.questions.push(question);
     const index = this.quizzes.findIndex((q: Quiz) => q.id === quiz.id);
@@ -94,5 +93,5 @@ export class QuizService {
     this.quizzes[index] = quiz;
     this.quizzes$.next(this.quizzes);
   }
-  **/
+  */
 }
