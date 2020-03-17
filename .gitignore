@@ -1,3 +1,6 @@
+# gitignore based on this template : https://github.com/angular/angular/blob/master/.gitignore
+
+
 /dist/
 /bazel-out
 /integration/bazel/bazel-*
