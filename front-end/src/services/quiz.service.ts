@@ -16,13 +16,13 @@ export class QuizService {
    */
 
   /**
-   * The list of quiz.
+   * The list of quiz-preview.
    * The list is retrieved from the mock.
    */
   private quizzes: Quiz[] = QUIZ_LIST;
 
   /**
-   * Observable which contains the list of the quiz.
+   * Observable which contains the list of the quiz-preview.
    * Naming convention: Add '$' at the end of the variable name to highlight it as an Observable.
    */
   public quizzes$: BehaviorSubject<Quiz[]>
@@ -73,24 +73,24 @@ export class QuizService {
   }
 
   /* Note: The functions below don't interact with the server. It's an example of implementation for the exercice 10.
-  addQuestion(quiz: Quiz, question: Question) {
-    quiz.questions.push(question);
-    const index = this.quizzes.findIndex((q: Quiz) => q.id === quiz.id);
+  addQuestion(quiz-preview: Quiz, question: Question) {
+    quiz-preview.questions.push(question);
+    const index = this.quizzes.findIndex((q: Quiz) => q.id === quiz-preview.id);
     if (index) {
-      this.updateQuizzes(quiz, index);
+      this.updateQuizzes(quiz-preview, index);
     }
   }
 
-  deleteQuestion(quiz: Quiz, question: Question) {
-    const index = quiz.questions.findIndex((q) => q.label === question.label);
+  deleteQuestion(quiz-preview: Quiz, question: Question) {
+    const index = quiz-preview.questions.findIndex((q) => q.label === question.label);
     if (index !== -1) {
-      quiz.questions.splice(index, 1)
-      this.updateQuizzes(quiz, index);
+      quiz-preview.questions.splice(index, 1)
+      this.updateQuizzes(quiz-preview, index);
     }
   }
 
-  private updateQuizzes(quiz: Quiz, index: number) {
-    this.quizzes[index] = quiz;
+  private updateQuizzes(quiz-preview: Quiz, index: number) {
+    this.quizzes[index] = quiz-preview;
     this.quizzes$.next(this.quizzes);
   }
   */

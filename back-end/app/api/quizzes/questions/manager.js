@@ -2,13 +2,13 @@ const { Quiz, Question } = require('../../../models')
 
 /**
  * Questions Manager.
- * This file contains all the logic needed to by the question routes.  
+ * This file contains all the logic needed to by the question routes.
  */
 
 /**
  * filterQuestionsFromQuizz.
  * This function filters among the questions to return only the question linked with the given quizId.
- * @param quizId 
+ * @param quizId
  */
 const filterQuestionsFromQuizz = (quizId) => {
     const questions = Question.get()
@@ -18,7 +18,7 @@ const filterQuestionsFromQuizz = (quizId) => {
 
 /**
  * getQuestionFromQuiz.
- * This function retrieves a question from a quiz. It will throw a not found exception if the quizId in the question is different from the one provided in parameter. 
+ * This function retrieves a question from a quiz-preview. It will throw a not found exception if the quizId in the question is different from the one provided in parameter.
  * @param quizId
  * @param questionId
  */
