@@ -1,7 +1,8 @@
-<div class="quiz-list">
+<!-- <app-quiz-creation></app-quiz-creation> -->
+<div class="quiz-list col-12 ">
     <div class="quiz" *ngFor="let quiz of quizList">
         <!--Inputs & Output allow communication between parent & child components.-->
         <!--More information: https://angular.io/guide/component-interaction-->
-        <app-quiz-preview [quiz]="quiz" (quizSelected)="quizSelected($event)" (deleteQuiz)="deleteQuiz($event)" (QuizEditor)="QuizEditor($event)"></app-quiz-preview>
+        <app-quiz-preview [quiz]="quiz" ></app-quiz-preview> <br>
     </div>
   </div>
