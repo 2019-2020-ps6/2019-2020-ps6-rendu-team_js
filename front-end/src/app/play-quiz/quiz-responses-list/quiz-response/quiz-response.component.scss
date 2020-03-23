@@ -1,15 +1,7 @@
-#appName {
-  color: #3D3D3D;
-  font-size: 20vmin;
-  margin: 8vmin;
-  font-weight: 900;
-  font-family: "Segoe UI Black", serif;
-}
-
-#connexionButton {
+#responseButton {
   background-color: #5396EC;
   font-family: "Segoe UI", serif;
-  font-size: 10vmin;
+  font-size: 500%;
   color: #f2f2f2;
   padding: 16px 32px;
   text-align: center;
@@ -24,7 +16,7 @@
   outline:none;
 }
 
-#connexionButton:hover {
+#responseButton:hover {
   background-color: #f2f2f2;
   border: 2px solid #5396EC;
   color: #5396EC;
