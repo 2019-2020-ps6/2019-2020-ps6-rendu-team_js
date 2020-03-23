@@ -15,6 +15,9 @@ import { QuestionFormComponent } from './questions/question-form/question-form.c
 import { QuestionComponent } from './questions/question/question.component';
 import { HttpClientModule } from '@angular/common/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import {LogoComponent} from './authentication/firstpage/logo.component';
+import {UserFormComponent} from './authentication/user-form/user-form.component';
+import {AdminFormComponent} from './authentication/admin-form/admin-form.component';
 
 
 @NgModule({
@@ -28,6 +31,9 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     QuestionListComponent,
     QuestionFormComponent,
     AuthenticationComponent,
+    AdminFormComponent,
+    UserFormComponent,
+    LogoComponent,
     QuestionComponent
   ],
   imports: [

@@ -7,9 +7,24 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AuthenticationComponent implements OnInit {
 
+  displayAuthenticationForm = false;
+  displayUserForm = true; // False mean user form
+
   constructor() { }
 
   ngOnInit() {
+  }
+
+  receiveDisplayAuthenticationFormEvent($event) {
+    this.displayAuthenticationForm = $event;
+  }
+
+  receiveDisplayUserFormEvent() {
+    this.displayUserForm = true;
+  }
+
+  receiveDisplayAdminFormEvent() {
+    this.displayUserForm = false;
   }
 
 }

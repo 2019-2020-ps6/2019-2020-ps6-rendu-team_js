@@ -1,4 +1,3 @@
-<div id="content" class="text-center">
-    <h1 id="appName">PolyQuiz</h1>
-    <button id="connexionButton" type="button"> Connexion </button>
-</div>
+<app-logo (displayAuthenticationFormEvent)="receiveDisplayAuthenticationFormEvent($event)" *ngIf="!this.displayAuthenticationForm"></app-logo>
+<app-user-form (displayAdminFormEvent)="receiveDisplayAdminFormEvent()" *ngIf="this.displayAuthenticationForm && this.displayUserForm" ></app-user-form>
+<app-admin-form (displayUserFormEvent)="receiveDisplayUserFormEvent()" *ngIf="this.displayAuthenticationForm && !this.displayUserForm" ></app-admin-form>
