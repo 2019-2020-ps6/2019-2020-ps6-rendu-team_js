@@ -1,4 +1,4 @@
-# **Branching strategy** : ***Light Git flow***
+# **Branching strategy** : ***Lite Git flow***
 
 <br/>
 
