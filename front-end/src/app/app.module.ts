@@ -4,10 +4,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 
 import { AppComponent } from './app.component';
 import { QuizListComponent } from './quizzes/quiz-list/quiz-list.component';
-import { QuizPreviewComponent } from './quizzes/quiz-preview/quiz-preview.component';
 import { HeaderComponent } from './header/header.component';
-import { QuizCreationComponent } from './quizzes/quiz-creation/quiz-creation.component';
-import { QuizEditorComponent } from './quizzes/quiz-editor/quiz-editor.component';
 import { AppRoutingModule } from './app.routing.module';
 import { QuestionListComponent } from './questions/question-list/question-list.component';
 import { AuthenticationComponent } from './authentication/authentication.component';
@@ -23,9 +20,16 @@ import {QuizResponseComponent} from './play-quiz/quiz-responses-list/quiz-respon
 import {QuizResponsesListComponent} from './play-quiz/quiz-responses-list/quiz-responses-list.component';
 import { MenuComponent } from './menu/menu.component';
 import { MenuButtonComponent } from './menu/menu-button/menu-button.component';
-import { StatsComponent } from './stats/stats.component';
 import { ParametersComponent } from './parameters/parameters.component';
-import { ResidentsComponent } from './residents/residents.component';
+import {ResultComponent} from './play-quiz/result/result.component';
+import {QuizPreviewComponent} from './quizzes/quiz-preview/quiz-preview.component';
+import {QuizCreationComponent} from './quizzes/quiz-creation/quiz-creation.component';
+import {QuizEditorComponent} from './quizzes/quiz-editor/quiz-editor.component';
+import {StatsComponent} from './stats/stats.component';
+import {ResidentsComponent} from './residents/residents.component';
+import {QuizHeaderComponent} from './play-quiz/result/quiz-header/quiz-header.component';
+import {QuestionResultComponent} from './play-quiz/result/quiz-result-list/question-result/question-result.component';
+import {QuizResultListComponent} from './play-quiz/result/quiz-result-list/quiz-result-list.component';
 
 
 
@@ -41,12 +45,16 @@ import { ResidentsComponent } from './residents/residents.component';
     QuestionFormComponent,
     AuthenticationComponent,
     AdminFormComponent,
+    QuizHeaderComponent,
+    QuestionResultComponent,
     UserFormComponent,
     LogoComponent,
     QuestionComponent,
     PlayQuizComponent,
     QuizResponseComponent,
+    QuizResultListComponent,
     QuizResponsesListComponent,
+    ResultComponent,
     PlayQuizComponent,
     MenuComponent,
     MenuButtonComponent,

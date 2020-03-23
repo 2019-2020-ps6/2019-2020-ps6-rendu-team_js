@@ -1,0 +1,24 @@
+<div class="container">
+  <div class="row">
+    <div id="number" class="col-lg-1 col-md-1 col-xs-1 xol-sm-1 itemTitle ">
+      Numéro
+    </div>
+    <div id="questionAndResponse" class="col-lg-10 col-md-10 col-xs-10 xol-sm-10 itemTitle">
+      Question et Réponse
+    </div>
+    <div id="score" class="col-lg-1 col-md-1 col-xs-1 xol-sm-1 itemTitle">
+      Score
+    </div>
+  </div>
+</div>
+
+<div id="scroll">
+  <ng-container *ngFor="let i of [].constructor(5)">
+    <app-question-result></app-question-result>
+  </ng-container>
+</div>
+
+<div class="container">
+  <div id="end" class="row">
+  </div>
+</div>
