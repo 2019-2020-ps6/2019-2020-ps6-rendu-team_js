@@ -6,7 +6,7 @@ import { AppComponent } from './app.component';
 import { QuizListComponent } from './quizzes/quiz-list/quiz-list.component';
 import { QuizComponent } from './quizzes/quiz-preview/quiz.component';
 import { HeaderComponent } from './header/header.component';
-import { QuizFormComponent } from './quizzes/quiz-creation/quiz-form.component';
+import { QuizCreationComponent } from './quizzes/quiz-creation/quiz-creation.component';
 import { EditQuizComponent } from './quizzes/quiz-editor/edit-quiz.component';
 import { AppRoutingModule } from './app.routing.module';
 import { QuestionListComponent } from './questions/question-list/question-list.component';
@@ -29,7 +29,7 @@ import {QuizResponsesListComponent} from './play-quiz/quiz-responses-list/quiz-r
     QuizListComponent,
     QuizComponent,
     HeaderComponent,
-    QuizFormComponent,
+    QuizCreationComponent,
     EditQuizComponent,
     QuestionListComponent,
     QuestionFormComponent,
