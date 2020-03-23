@@ -18,6 +18,9 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {LogoComponent} from './authentication/firstpage/logo.component';
 import {UserFormComponent} from './authentication/user-form/user-form.component';
 import {AdminFormComponent} from './authentication/admin-form/admin-form.component';
+import {PlayQuizComponent} from './play-quiz/play-quiz.component';
+import {QuizResponseComponent} from './play-quiz/quiz-responses-list/quiz-response/quiz-response.component';
+import {QuizResponsesListComponent} from './play-quiz/quiz-responses-list/quiz-responses-list.component';
 
 
 @NgModule({
@@ -34,7 +37,11 @@ import {AdminFormComponent} from './authentication/admin-form/admin-form.compone
     AdminFormComponent,
     UserFormComponent,
     LogoComponent,
-    QuestionComponent
+    QuestionComponent,
+    PlayQuizComponent,
+    QuizResponseComponent,
+    QuizResponsesListComponent,
+    PlayQuizComponent
   ],
   imports: [
     BrowserModule,
