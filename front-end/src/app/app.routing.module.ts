@@ -8,7 +8,8 @@ const routes: Routes = [
     {path: 'quiz-list', component: QuizListComponent},
     {path: 'authentication', component: AuthenticationComponent},
     {path: 'edit-quiz/:id', component: EditQuizComponent},
-    { path: '', redirectTo: '/quiz-list', pathMatch: 'full' },
+    { path: '**', redirectTo: '/quiz-list', pathMatch: 'full' }, // path ** means every page
+    // { path: '', redirectTo: '/quiz-list', pathMatch: 'full' }, // path empty means nothing
 ];
 
 @NgModule({
