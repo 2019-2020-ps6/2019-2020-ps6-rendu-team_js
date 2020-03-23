@@ -15,7 +15,7 @@ export class QuizComponent implements OnInit {
   quizSelected: EventEmitter<boolean> = new EventEmitter<boolean>();
 
   @Output()
-  editQuiz: EventEmitter<Quiz> = new EventEmitter<Quiz>();
+  QuizEditor: EventEmitter<Quiz> = new EventEmitter<Quiz>();
 
   @Output()
   deleteQuiz: EventEmitter<Quiz> = new EventEmitter<Quiz>();
@@ -31,7 +31,7 @@ export class QuizComponent implements OnInit {
   }
 
   edit() {
-    this.editQuiz.emit(this.quiz);
+    this.QuizEditor.emit(this.quiz);
   }
 
   delete() {
