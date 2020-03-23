@@ -15,7 +15,7 @@ const routes: Routes = [
     {path: 'quiz-list', component: QuizListComponent},
     {path: 'authentication', component: AuthenticationComponent},
     {path: 'menu', component: MenuComponent},
-    {path: 'play', component: PlayQuizComponent},
+    {path: 'play/:id', component: PlayQuizComponent},
     {path: 'stats', component: StatsComponent},
     {path: 'result', component: ResultComponent},
     {path: 'parameters', component: ParametersComponent},
