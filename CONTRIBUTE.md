@@ -4,7 +4,7 @@
 
 ## Requirements
 
-* Webstorm (by Jetbrains)
+* Webstorm _(by Jetbrains)_
 * Node.js
 
 <br/>
