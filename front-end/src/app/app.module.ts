@@ -21,6 +21,11 @@ import {AdminFormComponent} from './authentication/admin-form/admin-form.compone
 import {PlayQuizComponent} from './play-quiz/play-quiz.component';
 import {QuizResponseComponent} from './play-quiz/quiz-responses-list/quiz-response/quiz-response.component';
 import {QuizResponsesListComponent} from './play-quiz/quiz-responses-list/quiz-responses-list.component';
+import { MenuComponent } from './menu/menu.component';
+import { MenuButtonComponent } from './menu/menu-button/menu-button.component';
+import { StatsComponent } from './stats/stats.component';
+import { ParametersComponent } from './parameters/parameters.component';
+
 
 
 @NgModule({
@@ -41,7 +46,11 @@ import {QuizResponsesListComponent} from './play-quiz/quiz-responses-list/quiz-r
     PlayQuizComponent,
     QuizResponseComponent,
     QuizResponsesListComponent,
-    PlayQuizComponent
+    PlayQuizComponent,
+    MenuComponent,
+    MenuButtonComponent,
+    StatsComponent,
+    ParametersComponent
   ],
   imports: [
     BrowserModule,

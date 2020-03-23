@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="38.207" height="41.519" viewBox="0 0 38.207 41.519">
+  <g id="flasher" transform="translate(-0.5)">
+    <path id="Tracé_75" data-name="Tracé 75" d="M32.766,451.953H65.74v4.869H32.766Zm0,0" transform="translate(-29.649 -415.303)" fill="#fff"/>
+    <path id="Tracé_76" data-name="Tracé 76" d="M220.775,311.552a1.481,1.481,0,1,0-2.962,0v7.592h2.962Zm0,0" transform="translate(-199.69 -284.926)" fill="#fff"/>
+    <path id="Tracé_77" data-name="Tracé 77" d="M100.516,144.575v-7.592a3.914,3.914,0,1,1,7.828,0v7.592h7.7V131.714a11.618,11.618,0,0,0-23.235,0v12.861Zm0,0" transform="translate(-84.827 -110.358)" fill="#fff"/>
+    <path id="Tracé_78" data-name="Tracé 78" d="M221.078,0h2.433V6.491h-2.433Zm0,0" transform="translate(-202.691)" fill="#fff"/>
+    <path id="Tracé_79" data-name="Tracé 79" d="M1.716,118.688l5.622,3.246L6.122,124.04.5,120.795Zm0,0" transform="translate(0 -109.063)" fill="#fff"/>
+    <path id="Tracé_80" data-name="Tracé 80" d="M392.949,118.68l1.216,2.107-5.622,3.246-1.216-2.106Zm0,0" transform="translate(-355.459 -109.056)" fill="#fff"/>
+    <path id="Tracé_81" data-name="Tracé 81" d="M93.517,27.781,96.763,33.4l-2.107,1.216L91.41,29Zm0,0" transform="translate(-83.538 -25.528)" fill="#fff"/>
+    <path id="Tracé_82" data-name="Tracé 82" d="M317.98,27.781,320.087,29l-3.246,5.622L314.735,33.4Zm0,0" transform="translate(-288.753 -25.528)" fill="#fff"/>
+  </g>
+</svg>

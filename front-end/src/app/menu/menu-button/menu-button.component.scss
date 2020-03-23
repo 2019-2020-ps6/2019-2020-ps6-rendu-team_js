@@ -1,0 +1,25 @@
+@import "../../../styles/variables";
+
+
+.center-inside{
+  margin: 20px;
+  text-align: center;
+}
+
+.center-img {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+  height: 120px;
+}
+
+.text {
+  font-size: large;
+  text-decoration: none;
+  color: white;
+}
+
+a:link{
+  text-decoration: none;
+}
