@@ -11,7 +11,7 @@
 
 ## Coding rules
 
-* Don't comment a large block of code and leave it in the master or the development branch.
+* Don't comment a large block of code and leave it in the master branch.
 * Give functional names to methods.
 * If the method comportment is complex to understand add **doc**.
 * Test all methods before pushing.
@@ -37,12 +37,12 @@
 
 ## Branch merging
 
-* To merge a branch with the **development** branch, you need to create a **pull request** and wait that all group members approve your demand.
+* To merge a branch with the **master** branch, you need to create a **pull request** and wait that all group members approve your demand.
 
 <br/>
 
 ## Branches organization
 
-* New features are stored in **"features/"** branches, when they are finished and tested, you can merge your branch with the **development** branch.
-* Before rendering (weekly rendering), launch all **tests**, and **read the code** again in group. If everything is good, merge the **development** branch with the **master** branch.
+* New features are stored in **"features/"** branches, when they are finished and tested, you can merge your branch with the **master** branch.
+* Before rendering (weekly rendering), launch all **tests**, and **read the code** again in group. If everything is good, you can add a **tag**.
 * Our **master** branch is a **production** branch, don't forget the tag to succeed the rendering !
