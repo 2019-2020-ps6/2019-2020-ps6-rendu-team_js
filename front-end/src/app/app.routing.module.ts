@@ -7,6 +7,8 @@ import {PlayQuizComponent} from './play-quiz/play-quiz.component';
 import {MenuComponent} from './menu/menu.component';
 import {StatsComponent} from './stats/stats.component';
 import {ParametersComponent} from './parameters/parameters.component';
+import {QuizCreationComponent} from './quizzes/quiz-creation/quiz-creation.component';
+import {ResidentsComponent} from './residents/residents.component';
 
 const routes: Routes = [
     {path: 'quiz-list', component: QuizListComponent},
@@ -15,6 +17,8 @@ const routes: Routes = [
     {path: 'play', component: PlayQuizComponent},
     {path: 'stats', component: StatsComponent},
     {path: 'parameters', component: ParametersComponent},
+    {path: 'quiz-creation', component: QuizCreationComponent},
+    {path: 'residents', component: ResidentsComponent},
     {path: 'quiz-editor/:id', component: QuizEditorComponent},
     { path: '**', redirectTo: '/quiz-list', pathMatch: 'full' }, // path ** means every page
     // { path: '', redirectTo: '/quiz-list', pathMatch: 'full' }, // path empty means nothing

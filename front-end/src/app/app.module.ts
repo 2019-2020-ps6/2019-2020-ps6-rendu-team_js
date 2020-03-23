@@ -25,6 +25,7 @@ import { MenuComponent } from './menu/menu.component';
 import { MenuButtonComponent } from './menu/menu-button/menu-button.component';
 import { StatsComponent } from './stats/stats.component';
 import { ParametersComponent } from './parameters/parameters.component';
+import { ResidentsComponent } from './residents/residents.component';
 
 
 
@@ -50,7 +51,8 @@ import { ParametersComponent } from './parameters/parameters.component';
     MenuComponent,
     MenuButtonComponent,
     StatsComponent,
-    ParametersComponent
+    ParametersComponent,
+    ResidentsComponent
   ],
   imports: [
     BrowserModule,
