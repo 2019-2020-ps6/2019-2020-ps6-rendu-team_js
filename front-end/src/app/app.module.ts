@@ -4,7 +4,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 
 import { AppComponent } from './app.component';
 import { QuizListComponent } from './quizzes/quiz-list/quiz-list.component';
-import { QuizComponent } from './quizzes/quiz-preview/quiz.component';
+import { QuizPreviewComponent } from './quizzes/quiz-preview/quiz-preview.component';
 import { HeaderComponent } from './header/header.component';
 import { QuizCreationComponent } from './quizzes/quiz-creation/quiz-creation.component';
 import { QuizEditorComponent } from './quizzes/quiz-editor/quiz-editor.component';
@@ -27,7 +27,7 @@ import {QuizResponsesListComponent} from './play-quiz/quiz-responses-list/quiz-r
   declarations: [
     AppComponent,
     QuizListComponent,
-    QuizComponent,
+    QuizPreviewComponent,
     HeaderComponent,
     QuizCreationComponent,
     QuizEditorComponent,

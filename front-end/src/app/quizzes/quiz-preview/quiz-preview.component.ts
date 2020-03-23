@@ -2,11 +2,11 @@ import { Component, OnInit, Input, Output, EventEmitter} from '@angular/core';
 import { Quiz } from '../../../models/quiz.model';
 
 @Component({
-  selector: 'app-quiz',
-  templateUrl: './quiz.component.html',
-  styleUrls: ['./quiz.component.scss']
+  selector: 'app-quiz-preview',
+  templateUrl: './quiz-preview.component.html',
+  styleUrls: ['./quiz-preview.component.scss']
 })
-export class QuizComponent implements OnInit {
+export class QuizPreviewComponent implements OnInit {
 
   @Input()
   quiz: Quiz;
