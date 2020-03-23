@@ -25,7 +25,7 @@ export class QuizListComponent implements OnInit {
     console.log('event received from child:', selected);
   }
 
-  editQuiz(quiz: Quiz) {
+  QuizEditor(quiz: Quiz) {
     this.router.navigate(['/quiz-editor-preview/' + quiz.name]);
   }
 

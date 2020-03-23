@@ -4,11 +4,11 @@ import { Quiz } from 'src/models/quiz.model';
 import { QuizService } from 'src/services/quiz.service';
 
 @Component({
-  selector: 'app-edit-quiz',
-  templateUrl: './edit-quiz.component.html',
-  styleUrls: ['./edit-quiz.component.scss']
+  selector: 'app-quiz-editor',
+  templateUrl: './quiz-editor.component.html',
+  styleUrls: ['./quiz-editor.component.scss']
 })
-export class EditQuizComponent implements OnInit {
+export class QuizEditorComponent implements OnInit {
 
   public quiz: Quiz;
 

@@ -7,7 +7,7 @@ import { QuizListComponent } from './quizzes/quiz-list/quiz-list.component';
 import { QuizComponent } from './quizzes/quiz-preview/quiz.component';
 import { HeaderComponent } from './header/header.component';
 import { QuizCreationComponent } from './quizzes/quiz-creation/quiz-creation.component';
-import { EditQuizComponent } from './quizzes/quiz-editor/edit-quiz.component';
+import { QuizEditorComponent } from './quizzes/quiz-editor/quiz-editor.component';
 import { AppRoutingModule } from './app.routing.module';
 import { QuestionListComponent } from './questions/question-list/question-list.component';
 import { AuthenticationComponent } from './authentication/authentication.component';
@@ -35,7 +35,7 @@ import { ParametersComponent } from './parameters/parameters.component';
     QuizComponent,
     HeaderComponent,
     QuizCreationComponent,
-    EditQuizComponent,
+    QuizEditorComponent,
     QuestionListComponent,
     QuestionFormComponent,
     AuthenticationComponent,
