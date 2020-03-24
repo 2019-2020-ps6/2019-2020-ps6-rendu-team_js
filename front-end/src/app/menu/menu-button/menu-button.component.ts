@@ -1,4 +1,6 @@
 import {Component, Input, OnInit} from '@angular/core';
+import {Router} from '@angular/router';
+import {Location} from '@angular/common';
 
 @Component({
   selector: 'app-menu-button',
@@ -10,10 +12,11 @@ export class MenuButtonComponent implements OnInit {
   @Input() name: string;
   @Input() imageName: string;
   @Input() routerPath: string;
+  @Input() bgColor: string;
 
   imagePath: string;
 
-  constructor() {
+  constructor(public location: Location) {
   }
 
   ngOnInit() {
