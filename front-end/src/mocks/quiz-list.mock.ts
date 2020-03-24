@@ -28,6 +28,6 @@ export const QUIZ_LIST: Quiz[] = [
         id: '2',
         name: 'Les technos WEB',
         questions: [],
-      difficulty: 'Difficile',
+        difficulty: 'Difficile',
     }
 ];

@@ -6,7 +6,17 @@
 
 #quizbtn {
   background-color: #3396FF !important;
+  text-align: left;
+  padding-left: 20px;
 }
 #themebtn{
   background-color: #2B7FD8 !important;
 }
+
+#quizbtn, #themebtn{
+  font-weight: 900;
+  font-family: "Segoe UI Black", sans-serif;
+  font-size: 50pt;
+}
+
+
