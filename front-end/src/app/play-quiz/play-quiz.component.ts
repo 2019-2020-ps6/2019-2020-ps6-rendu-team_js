@@ -12,6 +12,7 @@ import {Answer, Question} from '../../models/question.model';
 
 export class PlayQuizComponent implements OnInit {
 
+  // public quiz: Quiz = null;  //syntax to assign & define on same statement
   public quiz: Quiz;
   public questionNumber: number;
   public userAnswers: Answer[];
@@ -26,7 +27,7 @@ export class PlayQuizComponent implements OnInit {
 
     // this.questionNumber = +this.route.snapshot.paramMap.get('questionNumber');  // +in front of string cast string to int
 
-    this.questionNumber = 0;
+    this.questionNumber = 0;  // initialize vars
     this.userAnswers = [];
   }
 
