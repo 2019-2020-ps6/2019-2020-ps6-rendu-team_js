@@ -1,3 +1,5 @@
+@import "../../../styles/variables";
+
 .quiz-list {
   display: inline-block;
   margin: 1rem;
@@ -5,4 +7,10 @@
   border-radius: 2px;
   padding: 0 1em 1em 1em;
   width: 100%;
+}
+
+h1{
+  font-weight: 900;
+  font-family: "Segoe UI Black", sans-serif;
+  font-size: 75pt;
 }

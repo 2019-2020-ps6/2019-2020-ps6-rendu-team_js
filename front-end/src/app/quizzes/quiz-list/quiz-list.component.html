@@ -1,8 +1,13 @@
 <!-- <app-quiz-creation></app-quiz-creation> -->
-<div class="quiz-list col-12 ">
+<div>
+  <h1 id="title">Thème...</h1>
+  <hr>
+  <div class="quiz-list col-12 ">
     <div class="quiz" *ngFor="let quiz of quizList">
-        <!--Inputs & Output allow communication between parent & child components.-->
-        <!--More information: https://angular.io/guide/component-interaction-->
-        <app-quiz-preview [quiz]="quiz" ></app-quiz-preview> <br><br>
+      <!--Inputs & Output allow communication between parent & child components.-->
+      <!--More information: https://angular.io/guide/component-interaction-->
+      <app-quiz-preview [quiz]="quiz" ></app-quiz-preview> <br><br>
     </div>
   </div>
+</div>
+
