@@ -1,5 +1,8 @@
-<div class="row">
-  <button type="button" class="btn btn-primary btn-lg btn-block">{{quiz.name}}</button>
-
+<div class="btn-group btn-group-toggle btn-block" data-toggle="buttons">
+  <label class="btn btn-secondary col-10" id="quizbtn">
+    <input type="radio" name="options"> {{quiz.name}}
+  </label>
+  <label class="btn btn-secondary active col-2" id="themebtn">
+    <input type="radio" name="options"  checked> {{quiz.difficulty}}
+  </label>
 </div>
-
