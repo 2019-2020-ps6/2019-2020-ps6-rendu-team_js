@@ -16,7 +16,8 @@ export class MenuButtonComponent implements OnInit {
 
   imagePath: string;
 
-  constructor(public location: Location) {
+  constructor(public location: Location,
+              private router: Router) {
   }
 
   ngOnInit() {
@@ -24,4 +25,9 @@ export class MenuButtonComponent implements OnInit {
   }
 
 
+  goTo() {
+    if (this.routerPath !== '') {
+      this.router.navigate([this.routerPath]);
+    }
+  }
 }

@@ -13,22 +13,23 @@ import {WelcomeComponent} from './welcome/welcome.component';
 import {UserFormComponent} from './authentication/user-form/user-form.component';
 import {AdminFormComponent} from './authentication/admin-form/admin-form.component';
 import {AuthGuardService} from '../services/auth-guard.service';
+import {NotAuthGuardService} from '../services/not-auth-guard.service';
 
 const routes: Routes = [
     // {path: 'quiz-list', canActivate: [AuthGuardService], component: QuizListComponent},
-    {path: 'quiz-list', component: QuizListComponent},
-    {path: 'welcome', component: WelcomeComponent},
-    {path: 'play/:id', component: PlayQuizComponent},
-    {path: 'stats', component: StatsComponent},
-    {path: 'result', component: ResultComponent},
-    {path: 'parameters', component: ParametersComponent},
-    {path: 'quiz-creation', component: QuizCreationComponent},
-    {path: 'residents', component: ResidentsComponent},
-    {path: 'quiz-editor/:id', component: QuizEditorComponent},
-    {path: 'login/user', component: UserFormComponent},
-    {path: 'login/admin', component: AdminFormComponent},
-    {path: '**', redirectTo: '/quiz-list', pathMatch: 'full' }, // path ** means every page
-    {path: '', redirectTo: '/quiz-list', pathMatch: 'full' }, // path empty means nothing
+    {path: 'quiz-list',  canActivate: [AuthGuardService], component: QuizListComponent},
+    {path: 'welcome', canActivate: [NotAuthGuardService], component: WelcomeComponent},
+    {path: 'play/:id', canActivate: [AuthGuardService], component: PlayQuizComponent},
+    {path: 'stats', canActivate: [AuthGuardService], component: StatsComponent},
+    {path: 'result', canActivate: [AuthGuardService], component: ResultComponent},
+    {path: 'parameters', canActivate: [AuthGuardService], component: ParametersComponent},
+    {path: 'quiz-creation', canActivate: [AuthGuardService], component: QuizCreationComponent},
+    {path: 'residents', canActivate: [AuthGuardService], component: ResidentsComponent},
+    {path: 'quiz-editor/:id', canActivate: [AuthGuardService], component: QuizEditorComponent},
+    {path: 'login/user', canActivate: [NotAuthGuardService], component: UserFormComponent},
+    {path: 'login/admin', canActivate: [NotAuthGuardService], component: AdminFormComponent},
+    {path: '**', redirectTo: '/quiz-list', canActivate: [NotAuthGuardService], pathMatch: 'full' }, // path ** means every page
+    {path: '', redirectTo: '/quiz-list', canActivate: [NotAuthGuardService], pathMatch: 'full' }, // path empty means nothing
 
 ];
 

@@ -1,12 +1,11 @@
 <!-- USER FORM -->
 
-<div>
-  <h2>Connexion</h2>
-  <form class="user-form" [formGroup]="userForm">
-    <input class="input-custom" placeholder="Votre identifiant" type="text" id="userIdentifiant"
-           [formControlName]="'userIdentifiant'">
-    <br>
-    <br>
-    <button type="submit" class="button-card" (click)="connexion()">Se connecter</button>
-  </form>
+<div class="user-container">
+  <div class="user-table">
+    <div class="text-connexion">Connexion</div>
+    <form class="user-form" [formGroup]="userForm">
+      <input class="input-custom" placeholder="Nom Prénom" type="text" id="userIdentifiant" [formControlName]="'userIdentifiant'">
+      <button type="submit" class="button-card" (click)="connexion()">Se connecter</button>
+    </form>
+  </div>
 </div>

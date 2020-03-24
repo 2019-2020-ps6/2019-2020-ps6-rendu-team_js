@@ -1,16 +1,15 @@
 <!-- ADMIN FORM -->
 
-<div>
-  <h2>Connexion</h2>
-  <form class="admin-form" [formGroup]="adminForm" ngNativeValidate>
-    <input class="input-custom" placeholder="Votre identifiant" type="text" id="userIdentifiant"
-           [formControlName]="'userIdentifiant'" >
-    <br>
-    <br>
-    <input class="input-custom" placeholder="Votre mot de passe" type="text" id="userPassword"
-           [formControlName]="'userPassword'" >
-    <br>
-    <br>
-    <button type="submit" class="button-card" (click)="this.connexion()">Se connecter</button>
-  </form>
+<div class="admin-container">
+  <div class="admin-table">
+    <div class="text-connexion">Connexion</div>
+    <form class="admin-form" [formGroup]="adminForm" ngNativeValidate>
+      <input class="input-custom" placeholder="Votre identifiant" type="text" id="userIdentifiant"
+             [formControlName]="'userIdentifiant'" >
+      <input class="input-custom" placeholder="Votre mot de passe" type="text" id="userPassword"
+             [formControlName]="'userPassword'" >
+
+      <button type="submit" class="button-card" (click)="this.connexion()">Se connecter</button>
+    </form>
+  </div>
 </div>

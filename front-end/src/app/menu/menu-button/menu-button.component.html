@@ -1,7 +1,7 @@
-<a class="center-inside" [ngStyle]="{'background-color': bgColor}" [routerLink]="[routerPath]">
+<a class="center-inside" [ngStyle]="{'background-color': bgColor}" (click)="goTo()">
 
   <div class="div-inside">
-    <img class="center-img" src="{{imagePath}}">
+    <img *ngIf="name !== ''" class="center-img" src="{{imagePath}}">
     <div class="text">{{name}}</div>
   </div>
 

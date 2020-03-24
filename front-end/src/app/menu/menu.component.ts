@@ -29,9 +29,14 @@ export class MenuComponent implements OnInit {
     return this.authService.isAuth() && this.authService.getAuthLevel() > 0 && path.length > 0 && path[1] !== 'login';
   }
 
-  isBackItemDisplayed(): boolean {
+  isEmptyMenuDisplayed(): boolean {
     const path = this.location.path().split('/');
     return path.length > 0 && path[1] === 'login';
+  }
+
+  isBackItemDisplayed(): boolean {
+    const path = this.location.path().split('/');
+    return path.length > 1 && path[1] === 'login' && path[2] === 'admin';
   }
 
   isMenuDisplayed(): boolean {

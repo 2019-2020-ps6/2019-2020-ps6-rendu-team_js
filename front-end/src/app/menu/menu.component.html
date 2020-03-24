@@ -4,5 +4,6 @@
   <app-menu-button *ngIf="isAdminItemDisplayed()" name="Création"   imageName="pen.svg"           routerPath="quiz-creation" bgColor="#6BA800"></app-menu-button>
   <app-menu-button *ngIf="isAdminItemDisplayed()" name="Résidents"  imageName="user.svg"          routerPath="residents"     bgColor="#3CABC2"></app-menu-button>
   <app-menu-button *ngIf="isUserItemDisplayed()"  name="Paramètres" imageName="settings.svg"      routerPath="parameters"    bgColor="#3396FF"></app-menu-button>
-  <app-menu-button *ngIf="isBackItemDisplayed()"  name="Retour"     imageName="arrow-back.svg"    routerPath="welcome"       bgColor="grey"></app-menu-button>
+  <app-menu-button *ngIf="isBackItemDisplayed()"  name="Retour"     imageName="arrow-back.svg"    routerPath="login/user"    bgColor="#EA4343"></app-menu-button>
+  <app-menu-button *ngIf="isEmptyMenuDisplayed()"  name=""          imageName=""                  routerPath=""              bgColor="grey" style="flex: 5"></app-menu-button>
 </div>
