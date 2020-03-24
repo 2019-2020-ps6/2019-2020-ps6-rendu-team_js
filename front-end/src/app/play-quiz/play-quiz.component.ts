@@ -13,6 +13,8 @@ import {Question} from '../../models/question.model';
 export class PlayQuizComponent implements OnInit {
 
   public quiz: Quiz;
+  public questionNumber: number;
+  public question: Question;
 
   constructor(private route: ActivatedRoute, private quizService: QuizService) {
     this.quizService.quizSelected$.subscribe((quiz) => this.quiz = quiz); // set class var quiz

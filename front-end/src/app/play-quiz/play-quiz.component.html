@@ -1,6 +1,9 @@
 <div>
   <ng-container *ngFor="let question of quiz.questions; let i=index">
-    <p id="question">Question {{i+1}}: {{question.label}}</p>
+    <p id="question">Question {{i+1}} : "{{question.label}}"</p>
     <app-quiz-responses-list id="answers" [answers]="question.answers"></app-quiz-responses-list>
+    <!-- if next question != -1 print next question else print result -->
   </ng-container>
+
+  <br/><button routerLink="/quiz-list">Quitter</button>
 </div>
