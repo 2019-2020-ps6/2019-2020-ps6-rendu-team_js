@@ -72,13 +72,6 @@ export class QuizService {
     this.http.delete<Question>(questionUrl, this.httpOptions).subscribe(() => this.setSelectedQuiz(quiz.id));
   }
 
-  /*isAnswerCorrect(quiz: Quiz, question: Question, answer: Answer) {
-    const urlWithId = this.quizUrl + '/' + quizId;
-    this.http.get<Quiz>(urlWithId).subscribe((quiz) => {
-      this.quizSelected$.next(quiz);
-    });
-  }*/
-
   /* Note: The functions below don't interact with the server. It's an example of implementation for the exercice 10.
   addQuestion(quiz: Quiz, question: Question) {
     quiz.questions.push(question);

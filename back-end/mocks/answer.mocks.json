@@ -40,5 +40,35 @@
     "isCorrect": false,
     "questionId": 1585037943506,
     "id": 1585037943534
+  },
+  {
+    "value": "answer1",
+    "isCorrect": false,
+    "questionId": 1585040516920,
+    "id": 1585040516926
+  },
+  {
+    "value": "answer2",
+    "isCorrect": true,
+    "questionId": 1585040516920,
+    "id": 1585040516928
+  },
+  {
+    "value": "answer3",
+    "isCorrect": false,
+    "questionId": 1585040516920,
+    "id": 1585040516928
+  },
+  {
+    "value": "false",
+    "isCorrect": false,
+    "questionId": 1585040533897,
+    "id": 1585040533898
+  },
+  {
+    "value": "true",
+    "isCorrect": true,
+    "questionId": 1585040533897,
+    "id": 1585040533899
   }
 ]

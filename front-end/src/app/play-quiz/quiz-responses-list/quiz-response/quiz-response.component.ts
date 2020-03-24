@@ -1,5 +1,8 @@
-import {Component, Input, OnInit} from '@angular/core';
+import {Component, Input, OnInit, Output} from '@angular/core';
 import {Answer} from '../../../../models/question.model';
+import {Quiz} from '../../../../models/quiz.model';
+import {Router} from '@angular/router';
+import {QuizService} from '../../../../services/quiz.service';
 
 @Component({
   selector: 'app-quiz-response',
@@ -11,9 +14,15 @@ export class QuizResponseComponent implements OnInit {
   @Input()
   public answer: Answer;
 
-  constructor() { }
+  constructor(private router: Router, public quizService: QuizService) {
+
+  }
 
   ngOnInit() {
+  }
+
+  submit(answer: Answer) {
+    // this.quizService.submitAnswer(quiz);
   }
 
 }

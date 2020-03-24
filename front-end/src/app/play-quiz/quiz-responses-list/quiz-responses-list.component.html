@@ -3,7 +3,7 @@
       <td>
         <app-quiz-response [answer]="answer"></app-quiz-response>
       </td>
-      <ng-container *ngIf="i%2 != 0">
+      <ng-container *ngIf="i%2 != 0"> <!-- first question has index 0 -->
         <tr></tr>
       </ng-container>
     </ng-container>
