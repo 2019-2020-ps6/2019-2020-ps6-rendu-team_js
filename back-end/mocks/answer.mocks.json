@@ -10,5 +10,35 @@
     "isCorrect": true,
     "questionId": 1584444209245,
     "id": 1584444209246
+  },
+  {
+    "value": "true",
+    "isCorrect": true,
+    "questionId": 1584989198822,
+    "id": 1584989198831
+  },
+  {
+    "value": "false",
+    "isCorrect": false,
+    "questionId": 1585000018443,
+    "id": 1585000018493
+  },
+  {
+    "value": "1answer",
+    "isCorrect": false,
+    "questionId": 1585037943506,
+    "id": 1585037943531
+  },
+  {
+    "value": "2answer",
+    "isCorrect": true,
+    "questionId": 1585037943506,
+    "id": 1585037943533
+  },
+  {
+    "value": "3answer",
+    "isCorrect": false,
+    "questionId": 1585037943506,
+    "id": 1585037943534
   }
 ]
