@@ -29,7 +29,7 @@ import {QuizHeaderComponent} from './play-quiz/result/quiz-header/quiz-header.co
 import {QuestionResultComponent} from './play-quiz/result/quiz-result-list/question-result/question-result.component';
 import {QuizResultListComponent} from './play-quiz/result/quiz-result-list/quiz-result-list.component';
 import { WelcomeComponent } from './welcome/welcome.component';
-import { QuizInfoComponent } from './quizzies/quiz-info/quiz-info.component';
+import { QuizInfoComponent } from './quizzes/quiz-info/quiz-info.component';
 
 
 
