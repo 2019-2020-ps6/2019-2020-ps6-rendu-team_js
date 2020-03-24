@@ -13,7 +13,12 @@
     <br>
     <label for="difficulty">
       Difficulté <br>
-      <input class="input-custom" type="text" id="difficulty" [formControlName]="'difficulty'">
+      <select class="custom-select mb-3" id="difficulty" [formControlName]="'difficulty'">
+        <option selected>Choisir une difficulté</option>
+        <option value="Facile">Facile</option>
+        <option value="Moyen">Moyen</option>
+        <option value="Difficile">Difficile</option>
+      </select>
     </label>
     <br>
     <button type="submit" class="button-card" (click)="addQuiz()">Create</button>
