@@ -1,8 +1,10 @@
 <table id="answerTable">
-  <tr></tr>
-  <ng-container *ngFor="let answer of answers">
-    <td>
-      <app-quiz-response [answer]="answer"></app-quiz-response>
-    </td>
-  </ng-container>
+    <ng-container *ngFor="let answer of answers; let i=index">
+      <td>
+        <app-quiz-response [answer]="answer"></app-quiz-response>
+      </td>
+      <ng-container *ngIf="i%2 != 0">
+        <tr></tr>
+      </ng-container>
+    </ng-container>
 </table>
