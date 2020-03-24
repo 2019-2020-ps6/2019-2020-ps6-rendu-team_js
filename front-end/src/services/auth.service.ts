@@ -1,4 +1,5 @@
-import { Injectable } from '@angular/core';
+import {Injectable} from '@angular/core';
+import {BehaviorSubject} from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -6,9 +7,13 @@ import { Injectable } from '@angular/core';
 export class AuthService {
 
   auth = true;
+  auth$ = new BehaviorSubject<boolean>(this.auth);
+
   authLevel = 1;
 
+
   constructor() { }
+
 
   isAuth(): boolean {
     return this.auth;

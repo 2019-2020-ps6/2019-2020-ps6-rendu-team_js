@@ -1,7 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { QuizListComponent } from './quizzes/quiz-list/quiz-list.component';
-import {AuthenticationComponent} from './authentication/authentication.component';
 import {PlayQuizComponent} from './play-quiz/play-quiz.component';
 import {MenuComponent} from './menu/menu.component';
 import {ParametersComponent} from './parameters/parameters.component';
@@ -13,11 +12,12 @@ import {QuizEditorComponent} from './quizzes/quiz-editor/quiz-editor.component';
 import {WelcomeComponent} from './welcome/welcome.component';
 import {UserFormComponent} from './authentication/user-form/user-form.component';
 import {AdminFormComponent} from './authentication/admin-form/admin-form.component';
+import {AuthGuardService} from '../services/auth-guard.service';
 
 const routes: Routes = [
+    // {path: 'quiz-list', canActivate: [AuthGuardService], component: QuizListComponent},
     {path: 'quiz-list', component: QuizListComponent},
     {path: 'welcome', component: WelcomeComponent},
-    {path: 'menu', component: MenuComponent},
     {path: 'play/:id', component: PlayQuizComponent},
     {path: 'stats', component: StatsComponent},
     {path: 'result', component: ResultComponent},
@@ -27,9 +27,9 @@ const routes: Routes = [
     {path: 'quiz-editor/:id', component: QuizEditorComponent},
     {path: 'login/user', component: UserFormComponent},
     {path: 'login/admin', component: AdminFormComponent},
-    {path: 'login', component: AuthenticationComponent},
-    { path: '**', redirectTo: '/quiz-list', pathMatch: 'full' }, // path ** means every page
-    // { path: '', redirectTo: '/quiz-list', pathMatch: 'full' }, // path empty means nothing
+    {path: '**', redirectTo: '/quiz-list', pathMatch: 'full' }, // path ** means every page
+    {path: '', redirectTo: '/quiz-list', pathMatch: 'full' }, // path empty means nothing
+
 ];
 
 @NgModule({

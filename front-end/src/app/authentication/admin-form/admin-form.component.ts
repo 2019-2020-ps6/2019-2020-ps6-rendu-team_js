@@ -8,8 +8,6 @@ import {FormControl, FormGroup} from '@angular/forms';
 })
 export class AdminFormComponent implements OnInit {
 
-  @Output() displayUserFormEvent = new EventEmitter<void>();
-
   public adminForm: FormGroup;
 
   constructor() {
@@ -26,8 +24,5 @@ export class AdminFormComponent implements OnInit {
     console.log('Admin connexion request :' + this.adminForm.get('userIdentifiant').value + ' ' + this.adminForm.get('userPassword').value);
   }
 
-  displayUserForm() {
-    this.displayUserFormEvent.emit();
-  }
 
 }

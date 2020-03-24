@@ -7,7 +7,6 @@ import { QuizListComponent } from './quizzes/quiz-list/quiz-list.component';
 import { HeaderComponent } from './header/header.component';
 import { AppRoutingModule } from './app.routing.module';
 import { QuestionListComponent } from './questions/question-list/question-list.component';
-import { AuthenticationComponent } from './authentication/authentication.component';
 import { QuestionFormComponent } from './questions/question-form/question-form.component';
 import { QuestionComponent } from './questions/question/question.component';
 import { HttpClientModule } from '@angular/common/http';
@@ -30,6 +29,7 @@ import {QuizHeaderComponent} from './play-quiz/result/quiz-header/quiz-header.co
 import {QuestionResultComponent} from './play-quiz/result/quiz-result-list/question-result/question-result.component';
 import {QuizResultListComponent} from './play-quiz/result/quiz-result-list/quiz-result-list.component';
 import { WelcomeComponent } from './welcome/welcome.component';
+import { QuizInfoComponent } from './quizzies/quiz-info/quiz-info.component';
 
 
 
@@ -43,7 +43,6 @@ import { WelcomeComponent } from './welcome/welcome.component';
     QuizEditorComponent,
     QuestionListComponent,
     QuestionFormComponent,
-    AuthenticationComponent,
     AdminFormComponent,
     QuizHeaderComponent,
     QuestionResultComponent,
@@ -60,7 +59,8 @@ import { WelcomeComponent } from './welcome/welcome.component';
     StatsComponent,
     ParametersComponent,
     ResidentsComponent,
-    WelcomeComponent
+    WelcomeComponent,
+    QuizInfoComponent
   ],
   imports: [
     BrowserModule,

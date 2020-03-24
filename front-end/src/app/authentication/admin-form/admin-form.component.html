@@ -1,18 +1,14 @@
-<!-- MENU (USER FORM ACCESS BUTTON) -->
-
-<!--<button type="submit" class="button-card" (click)="displayUserForm()">Résident</button>-->
-
 <!-- ADMIN FORM -->
 
 <div>
   <h2>Connexion</h2>
   <form class="admin-form" [formGroup]="adminForm" ngNativeValidate>
     <input class="input-custom" placeholder="Votre identifiant" type="text" id="userIdentifiant"
-           [formControlName]="'userIdentifiant'" required>
+           [formControlName]="'userIdentifiant'" >
     <br>
     <br>
     <input class="input-custom" placeholder="Votre mot de passe" type="text" id="userPassword"
-           [formControlName]="'userPassword'" required>
+           [formControlName]="'userPassword'" >
     <br>
     <br>
     <button type="submit" class="button-card" (click)="this.connexion()">Se connecter</button>

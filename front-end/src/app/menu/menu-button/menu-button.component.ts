@@ -23,4 +23,5 @@ export class MenuButtonComponent implements OnInit {
     this.imagePath = 'assets/images/' + this.imageName;
   }
 
+
 }

@@ -1,5 +1,7 @@
 import {Component, EventEmitter, OnInit, Output} from '@angular/core';
 import {FormBuilder, FormControl, FormGroup} from '@angular/forms';
+import {AuthService} from '../../../services/auth.service';
+import {Router, RouterLink} from '@angular/router';
 
 @Component({
   selector: 'app-user-form',
@@ -8,11 +10,10 @@ import {FormBuilder, FormControl, FormGroup} from '@angular/forms';
 })
 export class UserFormComponent implements OnInit {
 
-  @Output() displayAdminFormEvent = new EventEmitter<void>();
-
   public userForm: FormGroup;
 
-  constructor() {
+  constructor(private authService: AuthService,
+              private router: Router) {
     this.userForm = new FormGroup({
       userIdentifiant: new FormControl()
     });
@@ -22,11 +23,11 @@ export class UserFormComponent implements OnInit {
   }
 
   connexion() {
-    console.log('User connexion request :' + this.userForm.get('userIdentifiant').value);
+    this.authService.auth$.next(true);
+    // console.log('User connexion request :' + this.userForm.get('userIdentifiant').value);
+    this.router.navigate(['/list-quiz']);
+    console.log(this.authService.auth);
   }
 
-  displayAdminForm() {
-    this.displayAdminFormEvent.emit();
-  }
 
 }

@@ -1,6 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {Location} from '@angular/common';
-import {AuthService} from '../services/auth.service';
+import {AuthService} from '../../services/auth.service';
+import {ActivatedRoute} from '@angular/router';
 
 @Component({
   selector: 'app-menu',
@@ -10,7 +11,8 @@ import {AuthService} from '../services/auth.service';
 export class MenuComponent implements OnInit {
 
   constructor(private location: Location,
-              private authService: AuthService) {
+              private authService: AuthService,
+              private activatedRoute: ActivatedRoute) {
   }
 
   ngOnInit() {
@@ -18,15 +20,23 @@ export class MenuComponent implements OnInit {
 
 
   isUserItemDisplayed(): boolean {
-    return this.authService.isAuth() && this.location.path() !== '/login';
+    const path = this.location.path().split('/');
+    return this.authService.isAuth() && path.length > 0 && path[1] !== 'login';
   }
 
   isAdminItemDisplayed(): boolean {
-    return this.authService.isAuth() && this.authService.getAuthLevel() > 0 && this.location.path() !== '/login';
+    const path = this.location.path().split('/');
+    return this.authService.isAuth() && this.authService.getAuthLevel() > 0 && path.length > 0 && path[1] !== 'login';
   }
 
   isBackItemDisplayed(): boolean {
-    return this.location.path() === '/login';
+    const path = this.location.path().split('/');
+    return path.length > 0 && path[1] === 'login';
+  }
+
+  isMenuDisplayed(): boolean {
+    const path = this.location.path().split('/');
+    return path.length > 0 && path[1] !== 'welcome';
   }
 
 }
