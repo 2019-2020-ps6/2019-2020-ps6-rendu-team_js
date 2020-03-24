@@ -4,10 +4,10 @@
 .center-inside{
   flex: 1;
   height: 100%;
-  width: 100%;
   display: flex;
   align-items: center;
   justify-content: center;
+
 }
 
 
@@ -22,6 +22,28 @@ a:link{
 }
 
 .div-inside {
+  width: 150px;
   padding: 5px;
   text-align: center;
+}
+
+.arrow-container{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 100%;
+  //mask: url("#mask-arrow");
+  background-color: #f2f2f2;
+  //mask: url("../../../assets/images/arrow.svg");
+  mask-mode: alpha;
+}
+
+.arrow-img{
+  width: 20px;
+  height: 77px;
+}
+
+.not-displayed{
+  fill: #f2f2f2;
+  background-color: #f2f2f2;
 }

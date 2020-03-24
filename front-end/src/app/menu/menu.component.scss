@@ -2,37 +2,38 @@
 
 
 .menu{
-  width: 150px;
-  background-color: #3D3D3D;
+
+  //background-color: #3D3D3D;
   height: 100%;
   display: flex;
   flex-direction: column;
   align-items: stretch;
 }
 
-.quiz{
-  background-color: orange;
-}
-
-
-.stats{
-  background-color: darkred;
-}
-
-
-.param{
-  background-color: darkblue;
-}
-
-
-.creation{
-  background-color: green;
-}
-
-
-.residents{
-  background-color: deepskyblue;
-}
+//.quiz{
+//  background-color: orange;
+//}
+//
+//
+//.stats{
+//  fill: darkred;
+//  //background-color: darkred;
+//}
+//
+//
+//.param{
+//  background-color: darkblue;
+//}
+//
+//
+//.creation{
+//  background-color: green;
+//}
+//
+//
+//.residents{
+//  background-color: deepskyblue;
+//}
 
 app-menu-button{
   flex: 1;
