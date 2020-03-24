@@ -10,8 +10,33 @@
 
 .header {
   visibility: visible;
+  display: flex;
+  justify-content: space-between;
   background: $blue;
-  padding: 0.5em;
   box-shadow: 0 3px 5px -1px rgba(0, 0, 0, 0.2), 0 6px 10px 0 rgba(0, 0, 0, 0.14), 0 1px 18px 0 rgba(0, 0, 0, 0.12);
 
+}
+
+
+.app-name {
+  width: 150px;
+  text-align: center;
+  background-color: #2A2A2A;
+  padding: 0.5em;
+}
+
+.disconnect {
+  width: 150px;
+  color: white;
+  text-align: center;
+  background-color: #800000;
+  padding: 0.5em;
+}
+
+a:link{
+  text-decoration: none;
+}
+
+a:hover{
+  text-decoration: none;
 }
