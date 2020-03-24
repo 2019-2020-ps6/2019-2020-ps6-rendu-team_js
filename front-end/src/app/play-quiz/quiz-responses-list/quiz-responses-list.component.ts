@@ -1,4 +1,4 @@
-import {Component, Input, OnInit} from '@angular/core';
+import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
 import {Answer, Question} from '../../../models/question.model';
 
 @Component({
@@ -11,9 +11,16 @@ export class QuizResponsesListComponent implements OnInit {
   @Input()
   answers: Answer[];
 
+  @Output()
+  answerSelected: EventEmitter<Answer> = new EventEmitter<Answer>();  // answer selected by user
+
   constructor() {}
 
   ngOnInit() {
+  }
+
+  submitAnswerOnClick(answer: Answer) {
+    this.answerSelected.emit(answer);
   }
 
 }
