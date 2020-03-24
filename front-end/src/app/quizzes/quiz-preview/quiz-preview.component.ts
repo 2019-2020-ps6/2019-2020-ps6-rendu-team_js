@@ -12,10 +12,10 @@ export class QuizPreviewComponent implements OnInit {
   quiz: Quiz;
 
   @Output()
-  quizSelected: EventEmitter<boolean> = new EventEmitter<boolean>();
+  quizSelected: EventEmitter<Quiz> = new EventEmitter<Quiz>();
 
   @Output()
-  QuizEditor: EventEmitter<Quiz> = new EventEmitter<Quiz>();
+  quizEditor: EventEmitter<Quiz> = new EventEmitter<Quiz>();
 
   @Output()
   deleteQuiz: EventEmitter<Quiz> = new EventEmitter<Quiz>();
@@ -27,11 +27,11 @@ export class QuizPreviewComponent implements OnInit {
   }
 
   selectQuiz() {
-    this.quizSelected.emit(true);
+    this.quizSelected.emit(this.quiz);
   }
 
   edit() {
-    this.QuizEditor.emit(this.quiz);
+    this.quizEditor.emit(this.quiz);
   }
 
   delete() {

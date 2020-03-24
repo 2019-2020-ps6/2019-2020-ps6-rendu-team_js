@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
+import {Answer, Question} from '../../../models/question.model';
 
 @Component({
   selector: 'app-quiz-responses-list',
@@ -7,7 +8,10 @@ import { Component, OnInit } from '@angular/core';
 })
 export class QuizResponsesListComponent implements OnInit {
 
-  constructor() { }
+  @Input()
+  answers: Answer[];
+
+  constructor() {}
 
   ngOnInit() {
   }
