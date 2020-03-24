@@ -1,10 +1,10 @@
 <table id="answerTable">
-  <ng-container *ngFor="let i of [].constructor(2)">
-    <tr></tr>
-    <ng-container *ngFor="let i of [].constructor(2)">
+    <ng-container *ngFor="let answer of answers; let i=index">
       <td>
-        <app-quiz-response></app-quiz-response>
+        <app-quiz-response [answer]="answer"></app-quiz-response>
       </td>
+      <ng-container *ngIf="i%2 != 0">
+        <tr></tr>
+      </ng-container>
     </ng-container>
-  </ng-container>
 </table>
