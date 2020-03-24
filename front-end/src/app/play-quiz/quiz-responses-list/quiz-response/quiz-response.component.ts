@@ -21,8 +21,4 @@ export class QuizResponseComponent implements OnInit {
   ngOnInit() {
   }
 
-  submit(answer: Answer) {
-    // this.quizService.submitAnswer(quiz);
-  }
-
 }
