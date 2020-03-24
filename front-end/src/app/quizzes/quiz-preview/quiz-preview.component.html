@@ -1,4 +1,4 @@
-<div class="btn-group btn-group-toggle btn-block" data-toggle="buttons">
+<div class="btn-group btn-group-toggle btn-block" data-toggle="buttons" routerLink="/play/{{quiz.id}}">
   <label class="btn btn-secondary col-10" id="quizbtn">
     <input type="radio" name="options"> {{quiz.name}}
   </label>
@@ -6,3 +6,4 @@
     <input type="radio" name="options"  checked> {{quiz.difficulty}}
   </label>
 </div>
+

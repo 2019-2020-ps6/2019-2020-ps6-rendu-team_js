@@ -1,0 +1,63 @@
+
+/**
+ COLOR VARIABLE
+ */
+
+$goodResponseBackgroundColorStrong: #3BDF75;
+$goodResponseBackgroundColorLite: #a2ffb3;
+
+$badResponseBackgroundColorStrong: #FF928C;
+$badResponseBackgroundColorLite: #FFB5B1;
+
+/**
+ ELEMENTS
+ */
+
+#questionNumber {
+  background-color: $goodResponseBackgroundColorStrong;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 600;
+}
+
+#questionAndResponse {
+  background-color: $goodResponseBackgroundColorLite;
+}
+
+#questionScore {
+  background-color: #B9D1FF;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 600;
+}
+
+.itemData{
+  color: #000000;
+  text-align: center;
+}
+
+#component {
+  border-bottom: 1px solid grey;
+}
+
+#question {
+  font-weight: 600;
+}
+
+#correctResponse {
+  color: darkgreen;
+  font-weight: 500;
+  padding-bottom: 8px;
+}
+
+#incorrectResponse {
+  color: maroon;
+  font-weight: 500;
+  padding-bottom: 8px;
+}
+
+.container {
+  max-width: 100%;
+}
