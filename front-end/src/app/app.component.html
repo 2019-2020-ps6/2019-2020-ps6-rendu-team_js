@@ -1,4 +1,4 @@
-<div class="main">
+<div class="main"  *ngIf="location.path() !== '/welcome'">
   <app-header></app-header>
   <div class="main-page">
     <app-menu></app-menu>
@@ -7,3 +7,6 @@
     </div>
   </div>
 </div>
+
+<router-outlet *ngIf="location.path() === '/welcome'"></router-outlet>
+

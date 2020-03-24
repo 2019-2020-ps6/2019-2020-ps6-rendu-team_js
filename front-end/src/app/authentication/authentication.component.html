@@ -1,3 +1,4 @@
-<app-logo (displayAuthenticationFormEvent)="receiveDisplayAuthenticationFormEvent($event)" *ngIf="!this.displayAuthenticationForm"></app-logo>
+<div>
 <app-user-form (displayAdminFormEvent)="receiveDisplayAdminFormEvent()" *ngIf="this.displayAuthenticationForm && this.displayUserForm" ></app-user-form>
 <app-admin-form (displayUserFormEvent)="receiveDisplayUserFormEvent()" *ngIf="this.displayAuthenticationForm && !this.displayUserForm" ></app-admin-form>
+</div>

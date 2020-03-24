@@ -12,7 +12,6 @@ import { QuestionFormComponent } from './questions/question-form/question-form.c
 import { QuestionComponent } from './questions/question/question.component';
 import { HttpClientModule } from '@angular/common/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import {LogoComponent} from './authentication/firstpage/logo.component';
 import {UserFormComponent} from './authentication/user-form/user-form.component';
 import {AdminFormComponent} from './authentication/admin-form/admin-form.component';
 import {PlayQuizComponent} from './play-quiz/play-quiz.component';
@@ -30,6 +29,7 @@ import {ResidentsComponent} from './residents/residents.component';
 import {QuizHeaderComponent} from './play-quiz/result/quiz-header/quiz-header.component';
 import {QuestionResultComponent} from './play-quiz/result/quiz-result-list/question-result/question-result.component';
 import {QuizResultListComponent} from './play-quiz/result/quiz-result-list/quiz-result-list.component';
+import { WelcomeComponent } from './welcome/welcome.component';
 
 
 
@@ -48,7 +48,6 @@ import {QuizResultListComponent} from './play-quiz/result/quiz-result-list/quiz-
     QuizHeaderComponent,
     QuestionResultComponent,
     UserFormComponent,
-    LogoComponent,
     QuestionComponent,
     PlayQuizComponent,
     QuizResponseComponent,
@@ -60,7 +59,8 @@ import {QuizResultListComponent} from './play-quiz/result/quiz-result-list/quiz-
     MenuButtonComponent,
     StatsComponent,
     ParametersComponent,
-    ResidentsComponent
+    ResidentsComponent,
+    WelcomeComponent
   ],
   imports: [
     BrowserModule,

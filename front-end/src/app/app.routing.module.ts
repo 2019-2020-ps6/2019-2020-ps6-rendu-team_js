@@ -10,10 +10,13 @@ import {StatsComponent} from './stats/stats.component';
 import {QuizCreationComponent} from './quizzes/quiz-creation/quiz-creation.component';
 import {ResidentsComponent} from './residents/residents.component';
 import {QuizEditorComponent} from './quizzes/quiz-editor/quiz-editor.component';
+import {WelcomeComponent} from './welcome/welcome.component';
+import {UserFormComponent} from './authentication/user-form/user-form.component';
+import {AdminFormComponent} from './authentication/admin-form/admin-form.component';
 
 const routes: Routes = [
     {path: 'quiz-list', component: QuizListComponent},
-    {path: 'authentication', component: AuthenticationComponent},
+    {path: 'welcome', component: WelcomeComponent},
     {path: 'menu', component: MenuComponent},
     {path: 'play/:id', component: PlayQuizComponent},
     {path: 'stats', component: StatsComponent},
@@ -22,6 +25,9 @@ const routes: Routes = [
     {path: 'quiz-creation', component: QuizCreationComponent},
     {path: 'residents', component: ResidentsComponent},
     {path: 'quiz-editor/:id', component: QuizEditorComponent},
+    {path: 'login', component: AuthenticationComponent},
+    {path: 'login-user', component: UserFormComponent},
+    {path: 'login-admin', component: AdminFormComponent},
     { path: '**', redirectTo: '/quiz-list', pathMatch: 'full' }, // path ** means every page
     // { path: '', redirectTo: '/quiz-list', pathMatch: 'full' }, // path empty means nothing
 ];
