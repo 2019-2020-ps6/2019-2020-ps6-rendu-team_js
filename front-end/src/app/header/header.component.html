@@ -2,7 +2,13 @@
   <div class="app-name">
     PolyQuiz
   </div>
-  <a class="disconnect" [routerLink]="['welcome']">
+  <a class="disconnect" *ngIf="authService.isAuth()" (click)="logout()">
     Déconnexion
+  </a>
+  <a class="admin" *ngIf="!authService.isAuth()" [routerLink]="['/login/admin']">
+    <img class="arrow-img" src="assets/images/lock.svg">
+    <div>
+      Admin
+    </div>
   </a>
 </div>

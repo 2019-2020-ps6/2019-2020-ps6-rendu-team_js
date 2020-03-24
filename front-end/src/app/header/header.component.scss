@@ -34,10 +34,21 @@
   padding: 0.5em;
 }
 
-a:link{
+a:link {
   text-decoration: none;
 }
 
-a:hover{
+a:hover {
   text-decoration: none;
+}
+
+.admin {
+  width: 150px;
+  color: white;
+  text-align: center;
+  background-color: #5D5D5D;
+  padding: 0.5em;
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
 }

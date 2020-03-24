@@ -1,4 +1,4 @@
 <div>
-<app-user-form (displayAdminFormEvent)="receiveDisplayAdminFormEvent()" *ngIf="this.displayAuthenticationForm && this.displayUserForm" ></app-user-form>
-<app-admin-form (displayUserFormEvent)="receiveDisplayUserFormEvent()" *ngIf="this.displayAuthenticationForm && !this.displayUserForm" ></app-admin-form>
+  <app-user-form (displayAdminFormEvent)="receiveDisplayAdminFormEvent()" ></app-user-form>
+  <app-admin-form (displayUserFormEvent)="receiveDisplayUserFormEvent()"  ></app-admin-form>
 </div>

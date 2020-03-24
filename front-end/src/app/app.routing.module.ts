@@ -25,9 +25,9 @@ const routes: Routes = [
     {path: 'quiz-creation', component: QuizCreationComponent},
     {path: 'residents', component: ResidentsComponent},
     {path: 'quiz-editor/:id', component: QuizEditorComponent},
+    {path: 'login/user', component: UserFormComponent},
+    {path: 'login/admin', component: AdminFormComponent},
     {path: 'login', component: AuthenticationComponent},
-    {path: 'login-user', component: UserFormComponent},
-    {path: 'login-admin', component: AdminFormComponent},
     { path: '**', redirectTo: '/quiz-list', pathMatch: 'full' }, // path ** means every page
     // { path: '', redirectTo: '/quiz-list', pathMatch: 'full' }, // path empty means nothing
 ];
