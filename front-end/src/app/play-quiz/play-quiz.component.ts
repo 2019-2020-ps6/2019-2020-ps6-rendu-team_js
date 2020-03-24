@@ -14,7 +14,6 @@ export class PlayQuizComponent implements OnInit {
 
   public quiz: Quiz;
   public questionNumber: number;
-  public question: Question;
   public userAnswers: Answer[];
 
   constructor(private route: ActivatedRoute, private quizService: QuizService) {
@@ -26,11 +25,24 @@ export class PlayQuizComponent implements OnInit {
     this.quizService.setSelectedQuiz(id);
 
     // this.questionNumber = +this.route.snapshot.paramMap.get('questionNumber');  // +in front of string cast string to int
+
+    this.questionNumber = 0;
+    this.userAnswers = [];
   }
 
   addToUserAnswers(answer: Answer) {
     console.log('DEBUG', answer);
-    this.userAnswers.push(answer);
+    // this.userAnswers.push(answer); // TODO redo push
+
+    this.questionNumber++;
+  }
+
+  isOver() {
+    if (this.questionNumber >= this.quiz.questions.length) {
+      return true;
+    } else {
+      return false;
+    }
   }
 
 }

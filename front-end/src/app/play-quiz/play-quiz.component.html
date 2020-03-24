@@ -5,5 +5,13 @@
     <!-- if next question != -1 print next question else print result -->
   </ng-container>
 
-  <br/><button routerLink="/quiz-list">Quitter</button>
+  <!--<ng-container *ngIf="isOver() == false">
+    <p id="question">Question : "{{quiz.questions[questionNumber].label}}"</p>
+    <! -- <app-quiz-responses-list id="answers" [answers]="quiz.questions[questionNumber].answers" (answerSelected)="addToUserAnswers($event)"></app-quiz-responses-list> -- >
+  </ng-container>
+  <ng-container *ngIf="isOver() == true">
+    <p>RESULTAT</p>
+  </ng-container>-->
+
+  <br/><button routerLink="/quiz-list">Quitter</button> <!-- TODO design button -->
 </div>
