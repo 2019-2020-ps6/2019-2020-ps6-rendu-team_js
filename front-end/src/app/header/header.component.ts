@@ -23,8 +23,32 @@ export class HeaderComponent implements OnInit {
     this.router.navigate(['/welcome']);
   }
 
+  quitQuiz() {
+    this.router.navigate(['/quiz-list']);
+  }
+
   displayHeader() {
     const path = this.location.path().split('/');
     return path.length > 0 && path[1] !== 'welcome';
   }
+
+  isDisconnectDisplayed() {
+    const path = this.location.path().split('/');
+    return this.authService.isAuth() && path.length > 0 && path[1] !== 'play' ;
+  }
+
+
+  isPolyQuizDisplayed() {
+    const path = this.location.path().split('/');
+    return path.length > 0 && path[1] !== 'play' ;
+  }
+
+
+  isQuitDisplayed() {
+    const path = this.location.path().split('/');
+    return this.authService.isAuth() && path.length > 0 && path[1] === 'play';
+  }
+
+
+
 }

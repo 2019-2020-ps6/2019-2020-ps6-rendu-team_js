@@ -1,14 +1,25 @@
-<div class="header" style="background-color: #3D3D3D" *ngIf="displayHeader()">
-  <div class="app-name">
-    PolyQuiz
-  </div>
-  <a class="disconnect" *ngIf="authService.isAuth()" (click)="logout()">
-    Déconnexion
-  </a>
-  <a class="admin" *ngIf="!authService.isAuth()" [routerLink]="['/login/admin']">
-    <img class="arrow-img" src="assets/images/lock.svg">
-    <div>
-      Admin
+<div class="header"  *ngIf="displayHeader()">
+
+  <div >
+    <div class="app-name" *ngIf="isPolyQuizDisplayed()">
+      PolyQuiz
     </div>
-  </a>
+  </div>
+
+
+    <a class="disconnect" *ngIf="isDisconnectDisplayed()" (click)="logout()">
+      Déconnexion
+    </a>
+
+    <a class="quitter" *ngIf="isQuitDisplayed()" (click)="quitQuiz()">
+      Quitter
+    </a>
+
+    <a class="admin" *ngIf="!authService.isAuth()" [routerLink]="['/login/admin']">
+      <img class="arrow-img" src="assets/images/lock.svg">
+      <div>
+        Admin
+      </div>
+    </a>
+
 </div>

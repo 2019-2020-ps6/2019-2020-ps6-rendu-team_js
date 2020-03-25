@@ -12,7 +12,7 @@
   visibility: visible;
   display: flex;
   justify-content: space-between;
-  background: $blue;
+  background-color: #3D3D3D;
   box-shadow: 0 3px 5px -1px rgba(0, 0, 0, 0.2), 0 6px 10px 0 rgba(0, 0, 0, 0.14), 0 1px 18px 0 rgba(0, 0, 0, 0.12);
 
 }
@@ -32,6 +32,20 @@
   text-align: center;
   background-color: #800000;
   padding: 0.5em;
+  height: 100%;
+}
+
+.quitter {
+  width: 150px;
+  color: white;
+  text-align: center;
+  background-color: #5D5D5D;
+  padding: 0.5em;
+  height: 100%;
+}
+
+a {
+  height: 100%;
 }
 
 a:link {

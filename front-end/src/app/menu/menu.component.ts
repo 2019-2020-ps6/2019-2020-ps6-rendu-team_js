@@ -41,7 +41,7 @@ export class MenuComponent implements OnInit {
 
   isMenuDisplayed(): boolean {
     const path = this.location.path().split('/');
-    return path.length > 0 && path[1] !== 'welcome';
+    return path.length > 0 && path[1] !== 'welcome' && path[1] !== 'play';
   }
 
 }
