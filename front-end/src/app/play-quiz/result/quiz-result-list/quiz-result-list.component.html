@@ -13,8 +13,14 @@
 </div>
 
 <div id="scroll">
-  <ng-container *ngFor="let i of [].constructor(5)">
-    <app-question-result></app-question-result>
+  <ng-container *ngFor="let ans of answers; let i = index">
+    <app-question-result [index]="0"
+                         [questionScore]="answers[i].questionScore"
+                         [answerId]="answers[i].answerId"
+                         [correctAnswerId]="answers[i].correctAnswerId"
+                         [quizId]="quizId"
+                         [questionId]="answers[i].questionId">
+    </app-question-result>
   </ng-container>
 </div>
 

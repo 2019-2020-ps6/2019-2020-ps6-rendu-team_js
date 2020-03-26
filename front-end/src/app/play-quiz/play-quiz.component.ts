@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {Quiz} from '../../models/quiz.model';
-import {ActivatedRoute} from '@angular/router';
+import {ActivatedRoute, Router} from '@angular/router';
 import {QuizService} from '../../services/quiz.service';
 import {Answer, Question} from '../../models/question.model';
 
@@ -17,14 +17,13 @@ export class PlayQuizComponent implements OnInit {
   public questionNumber: number;
   public userAnswers: Answer[];
 
-  constructor(private route: ActivatedRoute, private quizService: QuizService) {
+  constructor(private router: Router, private route: ActivatedRoute, private quizService: QuizService) {
     this.quizService.quizSelected$.subscribe((quiz) => this.quiz = quiz); // set class var quiz
 }
 
   ngOnInit() {
     const id = this.route.snapshot.paramMap.get('id');
     this.quizService.setSelectedQuiz(id);
-
     // this.questionNumber = +this.route.snapshot.paramMap.get('questionNumber');  // +in front of string cast string to int
 
     this.questionNumber = 0;  // initialize vars
@@ -40,6 +39,7 @@ export class PlayQuizComponent implements OnInit {
 
   isOver() {
     if (this.questionNumber >= this.quiz.questions.length) {
+      // this.router.navigate(['/play/:id/result'])
       return true;
     } else {
       return false;

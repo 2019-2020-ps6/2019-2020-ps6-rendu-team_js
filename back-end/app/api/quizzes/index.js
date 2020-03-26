@@ -4,6 +4,7 @@ const { Quiz } = require('../../models')
 const manageAllErrors = require('../../utils/routes/error-management')
 const QuestionsRouter = require('./questions')
 const { buildQuizz, buildQuizzes } = require('./manager')
+const logger = require('../../utils/logger.js')
 
 const router = new Router()
 

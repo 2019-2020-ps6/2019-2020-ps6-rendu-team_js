@@ -5,7 +5,7 @@ const logger = require('../utils/logger.js')
 const ValidationError = require('./errors/validation-error.js')
 const NotFoundError = require('./errors/not-found-error.js')
 
-module.exports = class BaseModel {
+module.exports = class CheckModel {
   constructor(name, schema) {
     if (!name) throw new Error('You must provide a name in constructor of BaseModel')
     if (!schema) throw new Error('You must provide a schema in constructor of BaseModel')
@@ -32,20 +32,9 @@ module.exports = class BaseModel {
     }
   }
 
-  get() {
-    return this.items
-  }
-
   getById(id) {
     if (typeof id === 'string') id = parseInt(id, 10)
     const item = this.items.find((i) => i.id === id)
-    if (!item) throw new NotFoundError(`Cannot get ${this.name} id=${id} : not found`)
-    return item
-  }
-
-  getByQuestionId(id) {
-    if (typeof id === 'string') id = parseInt(id, 10)
-    const item = this.items.find((i) => i.questionId === id)
     if (!item) throw new NotFoundError(`Cannot get ${this.name} id=${id} : not found`)
     return item
   }

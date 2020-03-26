@@ -80,4 +80,3 @@ router.delete('/:answerId', (req, res) => {
 })
 
 module.exports = router
-
