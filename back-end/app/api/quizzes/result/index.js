@@ -25,16 +25,15 @@ router.get('/:resultId', (req, res) => {
 })
 
 router.post('/', (req, res) => {
-
   const goodAnswerScore = 100
   const badAnswerScore = 50
 
   try {
     // Récupeter la liste des answers
-    const quizId = req.body.quizId
-    const answers = req.body.answers
-    const playTime = req.body.playTime
-    const date = req.body.date
+    const { quizId } = req.body
+    const { answers } = req.body
+    const { playTime } = req.body
+    const { date } = req.body
     const userId = '000000000'
 
     // Traitement & calcul du score

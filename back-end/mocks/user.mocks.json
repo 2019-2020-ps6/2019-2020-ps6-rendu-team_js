@@ -1,0 +1,16 @@
+[
+  {
+    "firstName": "John",
+    "lastName": "Doe",
+    "password": "$2b$10$PYnIj925oUWtA6EoOzdkAuy7ZEPMHXuYsJWCC7dif0pS8ZXGdCwoy",
+    "accountLevel": 0,
+    "id": 1585337697555
+  },
+  {
+    "firstName": "Johnny",
+    "lastName": "Doe",
+    "password": "$2b$10$hBYWq2Sp7EJr89TRMSiTQeOi0UX3QL4D/7634S0e2uKbgZjMDiK12",
+    "accountLevel": 0,
+    "id": 1585337705534
+  }
+]
