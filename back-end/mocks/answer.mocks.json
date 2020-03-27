@@ -70,5 +70,41 @@
     "isCorrect": true,
     "questionId": 1585040533897,
     "id": 1585040533899
+  },
+  {
+    "value": "rep 1",
+    "isCorrect": false,
+    "questionId": 1585040516921,
+    "id": 1585044563898
+  },
+  {
+    "value": "rep 2",
+    "isCorrect": true,
+    "questionId": 1585040516921,
+    "id": 1585040533858
+  },
+  {
+    "value": "bleu",
+    "isCorrect": false,
+    "questionId": 1585040516922,
+    "id": 1588040533898
+  },
+  {
+    "value": "rouge",
+    "isCorrect": true,
+    "questionId": 1585040516922,
+    "id": 1585040773899
+  },
+  {
+    "value": "vert",
+    "isCorrect": false,
+    "questionId": 1585040516922,
+    "id": 1585040533877
+  },
+  {
+    "value": "violet",
+    "isCorrect": false,
+    "questionId": 1585040516922,
+    "id": 1585200533899
   }
 ]

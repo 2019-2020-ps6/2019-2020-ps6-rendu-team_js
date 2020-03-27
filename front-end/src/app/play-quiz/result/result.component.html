@@ -1,2 +1,10 @@
-<app-quiz-header></app-quiz-header>
-<app-quiz-result-list></app-quiz-result-list>
+<app-quiz-header [maxScore]="quizResult.maxScore"
+                 [userScore]="quizResult.userScore"
+                 [quizId]="quizResult.quizId"
+                 [date]="quizResult.date"
+                 [playTime]="quizResult.playTime">
+</app-quiz-header>
+
+<app-quiz-result-list [answers]="quizResult.answers"
+                      [quizId]="quizResult.quizId">
+</app-quiz-result-list>

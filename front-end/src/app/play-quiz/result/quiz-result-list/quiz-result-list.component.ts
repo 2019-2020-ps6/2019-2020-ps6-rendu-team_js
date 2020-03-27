@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
+import {ResultQuestion} from '../../../../models/result.model';
 
 @Component({
   selector: 'app-quiz-result-list',
@@ -6,6 +7,9 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./quiz-result-list.component.scss']
 })
 export class QuizResultListComponent implements OnInit {
+
+  @Input() answers: ResultQuestion[];
+  @Input() quizId: string;
 
   constructor() { }
 
