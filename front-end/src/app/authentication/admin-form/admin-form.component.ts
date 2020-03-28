@@ -10,9 +10,13 @@ import {AuthService} from '../../../services/auth.service';
 export class AdminFormComponent implements OnInit {
 
   public adminForm: FormGroup;
+  private error: string;
+  private isLoading: boolean;
+
 
   constructor(private authService: AuthService,
-              private formBuilder: FormBuilder) { }
+              private formBuilder: FormBuilder) {
+  }
 
   ngOnInit() {
     this.initForm();
@@ -20,12 +24,21 @@ export class AdminFormComponent implements OnInit {
 
   initForm() {
     this.adminForm = this.formBuilder.group({
-      username: ['', [Validators.required]],
-      password: ['', [Validators.required]],
+      username: ['admin', [Validators.required]],
+      password: ['admin', [Validators.required]],
     });
   }
+
+
   connexion() {
-    this.authService.loginAdmin(this.adminForm.get('username').value, this.adminForm.get('password').value);
+    const username = this.adminForm.get('username').value;
+    const password = this.adminForm.get('password').value;
+
+    this.isLoading = true;
+    this.authService.loginAdmin(username, password).then((callback) => {
+      this.error = callback.toString();
+      this.isLoading = false;
+    });
   }
 
 

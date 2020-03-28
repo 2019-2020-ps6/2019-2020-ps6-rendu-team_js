@@ -50,7 +50,7 @@ export class AuthService {
       password: this.DEFAULT_RESIDENT_PASSWORD,
     } as User;
 
-    this.login(user);
+    return this.login(user);
   }
 
   loginAdmin(username: string, password: string) {
@@ -59,33 +59,46 @@ export class AuthService {
       password,
     } as User;
 
-    this.login(user);
+    return this.login(user);
   }
 
   login(user: User) {
-    this.http.post<User>(this.authUrl + '/' + this.loginPath, user, httpOptionsBase).subscribe((u) => {
+    return new Promise(
+      ((resolve, reject) => {
+        this.http.post<User>(this.authUrl + '/' + this.loginPath, user, httpOptionsBase).subscribe((u) => {
 
-      this.user = u;
-      this.user$.next(this.user);
+          this.user = u;
+          this.user$.next(this.user);
 
-      if (this.isAuth()) {
-        this.router.navigate(['/quiz-list']);
-      }
-    });
+          if (this.isAuth()) {
+            this.router.navigate(['/quiz-list']);
+            resolve('Connected');
+          } else {
+            console.log(u);
+            resolve('Erreur : ' + JSON.parse(JSON.stringify(u)).errors);
+          }
+
+        });
+      }));
   }
 
   getLogin() {
-    this.http.get(this.authUrl + '/' + this.loginPath, httpOptionsBase).subscribe((u) => {
+    return new Promise(
+      ((resolve, reject) => {
+        this.http.get(this.authUrl + '/' + this.loginPath, httpOptionsBase).subscribe((u) => {
 
-      this.user = u as User;
-      this.user$.next(this.user);
+          this.user = u as User;
+          this.user$.next(this.user);
 
-      if (this.isAuth()) {
-        console.log(u);
-        this.router.navigate(['/quiz-list']);
-      }
-
-    });
+          if (this.isAuth()) {
+            console.log(u);
+            this.router.navigate(['/quiz-list']);
+            resolve('Connected');
+          } else {
+            resolve('');
+          }
+        });
+      }));
   }
 
   logout() {

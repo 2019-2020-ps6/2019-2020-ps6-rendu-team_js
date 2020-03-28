@@ -11,10 +11,13 @@ import {Router, RouterLink} from '@angular/router';
 export class UserFormComponent implements OnInit {
 
   public userForm: FormGroup;
+  private error: string;
+  private isLoading: boolean;
 
   constructor(private authService: AuthService,
               private formBuilder: FormBuilder,
-              private router: Router) { }
+              private router: Router) {
+  }
 
   ngOnInit() {
     this.initForm();
@@ -22,13 +25,19 @@ export class UserFormComponent implements OnInit {
 
   initForm() {
     this.userForm = this.formBuilder.group({
-      username: ['', [Validators.required]]
+      username: ['John Doe', [Validators.required]]
     });
   }
 
   connexion() {
     const username = this.userForm.get('username').value;
-    this.authService.loginResident(username);
+
+    this.isLoading = true;
+    this.authService.loginResident(username).then((callback) => {
+      this.error = callback.toString();
+      this.isLoading = false;
+    });
+
   }
 
 

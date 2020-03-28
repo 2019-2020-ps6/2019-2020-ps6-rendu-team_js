@@ -1,15 +1,16 @@
 <!-- ADMIN FORM -->
 
 <div class="admin-container">
+  <div class="error-text" *ngIf="error !== 'undefined'">{{error}}</div>
   <div class="admin-table">
     <div class="text-connexion">Connexion</div>
     <form class="admin-form" [formGroup]="adminForm" ngNativeValidate>
-      <input class="input-custom" placeholder="Votre identifiant" type="text" id="userIdentifiant" ngModel="admin"
-             [formControlName]="'username'" >
-      <input class="input-custom" placeholder="Votre mot de passe" type="password" id="userPassword"
-             [formControlName]="'password'" ngModel="admin" >
+      <input class="input-custom" placeholder="Votre identifiant" type="text" id="username"
+             [formControlName]="'username'"  [class.disable-button]="isLoading" >
+      <input class="input-custom" placeholder="Votre mot de passe" type="password" id="password"
+             [formControlName]="'password'"  [class.disable-button]="isLoading">
 
-      <button type="submit" class="button-card" [disabled]="adminForm.invalid" [class.disable-button]="adminForm.invalid" (click)="this.connexion()">Se connecter</button>
+      <button type="submit" class="button-card" [disabled]="adminForm.invalid" [class.disable-button]="adminForm.invalid || isLoading" (click)="this.connexion()">Se connecter</button>
     </form>
   </div>
 </div>

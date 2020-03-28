@@ -11,14 +11,7 @@ const SESSION_LIFETIME = 1000 * 60 * 60 * 24 * 7
 const SESSION_NAME = 'sid'
 const SESSION_SECRET = 'wefaefwdgrv' /* generate a better one */
 
-// const EMPTY_USER = {
-//   username: '',
-//   firstName: '',
-//   lastName: '',
-//   password: '',
-//   accountLevel: -1,
-// };
-
+const ERROR_NAME = 'error';
 
 router.use(cors({credentials: true, origin: 'http://localhost:4200'}));
 
@@ -84,7 +77,7 @@ router.post('/', async (req, res) => {
 
   try {
     if (isAuth(req)) {
-      return res.status(400).send('User is already authenticated')
+      return res.status(401).json({'errors': 'Action non authorisée...'})
     }
 
     let user = User.create({ ...req.body })
@@ -105,19 +98,17 @@ router.post('/login', async (req, res) => {
     console.log(req.body.username)
 
     if (user === undefined) {
-      return res.status(200).json({'information': 'user doesn\'t exist'})
+      return res.status(200).json({'errors': 'L\'utilisateur n\'existe pas'})
     }
-
-
 
     // use bcrypt.compare() to present timing attack
     // (it's when you analyse the time taken to decrypt the password)
     if (await bcrypt.compare(req.body.password, user.password)) {
-      console.log(user)
+      console.log('User logged in : ' + req.body.username);
       req.session.userId = user.id
       return res.status(200).json(user)
     } else {
-      return res.status(200).json({'information': 'wrong password'})
+      return res.status(200).json({'errors': 'Mot de passe incorrect'})
     }
 
   } catch (err) {
@@ -154,6 +145,7 @@ router.get('/logout', (req, res) => {
       }
 
       res.clearCookie(SESSION_NAME)
+      console.log('A user has logged out');
       return res.status(200).json({'success': true})
     })
 

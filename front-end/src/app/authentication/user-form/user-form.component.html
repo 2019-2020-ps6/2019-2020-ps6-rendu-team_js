@@ -1,12 +1,13 @@
 <!-- USER FORM -->
 
 <div class="user-container">
+  <div class="error-text" *ngIf="error !== 'undefined'">{{error}}</div>
   <div class="user-table">
     <div class="text-connexion">Connexion</div>
     <form class="user-form" [formGroup]="userForm">
-<!--      <input class="input-custom" placeholder="Nom Prénom" type="text" val id="username" [formControlName]="'username'" [ngModel]="'John Doe'">-->
-      <input class="input-custom" placeholder="Nom Prénom" type="text" id="username" [formControlName]="'username'" ngModel="John Doe" >
-      <button type="submit" class="button-card"  [disabled]="userForm.invalid" [class.disable-button]="userForm.invalid" (click)="connexion()">Se connecter</button>
+      <input class="input-custom" placeholder="Nom Prénom" type="text" id="username" [formControlName]="'username'"
+             [disabled]="isLoading" [class.disable-button]="isLoading">
+      <button type="submit" class="button-card"  [disabled]="userForm.invalid" [class.disable-button]="userForm.invalid || isLoading" (click)="connexion()">Se connecter</button>
     </form>
   </div>
 </div>
