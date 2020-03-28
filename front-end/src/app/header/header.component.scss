@@ -19,10 +19,14 @@
 
 
 .app-name {
-  width: 150px;
+  width: 10vw;
   text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
   background-color: #2A2A2A;
   padding: 0.5em;
+  height: 100%;
   font-family: "Segoe UI Black", sans-serif;
 }
 

@@ -15,12 +15,12 @@ export class HeaderComponent implements OnInit {
               private location: Location) { }
 
   ngOnInit() {
-    this.authService.auth$.subscribe((b: boolean) => { this.authService.auth = b; });
+    // this.authService.user$.subscribe((b: boolean) => { this.authService.auth = b; });
   }
 
   logout() {
-    this.authService.auth$.next(false);
-    this.router.navigate(['/welcome']);
+    this.authService.logout();
+    // this.router.navigate(['/welcome']);
   }
 
   quitQuiz() {

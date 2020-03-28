@@ -1,5 +1,6 @@
 import {Component, EventEmitter, OnInit, Output} from '@angular/core';
-import {FormControl, FormGroup} from '@angular/forms';
+import {FormBuilder, FormControl, FormGroup, Validators} from '@angular/forms';
+import {AuthService} from '../../../services/auth.service';
 
 @Component({
   selector: 'app-admin-form',
@@ -10,18 +11,21 @@ export class AdminFormComponent implements OnInit {
 
   public adminForm: FormGroup;
 
-  constructor() {
-    this.adminForm = new FormGroup({
-      userIdentifiant: new FormControl(),
-      userPassword: new FormControl()
-    });
-  }
+  constructor(private authService: AuthService,
+              private formBuilder: FormBuilder) { }
 
   ngOnInit() {
+    this.initForm();
   }
 
+  initForm() {
+    this.adminForm = this.formBuilder.group({
+      username: ['', [Validators.required]],
+      password: ['', [Validators.required]],
+    });
+  }
   connexion() {
-    console.log('Admin connexion request :' + this.adminForm.get('userIdentifiant').value + ' ' + this.adminForm.get('userPassword').value);
+    this.authService.loginAdmin(this.adminForm.get('username').value, this.adminForm.get('password').value);
   }
 
 

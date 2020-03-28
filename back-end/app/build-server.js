@@ -7,7 +7,7 @@ const api = require('./api')
 module.exports = (cb) => {
   const app = express()
   app.disable('x-powered-by')
-  app.use(cors())
+  app.use(cors({credentials: true, origin: 'http://localhost:4200'}));
   app.use(bodyParser.json({}))
   app.use(morgan('[:date[iso]] :method :url :status :response-time ms - :res[content-length]'))
   app.use('/api', api)

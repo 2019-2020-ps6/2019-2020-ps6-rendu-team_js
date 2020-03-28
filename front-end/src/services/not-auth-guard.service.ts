@@ -15,10 +15,8 @@ export class NotAuthGuardService {
     return new Promise(
       (resolve, reject) => {
 
-        console.log(this.authService.auth);
-
-        if (this.authService.auth) {
-          resolve(false);
+        if (this.authService.isAuth()) {
+          reject();
           this.router.navigate(['/quiz-list']);
         } else {
           resolve(true);

@@ -35,6 +35,7 @@
   border-radius: 2vmin;
   font-family: "Segoe UI Black", sans-serif;
   font-size: 5vmin;
+  text-align: center;
 }
 
 .button-card {
@@ -52,4 +53,8 @@
 ::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
   opacity: 0.4;
   text-align: center;
+}
+
+.disable-button {
+  opacity: 0.5;
 }

@@ -15,13 +15,11 @@ export class AuthGuardService {
     return new Promise(
       (resolve, reject) => {
 
-        console.log(this.authService.auth);
-
-        if (this.authService.auth) {
+        if (this.authService.isAuth()) {
           resolve(true);
         } else {
-          this.router.navigate(['/login/user']);
-          resolve(false);
+          this.router.navigate(['/welcome']);
+          reject();
         }
       }
     );

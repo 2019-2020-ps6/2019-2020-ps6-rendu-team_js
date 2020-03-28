@@ -7,14 +7,17 @@
   display: flex;
   align-items: center;
   justify-content: center;
-
 }
 
+.center-img {
+  width: 7vw;
+  height: 10vh;
+}
 
 .text {
-  font-size: x-large;
   text-decoration: none;
   color: white;
+  font-size: 1.5vw;
 }
 
 a:link{
@@ -22,7 +25,7 @@ a:link{
 }
 
 .div-inside {
-  width: 150px;
+  width: 10vw;
   padding: 5px;
   text-align: center;
   font-family: "Segoe UI Black", sans-serif;
@@ -41,7 +44,7 @@ a:link{
 
 .arrow-img{
   width: 20px;
-  height: 77px;
+  height: 80px;
 }
 
 .not-displayed{

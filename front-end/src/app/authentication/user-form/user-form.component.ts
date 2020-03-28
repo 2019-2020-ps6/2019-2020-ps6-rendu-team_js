@@ -1,5 +1,5 @@
 import {Component, EventEmitter, OnInit, Output} from '@angular/core';
-import {FormBuilder, FormControl, FormGroup} from '@angular/forms';
+import {FormBuilder, FormControl, FormGroup, Validators} from '@angular/forms';
 import {AuthService} from '../../../services/auth.service';
 import {Router, RouterLink} from '@angular/router';
 
@@ -13,20 +13,22 @@ export class UserFormComponent implements OnInit {
   public userForm: FormGroup;
 
   constructor(private authService: AuthService,
-              private router: Router) {
-    this.userForm = new FormGroup({
-      userIdentifiant: new FormControl()
+              private formBuilder: FormBuilder,
+              private router: Router) { }
+
+  ngOnInit() {
+    this.initForm();
+  }
+
+  initForm() {
+    this.userForm = this.formBuilder.group({
+      username: ['', [Validators.required]]
     });
   }
 
-  ngOnInit() {
-  }
-
   connexion() {
-    this.authService.auth$.next(true);
-    // console.log('User connexion request :' + this.userForm.get('userIdentifiant').value);
-    this.router.navigate(['/list-quiz']);
-    console.log(this.authService.auth);
+    const username = this.userForm.get('username').value;
+    this.authService.loginResident(username);
   }
 
 

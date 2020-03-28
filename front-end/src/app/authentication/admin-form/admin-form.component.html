@@ -4,12 +4,12 @@
   <div class="admin-table">
     <div class="text-connexion">Connexion</div>
     <form class="admin-form" [formGroup]="adminForm" ngNativeValidate>
-      <input class="input-custom" placeholder="Votre identifiant" type="text" id="userIdentifiant"
-             [formControlName]="'userIdentifiant'" >
-      <input class="input-custom" placeholder="Votre mot de passe" type="text" id="userPassword"
-             [formControlName]="'userPassword'" >
+      <input class="input-custom" placeholder="Votre identifiant" type="text" id="userIdentifiant" ngModel="admin"
+             [formControlName]="'username'" >
+      <input class="input-custom" placeholder="Votre mot de passe" type="password" id="userPassword"
+             [formControlName]="'password'" ngModel="admin" >
 
-      <button type="submit" class="button-card" (click)="this.connexion()">Se connecter</button>
+      <button type="submit" class="button-card" [disabled]="adminForm.invalid" [class.disable-button]="adminForm.invalid" (click)="this.connexion()">Se connecter</button>
     </form>
   </div>
 </div>
