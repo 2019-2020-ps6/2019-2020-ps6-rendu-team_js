@@ -1,7 +1,7 @@
 const { Router } = require('express')
-const { Result } = require('../../../models')
+const { Result, Statistics } = require('../../../models')
 const logger = require('../../../utils/logger.js')
-const { verifyIfAnswerIsCorrect, getCorrectAnswer, buildResult } = require('./manager')
+const { verifyIfAnswerIsCorrect, getCorrectAnswer, buildResult, updateStatistics } = require('./manager')
 
 const router = new Router({ mergeParams: true })
 
@@ -26,38 +26,43 @@ router.get('/:resultId', (req, res) => {
 
 router.post('/', (req, res) => {
   const goodAnswerScore = 100
-  const badAnswerScore = 50
 
   try {
     // Récupeter la liste des answers
-    const { quizId } = req.body
-    const { answers } = req.body
-    const { playTime } = req.body
-    const { date } = req.body
-    const userId = '000000000'
+    const quizId = req.body.quizId
+    const answers = req.body.answers
+    const playTime = req.body.playTime
+    const date = req.body.date
+    const userId = 1000000001
 
     // Traitement & calcul du score
     // Pour chaque answer on va check si la reponse est juste et calculer les scores
-    let userScore = 0
-    let maxScore = 0
+    let correctAnswers = 0
+    let totalAnswers = 0
 
     answers.forEach((answer) => {
+      totalAnswers += 1
       if (verifyIfAnswerIsCorrect(answer.answerId)) {
-        userScore += goodAnswerScore
-        answer.questionScore = goodAnswerScore
+        correctAnswers += 1
       } else {
-        userScore += badAnswerScore
         const correctAnswer = getCorrectAnswer(answer.questionId)
         answer.correctAnswerId = correctAnswer
-        answer.questionScore = badAnswerScore
       }
-      maxScore += goodAnswerScore
     })
+    const maxScore = totalAnswers * goodAnswerScore;
+    let userScore = correctAnswers * goodAnswerScore;
+    userScore += ((maxScore - userScore) / 2);
+
+    const quizSuccessPercentage = (100 * correctAnswers) / totalAnswers;
 
     // Création & save de l'objet Result
     const result = Result.create({
-      ...req.body, maxScore, userId, userScore,
-    })
+      ...req.body, maxScore, userId, userScore, quizSuccessPercentage
+    });
+
+    // Mise a jour des statistiques
+    updateStatistics(userId, result.id, quizSuccessPercentage);
+
     res.status(201).json(result)
   } catch (err) {
     if (err.name === 'ValidationError') {

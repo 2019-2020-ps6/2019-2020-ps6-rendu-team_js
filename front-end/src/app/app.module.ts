@@ -23,7 +23,7 @@ import {ResultComponent} from './play-quiz/result/result.component';
 import {QuizPreviewComponent} from './quizzes/quiz-preview/quiz-preview.component';
 import {QuizCreationComponent} from './quizzes/quiz-creation/quiz-creation.component';
 import {QuizEditorComponent} from './quizzes/quiz-editor/quiz-editor.component';
-import {StatsComponent} from './stats/stats.component';
+import {StatisticsComponent} from './statistics/statistics.component';
 import {ResidentsComponent} from './residents/residents.component';
 import {QuizHeaderComponent} from './play-quiz/result/quiz-header/quiz-header.component';
 import {QuestionResultComponent} from './play-quiz/result/quiz-result-list/question-result/question-result.component';
@@ -56,11 +56,11 @@ import { QuizInfoComponent } from './quizzes/quiz-info/quiz-info.component';
     PlayQuizComponent,
     MenuComponent,
     MenuButtonComponent,
-    StatsComponent,
+    StatisticsComponent,
     ParametersComponent,
     ResidentsComponent,
     WelcomeComponent,
-    QuizInfoComponent
+    QuizInfoComponent,
   ],
     imports: [
         BrowserModule,

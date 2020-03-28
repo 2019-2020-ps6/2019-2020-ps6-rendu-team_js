@@ -1,4 +1,4 @@
-const { Answer, Result, Question } = require('../../../models')
+const { Answer, Result, Question, Statistics } = require('../../../models')
 const logger = require('../../../utils/logger.js')
 
 /**
@@ -10,20 +10,17 @@ const buildResult = (resultId) => {
   const result = Result.getById(resultId)
 
   const answers = result.answers.map((answer) => {
-    const { questionScore } = answer
+    const questionScore = answer.questionScore
     const question = Question.getById(answer.questionId)
     const userAnswer = Answer.getById(answer.answerId)
     if (answer.correctAnswerId) {
-      const correctAnswer = Answer.getById(answer.correctAnswerId)
-      return {
-        ...questionScore, question, userAnswer, correctAnswer, questionScore,
-      }
-    }
-    return {
-      ...questionScore, question, userAnswer, questionScore,
-    }
-  })
-  return { ...result, answers }
+            const correctAnswer = Answer.getById(answer.correctAnswerId)
+            return { ...questionScore, question, userAnswer, correctAnswer, questionScore }
+        } else {
+            return { ...questionScore, question, userAnswer, questionScore }
+        }
+    })
+    return { ...result, answers }
 }
 
 
@@ -49,9 +46,53 @@ const getCorrectAnswer = (questionId) => {
   return correctAnswer
 }
 
+function getWeekNumber(d) {
+    // Copy date so don't modify original
+    d = new Date(Date.UTC(d.getFullYear(), d.getMonth(), d.getDate()))
+    // Set to nearest Thursday: current date + 4 - current day number
+    // Make Sunday's day number 7
+    d.setUTCDate(d.getUTCDate() + 4 - (d.getUTCDay() || 7))
+    // Get first day of year
+    var yearStart = new Date(Date.UTC(d.getUTCFullYear(), 0, 1))
+    // Calculate full weeks to nearest Thursday
+    var weekNo = Math.ceil((((d - yearStart) / 86400000) + 1) / 7)
+    // Return array of year and week number
+    return weekNo
+}
+
+const updateStatistics = (userId, resultId, quizSuccessPercentage) => {
+
+    // Methode qui check si la réponse choisi est la bonne
+    const userStatistiques = Statistics.getStatisticById(userId);
+    // const currentWeek = getWeekNumber(new Date())
+    const currentWeek = getWeekNumber(new Date());
+    if (userStatistiques) { // Statistics found
+        const totalQuizMade = userStatistiques.totalQuizMade + 1;
+        const successPercentage = ((userStatistiques.successPercentage * userStatistiques.totalQuizMade) + quizSuccessPercentage) / totalQuizMade;
+        let weekQuizMade = 1;
+        if (userStatistiques.currentWeek === currentWeek) {
+            weekQuizMade = userStatistiques.weekQuizMade + 1
+        }
+        let quizzesResultIds = userStatistiques.quizzesResultIds
+        quizzesResultIds.push(resultId);
+
+        // Statistics.update(userId, currentWeek, totalQuizMade, weekQuizMade, quizzesStats)
+        Statistics.update(userId, { currentWeek, successPercentage, totalQuizMade, weekQuizMade, quizzesResultIds});
+    } else { // Statistics undefined
+        const successPercentage = quizSuccessPercentage;
+        const totalQuizMade = 1;
+        const weekQuizMade = 1;
+        const quizzesResultIds = [];
+        quizzesResultIds.push(resultId);
+        // Statistics.createWithId(userId, currentWeek, totalQuizMade, weekQuizMade, quizzesStats)
+        Statistics.createWithId(userId, { currentWeek, successPercentage, totalQuizMade, weekQuizMade, quizzesResultIds});
+    }
+}
+
 module.exports = {
-  verifyIfAnswerIsCorrect,
-  filterAnswersFromQuestion,
-  getCorrectAnswer,
-  buildResult,
+    verifyIfAnswerIsCorrect,
+    filterAnswersFromQuestion,
+    getCorrectAnswer,
+    buildResult,
+    updateStatistics,
 }

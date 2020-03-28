@@ -7,4 +7,5 @@ module.exports = new BaseModel('User', {
   lastName: Joi.string().required(),
   password: Joi.string().required(),
   accountLevel: Joi.number().default(0),
+  userId: Joi.string()
 })

@@ -8,5 +8,6 @@ module.exports = new BaseModel('Result', {
   date: Joi.number().required(),
   quizId: Joi.string().required(),
   answers: Joi.array().required(),
-  userId: Joi.string().required(),
+  userId: Joi.number().required(),
+  quizSuccessPercentage: Joi.number().required(),
 })
