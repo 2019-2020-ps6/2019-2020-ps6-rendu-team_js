@@ -5,7 +5,7 @@ import {PlayQuizComponent} from './play-quiz/play-quiz.component';
 import {MenuComponent} from './menu/menu.component';
 import {ParametersComponent} from './parameters/parameters.component';
 import {ResultComponent} from './play-quiz/result/result.component';
-import {StatsComponent} from './stats/stats.component';
+import {StatisticsComponent} from './statistics/statistics.component';
 import {QuizCreationComponent} from './quizzes/quiz-creation/quiz-creation.component';
 import {ResidentsComponent} from './residents/residents.component';
 import {QuizEditorComponent} from './quizzes/quiz-editor/quiz-editor.component';
@@ -20,7 +20,7 @@ const routes: Routes = [
     {path: 'quiz-list',  canActivate: [AuthGuardService], component: QuizListComponent},
     {path: 'welcome', canActivate: [NotAuthGuardService], component: WelcomeComponent},
     {path: 'play/:id', canActivate: [AuthGuardService], component: PlayQuizComponent},
-    {path: 'stats', canActivate: [AuthGuardService], component: StatsComponent},
+    {path: 'stats', canActivate: [AuthGuardService], component: StatisticsComponent},
     {path: 'play/:id/result', canActivate: [AuthGuardService], component: ResultComponent},
     {path: 'parameters', canActivate: [AuthGuardService], component: ParametersComponent},
     {path: 'quiz-creation', canActivate: [AuthGuardService], component: QuizCreationComponent},

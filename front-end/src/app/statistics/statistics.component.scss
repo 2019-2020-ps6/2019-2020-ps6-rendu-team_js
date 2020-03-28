@@ -1,0 +1,43 @@
+
+$primaryColorDark: #44ff87;
+$primaryColor: #a2ffb3;
+$borderColor: grey;
+$cornerRadius: 25px;
+
+.row {
+  font-weight: 600;
+  font-size: 5vmin;
+}
+
+#totalQuiz {
+  background-color: $primaryColorDark;
+  border-top-left-radius: $cornerRadius;
+  border-top-right-radius: $cornerRadius;
+}
+
+#totalQuizValue {
+  text-align: center;
+  border-top-right-radius: $cornerRadius;
+  border-left: solid 1px $borderColor;
+}
+
+#weekQuiz {
+  background-color: $primaryColor;
+}
+
+#weekQuizValue {
+  text-align: center;
+  border-left: solid 1px $borderColor;
+}
+
+#successPercentage {
+  background-color: $primaryColorDark;
+  border-bottom-left-radius: $cornerRadius;
+  border-bottom-right-radius: $cornerRadius;
+}
+
+#successPercentageValue {
+  text-align: center;
+  border-bottom-right-radius: $cornerRadius;
+  border-left: solid 1px $borderColor;
+}
