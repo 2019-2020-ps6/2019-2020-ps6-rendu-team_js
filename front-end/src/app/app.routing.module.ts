@@ -16,7 +16,8 @@ import {AuthGuardService} from '../services/auth-guard.service';
 import {NotAuthGuardService} from '../services/not-auth-guard.service';
 
 const routes: Routes = [
-    // {path: 'quiz-list', canActivate: [AuthGuardService], component: QuizListComponent},
+    // add the AuthGuardService if the user can go to the page if he's connected
+    // add the NotAuthGuardService if the user can go to the page if he's not connected
     {path: 'quiz-list',  canActivate: [AuthGuardService], component: QuizListComponent},
     {path: 'welcome', canActivate: [NotAuthGuardService], component: WelcomeComponent},
     {path: 'play/:id', canActivate: [AuthGuardService], component: PlayQuizComponent},
