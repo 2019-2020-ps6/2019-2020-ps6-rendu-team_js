@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+import {Injectable} from '@angular/core';
 import {Observable} from 'rxjs';
 import {Router} from '@angular/router';
 import {AuthService} from './auth.service';
@@ -9,20 +9,23 @@ import {AuthService} from './auth.service';
 export class NotAuthGuardService {
 
   constructor(private router: Router,
-              public authService: AuthService) { }
+              public authService: AuthService) {
+  }
 
   canActivate(): Observable<boolean> | Promise<boolean> | boolean {
-    return new Promise(
-      (resolve, reject) => {
 
+    return new Promise(((resolve, reject) => {
+      this.authService.getLogin().then(() => {
         if (this.authService.isAuth()) {
           reject();
           this.router.navigate(['/quiz-list']);
         } else {
           resolve(true);
         }
-      }
-    );
+
+      });
+    }));
+
   }
 
 }

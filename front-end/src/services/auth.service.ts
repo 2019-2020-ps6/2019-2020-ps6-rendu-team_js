@@ -92,7 +92,6 @@ export class AuthService {
 
           if (this.isAuth()) {
             console.log(u);
-            this.router.navigate(['/quiz-list']);
             resolve('Connected');
           } else {
             resolve('');
