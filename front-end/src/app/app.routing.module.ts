@@ -14,6 +14,7 @@ import {UserFormComponent} from './authentication/user-form/user-form.component'
 import {AdminFormComponent} from './authentication/admin-form/admin-form.component';
 import {AuthGuardService} from '../services/auth-guard.service';
 import {NotAuthGuardService} from '../services/not-auth-guard.service';
+import {AuthGuardAdminService} from '../services/auth-guard-admin.service';
 
 const routes: Routes = [
     // add the AuthGuardService if the user can go to the page if he's connected
@@ -24,8 +25,8 @@ const routes: Routes = [
     {path: 'stats', canActivate: [AuthGuardService], component: StatisticsComponent},
     {path: 'play/:id/result', canActivate: [AuthGuardService], component: ResultComponent},
     {path: 'parameters', canActivate: [AuthGuardService], component: ParametersComponent},
-    {path: 'quiz-creation', canActivate: [AuthGuardService], component: QuizCreationComponent},
-    {path: 'residents', canActivate: [AuthGuardService], component: ResidentsComponent},
+    {path: 'quiz-creation', canActivate: [AuthGuardAdminService], component: QuizCreationComponent},
+    {path: 'residents', canActivate: [AuthGuardAdminService], component: ResidentsComponent},
     {path: 'quiz-editor/:id', canActivate: [AuthGuardService], component: QuizEditorComponent},
     {path: 'login/user', canActivate: [NotAuthGuardService], component: UserFormComponent},
     {path: 'login/admin', canActivate: [NotAuthGuardService], component: AdminFormComponent},
