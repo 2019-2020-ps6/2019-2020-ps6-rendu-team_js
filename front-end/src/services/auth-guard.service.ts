@@ -15,15 +15,22 @@ export class AuthGuardService {
   canActivate(): Observable<boolean> | Promise<boolean> | boolean {
 
     return new Promise(((resolve, reject) => {
-      this.authService.getLogin().then(() => {
-        if (this.authService.isAuth()) {
-          resolve(true);
-        } else {
-          reject();
-          this.router.navigate(['/welcome']);
-        }
 
-      });
+      if (this.authService.isAuth()) {
+        resolve(true);
+
+      } else {
+
+        this.authService.getLogin().then(() => {
+          if (this.authService.isAuth()) {
+            resolve(true);
+          } else {
+            reject();
+            this.router.navigate(['/welcome']);
+          }
+
+        });
+      }
     }));
 
   }
