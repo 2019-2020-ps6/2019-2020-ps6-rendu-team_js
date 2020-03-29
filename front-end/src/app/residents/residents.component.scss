@@ -1,0 +1,28 @@
+.main-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.create-button {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+
+  color: white;
+  background-color: #3CABC2;
+  border: #3CABC2 solid 0px ;
+  border-radius: 40px;
+
+  margin: 20px;
+  padding: 20px;
+
+  font-family: "Segoe UI Black";
+  font-size: xx-large;
+}
+
+a:hover{
+  color: white;
+  cursor: pointer;
+}
