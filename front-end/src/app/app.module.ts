@@ -31,8 +31,9 @@ import {QuizResultListComponent} from './play-quiz/result/quiz-result-list/quiz-
 import { WelcomeComponent } from './welcome/welcome.component';
 import { QuizInfoComponent } from './quizzes/quiz-info/quiz-info.component';
 import { StatisticsResidentsComponent } from './residents/statistics-residents/statistics-residents.component';
-import { QuizStatisticsComponent } from './residents/statistics-residents/quiz-statistics/quiz-statistics.component';
+import { QuizzesStatisticsComponent } from './residents/statistics-residents/quizzes-statistics/quizzes-statistics.component';
 import { GlobalStatisticsComponent } from './residents/statistics-residents/global-statistics/global-statistics.component';
+import { QuizStatisticsComponent } from './residents/statistics-residents/quizzes-statistics/quiz-statistics/quiz-statistics.component';
 
 
 
@@ -64,8 +65,9 @@ import { GlobalStatisticsComponent } from './residents/statistics-residents/glob
     WelcomeComponent,
     QuizInfoComponent,
     StatisticsResidentsComponent,
-    QuizStatisticsComponent,
+    QuizzesStatisticsComponent,
     GlobalStatisticsComponent,
+    QuizStatisticsComponent,
   ],
     imports: [
         BrowserModule,

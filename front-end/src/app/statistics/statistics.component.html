@@ -9,7 +9,7 @@
     </div>
     <div id="totalQuizValue" class="col-lg-3 col-md-3 col-xs-3 xol-sm-3 itemTitle">
       <div *ngIf="userStatistics == undefined;else definedTotalQuiz">000</div>
-      <ng-template #definedTotalQuiz> {{userStatistics.totalQuizMade}}% </ng-template>
+      <ng-template #definedTotalQuiz> {{userStatistics.totalQuizMade}} </ng-template>
     </div>
   </div>
 
@@ -19,7 +19,7 @@
     </div>
     <div id="weekQuizValue" class="col-lg-3 col-md-3 col-xs-3 xol-sm-3 itemTitle">
       <div *ngIf="userStatistics == undefined;else definedQuizValue">000</div>
-      <ng-template #definedQuizValue> {{userStatistics.weekQuizMade}}% </ng-template>
+      <ng-template #definedQuizValue> {{userStatistics.weekQuizMade}} </ng-template>
     </div>
   </div>
 

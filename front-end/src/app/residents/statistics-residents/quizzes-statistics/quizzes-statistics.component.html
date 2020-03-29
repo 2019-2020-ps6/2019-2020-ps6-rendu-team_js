@@ -1,0 +1,26 @@
+<div class="container">
+  <div class="row" id="quizInfo" (click)=toggleDisplay()>
+    <div class="col-lg-9 col-md-9 col-xs-9 xol-sm-9">
+      {{quizResult.name}}
+    </div>
+    <div id="quizDifficulty" class="col-lg-3 col-md-3 col-xs-3 xol-sm-3">
+      {{quizResult.difficulty}}
+    </div>
+  </div>
+
+
+  <div *ngIf="isShow" class="row" id="quizHistory">
+    <div class="col-lg-12 col-md-12 col-xs-12 xol-sm-12">
+      <div id="txtEssaies">Essaies : </div>
+      <div id="historyList">
+          <ng-container *ngFor="let try of quizResult.quizTries; let i = index">
+        <div class="item-result">
+          <app-quiz-statistics-adminside [try]="try"></app-quiz-statistics-adminside>
+        </div>
+          </ng-container>
+      </div>
+    </div>
+  </div>
+</div>
+
+<br>

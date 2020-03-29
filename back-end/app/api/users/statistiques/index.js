@@ -6,17 +6,16 @@ const router = new Router({ mergeParams: true })
 
 router.get('/', (req, res) => {
   try {
-    res.status(200).json('GET HTTP method on user resource')
+    res.status(200).json('GET HTTP method on user resource :)')
   } catch (err) {
     res.status(500).json(err)
   }
 })
 
-router.get('/:userId', (req, res) => {
+router.get('/:residentId', (req, res) => {
   try {
-    const result = buildStats(req.params.userId)
-    // const result = Result.getById(req.params.resultId)
-    logger.info(result)
+    const result = buildStats(req.params.residentId);
+
     res.status(200).json(result)
   } catch (err) {
     res.status(500).json(err)

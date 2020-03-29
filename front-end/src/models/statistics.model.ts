@@ -5,5 +5,5 @@ export interface Statistics {
   totalQuizMade: number;
   weekQuizMade: number;
   perfectQuiz: number;
-  quizzesResultIds: number[];
+  quizzesResultIds: [];
 }

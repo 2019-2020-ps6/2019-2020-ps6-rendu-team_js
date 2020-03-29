@@ -17,7 +17,6 @@ router.get('/:resultId', (req, res) => {
   try {
     const result = buildResult(req.params.resultId)
     // const result = Result.getById(req.params.resultId)
-    logger.info(result)
     res.status(200).json(result)
   } catch (err) {
     res.status(500).json(err)

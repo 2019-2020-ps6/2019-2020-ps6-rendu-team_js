@@ -1,0 +1,29 @@
+
+$headerColor: grey;
+$backgroundColor: #FFF;
+$cornerRadius: 12px;
+
+#container-quiz {
+  font-weight: 600;
+  background-color: $backgroundColor;
+  font-size: 3vmin;
+  border-radius: $cornerRadius;
+  margin-bottom: 12px;
+}
+
+#quizDate {
+  color: $backgroundColor;
+  border-top-left-radius: $cornerRadius;
+  border-top-right-radius: $cornerRadius;
+  background-color: $headerColor;
+  padding-right: 12px;
+  padding-left: 12px;
+  text-align: center;
+}
+
+#successPercentage {
+  font-size: 4vmin;
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: center;
+}

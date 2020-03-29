@@ -17,7 +17,7 @@ export class StatisticsComponent implements OnInit {
   }
 
   ngOnInit() {
-    const id = '1000000001'; // TODO USER ID TO REPLACE IN FUTURE
+    const id = '1000000002'; // TODO USER ID TO REPLACE IN FUTURE
     this.statisticsService.setSelectedStatistics(id);
   }
 

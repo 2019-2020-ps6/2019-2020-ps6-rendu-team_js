@@ -1,0 +1,46 @@
+$primaryColorDark: #44ff87;
+$primaryColor: #a2ffb3;
+$borderColor: #FFF;
+$cornerRadius: 25px;
+
+.container {
+  background-color: $primaryColor;
+  border-radius: $cornerRadius;
+}
+
+.row {
+  font-weight: 600;
+  font-size: 5vmin;
+}
+
+#txtEssaies {
+  font-size: 3.75vmin;
+  font-weight: 600;
+  margin-bottom: 8px;
+  margin-top: 8px;
+}
+
+#quizInfo {
+  border-radius: $cornerRadius;
+  background-color: $primaryColorDark;
+}
+
+#quizDifficulty {
+  text-align: center;
+  border-left: solid 5px $borderColor;
+  border-bottom-right-radius: $cornerRadius;
+}
+
+#historyList {
+  overflow: auto;
+  white-space: nowrap;
+}
+
+#quizHistory {
+  padding-bottom: 20px;
+}
+
+.item-result {
+  display: inline-block;
+  margin-right: 12px;
+}

@@ -3,6 +3,7 @@ $primaryColorDark: #44ff87;
 $primaryColor: #a2ffb3;
 $borderColor: grey;
 $cornerRadius: 25px;
+$borderSize: 5px;
 
 .row {
   font-weight: 600;
@@ -18,7 +19,7 @@ $cornerRadius: 25px;
 #totalQuizValue {
   text-align: center;
   border-top-right-radius: $cornerRadius;
-  border-left: solid 1px $borderColor;
+  border-left: solid $borderSize $borderColor;
 }
 
 #weekQuiz {
@@ -27,7 +28,7 @@ $cornerRadius: 25px;
 
 #weekQuizValue {
   text-align: center;
-  border-left: solid 1px $borderColor;
+  border-left: solid $borderSize $borderColor;
 }
 
 #successPercentage {
@@ -39,5 +40,5 @@ $cornerRadius: 25px;
 #successPercentageValue {
   text-align: center;
   border-bottom-right-radius: $cornerRadius;
-  border-left: solid 1px $borderColor;
+  border-left: solid $borderSize $borderColor;
 }
