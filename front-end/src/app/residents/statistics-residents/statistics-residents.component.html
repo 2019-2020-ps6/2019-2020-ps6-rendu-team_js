@@ -1,0 +1,16 @@
+<h1>Statistiques</h1>
+
+<button type="submit" class="button-card">Par quiz</button>
+
+<button type="submit" class="button-card">Global</button>
+
+<hr class="blackLine">
+<br>
+<br>
+
+<app-quiz-statistics></app-quiz-statistics>
+<app-global-statistics [totalQuizMade]="userStatistics.totalQuizMade"
+                       [weekQuizMade]="userStatistics.weekQuizMade"
+                       [successPercentage]="userStatistics.successPercentage"
+                       [perfectQuizMade]="userStatistics.perfectQuiz">
+</app-global-statistics>

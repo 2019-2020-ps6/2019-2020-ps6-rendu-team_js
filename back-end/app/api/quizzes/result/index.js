@@ -33,7 +33,7 @@ router.post('/', (req, res) => {
     const answers = req.body.answers
     const playTime = req.body.playTime
     const date = req.body.date
-    const userId = 1000000001
+    const userId = 1000000002
 
     // Traitement & calcul du score
     // Pour chaque answer on va check si la reponse est juste et calculer les scores
@@ -44,9 +44,11 @@ router.post('/', (req, res) => {
       totalAnswers += 1
       if (verifyIfAnswerIsCorrect(answer.answerId)) {
         correctAnswers += 1
+        answer.questionScore = goodAnswerScore
       } else {
         const correctAnswer = getCorrectAnswer(answer.questionId)
         answer.correctAnswerId = correctAnswer
+        answer.questionScore = goodAnswerScore / 2
       }
     })
     const maxScore = totalAnswers * goodAnswerScore;

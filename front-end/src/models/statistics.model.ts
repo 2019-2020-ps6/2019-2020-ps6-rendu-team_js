@@ -4,5 +4,6 @@ export interface Statistics {
   successPercentage: number;
   totalQuizMade: number;
   weekQuizMade: number;
+  perfectQuiz: number;
   quizzesResultIds: number[];
 }

@@ -64,9 +64,16 @@ const updateStatistics = (userId, resultId, quizSuccessPercentage) => {
 
     // Methode qui check si la réponse choisi est la bonne
     const userStatistiques = Statistics.getStatisticById(userId);
+
+    let perfectQuiz = 0;
+    if (quizSuccessPercentage === 100){
+        perfectQuiz = 1;
+    }
+
     // const currentWeek = getWeekNumber(new Date())
     const currentWeek = getWeekNumber(new Date());
     if (userStatistiques) { // Statistics found
+        perfectQuiz = perfectQuiz + userStatistiques.perfectQuiz;
         const totalQuizMade = userStatistiques.totalQuizMade + 1;
         const successPercentage = ((userStatistiques.successPercentage * userStatistiques.totalQuizMade) + quizSuccessPercentage) / totalQuizMade;
         let weekQuizMade = 1;
@@ -77,7 +84,7 @@ const updateStatistics = (userId, resultId, quizSuccessPercentage) => {
         quizzesResultIds.push(resultId);
 
         // Statistics.update(userId, currentWeek, totalQuizMade, weekQuizMade, quizzesStats)
-        Statistics.update(userId, { currentWeek, successPercentage, totalQuizMade, weekQuizMade, quizzesResultIds});
+        Statistics.update(userId, { currentWeek, successPercentage, totalQuizMade, weekQuizMade, quizzesResultIds, perfectQuiz});
     } else { // Statistics undefined
         const successPercentage = quizSuccessPercentage;
         const totalQuizMade = 1;
@@ -85,7 +92,7 @@ const updateStatistics = (userId, resultId, quizSuccessPercentage) => {
         const quizzesResultIds = [];
         quizzesResultIds.push(resultId);
         // Statistics.createWithId(userId, currentWeek, totalQuizMade, weekQuizMade, quizzesStats)
-        Statistics.createWithId(userId, { currentWeek, successPercentage, totalQuizMade, weekQuizMade, quizzesResultIds});
+        Statistics.createWithId(userId, { currentWeek, successPercentage, totalQuizMade, weekQuizMade, quizzesResultIds, perfectQuiz});
     }
 }
 

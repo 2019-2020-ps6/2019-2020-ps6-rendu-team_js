@@ -1,14 +1,14 @@
 import { Component, OnInit } from '@angular/core';
-import { Statistics } from '../../models/statistics.model';
+import {Statistics} from '../../../models/statistics.model';
 import {ActivatedRoute} from '@angular/router';
-import {StatisticsService} from '../../services/statistics.service';
+import {StatisticsService} from '../../../services/statistics.service';
 
 @Component({
-  selector: 'app-stats',
-  templateUrl: './statistics.component.html',
-  styleUrls: ['./statistics.component.scss']
+  selector: 'app-statistics-residents',
+  templateUrl: './statistics-residents.component.html',
+  styleUrls: ['./statistics-residents.component.scss']
 })
-export class StatisticsComponent implements OnInit {
+export class StatisticsResidentsComponent implements OnInit {
 
   private userStatistics: Statistics;
 
@@ -17,7 +17,7 @@ export class StatisticsComponent implements OnInit {
   }
 
   ngOnInit() {
-    const id = '1000000001'; // TODO USER ID TO REPLACE IN FUTURE
+    const id = this.route.snapshot.paramMap.get('id');
     this.statisticsService.setSelectedStatistics(id);
   }
 

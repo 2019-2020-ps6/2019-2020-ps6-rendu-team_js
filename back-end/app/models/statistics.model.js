@@ -6,5 +6,6 @@ module.exports = new BaseModel('Statistics', {
   currentWeek: Joi.number().required(),
   weekQuizMade: Joi.number().required(),
   successPercentage: Joi.number().required(),
+  perfectQuiz: Joi.number().required(),
   quizzesResultIds: Joi.array().required(),
 })
