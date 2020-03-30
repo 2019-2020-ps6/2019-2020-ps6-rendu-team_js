@@ -65,4 +65,12 @@ export class PlayQuizComponent implements OnInit {
     return this.endDate - this.beginDate;
   }
 
+  generateFinalUserAnswer() {
+    return Object.create({quizId: this.quiz.id,
+    answers: this.userAnswers,
+    playTime: this.getPlayTime(),
+    date: this.beginDate,
+    userId: -1});
+  }
+
 }
