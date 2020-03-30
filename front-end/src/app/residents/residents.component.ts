@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 
 @Component({
   selector: 'app-residents',
@@ -7,9 +7,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ResidentsComponent implements OnInit {
 
-  constructor() { }
+  private isCreateAccountActive: boolean;
+
+  constructor() {
+  }
 
   ngOnInit() {
   }
 
+  openCreateAccount() {
+    this.isCreateAccountActive = !this.isCreateAccountActive;
+  }
 }

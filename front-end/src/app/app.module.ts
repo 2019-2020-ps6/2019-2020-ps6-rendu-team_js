@@ -33,6 +33,7 @@ import { QuizInfoComponent } from './quizzes/quiz-info/quiz-info.component';
 import { StatisticsResidentsComponent } from './residents/statistics-residents/statistics-residents.component';
 import { QuizStatisticsComponent } from './residents/statistics-residents/quiz-statistics/quiz-statistics.component';
 import { GlobalStatisticsComponent } from './residents/statistics-residents/global-statistics/global-statistics.component';
+import { CreateAccountComponent } from './residents/create-account/create-account.component';
 
 
 
@@ -66,6 +67,7 @@ import { GlobalStatisticsComponent } from './residents/statistics-residents/glob
     StatisticsResidentsComponent,
     QuizStatisticsComponent,
     GlobalStatisticsComponent,
+    CreateAccountComponent,
   ],
     imports: [
         BrowserModule,

@@ -1,0 +1,74 @@
+
+.create-account-container{
+  position: absolute;
+  left: 50vw;
+  right: 50vw - 10vw;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.user-table {
+  padding: 2vmin;
+  border: #D8F8FF 0px solid;
+  border-radius: 5vmin;
+  background-color: #D8F8FF;
+}
+
+.text-create-account {
+  text-align: center;
+  color: black;
+  font-size: 5vmin;
+  padding: 3vmin;
+  font-family: "Segoe UI Black", sans-serif;
+
+}
+
+.disable-button {
+  opacity: 0.5;
+}
+
+.user-form {
+  display: flex;
+  flex-direction: column;
+}
+
+.input-custom {
+  padding: 1vmin;
+  margin: 1vmin;
+  border: #FFFFFF 0px solid;
+  border-radius: 2vmin;
+  font-family: "Segoe UI Black", sans-serif;
+  font-size: 3vmin;
+  text-align: center;
+}
+
+.button-card {
+  padding: 1vmin;
+  margin: 1vmin;
+  border: #FFFFFF 0px solid;
+  border-radius: 2vmin;
+  color: white;
+  text-align: center;
+  font-family: "Segoe UI Black", sans-serif;
+  font-size: 5vmin;
+  width: 100%;
+}
+
+.back-button-bg{
+  background-color: #5D5D5D;
+}
+
+.create-button-bg{
+  background-color: #6BA800;
+}
+
+
+.button-container {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  align-items: stretch;
+}

@@ -1,0 +1,16 @@
+<div class="create-account-container user-container ">
+  <div class="user-table">
+    <div class="text-create-account">Création de compte</div>
+    <hr class="blackLine">
+    <form class="user-form">
+      <input class="input-custom" placeholder="Nom" type="text" id="firstName" [formControlName]="'username'">
+      <input class="input-custom" placeholder="Prénom" type="text" id="lastName" [formControlName]="'username'">
+      <hr class="blackLine">
+
+      <div class="button-container">
+        <button (click)="backPressed()" class="button-card back-button-bg">Retour</button>
+        <button type="submit" class="button-card create-button-bg">Créer</button>
+      </div>
+    </form>
+  </div>
+</div>

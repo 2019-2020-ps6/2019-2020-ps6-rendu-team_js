@@ -17,7 +17,6 @@
 
   margin: 20px;
   padding: 20px;
-
   font-family: "Segoe UI Black";
   font-size: xx-large;
 }
@@ -25,4 +24,18 @@
 a:hover{
   color: white;
   cursor: pointer;
+}
+
+.background {
+  position: absolute;
+  background-color: #000000;
+  opacity: 0.5;
+
+  left: 10vw;
+  top: 0;
+
+  width: 90vw;
+  height: 100%;
+
+  filter:blur(200px);
 }

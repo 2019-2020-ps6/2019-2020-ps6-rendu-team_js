@@ -1,7 +1,12 @@
-<div >
+<div>
   <div class="main-container">
     <h1>Résidents</h1>
-    <a class="create-button">Créer un compte</a>
+    <a class="create-button" (click)="openCreateAccount()">Créer un compte</a>
   </div>
   <hr class="blackLine">
 </div>
+
+<div *ngIf="isCreateAccountActive" class="background"></div>
+<app-create-account *ngIf="isCreateAccountActive" (isBackPressed)="isCreateAccountActive=!$event"></app-create-account>
+
+
