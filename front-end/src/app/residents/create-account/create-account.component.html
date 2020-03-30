@@ -1,16 +1,34 @@
 <div class="create-account-container user-container ">
-  <div class="user-table">
-    <div class="text-create-account">Création de compte</div>
-    <hr class="blackLine">
-    <form class="user-form">
-      <input class="input-custom" placeholder="Nom" type="text" id="firstName" [formControlName]="'username'">
-      <input class="input-custom" placeholder="Prénom" type="text" id="lastName" [formControlName]="'username'">
+
+
+  <form class="form" [formGroup]="createForm" ngNativeValidate>
+    <div class="table">
+
+      <div class="text-create-account">Création de compte</div>
+      <hr class="blackLine">
+
+      <div class="text-input-container">
+        <input class="input-custom" placeholder="Prénom" type="text" id="lastName" [formControlName]="'firstName'">
+        <input class="input-custom" placeholder="Nom" type="text" id="firstName" [formControlName]="'lastName'">
+      </div>
+
+      <hr class="blackLine">
+
+      <div class="assistance-container">
+        <div class="assistance-text">Assistance (à sélectionner) :</div>
+        <div class="checkbox-container" *ngFor="let assistance of assistanceArray">
+          <input type="checkbox" name="assistance" value="{{assistance.value}}" id="{{assistance.value}}"/>
+          <label for="{{assistance.value}}">{{assistance.name}}</label>
+        </div>
+      </div>
+
       <hr class="blackLine">
 
       <div class="button-container">
-        <button (click)="backPressed()" class="button-card back-button-bg">Retour</button>
-        <button type="submit" class="button-card create-button-bg">Créer</button>
+        <button (click)="backPressed()" class="button-card back-button-bg">Annuler</button>
+        <button type="submit" [disabled]="createForm.invalid"  [class.disable-button]="createForm.invalid" (click)="createPressed()" class="button-card create-button-bg">Créer</button>
       </div>
-    </form>
-  </div>
+
+    </div>
+  </form>
 </div>

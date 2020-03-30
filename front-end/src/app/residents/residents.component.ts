@@ -10,9 +10,11 @@ export class ResidentsComponent implements OnInit {
   private isCreateAccountActive: boolean;
 
   constructor() {
+    this.isCreateAccountActive = false;
   }
 
   ngOnInit() {
+    console.log(this.isCreateAccountActive);
   }
 
   openCreateAccount() {

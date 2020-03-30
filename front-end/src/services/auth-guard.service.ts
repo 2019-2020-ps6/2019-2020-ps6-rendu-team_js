@@ -16,6 +16,8 @@ export class AuthGuardService {
 
     return new Promise(((resolve, reject) => {
 
+      // TODO check if a cookie exist before asking the server
+
       if (this.authService.isAuth()) {
         resolve(true);
 

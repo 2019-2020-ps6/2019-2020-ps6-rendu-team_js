@@ -1,5 +1,6 @@
-import { Component } from '@angular/core';
-import { Location } from '@angular/common';
+import {Component} from '@angular/core';
+import {Location} from '@angular/common';
+
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -7,8 +8,12 @@ import { Location } from '@angular/common';
 })
 export class AppComponent {
   title = 'polyquiz';
+  colorBackground: string;
 
   constructor(public location: Location) {
+  }
 
+  setBackgroundColor(color: string) {
+    this.colorBackground = color;
   }
 }

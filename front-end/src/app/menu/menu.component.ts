@@ -1,7 +1,8 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, EventEmitter, OnInit, Output} from '@angular/core';
 import {Location} from '@angular/common';
 import {AuthService} from '../../services/auth.service';
 import {ActivatedRoute} from '@angular/router';
+
 
 @Component({
   selector: 'app-menu',
@@ -10,14 +11,21 @@ import {ActivatedRoute} from '@angular/router';
 })
 export class MenuComponent implements OnInit {
 
+  @Output()
+  bodyBackgroundColor: EventEmitter<string> = new EventEmitter<string>();
+
   constructor(private location: Location,
               private authService: AuthService,
               private activatedRoute: ActivatedRoute) {
   }
 
   ngOnInit() {
+    this.getColor('#f2f2f2');
   }
 
+  getColor(color: string) {
+    this.bodyBackgroundColor.emit(color);
+  }
 
   isUserItemDisplayed(): boolean {
     const path = this.location.path().split('/');

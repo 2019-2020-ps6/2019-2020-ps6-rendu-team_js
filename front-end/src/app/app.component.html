@@ -1,7 +1,8 @@
-<div class="main">
+<!--<div class="main" [style]="{'background-color': this.colorBackground}">-->
+<div class="main" [style.background-color]="colorBackground">
   <app-header></app-header>
   <div class="main-page">
-    <app-menu></app-menu>
+    <app-menu (bodyBackgroundColor)="setBackgroundColor($event)"></app-menu>
     <div class="main-content">
       <router-outlet></router-outlet>
     </div>
