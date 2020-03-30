@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {Quiz} from '../../models/quiz.model';
-import {ActivatedRoute} from '@angular/router';
+import {ActivatedRoute, Router} from '@angular/router';
 import {QuizService} from '../../services/quiz.service';
 import {Answer, Question} from '../../models/question.model';
 
@@ -16,8 +16,10 @@ export class PlayQuizComponent implements OnInit {
   public quiz: Quiz;
   public questionNumber: number;
   public userAnswers: Answer[];
+  public beginDate: number;
+  public endDate: number;
 
-  constructor(private route: ActivatedRoute, private quizService: QuizService) {
+  constructor(private router: Router, private route: ActivatedRoute, private quizService: QuizService) {
     this.quizService.quizSelected$.subscribe((quiz) => this.quiz = quiz); // set class var quiz
 }
 
@@ -32,8 +34,9 @@ export class PlayQuizComponent implements OnInit {
   }
 
   addToUserAnswers(answer: Answer) {
-    console.log('DEBUG', answer);
-    // this.userAnswers.push(answer); // TODO redo push
+    // console.log('Last answer', answer);
+    this.userAnswers.push(answer);
+    console.log('user answers array', this.userAnswers);
 
     this.questionNumber++;
   }
@@ -44,6 +47,22 @@ export class PlayQuizComponent implements OnInit {
     } else {
       return false;
     }
+  }
+
+  redirectToResult() {
+    this.router.navigate(['/play', this.quiz.id, '/result']);
+  }
+
+  setBeginDateToCurrent() {
+    this.beginDate = Date.now();
+  }
+
+  setEndDateToCurrent() {
+    this.endDate = Date.now();
+  }
+
+  getPlayTime() {
+    return this.endDate - this.beginDate;
   }
 
 }
