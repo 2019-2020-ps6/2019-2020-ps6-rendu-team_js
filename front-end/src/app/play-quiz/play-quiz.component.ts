@@ -3,6 +3,7 @@ import {Quiz} from '../../models/quiz.model';
 import {ActivatedRoute, Router} from '@angular/router';
 import {QuizService} from '../../services/quiz.service';
 import {Answer, Question} from '../../models/question.model';
+import {ResultService} from '../../services/result.service';
 
 @Component({
   selector: 'app-play-quiz',
@@ -19,7 +20,7 @@ export class PlayQuizComponent implements OnInit {
   public beginDate: number;
   public endDate: number;
 
-  constructor(private router: Router, private route: ActivatedRoute, private quizService: QuizService) {
+  constructor(private router: Router, private route: ActivatedRoute, private quizService: QuizService, private resultService: ResultService) {
     this.quizService.quizSelected$.subscribe((quiz) => this.quiz = quiz); // set class var quiz
 }
 
@@ -36,7 +37,7 @@ export class PlayQuizComponent implements OnInit {
   addToUserAnswers(answer: Answer) {
     // console.log('Last answer', answer);
     this.userAnswers.push(answer);
-    console.log('user answers array', this.userAnswers);
+    // console.log('user answers array', this.userAnswers);
 
     this.questionNumber++;
   }
@@ -50,7 +51,7 @@ export class PlayQuizComponent implements OnInit {
   }
 
   redirectToResult() {
-    this.router.navigate(['/play', this.quiz.id, '/result']);
+    this.router.navigate(['/play', this.sendFinalAnswerToServiceAndReturnResponseId(), '/result']);
   }
 
   setBeginDateToCurrent() {
@@ -66,11 +67,21 @@ export class PlayQuizComponent implements OnInit {
   }
 
   generateFinalUserAnswer() {
-    return Object.create({quizId: this.quiz.id,
+    const test =  Object.create({quizId: this.quiz.id,
     answers: this.userAnswers,
     playTime: this.getPlayTime(),
     date: this.beginDate,
     userId: -1});
+
+    console.log('final user answer object', test);
+    return test;
+  }
+
+  sendFinalAnswerToServiceAndReturnResponseId() {
+    this.resultService.addResult(this.generateFinalUserAnswer());
+    let resFinal = -1;
+    this.resultService.resultIdSelected$.subscribe((res: number) => resFinal = res);
+    return resFinal;
   }
 
 }

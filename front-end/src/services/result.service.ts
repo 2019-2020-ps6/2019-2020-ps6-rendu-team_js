@@ -32,6 +32,8 @@ export class ResultService {
 
   public resultSelected$: Subject<Result> = new Subject();
 
+  public resultIdSelected$: Subject<number> = new Subject();
+
   private resultUrl = serverUrl + '/result';
 
   private httpOptions = httpOptionsBase;
@@ -52,6 +54,12 @@ export class ResultService {
     this.http.get<Result>(urlWithId).subscribe((result) => {
       console.log(result);
       this.resultSelected$.next(result);
+    });
+  }
+
+  addResult(answer: object) {
+    this.http.post<number>(this.resultUrl, answer, this.httpOptions).subscribe((resultId: number) => {
+      this.resultIdSelected$.next(resultId);
     });
   }
 }
