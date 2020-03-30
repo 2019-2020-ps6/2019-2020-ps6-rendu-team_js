@@ -3,6 +3,7 @@ import {Quiz} from '../../models/quiz.model';
 import {ActivatedRoute, Router} from '@angular/router';
 import {QuizService} from '../../services/quiz.service';
 import {Answer, Question} from '../../models/question.model';
+import {ResultService} from '../../services/result.service';
 
 @Component({
   selector: 'app-play-quiz',
@@ -19,7 +20,8 @@ export class PlayQuizComponent implements OnInit {
   public beginDate: number;
   public endDate: number;
 
-  constructor(private router: Router, private route: ActivatedRoute, private quizService: QuizService) {
+  // tslint:disable-next-line:max-line-length
+  constructor(private router: Router, private route: ActivatedRoute, private quizService: QuizService, private resultService: ResultService) {
     this.quizService.quizSelected$.subscribe((quiz) => this.quiz = quiz); // set class var quiz
 }
 
@@ -35,8 +37,9 @@ export class PlayQuizComponent implements OnInit {
 
   addToUserAnswers(answer: Answer) {
     // console.log('Last answer', answer);
-    this.userAnswers.push(answer);
-    console.log('user answers array', this.userAnswers);
+    const answerConformWithBack = {questionId: answer.questionId, answerId: answer.id};
+    this.userAnswers.push(answerConformWithBack);
+    // console.log('user answers array', this.userAnswers);
 
     this.questionNumber++;
   }
@@ -50,7 +53,7 @@ export class PlayQuizComponent implements OnInit {
   }
 
   redirectToResult() {
-    this.router.navigate(['/play', this.quiz.id, '/result']);
+    this.router.navigate(['/play', this.sendFinalAnswerToServiceAndReturnResponseId(), 'result']);
   }
 
   setBeginDateToCurrent() {
@@ -63,6 +66,27 @@ export class PlayQuizComponent implements OnInit {
 
   getPlayTime() {
     return this.endDate - this.beginDate;
+  }
+
+  generateFinalUserAnswer() {
+    const tmp = {quizId: this.quiz.id + '',
+      answers: this.userAnswers,
+      playTime: this.getPlayTime(),
+      date: this.beginDate,
+      userId: -1
+    };
+
+    // console.log('final user answer object', tmp);
+    return tmp;
+  }
+
+  sendFinalAnswerToServiceAndReturnResponseId(): number {
+    this.resultService.addResult(this.generateFinalUserAnswer());
+    this.resultService.resultIdSelected$.subscribe((res: number) => {
+      console.log('result id front side', res);
+    });
+    return 1585603031965; // mock result
+    // this.resultService.resultIdSelected$.unsubscribe()
   }
 
 }

@@ -26,7 +26,7 @@ export class AuthService {
   private ERROR_ACCOUNT_LEVEL = -1;
   private DEFAULT_RESIDENT_PASSWORD = 'resident';
 
-  private user: User;
+  public user: User;
   public user$: BehaviorSubject<User> = new BehaviorSubject<User>(this.user);
 
 
