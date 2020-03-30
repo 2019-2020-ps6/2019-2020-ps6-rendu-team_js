@@ -64,7 +64,7 @@ router.post('/', (req, res) => {
     // Mise a jour des statistiques
     updateStatistics(userId, result.id, quizSuccessPercentage);
 
-    res.status(201).json(result)
+    res.status(201).json(result.id)
   } catch (err) {
     if (err.name === 'ValidationError') {
       res.status(400).json(err.extra)
