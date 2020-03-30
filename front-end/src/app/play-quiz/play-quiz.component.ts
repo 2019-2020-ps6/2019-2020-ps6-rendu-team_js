@@ -67,14 +67,15 @@ export class PlayQuizComponent implements OnInit {
   }
 
   generateFinalUserAnswer() {
-    const test =  Object.create({quizId: this.quiz.id,
-    answers: this.userAnswers,
-    playTime: this.getPlayTime(),
-    date: this.beginDate,
-    userId: -1});
+    const tmp = {quizId: this.quiz.id,
+      answers: this.userAnswers,
+      playTime: this.getPlayTime(),
+      date: this.beginDate,
+      userId: -1
+    };
 
-    console.log('final user answer object', test);
-    return test;
+    console.log('final user answer object', tmp);
+    return tmp;
   }
 
   sendFinalAnswerToServiceAndReturnResponseId() {
