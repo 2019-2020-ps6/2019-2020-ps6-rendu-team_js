@@ -1,7 +1,9 @@
 export interface Answer {
-    type?: string;
-    value: string;
-    isCorrect: boolean;
+    type?: string;  // ? can be empty
+    value?: string;
+    isCorrect?: boolean;
+    questionId?: number;
+    id?: number;
 }
 
 export interface Question {

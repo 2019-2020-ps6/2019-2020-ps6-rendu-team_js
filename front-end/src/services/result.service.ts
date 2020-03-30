@@ -60,6 +60,7 @@ export class ResultService {
   addResult(answer: object) {
     this.http.post<number>(this.resultUrl, answer, this.httpOptions).subscribe((resultId: number) => {
       this.resultIdSelected$.next(resultId);
+      console.log('res id service side', resultId);
     });
   }
 }

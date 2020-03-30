@@ -37,7 +37,8 @@ export class PlayQuizComponent implements OnInit {
 
   addToUserAnswers(answer: Answer) {
     // console.log('Last answer', answer);
-    this.userAnswers.push(answer);
+    const answerConformWithBack = {questionId: answer.questionId, answerId: answer.id};
+    this.userAnswers.push(answerConformWithBack);
     // console.log('user answers array', this.userAnswers);
 
     this.questionNumber++;
@@ -52,7 +53,7 @@ export class PlayQuizComponent implements OnInit {
   }
 
   redirectToResult() {
-    this.router.navigate(['/play', this.sendFinalAnswerToServiceAndReturnResponseId(), '/result']);
+    this.router.navigate(['/play', this.sendFinalAnswerToServiceAndReturnResponseId() + '', '/result']);
   }
 
   setBeginDateToCurrent() {
@@ -68,22 +69,24 @@ export class PlayQuizComponent implements OnInit {
   }
 
   generateFinalUserAnswer() {
-    const tmp = {quizId: this.quiz.id,
+    const tmp = {quizId: this.quiz.id + '',
       answers: this.userAnswers,
       playTime: this.getPlayTime(),
       date: this.beginDate,
       userId: -1
     };
 
-    console.log('final user answer object', tmp);
+    // console.log('final user answer object', tmp);
     return tmp;
   }
 
   sendFinalAnswerToServiceAndReturnResponseId() {
     this.resultService.addResult(this.generateFinalUserAnswer());
-    let resFinal = -1;
-    this.resultService.resultIdSelected$.subscribe((res: number) => resFinal = res);
-    return resFinal;
+    let resIdFinal = -1;
+    this.resultService.resultIdSelected$.subscribe((res: number) => resIdFinal = res);
+
+    console.log('res id final', resIdFinal);
+    return resIdFinal;
   }
 
 }
