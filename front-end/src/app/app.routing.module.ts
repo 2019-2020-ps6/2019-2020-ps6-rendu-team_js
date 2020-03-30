@@ -24,7 +24,7 @@ const routes: Routes = [
     {path: 'welcome', canActivate: [NotAuthGuardService], component: WelcomeComponent},
     {path: 'play/:id', canActivate: [AuthGuardService], component: PlayQuizComponent},
     {path: 'stats', canActivate: [AuthGuardService], component: StatisticsComponent},
-    {path: 'play/:id/result', canActivate: [AuthGuardService], component: ResultComponent},
+    {path: 'play/:id/result', canActivate: [AuthGuardService], component: ResultComponent}, // TODO rename /play/resID/result
     {path: 'parameters', canActivate: [AuthGuardService], component: ParametersComponent},
     {path: 'quiz-creation', canActivate: [AuthGuardAdminService], component: QuizCreationComponent},
     {path: 'residents', canActivate: [AuthGuardAdminService], component: ResidentsComponent},
