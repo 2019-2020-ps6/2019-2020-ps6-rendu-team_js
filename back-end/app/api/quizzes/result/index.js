@@ -28,11 +28,11 @@ router.post('/', (req, res) => {
 
   try {
     // Récupeter la liste des answers
-    const quizId = req.body.quizId
-    const answers = req.body.answers
-    const playTime = req.body.playTime
-    const date = req.body.date
-    const userId = 1000000002
+    const quizId = req.body.quizId;
+    const answers = req.body.answers;
+    const playTime = req.body.playTime;
+    const date = req.body.date;
+    const userId = req.body.userId;
 
     // Traitement & calcul du score
     // Pour chaque answer on va check si la reponse est juste et calculer les scores

@@ -23,11 +23,17 @@ $cornerRadius: 25px;
 #quizInfo {
   border-radius: $cornerRadius;
   background-color: $primaryColorDark;
+  cursor: pointer;
 }
 
 #quizDifficulty {
   text-align: center;
-  border-left: solid 5px $borderColor;
+  border-left: solid 5px $primaryColor;
+}
+
+#arrow {
+  text-align: center;
+  border-left: solid 5px $primaryColor;
   border-bottom-right-radius: $cornerRadius;
 }
 

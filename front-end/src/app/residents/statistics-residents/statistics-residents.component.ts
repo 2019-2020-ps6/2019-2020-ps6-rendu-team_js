@@ -1,7 +1,9 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, EventEmitter, OnInit, Output} from '@angular/core';
 import {Statistics} from '../../../models/statistics.model';
 import {ActivatedRoute} from '@angular/router';
 import {StatisticsService} from '../../../services/statistics.service';
+import {Result} from '../../../models/result.model';
+import {ResultService} from '../../../services/result.service';
 
 @Component({
   selector: 'app-statistics-residents',
@@ -11,9 +13,15 @@ import {StatisticsService} from '../../../services/statistics.service';
 export class StatisticsResidentsComponent implements OnInit {
 
   private userStatistics: Statistics;
+  private quizResult: Result;
 
-  constructor(private route: ActivatedRoute, private statisticsService: StatisticsService) {
+  private displayPerQuizComponent = true;
+  private displayGlobalComponent: boolean;
+  private displayQuizDetailsComponent = false;
+
+  constructor(private route: ActivatedRoute, private statisticsService: StatisticsService, private resultService: ResultService) {
     this.statisticsService.statisticsSelected$.subscribe((statistics) => this.userStatistics = statistics);
+    this.resultService.resultSelected$.subscribe((result) => this.quizResult = result);
   }
 
   ngOnInit() {
@@ -21,4 +29,26 @@ export class StatisticsResidentsComponent implements OnInit {
     this.statisticsService.setSelectedStatistics(id);
   }
 
+  displayQuizDetails($event) {
+    this.resultService.setSelectedResult($event.toString());
+    this.displayQuizDetailsComponent = true;
+    this.displayPerQuizComponent = false;
+    this.displayGlobalComponent = false;
+  }
+
+  displayGlobal() {
+    if (!this.displayGlobalComponent) {
+      this.displayQuizDetailsComponent = false;
+      this.displayGlobalComponent = !this.displayGlobalComponent;
+      this.displayPerQuizComponent = false;
+    }
+  }
+
+  displayPerQuiz() {
+    if (!this.displayPerQuizComponent) {
+      this.displayQuizDetailsComponent = false;
+      this.displayPerQuizComponent = !this.displayPerQuizComponent;
+      this.displayGlobalComponent = false;
+    }
+  }
 }

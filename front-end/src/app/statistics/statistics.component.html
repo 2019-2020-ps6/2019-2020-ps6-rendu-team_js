@@ -29,7 +29,7 @@
     </div>
     <div id="successPercentageValue" class="col-lg-3 col-md-3 col-xs-3 xol-sm-3 itemTitle">
       <div *ngIf="userStatistics == undefined;else definedSuccessPercentage">???%</div>
-      <ng-template #definedSuccessPercentage> {{userStatistics.successPercentage}}% </ng-template>
+      <ng-template #definedSuccessPercentage> {{userStatistics.successPercentage| number:'1.2-2'}} % </ng-template>
     </div>
   </div>
 </div>

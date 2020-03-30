@@ -50,6 +50,7 @@ export class ResultService {
   setSelectedResult(resultId: string) {
     const urlWithId = this.resultUrl + '/' + resultId;
     this.http.get<Result>(urlWithId).subscribe((result) => {
+      console.log(result);
       this.resultSelected$.next(result);
     });
   }

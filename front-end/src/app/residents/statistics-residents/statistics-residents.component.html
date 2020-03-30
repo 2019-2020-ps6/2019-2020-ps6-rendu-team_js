@@ -1,19 +1,38 @@
 <h1>Statistiques</h1>
 
-<button type="submit" class="button-card">Par quiz</button>
+<button type="submit" class="button-card" (click)=displayPerQuiz()>Par quiz</button>
 
-<button type="submit" class="button-card">Global</button>
+<button type="submit" class="button-card" (click)=displayGlobal()>Global</button>
 
 <hr class="blackLine">
 <br>
 <br>
-<ng-container *ngFor="let quizResult of userStatistics.quizzesResultIds; let i = index">
-<app-quiz-statistics [quizResult]="quizResult"></app-quiz-statistics>
-</ng-container>
+<div *ngIf="displayPerQuizComponent">
+  <ng-container *ngFor="let quizResult of userStatistics.quizzesResultIds; let i = index">
+    <app-quiz-statistics [quizResult]="quizResult"
+                         (quizResultToDisplayDetails)="displayQuizDetails($event)"></app-quiz-statistics>
+  </ng-container>
+</div>
 
-<app-global-statistics
-  [totalQuizMade]="userStatistics.totalQuizMade"
-  [weekQuizMade]="userStatistics.weekQuizMade"
-  [successPercentage]="userStatistics.successPercentage"
-  [perfectQuizMade]="userStatistics.perfectQuiz">
-</app-global-statistics>
+<div *ngIf="displayGlobalComponent">
+  <app-global-statistics
+    [totalQuizMade]="userStatistics.totalQuizMade"
+    [weekQuizMade]="userStatistics.weekQuizMade"
+    [successPercentage]="userStatistics.successPercentage"
+    [perfectQuizMade]="userStatistics.perfectQuiz">
+  </app-global-statistics>
+</div>
+
+<div *ngIf="quizResult != undefined && displayQuizDetailsComponent">
+  <app-quiz-header [maxScore]="quizResult.maxScore"
+                   [userScore]="quizResult.userScore"
+                   [quizId]="quizResult.quizId"
+                   [date]="quizResult.date"
+                   [playTime]="quizResult.playTime">
+  </app-quiz-header>
+
+  <app-quiz-result-list [answers]="quizResult.answers"
+                        [quizId]="quizResult.quizId">
+
+  </app-quiz-result-list>
+</div>
