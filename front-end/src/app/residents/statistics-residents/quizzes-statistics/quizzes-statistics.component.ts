@@ -1,4 +1,4 @@
-import {Component, Input, OnInit} from '@angular/core';
+import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
 import {Result} from '../../../../models/result.model';
 
 @Component({
@@ -9,7 +9,7 @@ import {Result} from '../../../../models/result.model';
 export class QuizzesStatisticsComponent implements OnInit {
 
   @Input() quizResult: Result;
-
+  @Output() quizResultToDisplayDetails = new EventEmitter<number>();
   private isShow = false;
 
   constructor() { }
@@ -20,6 +20,10 @@ export class QuizzesStatisticsComponent implements OnInit {
 
   toggleDisplay() {
     this.isShow = !this.isShow;
+  }
+
+  quizToDisplayEvent($event) {
+    this.quizResultToDisplayDetails.emit($event);
   }
 
 }
