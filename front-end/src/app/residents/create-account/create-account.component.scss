@@ -24,7 +24,7 @@
   width: 100%;
   color: black;
   font-size: 5vmin;
-  padding: 2vmin;
+  padding-bottom: 2vmin;
   display: inline-block;
   font-family: "Segoe UI Black", sans-serif;
 }
@@ -145,4 +145,11 @@
 
 hr.blackLine{
   border-top: 2px solid grey;
+}
+
+.error-text{
+  font-size: xx-large;
+  color: #b20000;
+  text-align: center;
+  font-family: "Segoe UI Black", serif;
 }

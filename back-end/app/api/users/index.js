@@ -80,6 +80,9 @@ router.post('/', async (req, res) => {
       return res.status(401).json({'errors': 'Action non authorisée...'})
     }
 
+    // TODO check that the data is valid
+    // TODO check that the name & last name doesnt already exist
+
     let user = User.create({ ...req.body })
     req.session.userId = user.id
     user.password = await bcrypt.hash(req.body.password, 10)

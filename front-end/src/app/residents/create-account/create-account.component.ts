@@ -11,8 +11,8 @@ import {AuthService} from '../../../services/auth.service';
 export class CreateAccountComponent implements OnInit {
 
   assistanceArray = [
-    {name: 'Visuelle', value: 'visuelle', checked: false},
-    {name: 'Motrice', value: 'motrice', checked: false}
+    {name: 'Visuelle', value: 'visuelle', id: 0, checked: false},
+    {name: 'Motrice', value: 'motrice', id: 1, checked: false}
   ];
 
 
@@ -24,8 +24,6 @@ export class CreateAccountComponent implements OnInit {
   isBackPressed: EventEmitter<boolean> = new EventEmitter<boolean>();
 
 
-
-
   constructor(private authService: AuthService,
               private formBuilder: FormBuilder) {
   }
@@ -34,7 +32,7 @@ export class CreateAccountComponent implements OnInit {
     this.createForm = this.formBuilder.group({
       firstName: ['', [Validators.required]],
       lastName: ['', [Validators.required]],
-      myChoices: new FormArray([]),
+      assistanceArray: new FormArray([]),
     });
   }
 
@@ -47,5 +45,17 @@ export class CreateAccountComponent implements OnInit {
     const lastName = this.createForm.get('lastName').value;
 
     console.log(firstName + ' ' + lastName);
+    console.log(this.getAssistanceValue());
+  }
+
+  changeState(id: number) {
+    this.assistanceArray[id].checked = !this.assistanceArray[id].checked;
+  }
+
+  getAssistanceValue() {
+    return this.assistanceArray.filter((v) => v.checked).map((item) => {
+      return item.value;
+    });
+
   }
 }

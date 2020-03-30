@@ -1,6 +1,7 @@
 <div class="create-account-container user-container ">
 
 
+  <div class="error-text" *ngIf="error !== 'undefined'">{{error}}</div>
   <form class="form" [formGroup]="createForm" ngNativeValidate>
     <div class="table">
 
@@ -17,7 +18,7 @@
       <div class="assistance-container">
         <div class="assistance-text">Assistance (à sélectionner) :</div>
         <div class="checkbox-container" *ngFor="let assistance of assistanceArray">
-          <input type="checkbox" name="assistance" value="{{assistance.value}}" id="{{assistance.value}}"/>
+          <input type="checkbox" name="assistance" value="{{assistance.value}}" id="{{assistance.value}}" (change)="changeState(assistance.id)"/>
           <label for="{{assistance.value}}">{{assistance.name}}</label>
         </div>
       </div>
