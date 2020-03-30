@@ -29,17 +29,10 @@ export class ResultService {
    * Naming convention: Add '$' at the end of the variable name to highlight it as an Observable.
    */
   public result$: BehaviorSubject<Result> = new BehaviorSubject(this.result);
-  public answer$: BehaviorSubject<Answer> = new BehaviorSubject(this.answer);
-  public correctAnswer$: BehaviorSubject<Answer> = new BehaviorSubject(this.answer);
-  public question$: BehaviorSubject<Question> = new BehaviorSubject(this.question);
 
   public resultSelected$: Subject<Result> = new Subject();
-  public answerSelected$: Subject<Answer> = new Subject();
-  public correctAnswerSelected$: Subject<Answer> = new Subject();
-  public questionSelected$: Subject<Question> = new Subject();
 
   private resultUrl = serverUrl + '/result';
-  private questionUrl = serverUrl + '/:quizId/questions';
 
   private httpOptions = httpOptionsBase;
 
@@ -58,27 +51,6 @@ export class ResultService {
     const urlWithId = this.resultUrl + '/' + resultId;
     this.http.get<Result>(urlWithId).subscribe((result) => {
       this.resultSelected$.next(result);
-    });
-  }
-
-  setSelectedQuestion(quizId: string, questionId: string) {
-    const urlWithId = serverUrl + '/quizzes/' + quizId + '/questions/' + questionId;
-    this.http.get<Question>(urlWithId).subscribe((question) => {
-      this.questionSelected$.next(question);
-    });
-  }
-
-  setSelectedAnswer(quizId: string, questionId: string, answerId: string) {
-    const urlWithId = serverUrl + '/quizzes/' + quizId + '/questions/' + questionId + '/answers/' + answerId;
-    this.http.get<Answer>(urlWithId).subscribe((answer) => {
-      this.answerSelected$.next(answer);
-    });
-  }
-
-  setSelectedCorrectAnswer(quizId: string, questionId: string, answerId: string) {
-    const urlWithId = serverUrl + '/quizzes/' + quizId + '/questions/' + questionId + '/answers/' + answerId;
-    this.http.get<Answer>(urlWithId).subscribe((answer) => {
-      this.correctAnswerSelected$.next(answer);
     });
   }
 }

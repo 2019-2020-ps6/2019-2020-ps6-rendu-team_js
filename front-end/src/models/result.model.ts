@@ -8,6 +8,11 @@ export interface Result {
   answers: Answer[];
   playTime: number;
   userId: string;
+  quizResultId?: number;
+  quizSuccessPercentage?: number;
+  quizTries?: Result[];
+  difficulty?: string;
+  name?: string;
 }
 
 export interface ResultQuestion {

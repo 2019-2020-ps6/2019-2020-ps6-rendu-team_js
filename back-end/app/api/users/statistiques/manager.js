@@ -1,4 +1,5 @@
-const { Answer, Statistics, Question } = require('../../../models')
+const { Answer, Statistics, Quiz } = require('../../../models')
+const { buildResult } = require('../../quizzes/result/manager')
 const logger = require('../../../utils/logger.js')
 
 /**
@@ -7,8 +8,44 @@ const logger = require('../../../utils/logger.js')
  */
 
 const buildStats = (statsId) => {
-    const stats = Statistics.getStatisticById(statsId)
-    return stats
+    const stats = Statistics.getStatisticById(statsId);
+
+    const mapOfQuiz = new Map();
+
+    stats.quizzesResultIds.forEach((quizResultId) => {
+        const quizResult = buildResult(quizResultId);
+
+        const quizId = quizResult.quiz.id;
+
+        if (mapOfQuiz.has(quizId)){ // Existe dans la map
+            let array = mapOfQuiz.get(quizId);
+            const result = {};
+            result.date = quizResult.date;
+            result.quizResultId = quizResultId;
+            result.quizSuccessPercentage = quizResult.quizSuccessPercentage;
+            array.push(result)
+        }else { // Existe pas dans la map
+            const array = [];
+            const result = {};
+            result.date = quizResult.date;
+            result.quizResultId = quizResultId;
+            result.quizSuccessPercentage = quizResult.quizSuccessPercentage;
+            array.push(result);
+            mapOfQuiz.set(quizId , array);
+        }
+    });
+
+    let quizzesResultIds = [];
+
+    for (let key of mapOfQuiz.keys()) {
+
+        const quizInfo  = Quiz.getById(key);
+        quizInfo.quizTries = mapOfQuiz.get(key);
+        quizzesResultIds.push(quizInfo);
+    }
+
+
+    return { ...stats, quizzesResultIds }
 }
 
 
