@@ -20,6 +20,7 @@ export class PlayQuizComponent implements OnInit {
   public beginDate: number;
   public endDate: number;
 
+  // tslint:disable-next-line:max-line-length
   constructor(private router: Router, private route: ActivatedRoute, private quizService: QuizService, private resultService: ResultService) {
     this.quizService.quizSelected$.subscribe((quiz) => this.quiz = quiz); // set class var quiz
 }

@@ -1,0 +1,34 @@
+@import "../../../styles/variables";
+
+.card{
+  margin-top: 90pt;
+}
+.card-header {
+  background-color: #3396FF !important;
+  font-weight: 900;
+  font-family: "Segoe UI Black", sans-serif;
+  font-size: 50pt;
+  color: white;
+}
+
+.card-text{
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 900;
+  font-family: "Segoe UI Black", sans-serif;
+  font-size: 40pt;
+  color: black;
+}
+
+.card-body{
+  background-color: #BADCFF !important;
+}
+
+.btn-secondary{
+  background-color: #2B7FD8 !important;
+  font-weight: 900;
+  font-family: "Segoe UI Black", sans-serif;
+  font-size: 30pt;
+}

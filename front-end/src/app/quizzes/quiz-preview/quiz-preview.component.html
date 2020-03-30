@@ -1,10 +1,10 @@
 <div class="btn-group btn-group-toggle btn-block" data-toggle="buttons" >
   <label class="btn btn-secondary col-9" id="quizbtn">
-    <input type="radio" name="options" routerLink="/play/{{quiz.id}}"> {{quiz.name}}
+    <input type="radio" name="options" routerLink="/quiz-info/{{quiz.id}}"> {{quiz.name}}
   </label>
   <label class="btn btn-secondary active col-3" id="themebtn">
-    <input type="radio" name="options" routerLink="/play/{{quiz.id}}" checked> {{quiz.difficulty}}
+    <input type="radio" name="options" checked> {{quiz.difficulty}}
   </label>
-  <button> <a href="/quiz-editor/{{quiz.id}}"> Editer </a> </button>
+
 </div>
 

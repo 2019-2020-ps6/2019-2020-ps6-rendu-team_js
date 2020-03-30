@@ -1,1 +1,21 @@
-<p>quiz-info works!</p>
+<div style="align-content: space-around">
+  <div class="card">
+    <h5 class="card-header">{{quiz.name}}</h5>
+    <div class="card-body">
+     <!--  <h5 class="card-title">Special title treatment</h5> -->
+      <p class="card-text">Thème : {{quiz.theme}}</p><br>
+      <p class="card-text">Difficulté : {{quiz.difficulty}}</p><br>
+      <p class="card-text">Ce quiz comporte  {{quiz.questions.length}} questions</p><br>
+
+      <div style="text-align: center">
+        <button type="button" class="btn btn-secondary active btn-lg col-3" onclick="history.go(-1)"> Retour </button>
+        &nbsp;
+        <button type="button" class="btn btn-secondary active btn-lg col-3" routerLink="/play/{{quiz.id}}"> Faire le quiz </button>
+        &nbsp;
+        <button type="button" class="btn btn-secondary active btn-lg col-3" routerLink="/quiz-editor/{{quiz.id}}"> Editer </button>
+      </div>
+
+    </div>
+  </div>
+</div>
+
