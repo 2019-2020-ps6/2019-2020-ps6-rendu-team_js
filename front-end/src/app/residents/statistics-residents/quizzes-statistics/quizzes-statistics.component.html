@@ -1,10 +1,13 @@
 <div class="container">
   <div class="row" id="quizInfo" (click)=toggleDisplay()>
-    <div class="col-lg-9 col-md-9 col-xs-9 xol-sm-9">
+    <div class="col-lg-8 col-md-8 col-xs-8 xol-sm-8">
       {{quizResult.name}}
     </div>
     <div id="quizDifficulty" class="col-lg-3 col-md-3 col-xs-3 xol-sm-3">
       {{quizResult.difficulty}}
+    </div>
+    <div id="arrow" class="col-lg-1 col-md-1 col-xs-1 xol-sm-1">
+      ⏷
     </div>
   </div>
 
@@ -15,7 +18,7 @@
       <div id="historyList">
           <ng-container *ngFor="let try of quizResult.quizTries; let i = index">
         <div class="item-result">
-          <app-quiz-statistics-adminside [try]="try"></app-quiz-statistics-adminside>
+          <app-quiz-statistics-adminside [try]="try" (quizResultToDisplayDetails)="quizToDisplayEvent($event)"></app-quiz-statistics-adminside>
         </div>
           </ng-container>
       </div>

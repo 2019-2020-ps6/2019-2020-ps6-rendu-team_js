@@ -5,7 +5,7 @@ export interface Result {
   maxScore: number;
   userScore: number;
   date: number;
-  answers: Answer[];
+  answers: [];
   playTime: number;
   userId: string;
   quizResultId?: number;

@@ -1,0 +1,32 @@
+
+$buttonColor: #d650ec;
+
+.button-card {
+  outline: none;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.button-card {
+  background-color: $buttonColor;
+  font-family: "Segoe UI", serif;
+  font-size: 2vmin;
+  width: 125px;
+  color: #f2f2f2;
+  padding: 5px 20px;
+  text-align: center;
+  text-decoration: none;
+  cursor: pointer;
+  transition-duration: 0.4s;
+  border: 2px solid $buttonColor;
+  border-radius: 7px;
+  font-weight: bold;
+  outline: none;
+  margin: 5px;
+}
+
+.button-card:hover {
+  background-color: #f2f2f2;
+  border: 2px solid $buttonColor;
+  color: $buttonColor;
+}
