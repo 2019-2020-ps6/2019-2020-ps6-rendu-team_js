@@ -6,7 +6,6 @@
 
 <hr class="blackLine">
 <br>
-<br>
 <div *ngIf="displayPerQuizComponent">
   <ng-container *ngFor="let quizResult of userStatistics.quizzesResultIds; let i = index">
     <app-quiz-statistics [quizResult]="quizResult"
