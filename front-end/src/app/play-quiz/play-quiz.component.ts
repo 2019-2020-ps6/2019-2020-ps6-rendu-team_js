@@ -4,7 +4,7 @@ import {ActivatedRoute, Router} from '@angular/router';
 import {QuizService} from '../../services/quiz.service';
 import {Answer, Question} from '../../models/question.model';
 import {ResultService} from '../../services/result.service';
-import {AuthService} from "../../services/auth.service";
+import {AuthService} from '../../services/auth.service';
 
 @Component({
   selector: 'app-play-quiz',

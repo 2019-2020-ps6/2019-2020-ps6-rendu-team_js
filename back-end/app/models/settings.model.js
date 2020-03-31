@@ -7,5 +7,5 @@ module.exports = new BaseModel('Settings', {
   contraste: Joi.number().required(),
   fontSize: Joi.number().required(),
   font: Joi.string().required(),
-  TailleSelection: Joi.number().required(),
+  tailleSelection: Joi.number().required(),
 })

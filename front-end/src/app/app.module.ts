@@ -35,6 +35,8 @@ import { QuizzesStatisticsComponent } from './residents/statistics-residents/qui
 import { GlobalStatisticsComponent } from './residents/statistics-residents/global-statistics/global-statistics.component';
 import { CreateAccountComponent } from './residents/create-account/create-account.component';
 import { QuizStatisticsComponent } from './residents/statistics-residents/quizzes-statistics/quiz-statistics/quiz-statistics.component';
+import { VisionSettingsComponent } from './parameters/vision-settings/vision-settings.component';
+import { MoteurSettingsComponent } from './parameters/moteur-settings/moteur-settings.component';
 
 
 
@@ -70,6 +72,8 @@ import { QuizStatisticsComponent } from './residents/statistics-residents/quizze
     GlobalStatisticsComponent,
     QuizStatisticsComponent,
     CreateAccountComponent,
+    VisionSettingsComponent,
+    MoteurSettingsComponent,
   ],
     imports: [
         BrowserModule,

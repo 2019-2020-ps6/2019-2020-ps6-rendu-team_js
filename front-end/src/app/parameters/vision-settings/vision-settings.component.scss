@@ -1,0 +1,61 @@
+
+$primaryColorDark: #2B7FD8;
+$primaryColor: #FFFFFF;
+$borderColor: #2B7FD8;
+$cornerRadius: 25px;
+
+
+.container {
+  background-color: $primaryColor;
+  border-radius: $cornerRadius;
+  max-width: 100%;
+}
+
+.row {
+  font-weight: 600;
+  font-size: 4.5vmin;
+}
+
+.settingName {
+  text-align: center;
+  color: $primaryColor;
+  background-color: $primaryColorDark;
+  border-top-left-radius: $cornerRadius;
+  border-bottom-left-radius: $cornerRadius;
+
+}
+
+.settingName {
+  text-align: center;
+  color: $primaryColor;
+  background-color: $primaryColorDark;
+  border-top-left-radius: $cornerRadius;
+  border-bottom-left-radius: $cornerRadius;
+
+}
+
+.middleChoose {
+  text-align: center;
+  color: $primaryColorDark;
+  background-color: $primaryColor;
+  border: 1px solid $primaryColorDark;
+}
+
+.lastChoose {
+  text-align: center;
+  color: $primaryColorDark;
+  background-color: $primaryColor;
+  border: 1px solid $primaryColorDark;
+  border-top-right-radius: $cornerRadius;
+  border-bottom-right-radius: $cornerRadius;
+}
+
+.form-check-input {
+  transform : scale(3.5);
+}
+
+.form-check-input {
+  position: relative;
+  margin: 0px 20px;
+  vertical-align: middle;
+}
