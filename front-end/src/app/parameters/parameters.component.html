@@ -1,12 +1,17 @@
 <h1>Paramètres vision</h1>
+<button type="submit" class="button-card" (click)=resetSettingsToDefault()>Réinitialiser</button>
 <hr class="blackLine">
 
 <app-vision-settings [contrast]="userSettings.contraste"
                      [font]="userSettings.font"
-                     [fontSize]="userSettings.fontSize">
+                     [fontSize]="userSettings.fontSize"
+                     (contrastSelected)="contrastEvent($event)"
+                     (fontSizeSelected)="fontSizeEvent($event)">
 </app-vision-settings>
 
 <h1>Paramètres moteur</h1>
 <hr class="blackLine">
 
-<app-moteur-settings [tailleSelection]="userSettings.tailleSelection"></app-moteur-settings>
+<app-moteur-settings [tailleSelection]="userSettings.tailleSelection"
+                     (tailleSelectionSelected)="tailleSelectionEvent($event)">
+</app-moteur-settings>

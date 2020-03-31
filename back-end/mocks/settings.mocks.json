@@ -2,7 +2,7 @@
   {
     "handicapVisuel": true,
     "handicapMoteur": false,
-    "contraste": 1,
+    "contraste": 2,
     "fontSize": 2,
     "font": "Segoe UI",
     "tailleSelection": 1,
@@ -11,7 +11,7 @@
   {
     "handicapVisuel": true,
     "handicapMoteur": false,
-    "contraste": 1,
+    "contraste": 2,
     "fontSize": 2,
     "font": "Segoe UI",
     "tailleSelection": 1,
@@ -79,6 +79,15 @@
     "font": "Segoe UI",
     "tailleSelection": 2,
     "id": 1585655522153
+  },
+  {
+    "handicapVisuel": false,
+    "handicapMoteur": true,
+    "contraste": 1,
+    "fontSize": 1,
+    "font": "Segoe UI",
+    "tailleSelection": 2,
+    "id": 1585655945443
   },
   {
     "handicapVisuel": true,

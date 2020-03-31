@@ -1,7 +1,7 @@
 const { Router } = require('express')
 const logger = require('../../../utils/logger.js')
 const {Settings} = require("../../../models");
-const { buildSettings } = require('./manager')
+const { resetSettings } = require('./manager')
 
 const router = new Router({ mergeParams: true })
 
@@ -33,6 +33,16 @@ router.put('/:residentId', (req, res) => {
   }
 })
 
+router.put('/resetSettings/:residentId', (req, res) => {
+  try {
+    const result = resetSettings(req.params.residentId, req.body.handicapVisuel, req.body.handicapMoteur);
+
+    res.status(200).json(result)
+  } catch (err) {
+    res.status(404).json(err)
+  }
+})
+
 module.exports = router
 
 
@@ -44,7 +54,7 @@ module.exports = router
     "contraste" : 1,
     "fontSize" : 2,
     "font" : "Segoe UI",
-    "TailleSelection" : 1
+    "tailleSelection" : 1
 }
 
  */

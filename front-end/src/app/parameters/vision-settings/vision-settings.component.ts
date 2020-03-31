@@ -1,4 +1,4 @@
-import {Component, Input, OnInit} from '@angular/core';
+import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
 
 @Component({
   selector: 'app-vision-settings',
@@ -11,9 +11,20 @@ export class VisionSettingsComponent implements OnInit {
   @Input() fontSize: number;
   @Input() font: string;
 
+  @Output() contrastSelected = new EventEmitter<number>();
+  @Output() fontSizeSelected = new EventEmitter<number>();
+
   constructor() { }
 
   ngOnInit() {
+  }
+
+  contrastSelectedEmit(valeur) {
+    this.contrastSelected.emit(valeur);
+  }
+
+  fontSizeSelectedEmit(valeur) {
+    this.fontSizeSelected.emit(valeur);
   }
 
 }
