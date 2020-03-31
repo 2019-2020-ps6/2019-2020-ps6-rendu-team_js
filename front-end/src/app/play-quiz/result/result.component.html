@@ -1,3 +1,4 @@
+<ng-container *ngIf = "quizResult != null">
 <h1>Résultats</h1>
 <hr class="blackLine">
 
@@ -11,3 +12,4 @@
 <app-quiz-result-list [answers]="quizResult.answers"
                       [quizId]="quizResult.quizId">
 </app-quiz-result-list>
+</ng-container>
