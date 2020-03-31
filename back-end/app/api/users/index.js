@@ -1,7 +1,7 @@
 const {Router} = require('express')
 const session = require('express-session')
 const {User} = require('../../models')
-const {isFirstAndLastNameExist} = require('./manager')
+const {isFirstAndLastNameExist, getCorrectFormatString, getUserByUsername} = require('./manager')
 const manageAllErrors = require('../../utils/routes/error-management')
 const cors = require('cors')
 const {createSettings} = require('../users/settings/manager')
@@ -82,8 +82,8 @@ router.post('/', async (req, res) => {
     try {
         console.log(req.body);
 
-        firstName = req.body.firstName;
-        lastName = req.body.lastName;
+        firstName = getCorrectFormatString(req.body.firstName);
+        lastName = getCorrectFormatString(req.body.lastName);
         assistanceMoteur = req.body.assistanceMoteur;
         assistanceVisuelle = req.body.assistanceVisuelle;
 
@@ -103,12 +103,14 @@ router.post('/', async (req, res) => {
         const tempUser = {...req.body};
         delete tempUser.assistanceMoteur;
         delete tempUser.assistanceVisuelle;
+        tempUser.firstName = firstName;
+        tempUser.lastName = lastName;
+        tempUser.username = firstName + ' ' + lastName;
+        tempUser.password = await bcrypt.hash(req.body.password, 10);
 
         console.log(tempUser);
-
         let user = User.create(tempUser);
-        user.password = await bcrypt.hash(req.body.password, 10);
-        User.save();
+        // User.save();
 
         createSettings(user.id, assistanceVisuelle, assistanceMoteur);
 
@@ -122,7 +124,7 @@ router.post('/', async (req, res) => {
 router.post('/login', async (req, res) => {
 
     try {
-        const user = User.items.find((u) => u.username.toLowerCase() === req.body.username.toLowerCase());
+        const user = getUserByUsername(req.body.username);
         console.log(req.body.username);
 
         if (user === undefined) {
@@ -157,7 +159,7 @@ router.get('/login', (req, res) => {
 
         if (req.body.username !== undefined) {
 
-            const user = User.get().find((u) => u.username === req.body.username);
+            const user = getUserByUsername(req.body.username);
             console.log(user);
             return res.status(200).json(user);
         }
