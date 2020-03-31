@@ -17,7 +17,7 @@ export class ResultComponent implements OnInit {
   }
 
   ngOnInit() {
-    const id = this.route.snapshot.paramMap.get('id');
+    const id = this.route.snapshot.paramMap.get('resId');
     this.resultService.setSelectedResult(id);
   }
 

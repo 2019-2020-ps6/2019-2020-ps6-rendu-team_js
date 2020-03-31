@@ -1,5 +1,12 @@
 <h1>Paramètres vision</h1>
 <hr class="blackLine">
 
+<app-vision-settings [contrast]="userSettings.contraste"
+                     [font]="userSettings.font"
+                     [fontSize]="userSettings.fontSize">
+</app-vision-settings>
+
 <h1>Paramètres moteur</h1>
 <hr class="blackLine">
+
+<app-moteur-settings [tailleSelection]="userSettings.tailleSelection"></app-moteur-settings>

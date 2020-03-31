@@ -1,4 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import {ActivatedRoute} from '@angular/router';
+import {AuthService} from '../../services/auth.service';
+import {SettingsService} from '../../services/settings.service';
+import {Settings} from '../../models/settings.model';
 
 @Component({
   selector: 'app-parameters',
@@ -7,9 +11,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ParametersComponent implements OnInit {
 
-  constructor() { }
+  private userSettings: Settings;
+
+  constructor(private route: ActivatedRoute, private settingsService: SettingsService, private auth: AuthService) {
+    this.settingsService.settingsSelected$.subscribe((settings) => this.userSettings = settings);
+  }
 
   ngOnInit() {
+    const userId = this.auth.user.id.toString();
+    this.settingsService.setSelectedSettings(userId);
   }
+
 
 }

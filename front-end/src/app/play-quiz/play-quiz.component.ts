@@ -1,9 +1,10 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {Quiz} from '../../models/quiz.model';
 import {ActivatedRoute, Router} from '@angular/router';
 import {QuizService} from '../../services/quiz.service';
 import {Answer, Question} from '../../models/question.model';
 import {ResultService} from '../../services/result.service';
+import {AuthService} from '../../services/auth.service';
 
 @Component({
   selector: 'app-play-quiz',
@@ -20,10 +21,13 @@ export class PlayQuizComponent implements OnInit {
   public beginDate: number;
   public endDate: number;
 
+  public resultId = -1;
+  private isAlReadyCalled = false;  // TODO find why when isOver = true, methods are called questionNumber times
+
   // tslint:disable-next-line:max-line-length
-  constructor(private router: Router, private route: ActivatedRoute, private quizService: QuizService, private resultService: ResultService) {
+  constructor(private router: Router, private route: ActivatedRoute, private quizService: QuizService, private resultService: ResultService, private authService: AuthService) {
     this.quizService.quizSelected$.subscribe((quiz) => this.quiz = quiz); // set class var quiz
-}
+  }
 
   ngOnInit() {
     const id = this.route.snapshot.paramMap.get('id');
@@ -53,7 +57,16 @@ export class PlayQuizComponent implements OnInit {
   }
 
   redirectToResult() {
-    this.router.navigate(['/play', this.sendFinalAnswerToServiceAndReturnResponseId(), 'result']);
+    if (this.isAlReadyCalled === false) {
+      const completeAnswer = this.generateFinalUserAnswer();
+      this.sendFinalAnswerToServiceAndSetResponseId(completeAnswer);
+      this.isAlReadyCalled = true;
+    }
+    if (this.resultId !== -1) {
+      this.router.navigate(['/result', this.resultId]);
+    } else {
+      this.router.navigate(['/']);
+    }
   }
 
   setBeginDateToCurrent() {
@@ -69,24 +82,30 @@ export class PlayQuizComponent implements OnInit {
   }
 
   generateFinalUserAnswer() {
-    const tmp = {quizId: this.quiz.id + '',
+    const tmp = {
+      quizId: this.quiz.id + '',
       answers: this.userAnswers,
       playTime: this.getPlayTime(),
       date: this.beginDate,
-      userId: -1
+      userId: Number(this.authService.user.id)
     };
 
     // console.log('final user answer object', tmp);
     return tmp;
   }
 
-  sendFinalAnswerToServiceAndReturnResponseId(): number {
-    this.resultService.addResult(this.generateFinalUserAnswer());
+  sendFinalAnswerToServiceAndSetResponseId(completeAnswer) {
+    this.resultService.addResult(completeAnswer);
     this.resultService.resultIdSelected$.subscribe((res: number) => {
-      console.log('result id front side', res);
+      // console.log('result id front side', res);
+      this.setResultId(res);
     });
-    return 1585603031965; // mock result
+    console.log('resIdFinal', this.resultId);
     // this.resultService.resultIdSelected$.unsubscribe()
+  }
+
+  setResultId(resultId: number) {
+    this.resultId = resultId;
   }
 
 }
