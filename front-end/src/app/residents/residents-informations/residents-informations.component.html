@@ -19,10 +19,10 @@
 
       <hr class="blackLine"  *ngIf="!isDeleteButtonPressed">
 
-      <button (click)="backPressed()" *ngIf="!isDeleteButtonPressed" class="link-card share-button-bg">Partager les paramètres du compte</button>
-      <button (click)="backPressed()" *ngIf="!isDeleteButtonPressed" class="link-card stats-button-bg">Statistiques</button>
+      <button (click)="shareButtonPressed()" *ngIf="!isDeleteButtonPressed" class="link-card share-button-bg">Partager les paramètres du compte</button>
+      <button (click)="statsButtonPressed()" *ngIf="!isDeleteButtonPressed" class="link-card stats-button-bg">Statistiques</button>
       <button (click)="deleteButtonPressed()" [ngClass]="isDeleteButtonPressed ? 'deletePressed' : ''" class="link-card delete-button-bg">
-        <div *ngIf="!isDeleteButtonPressed">Supprimer le compte </div>
+        <div *ngIf="!isDeleteButtonPressed">Supprimer le compte</div>
         <div *ngIf="isDeleteButtonPressed">Comfirmer la suppression du compte</div>
       </button>
 

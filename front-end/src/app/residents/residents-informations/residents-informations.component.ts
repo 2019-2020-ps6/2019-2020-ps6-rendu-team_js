@@ -42,4 +42,12 @@ export class ResidentsInformationsComponent implements OnInit {
       this.isDeleteButtonPressed = true;
     }
   }
+
+  statsButtonPressed() {
+
+  }
+
+  shareButtonPressed() {
+
+  }
 }

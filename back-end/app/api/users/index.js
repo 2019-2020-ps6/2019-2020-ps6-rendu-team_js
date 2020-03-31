@@ -116,7 +116,7 @@ router.post('/', async (req, res) => {
 router.post('/login', async (req, res) => {
 
     try {
-        const user = User.items.find((u) => u.username === req.body.username);
+        const user = User.items.find((u) => u.username.toLowerCase() === req.body.username.toLowerCase());
         console.log(req.body.username);
 
         if (user === undefined) {
@@ -149,9 +149,15 @@ router.get('/login', (req, res) => {
             return res.status(200).json(user);
         }
 
-        const user = User.items.find((u) => u.username === req.body.username);
-        console.log(user);
-        return res.status(200).json(user);
+        if(req.body.username !== undefined){
+
+            const user = User.get().find((u) => u.username === req.body.username);
+            console.log(user);
+            return res.status(200).json(user);
+        }
+
+        return res.status(200).json({}); // if not found return empty object
+
 
     } catch (err) {
         manageAllErrors(res, err)
