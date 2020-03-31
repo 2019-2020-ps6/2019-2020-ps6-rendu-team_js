@@ -2,34 +2,42 @@
 <hr class="blackLine">
 <br>
 <br>
-<div class="container">
-  <div class="row" id="totalQuiz">
-    <div class="col-lg-9 col-md-9 col-xs-9 xol-sm-9 itemTitle">
-      Quiz faits au total
-    </div>
-    <div id="totalQuizValue" class="col-lg-3 col-md-3 col-xs-3 xol-sm-3 itemTitle">
-      <div *ngIf="userStatistics == undefined;else definedTotalQuiz">000</div>
-      <ng-template #definedTotalQuiz> {{userStatistics.totalQuizMade}} </ng-template>
+<div *ngIf="userStatistics == undefined">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-12 col-md-12 col-xs-12 xol-sm-12">
+        Faites un premier quiz 😄 pour avoir des statistiques !
+      </div>
     </div>
   </div>
+</div>
+<div *ngIf="userStatistics != undefined">
+  <div class="container">
+    <div class="row" id="totalQuiz">
+      <div class="col-lg-9 col-md-9 col-xs-9 xol-sm-9">
+        Quiz faits au total
+      </div>
+      <div id="totalQuizValue" class="col-lg-3 col-md-3 col-xs-3 xol-sm-3">
+        {{userStatistics.totalQuizMade}}
+      </div>
+    </div>
 
-  <div class="row" id="weekQuiz">
-    <div class="col-lg-9 col-md-9 col-xs-9 xol-sm-9 itemTitle">
-      Quiz faits cette semaine
+    <div class="row" id="weekQuiz">
+      <div class="col-lg-9 col-md-9 col-xs-9 xol-sm-9">
+        Quiz faits cette semaine
+      </div>
+      <div id="weekQuizValue" class="col-lg-3 col-md-3 col-xs-3 xol-sm-3">
+        {{userStatistics.weekQuizMade}}
+      </div>
     </div>
-    <div id="weekQuizValue" class="col-lg-3 col-md-3 col-xs-3 xol-sm-3 itemTitle">
-      <div *ngIf="userStatistics == undefined;else definedQuizValue">000</div>
-      <ng-template #definedQuizValue> {{userStatistics.weekQuizMade}} </ng-template>
-    </div>
-  </div>
 
-  <div class="row" id="successPercentage">
-    <div class="col-lg-9 col-md-9 col-xs-9 xol-sm-9 itemTitle">
-      Taux de réussite
-    </div>
-    <div id="successPercentageValue" class="col-lg-3 col-md-3 col-xs-3 xol-sm-3 itemTitle">
-      <div *ngIf="userStatistics == undefined;else definedSuccessPercentage">???%</div>
-      <ng-template #definedSuccessPercentage> {{userStatistics.successPercentage| number:'1.2-2'}} % </ng-template>
+    <div class="row" id="successPercentage">
+      <div class="col-lg-9 col-md-9 col-xs-9 xol-sm-9 itemTitle">
+        Taux de réussite
+      </div>
+      <div id="successPercentageValue" class="col-lg-3 col-md-3 col-xs-3 xol-sm-3 itemTitle">
+        {{userStatistics.successPercentage| number:'1.2-2'}} %
+      </div>
     </div>
   </div>
 </div>
