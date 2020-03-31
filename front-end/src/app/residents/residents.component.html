@@ -8,9 +8,9 @@
 
 
 <div  [ngClass]="isWindowOpen()? 'blur' : ''" >
-  <app-residents-list (userInformation)="openResidentInformationWindow($event)"></app-residents-list>
+  <app-residents-list [users]="users" (userInformation)="openResidentInformationWindow($event)"></app-residents-list>
 </div>
 
 <div *ngIf="isWindowOpen()" class="background"></div>
-<app-create-account *ngIf="isCreateAccountWindowOpen" (isBackPressed)="isCreateAccountWindowOpen=!$event"></app-create-account>
-<app-residents-informations *ngIf="isInformationWindowOpen" (isBackPressed)="isInformationWindowOpen=!$event" [user]="getUserSelectedInformation()"></app-residents-informations>
+<app-create-account (isAccountCreated)="updateResidentsList()" *ngIf="isCreateAccountWindowOpen" (isBackPressed)="isCreateAccountWindowOpen=!$event"></app-create-account>
+<app-residents-informations *ngIf="isInformationWindowOpen" (isBackPressed)="isInformationWindowOpen=!$event" (isModifyingEventHappened)="updateResidentsList()" [user]="getUserSelectedInformation()"></app-residents-informations>

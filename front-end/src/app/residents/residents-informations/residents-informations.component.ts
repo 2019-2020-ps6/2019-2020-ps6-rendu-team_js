@@ -1,5 +1,7 @@
 import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
 import {User} from '../../../models/user.model';
+import {AuthService} from '../../../services/auth.service';
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-residents-informations',
@@ -17,12 +19,16 @@ export class ResidentsInformationsComponent implements OnInit {
   @Output()
   isBackPressed: EventEmitter<boolean> = new EventEmitter<boolean>();
 
+  @Output()
+  isModifyingEventHappened: EventEmitter<boolean> = new EventEmitter<boolean>(); // emit to update the resident list;
+
   private isDeleteButtonPressed: boolean;
 
   @Input()
   user: User;
 
-  constructor() {
+  constructor(private authServices: AuthService,
+              private router: Router) {
   }
 
   ngOnInit() {
@@ -37,7 +43,6 @@ export class ResidentsInformationsComponent implements OnInit {
   deleteButtonPressed() {
     if (this.isDeleteButtonPressed === true) {
       this.isDeleteButtonPressed = false;
-      console.log('to Delete');
     } else {
       this.isDeleteButtonPressed = true;
     }
@@ -49,5 +54,12 @@ export class ResidentsInformationsComponent implements OnInit {
 
   shareButtonPressed() {
 
+  }
+
+  confirmDeletionPressed() {
+    this.authServices.deleteResidentAccount(this.user).subscribe(() => {
+      this.isModifyingEventHappened.emit(true);
+      this.backPressed();
+    });
   }
 }

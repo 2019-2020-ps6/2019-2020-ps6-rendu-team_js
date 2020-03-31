@@ -1,4 +1,4 @@
-import {Component, EventEmitter, OnInit, Output} from '@angular/core';
+import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
 import {User} from '../../../models/user.model';
 import {BehaviorSubject} from 'rxjs';
 import {AuthService} from '../../../services/auth.service';
@@ -10,6 +10,7 @@ import {AuthService} from '../../../services/auth.service';
 })
 export class ResidentsListComponent implements OnInit {
 
+  @Input()
   users: User[];
 
   @Output()
@@ -20,7 +21,6 @@ export class ResidentsListComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.updateResidentsList();
   }
 
   emitUser(user: User) {
@@ -28,9 +28,5 @@ export class ResidentsListComponent implements OnInit {
     console.log('user id: ' + user.id);
   }
 
-  updateResidentsList() {
-    this.authServices.getResidents().subscribe((users) => {
-      this.users = users as User[];
-    });
-  }
+
 }

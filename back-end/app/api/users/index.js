@@ -1,7 +1,7 @@
 const {Router} = require('express')
 const session = require('express-session')
 const {User} = require('../../models')
-const { isFirstAndLastNameExist } = require('./manager')
+const {isFirstAndLastNameExist} = require('./manager')
 const manageAllErrors = require('../../utils/routes/error-management')
 const cors = require('cors')
 const {createSettings} = require('../users/settings/manager')
@@ -64,7 +64,13 @@ router.use(session({
 router.get('/residents', (req, res) => {
 
     try {
-        res.status(200).json(User.get().filter((u) => u.accountLevel === 0));
+        res.status(200).json(User.get()
+            .filter((u) => u.accountLevel === 0)
+            .sort(function (a, b) {
+                if(a.lastName.toLowerCase() < b.lastName.toLowerCase()) { return -1; }
+                if(a.lastName.toLowerCase() > b.lastName.toLowerCase()) { return 1; }
+                return 0;
+            }));
     } catch (err) {
         manageAllErrors(res, err)
     }
@@ -87,14 +93,14 @@ router.post('/', async (req, res) => {
 
         alreadyExist = isFirstAndLastNameExist(firstName, lastName);
         console.log(alreadyExist);
-        if(alreadyExist){
+        if (alreadyExist) {
             return res.status(200).json({'errors': 'Ce nom et prénom existe déjà'})
         }
 
 
-        console.log('visu : ' + assistanceVisuelle + '        mot : ' + assistanceMoteur );
+        console.log('visu : ' + assistanceVisuelle + '        mot : ' + assistanceMoteur);
 
-        const tempUser = { ...req.body};
+        const tempUser = {...req.body};
         delete tempUser.assistanceMoteur;
         delete tempUser.assistanceVisuelle;
 
@@ -149,7 +155,7 @@ router.get('/login', (req, res) => {
             return res.status(200).json(user);
         }
 
-        if(req.body.username !== undefined){
+        if (req.body.username !== undefined) {
 
             const user = User.get().find((u) => u.username === req.body.username);
             console.log(user);
@@ -183,6 +189,31 @@ router.get('/logout', (req, res) => {
 });
 
 
+// router.put('/:userId', (req, res) => {
+//     try {
+//         const question = getQuestionFromQuiz(req.params.quizId, req.params.questionId)
+//         const updatedQuestion = Question.update(req.params.questionId, { label: req.body.label, quizId: question.quizId })
+//         res.status(200).json(updatedQuestion)
+//     } catch (err) {
+//         manageAllErrors(res, err)
+//     }
+// })
+
+router.delete('/:userId', (req, res) => {
+    try {
+        // Check if the user id exists & if the user has the same userId as the one provided in the url.
+        const user = User.getById(req.params.userId);
+
+        if (user !== undefined) {
+            User.delete(req.params.userId);
+            return res.status(204).end();
+        }
+
+        return res.status(404).end();
+    } catch (err) {
+        manageAllErrors(res, err)
+    }
+});
 
 
 module.exports = router;

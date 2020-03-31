@@ -24,6 +24,8 @@ export class CreateAccountComponent implements OnInit {
   @Output()
   isBackPressed: EventEmitter<boolean> = new EventEmitter<boolean>();
 
+  @Output()
+  isAccountCreated: EventEmitter<boolean> = new EventEmitter<boolean>();
 
   constructor(private authService: AuthService,
               private formBuilder: FormBuilder) {
@@ -41,6 +43,7 @@ export class CreateAccountComponent implements OnInit {
     this.isBackPressed.emit(true);
   }
 
+
   createPressed() {
     const firstName = this.createForm.get('firstName').value;
     const lastName = this.createForm.get('lastName').value;
@@ -51,9 +54,8 @@ export class CreateAccountComponent implements OnInit {
     this.authService.createResidentAccount(firstName, lastName, this.getAssistanceVisuelle(), this.getAssistanceMoteur())
       .then((callback) => {
 
-      console.log(callback.toString());
-
       if (callback.toString() === '') {
+        this.isAccountCreated.emit(true);
         this.backPressed();
       }
 

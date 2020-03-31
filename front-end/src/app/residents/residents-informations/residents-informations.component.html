@@ -31,7 +31,7 @@
       <div class="button-container">
         <button (click)="backPressed()" class="button-card back-button-bg">Retour</button>
         <button class="button-card create-button-bg" *ngIf="!isDeleteButtonPressed">Enregistrer</button>
-        <button class="button-card delete-button-bg" *ngIf="isDeleteButtonPressed">Supprimer</button>
+        <button (click)="confirmDeletionPressed()" class="button-card delete-button-bg" *ngIf="isDeleteButtonPressed">Supprimer</button>
       </div>
 
     </div>

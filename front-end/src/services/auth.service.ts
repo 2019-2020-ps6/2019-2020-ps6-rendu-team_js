@@ -129,4 +129,9 @@ export class AuthService {
   getResidents() {
     return this.http.get(this.authUrl + '/' + this.residentsPath, httpOptionsBase);
   }
+
+  deleteResidentAccount(user: User) {
+    const urlWithId = this.authUrl + '/' + user.id;
+    return this.http.delete<User>(urlWithId, httpOptionsBase);
+  }
 }
