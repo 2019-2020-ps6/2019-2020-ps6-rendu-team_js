@@ -17,7 +17,8 @@ export class CreateAccountComponent implements OnInit {
 
 
   public createForm: FormGroup;
-  private error: string;
+  // private error: string;
+  private error = 'aaaaaaaaaaaaa aaaaaaaaaaaaaaaa aaaaaaaaaaa aaaaaaaaaaaa aaaaaaaaaaaaaaa';
   private isLoading: boolean;
 
   @Output()
@@ -46,6 +47,19 @@ export class CreateAccountComponent implements OnInit {
 
     console.log(firstName + ' ' + lastName);
     console.log(this.getAssistanceValue());
+    this.isLoading = true;
+
+    this.authService.createResidentAccount(firstName, lastName).then((callback) => {
+
+      console.log(callback.toString());
+
+      if (callback.toString() === '') {
+        this.backPressed();
+      }
+
+      this.error = callback.toString();
+      this.isLoading = false;
+    });
   }
 
   changeState(id: number) {
@@ -56,6 +70,5 @@ export class CreateAccountComponent implements OnInit {
     return this.assistanceArray.filter((v) => v.checked).map((item) => {
       return item.value;
     });
-
   }
 }

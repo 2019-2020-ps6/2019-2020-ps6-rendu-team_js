@@ -27,7 +27,29 @@ export class MenuButtonComponent implements OnInit {
 
   goTo() {
     if (this.routerPath !== '') {
-      this.router.navigate([this.routerPath]);
+      const pathsDisplayed = this.routerPath.split(' ');
+      console.log(pathsDisplayed[0]);
+      this.router.navigate([pathsDisplayed[0]]);
     }
+  }
+
+  isArrowDisplayed() {
+    const pathsDisplayed = this.routerPath.split(' ');
+    const path = this.location.path().split('/');
+
+    // console.log(path[1] + ' ' + pathsDisplayed[0])
+    if (path.length <= 1) {
+      return false;
+    }
+
+    let isDisplayed = false;
+
+    pathsDisplayed.forEach((s) => {
+      if (path[1] === s) {
+        isDisplayed = true;
+      }
+    });
+
+    return isDisplayed;
   }
 }

@@ -5,13 +5,13 @@
     <div class="text">{{name}}</div>
   </div>
 
-  <div class="arrow-container" *ngIf="location.path() === '/'+ routerPath">
+  <div class="arrow-container" *ngIf="isArrowDisplayed()">
     <svg class="arrow-img" xmlns="http://www.w3.org/2000/svg" width="20" height="77" viewBox="0 0 20 77">
       <path [ngStyle]="{'fill': bgColor}" d="M38.5,0,77,20H0Z" transform="translate(20) rotate(90)" fill="#dca409"/>
     </svg>
   </div>
 
-  <div class="arrow-container not-displayed" *ngIf="location.path() !== '/'+ routerPath">
+  <div class="arrow-container not-displayed" *ngIf="!isArrowDisplayed()">
     <svg class="arrow-img" xmlns="http://www.w3.org/2000/svg" width="20" height="77" viewBox="0 0 20 77">
       <path class="not-displayed" d="M38.5,0,77,20H0Z" transform="translate(20) rotate(90)"/>
     </svg>
