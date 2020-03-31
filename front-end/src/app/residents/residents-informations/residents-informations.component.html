@@ -3,7 +3,7 @@
 
     <div class="table">
 
-      <div class="text-create-account">{{user.username}}</div>
+      <div class="text-create-account">{{user.firstName}} {{user.lastName.toUpperCase()}}</div>
       <hr class="blackLine">
 
       <div class="assistance-container" *ngIf="!isDeleteButtonPressed">
