@@ -56,7 +56,8 @@ export class PlayQuizComponent implements OnInit {
   }
 
   redirectToResult() {
-    this.sendFinalAnswerToServiceAndSetResponseId();
+    const completeAnswer = this.generateFinalUserAnswer();
+    this.sendFinalAnswerToServiceAndSetResponseId(completeAnswer);
     if (this.resultId !== -1) {
       this.router.navigate(['/result', this.resultId]);
     }
@@ -86,8 +87,8 @@ export class PlayQuizComponent implements OnInit {
     return tmp;
   }
 
-  sendFinalAnswerToServiceAndSetResponseId() {
-    this.resultService.addResult(this.generateFinalUserAnswer());
+  sendFinalAnswerToServiceAndSetResponseId(completeAnswer) {
+    this.resultService.addResult(completeAnswer);
     this.resultService.resultIdSelected$.subscribe((res: number) => {
       // console.log('result id front side', res);
       this.setResultId(res);
