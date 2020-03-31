@@ -22,6 +22,7 @@ export class PlayQuizComponent implements OnInit {
   public endDate: number;
 
   public resultId = -1;
+  private isAlReadyCalled = false;  // TODO find why when isOver = true, methods are called questionNumber times
 
   // tslint:disable-next-line:max-line-length
   constructor(private router: Router, private route: ActivatedRoute, private quizService: QuizService, private resultService: ResultService, private authService: AuthService) {
@@ -56,10 +57,16 @@ export class PlayQuizComponent implements OnInit {
   }
 
   redirectToResult() {
-    const completeAnswer = this.generateFinalUserAnswer();
-    this.sendFinalAnswerToServiceAndSetResponseId(completeAnswer);
+    if (this.isAlReadyCalled === false) {
+      const completeAnswer = this.generateFinalUserAnswer();
+      this.sendFinalAnswerToServiceAndSetResponseId(completeAnswer);
+      this.isAlReadyCalled = true;
+    }
     if (this.resultId !== -1) {
       this.router.navigate(['/result', this.resultId]);
+    }
+    else {
+      this.router.navigate(['/']);
     }
   }
 
