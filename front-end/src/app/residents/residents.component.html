@@ -1,18 +1,16 @@
-<div *ngIf="isCreateAccountActive" style="filter:blur(10px)">
+<div  [ngClass]="isWindowOpen()? 'blur' : ''" >
   <div class="main-container">
     <h1>Résidents</h1>
-    <a class="create-button" (click)="openCreateAccount()">Créer un compte</a>
+    <a class="create-button" (click)="openCreateAccountWindow()">Créer un compte</a>
   </div>
   <hr class="blackLine">
 </div>
 
-<div *ngIf="!isCreateAccountActive" >
-  <div class="main-container">
-    <h1>Résidents</h1>
-    <a class="create-button" (click)="openCreateAccount()">Créer un compte</a>
-  </div>
-  <hr class="blackLine">
+
+<div  [ngClass]="isWindowOpen()? 'blur' : ''" >
+  <app-residents-list (userInformation)="openResidentInformationWindow($event)"></app-residents-list>
 </div>
 
-<div *ngIf="isCreateAccountActive" class="background"></div>
-<app-create-account *ngIf="isCreateAccountActive" (isBackPressed)="isCreateAccountActive=!$event"></app-create-account>
+<div *ngIf="isWindowOpen()" class="background"></div>
+<app-create-account *ngIf="isCreateAccountWindowOpen" (isBackPressed)="isCreateAccountWindowOpen=!$event"></app-create-account>
+<app-residents-informations *ngIf="isInformationWindowOpen" (isBackPressed)="isInformationWindowOpen=!$event" [user]="getUserSelectedInformation()"></app-residents-informations>

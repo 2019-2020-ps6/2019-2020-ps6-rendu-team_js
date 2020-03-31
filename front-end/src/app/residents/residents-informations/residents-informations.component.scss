@@ -14,6 +14,7 @@
 
 .table {
   padding: 2vmin;
+  width: 60vmin;
   border: #D8F8FF 0px solid;
   border-radius: 5vmin;
   background-color: #D8F8FF;
@@ -41,7 +42,6 @@
 
 .input-custom {
   padding: 1vmin;
-  margin-bottom: 1vmin;
   border: grey 2px solid;
   border-radius: 2vmin;
   font-family: "Segoe UI Black", sans-serif;
@@ -67,9 +67,41 @@
   width: 100%;
 }
 
-.back-button-bg {
-  background-color: #804b4c;
+.link-card {
+    padding: 1vmin;
+    margin-bottom: 1vmin;
+    border: #FFFFFF 0px solid;
+    border-radius: 10vmin;
+    color: white;
+    text-align: center;
+    font-family: "Segoe UI Black", sans-serif;
+    font-size: 2vmin;
+    width: 100%;
 }
+
+.back-button-bg {
+  background-color: #929292;
+}
+
+
+.share-button-bg {
+  background-color: #2E7F90;
+}
+
+.margin-top{
+  margin-top: 0.5vmin;
+}
+
+.stats-button-bg {
+  background-color: #DCA409;
+}
+
+
+.delete-button-bg {
+  background-color: #9d0000;
+}
+
+
 
 .create-button-bg {
   background-color: #6BA800;
@@ -84,28 +116,25 @@
   margin-top: 2vmin;
 }
 
-.text-input-container {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  margin-top: 3vmin;
-  margin-bottom: 2vmin;
-}
 
 .checkbox-container {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+  width: 100%;
 }
 
 .checkbox-container div {
+  width: 100%;
   margin: 1vmin;
 }
+
 
 .checkbox-container label {
   flex: 1;
   text-align: center;
   background-color: #56A5B6;
+  margin: 0px;
   padding: 1vmin;
   border: #5D5D5D 0px solid;
   border-radius: 10vmin;
@@ -113,6 +142,7 @@
   font-size: 3vmin;
   color: white;
   opacity: 0.5;
+  width: 100%;
 }
 
 .checkbox-container input{
@@ -135,30 +165,38 @@
 
 .assistance-text {
   font-family: "Segoe UI Black", sans-serif;
-  font-size: 3vmin;
+  font-size: 2vmin;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
   text-align: center;
   color: #5D5D5D;
 }
 
+
 .assistance-container {
   display: flex;
-  flex-direction: column;
-  padding-bottom: 2vmin;
+  flex-direction: row;
+  margin-bottom: 1vmin;
 }
 
 hr.blackLine{
   border-top: 2px solid grey;
 }
 
-.error-text{
-  font-size: xx-large;
-  color: #b00000;
-  width: 100vmin;
-  text-align: center;
-  display: inline-block;
-  font-family: "Segoe UI Black", serif;
-}
 
 .checkbox {
+  width: 100%;
+}
+
+.deletePressed {
+  padding: 1vmin;
+  margin-bottom: 1vmin;
+  border: #FFFFFF 0px solid;
+  border-radius: 2vmin;
+  color: white;
+  text-align: center;
+  font-family: "Segoe UI Black", sans-serif;
+  font-size: 6vmin;
   width: 100%;
 }

@@ -79,5 +79,23 @@
     "font": "Segoe UI",
     "tailleSelection": 2,
     "id": 1585655522153
+  },
+  {
+    "handicapVisuel": true,
+    "handicapMoteur": true,
+    "contraste": 2,
+    "fontSize": 2,
+    "font": "Segoe UI",
+    "tailleSelection": 2,
+    "id": 1585669840713
+  },
+  {
+    "handicapVisuel": false,
+    "handicapMoteur": false,
+    "contraste": 1,
+    "fontSize": 1,
+    "font": "Segoe UI",
+    "tailleSelection": 1,
+    "id": 1585669944962
   }
 ]

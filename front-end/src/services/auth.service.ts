@@ -17,6 +17,7 @@ export class AuthService {
   private authUrl = serverUrl + '/users';
   private loginPath = 'login';
   private logoutPath = 'logout';
+  private residentsPath = 'residents';
 
   private ERROR_ACCOUNT_LEVEL = -1;
   private DEFAULT_RESIDENT_PASSWORD = 'resident';
@@ -123,5 +124,9 @@ export class AuthService {
           resolve('Erreur : ' + error);
         });
       }));
+  }
+
+  getResidents() {
+    return this.http.get(this.authUrl + '/' + this.residentsPath, httpOptionsBase);
   }
 }

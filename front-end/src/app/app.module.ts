@@ -37,6 +37,9 @@ import { CreateAccountComponent } from './residents/create-account/create-accoun
 import { QuizStatisticsComponent } from './residents/statistics-residents/quizzes-statistics/quiz-statistics/quiz-statistics.component';
 import { VisionSettingsComponent } from './parameters/vision-settings/vision-settings.component';
 import { MoteurSettingsComponent } from './parameters/moteur-settings/moteur-settings.component';
+import { ResidentsListComponent } from './residents/residents-list/residents-list.component';
+import { ResidentsItemComponent } from './residents/residents-list/residents-item/residents-item.component';
+import { ResidentsInformationsComponent } from './residents/residents-informations/residents-informations.component';
 
 
 
@@ -74,6 +77,9 @@ import { MoteurSettingsComponent } from './parameters/moteur-settings/moteur-set
     CreateAccountComponent,
     VisionSettingsComponent,
     MoteurSettingsComponent,
+    ResidentsListComponent,
+    ResidentsItemComponent,
+    ResidentsInformationsComponent,
   ],
     imports: [
         BrowserModule,

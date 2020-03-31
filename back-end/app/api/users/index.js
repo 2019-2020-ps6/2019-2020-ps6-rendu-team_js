@@ -61,13 +61,10 @@ router.use(session({
     },
 }));
 
-router.get('/', (req, res) => {
+router.get('/residents', (req, res) => {
 
     try {
-        const {userId} = req.session;
-        // const { userSession } = req.session
-        console.log(isAuth());
-        res.status(200).json(User.get())
+        res.status(200).json(User.get().filter((u) => u.accountLevel === 0));
     } catch (err) {
         manageAllErrors(res, err)
     }

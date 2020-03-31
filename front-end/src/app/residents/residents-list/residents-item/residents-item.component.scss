@@ -1,0 +1,33 @@
+
+.resident-container {
+  background-color: #90D3E1;
+  padding: 2vmin;
+  margin: 1vmin;
+  border: 0px solid;
+  border-radius: 3vmin;
+  display: flex;
+  cursor: pointer;
+
+  height: 10vmin;
+}
+
+.resident-container:hover {
+  background-color: #7cb3bf;
+}
+
+.img-user {
+  fill: white;
+  padding-right: 1vmin;
+
+}
+
+.username {
+  font-size: 3vmin;
+  color: #2A2A2A;
+  font-family: "Segoe UI Black";
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 100%;
+  text-align: center;
+}
