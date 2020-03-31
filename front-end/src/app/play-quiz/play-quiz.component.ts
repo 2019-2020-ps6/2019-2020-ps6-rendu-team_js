@@ -4,6 +4,7 @@ import {ActivatedRoute, Router} from '@angular/router';
 import {QuizService} from '../../services/quiz.service';
 import {Answer, Question} from '../../models/question.model';
 import {ResultService} from '../../services/result.service';
+import {AuthService} from "../../services/auth.service";
 
 @Component({
   selector: 'app-play-quiz',
@@ -21,7 +22,7 @@ export class PlayQuizComponent implements OnInit {
   public endDate: number;
 
   // tslint:disable-next-line:max-line-length
-  constructor(private router: Router, private route: ActivatedRoute, private quizService: QuizService, private resultService: ResultService) {
+  constructor(private router: Router, private route: ActivatedRoute, private quizService: QuizService, private resultService: ResultService, private authService: AuthService) {
     this.quizService.quizSelected$.subscribe((quiz) => this.quiz = quiz); // set class var quiz
 }
 
@@ -73,7 +74,7 @@ export class PlayQuizComponent implements OnInit {
       answers: this.userAnswers,
       playTime: this.getPlayTime(),
       date: this.beginDate,
-      userId: -1
+      userId: Number(this.authService.user.id)
     };
 
     // console.log('final user answer object', tmp);
