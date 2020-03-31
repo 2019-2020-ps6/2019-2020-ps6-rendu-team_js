@@ -54,7 +54,7 @@ export class PlayQuizComponent implements OnInit {
   }
 
   redirectToResult() {
-    this.router.navigate(['/play', this.sendFinalAnswerToServiceAndReturnResponseId(), 'result']);
+    this.router.navigate(['/result', this.sendFinalAnswerToServiceAndReturnResponseId()]);
   }
 
   setBeginDateToCurrent() {
