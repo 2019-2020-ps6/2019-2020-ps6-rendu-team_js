@@ -90,7 +90,7 @@ export class PlayQuizComponent implements OnInit {
     this.resultService.addResult(this.generateFinalUserAnswer());
     this.resultService.resultIdSelected$.subscribe((res: number) => {
       // console.log('result id front side', res);
-      this.setResultId(res)
+      this.setResultId(res);
     });
     console.log('resFinal', this.resultId);
     // this.resultService.resultIdSelected$.unsubscribe()
