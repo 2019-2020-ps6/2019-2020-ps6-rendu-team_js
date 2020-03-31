@@ -21,7 +21,7 @@ export class PlayQuizComponent implements OnInit {
   public beginDate: number;
   public endDate: number;
 
-  public resultId: number;
+  public resultId = -1;
 
   // tslint:disable-next-line:max-line-length
   constructor(private router: Router, private route: ActivatedRoute, private quizService: QuizService, private resultService: ResultService, private authService: AuthService) {
@@ -56,7 +56,10 @@ export class PlayQuizComponent implements OnInit {
   }
 
   redirectToResult() {
-    this.router.navigate(['/result', this.sendFinalAnswerToServiceAndReturnResponseId()]);
+    this.sendFinalAnswerToServiceAndReturnResponseId();
+    if (this.resultId !== -1) {
+      this.router.navigate(['/result', this.resultId]);
+    }
   }
 
   setBeginDateToCurrent() {
@@ -83,14 +86,13 @@ export class PlayQuizComponent implements OnInit {
     return tmp;
   }
 
-  sendFinalAnswerToServiceAndReturnResponseId(): number {
+  sendFinalAnswerToServiceAndReturnResponseId() {
     this.resultService.addResult(this.generateFinalUserAnswer());
     this.resultService.resultIdSelected$.subscribe((res: number) => {
       // console.log('result id front side', res);
       this.setResultId(res)
     });
     console.log('resFinal', this.resultId);
-    return this.resultId;
     // this.resultService.resultIdSelected$.unsubscribe()
   }
 
