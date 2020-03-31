@@ -4,7 +4,7 @@ import {ActivatedRoute, Router} from '@angular/router';
 import {QuizService} from '../../services/quiz.service';
 import {Answer, Question} from '../../models/question.model';
 import {ResultService} from '../../services/result.service';
-import {AuthService} from "../../services/auth.service";
+import {AuthService} from '../../services/auth.service';
 
 @Component({
   selector: 'app-play-quiz',
@@ -20,6 +20,8 @@ export class PlayQuizComponent implements OnInit {
   public userAnswers: Answer[];
   public beginDate: number;
   public endDate: number;
+
+  public resultId: number;
 
   // tslint:disable-next-line:max-line-length
   constructor(private router: Router, private route: ActivatedRoute, private quizService: QuizService, private resultService: ResultService, private authService: AuthService) {
@@ -84,10 +86,16 @@ export class PlayQuizComponent implements OnInit {
   sendFinalAnswerToServiceAndReturnResponseId(): number {
     this.resultService.addResult(this.generateFinalUserAnswer());
     this.resultService.resultIdSelected$.subscribe((res: number) => {
-      console.log('result id front side', res);
+      // console.log('result id front side', res);
+      this.setResultId(res)
     });
-    return 1585638738670; // mock result
+    console.log('resFinal', this.resultId);
+    return this.resultId;
     // this.resultService.resultIdSelected$.unsubscribe()
+  }
+
+  setResultId(resultId: number) {
+    this.resultId = resultId;
   }
 
 }
