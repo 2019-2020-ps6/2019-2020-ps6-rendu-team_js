@@ -85,7 +85,7 @@ export class PlayQuizComponent implements OnInit {
     this.resultService.resultIdSelected$.subscribe((res: number) => {
       console.log('result id front side', res);
     });
-    return 1585603031965; // mock result
+    return 1585638738670; // mock result
     // this.resultService.resultIdSelected$.unsubscribe()
   }
 
