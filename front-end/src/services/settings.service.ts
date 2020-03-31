@@ -48,4 +48,14 @@ export class SettingsService {
       this.settingsSelected$.next(settings);
     });
   }
+
+  updateSettings(settings: Settings, userId: string) {
+    const questionUrl = this.settingsUrl + '/' + userId;
+    this.http.put<Settings>(questionUrl, settings, this.httpOptions).subscribe();
+  }
+
+  resetSettings(settings: Settings, userId: string) {
+    const questionUrl = this.settingsUrl + '/resetSettings/' + userId;
+    this.http.put<Settings>(questionUrl, settings, this.httpOptions).subscribe();
+  }
 }

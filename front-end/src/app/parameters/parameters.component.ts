@@ -23,4 +23,25 @@ export class ParametersComponent implements OnInit {
   }
 
 
+  resetSettingsToDefault() {
+    this.settingsService.resetSettings(this.userSettings, this.auth.user.id);
+    const userId = this.auth.user.id.toString();
+    this.settingsService.setSelectedSettings(userId);
+  }
+
+  tailleSelectionEvent($event) {
+    this.userSettings.tailleSelection = $event;
+    this.settingsService.updateSettings(this.userSettings, this.auth.user.id);
+  }
+
+  contrastEvent($event) {
+    this.userSettings.contraste = $event;
+    this.settingsService.updateSettings(this.userSettings, this.auth.user.id);
+  }
+
+  fontSizeEvent($event) {
+    this.userSettings.fontSize = $event;
+    this.settingsService.updateSettings(this.userSettings, this.auth.user.id);
+  }
+
 }

@@ -214,5 +214,13 @@
     "password": "$2b$10$OL9AsHhnW2ZWovDcdslAQefZ0kMY9.3FlN7h9kn9EImAu9k21lF7e",
     "accountLevel": 0,
     "id": 1585655522153
+  },
+  {
+    "username": "Louis Raffin :)",
+    "firstName": "Louis",
+    "lastName": "Raffin :)",
+    "password": "$2b$10$fdfDrYbl2wIiNYLAFOKhO.n0Tn2aerkRNYatajWG86ueR2.kumU3i",
+    "accountLevel": 0,
+    "id": 1585655945443
   }
 ]
