@@ -100,7 +100,7 @@ export class AuthService {
     });
   }
 
-  createResidentAccount(firstName: string, lastName: string) {
+  createResidentAccount(firstName: string, lastName: string, assistanceVisuelle: boolean, assistanceMoteur: boolean) {
     return new Promise(
       ((resolve, reject) => {
 
@@ -109,13 +109,14 @@ export class AuthService {
           firstName,
           lastName,
           password: this.DEFAULT_RESIDENT_PASSWORD,
-          accountLevel: 0
+          accountLevel: 0,
+          assistanceVisuelle,
+          assistanceMoteur
         };
 
         this.http.post<User>(this.authUrl + '/', userToCreate, httpOptionsBase).subscribe((u) => {
           const error = JSON.parse(JSON.stringify(u)).errors;
-          if (error === 'false') {
-            console.log('ITS FALSE');
+          if (error === '') {
             resolve('');
           }
 

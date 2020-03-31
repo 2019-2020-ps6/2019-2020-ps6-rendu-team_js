@@ -18,7 +18,7 @@ export class CreateAccountComponent implements OnInit {
 
   public createForm: FormGroup;
   // private error: string;
-  private error = 'aaaaaaaaaaaaa aaaaaaaaaaaaaaaa aaaaaaaaaaa aaaaaaaaaaaa aaaaaaaaaaaaaaa';
+  private error: string;
   private isLoading: boolean;
 
   @Output()
@@ -46,10 +46,10 @@ export class CreateAccountComponent implements OnInit {
     const lastName = this.createForm.get('lastName').value;
 
     console.log(firstName + ' ' + lastName);
-    console.log(this.getAssistanceValue());
     this.isLoading = true;
 
-    this.authService.createResidentAccount(firstName, lastName).then((callback) => {
+    this.authService.createResidentAccount(firstName, lastName, this.getAssistanceVisuelle(), this.getAssistanceMoteur())
+      .then((callback) => {
 
       console.log(callback.toString());
 
@@ -66,9 +66,14 @@ export class CreateAccountComponent implements OnInit {
     this.assistanceArray[id].checked = !this.assistanceArray[id].checked;
   }
 
-  getAssistanceValue() {
-    return this.assistanceArray.filter((v) => v.checked).map((item) => {
-      return item.value;
-    });
+  getAssistanceVisuelle() {
+    return this.assistanceArray[0].checked;
   }
+
+  getAssistanceMoteur() {
+    return this.assistanceArray[1].checked;
+  }
+
+
+
 }

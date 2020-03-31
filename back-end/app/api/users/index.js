@@ -4,6 +4,7 @@ const {User} = require('../../models')
 const { isFirstAndLastNameExist } = require('./manager')
 const manageAllErrors = require('../../utils/routes/error-management')
 const cors = require('cors')
+const {createSettings} = require('../users/settings/manager')
 
 const router = new Router()
 const bcrypt = require('bcrypt')
@@ -80,6 +81,8 @@ router.post('/', async (req, res) => {
 
         firstName = req.body.firstName;
         lastName = req.body.lastName;
+        assistanceMoteur = req.body.assistanceMoteur;
+        assistanceVisuelle = req.body.assistanceVisuelle;
 
         if (firstName === undefined || lastName === undefined) {
             return res.status(200).json({'errors': 'Nom ou prénom indéfini'})
@@ -91,10 +94,22 @@ router.post('/', async (req, res) => {
             return res.status(200).json({'errors': 'Ce nom et prénom existe déjà'})
         }
 
-        let user = User.create({...req.body});
+
+        console.log('visu : ' + assistanceVisuelle + '        mot : ' + assistanceMoteur );
+
+        const tempUser = { ...req.body};
+        delete tempUser.assistanceMoteur;
+        delete tempUser.assistanceVisuelle;
+
+        console.log(tempUser);
+
+        let user = User.create(tempUser);
         user.password = await bcrypt.hash(req.body.password, 10);
         User.save();
-        res.status(201).json({'errors': 'false'})
+
+        createSettings(user.id, assistanceVisuelle, assistanceMoteur);
+
+        res.status(201).json({'errors': ''}) // no errors
 
     } catch (err) {
         manageAllErrors(res, err)

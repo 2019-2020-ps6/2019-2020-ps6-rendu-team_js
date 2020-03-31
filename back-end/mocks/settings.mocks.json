@@ -16,5 +16,68 @@
     "font": "Segoe UI",
     "tailleSelection": 1,
     "id": 1585360751986
+  },
+  {
+    "handicapVisuel": true,
+    "handicapMoteur": true,
+    "contraste": 2,
+    "fontSize": 2,
+    "font": "Segoe UI",
+    "tailleSelection": 2,
+    "id": 1585654749401
+  },
+  {
+    "handicapVisuel": true,
+    "handicapMoteur": true,
+    "contraste": 2,
+    "fontSize": 2,
+    "font": "Segoe UI",
+    "tailleSelection": 2,
+    "id": 1585654807761
+  },
+  {
+    "handicapVisuel": true,
+    "handicapMoteur": true,
+    "contraste": 2,
+    "fontSize": 2,
+    "font": "Segoe UI",
+    "tailleSelection": 2,
+    "id": 1585655010135
+  },
+  {
+    "handicapVisuel": true,
+    "handicapMoteur": true,
+    "contraste": 2,
+    "fontSize": 2,
+    "font": "Segoe UI",
+    "tailleSelection": 2,
+    "id": 1585655124575
+  },
+  {
+    "handicapVisuel": true,
+    "handicapMoteur": false,
+    "contraste": 2,
+    "fontSize": 2,
+    "font": "Segoe UI",
+    "tailleSelection": 1,
+    "id": 1585655194450
+  },
+  {
+    "handicapVisuel": false,
+    "handicapMoteur": true,
+    "contraste": 1,
+    "fontSize": 1,
+    "font": "Segoe UI",
+    "tailleSelection": 2,
+    "id": 1585655349618
+  },
+  {
+    "handicapVisuel": true,
+    "handicapMoteur": true,
+    "contraste": 2,
+    "fontSize": 2,
+    "font": "Segoe UI",
+    "tailleSelection": 2,
+    "id": 1585655522153
   }
 ]
