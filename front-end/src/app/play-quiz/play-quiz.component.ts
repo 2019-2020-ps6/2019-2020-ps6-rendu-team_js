@@ -56,7 +56,7 @@ export class PlayQuizComponent implements OnInit {
   }
 
   redirectToResult() {
-    this.sendFinalAnswerToServiceAndReturnResponseId();
+    this.sendFinalAnswerToServiceAndSetResponseId();
     if (this.resultId !== -1) {
       this.router.navigate(['/result', this.resultId]);
     }
@@ -86,13 +86,13 @@ export class PlayQuizComponent implements OnInit {
     return tmp;
   }
 
-  sendFinalAnswerToServiceAndReturnResponseId() {
+  sendFinalAnswerToServiceAndSetResponseId() {
     this.resultService.addResult(this.generateFinalUserAnswer());
     this.resultService.resultIdSelected$.subscribe((res: number) => {
       // console.log('result id front side', res);
       this.setResultId(res);
     });
-    console.log('resFinal', this.resultId);
+    console.log('resIdFinal', this.resultId);
     // this.resultService.resultIdSelected$.unsubscribe()
   }
 
