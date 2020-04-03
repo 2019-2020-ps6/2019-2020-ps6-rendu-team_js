@@ -7,22 +7,37 @@ $buttonColor: #d650ec;
   cursor: pointer;
 }
 
-.button-card {
-  background-color: $buttonColor;
-  font-family: "Segoe UI", serif;
-  font-size: 2vmin;
-  width: 125px;
-  color: #f2f2f2;
-  padding: 5px 20px;
+.button-stats {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
   text-align: center;
-  text-decoration: none;
-  cursor: pointer;
-  transition-duration: 0.4s;
-  border: 2px solid $buttonColor;
-  border-radius: 7px;
-  font-weight: bold;
-  outline: none;
-  margin: 5px;
+
+  color: white;
+  background-color: #3CABC2;
+  border: #3CABC2 solid 0px ;
+  border-radius: 40px;
+
+  opacity: 0.5;
+
+  margin: 20px;
+  padding: 20px;
+  font-family: "Segoe UI Black";
+  font-size: xx-large;
+}
+
+.button-stats:hover{
+  color: white;
+  background-color: #47c5dc;
+}
+
+.selected{
+  background-color: #358c9f;
+  opacity: 1;
+}
+
+.selected:hover{
+  background-color: #2b6273 !important;
 }
 
 .button-card:hover {
@@ -30,3 +45,13 @@ $buttonColor: #d650ec;
    border: 2px solid $buttonColor;
    color: $buttonColor;
  }
+
+.title-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.title-container div {
+  display: flex;
+}

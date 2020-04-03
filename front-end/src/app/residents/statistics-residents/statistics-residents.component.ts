@@ -12,7 +12,17 @@ import {ResultService} from '../../../services/result.service';
 })
 export class StatisticsResidentsComponent implements OnInit {
 
-  private userStatistics: Statistics;
+  emptyStats: Statistics = {
+    currentWeek: 0,
+    successPercentage: 0,
+    totalQuizMade: 0,
+    weekQuizMade: 0,
+    perfectQuiz: 0,
+    quizzesResultIds: [],
+  };
+
+
+  private userStatistics: Statistics = this.emptyStats;
   private quizResult: Result;
 
   private displayPerQuizComponent = true;

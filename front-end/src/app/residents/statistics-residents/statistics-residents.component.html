@@ -1,10 +1,14 @@
-<h1>Statistiques</h1>
+<div class="title-container">
+  <h1>Statistiques</h1>
 
-<button type="submit" class="button-card" (click)=displayPerQuiz()>Par quiz</button>
-
-<button type="submit" class="button-card" (click)=displayGlobal()>Global</button>
+  <div>
+    <a type="submit" class="button-stats" [ngClass]="(displayPerQuizComponent)? 'selected' : ''" (click)=displayPerQuiz()>Par quiz</a>
+    <a type="submit" class="button-stats" [ngClass]="(displayGlobalComponent)?  'selected' : ''"  (click)=displayGlobal()>Global</a>
+  </div>
+</div>
 
 <hr class="blackLine">
+
 <br>
 <div *ngIf="displayPerQuizComponent">
   <ng-container *ngFor="let quizResult of userStatistics.quizzesResultIds; let i = index">

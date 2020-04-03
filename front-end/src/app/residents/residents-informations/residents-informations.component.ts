@@ -49,7 +49,7 @@ export class ResidentsInformationsComponent implements OnInit {
   }
 
   statsButtonPressed() {
-
+      this.router.navigate(['/admin/' + this.user.id + '/stats']);
   }
 
   shareButtonPressed() {
