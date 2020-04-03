@@ -79,8 +79,16 @@
     width: 100%;
 }
 
+.margin-top{
+  margin-top: 0.5vmin;
+}
+
 .back-button-bg {
   background-color: #929292;
+}
+
+.back-button-bg:hover {
+  background-color: #848484;
 }
 
 
@@ -88,25 +96,34 @@
   background-color: #2E7F90;
 }
 
-.margin-top{
-  margin-top: 0.5vmin;
+.share-button-bg:hover {
+  background-color: #286d7c;
 }
 
 .stats-button-bg {
   background-color: #DCA409;
 }
 
+.stats-button-bg:hover {
+  background-color: #bf8e08;
+}
 
 .delete-button-bg {
   background-color: #9d0000;
 }
 
+.delete-button-bg:hover {
+  background-color: #8d0000;
+}
 
 
 .create-button-bg {
   background-color: #6BA800;
 }
 
+.create-button-bg:hover {
+  background-color: #589200;
+}
 
 .button-container {
   display: flex;
@@ -153,6 +170,16 @@
   opacity: 1;
   background-color: #3CABC2;
 }
+
+.checkbox-container input:checked + label:hover {
+  opacity: 1;
+  background-color: #308a9c;
+}
+
+.checkbox-container input + label:hover {
+  opacity: 0.7;
+}
+
 
 .checkbox-container label {
   cursor: pointer;
