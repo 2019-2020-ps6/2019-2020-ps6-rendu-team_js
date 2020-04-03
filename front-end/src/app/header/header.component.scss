@@ -13,12 +13,21 @@
   display: flex;
   justify-content: space-between;
   background-color: #3D3D3D;
+  height: 4vmin;
+}
+
+.box-shadow {
   box-shadow: 0 3px 5px -1px rgba(0, 0, 0, 0.2), 0 6px 10px 0 rgba(0, 0, 0, 0.14), 0 1px 18px 0 rgba(0, 0, 0, 0.12);
 }
 
+.left-side{
+  display: flex;
+  flex-direction: row;
+}
 
 .app-name {
   width: 10vw;
+  font-size: 2vmin;
   text-align: center;
   display: flex;
   flex-direction: column;
@@ -29,24 +38,64 @@
   font-family: "Segoe UI Black", sans-serif;
 }
 
-.disconnect {
-  width: 150px;
-  color: white;
+.help-button{
   cursor: pointer;
   text-align: center;
+  color: white;
+  font-size: 2vmin;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  background-color: #65a800;
+  padding: 0.5em;
+  height: 100%;
+  font-family: "Segoe UI Black", sans-serif;
+}
+
+.help-button:hover{
+  background-color: #4e8100;
+}
+
+.help-button img{
+  height: 2vmin;
+}
+
+.text-aide {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 100%;
+  padding-left:2vmin;
+  padding-right:2vmin;
+}
+
+.disconnect {
+  cursor: pointer;
+  text-align: center;
+  color: white;
+  font-size: 2vmin;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
   background-color: #800000;
   padding: 0.5em;
   height: 100%;
+  font-family: "Segoe UI";
 }
 
 .quitter {
-  width: 150px;
-  color: white;
   cursor: pointer;
   text-align: center;
-  background-color: #5D5D5D;
+  color: white;
+  font-size: 2vmin;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background-color: #800000;
   padding: 0.5em;
   height: 100%;
+  border-bottom-left-radius: 1vmin;
+  font-family: "Segoe UI Black", sans-serif;
 }
 
 a {
@@ -61,13 +110,78 @@ a:hover {
   text-decoration: none;
 }
 
+
 .admin {
-  width: 150px;
-  color: white;
+  cursor: pointer;
   text-align: center;
-  background-color: #5D5D5D;
-  padding: 0.5em;
+  color: white;
+  font-size: 2vmin;
   display: flex;
-  justify-content: center;
   flex-direction: row;
+  justify-content: space-around;
+  background-color: #5d5d5d;
+  padding: 0.5em;
+  height: 100%;
+  font-family: "Segoe UI Black", sans-serif;
 }
+
+.admin {
+  background-color: #7b7b7b;
+}
+
+.admin div {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 100%;
+  padding-left:2vmin;
+  padding-right:2vmin;
+
+}
+
+.resident {
+  cursor: pointer;
+  text-align: center;
+  color: white;
+  font-size: 2vmin;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  background-color: #5396ec;
+  padding: 0.5em;
+  height: 100%;
+  font-family: "Segoe UI Black", sans-serif;
+
+}
+
+.resident:hover{
+  background-color: #496db9;
+}
+
+.resident div {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 100%;
+  padding-left:2vmin;
+  padding-right:2vmin;
+}
+
+.resident img {
+  width: 1.5vmin;
+}
+
+
+//.btn-header{
+//  cursor: pointer;
+//  text-align: center;
+//  color: white;
+//  font-size: 2vmin;
+//  display: flex;
+//  flex-direction: column;
+//  justify-content: center;
+//  background-color: #5d5d5d;
+//  padding: 0.5em;
+//  height: 100%;
+//  font-family: "Segoe UI Black", sans-serif;
+//}

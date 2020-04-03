@@ -40,6 +40,7 @@ import { MoteurSettingsComponent } from './parameters/moteur-settings/moteur-set
 import { ResidentsListComponent } from './residents/residents-list/residents-list.component';
 import { ResidentsItemComponent } from './residents/residents-list/residents-item/residents-item.component';
 import { ResidentsInformationsComponent } from './residents/residents-informations/residents-informations.component';
+import { HelpComponent } from './help/help.component';
 
 
 
@@ -80,6 +81,7 @@ import { ResidentsInformationsComponent } from './residents/residents-informatio
     ResidentsListComponent,
     ResidentsItemComponent,
     ResidentsInformationsComponent,
+    HelpComponent,
   ],
     imports: [
         BrowserModule,

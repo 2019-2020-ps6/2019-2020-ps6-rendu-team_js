@@ -6,5 +6,8 @@
     <div class="main-content">
       <router-outlet></router-outlet>
     </div>
+
+    <app-help *ngIf="isHelpActive"> </app-help>
+
   </div>
 </div>

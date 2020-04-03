@@ -1,25 +1,33 @@
-<div class="header"  *ngIf="displayHeader()">
+<div class="header" [ngClass]="isQuitDisplayed()? 'bg-transparent' : 'box-shadow'" *ngIf="displayHeader()">
 
-  <div >
+  <div class="left-side" >
     <div class="app-name" *ngIf="isPolyQuizDisplayed()">
       PolyQuiz
     </div>
+    <a class="help-button" *ngIf="isPolyQuizDisplayed()">
+      <img src="assets/images/flasher.png">
+      <div class="text-aide">Aide</div>
+      <img src="assets/images/flasher.png">
+    </a>
   </div>
 
 
-    <a class="disconnect" *ngIf="isDisconnectDisplayed()" (click)="logout()">
-      Déconnexion
-    </a>
+  <a class="disconnect" *ngIf="isDisconnectDisplayed()" (click)="logout()">
+    Déconnexion
+  </a>
 
-    <a class="quitter" *ngIf="isQuitDisplayed()" (click)="quitQuiz()">
-      Quitter
-    </a>
+  <a class="quitter" *ngIf="isQuitDisplayed()" (click)="quitQuiz()">
+    Quitter le quiz
+  </a>
 
-    <a class="admin" *ngIf="!authService.isAuth()" [routerLink]="['/login/admin']">
-      <img class="arrow-img" src="assets/images/lock.svg">
-      <div>
-        Admin
-      </div>
-    </a>
+  <a class="admin" *ngIf="!authService.isAuth() && !isOnAdminLoginPage()" [routerLink]="['/login/admin']">
+    <img class="arrow-img" src="assets/images/lock.svg">
+    <div> Admin </div>
+  </a>
+
+  <a class="resident" *ngIf="!authService.isAuth() && isOnAdminLoginPage()" [routerLink]="['/login/user']">
+    <img class="arrow-img" src="assets/images/user.svg">
+    <div> Résident </div>
+  </a>
 
 </div>

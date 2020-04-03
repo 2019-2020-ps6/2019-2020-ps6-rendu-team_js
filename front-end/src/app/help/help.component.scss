@@ -1,0 +1,26 @@
+.help-container {
+  position: absolute;
+  top: 50%;
+  bottom: 50%;
+  left: 50vw;
+  right: 50vw;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.background {
+  position: absolute;
+  background-color: #000000;
+  opacity: 0.5;
+
+  left: 10vw;
+  top: 0;
+
+  width: 90vw;
+  height: 100%;
+
+  filter:blur(200px);
+}

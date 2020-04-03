@@ -11,6 +11,9 @@
   border: #5396EC 5px solid;
   border-radius: 5vmin;
   background-color: #5396EC;
+  -webkit-box-shadow: 0px 0px 38px 6px rgba(0,0,0,0.31);
+  -moz-box-shadow: 0px 0px 38px 6px rgba(0,0,0,0.31);
+  box-shadow: 0px 0px 38px 6px rgba(0,0,0,0.31);
 }
 
 .text-connexion {

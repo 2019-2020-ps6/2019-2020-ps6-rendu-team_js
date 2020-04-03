@@ -18,6 +18,10 @@ export class HeaderComponent implements OnInit {
     // this.authService.user$.subscribe((b: boolean) => { this.authService.auth = b; });
   }
 
+  getCurrentPathSpliced(): string[] {
+    return this.location.path().split('/');
+  }
+
   logout() {
     this.authService.logout();
     // this.router.navigate(['/welcome']);
@@ -28,27 +32,31 @@ export class HeaderComponent implements OnInit {
   }
 
   displayHeader() {
-    const path = this.location.path().split('/');
+    const path = this.getCurrentPathSpliced();
     return path.length > 0 && path[1] !== 'welcome';
   }
 
-  isDisconnectDisplayed() {
-    const path = this.location.path().split('/');
+  isDisconnectDisplayed(): boolean {
+    const path = this.getCurrentPathSpliced();
     return this.authService.isAuth() && path.length > 0 && path[1] !== 'play' ;
   }
 
 
-  isPolyQuizDisplayed() {
-    const path = this.location.path().split('/');
+  isPolyQuizDisplayed(): boolean {
+    const path = this.getCurrentPathSpliced();
     return path.length > 0 && path[1] !== 'play' ;
   }
 
 
-  isQuitDisplayed() {
-    const path = this.location.path().split('/');
+  isQuitDisplayed(): boolean {
+    const path = this.getCurrentPathSpliced();
     return this.authService.isAuth() && path.length > 0 && path[1] === 'play';
   }
 
-
+  isOnAdminLoginPage(): boolean {
+    const path = this.getCurrentPathSpliced();
+    console.log(path.length > 2 && path[2] === 'admin');
+    return path.length > 2 && path[2] === 'admin';
+  }
 
 }

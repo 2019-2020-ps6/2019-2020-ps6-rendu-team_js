@@ -7,11 +7,13 @@ import {Location} from '@angular/common';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'polyquiz';
-  colorBackground: string;
+ colorBackground: string;
+
+  isHelpActive = false;
 
   constructor(public location: Location) {
   }
+
 
   setBackgroundColor(color: string) {
     this.colorBackground = color;
