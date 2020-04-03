@@ -13,7 +13,6 @@
   display: flex;
   justify-content: space-between;
   background-color: #3D3D3D;
-  height: 4vmin;
 }
 
 .box-shadow {
@@ -27,7 +26,7 @@
 
 .app-name {
   width: 10vw;
-  font-size: 2vmin;
+  font-size: 3vmin;
   text-align: center;
   display: flex;
   flex-direction: column;
@@ -42,7 +41,7 @@
   cursor: pointer;
   text-align: center;
   color: white;
-  font-size: 2vmin;
+  font-size: 3vmin;
   display: flex;
   flex-direction: row;
   justify-content: space-around;
@@ -57,7 +56,7 @@
 }
 
 .help-button img{
-  height: 2vmin;
+  height: 4vmin;
 }
 
 .text-aide {
@@ -73,7 +72,7 @@
   cursor: pointer;
   text-align: center;
   color: white;
-  font-size: 2vmin;
+  font-size: 3vmin;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -91,7 +90,7 @@
   cursor: pointer;
   text-align: center;
   color: white;
-  font-size: 2vmin;
+  font-size: 3vmin;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -119,7 +118,7 @@ a:hover {
   cursor: pointer;
   text-align: center;
   color: white;
-  font-size: 2vmin;
+  font-size: 3vmin;
   display: flex;
   flex-direction: row;
   justify-content: space-around;
@@ -147,7 +146,7 @@ a:hover {
   cursor: pointer;
   text-align: center;
   color: white;
-  font-size: 2vmin;
+  font-size: 3vmin;
   display: flex;
   flex-direction: row;
   justify-content: space-around;
