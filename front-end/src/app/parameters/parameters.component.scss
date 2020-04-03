@@ -1,0 +1,27 @@
+.title-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.reset-button {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+
+  color: white;
+  background-color: #8d0000;
+  border: #8d0000 solid 0px ;
+  border-radius: 20px;
+
+
+  margin: 20px;
+  padding: 20px;
+  font-family: "Segoe UI Black", sans-serif;
+  font-size: xx-large;
+}
+
+.reset-button:hover{
+  color: white;
+  background-color: #b40000;
+}

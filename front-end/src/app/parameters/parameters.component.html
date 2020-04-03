@@ -1,5 +1,8 @@
-<h1>Paramètres vision</h1>
-<button type="submit" class="button-card" (click)=resetSettingsToDefault()>Réinitialiser</button>
+
+<div class="title-container">
+  <h1>Paramètres vision</h1>
+  <a type="submit" class="reset-button" (click)=resetSettingsToDefault()>Réinitialiser</a>
+</div>
 <hr class="blackLine">
 
 <app-vision-settings [contrast]="userSettings.contraste"

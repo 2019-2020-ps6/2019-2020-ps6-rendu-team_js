@@ -80,7 +80,11 @@
   background-color: #800000;
   padding: 0.5em;
   height: 100%;
-  font-family: "Segoe UI";
+  font-family: "Segoe UI Black", sans-serif;
+}
+
+.disconnect:hover {
+  background-color: #a40000;
 }
 
 .quitter {
