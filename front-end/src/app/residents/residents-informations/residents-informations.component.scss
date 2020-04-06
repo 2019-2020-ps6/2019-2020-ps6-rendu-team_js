@@ -227,3 +227,28 @@ hr.blackLine{
   font-size: 6vmin;
   width: 100%;
 }
+
+.info-text {
+  font-size: xx-large;
+  color: white;
+  width: 100vmin;
+  text-align: center;
+  position: absolute;
+  left: 40vmin;
+  right: 60vmin;
+  top: 7vmin;
+  background-color: #6ba800;
+  border: 0 solid white;
+  border-bottom-left-radius: 2vmin;
+  border-bottom-right-radius: 2vmin;
+  font-family: "Segoe UI Black", serif;
+
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.5s ease-in-out;
+}
+
+.info-text-visible {
+  visibility: visible;
+  opacity: 1 !important;
+}

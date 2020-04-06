@@ -11,7 +11,7 @@ router.get('/', (req, res) => {
   } catch (err) {
     res.status(500).json(err)
   }
-})
+});
 
 router.get('/:residentId', (req, res) => {
   try {
@@ -21,7 +21,7 @@ router.get('/:residentId', (req, res) => {
   } catch (err) {
     res.status(404).json(err)
   }
-})
+});
 
 router.put('/:residentId', (req, res) => {
   try {
@@ -31,7 +31,7 @@ router.put('/:residentId', (req, res) => {
   } catch (err) {
     res.status(404).json(err)
   }
-})
+});
 
 router.put('/resetSettings/:residentId', (req, res) => {
   try {
@@ -41,7 +41,7 @@ router.put('/resetSettings/:residentId', (req, res) => {
   } catch (err) {
     res.status(404).json(err)
   }
-})
+});
 
 module.exports = router
 

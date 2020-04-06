@@ -1,3 +1,4 @@
+<div [ngClass]="(message !=='')? 'info-text-visible' : ''" class="info-text" [style.background-color]="(isErrorMessage)? '#8d0000' : '#6ba800'">{{message}}</div>
 <div class="create-account-container user-container ">
 
   <div class="table">
@@ -10,7 +11,7 @@
       <div class="checkbox-container">
         <div class="checkbox" *ngFor="let assistance of assistanceArray">
           <input type="checkbox" name="assistance" value="{{assistance.value}}" id="{{assistance.value}}"
-                 [checked]="assistance.checked"/>
+                 [checked]="assistance.checked" (change)="changeState(assistance.id)"/>
           <label for="{{assistance.value}}">{{assistance.name}}</label>
         </div>
       </div>
@@ -35,7 +36,7 @@
 
     <div class="button-container">
       <button (click)="backPressed()" class="button-card back-button-bg">Retour</button>
-      <button class="button-card create-button-bg" *ngIf="!isDeleteButtonPressed">Enregistrer</button>
+      <button (click)="saveButtonPressed()" class="button-card create-button-bg" *ngIf="!isDeleteButtonPressed" [disabled]="!hasChangeBeenDone()" [class.disable-button]="!hasChangeBeenDone()" >Enregistrer</button>
       <button (click)="confirmDeletionPressed()" class="button-card delete-button-bg" *ngIf="isDeleteButtonPressed">
         Supprimer
       </button>

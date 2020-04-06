@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
-import {BehaviorSubject, Observable, Subject} from 'rxjs';
+import {HttpClient, HttpResponse} from '@angular/common/http';
+import {BehaviorSubject, Observable, Subject, Subscription} from 'rxjs';
 import { serverUrl, httpOptionsBase } from '../configs/server.config';
 import {Settings} from '../models/settings.model';
 
@@ -64,6 +64,12 @@ export class SettingsService {
 
   resetSettings(settings: Settings, userId: string) {
     const questionUrl = this.settingsUrl + '/resetSettings/' + userId;
-    this.http.put<Settings>(questionUrl, settings, this.httpOptions).subscribe();
+    this.http.put(questionUrl, settings, this.httpOptions).subscribe();
+  }
+
+  modifyBaseSettings(settings: Settings, userId: string): Observable<HttpResponse<any>> {
+    const questionUrl = this.settingsUrl + '/resetSettings/' + userId;
+    return this.http.put(questionUrl, settings, {...this.httpOptions, observe: 'response'});
+
   }
 }
