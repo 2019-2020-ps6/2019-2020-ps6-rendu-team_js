@@ -5,10 +5,11 @@
   <div class="admin-table">
     <div class="text-connexion">Connexion</div>
     <form class="admin-form" [formGroup]="adminForm" ngNativeValidate>
+
       <input class="input-custom" placeholder="Votre identifiant" type="text" id="username"
-             [formControlName]="'username'"  [class.disable-button]="isLoading" >
+             [formControlName]="'username'"  [class.disable-button]="isLoading" [disabled]="isLoading">
       <input class="input-custom" placeholder="Votre mot de passe" type="password" id="password"
-             [formControlName]="'password'"  [class.disable-button]="isLoading">
+             [formControlName]="'password'"  [class.disable-button]="isLoading" [disabled]="isLoading">
 
       <button type="submit" class="button-card" [disabled]="adminForm.invalid" [class.disable-button]="adminForm.invalid || isLoading" (click)="this.connexion()">Se connecter</button>
     </form>

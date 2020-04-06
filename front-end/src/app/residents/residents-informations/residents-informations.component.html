@@ -1,38 +1,45 @@
-
 <div class="create-account-container user-container ">
 
-    <div class="table">
+  <div class="table">
 
-      <div class="text-create-account">{{user.firstName}} {{user.lastName.toUpperCase()}}</div>
-      <hr class="blackLine">
+    <div class="text-create-account">{{user.firstName}} {{user.lastName.toUpperCase()}}</div>
+    <hr class="blackLine">
 
-      <div class="assistance-container" *ngIf="!isDeleteButtonPressed">
-        <div class="assistance-text">Assistance :<br>(modifiable)</div>
-        <div class="checkbox-container">
-          <div class="checkbox" *ngFor="let assistance of assistanceArray">
-            <input type="checkbox" name="assistance" value="{{assistance.value}}" id="{{assistance.value}}"/>
-            <label for="{{assistance.value}}">{{assistance.name}}</label>
-          </div>
+    <div class="assistance-container" *ngIf="!isDeleteButtonPressed">
+      <div class="assistance-text">Assistance :<br>(modifiable)</div>
+      <div class="checkbox-container">
+        <div class="checkbox" *ngFor="let assistance of assistanceArray">
+          <input type="checkbox" name="assistance" value="{{assistance.value}}" id="{{assistance.value}}"
+                 [checked]="assistance.checked"/>
+          <label for="{{assistance.value}}">{{assistance.name}}</label>
         </div>
       </div>
-
-
-      <hr class="blackLine"  *ngIf="!isDeleteButtonPressed">
-
-      <button (click)="shareButtonPressed()" *ngIf="!isDeleteButtonPressed" class="link-card share-button-bg">Partager les paramètres du compte</button>
-      <button (click)="statsButtonPressed()" *ngIf="!isDeleteButtonPressed" class="link-card stats-button-bg">Statistiques</button>
-      <button (click)="deleteButtonPressed()" [ngClass]="isDeleteButtonPressed ? 'deletePressed' : ''" class="link-card delete-button-bg">
-        <div *ngIf="!isDeleteButtonPressed">Supprimer le compte</div>
-        <div *ngIf="isDeleteButtonPressed">Comfirmer la suppression du compte</div>
-      </button>
-
-      <hr class="blackLine margin-top">
-
-      <div class="button-container">
-        <button (click)="backPressed()" class="button-card back-button-bg">Retour</button>
-        <button class="button-card create-button-bg" *ngIf="!isDeleteButtonPressed">Enregistrer</button>
-        <button (click)="confirmDeletionPressed()" class="button-card delete-button-bg" *ngIf="isDeleteButtonPressed">Supprimer</button>
-      </div>
-
     </div>
+
+
+    <hr class="blackLine" *ngIf="!isDeleteButtonPressed">
+
+    <button (click)="shareButtonPressed()" *ngIf="!isDeleteButtonPressed" class="link-card share-button-bg">Partager les
+      paramètres du compte
+    </button>
+    <button (click)="statsButtonPressed()" *ngIf="!isDeleteButtonPressed" class="link-card stats-button-bg">
+      Statistiques
+    </button>
+    <button (click)="deleteButtonPressed()" [ngClass]="isDeleteButtonPressed ? 'deletePressed' : ''"
+            class="link-card delete-button-bg">
+      <div *ngIf="!isDeleteButtonPressed">Supprimer le compte</div>
+      <div *ngIf="isDeleteButtonPressed">Comfirmer la suppression du compte</div>
+    </button>
+
+    <hr class="blackLine margin-top">
+
+    <div class="button-container">
+      <button (click)="backPressed()" class="button-card back-button-bg">Retour</button>
+      <button class="button-card create-button-bg" *ngIf="!isDeleteButtonPressed">Enregistrer</button>
+      <button (click)="confirmDeletionPressed()" class="button-card delete-button-bg" *ngIf="isDeleteButtonPressed">
+        Supprimer
+      </button>
+    </div>
+
+  </div>
 </div>

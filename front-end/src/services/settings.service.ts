@@ -49,6 +49,14 @@ export class SettingsService {
     });
   }
 
+  // getUserSettings(userId: number) {
+  //   const urlWithId = this.settingsUrl + '/' + userId;
+  //   this.http.get<Settings>(urlWithId).subscribe((settings) => {
+  //     console.log(settings);
+  //     return settings;
+  //   });
+  // }
+
   updateSettings(settings: Settings, userId: string) {
     const questionUrl = this.settingsUrl + '/' + userId;
     this.http.put<Settings>(questionUrl, settings, this.httpOptions).subscribe();

@@ -8,68 +8,12 @@
     "id": 1585360751986
   },
   {
-    "username": "John Doe",
-    "firstName": "John",
-    "lastName": "Doe",
-    "password": "$2b$10$MwnxhfSRJsyshJHxeS60QOZZRg1Z3CbVkSJ3Cr5BohFN8EuuP8bUq",
-    "accountLevel": 0,
-    "id": 1585361499729
-  },
-  {
     "username": "admin",
     "firstName": "Mr",
     "lastName": "Admin",
     "password": "$2b$10$zS7UMOZdwNviNi0su/brC.fG8RXJmEK2DXhtKloer2xDhwgZl6C2K",
     "accountLevel": 1,
     "id": 1585366302574
-  },
-  {
-    "username": "John aaaaaaaaaaaaaaaa",
-    "firstName": "John",
-    "lastName": "aaaaaaaaaaaaaaaa",
-    "password": "$2b$10$EAkyZ2lf01B.fUf825bmmugTp3bgryer6RBiAngXKHrMlfJ7iSYGC",
-    "accountLevel": 0,
-    "id": 1585646762331
-  },
-  {
-    "username": "a ab",
-    "firstName": "a",
-    "lastName": "ab",
-    "password": "$2b$10$LdCLVRZ5ur5wLA3e5wyqLOhl2HB5uPa4GABXI8eOPP0arXODf..oO",
-    "accountLevel": 0,
-    "id": 1585647618135
-  },
-  {
-    "username": "addd a",
-    "firstName": "addd",
-    "lastName": "a",
-    "password": "$2b$10$Xb4DuLa4Cv.EwvhpUlIoD.tcdnKrz4XiBRne.AivNaR99aijT6DTG",
-    "accountLevel": 0,
-    "id": 1585648126205
-  },
-  {
-    "username": "aaaaa aa",
-    "firstName": "aaaaa",
-    "lastName": "aa",
-    "password": "$2b$10$sl8C9qzfo5Rl0XsxKfwM2uIkMN3y6/xbOo3jeLSss19W5.O42xIuO",
-    "accountLevel": 0,
-    "id": 1585648151024
-  },
-  {
-    "username": "azeaze azeaze",
-    "firstName": "azeaze",
-    "lastName": "azeaze",
-    "password": "$2b$10$YhHsSEFMowUjrDDpQjO8qutep4bGmsGqm1mQdvAuOOnlvAz2W6BZC",
-    "accountLevel": 0,
-    "id": 1585648230548
-  },
-  {
-    "username": "azeaze aze",
-    "firstName": "azeaze",
-    "lastName": "aze",
-    "password": "$2b$10$oGpHYVu1q9BXnuYQB0uQA.q6xyNnwYc6gUfyFnYJf0pFbI6bGvCiu",
-    "accountLevel": 0,
-    "id": 1585648242505
   },
   {
     "username": "Anton qui carry",

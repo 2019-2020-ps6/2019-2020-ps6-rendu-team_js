@@ -2,6 +2,8 @@ import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
 import {User} from '../../../models/user.model';
 import {AuthService} from '../../../services/auth.service';
 import {Router} from '@angular/router';
+import {Settings} from '../../../models/settings.model';
+import {SettingsService} from '../../../services/settings.service';
 
 @Component({
   selector: 'app-residents-informations',
@@ -27,12 +29,21 @@ export class ResidentsInformationsComponent implements OnInit {
   @Input()
   user: User;
 
+  settings: Settings;
+
   constructor(private authServices: AuthService,
+              private settingsService: SettingsService,
               private router: Router) {
   }
 
   ngOnInit() {
     this.isDeleteButtonPressed = false;
+    this.settingsService.setSelectedSettings(this.user.id);
+    this.settingsService.settingsSelected$.subscribe((s) => {
+      this.settings = s;
+      this.assistanceArray[0].checked = this.settings.handicapVisuel;
+      this.assistanceArray[1].checked = this.settings.handicapMoteur;
+    });
   }
 
 
@@ -49,7 +60,7 @@ export class ResidentsInformationsComponent implements OnInit {
   }
 
   statsButtonPressed() {
-      this.router.navigate(['/admin/' + this.user.id + '/stats']);
+    this.router.navigate(['/admin/' + this.user.id + '/stats']);
   }
 
   shareButtonPressed() {
