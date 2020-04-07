@@ -4,6 +4,7 @@ import {QuizService} from '../../../services/quiz.service';
 import {Quiz} from '../../../models/quiz.model';
 import {Theme} from '../../../models/theme.model';
 import {ThemesService} from '../../../services/themes.service';
+import {BehaviorSubject} from 'rxjs';
 
 @Component({
   selector: 'app-quiz-list',
@@ -14,6 +15,7 @@ export class QuizListComponent implements OnInit {
 
   private theme: Theme = {name: ' '} as Theme;
   private quizList: Quiz[];
+  public quizList$: BehaviorSubject<Quiz[]> = new BehaviorSubject(this.quizList);
 
   constructor(private router: Router,
               private route: ActivatedRoute,
@@ -21,21 +23,26 @@ export class QuizListComponent implements OnInit {
               private quizService: QuizService) {
 
 
-
     this.themesService.themeSelected$.subscribe((t) => {
       this.theme = t;
-      this.quizService.setQuizzesFromThemeId(t.id);
+      // this.quizService.setQuizzesFromThemeId(t.id);
+
+
+      this.quizService.getQuizzesFromThemeId(t.id).subscribe((q) => {
+        this.quizList = q;
+        this.quizList$.next(this.quizList);
+      });
     });
 
-    this.quizService.quizzes$.subscribe((quizzes: Quiz[]) => {
-      this.quizList = quizzes;
-    });
+    // this.quizService.quizzes$.subscribe((quizzes: Quiz[]) => {
+    //   this.quizList = quizzes;
+    // });
   }
 
   ngOnInit() {
     const themeId = this.route.snapshot.paramMap.get('id');
     this.themesService.setThemeSelectedFromId(themeId);
-
+    this.quizList = [];
   }
 
   quizSelected(selected: boolean) {

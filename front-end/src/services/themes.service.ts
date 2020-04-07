@@ -39,6 +39,11 @@ export class ThemesService {
     });
   }
 
+  getThemeSelectedFromId(themeId: string) {
+    const urlWithId = this.themeUrl + '/' + themeId;
+    return this.http.get<Theme>(urlWithId);
+  }
+
   increaseThemeQuizNumber(theme: Theme, themeId: string): Observable<HttpResponse<any>> {
     const url = this.themeUrl + '/' + themeId + '/increase';
     theme.nbQuiz++;

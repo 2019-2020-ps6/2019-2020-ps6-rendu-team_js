@@ -34,10 +34,10 @@ const routes: Routes = [
   {path: 'quiz-info/:id', canActivate: [AuthGuardService], component: QuizInfoComponent},
   {path: 'login/user', canActivate: [NotAuthGuardService], component: UserFormComponent},
   {path: 'login/admin', canActivate: [NotAuthGuardService], component: AdminFormComponent},
-  {path: 'theme', canActivate: [AuthGuardService], component: ThemeComponent},
-  {path: 'theme/:id', canActivate: [AuthGuardService], component: QuizListComponent},
-  {path: '**', redirectTo: '/theme', canActivate: [NotAuthGuardService], pathMatch: 'full'}, // path ** means every page
-  {path: '', redirectTo: '/theme', canActivate: [NotAuthGuardService], pathMatch: 'full'}, // path empty means nothing
+  {path: 'themes', canActivate: [AuthGuardService], component: ThemeComponent},
+  {path: 'themes/:id', canActivate: [AuthGuardService], component: QuizListComponent},
+  {path: '**', redirectTo: '/themes', canActivate: [NotAuthGuardService], pathMatch: 'full'}, // path ** means every page
+  {path: '', redirectTo: '/themes', canActivate: [NotAuthGuardService], pathMatch: 'full'}, // path empty means nothing
 ];
 
 @NgModule({
