@@ -20,21 +20,6 @@ app-theme-list {
   flex-direction: row;
   justify-content: center;
   width: 100%;
-  overflow-y: scroll;
-  height: 75vh;
-
+  height: 100%;
 }
 
-.bottom-shadow {
-  position: absolute;
-  height: 00vmin;
-  top: 100%;
-  bottom: 0;
-  width: 86%;
-  left: 12%;
-  right: 2%;
-
-  -webkit-box-shadow: 0 0 1vmin 1vmin $app-background-color;
-  -moz-box-shadow: 0 0 1vmin 1vmin $app-background-color;
-  box-shadow: 0 0 1vmin 1vmin $app-background-color;
-}
