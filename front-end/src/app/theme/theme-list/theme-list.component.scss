@@ -2,10 +2,16 @@
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
+  justify-content: center;
 }
 
 app-theme-item {
-  min-width: 50vmin;
-  max-width: 50vmin;
   text-align: center;
+  flex: 1 0 50%;
+  display: flex;
+  flex-direction: column;
+  align-self: center;
+  align-content: stretch;
+
 }
+

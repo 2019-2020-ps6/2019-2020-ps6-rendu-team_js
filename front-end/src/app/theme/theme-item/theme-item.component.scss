@@ -1,14 +1,19 @@
 .theme-container {
-  padding: 5vmin 8vmin 5vmin 8vmin ;
+  padding: 1vmin 8vmin 1vmin 8vmin ;
   background-color: blueviolet;
   border: 0 solid black;
   border-radius: 3vmin;
   margin: 2vmin;
   cursor: pointer;
+  height: 25vmin;
 }
 
 .theme-text {
-  font-size: 8vmin;
+  font-size: 6vmin;
   color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 100%;
   font-family: "Segoe UI Black", sans-serif;
 }

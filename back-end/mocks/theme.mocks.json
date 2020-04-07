@@ -16,5 +16,17 @@
     "color": "#003366",
     "nbQuiz": 0,
     "id": 1586275490789
+  },
+  {
+    "name": "Les Mathématiques",
+    "color": "#993366",
+    "nbQuiz": 0,
+    "id": 1586287855186
+  },
+  {
+    "name": "La Cuisine",
+    "color": "#663300",
+    "nbQuiz": 0,
+    "id": 1586288401799
   }
 ]

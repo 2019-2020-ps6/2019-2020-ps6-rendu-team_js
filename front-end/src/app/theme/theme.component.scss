@@ -2,15 +2,15 @@
 
 .headerLine {
   display: inline-block;
-  margin: 1rem;
+  margin: 1vmin;
   position: relative;
-  border-radius: 2px;
-  padding: 0 1em 1em 1em;
+  border-radius: 1vmin;
+  padding: 0 1vmin 1vmin 1vmin;
   width: 100%;
 }
 
-.container-fluid{
-  width: 90%;
+.container-theme{
+  width: 100%;
   padding: 0;
 }
 
@@ -20,4 +20,21 @@ app-theme-list {
   flex-direction: row;
   justify-content: center;
   width: 100%;
+  overflow-y: scroll;
+  height: 76vh;
+
+}
+
+.bottom-shadow {
+  position: absolute;
+  height: 00vmin;
+  top: 100%;
+  bottom: 0;
+  width: 86%;
+  left: 12%;
+  right: 2%;
+
+  -webkit-box-shadow: 0 0 1vmin 1vmin $app-background-color;
+  -moz-box-shadow: 0 0 1vmin 1vmin $app-background-color;
+  box-shadow: 0 0 1vmin 1vmin $app-background-color;
 }

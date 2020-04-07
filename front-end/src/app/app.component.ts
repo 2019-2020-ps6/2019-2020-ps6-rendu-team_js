@@ -7,7 +7,7 @@ import {Location} from '@angular/common';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
- colorBackground: string;
+  colorBackground: string;
 
   isHelpActive = false;
 
