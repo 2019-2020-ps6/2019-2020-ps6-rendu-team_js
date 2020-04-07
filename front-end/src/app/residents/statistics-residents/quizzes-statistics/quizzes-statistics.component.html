@@ -12,9 +12,9 @@
   </div>
 
 
-  <div *ngIf="isShow" class="row" id="quizHistory">
-    <div class="col-lg-12 col-md-12 col-xs-12 xol-sm-12">
-      <div id="txtEssaies">Essaies : </div>
+  <div [ngClass]="(isShow)? 'visible-item'  : 'hidden-item'" class="row" id="quizHistory">
+    <div class="col-lg-12 col-md-12 col-xs-12 xol-sm-12"  [ngClass]="(isShow)? 'visible-item'  : 'hidden-item'" >
+      <div id="txtEssaies"  >Essaies : </div>
       <div id="historyList">
           <ng-container *ngFor="let try of quizResult.quizTries; let i = index">
         <div class="item-result">
