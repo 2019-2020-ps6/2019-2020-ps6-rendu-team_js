@@ -5,6 +5,7 @@ const Quiz = require('./quiz.model.js')
 const User = require('./user.model.js')
 const Statistics = require('./statistics.model')
 const Settings = require('./settings.model')
+const Game = require('./game.model')
 const Theme = require('./theme.model')
 
 module.exports = {
@@ -15,5 +16,6 @@ module.exports = {
   Statistics,
   User,
   Settings,
+  Game,
   Theme,
 }
