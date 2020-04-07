@@ -1,17 +1,16 @@
 <ng-container *ngIf="quiz != null">
-<div style="align-content: space-around">
-  <div class="card">
-    <h5 class="card-header">{{quiz.name}}</h5>
-    <div class="card-body">
-      <p class="card-text">Thème : {{theme.name}}</p><br>
-      <p class="card-text">Difficulté : {{quiz.difficulty}}</p><br>
+<div class="main-container" [ngStyle]="{backgroundColor: bgColor}">
+  <div >
+    <div class="btn-group btn-group-toggle btn-block"  (click)="isFullyDisplayed = !isFullyDisplayed">
+      <div class="btn btn-secondary col-9 left-part" id="quizbtn" [ngStyle]="{backgroundColor: themeColor}"> {{quiz.name}} </div>
+      <div class="btn btn-secondary col-3 right-part" id="themebtn"  [ngStyle]="{backgroundColor: lvlColor}"> {{quiz.difficulty}} </div>
+    </div>
+
+    <div class="card-body" *ngIf="isFullyDisplayed">
       <p class="card-text" *ngIf="quiz.questions !== undefined">Ce quiz comporte {{quiz.questions.length}} questions</p><br>
 
-      <div style="text-align: center">
-        <button type="button" class="btn btn-secondary active btn-lg col-3" onclick="history.go(-1)"> Retour </button>
-        &nbsp;
-        <button type="button" class="btn btn-secondary active btn-lg col-3" routerLink="/play/{{quiz.id}}"> Faire le quiz </button>
-        &nbsp;
+      <div class="btn-container" style="text-align: center">
+        <button type="button" class="btn btn-secondary btn-lg col-3" [ngStyle]="{backgroundColor: themeColor}" routerLink="/play/{{quiz.id}}"> Faire le quiz </button>
         <button type="button" class="btn btn-secondary active btn-lg col-3" routerLink="/quiz-editor/{{quiz.id}}" *ngIf="authServices.getAuthLevel() > 0"> Editer </button>
       </div>
 

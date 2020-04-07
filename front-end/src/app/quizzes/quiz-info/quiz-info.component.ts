@@ -19,16 +19,28 @@ export class QuizInfoComponent implements OnInit {
   @Input()
   private quiz: Quiz;
 
+  private isFullyDisplayed = false;
+
+  private themeColor: string;
+  private lvlColor: string;
+  private bgColor: string;
+
   constructor(private route: ActivatedRoute,
               private themesService: ThemesService,
               private authServices: AuthService,
               private quizService: QuizService) {
+
     this.quizService.quizSelected$.subscribe((quiz) => this.quiz = quiz);
+
   }
 
   ngOnInit() {
     this.quiz.questions = [];
     this.quizService.setSelectedQuiz(this.quiz.id);
+    this.themeColor = this.theme.color;
+    this.bgColor = this.themeColor + '40';
+    // tslint:disable-next-line:no-bitwise
+    this.lvlColor = this.themeColor + 'D0';
   }
 
 }

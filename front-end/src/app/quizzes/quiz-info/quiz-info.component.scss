@@ -1,13 +1,34 @@
 @import "../../../styles/variables";
 
+.main-container {
+  align-content: space-around;
+  margin: 2vmin;
+  border: 0 solid transparent;
+  border-radius: 2vmin;
+}
+
+.left-part {
+  border: 1vmin solid transparent;
+  border-bottom-left-radius: 2vmin;
+  border-top-left-radius: 2vmin;
+  font-size: 6vmin !important;
+  border-right: 0.5vmin solid white !important;
+}
+
+.right-part {
+  border: 0 solid transparent;
+  border-bottom-right-radius: 2vmin;
+  border-top-right-radius: 2vmin;
+  font-size: 6vmin !important;
+}
+
 .card{
   margin-top: 90pt;
 }
 .card-header {
-  background-color: #3396FF !important;
   font-weight: 900;
   font-family: "Segoe UI Black", sans-serif;
-  font-size: 50pt;
+  font-size: 5vmin;
   color: white;
 }
 
@@ -18,17 +39,39 @@
   justify-content: center;
   font-weight: 900;
   font-family: "Segoe UI Black", sans-serif;
-  font-size: 40pt;
+  font-size: 5vmin;
   color: black;
 }
 
 .card-body{
-  background-color: #BADCFF !important;
+  border: 0 solid black;
+  border-bottom-left-radius: 3vmin;
+  border-bottom-right-radius: 3vmin;
 }
 
 .btn-secondary{
-  background-color: #2B7FD8 !important;
   font-weight: 900;
   font-family: "Segoe UI Black", sans-serif;
-  font-size: 30pt;
+  font-size: 3vmin;
+  border: 0 solid transparent;
+  background-color: transparent;
+}
+
+.btn-block {
+  border: 0 solid black;
+}
+
+
+.btn-block:hover {
+  opacity: 0.8;
+}
+
+.btn-lg {
+  border-radius: 1vmin;
+  font-size: 4vmin !important;
+  margin: 1vmin;
+}
+
+.btn-lg:hover{
+  opacity: 0.8;
 }
