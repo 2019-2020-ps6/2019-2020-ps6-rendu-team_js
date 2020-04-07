@@ -1,0 +1,26 @@
+$primaryColorDark: #0099ff;
+$primaryColor: #79e9ff;
+$borderColor: #F2F2F2;
+$cornerRadius: 25px;
+
+.container {
+  background-color: $primaryColor;
+  border-radius: $cornerRadius;
+  color: #FFF;
+}
+
+.row {
+  font-weight: 600;
+  font-size: 5vmin;
+}
+
+#quizInfo {
+  border-radius: $cornerRadius;
+  background-color: $primaryColorDark;
+  cursor: pointer;
+}
+
+#quizDifficulty {
+  text-align: center;
+  border-left: solid 5px $borderColor;
+}

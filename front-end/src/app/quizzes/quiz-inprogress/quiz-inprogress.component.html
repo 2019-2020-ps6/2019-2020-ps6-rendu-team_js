@@ -1,0 +1,19 @@
+
+<div *ngIf="arrayQuizInfo != undefined && arrayQuizInfo.length > 0">
+  <h1 id="title">Quiz à finir !</h1>
+  <hr class="blackLine">
+
+  <div *ngFor="let quiz of arrayQuizInfo">
+    <div class="container">
+      <div class="row" id="quizInfo">
+        <div class="col-lg-9 col-md-9 col-xs-9 xol-sm-9">
+          {{quiz.name}}
+        </div>
+        <div id="quizDifficulty" class="col-lg-3 col-md-3 col-xs-3 xol-sm-3">
+          {{quiz.difficulty}}
+        </div>
+      </div>
+    </div>
+    <br>
+  </div>
+</div>

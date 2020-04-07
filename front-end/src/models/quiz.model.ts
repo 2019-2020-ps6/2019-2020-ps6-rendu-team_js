@@ -4,6 +4,6 @@ export interface Quiz {
     id: string;
     name: string;
     themeId: string;
-    questions: Question[];
+    questions?: Question[];
     difficulty: string;
 }
