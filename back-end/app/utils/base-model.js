@@ -54,6 +54,13 @@ module.exports = class BaseModel {
     return item
   }
 
+  getGameById(userId) {
+    if (typeof userId === 'string') userId = parseInt(userId, 10)
+    const item = this.items.filter((i) => i.userId === userId)
+    //if (!item) throw new NotFoundError(`Cannot get ${this.name} userId=${userId} and quizId=${quizId} : not found`)
+    return item
+  }
+
   getStatisticById(userId) {
     if (typeof userId === 'string') userId = parseInt(userId, 10)
     const item = this.items.find((i) => i.id === userId)

@@ -4,7 +4,7 @@ const {Result} = require("../../../models");
 const {verifyIfAnswerIsCorrect} = require("../../users/statistiques/manager");
 const {getCorrectAnswer} = require("../../users/statistiques/manager");
 const {updateStatistics} = require("../result/manager");
-const {Game} = require("../../../models");
+const {Game, Quiz} = require("../../../models");
 
 const router = new Router({mergeParams: true})
 
@@ -13,6 +13,22 @@ router.get('/', (req, res) => {
         res.status(200).json('GET HTTP method on user resource :)')
     } catch (err) {
         res.status(500).json(err)
+    }
+})
+
+router.get('/:userId', (req, res) => {
+    try {
+        const games = Game.getGameById(req.params.userId);
+        const quizArray = [];
+
+        games.forEach((game) => {
+            const quiz = Quiz.getById(game.quizId);
+            quizArray.push(quiz);
+        });
+
+        res.status(200).json(quizArray)
+    } catch (err) {
+        res.status(404).json(err)
     }
 })
 
