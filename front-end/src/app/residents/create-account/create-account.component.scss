@@ -124,10 +124,23 @@
   background-color: #3CABC2;
 }
 
+
+.checkbox-container input:checked + label:hover {
+  opacity: 1;
+  background-color: #308a9c;
+}
+
+
 .checkbox-container label {
   cursor: pointer;
   opacity: 0.5;
 }
+
+
+.checkbox-container input + label:hover {
+  opacity: 0.7;
+}
+
 
 .disable-button {
   opacity: 0.5;
@@ -161,4 +174,16 @@ hr.blackLine{
 
 .checkbox {
   width: 100%;
+}
+
+.input-custom:hover{
+  opacity: 0.8;
+}
+
+.back-button-bg:hover {
+  background-color: #6e4042;
+}
+
+.create-button-bg:hover {
+  background-color: #4f7c00;
 }

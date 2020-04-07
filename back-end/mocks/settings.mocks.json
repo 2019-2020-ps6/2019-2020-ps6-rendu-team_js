@@ -9,10 +9,10 @@
     "id": 13213
   },
   {
-    "handicapVisuel": false,
+    "handicapVisuel": true,
     "handicapMoteur": true,
-    "contraste": 1,
-    "fontSize": 1,
+    "contraste": 2,
+    "fontSize": 2,
     "font": "Segoe UI",
     "tailleSelection": 2,
     "id": 1585360751986
