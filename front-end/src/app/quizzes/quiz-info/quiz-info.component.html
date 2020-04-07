@@ -2,8 +2,8 @@
 <div class="main-container" [ngStyle]="{backgroundColor: bgColor}">
   <div >
     <div class="btn-group btn-group-toggle btn-block"  (click)="isFullyDisplayed = !isFullyDisplayed">
-      <div class="btn btn-secondary col-1 left-part" [ngStyle]="{backgroundColor: themeColor}" *ngIf="!isFullyDisplayed"> ⯆ </div>
-      <div class="btn btn-secondary col-1 left-part" [ngStyle]="{backgroundColor: themeColor}" *ngIf="isFullyDisplayed"> ⯅ </div>
+      <div class="btn btn-secondary col-1 left-part" [ngStyle]="{backgroundColor: themeColor}" *ngIf="!isFullyDisplayed">⏷</div>
+      <div class="btn btn-secondary col-1 left-part" [ngStyle]="{backgroundColor: themeColor}" *ngIf="isFullyDisplayed">⏶</div>
       <div class="btn btn-secondary col-8 middle-part" [ngStyle]="{backgroundColor: themeColor}"> {{quiz.name}} </div>
       <div class="btn btn-secondary col-3 right-part"  [ngStyle]="{backgroundColor: lvlColor}"> {{quiz.difficulty}} </div>
     </div>
