@@ -5,7 +5,6 @@ const {isFirstAndLastNameExist, getCorrectFormatString, getUserByUsername} = req
 const manageAllErrors = require('../../utils/routes/error-management')
 const cors = require('cors')
 const {createSettings} = require('../users/settings/manager')
-
 const router = new Router()
 const bcrypt = require('bcrypt')
 //                     1 sec  min  hr   day
@@ -15,6 +14,7 @@ const SESSION_SECRET = 'wefaefwdgrv' /* generate a better one */
 
 const ERROR_NAME = 'error';
 
+var FileStore = require('session-file-store')(session);
 router.use(cors({credentials: true, origin: 'http://localhost:4200'}));
 
 // Add headers
@@ -43,6 +43,9 @@ const isAuth = (req) => {
 };
 
 router.use(session({
+
+    store: new FileStore({}),
+
     name: SESSION_NAME,
     // don't modify the session if never modified
     resave: false,

@@ -12,22 +12,24 @@
   </div>
 
 
-  <a class="disconnect" *ngIf="isDisconnectDisplayed()" (click)="logout()">
-    Déconnexion
-  </a>
+  <div class="right-side">
+    <a class="disconnect" *ngIf="isDisconnectDisplayed()" (click)="logout()">
+      Déconnexion
+    </a>
 
-  <a class="quitter" *ngIf="isQuitDisplayed()" (click)="quitQuiz()">
-    Quitter le quiz
-  </a>
+    <a class="quitter" *ngIf="isQuitDisplayed()" (click)="quitQuiz()">
+      Quitter le quiz
+    </a>
 
-  <a class="admin" *ngIf="!authService.isAuth() && !isOnAdminLoginPage()" [routerLink]="['/login/admin']">
-    <img class="arrow-img" src="assets/images/lock.svg">
-    <div> Admin </div>
-  </a>
+    <a class="admin" *ngIf="!authService.isAuth() && !isOnAdminLoginPage()" [routerLink]="['/login/admin']">
+      <img class="arrow-img" src="assets/images/lock.svg">
+      <div> Admin </div>
+    </a>
 
-  <a class="resident" *ngIf="!authService.isAuth() && isOnAdminLoginPage()" [routerLink]="['/login/user']">
-    <img class="arrow-img" src="assets/images/user.svg">
-    <div> Résident </div>
-  </a>
+    <a class="resident" *ngIf="!authService.isAuth() && isOnAdminLoginPage()" [routerLink]="['/login/user']">
+      <img class="arrow-img" src="assets/images/user.svg">
+      <div> Résident </div>
+    </a>
+  </div>
 
 </div>
