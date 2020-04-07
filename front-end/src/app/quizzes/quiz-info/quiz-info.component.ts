@@ -1,7 +1,10 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
 import {Quiz} from '../../../models/quiz.model';
 import {ActivatedRoute, Router} from '@angular/router';
 import {QuizService} from '../../../services/quiz.service';
+import {Theme} from '../../../models/theme.model';
+import {ThemesService} from '../../../services/themes.service';
+import {AuthService} from '../../../services/auth.service';
 
 @Component({
   selector: 'app-quiz-info',
@@ -10,15 +13,22 @@ import {QuizService} from '../../../services/quiz.service';
 })
 export class QuizInfoComponent implements OnInit {
 
-  public quiz: Quiz;
+  @Input()
+  private theme: Theme;
 
-  constructor(private route: ActivatedRoute, private quizService: QuizService) {
+  @Input()
+  private quiz: Quiz;
+
+  constructor(private route: ActivatedRoute,
+              private themesService: ThemesService,
+              private authServices: AuthService,
+              private quizService: QuizService) {
     this.quizService.quizSelected$.subscribe((quiz) => this.quiz = quiz);
   }
 
   ngOnInit() {
-    const id = this.route.snapshot.paramMap.get('id');
-    this.quizService.setSelectedQuiz(id);
+    this.quiz.questions = [];
+    this.quizService.setSelectedQuiz(this.quiz.id);
   }
 
 }

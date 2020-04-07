@@ -1,5 +1,5 @@
 export interface Theme {
-  id: number;
+  id: string;
   name: string;
   color: string;
   nbQuiz: number;

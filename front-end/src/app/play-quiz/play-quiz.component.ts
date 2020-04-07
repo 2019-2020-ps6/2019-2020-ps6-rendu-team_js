@@ -25,7 +25,12 @@ export class PlayQuizComponent implements OnInit {
   private isAlReadyCalled = false;  // TODO find why when isOver = true, methods are called questionNumber times
 
   // tslint:disable-next-line:max-line-length
-  constructor(private router: Router, private route: ActivatedRoute, private quizService: QuizService, private resultService: ResultService, private authService: AuthService) {
+  constructor(private router: Router,
+              private route: ActivatedRoute,
+              private quizService: QuizService,
+              private resultService: ResultService,
+              private authService: AuthService) {
+
     this.quizService.quizSelected$.subscribe((quiz) => this.quiz = quiz); // set class var quiz
   }
 

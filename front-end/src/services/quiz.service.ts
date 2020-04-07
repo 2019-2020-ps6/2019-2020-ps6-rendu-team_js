@@ -46,6 +46,14 @@ export class QuizService {
     });
   }
 
+  setQuizzesFromThemeId(themeId: string) {
+    const url = this.quizUrl + '/theme/' + themeId;
+    this.http.get<Quiz[]>(url).subscribe((quizList) => {
+      this.quizzes = quizList;
+      this.quizzes$.next(this.quizzes);
+    });
+  }
+
   addQuiz(quiz: Quiz) {
     this.http.post<Quiz>(this.quizUrl, quiz, this.httpOptions).subscribe(() => this.setQuizzesFromUrl());
   }

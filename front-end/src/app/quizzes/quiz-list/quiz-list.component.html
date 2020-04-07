@@ -1,12 +1,10 @@
 <!-- <app-quiz-creation></app-quiz-creation> -->
 <div class="container-fluid">
-  <h1 id="title">Thème...</h1>
+  <h1 id="title">{{theme.name}}&nbsp;</h1>
   <hr class="blackLine">
-  <div class="quiz-list col-12 ">
-    <div class="quiz" *ngFor="let quiz of quizList">
-      <!--Inputs & Output allow communication between parent & child components.-->
-      <!--More information: https://angular.io/guide/component-interaction-->
-      <app-quiz-preview [quiz]="quiz" ></app-quiz-preview> <br><br>
+  <div class="quiz-list col-12" *ngIf="quizList !== undefined">
+    <div class="quiz" *ngFor="let quiz of quizList" >
+      <app-quiz-info [quiz]="quiz" [theme]="theme"></app-quiz-info>
     </div>
   </div>
 </div>

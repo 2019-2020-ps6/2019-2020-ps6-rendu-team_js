@@ -22,7 +22,6 @@ import {ThemeComponent} from './theme/theme.component';
 const routes: Routes = [
   // add the AuthGuardService if the user can go to the page if he's connected
   // add the NotAuthGuardService if the user can go to the page if he's not connected
-  {path: 'quiz-list', canActivate: [AuthGuardService], component: QuizListComponent},
   {path: 'welcome', canActivate: [NotAuthGuardService], component: WelcomeComponent},
   {path: 'play/:id', canActivate: [AuthGuardService], component: PlayQuizComponent},
   {path: 'stats', canActivate: [AuthGuardService], component: StatisticsComponent},
@@ -36,10 +35,9 @@ const routes: Routes = [
   {path: 'login/user', canActivate: [NotAuthGuardService], component: UserFormComponent},
   {path: 'login/admin', canActivate: [NotAuthGuardService], component: AdminFormComponent},
   {path: 'theme', canActivate: [AuthGuardService], component: ThemeComponent},
-  {path: 'theme/:id', canActivate: [AuthGuardService], component: ThemeComponent},
-  {path: '**', redirectTo: '/quiz-list', canActivate: [NotAuthGuardService], pathMatch: 'full'}, // path ** means every page
-  {path: '', redirectTo: '/quiz-list', canActivate: [NotAuthGuardService], pathMatch: 'full'}, // path empty means nothing
-
+  {path: 'theme/:id', canActivate: [AuthGuardService], component: QuizListComponent},
+  {path: '**', redirectTo: '/theme', canActivate: [NotAuthGuardService], pathMatch: 'full'}, // path ** means every page
+  {path: '', redirectTo: '/theme', canActivate: [NotAuthGuardService], pathMatch: 'full'}, // path empty means nothing
 ];
 
 @NgModule({

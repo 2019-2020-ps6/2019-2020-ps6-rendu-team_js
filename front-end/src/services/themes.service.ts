@@ -15,7 +15,7 @@ export class ThemesService {
    * Naming convention: Add '$' at the end of the variable name to highlight it as an Observable.
    */
   public themes$: BehaviorSubject<Theme[]> = new BehaviorSubject(this.themes);
-  public settingsSelected$: Subject<Theme> = new Subject();
+  public themeSelected$: Subject<Theme> = new Subject();
 
   private themeUrl = serverUrl + '/theme';
   private httpOptions = httpOptionsBase;
@@ -35,7 +35,7 @@ export class ThemesService {
     const urlWithId = this.themeUrl + '/' + themeId;
     this.http.get<Theme>(urlWithId).subscribe((theme) => {
       console.log(theme);
-      this.settingsSelected$.next(theme);
+      this.themeSelected$.next(theme);
     });
   }
 

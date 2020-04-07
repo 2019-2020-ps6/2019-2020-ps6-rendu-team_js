@@ -1,13 +1,13 @@
 [
   {
     "name": "Les Capitales",
-    "theme": "Géographie",
+    "themeId": "1586269523580",
     "difficulty": "Difficile",
     "id": 1585037807033
   },
   {
     "name": "Les Oiseaux",
-    "theme": "Animaux",
+    "themeId": "1586269378771",
     "difficulty": "Facile",
     "id": 1585039873991
   }
