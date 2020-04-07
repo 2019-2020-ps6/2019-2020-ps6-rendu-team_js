@@ -67,11 +67,7 @@ export class PlayQuizComponent implements OnInit {
       this.sendFinalAnswerToServiceAndSetResponseId(completeAnswer);
       this.isAlReadyCalled = true;
     }
-    if (this.resultId !== -1) {
-      this.router.navigate(['/result', this.resultId]);
-    } else {
-      this.router.navigate(['/']);
-    }
+
   }
 
   setBeginDateToCurrent() {
@@ -104,6 +100,14 @@ export class PlayQuizComponent implements OnInit {
     this.resultService.resultIdSelected$.subscribe((res: number) => {
       // console.log('result id front side', res);
       this.setResultId(res);
+
+
+      if (this.resultId !== -1) {
+        console.log('path');
+        this.router.navigate(['/result', this.resultId]);
+      } else {
+        this.router.navigate(['/']);
+      }
     });
     console.log('resIdFinal', this.resultId);
     // this.resultService.resultIdSelected$.unsubscribe()
