@@ -53,7 +53,10 @@
   color: white;
   font-family: "Segoe UI Black", sans-serif;
   font-size: 5vmin;
+}
 
+.button-card:hover {
+  background-color: #555555;
 }
 
 ::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
