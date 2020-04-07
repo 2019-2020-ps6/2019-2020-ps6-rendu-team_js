@@ -1,0 +1,11 @@
+.themes-container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+app-theme-item {
+  min-width: 40vmin;
+  max-width: 40vmin;
+  text-align: center;
+}

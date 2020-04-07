@@ -17,6 +17,7 @@ import {NotAuthGuardService} from '../services/not-auth-guard.service';
 import {AuthGuardAdminService} from '../services/auth-guard-admin.service';
 import {StatisticsResidentsComponent} from './residents/statistics-residents/statistics-residents.component';
 import {QuizInfoComponent} from './quizzes/quiz-info/quiz-info.component';
+import {ThemeComponent} from './theme/theme.component';
 
 const routes: Routes = [
   // add the AuthGuardService if the user can go to the page if he's connected
@@ -34,6 +35,8 @@ const routes: Routes = [
   {path: 'quiz-info/:id', canActivate: [AuthGuardService], component: QuizInfoComponent},
   {path: 'login/user', canActivate: [NotAuthGuardService], component: UserFormComponent},
   {path: 'login/admin', canActivate: [NotAuthGuardService], component: AdminFormComponent},
+  {path: 'theme', canActivate: [AuthGuardService], component: ThemeComponent},
+  {path: 'theme/:id', canActivate: [AuthGuardService], component: ThemeComponent},
   {path: '**', redirectTo: '/quiz-list', canActivate: [NotAuthGuardService], pathMatch: 'full'}, // path ** means every page
   {path: '', redirectTo: '/quiz-list', canActivate: [NotAuthGuardService], pathMatch: 'full'}, // path empty means nothing
 

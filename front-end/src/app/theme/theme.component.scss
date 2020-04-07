@@ -1,0 +1,23 @@
+@import "../../styles/variables";
+
+.headerLine {
+  display: inline-block;
+  margin: 1rem;
+  position: relative;
+  border-radius: 2px;
+  padding: 0 1em 1em 1em;
+  width: 100%;
+}
+
+.container-fluid{
+  width: 90%;
+  padding: 0;
+}
+
+
+app-theme-list {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  width: 100%;
+}

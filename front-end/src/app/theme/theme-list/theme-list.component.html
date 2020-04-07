@@ -1,0 +1,5 @@
+<div class="themes-container">
+  <ng-container *ngFor="let theme of themes">
+    <app-theme-item [themeName]="theme.name" [bgColor]="theme.color" [routerLink]="'/theme/' + theme.id"></app-theme-item>
+  </ng-container>
+</div>

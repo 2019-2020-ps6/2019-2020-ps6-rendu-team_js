@@ -41,6 +41,9 @@ import { ResidentsListComponent } from './residents/residents-list/residents-lis
 import { ResidentsItemComponent } from './residents/residents-list/residents-item/residents-item.component';
 import { ResidentsInformationsComponent } from './residents/residents-informations/residents-informations.component';
 import { HelpComponent } from './help/help.component';
+import { ThemeComponent } from './theme/theme.component';
+import { ThemeListComponent } from './theme/theme-list/theme-list.component';
+import { ThemeItemComponent } from './theme/theme-item/theme-item.component';
 
 
 
@@ -82,6 +85,9 @@ import { HelpComponent } from './help/help.component';
     ResidentsItemComponent,
     ResidentsInformationsComponent,
     HelpComponent,
+    ThemeComponent,
+    ThemeListComponent,
+    ThemeItemComponent,
   ],
     imports: [
         BrowserModule,
