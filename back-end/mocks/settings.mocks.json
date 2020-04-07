@@ -63,12 +63,12 @@
     "id": 1585655194450
   },
   {
-    "handicapVisuel": false,
-    "handicapMoteur": true,
-    "contraste": 1,
-    "fontSize": 1,
+    "handicapVisuel": true,
+    "handicapMoteur": false,
+    "contraste": 2,
+    "fontSize": 2,
     "font": "Segoe UI",
-    "tailleSelection": 2,
+    "tailleSelection": 1,
     "id": 1585655349618
   },
   {
