@@ -67,16 +67,17 @@
   },
   {
     "currentWeek": 15,
-    "successPercentage": 41.666666666666664,
-    "totalQuizMade": 6,
-    "weekQuizMade": 4,
+    "successPercentage": 42.857142857142854,
+    "totalQuizMade": 7,
+    "weekQuizMade": 5,
     "quizzesResultIds": [
       1585645418403,
       1585645418421,
       1586300523872,
       1586300774964,
       1586300884700,
-      1586301094249
+      1586301094249,
+      1586364511228
     ],
     "perfectQuiz": 0,
     "id": 1585366302574
