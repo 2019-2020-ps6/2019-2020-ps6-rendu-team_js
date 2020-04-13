@@ -58,18 +58,24 @@ export class SettingsService {
   // }
 
   updateSettings(settings: Settings, userId: string) {
-    const questionUrl = this.settingsUrl + '/' + userId;
-    this.http.put<Settings>(questionUrl, settings, this.httpOptions).subscribe();
+    const url = this.settingsUrl + '/' + userId;
+    this.http.put<Settings>(url, settings, this.httpOptions).subscribe();
   }
 
   resetSettings(settings: Settings, userId: string) {
-    const questionUrl = this.settingsUrl + '/resetSettings/' + userId;
-    this.http.put(questionUrl, settings, this.httpOptions).subscribe();
+    const url = this.settingsUrl + '/resetSettings/' + userId;
+    this.http.put(url, settings, this.httpOptions).subscribe();
   }
 
   modifyBaseSettings(settings: Settings, userId: string): Observable<HttpResponse<any>> {
-    const questionUrl = this.settingsUrl + '/resetSettings/' + userId;
-    return this.http.put(questionUrl, settings, {...this.httpOptions, observe: 'response'});
+    const url = this.settingsUrl + '/resetSettings/' + userId;
+    return this.http.put(url, settings, {...this.httpOptions, observe: 'response'});
+
+  }
+
+  copyUserSettingsToOtherAccounts(userId: string, usersId: string[]): Observable<HttpResponse<any>> {
+    const url = this.settingsUrl + '/copySettings/' + userId;
+    return this.http.put(url, usersId, {...this.httpOptions, observe: 'response'});
 
   }
 }

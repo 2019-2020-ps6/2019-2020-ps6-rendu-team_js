@@ -19,7 +19,6 @@ export class ConfirmParamCopyComponent implements OnInit {
   usersToCopyParamUpon: User[];
 
 
-
   @Output()
   isBackPressed: EventEmitter<boolean> = new EventEmitter<boolean>();
 
@@ -64,19 +63,17 @@ export class ConfirmParamCopyComponent implements OnInit {
   }
 
   saveButtonPressed() {
+    const usersId = this.usersToCopyParamUpon.map((u) => u.id);
+    this.settingsService.copyUserSettingsToOtherAccounts(this.userParameterToCopy.id, usersId).subscribe(response => {
+      if (response.status === 200) {
+        this.showMessage('Paramètres copiés !', 2000);
+        this.isErrorMessage = false;
 
-    // this.settingsService.modifyBaseSettings(this.settings, this.user.id).subscribe((response => {
-    //   if (response.status === 200) {
-    //     this.assistanceArrayOriginal[0].checked = this.settings.handicapVisuel;
-    //     this.assistanceArrayOriginal[1].checked = this.settings.handicapMoteur;
-    //
-    //
-    //     this.showMessage('Paramètres enregistrés !', 2000);
-    //     this.isErrorMessage = false;
-    //   } else {
-    //     this.showMessage('Une erreur est survenue, réessayer plus tard...', 2000);
-    //     this.isErrorMessage = true;
-    //   }
-    // }));
+      } else {
+        this.showMessage('Une erreur est survenue, réessayer plus tard...', 2000);
+        this.isErrorMessage = true;
+      }
+    });
+
   }
 }

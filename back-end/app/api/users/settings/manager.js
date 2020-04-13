@@ -45,7 +45,43 @@ const resetSettings = (userId, handicapVisuel, handicapMoteur) => {
     Settings.update(userId, { handicapVisuel, handicapMoteur, contraste, fontSize, font, tailleSelection})
 };
 
+const copySettings = (userSharingSetting, usersID) => {
+
+    let userSettings = Settings.getById(userSharingSetting);
+
+    console.log('user id to copy settings on : ' + userSharingSetting);
+    console.log(usersID);
+
+    usersID.forEach((uid) => {
+        console.log(uid);
+        let newSettings  = Settings.getById(uid);
+        console.log(newSettings);
+        newSettings.handicapVisuel = userSettings.handicapVisuel;
+        newSettings.handicapMoteur = userSettings.handicapMoteur;
+        newSettings.contraste = userSettings.contraste;
+        newSettings.fontSize = userSettings.fontSize;
+        newSettings.font = userSettings.font;
+        newSettings.tailleSelection = userSettings.tailleSelection;
+        console.log(newSettings);
+
+        Settings.update(uid, newSettings);
+    })
+};
+
 module.exports = {
     createSettings,
     resetSettings,
+    copySettings,
 };
+
+
+/* JSON ATTENDU EN ENTREE POUR LE PUT
+ {
+    "handicapVisuel" : true,
+    "handicapMoteur" : false,
+    "contraste" : 1,
+    "fontSize" : 2,
+    "font" : "Segoe UI",
+    "tailleSelection" : 1
+}
+ */
