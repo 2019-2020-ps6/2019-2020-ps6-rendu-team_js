@@ -1,7 +1,7 @@
 import {Component, EventEmitter, OnInit, Output} from '@angular/core';
 import {FormBuilder, FormControl, FormGroup, Validators} from '@angular/forms';
 import {AuthService} from '../../../services/auth.service';
-import {Router, RouterLink} from '@angular/router';
+import {ToasterService} from '../../../services/toaster.service';
 
 @Component({
   selector: 'app-user-form',
@@ -11,12 +11,11 @@ import {Router, RouterLink} from '@angular/router';
 export class UserFormComponent implements OnInit {
 
   public userForm: FormGroup;
-  private error: string;
   private isLoading: boolean;
 
   constructor(private authService: AuthService,
               private formBuilder: FormBuilder,
-              private router: Router) {
+              private toasterService: ToasterService) {
   }
 
   ngOnInit() {
@@ -34,7 +33,7 @@ export class UserFormComponent implements OnInit {
 
     this.isLoading = true;
     this.authService.loginResident(username).then((callback) => {
-      this.error = callback.toString();
+      this.toasterService.activateToaster(true, callback.toString(), 3000);
       this.isLoading = false;
     });
 

@@ -4,6 +4,7 @@ import {AuthService} from '../../../services/auth.service';
 import {Router} from '@angular/router';
 import {Settings} from '../../../models/settings.model';
 import {SettingsService} from '../../../services/settings.service';
+import {ToasterService} from '../../../services/toaster.service';
 
 @Component({
   selector: 'app-residents-informations',
@@ -45,6 +46,7 @@ export class ResidentsInformationsComponent implements OnInit {
 
   constructor(private authServices: AuthService,
               private settingsService: SettingsService,
+              private toasterService: ToasterService,
               private router: Router) {
   }
 
@@ -104,16 +106,11 @@ export class ResidentsInformationsComponent implements OnInit {
   confirmDeletionPressed() {
     this.authServices.deleteResidentAccount(this.user).subscribe(() => {
       this.isModifyingEventHappened.emit(true);
+      this.toasterService.activateToaster(false, 'Compte supprimé !', 2000);
       this.backPressed();
     });
   }
 
-  async showMessage(message: string, ms: number) {
-    return new Promise(resolve => {
-      this.message = message;
-      setTimeout(resolve, ms);
-    }).then(() => this.message = '');
-  }
 
   saveButtonPressed() {
 
@@ -125,12 +122,10 @@ export class ResidentsInformationsComponent implements OnInit {
         this.assistanceArrayOriginal[0].checked = this.settings.handicapVisuel;
         this.assistanceArrayOriginal[1].checked = this.settings.handicapMoteur;
 
+        this.toasterService.activateToaster(false, 'Paramètres enregistrés !', 2000);
 
-        this.showMessage('Paramètres enregistrés !', 2000);
-        this.isErrorMessage = false;
       } else {
-        this.showMessage('Une erreur est survenue, réessayer plus tard...', 2000);
-        this.isErrorMessage = true;
+        this.toasterService.activateToaster(true, 'Une erreur est survenue, réessayer plus tard...', 2000);
       }
     }));
   }

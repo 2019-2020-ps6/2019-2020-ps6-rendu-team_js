@@ -4,6 +4,7 @@ import {Settings} from '../../../models/settings.model';
 import {AuthService} from '../../../services/auth.service';
 import {SettingsService} from '../../../services/settings.service';
 import {Router} from '@angular/router';
+import {ToasterService} from '../../../services/toaster.service';
 
 @Component({
   selector: 'app-confirm-param-copy',
@@ -37,6 +38,7 @@ export class ConfirmParamCopyComponent implements OnInit {
 
   constructor(private authServices: AuthService,
               private settingsService: SettingsService,
+              private toasterService: ToasterService,
               private router: Router) {
   }
 
@@ -66,15 +68,13 @@ export class ConfirmParamCopyComponent implements OnInit {
     const usersId = this.usersToCopyParamUpon.map((u) => u.id);
     this.settingsService.copyUserSettingsToOtherAccounts(this.userParameterToCopy.id, usersId).subscribe(response => {
       if (response.status === 200) {
-        this.showMessage('Paramètres copiés !', 2000);
-        this.isErrorMessage = false;
+        this.toasterService.activateToaster(false, 'Paramètres copiés !', 2000);
 
         // allow to reload even if it's on the same route
         this.router.navigateByUrl('/', {skipLocationChange: true}).then(() => this.router.navigate(['/residents']));
-
       } else {
-        this.showMessage('Une erreur est survenue, réessayer plus tard...', 2000);
-        this.isErrorMessage = true;
+
+        this.toasterService.activateToaster(false, 'Une erreur est survenue, réessayer plus tard...', 2000);
       }
     });
 

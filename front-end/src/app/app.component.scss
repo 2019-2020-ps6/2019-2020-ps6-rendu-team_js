@@ -45,3 +45,29 @@ router-outlet {
   -moz-box-shadow: 0 0 1vmin 1vmin $app-background-color;
   box-shadow: 0 0 1vmin 1vmin $app-background-color;
 }
+
+.info-text-visible {
+  visibility: visible !important;
+  opacity: 1 !important;
+}
+
+.info-text {
+  font-size: 4vmin;
+  color: white;
+  width: 100vmin;
+  text-align: center;
+  position: absolute;
+  left: 60vmin;
+  right: 40vmin;
+  top: 7vmin;
+  background-color: #6ba800;
+  border: 0 solid white;
+  border-bottom-left-radius: 2vmin;
+  border-bottom-right-radius: 2vmin;
+  font-family: "Segoe UI Black", serif;
+
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.5s ease-in-out;
+  z-index: 998;
+}

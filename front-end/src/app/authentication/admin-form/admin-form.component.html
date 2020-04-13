@@ -1,10 +1,9 @@
 <!-- ADMIN FORM -->
 
 <div class="admin-container">
-  <div class="error-text" *ngIf="error !== 'undefined'">{{error}}</div>
   <div class="admin-table">
     <div class="text-connexion">Connexion</div>
-    <form class="admin-form" [formGroup]="adminForm" ngNativeValidate>
+    <form class="admin-form" [formGroup]="adminForm">
 
       <input class="input-custom" placeholder="Votre identifiant" type="text" id="username"
              [formControlName]="'username'"  [class.disable-button]="isLoading" [disabled]="isLoading">

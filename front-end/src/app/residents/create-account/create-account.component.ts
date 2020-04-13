@@ -1,7 +1,7 @@
 import {Component, EventEmitter, OnInit, Output} from '@angular/core';
-import {Answer} from '../../../models/question.model';
 import {FormArray, FormBuilder, FormGroup, Validators} from '@angular/forms';
 import {AuthService} from '../../../services/auth.service';
+import {ToasterService} from '../../../services/toaster.service';
 
 @Component({
   selector: 'app-create-account',
@@ -28,6 +28,7 @@ export class CreateAccountComponent implements OnInit {
   isAccountCreated: EventEmitter<boolean> = new EventEmitter<boolean>();
 
   constructor(private authService: AuthService,
+              private toasterService: ToasterService,
               private formBuilder: FormBuilder) {
   }
 
@@ -54,14 +55,18 @@ export class CreateAccountComponent implements OnInit {
     this.authService.createResidentAccount(firstName, lastName, this.getAssistanceVisuelle(), this.getAssistanceMoteur())
       .then((callback) => {
 
-      if (callback.toString() === '') {
-        this.isAccountCreated.emit(true);
-        this.backPressed();
-      }
+        if (callback.toString() === '') {
+          console.log('got here');
+          this.toasterService.activateToaster(false, 'Compte créé !', 2000);
 
-      this.error = callback.toString();
-      this.isLoading = false;
-    });
+          this.isAccountCreated.emit(true);
+          this.backPressed();
+          return;
+        }
+
+        this.toasterService.activateToaster(true, callback.toString(), 3000);
+        this.isLoading = false;
+      });
   }
 
   changeState(id: number) {
@@ -75,7 +80,6 @@ export class CreateAccountComponent implements OnInit {
   getAssistanceMoteur() {
     return this.assistanceArray[1].checked;
   }
-
 
 
 }

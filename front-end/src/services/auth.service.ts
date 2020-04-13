@@ -65,7 +65,7 @@ export class AuthService {
 
           if (this.isAuth()) {
             this.router.navigate(['/quiz-list']);
-            resolve('Connected');
+            resolve('');
           } else {
             console.log(u);
             resolve('Erreur : ' + JSON.parse(JSON.stringify(u)).errors);
@@ -85,7 +85,7 @@ export class AuthService {
 
           if (this.isAuth()) {
             console.log(u);
-            resolve('Connected');
+            resolve('');
           } else {
             resolve('');
           }

@@ -1,6 +1,7 @@
 import {Component, EventEmitter, OnInit, Output} from '@angular/core';
 import {FormBuilder, FormControl, FormGroup, Validators} from '@angular/forms';
 import {AuthService} from '../../../services/auth.service';
+import {ToasterService} from '../../../services/toaster.service';
 
 @Component({
   selector: 'app-admin-form',
@@ -10,12 +11,12 @@ import {AuthService} from '../../../services/auth.service';
 export class AdminFormComponent implements OnInit {
 
   public adminForm: FormGroup;
-  private error: string;
   private isLoading: boolean;
 
 
   constructor(private authService: AuthService,
-              private formBuilder: FormBuilder) {
+              private formBuilder: FormBuilder,
+              private toasterService: ToasterService) {
   }
 
   ngOnInit() {
@@ -36,7 +37,7 @@ export class AdminFormComponent implements OnInit {
 
     this.isLoading = true;
     this.authService.loginAdmin(username, password).then((callback) => {
-      this.error = callback.toString();
+      this.toasterService.activateToaster(true, callback.toString(), 3000);
       this.isLoading = false;
     });
   }
