@@ -69,6 +69,9 @@ export class ConfirmParamCopyComponent implements OnInit {
         this.showMessage('Paramètres copiés !', 2000);
         this.isErrorMessage = false;
 
+        // allow to reload even if it's on the same route
+        this.router.navigateByUrl('/', {skipLocationChange: true}).then(() => this.router.navigate(['/residents']));
+
       } else {
         this.showMessage('Une erreur est survenue, réessayer plus tard...', 2000);
         this.isErrorMessage = true;
