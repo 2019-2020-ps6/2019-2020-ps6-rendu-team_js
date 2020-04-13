@@ -15,7 +15,7 @@
 .table {
   padding: 2vmin;
   width: 60vmin;
-  border: #D8F8FF 0px solid;
+  border: #D8F8FF 0 solid;
   border-radius: 5vmin;
   background-color: #D8F8FF;
 }
@@ -58,7 +58,7 @@
 .button-card {
   padding: 1vmin;
   margin: 1vmin;
-  border: #FFFFFF 0px solid;
+  border: #FFFFFF 0 solid;
   border-radius: 2vmin;
   color: white;
   text-align: center;
@@ -70,7 +70,7 @@
 .link-card {
     padding: 1vmin;
     margin-bottom: 1vmin;
-    border: #FFFFFF 0px solid;
+    border: #FFFFFF 0 solid;
     border-radius: 10vmin;
     color: white;
     text-align: center;
@@ -151,9 +151,9 @@
   flex: 1;
   text-align: center;
   background-color: #56A5B6;
-  margin: 0px;
+  margin: 0;
   padding: 1vmin;
-  border: #5D5D5D 0px solid;
+  border: #5D5D5D 0 solid;
   border-radius: 10vmin;
   font-family: "Segoe UI Black", sans-serif;
   font-size: 3vmin;
@@ -207,9 +207,6 @@
   margin-bottom: 1vmin;
 }
 
-hr.blackLine{
-  border-top: 2px solid grey;
-}
 
 
 .checkbox {
@@ -219,7 +216,7 @@ hr.blackLine{
 .deletePressed {
   padding: 1vmin;
   margin-bottom: 1vmin;
-  border: #FFFFFF 0px solid;
+  border: #FFFFFF 0 solid;
   border-radius: 2vmin;
   color: white;
   text-align: center;

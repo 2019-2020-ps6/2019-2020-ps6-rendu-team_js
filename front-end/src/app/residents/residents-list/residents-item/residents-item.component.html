@@ -1,4 +1,5 @@
-<div class="resident-container">
+
+<div class="resident-container" [ngClass]="isGreyedOut()? 'disable-color' : (isSelected()? 'selected-color' : 'normal-color')">
   <img class="img-user" src="assets/images/user.svg">
-  <div class="username">{{user.firstName}} {{user.lastName.toUpperCase()}}</div>
+  <div class="username" [ngClass]="isGreyedOut()? 'disable-color-text' : 'normal-color-text'">{{user.firstName}} {{user.lastName.toUpperCase()}}</div>
 </div>

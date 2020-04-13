@@ -8,11 +8,35 @@ import {User} from '../../../../models/user.model';
 })
 export class ResidentsItemComponent implements OnInit {
 
-  @Input() user: User;
+  @Input()
+  user: User;
 
-  constructor() { }
+  @Input()
+  greyedOut: boolean;
+
+  @Input()
+  selected: boolean;
+
+  constructor() {
+  }
 
   ngOnInit() {
+  }
+
+  isGreyedOut() {
+    if (this.greyedOut === undefined) {
+      return false;
+    }
+
+    return this.greyedOut;
+  }
+
+  isSelected() {
+    if (this.selected === undefined) {
+      return false;
+    }
+
+    return this.selected;
   }
 
 }

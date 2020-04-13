@@ -64,11 +64,11 @@
   },
   {
     "handicapVisuel": true,
-    "handicapMoteur": false,
+    "handicapMoteur": true,
     "contraste": 2,
     "fontSize": 2,
     "font": "Segoe UI",
-    "tailleSelection": 1,
+    "tailleSelection": 2,
     "id": 1585655349618
   },
   {

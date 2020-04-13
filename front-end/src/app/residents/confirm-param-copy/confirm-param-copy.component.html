@@ -1,0 +1,22 @@
+<div [ngClass]="(message !=='')? 'info-text-visible' : ''" class="info-text" [style.background-color]="(isErrorMessage)? '#8d0000' : '#6ba800'">{{message}}</div>
+<div class="create-account-container user-container ">
+
+  <div class="table">
+
+    <div class="text-create-account">Les paramètres de {{userParameterToCopy.firstName}} {{userParameterToCopy.lastName.toUpperCase()}} seront copiés sur les comptes de :</div>
+    <hr class="blackLine">
+
+    <div class="list-name">
+      <ng-container *ngFor="let user of usersToCopyParamUpon">
+        <div>{{user.firstName}} {{user.lastName.toUpperCase()}}</div>
+      </ng-container>
+    </div>
+    <hr class="blackLine margin-top">
+
+    <div class="button-container">
+      <button (click)="backPressed()" class="button-card back-button-bg">Retour</button>
+      <button (click)="saveButtonPressed()" class="button-card create-button-bg" *ngIf="!isDeleteButtonPressed">Confirmer</button>
+    </div>
+
+  </div>
+</div>

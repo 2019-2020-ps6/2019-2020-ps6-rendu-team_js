@@ -2,17 +2,22 @@
 
 <div  [ngClass]="isWindowOpen()? 'blur' : ''" >
   <div class="main-container">
-    <h1>Résidents</h1>
-    <a class="create-button" (click)="openCreateAccountWindow()">Créer un compte</a>
+    <h1  *ngIf="userSharingHisParameter === undefined">Résidents</h1>
+    <h2  *ngIf="userSharingHisParameter !== undefined">Copie des paramètres de : {{userSharingHisParameter.firstName}} {{userSharingHisParameter.lastName.toUpperCase()}}</h2>
+    <div class="button-container">
+      <a class="button create-button" *ngIf="userSharingHisParameter === undefined" (click)="openCreateAccountWindow()" >Créer un compte</a>
+      <a class="button save-button"  *ngIf="userSharingHisParameter !== undefined"  (click)="saveButtonClicked()" [ngClass]="usersToCopyParamUpon.length === 0? 'low-opacity' : ''">Enregistrer</a>
+      <a class="button back-button" *ngIf="userSharingHisParameter !== undefined" (click)="goBackToUserInformation()">Retour</a>
+    </div>
   </div>
   <hr class="blackLine">
 </div>
 
-
 <div  [ngClass]="isWindowOpen()? 'blur' : ''" >
-  <app-residents-list [users]="users" (userInformation)="openResidentInformationWindow($event)"></app-residents-list>
+  <app-residents-list [users]="users" (userInformation)="openResidentInformationWindow($event)" [userSharingHisParameters]="userSharingHisParameter" (usersToCopyParametersUponEmitter)="usersToCopyParamUpon = $event"></app-residents-list>
 </div>
 
 <div *ngIf="isWindowOpen()" class="background"></div>
 <app-create-account (isAccountCreated)="updateResidentsList()" *ngIf="isCreateAccountWindowOpen" (isBackPressed)="isCreateAccountWindowOpen=!$event"></app-create-account>
-<app-residents-informations *ngIf="isInformationWindowOpen" (isBackPressed)="isInformationWindowOpen=!$event" (isModifyingEventHappened)="updateResidentsList()" [user]="getUserSelectedInformation()"></app-residents-informations>
+<app-residents-informations *ngIf="isInformationWindowOpen" (isBackPressed)="isInformationWindowOpen=!$event" (isModifyingEventHappened)="updateResidentsList()" (userSharingHisParameters)="userSharingHisParameter = $event" [user]="getUserSelectedInformation()"></app-residents-informations>
+<app-confirm-param-copy *ngIf="isCopyParamWindowOpen" [userParameterToCopy]="userSharingHisParameter" [usersToCopyParamUpon]="usersToCopyParamUpon" (isBackPressed)="isCopyParamWindowOpen = !$event" (isModifyingEventHappened)="updateResidentsList()"></app-confirm-param-copy>

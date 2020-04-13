@@ -1,3 +1,5 @@
+
+<div class="info-text" *ngIf="userSharingHisParameters !== undefined">Sélectionner les résidents sur qui copier les paramètres :</div>
 <ng-container *ngFor="let user of users">
-  <app-residents-item (click)="emitUser(user)" class="users-list-container" [user]="user"></app-residents-item>
+  <app-residents-item (click)="emitUser(user)"  class="users-list-container" [user]="user" [greyedOut]="isGreyedOut(user)" [selected]="isUserSelectedCopyParam(user)"></app-residents-item>
 </ng-container>

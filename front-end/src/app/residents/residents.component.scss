@@ -4,7 +4,7 @@
   justify-content: space-between;
 }
 
-.create-button {
+.button {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -21,9 +21,44 @@
   font-size: 3vmin;
 }
 
+.button-container {
+  display: flex;
+  flex-direction: row;
+}
+
+.create-button {
+  background-color: #3CABC2;
+}
+
 .create-button:hover{
   background-color: #2b6273 !important;
 }
+
+
+.save-button {
+  background-color: #65a800;
+}
+
+.save-button:hover{
+  background-color: #5c9900 !important;
+}
+
+.low-opacity {
+  opacity: 0.5;
+}
+
+
+.back-button {
+  background-color: #929292;
+}
+
+.back-button:hover{
+  background-color: #848484 !important;
+}
+
+
+
+
 
 a:hover{
   color: white;
@@ -55,4 +90,8 @@ app-residents-list {
 
 .blur{
   filter: blur(1vmin);
+}
+
+h2 {
+  //color: #2b6273 !important;
 }

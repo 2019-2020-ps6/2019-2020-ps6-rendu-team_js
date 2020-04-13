@@ -28,6 +28,10 @@ export class ResidentsInformationsComponent implements OnInit {
   @Output()
   isModifyingEventHappened: EventEmitter<boolean> = new EventEmitter<boolean>(); // emit to update the resident list;
 
+
+  @Output()
+  userSharingHisParameters: EventEmitter<User> = new EventEmitter<User>();
+
   private isDeleteButtonPressed: boolean;
   private hasModificationsBeenMade: boolean;
 
@@ -79,7 +83,8 @@ export class ResidentsInformationsComponent implements OnInit {
   }
 
   shareButtonPressed() {
-
+    this.userSharingHisParameters.emit(this.user);
+    this.backPressed();
   }
 
   hasChangeBeenDone(): boolean {

@@ -13,15 +13,20 @@ export class ResidentsComponent implements OnInit {
 
     private isCreateAccountWindowOpen: boolean;
     private isInformationWindowOpen: boolean;
+    private isCopyParamWindowOpen: boolean;
+    private userSharingHisParameter: User;
     private userSelectedInformation: User;
+    private usersToCopyParamUpon: User[] = [];
 
     constructor(private authServices: AuthService) {
         this.isCreateAccountWindowOpen = false;
         this.isInformationWindowOpen = false;
+        this.isCopyParamWindowOpen = false;
     }
 
     ngOnInit() {
         this.updateResidentsList();
+        this.userSharingHisParameter = undefined;
     }
 
     openCreateAccountWindow() {
@@ -34,7 +39,7 @@ export class ResidentsComponent implements OnInit {
     }
 
     isWindowOpen() {
-        return this.isCreateAccountWindowOpen || this.isInformationWindowOpen;
+        return this.isCreateAccountWindowOpen || this.isInformationWindowOpen || this.isCopyParamWindowOpen;
     }
 
     getUserSelectedInformation() {
@@ -46,4 +51,14 @@ export class ResidentsComponent implements OnInit {
             this.users = users as User[];
         });
     }
+
+  goBackToUserInformation() {
+    this.userSharingHisParameter = undefined;
+    this.isInformationWindowOpen = true;
+    this.usersToCopyParamUpon = [];
+  }
+
+  saveButtonClicked() {
+    this.isCopyParamWindowOpen = true;
+  }
 }

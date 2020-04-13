@@ -8,12 +8,12 @@
 
 .user-table {
   padding: 2vmin;
-  border: #5396EC 5px solid;
+  border: #5396EC 1vmin solid;
   border-radius: 5vmin;
   background-color: #5396EC;
-  -webkit-box-shadow: 0px 0px 38px 6px rgba(0,0,0,0.31);
-  -moz-box-shadow: 0px 0px 38px 6px rgba(0,0,0,0.31);
-  box-shadow: 0px 0px 38px 6px rgba(0,0,0,0.31);
+  -webkit-box-shadow: 0 0 38px 6px rgba(0,0,0,0.31);
+  -moz-box-shadow: 0 0 38px 6px rgba(0,0,0,0.31);
+  box-shadow: 0 0 38px 6px rgba(0,0,0,0.31);
 }
 
 .text-connexion {
@@ -37,7 +37,7 @@
 .input-custom {
   padding: 2vmin;
   margin: 2vmin;
-  border: #FFFFFF 0px solid;
+  border: #FFFFFF 0 solid;
   border-radius: 2vmin;
   font-family: "Segoe UI Black", sans-serif;
   font-size: 5vmin;
@@ -47,7 +47,7 @@
 .button-card {
   padding: 2vmin;
   margin: 2vmin;
-  border: #FFFFFF 0px solid;
+  border: #FFFFFF 0 solid;
   border-radius: 2vmin;
   background-color: #3D3D3D;
   color: white;

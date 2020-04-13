@@ -24,12 +24,24 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 
 // PAGE TITLE CSS :
 h1{
+   font-weight: 900;
+   font-family: "Segoe UI Black", sans-serif;
+   font-size: 10vmin;
+   line-height: 10vmin;
+   margin-bottom: 3vmin !important;
+   margin-top: 0 !important;
+ }
+
+h2{
   font-weight: 900;
   font-family: "Segoe UI Black", sans-serif;
-  font-size: 10vmin;
-  line-height: 10vmin;
-  margin-bottom: 3vmin !important;
+  font-size: 4vmin;
+  line-height: 8vmin;
+  margin-bottom: 0 !important;
   margin-top: 0 !important;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 hr.blackLine {

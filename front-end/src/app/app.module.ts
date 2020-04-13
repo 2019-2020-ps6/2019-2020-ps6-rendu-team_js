@@ -40,6 +40,7 @@ import { MoteurSettingsComponent } from './parameters/moteur-settings/moteur-set
 import { ResidentsListComponent } from './residents/residents-list/residents-list.component';
 import { ResidentsItemComponent } from './residents/residents-list/residents-item/residents-item.component';
 import { ResidentsInformationsComponent } from './residents/residents-informations/residents-informations.component';
+import { ConfirmParamCopyComponent } from './residents/confirm-param-copy/confirm-param-copy.component';
 import { HelpComponent } from './help/help.component';
 import { ThemeComponent } from './theme/theme.component';
 import { ThemeListComponent } from './theme/theme-list/theme-list.component';
@@ -90,6 +91,7 @@ import { QuizInprogressComponent } from './quizzes/quiz-inprogress/quiz-inprogre
     ThemeListComponent,
     ThemeItemComponent,
     QuizInprogressComponent,
+    ConfirmParamCopyComponent
   ],
     imports: [
         BrowserModule,

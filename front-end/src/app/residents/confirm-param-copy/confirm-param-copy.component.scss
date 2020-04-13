@@ -14,7 +14,8 @@
 
 .table {
   padding: 2vmin;
-  border: #D8F8FF 0 solid;
+  width: 100vmin;
+  border: 0 solid transparent;
   border-radius: 5vmin;
   background-color: #D8F8FF;
 }
@@ -23,7 +24,7 @@
   text-align: center;
   width: 100%;
   color: black;
-  font-size: 5vmin;
+  font-size: 4vmin;
   padding-bottom: 2vmin;
   display: inline-block;
   font-family: "Segoe UI Black", sans-serif;
@@ -41,7 +42,6 @@
 
 .input-custom {
   padding: 1vmin;
-  margin-bottom: 1vmin;
   border: grey 0.3vmin solid;
   border-radius: 2vmin;
   font-family: "Segoe UI Black", sans-serif;
@@ -67,14 +67,63 @@
   width: 100%;
 }
 
-.back-button-bg {
-  background-color: #804b4c;
+.link-card {
+  padding: 1vmin;
+  margin-bottom: 1vmin;
+  border: #FFFFFF 0 solid;
+  border-radius: 10vmin;
+  color: white;
+  text-align: center;
+  font-family: "Segoe UI Black", sans-serif;
+  font-size: 2vmin;
+  width: 100%;
 }
+
+.margin-top{
+  margin-top: 0.5vmin;
+}
+
+.back-button-bg {
+  background-color: #929292;
+}
+
+.back-button-bg:hover {
+  background-color: #848484;
+}
+
+
+.share-button-bg {
+  background-color: #2E7F90;
+}
+
+.share-button-bg:hover {
+  background-color: #286d7c;
+}
+
+.stats-button-bg {
+  background-color: #DCA409;
+}
+
+.stats-button-bg:hover {
+  background-color: #bf8e08;
+}
+
+.delete-button-bg {
+  background-color: #9d0000;
+}
+
+.delete-button-bg:hover {
+  background-color: #8d0000;
+}
+
 
 .create-button-bg {
   background-color: #6BA800;
 }
 
+.create-button-bg:hover {
+  background-color: #589200;
+}
 
 .button-container {
   display: flex;
@@ -84,28 +133,43 @@
   margin-top: 2vmin;
 }
 
-.text-input-container {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  margin-top: 3vmin;
-  margin-bottom: 2vmin;
-}
 
 .checkbox-container {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+  width: 100%;
 }
 
 .checkbox-container div {
+  width: 100%;
   margin: 1vmin;
+}
+
+.list-name{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.list-name div {
+  font-weight: 600;
+  font-family: "Segoe UI", sans-serif;
+  font-size: 3vmin;
+  padding: 1.5vmin;
+  margin: 1vmin;
+  border: 0 solid transparent;
+  border-radius: 3vmin;
+  background-color: #90D3E1;
+
 }
 
 .checkbox-container label {
   flex: 1;
   text-align: center;
   background-color: #56A5B6;
+  margin: 0;
   padding: 1vmin;
   border: #5D5D5D 0 solid;
   border-radius: 10vmin;
@@ -113,6 +177,7 @@
   font-size: 3vmin;
   color: white;
   opacity: 0.5;
+  width: 100%;
 }
 
 .checkbox-container input{
@@ -124,10 +189,13 @@
   background-color: #3CABC2;
 }
 
-
 .checkbox-container input:checked + label:hover {
   opacity: 1;
   background-color: #308a9c;
+}
+
+.checkbox-container input + label:hover {
+  opacity: 0.7;
 }
 
 
@@ -136,52 +204,65 @@
   opacity: 0.5;
 }
 
-
-.checkbox-container input + label:hover {
-  opacity: 0.7;
-}
-
-
 .disable-button {
   opacity: 0.5;
 }
 
 .assistance-text {
   font-family: "Segoe UI Black", sans-serif;
-  font-size: 3vmin;
+  font-size: 2vmin;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
   text-align: center;
   color: #5D5D5D;
 }
 
+
 .assistance-container {
   display: flex;
-  flex-direction: column;
-  padding-bottom: 2vmin;
+  flex-direction: row;
+  margin-bottom: 1vmin;
 }
 
-
-
-.error-text{
-  font-size: xx-large;
-  color: #b00000;
-  width: 100vmin;
-  text-align: center;
-  display: inline-block;
-  font-family: "Segoe UI Black", serif;
-}
 
 .checkbox {
   width: 100%;
 }
 
-.input-custom:hover{
-  opacity: 0.8;
+.deletePressed {
+  padding: 1vmin;
+  margin-bottom: 1vmin;
+  border: #FFFFFF 0 solid;
+  border-radius: 2vmin;
+  color: white;
+  text-align: center;
+  font-family: "Segoe UI Black", sans-serif;
+  font-size: 6vmin;
+  width: 100%;
 }
 
-.back-button-bg:hover {
-  background-color: #6e4042;
+.info-text {
+  font-size: xx-large;
+  color: white;
+  width: 100vmin;
+  text-align: center;
+  position: absolute;
+  left: 60vmin;
+  right: 40vmin;
+  top: 7vmin;
+  background-color: #6ba800;
+  border: 0 solid white;
+  border-bottom-left-radius: 2vmin;
+  border-bottom-right-radius: 2vmin;
+  font-family: "Segoe UI Black", serif;
+
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.5s ease-in-out;
 }
 
-.create-button-bg:hover {
-  background-color: #4f7c00;
+.info-text-visible {
+  visibility: visible;
+  opacity: 1 !important;
 }

@@ -1,9 +1,8 @@
 
 .resident-container {
-  background-color: #90D3E1;
   padding: 2vmin;
   margin: 1vmin;
-  border: 0px solid;
+  border: 0 solid;
   border-radius: 3vmin;
   display: flex;
   cursor: pointer;
@@ -11,19 +10,35 @@
   height: 10vmin;
 }
 
-.resident-container:hover {
+.normal-color {
+  background-color: #90D3E1;
+}
+
+.normal-color:hover {
   background-color: #7cb3bf;
+}
+
+.disable-color {
+  background-color: #5D5D5D;
+}
+
+.selected-color {
+  background-color: #3497ac;
+}
+
+.selected-color:hover {
+  background-color: #3393a8;
 }
 
 .img-user {
   fill: white;
+  width: 6vmin;
   padding-right: 1vmin;
 
 }
 
 .username {
   font-size: 3vmin;
-  color: #2A2A2A;
   font-family: "Segoe UI Black";
   display: flex;
   flex-direction: column;
@@ -31,3 +46,13 @@
   width: 100%;
   text-align: center;
 }
+
+.disable-color-text {
+  color: #ffffff;
+
+}
+
+.normal-color-text {
+  color: #2A2A2A;
+}
+
