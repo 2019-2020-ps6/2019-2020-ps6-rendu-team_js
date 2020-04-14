@@ -19,8 +19,7 @@ export class QuizItemComponent implements OnInit {
 
   constructor(private auth: AuthService,
               private gamesService: GamesService,
-              private toasterService: ToasterService,
-              private router: Router) {
+              private toasterService: ToasterService) {
 
   }
 
@@ -30,10 +29,19 @@ export class QuizItemComponent implements OnInit {
   deleteGame() {
     const id = this.auth.user.id;
 
-    this.gamesService.deleteGame(id.toString(), this.quiz.id).subscribe(() => {
-      this.toasterService.activateToaster(false, 'Essaie supprimé !', 2000);
-      this.gamesService.setSelectedGameQuizInfo(id);
+    this.gamesService.deleteGame(id.toString(), this.quiz.id.toString()).subscribe(response => {
+      if (response.status === 204) {
+        this.toasterService.activateToaster(false, 'Essaie supprimé !', 2000);
+        this.gamesService.setSelectedGameQuizInfo(id.toString());
+      } else {
+        this.toasterService.activateToaster(true, 'Une erreur est survenue, réessayer plus tard...', 2000);
+      }
     });
+
+    // this.gamesService.deleteGame(id.toString(), this.quiz.id).subscribe(() => {
+    //   this.toasterService.activateToaster(false, 'Essaie supprimé !', 2000);
+    //   this.gamesService.setSelectedGameQuizInfo(id);
+    // });
   }
 
 }

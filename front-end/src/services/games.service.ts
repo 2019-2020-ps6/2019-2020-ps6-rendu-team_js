@@ -63,12 +63,12 @@ export class GamesService {
 
   deleteGames(userId: string) {
     const urlWithId = this.gamesUrl + '/' + userId;
-    this.http.delete<Game>(urlWithId, this.httpOptions).subscribe(() => this.setGameInfoFromUrl());
+    return this.http.delete<Game>(urlWithId, {...this.httpOptions, observe: 'response'});
   }
 
   deleteGame(userId: string, quizId: string) {
     const urlWithId = this.gamesUrl + '/' + userId + '/' + quizId;
-    return this.http.delete<Game>(urlWithId, this.httpOptions);
+    return this.http.delete<Game>(urlWithId, {...this.httpOptions, observe: 'response'});
   }
 
   setSelectedGameInfo(userId: string, quizId: string) {
