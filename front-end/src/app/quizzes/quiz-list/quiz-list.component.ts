@@ -15,7 +15,17 @@ export class QuizListComponent implements OnInit {
 
   private theme: Theme = {name: ' '} as Theme;
   private quizList: Quiz[];
-  public quizList$: BehaviorSubject<Quiz[]> = new BehaviorSubject(this.quizList);
+  private quizList$: BehaviorSubject<Quiz[]> = new BehaviorSubject(this.quizList);
+
+
+  private quizListFiltered: Quiz[];
+
+  private isFilterOpen: boolean;
+
+  private isEasyActive: boolean;
+  private isMediumActive: boolean;
+  private isHardActive: boolean;
+  private textFilter: string;
 
   constructor(private router: Router,
               private route: ActivatedRoute,
@@ -31,18 +41,19 @@ export class QuizListComponent implements OnInit {
       this.quizService.getQuizzesFromThemeId(t.id).subscribe((q) => {
         this.quizList = q;
         this.quizList$.next(this.quizList);
+
+        this.quizListFiltered = q;
       });
     });
-
-    // this.quizService.quizzes$.subscribe((quizzes: Quiz[]) => {
-    //   this.quizList = quizzes;
-    // });
   }
 
   ngOnInit() {
     const themeId = this.route.snapshot.paramMap.get('id');
     this.themesService.setThemeSelectedFromId(themeId);
     this.quizList = [];
+    this.isFilterOpen = false;
+    this.quizListFiltered = [];
+    this.textFilter = 'Filtrer';
   }
 
   quizSelected(selected: boolean) {
@@ -55,5 +66,63 @@ export class QuizListComponent implements OnInit {
 
   deleteQuiz(quiz: Quiz) {
     this.quizService.deleteQuiz(quiz);
+  }
+
+  filterButtonClicked() {
+    this.isFilterOpen = !this.isFilterOpen;
+  }
+
+  isAnyFilterActive() {
+    return this.isEasyActive || this.isMediumActive || this.isHardActive;
+  }
+
+  updateTextFilter() {
+    if (this.isAnyFilterActive()) {
+      this.textFilter = 'Des filtres sont activés';
+    } else {
+      this.textFilter = 'Filtrer';
+    }
+  }
+
+  getArrayOfActiveFilter(): string[] {
+    const array = [];
+
+    if (this.isEasyActive) { array.push('Facile'); }
+    if (this.isMediumActive) { array.push('Moyen'); }
+    if (this.isHardActive) { array.push('Difficile'); }
+
+    return array;
+  }
+
+  updateQuizListFiltered() {
+    if (this.isAnyFilterActive()) {
+      const difficultyArray = this.getArrayOfActiveFilter();
+      this.quizListFiltered = this.quizList.filter((q) => {
+        return difficultyArray.indexOf(q.difficulty) > -1;
+      });
+
+    } else {
+      this.quizListFiltered = this.quizList;
+    }
+  }
+
+  easyButtonPressed() {
+    this.isEasyActive = !this.isEasyActive;
+    this.updateTextFilter();
+    this.updateQuizListFiltered();
+  }
+
+
+  mediumButtonPressed() {
+    this.isMediumActive = !this.isMediumActive;
+    this.updateTextFilter();
+    this.updateQuizListFiltered();
+  }
+
+
+  hardButtonPressed() {
+    this.isHardActive = !this.isHardActive;
+    this.updateTextFilter();
+    this.updateQuizListFiltered();
   }
 }

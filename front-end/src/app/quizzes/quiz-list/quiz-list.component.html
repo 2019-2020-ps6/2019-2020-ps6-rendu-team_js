@@ -1,9 +1,24 @@
 <!-- <app-quiz-creation></app-quiz-creation> -->
 <div class="container-quiz">
-  <h1 id="title">{{theme.name}}&nbsp;</h1>
-  <hr class="blackLine">
+  <div class="main-container">
+    <h1 id="title">{{theme.name}}&nbsp;</h1>
+    <a class="button filter-button" (click)="filterButtonClicked()" [ngClass]="isAnyFilterActive()? 'activated' : '' " >{{textFilter}}</a>
+  </div>
+
+  <hr class="blackLine" [ngClass]="isFilterOpen? 'noBottomMargin' : ''">
+
+  <!-- FILTER -->
+  <div class="filter-container" *ngIf="isFilterOpen">
+    <div>Difficulté</div>
+    <div class="button-container">
+      <a class="button difficulty-button-color" [ngClass]="isEasyActive? '' : 'disable'" (click)="easyButtonPressed()">Facile</a>
+      <a class="button difficulty-button-color" [ngClass]="isMediumActive? '' : 'disable'" (click)="mediumButtonPressed()">Moyen</a>
+      <a class="button difficulty-button-color" [ngClass]="isHardActive? '' : 'disable'" (click)="hardButtonPressed()">Difficile</a>
+    </div>
+  </div>
+
   <div class="quiz-list col-12" *ngIf="quizList !== undefined">
-    <div class="quiz" *ngFor="let quiz of quizList" >
+    <div class="quiz" *ngFor="let quiz of quizListFiltered" >
       <app-quiz-info [quiz]="quiz" [theme]="theme"></app-quiz-info>
     </div>
   </div>
