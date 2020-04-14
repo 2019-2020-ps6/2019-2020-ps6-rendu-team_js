@@ -132,13 +132,21 @@ module.exports = class BaseModel {
     this.save()
   }
 
+  deleteGames(userId) {
+    if (typeof userId === 'string') userId = parseInt(userId, 10)
+    const objIndex = this.items.findIndex((item) => item.userId === userId)
+    if (objIndex === -1) throw new NotFoundError(`Cannot delete ${this.name} id=${userId} : not found`)
+    this.items = this.items.filter((item) => item.userId !== userId)
+    this.save()
+  }
+
   deleteGame(userId, quizId) {
     if (typeof userId === 'string') userId = parseInt(userId, 10)
     const items = this.items.filter((item) => item.userId === userId)
     const objIndex = items.findIndex((item) => item.quizId === quizId)
 
     if (objIndex === -1) throw new NotFoundError(`Cannot delete ${this.name} userId=${userId} and quizId=${quizId}  : not found`)
-    this.items = this.items.filter((item) => item.userId !== userId)
+    this.items = this.items.filter((item) => item.quizId !== quizId)
     this.save()
   }
 }

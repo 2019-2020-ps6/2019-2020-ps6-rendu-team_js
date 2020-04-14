@@ -22,4 +22,8 @@ export class QuizInprogressComponent implements OnInit {
     this.gamesService.setSelectedGameQuizInfo(id.toString());
   }
 
+  deleteGames() {
+    const id = this.auth.user.id;
+    this.gamesService.deleteGames(id.toString());
+  }
 }

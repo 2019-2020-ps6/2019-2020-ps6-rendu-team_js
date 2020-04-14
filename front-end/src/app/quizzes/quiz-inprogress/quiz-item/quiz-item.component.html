@@ -1,0 +1,30 @@
+<ng-container *ngIf="quiz != null && !deleted">
+  <div class="main-container" [ngStyle]="{backgroundColor: quiz.theme.color + '40'}">
+    <div>
+      <div class="btn-group btn-group-toggle btn-block" (click)="isFullyDisplayed = !isFullyDisplayed">
+        <div class="btn btn-secondary col-1 left-part" [ngStyle]="{backgroundColor: quiz.theme.color}"
+             *ngIf="!isFullyDisplayed">⏷
+        </div>
+        <div class="btn btn-secondary col-1 left-part" [ngStyle]="{backgroundColor: quiz.theme.color}"
+             *ngIf="isFullyDisplayed">⏶
+        </div>
+        <div class="btn btn-secondary col-8 middle-part"
+             [ngStyle]="{backgroundColor: quiz.theme.color}"> {{quiz.name}} </div>
+        <div class="btn btn-secondary col-3 right-part"
+             [ngStyle]="{backgroundColor: quiz.theme.color}"> {{quiz.difficulty}} </div>
+      </div>
+
+      <div class="card-body" *ngIf="isFullyDisplayed">
+
+        <div class="btn-container" style="text-align: center">
+          <button type="button" class="btn btn-secondary btn-lg col-3"
+                  [ngStyle]="{backgroundColor: quiz.theme.color}"> Continuer le quiz <!--routerLink="/play/{{quiz.id}}"-->
+          </button>
+          <button type="button" id="btn_delete" class="btn btn-secondary btn-lg col-3" (click)="deleteGame()"> Abandonner
+          </button>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</ng-container>

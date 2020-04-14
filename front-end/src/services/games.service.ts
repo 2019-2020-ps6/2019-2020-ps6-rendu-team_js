@@ -58,8 +58,17 @@ export class GamesService {
     const urlWithId = this.gamesUrl + '/' + userId;
     this.http.get<Quiz[]>(urlWithId).subscribe((result) => {
       this.gameQuizInfoSelected$.next(result);
-      console.log(result);
     });
+  }
+
+  deleteGames(userId: string) {
+    const urlWithId = this.gamesUrl + '/' + userId;
+    this.http.delete<Game>(urlWithId, this.httpOptions).subscribe(() => this.setGameInfoFromUrl());
+  }
+
+  deleteGame(userId: string, quizId: string) {
+    const urlWithId = this.gamesUrl + '/' + userId + '/' + quizId;
+    return this.http.delete<Game>(urlWithId, this.httpOptions);
   }
 
   setSelectedGameInfo(userId: string, quizId: string) {

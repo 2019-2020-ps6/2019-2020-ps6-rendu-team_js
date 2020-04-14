@@ -4,7 +4,7 @@ const {Result} = require("../../../models");
 const {verifyIfAnswerIsCorrect} = require("../../users/statistiques/manager");
 const {getCorrectAnswer} = require("../../users/statistiques/manager");
 const {updateStatistics} = require("../result/manager");
-const {Game, Quiz} = require("../../../models");
+const {Game, Quiz, Theme} = require("../../../models");
 
 const router = new Router({mergeParams: true})
 
@@ -23,6 +23,8 @@ router.get('/:userId', (req, res) => {
 
         games.forEach((game) => {
             const quiz = Quiz.getById(game.quizId);
+            const theme = Theme.getById(quiz.themeId);
+            quiz.theme = theme;
             quizArray.push(quiz);
         });
 
@@ -146,6 +148,24 @@ router.put('/quizCompleted', (req, res) => {
 
     } catch (err) {
         res.status(404).json(err)
+    }
+})
+
+router.delete('/:userId/:quizId', (req, res) => {
+    try {
+        Game.deleteGame(req.params.userId, req.params.quizId);
+        res.status(204).end()
+    } catch (err) {
+        manageAllErrors(res, err)
+    }
+})
+
+router.delete('/:userId', (req, res) => {
+    try {
+        Game.deleteGames(req.params.userId);
+        res.status(204).end()
+    } catch (err) {
+        manageAllErrors(res, err)
     }
 })
 

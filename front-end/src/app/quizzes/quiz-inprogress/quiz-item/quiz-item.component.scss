@@ -1,0 +1,90 @@
+@import "../../../../styles/variables";
+
+$primaryColorDark: #0099ff;
+$primaryColor: #79e9ff;
+$borderColor: #F2F2F2;
+$cornerRadius: 25px;
+
+.main-container {
+  align-content: space-around;
+  margin: 2vmin;
+  border: 0 solid transparent;
+  border-radius: 2vmin;
+}
+
+.left-part {
+  border: 1vmin solid transparent;
+  border-bottom-left-radius: 2vmin;
+  border-top-left-radius: 2vmin;
+  font-size: 6vmin !important;
+}
+
+.middle-part {
+  font-size: 6vmin !important;
+  border-right: 0.5vmin solid white !important;
+}
+
+.right-part {
+  border: 0 solid transparent;
+  border-bottom-right-radius: 2vmin;
+  border-top-right-radius: 2vmin;
+  font-size: 6vmin !important;
+}
+
+.card{
+  margin-top: 90pt;
+}
+.card-header {
+  font-weight: 900;
+  font-family: "Segoe UI Black", sans-serif;
+  font-size: 5vmin;
+  color: white;
+}
+
+#btn_delete{
+  background-color: #800000;
+}
+
+.card-text{
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 900;
+  font-family: "Segoe UI Black", sans-serif;
+  font-size: 5vmin;
+  color: black;
+}
+
+.card-body{
+  border: 0 solid black;
+  border-bottom-left-radius: 3vmin;
+  border-bottom-right-radius: 3vmin;
+}
+
+.btn-secondary{
+  font-weight: 900;
+  font-family: "Segoe UI Black", sans-serif;
+  font-size: 3vmin;
+  border: 0 solid transparent;
+  background-color: transparent;
+}
+
+.btn-block {
+  border: 0 solid black;
+}
+
+
+.btn-block:hover {
+  opacity: 0.8;
+}
+
+.btn-lg {
+  border-radius: 1vmin;
+  font-size: 4vmin !important;
+  margin: 1vmin;
+}
+
+.btn-lg:hover{
+  opacity: 0.8;
+}
