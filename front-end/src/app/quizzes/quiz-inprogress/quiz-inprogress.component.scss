@@ -1,26 +1,19 @@
-$primaryColorDark: #0099ff;
-$primaryColor: #79e9ff;
-$borderColor: #F2F2F2;
-$cornerRadius: 25px;
-
-.container {
-  background-color: $primaryColor;
-  border-radius: $cornerRadius;
-  color: #FFF;
-}
-
-.row {
-  font-weight: 600;
-  font-size: 5vmin;
-}
-
-#quizInfo {
-  border-radius: $cornerRadius;
-  background-color: $primaryColorDark;
-  cursor: pointer;
-}
-
-#quizDifficulty {
+.button-stats {
+  justify-content: center;
   text-align: center;
-  border-left: solid 5px $borderColor;
+
+  color: white;
+  background-color: #cd0500;
+  border: #cd0500 solid 0 ;
+  border-radius: 3vmin;
+
+  margin: 2vmin;
+  padding: 2vmin;
+  font-family: "Segoe UI Black";
+  font-size: 3vmin;
+}
+
+.button-stats:hover{
+  color: white;
+  background-color: #ed5855;
 }
