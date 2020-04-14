@@ -62,7 +62,6 @@ export class HeaderComponent implements OnInit {
 
   isOnAdminLoginPage(): boolean {
     const path = this.getCurrentPathSpliced();
-    console.log(path.length > 2 && path[2] === 'admin');
     return path.length > 2 && path[2] === 'admin';
   }
 
