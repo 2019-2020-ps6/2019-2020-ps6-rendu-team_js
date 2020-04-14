@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {HelpService} from '../../services/help.service';
 
 @Component({
   selector: 'app-help',
@@ -7,9 +8,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HelpComponent implements OnInit {
 
-  constructor() { }
+  constructor(private helpService: HelpService) { }
 
   ngOnInit() {
   }
 
+  deactivateWindow() {
+    this.helpService.activateWindow(false);
+  }
 }

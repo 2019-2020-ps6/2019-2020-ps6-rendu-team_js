@@ -46,6 +46,7 @@ import { ThemeComponent } from './theme/theme.component';
 import { ThemeListComponent } from './theme/theme-list/theme-list.component';
 import { ThemeItemComponent } from './theme/theme-item/theme-item.component';
 import { QuizInprogressComponent } from './quizzes/quiz-inprogress/quiz-inprogress.component';
+import {YouTubePlayerModule} from '@angular/youtube-player';
 
 
 
@@ -100,6 +101,7 @@ import { QuizInprogressComponent } from './quizzes/quiz-inprogress/quiz-inprogre
         HttpClientModule,
         BrowserAnimationsModule,
         FormsModule,
+        YouTubePlayerModule,
     ],
   providers: [],
   bootstrap: [AppComponent]

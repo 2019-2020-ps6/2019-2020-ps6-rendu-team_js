@@ -3,20 +3,21 @@
   <app-header></app-header>
 
 
-  <!--TOASTER-->
+  <!-- TOASTER -->
   <div [ngClass]="(message !== '')? 'info-text-visible' : ''" class="info-text" [style.background-color]="(isErrorMessage)? '#8d0000' : '#6ba800'">{{message}}</div>
+
+  <!-- HELP -->
+  <app-help *ngIf="isHelpActive"> </app-help>
 
   <div class="main-page">
     <app-menu (bodyBackgroundColor)="setBackgroundColor($event)"></app-menu>
-    <div class="main-content">
+    <div class="main-content"  [ngClass]="isHelpActive? 'blur' : ''">
       <router-outlet></router-outlet>
     </div>
 
-    <app-help *ngIf="isHelpActive"> </app-help>
+
 
     <div class="bottom-shadow"></div>
-
-
 
   </div>
 </div>

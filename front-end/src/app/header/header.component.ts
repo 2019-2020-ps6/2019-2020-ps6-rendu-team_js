@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import {AuthService} from '../../services/auth.service';
 import {Router} from '@angular/router';
 import {Location} from '@angular/common';
+import {HelpService} from '../../services/help.service';
 
 @Component({
   selector: 'app-header',
@@ -10,12 +11,18 @@ import {Location} from '@angular/common';
 })
 export class HeaderComponent implements OnInit {
 
+  isHelpWindowDisplayed: boolean;
+
   constructor(private authService: AuthService,
               private router: Router,
+              private helpService: HelpService,
               private location: Location) { }
 
   ngOnInit() {
     // this.authService.user$.subscribe((b: boolean) => { this.authService.auth = b; });
+    this.helpService.windowDisplayed$.subscribe((b) => {
+      this.isHelpWindowDisplayed = b;
+    });
   }
 
   getCurrentPathSpliced(): string[] {
@@ -59,4 +66,10 @@ export class HeaderComponent implements OnInit {
     return path.length > 2 && path[2] === 'admin';
   }
 
+  helpButtonPressed() {
+    this.isHelpWindowDisplayed = !this.isHelpWindowDisplayed;
+
+    this.helpService.activateWindow(this.isHelpWindowDisplayed);
+
+  }
 }

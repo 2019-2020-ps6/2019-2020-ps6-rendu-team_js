@@ -50,6 +50,7 @@
   display: flex;
   flex-direction: row;
   justify-content: space-around;
+  align-items: center;
   background-color: #65a800;
   padding: 0.5em;
   height: 100%;
@@ -62,6 +63,7 @@
 
 .help-button img{
   height: 4vmin;
+  width: 4vmin;
   //height: 100%;
 }
 

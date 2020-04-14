@@ -1,5 +1,6 @@
 import {Component} from '@angular/core';
 import {ToasterService} from '../services/toaster.service';
+import {HelpService} from '../services/help.service';
 
 @Component({
   selector: 'app-root',
@@ -14,8 +15,10 @@ export class AppComponent {
   private isErrorMessage: boolean;
   private message: string;
 
-  constructor(private toasterService: ToasterService) {
+  constructor(private toasterService: ToasterService,
+              private helpService: HelpService) {
 
+    /* TOASTER */
     toasterService.isErrorMessage$.subscribe((isErrorMessage) => {
       this.isErrorMessage = isErrorMessage;
     });
@@ -26,14 +29,15 @@ export class AppComponent {
 
     toasterService.timeMillisecond$.subscribe((timeMillisecond) => {
       return new Promise(resolve => {
-        console.log(this.message);
-        console.log(this.message !== '');
         setTimeout(resolve, timeMillisecond);
       }).then(() => {
         this.message = '';
-        console.log(this.message !== '');
-        console.log(this.message);
       });
+    });
+
+    /* HELP */
+    this.helpService.windowDisplayed$.subscribe((b) => {
+      this.isHelpActive = b;
     });
   }
 

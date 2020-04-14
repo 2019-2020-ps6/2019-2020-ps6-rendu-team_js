@@ -4,7 +4,7 @@
     <div class="app-name" *ngIf="isPolyQuizDisplayed()">
       PolyQuiz
     </div>
-    <a class="help-button" *ngIf="isPolyQuizDisplayed()">
+    <a class="help-button" *ngIf="isPolyQuizDisplayed()" (click)="helpButtonPressed()">
       <img src="assets/images/flasher.png">
       <div class="text-aide">Aide</div>
       <img src="assets/images/flasher.png">

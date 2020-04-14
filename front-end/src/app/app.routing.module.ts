@@ -2,7 +2,6 @@ import {NgModule} from '@angular/core';
 import {RouterModule, Routes} from '@angular/router';
 import {QuizListComponent} from './quizzes/quiz-list/quiz-list.component';
 import {PlayQuizComponent} from './play-quiz/play-quiz.component';
-import {MenuComponent} from './menu/menu.component';
 import {ParametersComponent} from './parameters/parameters.component';
 import {ResultComponent} from './play-quiz/result/result.component';
 import {StatisticsComponent} from './statistics/statistics.component';
