@@ -1,6 +1,8 @@
-<div *ngIf="arrayQuizInfo != undefined && arrayQuizInfo.length > 0">
-  <h1 id="title">Quiz à finir !</h1>
-  <a type="submit" class="button-stats" (click)=deleteGames()>Abandonner tous les Quiz</a>
+<div *ngIf="arrayQuizInfo !== undefined && arrayQuizInfo.length > 0">
+  <div class="title-container">
+    <h1 id="title">Quiz à finir !</h1>
+    <a type="submit" class="button-stats" (click)=deleteGames()>Abandonner tous les Quiz</a>
+  </div>
   <hr class="blackLine">
 
   <div *ngFor="let quiz of arrayQuizInfo">

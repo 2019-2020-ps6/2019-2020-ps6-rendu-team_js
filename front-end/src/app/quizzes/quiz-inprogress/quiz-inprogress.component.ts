@@ -14,11 +14,12 @@ export class QuizInprogressComponent implements OnInit {
   private arrayQuizInfo: Quiz[];
 
   constructor(private route: ActivatedRoute, private gamesService: GamesService, private auth: AuthService) {
-    this.gamesService.gameQuizInfoSelected$.subscribe((array) => this.arrayQuizInfo = array);
   }
 
   ngOnInit() {
     const id = this.auth.user.id;
+
+    this.gamesService.gameQuizInfoSelected$.subscribe((array) => this.arrayQuizInfo = array);
     this.gamesService.setSelectedGameQuizInfo(id.toString());
   }
 

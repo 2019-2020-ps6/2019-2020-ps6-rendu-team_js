@@ -4,6 +4,7 @@ import {AuthService} from '../../../../services/auth.service';
 import {GamesService} from '../../../../services/games.service';
 import {Router} from '@angular/router';
 import {Game} from '../../../../models/game.model';
+import {ToasterService} from '../../../../services/toaster.service';
 
 @Component({
   selector: 'app-quiz-item',
@@ -14,10 +15,12 @@ export class QuizItemComponent implements OnInit {
 
   @Input() quiz: Quiz;
 
-  private deleted = false;
   private isFullyDisplayed = false;
 
-  constructor(private auth: AuthService, private gamesService: GamesService, private router: Router) {
+  constructor(private auth: AuthService,
+              private gamesService: GamesService,
+              private toasterService: ToasterService,
+              private router: Router) {
 
   }
 
@@ -28,8 +31,8 @@ export class QuizItemComponent implements OnInit {
     const id = this.auth.user.id;
 
     this.gamesService.deleteGame(id.toString(), this.quiz.id).subscribe(() => {
-      this.deleted = true;
-      this.router.navigateByUrl('/', {skipLocationChange: true}).then(() => this.router.navigate(['/themes']));
+      this.toasterService.activateToaster(false, 'Essaie supprimé !', 2000);
+      this.gamesService.setSelectedGameQuizInfo(id);
     });
   }
 
