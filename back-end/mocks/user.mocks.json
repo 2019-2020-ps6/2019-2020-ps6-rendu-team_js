@@ -142,5 +142,13 @@
     "password": "$2b$10$hcPlIlYkr/Q7b6VwpHA/te63saMVf9UQo.Qgg5emBjB0umr0cZgAi",
     "accountLevel": 0,
     "id": 1586812301036
+  },
+  {
+    "username": "Pedro Pedro",
+    "firstName": "Pedro",
+    "lastName": "Pedro",
+    "password": "$2b$10$h2S4U8jI.eS4ahAzLmW5UOw5jJMPx.FTL3b/AMPvDmTa6CeWE7WpG",
+    "accountLevel": 0,
+    "id": 1586852411691
   }
 ]

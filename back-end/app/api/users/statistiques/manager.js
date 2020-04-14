@@ -34,7 +34,6 @@ const buildStats = (statsId) => {
             mapOfQuiz.set(quizId , array);
         }
     });
-
     let quizzesResultIds = [];
 
     for (let key of mapOfQuiz.keys()) {

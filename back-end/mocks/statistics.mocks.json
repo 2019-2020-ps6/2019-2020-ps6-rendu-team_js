@@ -83,21 +83,20 @@
     "id": 1585366302574
   },
   {
-    "currentWeek": 15,
-    "successPercentage": 71.875,
-    "totalQuizMade": 8,
-    "weekQuizMade": 5,
+    "currentWeek": 16,
+    "successPercentage": 60.294117647058826,
+    "totalQuizMade": 17,
+    "weekQuizMade": 7,
     "quizzesResultIds": [
       1585645443297,
       1585645443305,
-      1585666661625,
-      1586252298880,
-      1586252364175,
-      1586252398144,
-      1586252477695,
-      1586301902635
+      1586852920564,
+      1586852952048,
+      1586852961481,
+      1586852972257,
+      1586852981271
     ],
-    "perfectQuiz": 1,
+    "perfectQuiz": 3,
     "id": 1585360751986
   },
   {
