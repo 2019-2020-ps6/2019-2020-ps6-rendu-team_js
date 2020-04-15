@@ -15,6 +15,9 @@
     <app-quiz-statistics [quizResult]="quizResult"
                          (quizResultToDisplayDetails)="displayQuizDetails($event)"></app-quiz-statistics>
   </ng-container>
+  <div *ngIf="userStatistics.quizzesResultIds.length == 0">
+    <div id="text">Le résident a fini aucun quiz pour le moment</div>
+  </div>
 </div>
 
 <div *ngIf="displayGlobalComponent">

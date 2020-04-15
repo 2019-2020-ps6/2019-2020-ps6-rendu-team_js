@@ -46,6 +46,12 @@ $buttonColor: #d650ec;
    color: $buttonColor;
  }
 
+#text{
+  font-size: 3vmin;
+  font-family: "Segoe UI Black";
+  text-align: center;
+}
+
 .title-container {
   display: flex;
   flex-direction: row;
