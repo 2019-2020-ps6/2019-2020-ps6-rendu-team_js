@@ -8,6 +8,13 @@
 <!--  [startSeconds]="43"-->
 <!--  [endSeconds]="60">-->
 <!--</youtube-player>-->
-<div class="help-container"></div>
-<iframe class="help-container" src="https://www.youtube-nocookie.com/embed/dQw4w9WgXcQ?autoplay=1&controls=0&modestbranding=1&rel=1&showinfo=0&color=red" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"></iframe>
+<!--<div class="help-container"></div>-->
+<div class="help-container">
+  <div class="title">Vidéo d'aide :</div>
+  <iframe id="player" tag class="video" [src]='sanitizer.bypassSecurityTrustResourceUrl(urlFirstPart + getCorrectVideoId() + urlLastPart)'   frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"></iframe>
+  <div class="button-container">
+    <a class="button back-button" (click)="deactivateWindow()">Retour</a>
+<!--    <a class="button replay-button" (click)="restartVideo()">Revoir la vidéo</a>-->
+  </div>
+</div>
 <div class="background" (click)="deactivateWindow()"></div>
