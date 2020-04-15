@@ -4,7 +4,7 @@
       Quiz faits au total
     </div>
     <div id="totalQuizValue" class="col-lg-3 col-md-3 col-xs-3 xol-sm-3 itemTitle">
-      <div *ngIf="totalQuizMade == undefined;else definedTotalQuiz">000</div>
+      <div *ngIf="totalQuizMade == undefined || weekQuizMade == 0;else definedTotalQuiz"> - </div>
       <ng-template #definedTotalQuiz> {{totalQuizMade}} </ng-template>
     </div>
   </div>
@@ -14,7 +14,7 @@
       Quiz faits cette semaine
     </div>
     <div id="weekQuizValue" class="col-lg-3 col-md-3 col-xs-3 xol-sm-3 itemTitle">
-      <div *ngIf="weekQuizMade == undefined;else definedQuizValue">000</div>
+      <div *ngIf="weekQuizMade == undefined || weekQuizMade == 0;else definedQuizValue"> - </div>
       <ng-template #definedQuizValue> {{weekQuizMade}} </ng-template>
     </div>
   </div>
@@ -24,7 +24,7 @@
       Taux de réussite
     </div>
     <div id="successPercentageValue" class="col-lg-3 col-md-3 col-xs-3 xol-sm-3 itemTitle">
-      <div *ngIf="successPercentage == undefined;else definedSuccessPercentage">???%</div>
+      <div *ngIf="successPercentage == undefined || successPercentage == 0.00;else definedSuccessPercentage"> - </div>
       <ng-template #definedSuccessPercentage> {{successPercentage| number:'1.2-2'}}% </ng-template>
     </div>
   </div>
@@ -34,7 +34,7 @@
       Quiz réalisé sans erreur
     </div>
     <div id="quizPerfectedValue" class="col-lg-3 col-md-3 col-xs-3 xol-sm-3 itemTitle">
-      <div *ngIf="perfectQuizMade == undefined;else definedQuizPerfected">???</div>
+      <div *ngIf="perfectQuizMade == undefined || perfectQuizMade == 0;else definedQuizPerfected"> - </div>
       <ng-template #definedQuizPerfected> {{perfectQuizMade}} </ng-template>
     </div>
   </div>
