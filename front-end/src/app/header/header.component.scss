@@ -37,7 +37,7 @@
   flex-direction: column;
   justify-content: center;
   background-color: #2A2A2A;
-  padding: 0.5em;
+  padding: 1vmin;
   height: 100%;
   font-family: "Segoe UI Black", sans-serif;
 }
@@ -46,13 +46,13 @@
   cursor: pointer;
   text-align: center;
   color: white;
-  font-size: 3vmin;
+  font-size: 1.5vw;
   display: flex;
   flex-direction: row;
   justify-content: space-around;
   align-items: center;
   background-color: #65a800;
-  padding: 0.5em;
+  padding: 1vmin;
   height: 100%;
   font-family: "Segoe UI Black", sans-serif;
 }
@@ -80,12 +80,12 @@
   cursor: pointer;
   text-align: center;
   color: white;
-  font-size: 3vmin;
+  font-size: 1.5vw;
   display: flex;
   flex-direction: column;
   justify-content: center;
   background-color: #800000;
-  padding: 0.5em;
+  padding: 1vmin;
   height: 100%;
   font-family: "Segoe UI Black", sans-serif;
 }
@@ -98,12 +98,12 @@
   cursor: pointer;
   text-align: center;
   color: white;
-  font-size: 3vmin;
+  font-size: 1.5vw;
   display: flex;
   flex-direction: column;
   justify-content: center;
   background-color: #800000;
-  padding: 0.5em;
+  padding: 1vmin;
   height: 100%;
   border-bottom-left-radius: 1vmin;
   font-family: "Segoe UI Black", sans-serif;
@@ -126,12 +126,12 @@ a:hover {
   cursor: pointer;
   text-align: center;
   color: white;
-  font-size: 3vmin;
+  font-size: 1.5vw;
   display: flex;
   flex-direction: row;
   justify-content: space-around;
   background-color: #5d5d5d;
-  padding: 0.5em;
+  padding: 1vmin;
   height: 100%;
   font-family: "Segoe UI Black", sans-serif;
 }
@@ -154,12 +154,12 @@ a:hover {
   cursor: pointer;
   text-align: center;
   color: white;
-  font-size: 3vmin;
+  font-size: 1.5vw;
   display: flex;
   flex-direction: row;
   justify-content: space-around;
   background-color: #5396ec;
-  padding: 0.5em;
+  padding: 1vmin;
   height: 100%;
   font-family: "Segoe UI Black", sans-serif;
 
@@ -178,21 +178,7 @@ a:hover {
   padding-right:2vmin;
 }
 
-.resident img {
-  width: 1.5vmin;
+.resident img, .admin img {
+  height: 4vmin;
+  width: 4vmin;
 }
-
-
-//.btn-header{
-//  cursor: pointer;
-//  text-align: center;
-//  color: white;
-//  font-size: 2vmin;
-//  display: flex;
-//  flex-direction: column;
-//  justify-content: center;
-//  background-color: #5d5d5d;
-//  padding: 0.5em;
-//  height: 100%;
-//  font-family: "Segoe UI Black", sans-serif;
-//}

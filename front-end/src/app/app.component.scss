@@ -52,19 +52,22 @@ router-outlet {
 }
 
 .info-text {
-  font-size: 4vmin;
-  color: white;
-  width: 100vmin;
-  text-align: center;
   position: absolute;
-  left: 60vmin;
-  right: 40vmin;
+  left: 15vw;
+  //right: 50vw;
   top: 7vmin;
+  width: 80%;
+
+
+  font-size: 4vmin;
+  font-family: "Segoe UI Black", serif;
+  color: white;
+  text-align: center;
   background-color: #6ba800;
+
   border: 0 solid white;
   border-bottom-left-radius: 2vmin;
   border-bottom-right-radius: 2vmin;
-  font-family: "Segoe UI Black", serif;
 
   opacity: 0;
   visibility: hidden;

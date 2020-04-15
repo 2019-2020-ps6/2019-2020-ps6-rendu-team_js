@@ -22,12 +22,12 @@
     </a>
 
     <a class="admin" *ngIf="!authService.isAuth() && !isOnAdminLoginPage()" [routerLink]="['/login/admin']">
-      <img class="arrow-img" src="assets/images/lock.svg">
+      <img src="assets/images/lock.svg">
       <div> Admin </div>
     </a>
 
     <a class="resident" *ngIf="!authService.isAuth() && isOnAdminLoginPage()" [routerLink]="['/login/user']">
-      <img class="arrow-img" src="assets/images/user.svg">
+      <img src="assets/images/user.svg">
       <div> Résident </div>
     </a>
   </div>
