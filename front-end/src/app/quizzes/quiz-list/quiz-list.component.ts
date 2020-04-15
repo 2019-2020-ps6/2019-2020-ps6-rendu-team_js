@@ -78,7 +78,7 @@ export class QuizListComponent implements OnInit {
 
   updateTextFilter() {
     if (this.isAnyFilterActive()) {
-      this.textFilter = 'Des filtres sont activés';
+      // this.textFilter = 'Des filtres sont activés';
     } else {
       this.textFilter = 'Filtrer';
     }
@@ -122,6 +122,14 @@ export class QuizListComponent implements OnInit {
 
   hardButtonPressed() {
     this.isHardActive = !this.isHardActive;
+    this.updateTextFilter();
+    this.updateQuizListFiltered();
+  }
+
+  resetFilters() {
+    this.isEasyActive = false;
+    this.isMediumActive = false;
+    this.isHardActive = false;
     this.updateTextFilter();
     this.updateQuizListFiltered();
   }

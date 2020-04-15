@@ -9,14 +9,14 @@
   width: 100%;
 }
 
-.container-quiz{
+.container-quiz {
   width: 100%;
   padding: 0;
   margin-left: 0;
   margin-right: 0;
 }
 
-.noBottomMargin{
+.noBottomMargin {
   margin-bottom: 0 !important;
 }
 
@@ -35,7 +35,7 @@
 
   color: white;
   background-color: #3CABC2;
-  border: #3CABC2 solid 0 ;
+  border: #3CABC2 solid 0;
   border-radius: 3vmin;
 
   margin: 2vmin;
@@ -43,6 +43,16 @@
   font-family: "Segoe UI Black";
   font-size: 3vmin;
 }
+
+.remove-filter-button {
+  background-color: #8b3231;
+}
+
+.remove-filter-button:hover {
+  background-color: #782726;
+  color: white;
+}
+
 
 .filter-button {
   background-color: #707070;
@@ -54,6 +64,7 @@
   color: white;
 }
 
+
 .activated {
   background-color: #FFA200;
 }
@@ -62,6 +73,7 @@
   background-color: #e39100;
   color: white;
 }
+
 
 .difficulty-button-color {
   background-color: white;
@@ -73,6 +85,7 @@
   background-color: #FFFFFFE0;
   color: #e39100;
 }
+
 
 .disable {
   opacity: 0.6;
@@ -95,7 +108,7 @@
   justify-content: space-evenly;
 }
 
-.filter-container div:nth-child(1){
+.filter-container div:nth-child(1) {
   display: flex;
   flex-direction: column;
   justify-content: center;

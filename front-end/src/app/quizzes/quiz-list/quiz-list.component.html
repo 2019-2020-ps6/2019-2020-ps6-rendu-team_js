@@ -2,7 +2,10 @@
 <div class="container-quiz">
   <div class="main-container">
     <h1 id="title">{{theme.name}}&nbsp;</h1>
-    <a class="button filter-button" (click)="filterButtonClicked()" [ngClass]="isAnyFilterActive()? 'activated' : '' " >{{textFilter}}</a>
+    <div class="main-container">
+      <a class="button remove-filter-button" (click)="resetFilters()" *ngIf="isAnyFilterActive()">Supprimer les filtres</a>
+      <a class="button filter-button" (click)="filterButtonClicked()" [ngClass]="isAnyFilterActive()? 'activated' : '' " >{{textFilter}}</a>
+    </div>
   </div>
 
   <hr class="blackLine" [ngClass]="isFilterOpen? 'noBottomMargin' : ''">
