@@ -5,7 +5,8 @@
 </div>
 <hr class="blackLine">
 
-<app-vision-settings [contrast]="userSettings.contraste"
+<app-vision-settings *ngIf="userSettings !== undefined"
+                     [contrast]="userSettings.contraste"
                      [font]="userSettings.font"
                      [fontSize]="userSettings.fontSize"
                      (contrastSelected)="contrastEvent($event)"
@@ -15,6 +16,7 @@
 <h1>Paramètres moteur</h1>
 <hr class="blackLine">
 
-<app-moteur-settings [tailleSelection]="userSettings.tailleSelection"
-                     (tailleSelectionSelected)="tailleSelectionEvent($event)">
+<app-moteur-settings *ngIf="userSettings !== undefined"
+  [tailleSelection]="userSettings.tailleSelection"
+  (tailleSelectionSelected)="tailleSelectionEvent($event)">
 </app-moteur-settings>
