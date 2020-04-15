@@ -1,14 +1,3 @@
-
-<!--<youtube-player-->
-<!--  class="help-container"-->
-<!--  videoId="dQw4w9WgXcQ"-->
-<!--  suggestedQuality="highres"-->
-<!--  [height]="600"-->
-<!--  [width]="1080"-->
-<!--  [startSeconds]="43"-->
-<!--  [endSeconds]="60">-->
-<!--</youtube-player>-->
-<!--<div class="help-container"></div>-->
 <div class="help-container">
   <div class="title">Vidéo d'aide :</div>
   <iframe id="player" tag class="video" [src]='sanitizer.bypassSecurityTrustResourceUrl(urlFirstPart + getCorrectVideoId() + urlLastPart)'   frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"></iframe>

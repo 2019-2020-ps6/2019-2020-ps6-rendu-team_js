@@ -18,5 +18,5 @@
 
 <app-moteur-settings *ngIf="userSettings !== undefined"
   [tailleSelection]="userSettings.tailleSelection"
-  (tailleSelectionSelected)="tailleSelectionEvent($event)">
+  (tailleSelectionSelected)="selectionSizeEvent($event)">
 </app-moteur-settings>

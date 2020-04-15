@@ -2,6 +2,9 @@ import {Component, OnInit} from '@angular/core';
 import {HelpService} from '../../services/help.service';
 import {DomSanitizer} from '@angular/platform-browser';
 import {Location} from '@angular/common';
+import {AuthService} from '../../services/auth.service';
+import {SettingsService} from '../../services/settings.service';
+import {Settings} from '../../models/settings.model';
 
 @Component({
   selector: 'app-help',
@@ -13,10 +16,19 @@ export class HelpComponent implements OnInit {
   urlLastPart = '?autoplay=1&controls=0&modestbranding=1&rel=1&showinfo=0&color=red';
   videoId: string;
 
+  settings: Settings;
+
   constructor(private helpService: HelpService,
-              public location: Location,
+              private location: Location,
+              private authServices: AuthService,
+              private settingsService: SettingsService,
               private sanitizer: DomSanitizer) {
+
     this.videoId = 'dQw4w9WgXcQ';
+    this.settingsService.settings$.subscribe((s) => {
+      this.settings = s;
+      console.log(s);
+    });
   }
 
   ngOnInit() {
@@ -33,24 +45,57 @@ export class HelpComponent implements OnInit {
 
     if (path.length > 0) {
       switch (path[1]) {
-        case 'login' :
-          return 'V-_O7nl0Ii0';
-        case 'themes' :
+        case 'login' : // ======================================== LOGIN
+          if (this.isBigFontActive()) { // Big font size
+            return 'V-_O7nl0Ii0';
+          } else {  // Medium
+            return 'AyPkrf74ras';
+          }
+
+        case 'themes' : // ======================================= THEMES
+          if (this.isBigFontActive()) { // Big font size
+            return 'dQw4w9WgXcQ';
+          } else { // Medium
+            return 'AyPkrf74ras';
+          }
+
+        case 'stats' : // ======================================== STATS
+          if (this.isBigFontActive()) { // Big font size
+            return 'dQw4w9WgXcQ';
+          } else { // Medium
+            return 'AyPkrf74ras';
+          }
+
+        case 'parameters' : // =================================== SETTINGS
+          if (this.isBigFontActive()) { // Big font size
+            return 'dQw4w9WgXcQ';
+          } else { // Medium
+            return 'AyPkrf74ras';
+          }
+
+        case 'residents' : // ==================================== RESIDENTS
           return 'AyPkrf74ras';
-        case 'stats' :
+
+        case 'quiz-creation' : // ================================ QUIZ CREATION
           return 'dQw4w9WgXcQ';
-        case 'parameters' :
-          return 'dQw4w9WgXcQ';
-        case 'residents' :
-          return 'dQw4w9WgXcQ';
-        case 'quiz-creation' :
-          return 'dQw4w9WgXcQ';
-        default:
+
+        default: // ============================================== DEFAULT
           return 'dQw4w9WgXcQ';
       }
     } else {
       return '';
     }
+  }
+
+  isBigFontActive() {
+
+    if (this.settingsService.settings !== undefined) {
+      return this.settingsService.settings.fontSize === 2;
+      // 1 == medium
+      // 2 == big
+    }
+
+    return true;
   }
 
   restartVideo() {

@@ -39,10 +39,10 @@ export class ResultService {
   private httpOptions = httpOptionsBase;
 
   constructor(private http: HttpClient) {
-    this.setResultFromUrl();
+    this.setCurrentUserSettings();
   }
 
-  setResultFromUrl() {
+  setCurrentUserSettings() {
     this.http.get<Result>(this.resultUrl).subscribe((result) => {
       this.result = result;
       this.result$.next(this.result);

@@ -1,27 +1,17 @@
-import { Injectable } from '@angular/core';
+import {Injectable} from '@angular/core';
 import {HttpClient, HttpResponse} from '@angular/common/http';
 import {BehaviorSubject, Observable, Subject, Subscription} from 'rxjs';
-import { serverUrl, httpOptionsBase } from '../configs/server.config';
+import {serverUrl, httpOptionsBase} from '../configs/server.config';
 import {Settings} from '../models/settings.model';
+import {AuthService} from './auth.service';
 
 @Injectable({
   providedIn: 'root'
 })
 export class SettingsService {
-  /**
-   * Services Documentation:
-   * https://angular.io/docs/ts/latest/tutorial/toh-pt4.html
-   */
 
-  /**
-   * The list of quiz.
-   * The list is retrieved from the mock.
-   */
-  private settings: Settings;
-  /**
-   * Observable which contains the list of the quiz.
-   * Naming convention: Add '$' at the end of the variable name to highlight it as an Observable.
-   */
+  public settings: Settings;
+
   public settings$: BehaviorSubject<Settings> = new BehaviorSubject(this.settings);
 
   public settingsSelected$: Subject<Settings> = new Subject();
@@ -30,15 +20,22 @@ export class SettingsService {
 
   private httpOptions = httpOptionsBase;
 
-  constructor(private http: HttpClient) {
-    this.setResultFromUrl();
+  constructor(private http: HttpClient,
+              private authServices: AuthService) {
+    this.setCurrentUserSettings();
   }
 
-  setResultFromUrl() {
-    this.http.get<Settings>(this.settingsUrl).subscribe((settings) => {
-      this.settings = settings;
-      this.settings$.next(this.settings);
-    });
+  setCurrentUserSettings() {
+    if (this.authServices.user != null) {
+      const uid = this.authServices.user.id;
+
+      const urlWithId = this.settingsUrl + '/' + uid;
+
+      this.http.get<Settings>(urlWithId).subscribe((settings) => {
+        this.settings = settings;
+        this.settings$.next(this.settings);
+      });
+    }
   }
 
   setSelectedSettings(userId: string) {
@@ -59,12 +56,12 @@ export class SettingsService {
 
   updateSettings(settings: Settings, userId: string) {
     const url = this.settingsUrl + '/' + userId;
-    this.http.put<Settings>(url, settings, this.httpOptions).subscribe();
+    return this.http.put<Settings>(url, settings, {...this.httpOptions, observe: 'response'});
   }
 
   resetSettings(settings: Settings, userId: string) {
     const url = this.settingsUrl + '/resetSettings/' + userId;
-    this.http.put(url, settings, this.httpOptions).subscribe();
+    return this.http.put(url, settings, {...this.httpOptions, observe: 'response'});
   }
 
   modifyBaseSettings(settings: Settings, userId: string): Observable<HttpResponse<any>> {
