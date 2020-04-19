@@ -74,7 +74,7 @@
   {
     "handicapVisuel": false,
     "handicapMoteur": true,
-    "contraste": 1,
+    "contraste": 2,
     "fontSize": 1,
     "font": "Segoe UI",
     "tailleSelection": 2,
