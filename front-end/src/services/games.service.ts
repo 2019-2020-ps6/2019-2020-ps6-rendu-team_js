@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import {HttpClient, HttpResponse} from '@angular/common/http';
 import {BehaviorSubject, Observable, Subject} from 'rxjs';
 import { serverUrl, httpOptionsBase } from '../configs/server.config';
 import {Quiz} from '../models/quiz.model';
@@ -40,10 +40,24 @@ export class GamesService {
     this.setGameInfoFromUrl();
   }
 
+  // ---------------------
+
+  updateGame(game): Observable<HttpResponse<any>> {
+    const url = this.gamesUrl + '/';
+    return this.http.put(url, game, {...this.httpOptions, observe: 'response'});
+  }
+
+  finishGame(game): Observable<HttpResponse<any>> {
+    const url = this.gamesUrl + '/quizCompleted';
+    return this.http.put(url, game, {...this.httpOptions, observe: 'response'});
+  }
+
   getGameFromQuiz(userId: number, quizId: number) {
     const url = this.gamesUrl + '/' + userId + '/' + quizId;
     return this.http.get<Game>(url);
   }
+
+  // -----
 
   setGameQuizInfoFromUrl() {
     this.http.get<Quiz[]>(this.gamesUrl).subscribe((gameQuizInfo) => {

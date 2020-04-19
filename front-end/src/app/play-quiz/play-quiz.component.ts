@@ -48,7 +48,7 @@ export class PlayQuizComponent implements OnInit {
 
     // check if their is already a tentative for this quiz
     this.gameService.getGameFromQuiz(+this.authService.user.id, +id).subscribe((res: Game) => {
-      console.log('last try', res);
+      // console.log('last try', res);
       if (res !== null) {
         this.userAnswers = res.answers;
         this.questionNumber = res.answers.length;
@@ -113,8 +113,8 @@ export class PlayQuizComponent implements OnInit {
 
       if (this.resultId !== -1) {
 
-        // delete last try
-        this.gameService.deleteGame(this.authService.user.id, this.quiz.id);  //TODO dont work
+        // delete last try & update stats
+        this.gameService.finishGame(this.getCurrentGameTry());  // TODO correct methods in service & update answer after each question
 
         console.log('path');
         this.router.navigate(['/result', this.resultId]);
@@ -124,7 +124,7 @@ export class PlayQuizComponent implements OnInit {
     });
   }
 
-  saveTry() {
+  public getCurrentGameTry() {
     const game = {
       playTime: this.getPlayTime(),
       date: Date.now(),
@@ -132,6 +132,8 @@ export class PlayQuizComponent implements OnInit {
       answers: this.userAnswers,
       userId: this.authService.user.id + ''
     };
+
+    return game;
   }
 
 }
