@@ -42,13 +42,18 @@ export class PlayQuizComponent implements OnInit {
 
     // this.questionNumber = +this.route.snapshot.paramMap.get('questionNumber');  // +in front of string cast string to int
 
+    this.questionNumber = 0;  // initialize vars
+    this.userAnswers = [];
+
     // check if their is already a tentative for this quiz
     this.gameService.getGameFromQuiz(+this.authService.user.id, +id).subscribe((res: Game) => {
       console.log('last try', res);
+      if (res !== null) {
+        this.userAnswers = res.answers;
+        this.questionNumber = res.answers.length;
+      }
     });
 
-    this.questionNumber = 0;  // initialize vars
-    this.userAnswers = [];
   }
 
   addToUserAnswers(answer: Answer) {
@@ -102,8 +107,7 @@ export class PlayQuizComponent implements OnInit {
     this.resultService.addResult(completeAnswer);
     this.resultService.resultIdSelected$.subscribe((res: number) => {
       // console.log('result id front side', res);
-      this.setResultId(res);
-
+      this.resultId = res;
 
       if (this.resultId !== -1) {
         console.log('path');
@@ -112,10 +116,6 @@ export class PlayQuizComponent implements OnInit {
         this.router.navigate(['/']);
       }
     });
-  }
-
-  setResultId(resultId: number) {
-    this.resultId = resultId;
   }
 
 }
