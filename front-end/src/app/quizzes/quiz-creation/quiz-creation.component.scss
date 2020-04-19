@@ -1,1 +1,36 @@
 @import '../../../styles/card.scss';
+
+.greencard{
+  margin: auto;
+  padding: 30pt;
+  float: none;
+  border-radius: 25px;
+  background-color: green;
+
+  text-align : center;
+  color: white;
+  font-family: "Segoe UI", sans-serif;
+  font-size: 4vmin;
+  font-weight: bold;
+}
+
+.input-custom, .form-control, .btn-lg{
+  border-radius: 25px;
+}
+
+.btn-gris, .btn-blanc{
+  text-align : center;
+  font-family: "Segoe UI", sans-serif;
+  font-size: 4vmin;
+  font-weight: bold;
+}
+
+.btn-gris{
+  background-color: #3D3D3D;
+  color: white;
+}
+
+.btn-blanc{
+  color: green;
+  background-color: white;
+}

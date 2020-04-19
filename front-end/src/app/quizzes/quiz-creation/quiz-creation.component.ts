@@ -3,6 +3,9 @@ import { FormBuilder, FormGroup } from '@angular/forms';
 
 import { QuizService } from '../../../services/quiz.service';
 import { Quiz } from '../../../models/quiz.model';
+import {Theme} from '../../../models/theme.model';
+import {ThemesService} from '../../../services/themes.service';
+import {BehaviorSubject} from 'rxjs';
 
 @Component({
   selector: 'app-quiz-creation',
@@ -19,13 +22,20 @@ export class QuizCreationComponent implements OnInit {
    * More information about Reactive Forms: https://angular.io/guide/reactive-forms#step-1-creating-a-formgroup-instance
    */
   public quizForm: FormGroup;
+  // private themeList: Theme[];
+  // private themeList$: BehaviorSubject<Quiz[]> = new BehaviorSubject(this.themeList);
 
-  constructor(public formBuilder: FormBuilder, public quizService: QuizService) {
+  constructor(public formBuilder: FormBuilder, public quizService: QuizService, private themesService: ThemesService) {
     this.quizForm = this.formBuilder.group({
       name: [''],
       theme: [''],
       difficulty: ['']
     });
+
+
+    // this.themesService.getThemes(((t) => {
+    // this.themeList = t;
+    // }));
     // You can also add validators to your inputs such as required, maxlength or even create your own validator!
     // More information: https://angular.io/guide/reactive-forms#simple-form-validation
     // Advanced validation: https://angular.io/guide/form-validation#reactive-form-validation

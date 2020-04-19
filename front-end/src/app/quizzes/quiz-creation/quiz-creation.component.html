@@ -1,31 +1,37 @@
 <h1>Création d'un quiz</h1>
 <hr class="blackLine">
 
-<div class="card">
-  <h2>Create a new Quiz</h2>
+<div class="greencard col-7 ">
   <form class="quiz-creation" [formGroup]="quizForm">
-    <label for="title">
-      Titre <br>
-      <input class="input-custom" type="text" id="title" [formControlName]="'name'">
-    </label>
+    <label for="title">Nom du quiz</label>
     <br>
-    <label for="theme">
-      Thème <br>
-      <input class="input-custom" type="text" id="theme" [formControlName]="'theme'">
-    </label>
+    <input class="input-custom" type="text" id="title" [formControlName]="'name'">
+    <br><br>
+
+    <label for="theme">Thème</label>
     <br>
-    <label for="difficulty">
-      Difficulté <br>
-      <select class="custom-select mb-3" id="difficulty" [formControlName]="'difficulty'">
-        <option selected>Choisir une difficulté</option>
-        <option value="Facile">Facile</option>
-        <option value="Moyen">Moyen</option>
-        <option value="Difficile">Difficile</option>
-      </select>
-    </label>
+    <input class="input-custom" type="text" id="theme" [formControlName]="'theme'">
+    <!--
+    <select class="form-control form-control-lg" id="theme" [formControlName]="'theme'" *ngFor="let theme of themeList">
+    </select>
+    -->
+    <br><br>
+
+    <label for="difficulty">Difficulté</label>
     <br>
-    <button type="submit" class="button-card" (click)="addQuiz()">Create</button>
+    <select class="form-control form-control-lg" id="difficulty" [formControlName]="'difficulty'" >
+      <option value="Facile">Facile</option>
+      <option value="Moyen">Moyen</option>
+      <option value="Difficile">Difficile</option>
+    </select>
+    <br>
+
+
+    <button type="submit" class="btn-lg btn-gris" id="cancel" (click)="addQuiz()">Annuler</button>
+    &nbsp;
+    <button type="submit" class="btn-lg btn-blanc" id="create" (click)="addQuiz()">Suivant</button>
   </form>
 </div>
 <!-- Uncomment below to see your form structure and how it changes-->
 <!-- <br><br>{{quizForm.getRawValue() | json}} -->
+
