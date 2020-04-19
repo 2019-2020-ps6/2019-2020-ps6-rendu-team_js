@@ -6,6 +6,7 @@ import {Answer, Question} from '../../models/question.model';
 import {ResultService} from '../../services/result.service';
 import {AuthService} from '../../services/auth.service';
 import {GamesService} from '../../services/games.service';
+import {Game} from '../../models/game.model';
 
 @Component({
   selector: 'app-play-quiz',
@@ -40,6 +41,11 @@ export class PlayQuizComponent implements OnInit {
     this.quizService.setSelectedQuiz(id);
 
     // this.questionNumber = +this.route.snapshot.paramMap.get('questionNumber');  // +in front of string cast string to int
+
+    // check if their is already a tentative for this quiz
+    this.gameService.getGameFromQuiz(+this.authService.user.id, +id).subscribe((res: Game) => {
+      console.log('last try', res);
+    });
 
     this.questionNumber = 0;  // initialize vars
     this.userAnswers = [];
