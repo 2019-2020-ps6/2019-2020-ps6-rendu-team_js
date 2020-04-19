@@ -22,6 +22,7 @@ export class PlayQuizComponent implements OnInit {
   public userAnswers: Answer[];
   public beginDate: number;
   public endDate: number;
+  private playTimeOld = 0;
 
   public resultId = -1;
 
@@ -51,6 +52,7 @@ export class PlayQuizComponent implements OnInit {
       if (res !== null) {
         this.userAnswers = res.answers;
         this.questionNumber = res.answers.length;
+        this.playTimeOld = res.playTime;
       }
     });
 
@@ -87,7 +89,7 @@ export class PlayQuizComponent implements OnInit {
   }
 
   getPlayTime() {
-    return this.endDate - this.beginDate;
+    return (this.endDate - this.beginDate) + this.playTimeOld;
   }
 
   generateFinalUserAnswer() {
@@ -110,12 +112,26 @@ export class PlayQuizComponent implements OnInit {
       this.resultId = res;
 
       if (this.resultId !== -1) {
+
+        // delete last try
+        this.gameService.deleteGame(this.authService.user.id, this.quiz.id);  //TODO dont work
+
         console.log('path');
         this.router.navigate(['/result', this.resultId]);
       } else {
         this.router.navigate(['/']);
       }
     });
+  }
+
+  saveTry() {
+    const game = {
+      playTime: this.getPlayTime(),
+      date: Date.now(),
+      quizId: this.quiz.id,
+      answers: this.userAnswers,
+      userId: this.authService.user.id + ''
+    };
   }
 
 }

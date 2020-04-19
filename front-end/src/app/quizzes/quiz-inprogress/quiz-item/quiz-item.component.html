@@ -18,7 +18,7 @@
 
         <div class="btn-container" style="text-align: center">
           <button type="button" class="btn btn-secondary btn-lg col-3"
-                  [ngStyle]="{backgroundColor: quiz.theme.color}"> Continuer le quiz <!--routerLink="/play/{{quiz.id}}"-->
+                  [ngStyle]="{backgroundColor: quiz.theme.color}" routerLink="/play/{{quiz.id}}"> Continuer le quiz
           </button>
           <button type="button" id="btn_delete" class="btn btn-secondary btn-lg col-3" (click)="deleteGame()"> Abandonner
           </button>
