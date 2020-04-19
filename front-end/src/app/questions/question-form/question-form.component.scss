@@ -1,6 +1,41 @@
 @import '../../../styles/card.scss';
 
+.bluecard{
+  margin: auto;
+  padding: 20pt;
+  float: none;
+  border-radius: 25px;
+  background-color: blue;
+
+  text-align: center;
+  color: white;
+  font-family: "Segoe UI", sans-serif;
+  font-size: 3vmin;
+  font-weight: bold;
+
+}
+
+input.mycheckbox {
+  width :20px;
+  height :20px;
+}
+
 .answer-form {
     margin-top: 0.3em;
     margin-bottom: 0.3em;
 }
+
+input, .form-control, .btn-md, .btn-lg{
+  border-radius: 25px;
+}
+
+
+.btn-perso{
+  text-align : center;
+  font-family: "Segoe UI", sans-serif;
+  font-size: 3vmin;
+  font-weight: bold;
+  color: blue;
+  background-color: white;
+}
+
