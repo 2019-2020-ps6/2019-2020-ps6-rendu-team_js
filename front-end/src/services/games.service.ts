@@ -40,6 +40,11 @@ export class GamesService {
     this.setGameInfoFromUrl();
   }
 
+  getGameForQuiz(userId: number, quizId: number) {
+    const url = this.gamesUrl + '/' + userId + '/' + quizId;
+    return this.http.get<Game>(url);
+  }
+
   setGameQuizInfoFromUrl() {
     this.http.get<Quiz[]>(this.gamesUrl).subscribe((gameQuizInfo) => {
       this.gameQuizInfo = gameQuizInfo;
