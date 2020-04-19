@@ -1,1 +1,26 @@
 @import '../../../styles/card.scss';
+
+.lightbluecard{
+  margin: 20pt;
+  padding: 20pt;
+  float: none;
+  border-radius: 25px;
+  background-color: lightskyblue;
+
+  text-align: center;
+  color: white;
+  font-family: "Segoe UI", sans-serif;
+  font-size: 3vmin;
+  font-weight: bold;
+}
+
+
+.button-card{
+  text-align : center;
+  font-family: "Segoe UI", sans-serif;
+  font-size: 2vmin;
+  font-weight: bold;
+  color: lightskyblue;
+  background-color: white;
+  border-radius: 25px;
+}
