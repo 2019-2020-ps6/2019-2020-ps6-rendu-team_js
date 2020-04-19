@@ -5,6 +5,7 @@ import {QuizService} from '../../services/quiz.service';
 import {Answer, Question} from '../../models/question.model';
 import {ResultService} from '../../services/result.service';
 import {AuthService} from '../../services/auth.service';
+import {GamesService} from '../../services/games.service';
 
 @Component({
   selector: 'app-play-quiz',
@@ -22,12 +23,12 @@ export class PlayQuizComponent implements OnInit {
   public endDate: number;
 
   public resultId = -1;
-  private isAlReadyCalled = false;  // TODO find why when isOver = true, methods are called questionNumber times
 
   // tslint:disable-next-line:max-line-length
   constructor(private router: Router,
               private route: ActivatedRoute,
               private quizService: QuizService,
+              private gameService: GamesService,
               private resultService: ResultService,
               private authService: AuthService) {
 
@@ -62,12 +63,8 @@ export class PlayQuizComponent implements OnInit {
   }
 
   redirectToResult() {
-    if (this.isAlReadyCalled === false) {
       const completeAnswer = this.generateFinalUserAnswer();
       this.sendFinalAnswerToServiceAndSetResponseId(completeAnswer);
-      this.isAlReadyCalled = true;
-    }
-
   }
 
   setBeginDateToCurrent() {
@@ -109,8 +106,6 @@ export class PlayQuizComponent implements OnInit {
         this.router.navigate(['/']);
       }
     });
-    console.log('resIdFinal', this.resultId);
-    // this.resultService.resultIdSelected$.unsubscribe()
   }
 
   setResultId(resultId: number) {
