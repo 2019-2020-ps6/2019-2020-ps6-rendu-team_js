@@ -118,27 +118,18 @@ export class PlayQuizComponent implements OnInit {
   }
 
   sendFinalAnswerToServiceAndSetResponseId(completeAnswer) {
-    this.resultService.addResult(completeAnswer).subscribe((res: number) => {
-      // console.log('result id front side', res);
-      this.resultId = res;
 
-      if (this.resultId !== -1) {
+      // delete last try & update stats
+      const game = this.getCurrentGameTry();
+      this.gameService.finishGame(game).subscribe((response) => {
+        if (response.status === 200 || response.status === 201) {
+          this.router.navigate(['/result/' + response.body]);
 
-        // delete last try & update stats
-        const game = this.getCurrentGameTry();
-        this.gameService.finishGame(game).subscribe(response => {
-          if (response.status === 200 || response.status === 201) {
-            this.router.navigate(['/result/' + this.resultId]);
+        } else {
+          this.router.navigate(['/']);
+        }
+      });
 
-          } else {
-            this.router.navigate(['/']);
-          }
-        });
-
-      } else {
-        this.router.navigate(['/']);
-      }
-    });
   }
 
   public getCurrentGameTry() {

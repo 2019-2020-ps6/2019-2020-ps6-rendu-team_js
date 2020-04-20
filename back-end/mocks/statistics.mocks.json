@@ -1,119 +1,14 @@
 [
   {
-    "currentWeek": 13,
-    "successPercentage": 50,
-    "totalQuizMade": 8,
-    "weekQuizMade": 1,
-    "quizzesResultIds": [
-      1585351311951,
-      1585351316753,
-      1585351317029,
-      1585351317183,
-      1585351317341,
-      1585351317490,
-      1585351317661,
-      1585351620176
-    ],
-    "id": 1000000001
-  },
-  {
-    "currentWeek": 14,
-    "successPercentage": 55.55555555555556,
-    "totalQuizMade": 9,
-    "weekQuizMade": 1,
-    "quizzesResultIds": [
-      1585489320377,
-      1585489331061,
-      1585489331856,
-      1585489356542,
-      1585489757706,
-      1585489757970,
-      1585489758368,
-      1585489758852,
-      1585578389785
-    ],
-    "perfectQuiz": 1,
-    "id": 1000000002
-  },
-  {
-    "currentWeek": 14,
-    "successPercentage": 50,
+    "currentWeek": 17,
+    "successPercentage": 66.66666666666667,
     "totalQuizMade": 2,
     "weekQuizMade": 2,
     "quizzesResultIds": [
-      1585579142942,
-      1585584669675
-    ],
-    "perfectQuiz": 0,
-    "id": 1000003
-  },
-  {
-    "currentWeek": 14,
-    "successPercentage": 37.5,
-    "totalQuizMade": 8,
-    "weekQuizMade": 8,
-    "quizzesResultIds": [
-      1585606553338,
-      1585606553347,
-      1585636878862,
-      1585636878875,
-      1585637011883,
-      1585637011891,
-      1585638787227,
-      1585638787234
-    ],
-    "perfectQuiz": 0,
-    "id": -1
-  },
-  {
-    "currentWeek": 16,
-    "successPercentage": 43.75,
-    "totalQuizMade": 8,
-    "weekQuizMade": 1,
-    "quizzesResultIds": [
-      1585645418403,
-      1585645418421,
-      1586300523872,
-      1586300774964,
-      1586300884700,
-      1586301094249,
-      1586364511228,
-      1586861830924
-    ],
-    "perfectQuiz": 0,
-    "id": 1585366302574
-  },
-  {
-    "currentWeek": 17,
-    "successPercentage": 63.88888888888889,
-    "totalQuizMade": 12,
-    "weekQuizMade": 2,
-    "quizzesResultIds": [
-      1585645443297,
-      1585645443305,
-      1585666661625,
-      1586252298880,
-      1586252364175,
-      1586252398144,
-      1586252477695,
-      1586301902635,
-      1586862171047,
-      1586985651183,
-      1587337287489,
-      1587337287496
+      1587417633247,
+      1587417636922
     ],
     "perfectQuiz": 1,
     "id": 1585360751986
-  },
-  {
-    "currentWeek": 15,
-    "successPercentage": 0,
-    "totalQuizMade": 1,
-    "weekQuizMade": 1,
-    "quizzesResultIds": [
-      1586264575963
-    ],
-    "perfectQuiz": 0,
-    "id": 10000037
   }
 ]
