@@ -68,7 +68,6 @@ export class PlayQuizComponent implements OnInit {
 
     // save user answer in back
     this.gameService.updateGame(this.getCurrentGameTry());
-    console.log('current game try', this.getCurrentGameTry());
   }
 
   isOver() {

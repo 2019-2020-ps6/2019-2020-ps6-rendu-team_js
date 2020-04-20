@@ -4,7 +4,6 @@ import {BehaviorSubject, Observable, Subject} from 'rxjs';
 import { serverUrl, httpOptionsBase } from '../configs/server.config';
 import {Quiz} from '../models/quiz.model';
 import {Game} from '../models/game.model';
-import {Theme} from "../models/theme.model";
 
 @Injectable({
   providedIn: 'root'
@@ -45,6 +44,7 @@ export class GamesService {
 
   updateGame(game: object): Observable<HttpResponse<any>> {
     const url = this.gamesUrl + '/';
+    console.log('current game try', game);
     return this.http.put(url, game, {...this.httpOptions, observe: 'response'});
   }
 
