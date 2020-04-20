@@ -67,7 +67,13 @@ export class PlayQuizComponent implements OnInit {
     this.questionNumber++;
 
     // save user answer in back
-    this.gameService.updateGame(this.getCurrentGameTry());
+    this.gameService.updateGame(this.getCurrentGameTry()).subscribe(response => {
+      if (response.status === 200) {
+        console.log('sauvegarde reussit !');
+      } else {
+        console.log('sauvegarde impossible !');
+      }
+    });
   }
 
   isOver() {
@@ -117,7 +123,13 @@ export class PlayQuizComponent implements OnInit {
       if (this.resultId !== -1) {
 
         // delete last try & update stats
-        // this.gameService.finishGame(this.getCurrentGameTry());  // TODO correct methods in service & update answer after each question
+        this.gameService.finishGame(this.getCurrentGameTry()).subscribe(response => {
+          if (response.status === 200) {
+            console.log('sauvegarde reussit !');
+          } else {
+            console.log('sauvegarde impossible !');
+          }
+        });
 
         console.log('path');
         this.router.navigate(['/result', this.resultId]);

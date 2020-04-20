@@ -44,7 +44,7 @@ export class GamesService {
 
   updateGame(game: object): Observable<HttpResponse<any>> {
     const url = this.gamesUrl + '/';
-    console.log('current game try', game);
+    // console.log('current game try', game);
     return this.http.put(url, game, {...this.httpOptions, observe: 'response'});
   }
 
