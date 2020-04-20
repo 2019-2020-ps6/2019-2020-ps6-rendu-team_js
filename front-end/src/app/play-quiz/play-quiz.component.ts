@@ -40,6 +40,7 @@ export class PlayQuizComponent implements OnInit {
   ngOnInit() {
     const id = this.route.snapshot.paramMap.get('id');
     this.quizService.setSelectedQuiz(id);
+    this.setBeginDateToCurrent();
 
     // this.questionNumber = +this.route.snapshot.paramMap.get('questionNumber');  // +in front of string cast string to int
 
@@ -67,26 +68,29 @@ export class PlayQuizComponent implements OnInit {
     this.questionNumber++;
 
     // save user answer in back
-    this.gameService.updateGame(this.getCurrentGameTry()).subscribe(response => {
-      if (response.status === 200) {
-        console.log('sauvegarde reussit !');
-      } else {
-        console.log('sauvegarde impossible !');
-      }
-    });
-  }
+    if (!this.isOver()) {
+      this.gameService.updateGame(this.getCurrentGameTry()).subscribe(response => {
+        if (response.status === 200) {
+          console.log('sauvegarde reussit !');
 
-  isOver() {
-    if (this.questionNumber >= this.quiz.questions.length) {
-      return true;
+        } else {
+          console.log('sauvegarde impossible !');
+        }
+      });
+
     } else {
-      return false;
+      this.setEndDateToCurrent();
+      this.redirectToResult();
     }
   }
 
+  isOver() {
+    return this.quiz !== undefined && this.quiz.questions !== undefined && this.questionNumber >= this.quiz.questions.length;
+  }
+
   redirectToResult() {
-      const completeAnswer = this.generateFinalUserAnswer();
-      this.sendFinalAnswerToServiceAndSetResponseId(completeAnswer);
+    const completeAnswer = this.generateFinalUserAnswer();
+    this.sendFinalAnswerToServiceAndSetResponseId(completeAnswer);
   }
 
   setBeginDateToCurrent() {
@@ -122,17 +126,17 @@ export class PlayQuizComponent implements OnInit {
       if (this.resultId !== -1) {
 
         // delete last try & update stats
-        this.gameService.finishGame(this.getCurrentGameTry()).subscribe(response => {
-          if (response.status === 200) {
-            console.log('sauvegarde reussit !');
+        const game = this.getCurrentGameTry();
+        this.gameService.finishGame(game).subscribe(response => {
+          if (response.status === 200 || response.status === 201) {
+            console.log('partie fini');
+
+            this.router.navigate(['/result/' + this.resultId]);
           } else {
-            console.log('sauvegarde impossible !');
+            console.log('partie fini mais erreur');
           }
         });
 
-        console.log('hi');
-
-        this.router.navigate(['/result', this.resultId]);
       } else {
         this.router.navigate(['/']);
       }

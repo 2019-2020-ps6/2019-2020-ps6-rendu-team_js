@@ -9,19 +9,14 @@
   </ng-container>
   -->
 
-  <ng-container *ngIf="quiz != null"> <!-- this condition is used to avoir _co.quizz is undefined -->
-    <ng-container *ngIf="isOver() == false">
+  <ng-container *ngIf="quiz !== undefined"> <!-- this condition is used to avoir _co.quizz is undefined -->
+
+    <ng-container *ngIf="isOver() === false && quiz.questions !== undefined" >
       <p id="question">Question : "{{quiz.questions[questionNumber].label}}"</p>
       <app-quiz-responses-list id="answers" [answers]="quiz.questions[questionNumber].answers" (answerSelected)="addToUserAnswers($event)"></app-quiz-responses-list>
-      <ng-container *ngIf="questionNumber==0">
-        {{setBeginDateToCurrent()}}
-      </ng-container>
+      <ng-container *ngIf="questionNumber==0"> {{setBeginDateToCurrent()}} </ng-container>
     </ng-container>
-    <ng-container *ngIf="isOver() == true">
-      {{setEndDateToCurrent()}}
-      {{redirectToResult()}}
-      <p>Chargement des resultats ...</p>
-    </ng-container>
+
   </ng-container>
 
 </div>

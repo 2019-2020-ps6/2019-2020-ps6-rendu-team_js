@@ -59,7 +59,7 @@ router.put('/', (req, res) => {
             answers.push(req.body.answer);
 
             const result = Game.updateGame(req.body.userId, req.body.quizId, {date, playTime, quizId, userId, answers});
-            logger.info(result);
+            console.log(result);
             res.status(200).json(result)
 
         } else { //undefined
@@ -71,8 +71,10 @@ router.put('/', (req, res) => {
             answers.push(req.body.answer);
 
             const result = Game.createGame({date, playTime, quizId, userId, answers});
+            console.log(result);
             res.status(200).json(result)
         }
+
 
     } catch (err) {
         res.status(404).json(err)
@@ -83,7 +85,7 @@ router.put('/', (req, res) => {
 router.put('/quizCompleted', (req, res) => {
     try {
         const game = Game.getGameByIdAndQuiz(req.body.userId, req.body.quizId);
-
+        console.log('game : ' + game);
         if (game) {
 
             let date = game.date;
@@ -102,7 +104,7 @@ router.put('/quizCompleted', (req, res) => {
                 answers
             });
 
-            const goodAnswerScore = 100
+            const goodAnswerScore = 100;
 
             // Récupeter la liste des answers
             quizId = userAnswers.quizId;
@@ -113,8 +115,8 @@ router.put('/quizCompleted', (req, res) => {
 
             // Traitement & calcul du score
             // Pour chaque answer on va check si la reponse est juste et calculer les scores
-            let correctAnswers = 0
-            let totalAnswers = 0
+            let correctAnswers = 0;
+            let totalAnswers = 0;
 
             answers.forEach((answer) => {
                 totalAnswers += 1
