@@ -88,7 +88,6 @@ $cornerRadius: 25px;
   font-family: "Segoe UI Black", sans-serif;
   font-size: 4vmin;
   padding: 1vmin;
-  flex: 1;
   margin: 2vmin;
   color: white;
 }
@@ -97,7 +96,12 @@ $cornerRadius: 25px;
   opacity: 0.8;
 }
 
+.play-quiz-button {
+  flex: 2;
+}
+
 .quit-quiz-button {
+  flex: 1;
   background-color: #800000;
 }
 
