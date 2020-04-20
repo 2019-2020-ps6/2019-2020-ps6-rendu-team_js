@@ -65,6 +65,10 @@ export class PlayQuizComponent implements OnInit {
     // console.log('user answers array', this.userAnswers);
 
     this.questionNumber++;
+
+    // save user answer in back
+    this.gameService.updateGame(this.getCurrentGameTry());
+    console.log('current game try', this.getCurrentGameTry());
   }
 
   isOver() {
@@ -114,7 +118,7 @@ export class PlayQuizComponent implements OnInit {
       if (this.resultId !== -1) {
 
         // delete last try & update stats
-        this.gameService.finishGame(this.getCurrentGameTry());  // TODO correct methods in service & update answer after each question
+        // this.gameService.finishGame(this.getCurrentGameTry());  // TODO correct methods in service & update answer after each question
 
         console.log('path');
         this.router.navigate(['/result', this.resultId]);
@@ -126,11 +130,10 @@ export class PlayQuizComponent implements OnInit {
 
   public getCurrentGameTry() {
     const game = {
-      playTime: this.getPlayTime(),
       date: Date.now(),
-      quizId: this.quiz.id,
-      answers: this.userAnswers,
-      userId: this.authService.user.id + ''
+      quizId: this.quiz.id + '',
+      answer: this.userAnswers[this.userAnswers.length - 1],
+      userId: this.authService.user.id
     };
 
     return game;
