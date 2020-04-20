@@ -3,6 +3,8 @@ import {Answer} from '../../../../models/question.model';
 import {Quiz} from '../../../../models/quiz.model';
 import {Router} from '@angular/router';
 import {QuizService} from '../../../../services/quiz.service';
+import {Settings} from '../../../../models/settings.model';
+import {SettingsService} from '../../../../services/settings.service';
 
 @Component({
   selector: 'app-quiz-response',
@@ -14,11 +16,26 @@ export class QuizResponseComponent implements OnInit {
   @Input()
   public answer: Answer;
 
-  constructor(private router: Router, public quizService: QuizService) {
+  settings: Settings;
 
+  constructor(private router: Router, public quizService: QuizService, private settingsService: SettingsService) {
+    this.settings = settingsService.settings;
+    console.log('user settings', this.settings);
+    this.adaptCssToSettings();
   }
 
   ngOnInit() {
+  }
+
+  adaptCssToSettings() {
+    if (this.settings != null) {
+      document.documentElement.style.setProperty('--contraste', this.settings.contraste + '');
+      // console.log('css property', document.documentElement.style.getPropertyValue('--contraste'));
+      document.documentElement.style.setProperty('--fontSize', this.settings.fontSize + '');
+      document.documentElement.style.setProperty('--moteur', this.settings.handicapMoteur + '');
+      document.documentElement.style.setProperty('--visuel', this.settings.handicapVisuel + '');
+      document.documentElement.style.setProperty('--tailleSelec', this.settings.tailleSelection + '');
+    }
   }
 
 }
