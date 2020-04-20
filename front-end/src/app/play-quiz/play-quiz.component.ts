@@ -40,7 +40,6 @@ export class PlayQuizComponent implements OnInit {
   ngOnInit() {
     const id = this.route.snapshot.paramMap.get('id');
     this.quizService.setSelectedQuiz(id);
-    this.setBeginDateToCurrent();
 
     // this.questionNumber = +this.route.snapshot.paramMap.get('questionNumber');  // +in front of string cast string to int
 
@@ -129,11 +128,10 @@ export class PlayQuizComponent implements OnInit {
         const game = this.getCurrentGameTry();
         this.gameService.finishGame(game).subscribe(response => {
           if (response.status === 200 || response.status === 201) {
-            console.log('partie fini');
-
             this.router.navigate(['/result/' + this.resultId]);
+
           } else {
-            console.log('partie fini mais erreur');
+            this.router.navigate(['/']);
           }
         });
 
