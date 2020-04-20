@@ -115,8 +115,7 @@ export class PlayQuizComponent implements OnInit {
   }
 
   sendFinalAnswerToServiceAndSetResponseId(completeAnswer) {
-    this.resultService.addResult(completeAnswer);
-    this.resultService.resultIdSelected$.subscribe((res: number) => {
+    this.resultService.addResult(completeAnswer).subscribe((res: number) => {
       // console.log('result id front side', res);
       this.resultId = res;
 
@@ -131,7 +130,8 @@ export class PlayQuizComponent implements OnInit {
           }
         });
 
-        console.log('path');
+        console.log('hi');
+
         this.router.navigate(['/result', this.resultId]);
       } else {
         this.router.navigate(['/']);

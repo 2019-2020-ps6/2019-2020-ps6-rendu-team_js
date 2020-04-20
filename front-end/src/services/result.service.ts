@@ -58,9 +58,12 @@ export class ResultService {
   }
 
   addResult(answer: object) {
-    this.http.post<number>(this.resultUrl, answer, this.httpOptions).subscribe((resultId: number) => {
-      console.log('>>>>>> res ID in service', resultId);
-      this.resultIdSelected$.next(resultId);
-    });
+    return this.http.post<number>(this.resultUrl, answer, this.httpOptions);
+
+    //   .subscribe((resultId: number) => {
+    //   console.log('>>>>>> res ID in service', resultId);
+    //   this.resultIdSelected$.next(resultId);
+    // });
+
   }
 }
