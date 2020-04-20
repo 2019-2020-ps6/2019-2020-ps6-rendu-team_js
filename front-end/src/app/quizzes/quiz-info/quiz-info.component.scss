@@ -7,16 +7,41 @@
   border-radius: 2vmin;
 }
 
+.top-part-button-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  cursor: pointer;
+}
+
+.top-part-button-container:hover {
+  opacity: 0.8;
+}
+
+.top-button {
+  padding-left: 2vmin;
+  padding-right: 2vmin;
+  color: white;
+  font-family: "Segoe UI Black", sans-serif;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+}
+
 .left-part {
   border: 1vmin solid transparent;
   border-bottom-left-radius: 2vmin;
   border-top-left-radius: 2vmin;
   font-size: 6vmin !important;
+  width: 10vmin;
 }
 
 .middle-part {
   font-size: 6vmin !important;
   border-right: 0.5vmin solid white !important;
+  flex: 2;
 }
 
 .right-part {
@@ -24,58 +49,52 @@
   border-bottom-right-radius: 2vmin;
   border-top-right-radius: 2vmin;
   font-size: 6vmin !important;
+  flex: 1;
 }
 
-.card{
-  margin-top: 90pt;
+
+
+
+.bottom-part-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  border: 0 solid transparent;
 }
-.card-header {
-  font-weight: 900;
+
+.bottom-text {
+  text-align: center;
+  font-size: 4vmin;
   font-family: "Segoe UI Black", sans-serif;
-  font-size: 5vmin;
+  color: #212529;
+  padding: 2vmin 4vmin 2vmin 2vmin;
+}
+
+
+
+.bottom-part-button-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
+.bottom-button {
+  border: 0 solid transparent;
+  border-radius: 1vmin;
+  font-family: "Segoe UI Black", sans-serif;
+  font-size: 4vmin;
+  padding: 1vmin;
+  flex: 1;
+  margin: 2vmin;
   color: white;
 }
 
-.card-text{
-  text-align: center;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-weight: 900;
-  font-family: "Segoe UI Black", sans-serif;
-  font-size: 5vmin;
-  color: black;
-}
-
-.card-body{
-  border: 0 solid black;
-  border-bottom-left-radius: 3vmin;
-  border-bottom-right-radius: 3vmin;
-}
-
-.btn-secondary{
-  font-weight: 900;
-  font-family: "Segoe UI Black", sans-serif;
-  font-size: 3vmin;
-  border: 0 solid transparent;
-  background-color: transparent;
-}
-
-.btn-block {
-  border: 0 solid black;
-}
-
-
-.btn-block:hover {
+.play-quiz-button:hover, .edit-quiz-button:hover {
   opacity: 0.8;
 }
 
-.btn-lg {
-  border-radius: 1vmin;
-  font-size: 4vmin !important;
-  margin: 1vmin;
+.edit-quiz-button {
+  background-color: #3D3D3D;
 }
 
-.btn-lg:hover{
-  opacity: 0.8;
-}
+

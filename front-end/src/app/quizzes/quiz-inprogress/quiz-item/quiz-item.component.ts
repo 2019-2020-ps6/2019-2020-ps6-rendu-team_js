@@ -17,6 +17,11 @@ export class QuizItemComponent implements OnInit {
 
   private isFullyDisplayed = false;
 
+
+  private themeColor: string;
+  private lvlColor: string;
+  private bgColor: string;
+
   constructor(private auth: AuthService,
               private gamesService: GamesService,
               private toasterService: ToasterService) {
@@ -24,6 +29,10 @@ export class QuizItemComponent implements OnInit {
   }
 
   ngOnInit() {
+    this.themeColor = this.quiz.theme.color;
+    this.bgColor = this.themeColor + '40';
+    // tslint:disable-next-line:no-bitwise
+    this.lvlColor = this.themeColor + 'D0';
   }
 
   deleteGame() {
