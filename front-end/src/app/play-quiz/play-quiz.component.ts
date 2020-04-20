@@ -115,22 +115,22 @@ export class PlayQuizComponent implements OnInit {
   }
 
   sendFinalAnswerToServiceAndSetResponseId(completeAnswer) {
+    // delete last try & update stats
+    this.gameService.finishGame(this.getCurrentGameTry()).subscribe(response => {
+      if (response.status === 200) {
+        console.log('sauvegarde reussit !');
+      } else {
+        console.log('sauvegarde impossible !');
+      }
+    });
+
     this.resultService.addResult(completeAnswer).subscribe((res: number) => {
       // console.log('result id front side', res);
       this.resultId = res;
 
       if (this.resultId !== -1) {
 
-        // delete last try & update stats
-        this.gameService.finishGame(this.getCurrentGameTry()).subscribe(response => {
-          if (response.status === 200) {
-            console.log('sauvegarde reussit !');
-          } else {
-            console.log('sauvegarde impossible !');
-          }
-        });
-
-        console.log('hi');
+        console.log('hi from observer');
 
         this.router.navigate(['/result', this.resultId]);
       } else {
