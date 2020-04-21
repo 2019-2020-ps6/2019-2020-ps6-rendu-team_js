@@ -8,9 +8,10 @@
     <input class="input-custom" type="text" id="title" [formControlName]="'name'">
     <br><br>
 
-    <label for="theme">Thème</label>
+    <label for="theme">Thème</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a routerLink="/theme-creation">Nouveau thème +</a>
     <br>
     <input class="input-custom" type="text" id="theme" [formControlName]="'theme'">
+
     <!--
     <select class="form-control form-control-lg" id="theme" [formControlName]="'theme'" *ngFor="let theme of themeList">
     </select>
@@ -27,7 +28,7 @@
     <br>
 
 
-    <button type="submit" class="btn-lg btn-gris" id="cancel" (click)="addQuiz()">Annuler</button>
+    <button type="submit" class="btn-lg btn-gris" id="cancel" (click)="backPressed()">Annuler</button>
     &nbsp;
     <button type="submit" class="btn-lg btn-blanc" id="create" (click)="addQuiz()">Suivant</button>
   </form>
