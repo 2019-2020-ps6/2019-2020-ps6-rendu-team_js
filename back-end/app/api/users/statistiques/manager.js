@@ -1,4 +1,4 @@
-const { Answer, Statistics, Quiz } = require('../../../models')
+const { Answer, Statistics, Quiz, Theme } = require('../../../models')
 const { buildResult } = require('../../quizzes/result/manager')
 const logger = require('../../../utils/logger.js')
 
@@ -41,6 +41,7 @@ const buildStats = (statsId) => {
 
         const quizInfo  = Quiz.getById(key);
         quizInfo.quizTries = mapOfQuiz.get(key);
+        quizInfo.theme = Theme.getById(quizInfo.themeId);
         quizzesResultIds.push(quizInfo);
     }
 

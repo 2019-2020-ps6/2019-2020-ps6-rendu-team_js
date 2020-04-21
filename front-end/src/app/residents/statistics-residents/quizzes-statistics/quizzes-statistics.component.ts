@@ -22,7 +22,6 @@ export class QuizzesStatisticsComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
-    console.log(this.quizResult);
     this.themeColor = this.quizResult.theme.color;
     this.bgColor = this.themeColor + '40';
     // tslint:disable-next-line:no-bitwise
