@@ -16,6 +16,10 @@ export class QuizResponseComponent implements OnInit {
   @Input()
   public answer: Answer;
 
+
+  @Input()
+  public color: string;
+
   settings: Settings;
 
   constructor(private router: Router, public quizService: QuizService, private settingsService: SettingsService) {
@@ -25,6 +29,7 @@ export class QuizResponseComponent implements OnInit {
 
   ngOnInit() {
     this.adaptCssToSettings();
+    console.log(this.color);
   }
 
   adaptCssToSettings() {
@@ -34,10 +39,10 @@ export class QuizResponseComponent implements OnInit {
       for (let i = 0; i < buttons.length; i++) {
         if (this.settings.fontSize === 1) {
           // @ts-ignore
-          buttons[i].style.setProperty('--fontSize', '500%');
+          buttons[i].style.setProperty('--fontSize', '5vmin');
         } else {
           // @ts-ignore
-          buttons[i].style.setProperty('--fontSize', '1000%');
+          buttons[i].style.setProperty('--fontSize', '9vmin');
         }
 
         // TODO add condition and css vars for :

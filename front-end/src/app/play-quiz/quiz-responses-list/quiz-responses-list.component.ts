@@ -14,9 +14,17 @@ export class QuizResponsesListComponent implements OnInit {
   @Output()
   answerSelected: EventEmitter<Answer> = new EventEmitter<Answer>();  // answer selected by user
 
+  color1 = '#C38200';
+  color2 = '#B60092';
+  color3 = '#6BA800';
+  color4 = '#0058CA';
+
+  colors = [this.color1, this.color2, this.color3, this.color4];
+
   constructor() {}
 
   ngOnInit() {
+    console.log(this.colors);
   }
 
   submitAnswerOnClick(answer: Answer) {
