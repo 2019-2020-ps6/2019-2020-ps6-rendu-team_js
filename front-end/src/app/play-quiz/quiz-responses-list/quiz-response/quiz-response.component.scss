@@ -1,16 +1,13 @@
-:root {
-  --contraste: 1;
+.responseButton {
   --fontSize: 500%;
-  --moteur: false;
-  --visuel: false;
-  --tailleSelec: 1;
   // contraste / font size / moteur / visuel / taille selection
-}
 
-#responseButton {
+
   background-color: #5396EC;
   font-family: "Segoe UI", serif;
+
   font-size: var(--fontSize);
+
   color: #f2f2f2;
   padding: 16px 32px;
   text-align: center;
@@ -25,7 +22,7 @@
   outline:none;
 }
 
-#responseButton:hover {
+.responseButton:hover {
   background-color: #f2f2f2;
   border: 2px solid #5396EC;
   color: #5396EC;
