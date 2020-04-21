@@ -5,7 +5,6 @@ import {Router} from '@angular/router';
 import {QuizService} from '../../../../services/quiz.service';
 import {Settings} from '../../../../models/settings.model';
 import {SettingsService} from '../../../../services/settings.service';
-import {forEachComment} from "tslint";
 
 @Component({
   selector: 'app-quiz-response',
@@ -30,7 +29,7 @@ export class QuizResponseComponent implements OnInit {
 
   adaptCssToSettings() {
     if (this.settings != null) {
-            const buttons = document.getElementsByClassName('responseButton');
+      const buttons = document.getElementsByClassName('responseButton');
       // tslint:disable-next-line:prefer-for-of
       for (let i = 0; i < buttons.length; i++) {
         if (this.settings.fontSize === 1) {
