@@ -48,6 +48,8 @@ import { ThemeItemComponent } from './theme/theme-item/theme-item.component';
 import { QuizInprogressComponent } from './quizzes/quiz-inprogress/quiz-inprogress.component';
 import {YouTubePlayerModule} from '@angular/youtube-player';
 import { QuizItemComponent } from './quizzes/quiz-inprogress/quiz-item/quiz-item.component';
+import { ThemeCreationComponent } from './theme/theme-creation/theme-creation.component';
+import { QuestionCreationComponent } from './questions/question-creation/question-creation.component';
 
 
 
@@ -94,7 +96,9 @@ import { QuizItemComponent } from './quizzes/quiz-inprogress/quiz-item/quiz-item
     ThemeItemComponent,
     QuizInprogressComponent,
     ConfirmParamCopyComponent,
-    QuizItemComponent
+    QuizItemComponent,
+    ThemeCreationComponent,
+    QuestionCreationComponent
   ],
     imports: [
         BrowserModule,
