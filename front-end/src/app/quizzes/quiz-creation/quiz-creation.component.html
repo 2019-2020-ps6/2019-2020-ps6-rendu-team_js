@@ -1,37 +1,46 @@
 <h1>Création d'un quiz</h1>
 <hr class="blackLine">
+<div class="col-6" style="position: center; margin: auto;">
+  <div class="card greencard">
+    <div class="card-header">General</div>
+    <div class="card-body">
+      <form class="quiz-creation" [formGroup]="quizForm">
+        <label for="title">Nom du quiz</label>
+        <br>
+        <input class="input-custom" type="text" id="title" [formControlName]="'name'">
+        <br><br>
 
-<div class="greencard col-7 ">
-  <form class="quiz-creation" [formGroup]="quizForm">
-    <label for="title">Nom du quiz</label>
-    <br>
-    <input class="input-custom" type="text" id="title" [formControlName]="'name'">
-    <br><br>
+        <label for="theme">Thème</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a routerLink="/theme-creation">Nouveau thème +</a>
+        <br>
+        <input class="input-custom" type="text" id="theme" [formControlName]="'theme'">
 
-    <label for="theme">Thème</label>
-    <br>
-    <input class="input-custom" type="text" id="theme" [formControlName]="'theme'">
-    <!--
-    <select class="form-control form-control-lg" id="theme" [formControlName]="'theme'" *ngFor="let theme of themeList">
-    </select>
-    -->
-    <br><br>
+        <!--
+        <select class="form-control form-control-lg" id="theme" [formControlName]="'theme'" *ngFor="let theme of themeList">
+        </select>
+        -->
+        <br><br>
 
-    <label for="difficulty">Difficulté</label>
-    <br>
-    <select class="form-control form-control-lg" id="difficulty" [formControlName]="'difficulty'" >
-      <option value="Facile">Facile</option>
-      <option value="Moyen">Moyen</option>
-      <option value="Difficile">Difficile</option>
-    </select>
-    <br>
+        <label for="difficulty">Difficulté</label>
+        <br>
+        <select class="form-control form-control-md" id="difficulty" [formControlName]="'difficulty'" >
+          <option value="Facile">Facile</option>
+          <option value="Moyen">Moyen</option>
+          <option value="Difficile">Difficile</option>
+        </select>
+        <br>
 
 
-    <button type="submit" class="btn-lg btn-gris" id="cancel" (click)="addQuiz()">Annuler</button>
-    &nbsp;
-    <button type="submit" class="btn-lg btn-blanc" id="create" (click)="addQuiz()">Suivant</button>
-  </form>
+        <button type="submit" class="btn-lg btn-gris" id="cancel" (click)="backPressed()">Annuler</button>
+        &nbsp;
+        <button type="submit" class="btn-lg btn-blanc" id="create" (click)="addQuiz()">Suivant</button>
+
+      </form>
+    </div>
+
+  </div>
 </div>
+
+
 <!-- Uncomment below to see your form structure and how it changes-->
 <!-- <br><br>{{quizForm.getRawValue() | json}} -->
 
