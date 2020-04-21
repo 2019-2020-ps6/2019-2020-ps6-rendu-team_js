@@ -1,7 +1,23 @@
+:root {
+  --contraste: 1;
+  --fontSize: 1;
+  --moteur: false;
+  --visuel: false;
+  --tailleSelec: 1;
+  // contraste / font size / moteur / visuel / taille selection
+}
+
 #responseButton {
   background-color: #5396EC;
   font-family: "Segoe UI", serif;
-  font-size: 500%;
+
+  @if (var(--fontSize) == 1) {
+    font-size: 500%;
+  }
+  @else {
+    font-size: 1000%;
+  }
+
   color: #f2f2f2;
   padding: 16px 32px;
   text-align: center;
