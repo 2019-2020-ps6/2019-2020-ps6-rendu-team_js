@@ -9,7 +9,6 @@
 
 <hr class="blackLine">
 
-<br>
 <div *ngIf="displayPerQuizComponent">
   <ng-container *ngFor="let quizResult of userStatistics.quizzesResultIds; let i = index">
     <app-quiz-statistics [quizResult]="quizResult"
@@ -20,14 +19,12 @@
   </div>
 </div>
 
-<div *ngIf="displayGlobalComponent">
-  <app-global-statistics
+  <app-global-statistics *ngIf="displayGlobalComponent"
     [totalQuizMade]="userStatistics.totalQuizMade"
     [weekQuizMade]="userStatistics.weekQuizMade"
     [successPercentage]="userStatistics.successPercentage"
     [perfectQuizMade]="userStatistics.perfectQuiz">
   </app-global-statistics>
-</div>
 
 <div *ngIf="quizResult != undefined && displayQuizDetailsComponent">
   <app-quiz-header [maxScore]="quizResult.maxScore"

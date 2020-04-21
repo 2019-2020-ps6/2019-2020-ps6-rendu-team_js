@@ -1,42 +1,33 @@
-<div class="container">
-  <div class="row" id="totalQuiz">
-    <div class="col-lg-9 col-md-9 col-xs-9 xol-sm-9 itemTitle">
-      Quiz faits au total
-    </div>
-    <div id="totalQuizValue" class="col-lg-3 col-md-3 col-xs-3 xol-sm-3 itemTitle">
+<div class="main-container">
+  <div class="totalQuiz row-container">
+    <div class="left-part"> Quiz faits au total </div>
+    <div class="right-part totalQuizValue">
       <div *ngIf="totalQuizMade == undefined || weekQuizMade == 0;else definedTotalQuiz"> - </div>
       <ng-template #definedTotalQuiz> {{totalQuizMade}} </ng-template>
     </div>
   </div>
 
-  <div class="row" id="weekQuiz">
-    <div class="col-lg-9 col-md-9 col-xs-9 xol-sm-9 itemTitle">
-      Quiz faits cette semaine
-    </div>
-    <div id="weekQuizValue" class="col-lg-3 col-md-3 col-xs-3 xol-sm-3 itemTitle">
+  <div class="weekQuiz row-container">
+    <div class="left-part"> Quiz faits cette semaine </div>
+    <div class="right-part weekQuizValue">
       <div *ngIf="weekQuizMade == undefined || weekQuizMade == 0;else definedQuizValue"> - </div>
       <ng-template #definedQuizValue> {{weekQuizMade}} </ng-template>
     </div>
   </div>
 
-  <div class="row" id="successPercentage">
-    <div class="col-lg-9 col-md-9 col-xs-9 xol-sm-9 itemTitle">
-      Taux de réussite
-    </div>
-    <div id="successPercentageValue" class="col-lg-3 col-md-3 col-xs-3 xol-sm-3 itemTitle">
+  <div class="successPercentage row-container">
+    <div class="left-part itemTitle"> Taux de réussite </div>
+    <div class="right-part successPercentageValue">
       <div *ngIf="successPercentage == undefined || successPercentage == 0.00;else definedSuccessPercentage"> - </div>
       <ng-template #definedSuccessPercentage> {{successPercentage| number:'1.2-2'}}% </ng-template>
     </div>
   </div>
 
-  <div class="row" id="quizPerfected">
-    <div class="col-lg-9 col-md-9 col-xs-9 xol-sm-9 itemTitle">
-      Quiz réalisé sans erreur
-    </div>
-    <div id="quizPerfectedValue" class="col-lg-3 col-md-3 col-xs-3 xol-sm-3 itemTitle">
+  <div class="quizPerfected row-container">
+    <div class="left-part itemTitle"> Quiz réalisé sans erreur </div>
+    <div class="right-part quizPerfectedValue">
       <div *ngIf="perfectQuizMade == undefined || perfectQuizMade == 0;else definedQuizPerfected"> - </div>
       <ng-template #definedQuizPerfected> {{perfectQuizMade}} </ng-template>
     </div>
   </div>
-
 </div>
