@@ -1,26 +1,33 @@
 @import '../../../styles/card.scss';
 
-.lightbluecard{
+.questionDisplay{
   margin: 20pt;
-  padding: 20pt;
+  padding-left: 0;
   float: none;
-  border-radius: 25px;
-  background-color: lightskyblue;
+  border-radius: 50px;
+  background-color: #3396FF;
 
   text-align: center;
   color: white;
   font-family: "Segoe UI", sans-serif;
-  font-size: 3vmin;
+  font-size: 4vmin;
   font-weight: bold;
 }
 
+.rightPart{
+  background-color: lightblue;
+  border-radius: 50px;
 
-.button-card{
-  text-align : center;
-  font-family: "Segoe UI", sans-serif;
-  font-size: 2vmin;
-  font-weight: bold;
-  color: lightskyblue;
-  background-color: white;
-  border-radius: 25px;
+  margin:0;
+}
+
+.leftPart, .rightPart, .deletePart{
+  padding-top: 10pt;
+  padding-bottom: 10pt;
+}
+
+
+.deletePart{
+  background-color: red;
+  border-radius: 50px;
 }
