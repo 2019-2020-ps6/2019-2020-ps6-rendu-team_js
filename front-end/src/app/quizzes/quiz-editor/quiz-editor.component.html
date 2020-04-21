@@ -1,7 +1,17 @@
-<button class="button-card" routerLink="/quiz-list">Back</button>
-
 <ng-container *ngIf="quiz">
-    <h1>{{quiz.name}}</h1>
+  <h1 id="title">{{quiz.name}}</h1>
+  <hr class="blackLine">
+  <!--
     <app-question-form [quiz]="quiz"></app-question-form>
-    <app-question-list [quiz]="quiz"></app-question-list>
+    -->
+  <app-question-list [quiz]="quiz"></app-question-list>
+  <div class="col-12" style="text-align: center;">
+    <p> <a routerLink="/question-creation/{{quiz.id}}">Nouvelle question +</a></p>
+  </div>
+
+
+
+  <button class="mybtn" routerLink="/themes/{{quiz.themeId}}">Retour</button>
+
+
 </ng-container>
