@@ -9,7 +9,7 @@ const logger = require('../../../utils/logger.js')
 
 const buildStats = (statsId) => {
     const stats = Statistics.getStatisticById(statsId);
-
+    console.log(stats);
     const mapOfQuiz = new Map();
 
     stats.quizzesResultIds.forEach((quizResultId) => {
@@ -24,6 +24,7 @@ const buildStats = (statsId) => {
             result.quizResultId = quizResultId;
             result.quizSuccessPercentage = quizResult.quizSuccessPercentage;
             array.push(result)
+
         }else { // Existe pas dans la map
             const array = [];
             const result = {};
