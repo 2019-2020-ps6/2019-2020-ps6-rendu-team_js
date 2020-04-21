@@ -17,7 +17,6 @@
 .rightPart{
   background-color: lightblue;
   border-radius: 50px;
-
   margin:0;
 }
 
@@ -26,8 +25,13 @@
   padding-bottom: 10pt;
 }
 
-
 .deletePart{
   background-color: red;
   border-radius: 50px;
 }
+
+.leftPart{
+  background-color: rgb(255, 255, 255, 0);
+  border-color: rgb(255, 255, 255, 0);
+}
+

@@ -17,6 +17,9 @@ import {AuthGuardAdminService} from '../services/auth-guard-admin.service';
 import {StatisticsResidentsComponent} from './residents/statistics-residents/statistics-residents.component';
 import {QuizInfoComponent} from './quizzes/quiz-info/quiz-info.component';
 import {ThemeComponent} from './theme/theme.component';
+import {ThemeCreationComponent} from './theme/theme-creation/theme-creation.component';
+import {QuestionFormComponent} from './questions/question-form/question-form.component';
+import {QuestionCreationComponent} from './questions/question-creation/question-creation.component';
 
 const routes: Routes = [
   // add the AuthGuardService if the user can go to the page if he's connected
@@ -27,7 +30,9 @@ const routes: Routes = [
   {path: 'result/:resId', canActivate: [AuthGuardService], component: ResultComponent},
   {path: 'parameters', canActivate: [AuthGuardService], component: ParametersComponent},
   {path: 'quiz-creation', canActivate: [AuthGuardAdminService], component: QuizCreationComponent},
-  // {path: 'theme-creation', canActivate: [AuthGuardAdminService], component: ThemeCreationComponent},
+  {path: 'theme-creation', canActivate: [AuthGuardAdminService], component: ThemeCreationComponent},
+  {path: 'question-creation/:id', canActivate: [AuthGuardAdminService], component: QuestionCreationComponent},
+  {path: 'question-edit/:id', canActivate: [AuthGuardAdminService], component: QuestionFormComponent},
   {path: 'residents', canActivate: [AuthGuardAdminService], component: ResidentsComponent},
   {path: 'admin/:id/stats', canActivate: [AuthGuardAdminService], component: StatisticsResidentsComponent},
   {path: 'quiz-editor/:id', canActivate: [AuthGuardService], component: QuizEditorComponent},

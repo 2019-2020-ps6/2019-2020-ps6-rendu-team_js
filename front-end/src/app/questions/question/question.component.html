@@ -13,11 +13,11 @@
     <div class="col-1 deletePart">
       <i (click)="delete()" class="far fa-trash-alt btndelete" ></i>
     </div>
-    <div class="col-8 leftPart">
+    <button class="col-8 leftPart">
       {{question.label}}
-    </div>
+    </button>
     <div class="col-3 rightPart">
-    {{question.answers.length}} réponses
+      {{question.answers.length}} réponses
     </div>
   </div>
 </div>

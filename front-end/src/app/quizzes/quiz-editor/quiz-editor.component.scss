@@ -1,1 +1,30 @@
 @import '../../../styles/card.scss';
+
+a{
+  font-size: 3vmin;
+  font-style: italic;
+  text-decoration: none;
+  color: #3396FF;
+  font-family: "Segoe UI", sans-serif;
+  font-weight: bold;
+}
+
+p{
+  position: center;
+  margin: 0;
+}
+
+.mybtn{
+  background-color: dimgrey;
+  padding: 30px;
+  font-size: 3vmin;
+  color: white;
+  font-family: "Segoe UI", sans-serif;
+  font-weight: bold;
+  border-radius: 25px;
+  margin:auto;
+  position: absolute;
+  bottom: 30px;
+  left: 50%;
+
+}
