@@ -2,15 +2,15 @@
 
 .greencard{
   margin: auto;
-  padding: 30pt;
-  float: none;
+  padding-bottom: 30pt;
+  //float: none;
+  position: center;
   border-radius: 25px;
   background-color: green;
-
   text-align : center;
   color: white;
   font-family: "Segoe UI", sans-serif;
-  font-size: 4vmin;
+  font-size: 3vmin;
   font-weight: bold;
 }
 
@@ -21,7 +21,7 @@
 .btn-gris, .btn-blanc{
   text-align : center;
   font-family: "Segoe UI", sans-serif;
-  font-size: 4vmin;
+  font-size: 3vmin;
   font-weight: bold;
 }
 
@@ -36,9 +36,17 @@
 }
 
 a{
-  font-size: 3vmin;
+  font-size: 2vmin;
   font-style: italic;
   text-decoration: none;
   color: white;
   font-family: "Segoe UI", sans-serif;
+}
+
+.card-header{
+  margin: 0;
+  border-top-left-radius: 25px;
+  border-top-right-radius: 25px;
+  background-color: darkgreen;
+  font-size: 4vmin;
 }
