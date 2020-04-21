@@ -1,21 +1,9 @@
 <div>
-  <!--
-  <ng-container *ngIf="quiz != null">
-    <ng-container *ngFor="let question of quiz.questions; let i=index">
-      <p id="question">Question {{i+1}} : "{{question.label}}"</p>
-      <app-quiz-responses-list id="answers" [answers]="question.answers" (answerSelected)="addToUserAnswers($event)"></app-quiz-responses-list>
-      <! -- if next question != -1 print next question else print result -- >
-    </ng-container>
-  </ng-container>
-  -->
+  <ng-container *ngIf="quiz !== undefined && isOver() === false && quiz.questions !== undefined">
 
-  <ng-container *ngIf="quiz !== undefined"> <!-- this condition is used to avoir _co.quizz is undefined -->
-
-    <ng-container *ngIf="isOver() === false && quiz.questions !== undefined" >
-      <p id="question">Question : "{{quiz.questions[questionNumber].label}}"</p>
-      <app-quiz-responses-list id="answers" [answers]="quiz.questions[questionNumber].answers" (answerSelected)="addToUserAnswers($event)"></app-quiz-responses-list>
+      <div class="question">Question : "{{quiz.questions[questionNumber].label}}"</div>
+      <app-quiz-responses-list class="answers" [answers]="quiz.questions[questionNumber].answers" (answerSelected)="addToUserAnswers($event)"></app-quiz-responses-list>
       <ng-container *ngIf="questionNumber==0"> {{setBeginDateToCurrent()}} </ng-container>
-    </ng-container>
 
   </ng-container>
 

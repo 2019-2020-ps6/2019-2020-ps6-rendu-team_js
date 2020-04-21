@@ -1,15 +1,26 @@
-#question {
+.question {
   color: #3D3D3D;
-  font-size: 350%;
+  font-size: 8vmin;
   font-weight: 900;
   font-family: "Segoe UI Black", serif;
   text-align: center;
-}
 
-#answers{
-  text-align: center;
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-top: 10%;
+  position: absolute;
+  width: 100vw;
+  height: 25vh;
+  left: 0;
+  right: 0;
+  top: 5vh;
+}
+
+.answers{
+
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 70vh;
 }

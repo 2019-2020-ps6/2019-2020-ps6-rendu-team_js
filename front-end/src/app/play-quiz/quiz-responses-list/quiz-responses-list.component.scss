@@ -1,5 +1,23 @@
-#answerTable {
-  margin-left:auto;
-  margin-right:auto;
+.answers {
+  //position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  flex-direction: row;
+  //flex: 1 0 51%;
+  width: 100vw;
+  height: 100%;
+  flex-wrap: wrap;
 }
 
+app-quiz-response {
+  flex: 1 0 49%;
+  width: 100%;
+  display: flex;
+  padding: 5vmin;
+  //flex-direction: row;
+  //flex: 1 0 49%;
+  //width: 100%;
+  //height: 100%;
+}

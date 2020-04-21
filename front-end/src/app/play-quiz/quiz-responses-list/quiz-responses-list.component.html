@@ -1,10 +1,5 @@
-<table id="answerTable">
+<div class="answers">
     <ng-container *ngFor="let answer of answers; let i=index">
-      <td>
-        <app-quiz-response [answer]="answer" (click)="submitAnswerOnClick(answer)"></app-quiz-response>
-      </td>
-      <ng-container *ngIf="i%2 != 0"> <!-- first question has index 0 -->
-        <tr></tr>
-      </ng-container>
+        <app-quiz-response [answer]="answer" (click)="submitAnswerOnClick(answer)" [color]="colors[i]"></app-quiz-response>
     </ng-container>
-</table>
+</div>

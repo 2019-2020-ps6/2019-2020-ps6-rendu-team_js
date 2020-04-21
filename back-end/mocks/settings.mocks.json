@@ -28,6 +28,15 @@
   },
   {
     "handicapVisuel": true,
+    "handicapMoteur": false,
+    "contraste": 2,
+    "fontSize": 1,
+    "font": "Segoe UI",
+    "tailleSelection": 1,
+    "id": 1585360751986
+  },
+  {
+    "handicapVisuel": true,
     "handicapMoteur": true,
     "contraste": 2,
     "fontSize": 2,
@@ -48,7 +57,7 @@
     "handicapVisuel": false,
     "handicapMoteur": false,
     "contraste": 1,
-    "fontSize": 2,
+    "fontSize": 1,
     "font": "Segoe UI",
     "tailleSelection": 1,
     "id": 1585366302574
@@ -73,12 +82,12 @@
   },
   {
     "handicapVisuel": false,
-    "handicapMoteur": true,
-    "contraste": 2,
-    "fontSize": 1,
+    "handicapMoteur": false,
+    "contraste": 1,
+    "fontSize": 2,
     "font": "Segoe UI",
-    "tailleSelection": 2,
-    "id": 1585360751986
+    "tailleSelection": 1,
+    "id": 1585366302574
   },
   {
     "handicapVisuel": true,

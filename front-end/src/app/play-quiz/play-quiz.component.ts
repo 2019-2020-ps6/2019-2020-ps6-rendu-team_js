@@ -105,16 +105,13 @@ export class PlayQuizComponent implements OnInit {
   }
 
   generateFinalUserAnswer() {
-    const tmp = {
+    return {
       quizId: this.quiz.id + '',
       answers: this.userAnswers,
       playTime: this.getPlayTime(),
       date: this.beginDate,
       userId: Number(this.authService.user.id)
     };
-
-    // console.log('final user answer object', tmp);
-    return tmp;
   }
 
   sendFinalAnswerToServiceAndSetResponseId(completeAnswer) {
@@ -133,14 +130,12 @@ export class PlayQuizComponent implements OnInit {
   }
 
   public getCurrentGameTry() {
-    const game = {
+    return {
       date: Date.now(),
       quizId: this.quiz.id + '',
       answer: this.userAnswers[this.userAnswers.length - 1],
       userId: this.authService.user.id
     };
-
-    return game;
   }
 
 }
