@@ -29,6 +29,7 @@ export class QuizResponseComponent implements OnInit {
 
   adaptCssToSettings() {
     if (this.settings != null) {
+      document.documentElement.style.setProperty('--fontSize', this.settings.fontSize + '');
       document.documentElement.style.setProperty('--contraste', this.settings.contraste + '');
       // console.log('css property', document.documentElement.style.getPropertyValue('--contraste'));
       document.documentElement.style.setProperty('--fontSize', this.settings.fontSize + '');
