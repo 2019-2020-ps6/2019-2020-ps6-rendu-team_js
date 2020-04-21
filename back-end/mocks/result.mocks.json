@@ -4306,5 +4306,35 @@
     "userScore": 300,
     "quizSuccessPercentage": 100,
     "id": 1587417636922
+  },
+  {
+    "date": 1587452152439,
+    "playTime": 25,
+    "quizId": "1585039873991",
+    "userId": 1585366302574,
+    "answers": [
+      {
+        "questionId": 1585040516920,
+        "answerId": 1585040516926,
+        "correctAnswerId": 1585040516928,
+        "questionScore": 50
+      },
+      {
+        "questionId": 1585040533897,
+        "answerId": 1585040533898,
+        "correctAnswerId": 1585040533899,
+        "questionScore": 50
+      },
+      {
+        "questionId": 1585040516922,
+        "answerId": 1588040533898,
+        "correctAnswerId": 1585040773899,
+        "questionScore": 50
+      }
+    ],
+    "maxScore": 300,
+    "userScore": 150,
+    "quizSuccessPercentage": 0,
+    "id": 1587452153168
   }
 ]
