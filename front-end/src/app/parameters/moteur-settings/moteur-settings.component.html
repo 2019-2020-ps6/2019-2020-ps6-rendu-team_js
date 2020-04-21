@@ -1,25 +1,20 @@
+<div class="container-bg">
+  <h2>Moteur</h2>
+  <div class="main-container">
 
+    <div class="settingName container-radio"> Taille de selection</div>
 
-<div class="container">
-  <div class="row">
-    <div id="settingName" class="col-lg-4 col-md-4 col-xs-4 xol-sm-4">
-      Taille de selection
-    </div>
-    <div id="middleChoose" class="col-lg-4 col-md-4 col-xs-4 xol-sm-4">
+    <div class="middleChoose container-radio" (click)="tailleSelectionSelectedEmit(1)">
       <input class="form-check-input" type="radio" name="gridRadios3" id="gridRadios5" value="moyenne_tailleSelction"
-             [checked]="tailleSelection === 1"
-             (click)="tailleSelectionSelectedEmit(1)">
-      <label class="form-check-label" for="gridRadios5">
-        Moyenne
-      </label>
+             [checked]="tailleSelection === 1">
+      <label class="form-check-label" for="gridRadios5"> Moyenne </label>
     </div>
-    <div id="lastChoose" class="col-lg-4 col-md-4 col-xs-4 xol-sm-4">
+
+    <div class="lastChoose container-radio" (click)="tailleSelectionSelectedEmit(2)">
       <input class="form-check-input" type="radio" name="gridRadios3" id="gridRadios6" value="grande_tailleSelction"
-             [checked]="tailleSelection === 2"
-             (click)="tailleSelectionSelectedEmit(2)">
-      <label class="form-check-label" for="gridRadios6">
-        Grande
-      </label>
+             [checked]="tailleSelection === 2">
+      <label class="form-check-label" for="gridRadios6"> Grande </label>
     </div>
+
   </div>
 </div>

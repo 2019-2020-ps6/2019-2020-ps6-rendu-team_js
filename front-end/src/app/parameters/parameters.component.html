@@ -1,6 +1,6 @@
 
 <div class="title-container">
-  <h1>Paramètres vision</h1>
+  <h1>Paramètres</h1>
   <a type="submit" class="reset-button" (click)=resetSettingsToDefault()>Réinitialiser</a>
 </div>
 <hr class="blackLine">
@@ -13,8 +13,7 @@
                      (fontSizeSelected)="fontSizeEvent($event)">
 </app-vision-settings>
 
-<h1>Paramètres moteur</h1>
-<hr class="blackLine">
+<hr class="blackLine top-margin">
 
 <app-moteur-settings *ngIf="userSettings !== undefined"
   [tailleSelection]="userSettings.tailleSelection"

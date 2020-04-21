@@ -33,7 +33,7 @@ router-outlet {
 
 .bottom-shadow {
   position: absolute;
-  height: 0vmin;
+  height: 0;
   top: 100%;
   bottom: 0;
   width: 86%;
@@ -54,7 +54,6 @@ router-outlet {
 .info-text {
   position: absolute;
   left: 15vw;
-  //right: 50vw;
   top: 6vmin;
   width: 80%;
 

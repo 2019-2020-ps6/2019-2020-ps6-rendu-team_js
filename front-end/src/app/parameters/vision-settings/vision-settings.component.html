@@ -1,64 +1,43 @@
+<div class="container-bg">
+  <h2>Vision</h2>
+  <div class="global-container">
+    <div class="main-container">
 
+      <div class="settingName container-radio"> Contraste</div>
 
-<div class="container">
-  <div class="row">
-    <div class="col-lg-4 col-md-4 col-xs-4 xol-sm-4 settingName">
-      Contraste
-    </div>
-    <div class="col-lg-4 col-md-4 col-xs-4 xol-sm-4 middleChoose">
-      <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios1" value="moyenne_tailleSelction"
-             [checked]="contrast === 1"
-             (click)="contrastSelectedEmit(1)">
-      <label class="form-check-label" for="gridRadios1">
-        Faible
-      </label>
-    </div>
-    <div class="col-lg-4 col-md-4 col-xs-4 xol-sm-4 lastChoose">
-      <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios2" value="grande_tailleSelction"
-             [checked]="contrast === 2"
-             (click)="contrastSelectedEmit(2)">
-      <label class="form-check-label" for="gridRadios2">
-        Elevé
-      </label>
-    </div>
-  </div>
-</div>
+      <div class="middleChoose container-radio" (click)="contrastSelectedEmit(1)">
+        <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios1" value="moyenne_tailleSelction"
+               [checked]="contrast === 1">
+        <label class="form-check-label" for="gridRadios1"> Faible </label>
+      </div>
 
-<br>
+      <div class="lastChoose container-radio" (click)="contrastSelectedEmit(2)">
+        <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios2" value="grande_tailleSelction"
+               [checked]="contrast === 2">
+        <label class="form-check-label" for="gridRadios2"> Elevé </label>
+      </div>
 
-<div class="container">
-  <div class="row">
-    <div class="col-lg-4 col-md-4 col-xs-4 xol-sm-4 settingName">
-      Taille Police
     </div>
-    <div class="col-lg-4 col-md-4 col-xs-4 xol-sm-4 middleChoose">
-      <input class="form-check-input" type="radio" name="gridRadios2" id="gridRadios3" value="moyenne_tailleSelction"
-             [checked]="fontSize === 1"
-             (click)="fontSizeSelectedEmit(1)">
-      <label class="form-check-label" for="gridRadios3">
-        Moyenne
-      </label>
-    </div>
-    <div class="col-lg-4 col-md-4 col-xs-4 xol-sm-4 lastChoose">
-      <input class="form-check-input" type="radio" name="gridRadios2" id="gridRadios4" value="grande_tailleSelction"
-             [checked]="fontSize === 2"
-             (click)="fontSizeSelectedEmit(2)">
-      <label class="form-check-label" for="gridRadios4">
-        Grande
-      </label>
-    </div>
-  </div>
-</div>
 
-<br>
+    <div class="main-container">
+      <div class="settingName container-radio"> Taille Police</div>
 
-<div class="container">
-  <div class="row">
-    <div  class="col-lg-4 col-md-4 col-xs-4 xol-sm-4 settingName">
-      Police
+      <div class="middleChoose container-radio" (click)="fontSizeSelectedEmit(1)">
+        <input class="form-check-input" type="radio" name="gridRadios2" id="gridRadios3" value="moyenne_tailleSelction"
+               [checked]="fontSize === 1">
+        <label class="form-check-label" for="gridRadios3"> Moyenne </label>
+      </div>
+
+      <div class="lastChoose container-radio" (click)="fontSizeSelectedEmit(2)">
+        <input class="form-check-input" type="radio" name="gridRadios2" id="gridRadios4" value="grande_tailleSelction"
+               [checked]="fontSize === 2">
+        <label class="form-check-label" for="gridRadios4"> Grande </label>
+      </div>
     </div>
-    <div  class="col-lg-8 col-md-8 col-xs-8 xol-sm-8 lastChoose">
-      {{font}}
+
+    <div class="main-container">
+      <div class="settingName" style="flex: 1"> Police</div>
+      <div class="lastChoose" style="flex: 2"> {{font}} </div>
     </div>
   </div>
 </div>
