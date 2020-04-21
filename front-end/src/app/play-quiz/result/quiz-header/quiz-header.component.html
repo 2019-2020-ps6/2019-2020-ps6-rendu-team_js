@@ -1,23 +1,7 @@
-<ng-container *ngIf="quiz != null">
-<div class="container">
-  <div class="row">
-    <div class="col-lg-4 col-md-4 col-xs-1 xol-sm-1 item-down">
-      <p class="dataDisplay" id="quizName">Quiz : {{quiz.name}}</p>
-    </div>
-    <div class="col-lg-4 col-md-4 col-xs-1 xol-sm-1 item-down">
-      <p class="dataDisplay" id="difficulty"> Difficulté : {{quiz.difficulty}}</p>
-    </div>
-    <div class="col-lg-4 col-md-4 col-xs-1 xol-sm-1 item-down">
-      <p class="dataDisplay" id="score">Score : {{userScore}} / {{maxScore}}</p>
-    </div>
-  </div>
-  <div class="row">
-    <div class="col-lg-6 col-md-6 col-xs-1 xol-sm-1 item-down">
-      <p class="dataDisplay" id="date">Date : fait le {{datePreFormat | date:'dd/MM/yyyy'}} à  {{datePreFormat | date:'HH:mm'}}</p>
-    </div>
-    <div class="col-lg-6 col-md-6 col-xs-1 xol-sm-1 item-down">
-      <p class="dataDisplay" id="totalTime">Temps total : {{playTime | date:'mm'}} minutes et {{playTime | date:'ss'}} secondes</p>
-    </div>
-  </div>
+<div class="main-container" *ngIf="quiz != null">
+      <div class="dataDisplay" id="quizName">Quiz : {{quiz.name}}</div>
+      <div class="dataDisplay" id="difficulty"> Difficulté : {{quiz.difficulty}}</div>
+      <div class="dataDisplay" id="score">Score : {{userScore}} / {{maxScore}}</div>
+      <div class="dataDisplay" id="date">Date : fait le {{datePreFormat | date:'dd/MM/yyyy'}} à  {{datePreFormat | date:'HH:mm'}}</div>
+      <div class="dataDisplay" id="totalTime">Temps total : {{playTime | date:'mm'}} minutes et {{playTime | date:'ss'}} secondes</div>
 </div>
-</ng-container>

@@ -1,26 +1,18 @@
-<div id="component" class="container">
-  <div class="row">
-    <div id="questionNumber" class="col-lg-1 col-md-1 col-xs-1 xol-sm-1 itemData">
-      {{index}}
-    </div>
-    <div id="questionAndResponse" class="col-lg-10 col-md-10 col-xs-10 xol-sm-10 itemData">
-      <div id="question">
-        {{question.label}}
-      </div>
-      <div class="container">
-        <div class="row">
-          <div id="correctResponse" class="col-lg-6 col-md-6 col-xs-6 xol-sm-6">
-            {{userAnswer.value}}
-          </div>
-          <div id="incorrectResponse" class="col-lg-6 col-md-6 col-xs-6 xol-sm-6 item-down">
-            <div *ngIf='correctAnswer !== undefined' >{{correctAnswer.value}}</div>
-          </div>
-        </div>
+<div class="main-container">
+
+    <div id="questionNumber" class="itemData" [ngClass]="isPair? 'numero-color' : 'numero-color-faded'"> {{index}} </div>
+
+    <div id="questionAndResponse" class="itemData"  [ngClass]="isPair? 'question-reponses-color' : 'question-reponses-color-faded'">
+      <div id="question"> {{question.label}} </div>
+
+      <div class="reponses-container">
+          <div class="correctResponse" *ngIf="!isAnswerChosenCorrect()">Bonne réponse : <b> {{userAnswer.value}} </b></div>
+          <div class="correctResponse" *ngIf="isAnswerChosenCorrect()">Bonne réponse choisi : <b> {{userAnswer.value}} </b></div>
+          <div id="incorrectResponse" class="item-down" *ngIf='correctAnswer !== undefined' >Réponse choisi : <b> {{correctAnswer.value}} </b></div>
       </div>
     </div>
-    <div id="questionScore" class="col-lg-1 col-md-1 col-xs-1 xol-sm-1 itemData">
-      {{questionScore}}
-    </div>
-  </div>
+
+    <div id="questionScore" class="itemData"  [ngClass]="isPair? 'score-color' : 'score-color-faded'"> {{questionScore}} </div>
+
 </div>
 

@@ -1,15 +1,7 @@
-<div class="container">
-  <div class="row">
-    <div id="number" class="col-lg-1 col-md-1 col-xs-1 xol-sm-1 itemTitle ">
-      Numéro
-    </div>
-    <div id="questionAndResponse" class="col-lg-10 col-md-10 col-xs-10 xol-sm-10 itemTitle">
-      Question et Réponse
-    </div>
-    <div id="score" class="col-lg-1 col-md-1 col-xs-1 xol-sm-1 itemTitle">
-      Score
-    </div>
-  </div>
+<div class="main-container">
+    <div id="number" class="itemTitle"> Numéro </div>
+    <div id="questionAndResponse" class="itemTitle"> Questions et Réponses </div>
+    <div id="score" class="itemTitle"> Score </div>
 </div>
 
 <div id="scroll">
@@ -18,12 +10,10 @@
                          [questionScore]="answers[i].questionScore"
                          [userAnswer]="answers[i].userAnswer"
                          [correctAnswer]="answers[i].correctAnswer"
-                         [question]="answers[i].question">
+                         [question]="answers[i].question"
+                         [isPair]="i%2 == 0">
     </app-question-result>
   </ng-container>
 </div>
 
-<div class="container">
-  <div id="end" class="row">
-  </div>
-</div>
+<div class="end-container"> </div>

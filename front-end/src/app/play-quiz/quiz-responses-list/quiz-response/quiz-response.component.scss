@@ -11,7 +11,6 @@
   padding: 3vmin;
   text-align: center;
   cursor: pointer;
-  border-radius: 3vmin;
   font-weight: bold;
   outline:none;
   width: 100%;
@@ -24,4 +23,12 @@
 
 .responseButton:hover {
   opacity: 0.8;
+}
+
+.selection-medium {
+  border-radius: 3vmin;
+}
+
+.selection-high {
+
 }
