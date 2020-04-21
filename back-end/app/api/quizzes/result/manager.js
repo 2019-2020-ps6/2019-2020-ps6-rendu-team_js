@@ -8,8 +8,11 @@ const logger = require('../../../utils/logger.js')
 
 const buildResult = (resultId) => {
   const result = Result.getById(resultId);
-
+    console.log(result)
   const quiz = Quiz.getById(result.quizId);
+    console.log(quiz)
+    const theme = Theme.getById(quiz.themeId);
+    console.log(theme)
 
   const answers = result.answers.map((answer) => {
     const questionScore = answer.questionScore
@@ -22,7 +25,10 @@ const buildResult = (resultId) => {
             return { ...questionScore, question, userAnswer, questionScore }
         }
     })
-    return { ...result, quiz, answers }
+
+    console.log({ ...result, quiz, answers, theme});
+
+    return { ...result, quiz, answers, theme}
 }
 
 

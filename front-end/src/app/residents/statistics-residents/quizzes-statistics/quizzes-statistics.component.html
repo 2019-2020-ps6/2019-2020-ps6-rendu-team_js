@@ -1,29 +1,25 @@
-<div class="container">
-  <div class="row" id="quizInfo" (click)=toggleDisplay()>
-    <div class="col-lg-8 col-md-8 col-xs-8 xol-sm-8">
-      {{quizResult.name}}
-    </div>
-    <div id="quizDifficulty" class="col-lg-3 col-md-3 col-xs-3 xol-sm-3">
-      {{quizResult.difficulty}}
-    </div>
-    <div id="arrow" class="col-lg-1 col-md-1 col-xs-1 xol-sm-1">
-      ⏷
-    </div>
-  </div>
+<ng-container *ngIf="quizResult != null">
+  <div class="main-container" [ngStyle]="{backgroundColor: bgColor}">
+    <div >
+      <div class="top-part-button-container"  (click)="isShow = !isShow">
+        <div class="top-button left-part" [ngStyle]="{backgroundColor: themeColor}" *ngIf="!isShow">⏷</div>
+        <div class="top-button left-part" [ngStyle]="{backgroundColor: themeColor}" *ngIf="isShow">⏶</div>
+        <div class="top-button middle-part" [ngStyle]="{backgroundColor: themeColor}"> {{quizResult.name}} </div>
+        <div class="top-button right-part"  [ngStyle]="{backgroundColor: lvlColor}"> {{quizResult.difficulty}} </div>
+      </div>
 
+      <div class="bottom-part-container" *ngIf="isShow">
+        <div class="txtEssaies"  >Essaies : </div>
 
-  <div [ngClass]="(isShow)? 'visible-item'  : 'hidden-item'" class="row" id="quizHistory">
-    <div class="col-lg-12 col-md-12 col-xs-12 xol-sm-12"  [ngClass]="(isShow)? 'visible-item'  : 'hidden-item'" >
-      <div id="txtEssaies"  >Essaies : </div>
-      <div id="historyList">
+        <div class="historyList scrollbar scrollbar-primary">
           <ng-container *ngFor="let try of quizResult.quizTries; let i = index">
-        <div class="item-result">
-          <app-quiz-statistics-adminside [try]="try" (quizResultToDisplayDetails)="quizToDisplayEvent($event)"></app-quiz-statistics-adminside>
-        </div>
+            <div class="item-result">
+              <app-quiz-statistics-adminside [try]="try" (quizResultToDisplayDetails)="quizToDisplayEvent($event)"></app-quiz-statistics-adminside>
+            </div>
           </ng-container>
+        </div>
+
       </div>
     </div>
   </div>
-</div>
-
-<br>
+</ng-container>

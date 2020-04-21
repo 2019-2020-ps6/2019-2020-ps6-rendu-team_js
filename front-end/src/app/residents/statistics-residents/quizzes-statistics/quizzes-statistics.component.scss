@@ -13,36 +13,30 @@ $cornerRadius: 25px;
   font-size: 5vmin;
 }
 
-#txtEssaies {
+.txtEssaies {
   font-size: 3.75vmin;
   font-weight: 600;
   margin-bottom: 8px;
   margin-top: 8px;
 }
 
-#quizInfo {
+.quizInfo {
   border-radius: $cornerRadius;
   background-color: $primaryColorDark;
   cursor: pointer;
 }
 
-#quizDifficulty {
+.quizDifficulty {
   text-align: center;
   border-left: solid 5px $primaryColor;
 }
 
-#arrow {
-  text-align: center;
-  border-left: solid 5px $primaryColor;
-  border-bottom-right-radius: $cornerRadius;
-}
-
-#historyList {
+.historyList {
   overflow: auto;
   white-space: nowrap;
 }
 
-#quizHistory {
+.quizHistory {
   padding-bottom: 20px;
   transition: height 0.2s ease-in-out, opacity 0.5s ease-in-out;
 }
@@ -66,3 +60,106 @@ $cornerRadius: 25px;
   padding-bottom: 0 !important;
   height: 0;
 }
+
+
+
+
+.main-container {
+  align-content: space-around;
+  margin: 2vmin;
+  border: 0 solid transparent;
+  border-radius: 2vmin;
+}
+
+.top-part-button-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  cursor: pointer;
+}
+
+.top-part-button-container:hover {
+  opacity: 0.8;
+}
+
+.top-button {
+  padding-left: 2vmin;
+  padding-right: 2vmin;
+  color: white;
+  font-family: "Segoe UI Black", sans-serif;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+}
+
+.left-part {
+  border: 1vmin solid transparent;
+  border-bottom-left-radius: 2vmin;
+  border-top-left-radius: 2vmin;
+  font-size: 6vmin !important;
+  width: 10vmin;
+}
+
+.middle-part {
+  font-size: 6vmin !important;
+  border-right: 0.5vmin solid white !important;
+  flex: 2;
+}
+
+.right-part {
+  border: 0 solid transparent;
+  border-bottom-right-radius: 2vmin;
+  border-top-right-radius: 2vmin;
+  font-size: 6vmin !important;
+  flex: 1;
+}
+
+
+
+
+.bottom-part-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  border: 0 solid transparent;
+  padding: 0 2vmin 0 2vmin;
+}
+
+.bottom-text {
+  text-align: center;
+  font-size: 4vmin;
+  font-family: "Segoe UI Black", sans-serif;
+  color: #212529;
+  padding: 2vmin 4vmin 2vmin 2vmin;
+}
+
+
+
+.bottom-part-button-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
+.bottom-button {
+  border: 0 solid transparent;
+  border-radius: 1vmin;
+  font-family: "Segoe UI Black", sans-serif;
+  font-size: 4vmin;
+  padding: 1vmin;
+  flex: 1;
+  margin: 2vmin;
+  color: white;
+}
+
+.play-quiz-button:hover, .edit-quiz-button:hover {
+  opacity: 0.8;
+}
+
+.edit-quiz-button {
+  background-color: #3D3D3D;
+}
+
+

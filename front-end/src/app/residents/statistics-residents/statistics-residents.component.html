@@ -10,10 +10,11 @@
 <hr class="blackLine">
 
 <div *ngIf="displayPerQuizComponent">
+
   <ng-container *ngFor="let quizResult of userStatistics.quizzesResultIds; let i = index">
-    <app-quiz-statistics [quizResult]="quizResult"
-                         (quizResultToDisplayDetails)="displayQuizDetails($event)"></app-quiz-statistics>
+    <app-quiz-statistics [quizResult]="quizResult" (quizResultToDisplayDetails)="displayQuizDetails($event)"></app-quiz-statistics>
   </ng-container>
+
   <div *ngIf="userStatistics.quizzesResultIds.length == 0">
     <div id="text">Le résident a fini aucun quiz pour le moment</div>
   </div>
@@ -34,8 +35,5 @@
                    [playTime]="quizResult.playTime">
   </app-quiz-header>
 
-  <app-quiz-result-list [answers]="quizResult.answers"
-                        [quizId]="quizResult.quizId">
-
-  </app-quiz-result-list>
+  <app-quiz-result-list [answers]="quizResult.answers" [quizId]="quizResult.quizId"></app-quiz-result-list>
 </div>

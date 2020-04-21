@@ -3,6 +3,6 @@
     {{datePreFormat | date:'dd/MM/yyyy'}} à {{datePreFormat | date:'HH:mm'}}
   </div>
   <div id="successPercentage">
-    {{try.quizSuccessPercentage}}%
+    {{try.quizSuccessPercentage | number:'1.0-0'}}%
   </div>
 </div>
