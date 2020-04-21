@@ -1,4 +1,4 @@
-const { Answer, Result, Question, Statistics, Quiz } = require('../../../models')
+const { Answer, Result, Question, Statistics, Quiz, Theme } = require('../../../models')
 const logger = require('../../../utils/logger.js')
 
 /**
@@ -10,6 +10,7 @@ const buildResult = (resultId) => {
   const result = Result.getById(resultId);
 
   const quiz = Quiz.getById(result.quizId);
+  const theme = Theme.getById(quiz.themeId);
 
   const answers = result.answers.map((answer) => {
     const questionScore = answer.questionScore
@@ -22,7 +23,7 @@ const buildResult = (resultId) => {
             return { ...questionScore, question, userAnswer, questionScore }
         }
     })
-    return { ...result, quiz, answers }
+    return { ...result, quiz, answers, theme }
 }
 
 

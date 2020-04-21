@@ -1,4 +1,5 @@
 import {Answer, Question} from './question.model';
+import {Theme} from './theme.model';
 
 export interface Result {
   quizId: string;
@@ -13,6 +14,7 @@ export interface Result {
   quizTries?: Result[];
   difficulty?: string;
   name?: string;
+  theme?: Theme;
 }
 
 export interface ResultQuestion {

@@ -9,13 +9,24 @@ import {Result} from '../../../../models/result.model';
 export class QuizzesStatisticsComponent implements OnInit {
 
   @Input() quizResult: Result;
+
   @Output() quizResultToDisplayDetails = new EventEmitter<number>();
+
   private isShow = false;
+
+  private themeColor: string;
+  private lvlColor: string;
+  private bgColor: string;
+
 
   constructor() { }
 
   ngOnInit() {
     console.log(this.quizResult);
+    this.themeColor = this.quizResult.theme.color;
+    this.bgColor = this.themeColor + '40';
+    // tslint:disable-next-line:no-bitwise
+    this.lvlColor = this.themeColor + 'D0';
   }
 
   toggleDisplay() {
