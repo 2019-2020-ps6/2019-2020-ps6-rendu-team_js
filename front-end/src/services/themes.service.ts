@@ -3,6 +3,7 @@ import {HttpClient, HttpResponse} from '@angular/common/http';
 import {BehaviorSubject, Observable, Subject, Subscription} from 'rxjs';
 import { serverUrl, httpOptionsBase } from '../configs/server.config';
 import {Theme} from '../models/theme.model';
+import {Quiz} from '../models/quiz.model';
 
 @Injectable({
   providedIn: 'root'
@@ -24,6 +25,10 @@ export class ThemesService {
     this.setThemes();
   }
 
+  addTheme(theme: Theme) {
+    this.http.post<Theme>(this.themeUrl, theme, this.httpOptions).subscribe(() => this.setThemes());
+  }
+*
   setThemes() {
     this.http.get<Theme[]>(this.themeUrl).subscribe((themes) => {
       this.themes = themes;
