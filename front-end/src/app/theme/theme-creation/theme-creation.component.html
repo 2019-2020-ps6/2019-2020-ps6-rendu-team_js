@@ -1,1 +1,31 @@
-<p>theme-creation works!</p>
+<h1>Création d'un quiz</h1>
+<hr class="blackLine">
+<div class="col-6" style="position: center; margin: auto;">
+  <div class="card greencard">
+    <div class="card-header">Créer un thème</div>
+    <div class="card-body">
+      <form class="quiz-creation" [formGroup]="themeForm">
+        <label for="title">Nom du thème</label>
+        <br>
+        <input class="input-custom" type="text" id="title" [formControlName]="'name'">
+        <br><br>
+
+        <label for="theme">Couleur</label>
+        <br>
+        <input class="input-custom" type="text" id="theme" [formControlName]="'color'">
+
+        <!--
+        <select class="form-control form-control-lg" id="theme" [formControlName]="'theme'" *ngFor="let theme of themeList">
+        </select>
+        -->
+        <br><br>
+
+        <button type="submit" class="btn-lg btn-gris" id="cancel" (click)="backPressed()">Retour</button>
+        &nbsp;
+        <button type="submit" class="btn-lg btn-blanc" id="create" (click)="addTheme()">Créer</button>
+
+      </form>
+    </div>
+
+  </div>
+</div>
