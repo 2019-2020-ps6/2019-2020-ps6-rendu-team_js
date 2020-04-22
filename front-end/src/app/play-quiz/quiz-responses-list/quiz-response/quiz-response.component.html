@@ -1,1 +1,4 @@
-<div class="responseButton" [ngStyle]="{backgroundColor: color}" [ngClass]="!settingsService.isSelectionHigh()? 'selection-medium' : 'selection-high'"> {{answer.value}} </div>
+<div class="responseButton" [ngStyle]="{backgroundColor: color}" [ngClass]="{'selection-medium': !settingsService.isSelectionHigh(),
+'selection-high': settingsService.isSelectionHigh(),
+'fontMedium': !settingsService.isFontHigh(),
+'fontHigh': settingsService.isFontHigh()}"> {{answer.value}} </div>
