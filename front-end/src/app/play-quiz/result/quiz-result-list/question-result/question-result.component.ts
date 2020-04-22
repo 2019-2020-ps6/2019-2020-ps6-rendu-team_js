@@ -14,9 +14,15 @@ export class QuestionResultComponent implements OnInit {
   @Input() question: Question;
   @Input() index: number;
 
+  @Input() isPair: boolean;
+
   constructor() {
   }
 
   ngOnInit() {
+  }
+
+  isAnswerChosenCorrect(): boolean {
+    return this.userAnswer.isCorrect;
   }
 }

@@ -9,7 +9,7 @@ import {AuthService} from './auth.service';
 export class AuthGuardService {
 
   constructor(private router: Router,
-              public authService: AuthService) {
+              private authService: AuthService) {
   }
 
   canActivate(): Observable<boolean> | Promise<boolean> | boolean {
