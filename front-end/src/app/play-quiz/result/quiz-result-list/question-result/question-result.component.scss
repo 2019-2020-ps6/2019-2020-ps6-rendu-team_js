@@ -13,24 +13,39 @@ $badResponseBackgroundColorLite: #FFB5B1;
  ELEMENTS
  */
 
+.main-container {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.main-container div {
+  width: 100%;
+}
+
+
 #questionNumber {
-  background-color: $goodResponseBackgroundColorStrong;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-weight: 600;
+  font-weight: 900;
+  flex: 1;
+  font-size: 3vmin;
 }
 
 #questionAndResponse {
-  background-color: $goodResponseBackgroundColorLite;
+  flex: 7;
+  font-size: 3vmin;
 }
 
 #questionScore {
-  background-color: #B9D1FF;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-weight: 600;
+  font-weight: 900;
+  flex: 1;
+  font-size: 3vmin;
 }
 
 .itemData{
@@ -38,26 +53,60 @@ $badResponseBackgroundColorLite: #FFB5B1;
   text-align: center;
 }
 
-#component {
-  border-bottom: 1px solid grey;
-}
 
 #question {
   font-weight: 600;
+  padding-top: 1vmin;
 }
 
-#correctResponse {
+.reponses-container {
+  padding: 1vmin;
+}
+
+
+.correctResponse {
   color: darkgreen;
   font-weight: 500;
-  padding-bottom: 8px;
 }
 
 #incorrectResponse {
   color: maroon;
   font-weight: 500;
-  padding-bottom: 8px;
 }
 
 .container {
   max-width: 100%;
 }
+
+
+
+.numero-color {
+  background-color: #fac536;
+}
+
+.numero-color-faded {
+  background-color: rgba(255, 213, 52, 0.76);
+}
+
+
+
+
+.question-reponses-color {
+  background-color: #b6fac4;
+}
+
+.question-reponses-color-faded {
+  background-color: #c7f9cc;
+}
+
+
+
+
+.score-color {
+  background-color: #B9D1FF;
+}
+
+.score-color-faded {
+  background-color: #c9daf8;
+}
+

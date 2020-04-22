@@ -16,7 +16,7 @@
 }
 
 .box-shadow {
-  box-shadow: 0 3px 5px -1px rgba(0, 0, 0, 0.2), 0 6px 10px 0 rgba(0, 0, 0, 0.14), 0 1px 18px 0 rgba(0, 0, 0, 0.12);
+  box-shadow: 0 1vmin 1vmin -0.1vmin rgba(0, 0, 0, 0.2), 0 1.5vmin 2vmin 0 rgba(0, 0, 0, 0.14), 0 0.1vmin 2vmin 0 rgba(0, 0, 0, 0.12);
 }
 
 .left-side{
@@ -139,6 +139,11 @@ a:hover {
 .admin {
   background-color: #7b7b7b;
 }
+
+.admin:hover {
+  background-color: #6c6c6c;
+}
+
 
 .admin div {
   display: flex;

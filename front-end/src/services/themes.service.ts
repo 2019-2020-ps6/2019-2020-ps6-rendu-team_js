@@ -28,7 +28,7 @@ export class ThemesService {
   addTheme(theme: Theme) {
     this.http.post<Theme>(this.themeUrl, theme, this.httpOptions).subscribe(() => this.setThemes());
   }
-*
+
   setThemes() {
     this.http.get<Theme[]>(this.themeUrl).subscribe((themes) => {
       this.themes = themes;

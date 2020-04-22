@@ -1,10 +1,26 @@
+.main-container {
+  width: 100%;
+  flex-wrap: wrap;
+  display: flex;
+  padding-bottom: 3vmin;
+}
 
 .dataDisplay {
-  border-radius: 25px;
-  padding: 5px;
+  border-radius: 3vmin;
+  padding: 1vmin;
   color: #FFFFFF;
   font-weight: 500;
+  font-size: 3vmin;
   text-align: center;
+  margin: 1vmin;
+
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  flex: 1 0 26%;
+  width: 100%;
+  display: flex;
 }
 
 #quizName {

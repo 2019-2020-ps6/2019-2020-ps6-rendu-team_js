@@ -38,6 +38,25 @@ export class SettingsService {
     }
   }
 
+  setCurrentUserSettingsPromise() {
+    return new Promise((resolve, reject) => {
+
+      if (this.authServices.user != null) {
+        const uid = this.authServices.user.id;
+
+        const urlWithId = this.settingsUrl + '/' + uid;
+
+        this.http.get<Settings>(urlWithId).subscribe((settings) => {
+          this.settings = settings;
+          this.settings$.next(this.settings);
+          resolve();
+        });
+      }
+
+      reject();
+    });
+  }
+
   setSelectedSettings(userId: string) {
     const urlWithId = this.settingsUrl + '/' + userId;
     this.http.get<Settings>(urlWithId).subscribe((settings) => {
@@ -74,5 +93,13 @@ export class SettingsService {
     const url = this.settingsUrl + '/copySettings/' + userId;
     return this.http.put(url, usersId, {...this.httpOptions, observe: 'response'});
 
+  }
+
+  isSelectionHigh() {
+    if (this.settings !== undefined) {
+      return this.settings.tailleSelection !== 1;
+    }
+
+    return true;
   }
 }

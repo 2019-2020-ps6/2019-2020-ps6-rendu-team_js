@@ -1,1 +1,1 @@
-<div class="responseButton" [ngStyle]="{backgroundColor: color}" > {{answer.value}} </div>
+<div class="responseButton" [ngStyle]="{backgroundColor: color}" [ngClass]="settingsService.isSelectionHigh()? 'selection-medium' : 'selection-high'"> {{answer.value}} </div>

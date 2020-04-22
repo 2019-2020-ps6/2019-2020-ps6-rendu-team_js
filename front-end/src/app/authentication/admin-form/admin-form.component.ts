@@ -2,6 +2,7 @@ import {Component, EventEmitter, OnInit, Output} from '@angular/core';
 import {FormBuilder, FormControl, FormGroup, Validators} from '@angular/forms';
 import {AuthService} from '../../../services/auth.service';
 import {ToasterService} from '../../../services/toaster.service';
+import {SettingsService} from '../../../services/settings.service';
 
 @Component({
   selector: 'app-admin-form',
