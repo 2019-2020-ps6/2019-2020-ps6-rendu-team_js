@@ -12,15 +12,15 @@
     "id": 1000000000001
   },
   {
-    "name": "Voyage",
+    "name": "Pays",
     "color": "#a503fc",
-    "nbQuiz": 0,
+    "nbQuiz": 1,
     "id": 1000000000002
   },
   {
-    "name": "Mathématiques",
+    "name": "Vie quotidienne",
     "color": "#fcd303",
-    "nbQuiz": 0,
+    "nbQuiz": 1,
     "id": 1000000000003
   },
   {
@@ -28,11 +28,5 @@
     "color": "#fc035a",
     "nbQuiz": 0,
     "id": 1000000000004
-  },
-  {
-    "name": "qdqsd",
-    "color": "#24400A",
-    "nbQuiz": 0,
-    "id": 1587649735849
   }
 ]

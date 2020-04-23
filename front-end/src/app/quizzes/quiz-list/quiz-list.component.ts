@@ -37,8 +37,8 @@ export class QuizListComponent implements OnInit {
     const themeId = this.route.snapshot.paramMap.get('id');
     this.themesService.setThemeSelectedFromId(themeId);
     this.quizList = [];
-    this.isFilterOpen = false;
     this.quizListFiltered = [];
+    this.isFilterOpen = false;
     this.textFilter = 'Filtrer';
 
     this.themesService.themeSelected$.pipe(take(1)).subscribe((t) => {
@@ -49,7 +49,6 @@ export class QuizListComponent implements OnInit {
         this.quizList = q;
         console.log(this.quizList);
         this.quizList$.next(this.quizList);
-
         this.quizListFiltered = q;
       });
     });

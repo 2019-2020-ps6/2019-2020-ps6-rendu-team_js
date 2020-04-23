@@ -51,9 +51,6 @@ export class ThemesService {
     return this.http.get<Theme>(urlWithId);
   }
 
-  getThemes() {
-    return this.themes;
-  }
 
   increaseThemeQuizNumber(theme: Theme, themeId: string): Observable<HttpResponse<any>> {
     const url = this.themeUrl + '/' + themeId + '/increase';
