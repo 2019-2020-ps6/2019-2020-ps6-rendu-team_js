@@ -22,5 +22,11 @@
     "themeId": "1000000000002",
     "difficulty": "Moyen",
     "id": 2000000000003
+  },
+  {
+    "name": "Le code de la route",
+    "themeId": "1000000000003",
+    "difficulty": "Facile",
+    "id": 2000000000004
   }
 ]
