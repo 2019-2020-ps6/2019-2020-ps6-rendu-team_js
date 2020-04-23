@@ -1,11 +1,11 @@
 .theme-container {
-  padding: 1vmin 8vmin 1vmin 8vmin ;
+  padding: 1vmin 2vmin 1vmin 2vmin ;
   background-color: blueviolet;
   border: 0 solid black;
   border-radius: 3vmin;
   margin: 2vmin;
   cursor: pointer;
-  height: 25vmin;
+  height: 4rem;
 }
 
 .theme-container:hover {
@@ -19,6 +19,7 @@
   font-size: 1.2rem;
   color: white;
   display: flex;
+  white-space: nowrap;
   flex-direction: column;
   justify-content: center;
   height: 100%;
