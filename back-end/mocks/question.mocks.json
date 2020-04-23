@@ -158,6 +158,41 @@
     "label": "Quel est le plus vaste (superficie) pays de l'Union européenne ?",
     "quizId": 2000000000003,
     "id": 3300000000006
+  },
+  {
+    "label": "Quelle est la vitesse maximale autorisé sur les Autoroutes Françaises",
+    "quizId": 2000000000004,
+    "id": 3400000000000
+  },
+  {
+    "label": "Le volant des voitures sont placé de quel côté ?",
+    "quizId": 2000000000004,
+    "id": 3400000000005
+  },
+  {
+    "label": "Combien de coter a le panneau STOP ?",
+    "quizId": 2000000000004,
+    "id": 3400000000001
+  },
+  {
+    "label": "En agglomération quelle est la vitesse maximale autorisé ?",
+    "quizId": 2000000000004,
+    "id": 3400000000002
+  },
+  {
+    "label": "Quel est l'âge minimum pour pouvoir s'asseoir à l'avant d'une voiture ?",
+    "quizId": 2000000000004,
+    "id": 3400000000003
+  },
+  {
+    "label": "En France on roule à ... ?",
+    "quizId": 2000000000004,
+    "id": 3400000000004
+  },
+  {
+    "label": "Combien de points y a-t-il sur un permis de conduire ?",
+    "quizId": 2000000000004,
+    "id": 3400000000006
   }
 
 
