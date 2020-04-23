@@ -12,13 +12,13 @@
 
         <label for="theme">Thème</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a routerLink="/theme-creation">Nouveau thème +</a>
         <br>
-        <input class="input-custom" type="text" id="theme" [formControlName]="'theme'">
+        <!--<input class="input-custom" type="text" id="theme" [formControlName]="'theme'">-->
 
-        <!--
-        <select class="form-control form-control-lg" id="theme" [formControlName]="'theme'" *ngFor="let theme of themeList">
+        <select class="form-control form-control-lg" id="theme" [formControlName]="'theme'">
+          <option *ngFor="let t of themeList" [value]=t>{{t.name}}</option>
         </select>
-        -->
-        <br><br>
+
+        <br>
 
         <label for="difficulty">Difficulté</label>
         <br>
