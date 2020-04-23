@@ -17,4 +17,5 @@ router.use('/settings', SettingsRouter);
 router.use('/theme', ThemeRouter);
 router.use('/games', GamesRouter);
 
+
 module.exports = router;
