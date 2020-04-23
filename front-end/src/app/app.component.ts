@@ -17,7 +17,8 @@ export class AppComponent {
   private message: string;
 
   constructor(private toasterService: ToasterService,
-              private helpService: HelpService) {
+              private helpService: HelpService,
+              private settingsService: SettingsService) {
 
     /* TOASTER */
     toasterService.isErrorMessage$.subscribe((isErrorMessage) => {
@@ -46,6 +47,24 @@ export class AppComponent {
 
   setBackgroundColor(color: string) {
     this.colorBackground = color;
+  }
+
+  applyCssFromSettings() {
+    if (this.settingsService.settings !== undefined && this.settingsService.settings !== null) {
+
+      if (this.settingsService.settings.fontSize === 1) {
+        document.getElementsByTagName('html')[0].style.setProperty('font-size', '5vmin');
+      } else {
+        document.getElementsByTagName('html')[0].style.setProperty('font-size', '9vmin');
+      }
+    }
+
+    if (this.settingsService.settings.contraste === 2) {
+      document.getElementsByTagName('html')[0].style.setProperty('--headerBG', 'black');
+    } else {
+      document.getElementsByTagName('html')[0].style.setProperty('--headerBG', '#3D3D3D');
+    }
+
   }
 
 }
