@@ -41,7 +41,7 @@
 
 .title {
   background-color: black;
-  color: white;
+  color: var(--customWhite);
 
   font-size: 0.8rem;
   font-family: "Segoe UI Black", sans-serif;
@@ -67,7 +67,7 @@
 .button {
   padding: 1vmin;
   border: 0 solid transparent;
-  color: white;
+  color: var(--customWhite);
   text-align: center;
   font-family: "Segoe UI Black", sans-serif;
   font-size: 0.6rem;
@@ -83,7 +83,7 @@
 
 .back-button:hover {
   background-color: #326335;
-  color: white;
+  color: var(--customWhite);
 }
 
 
@@ -93,6 +93,6 @@
 }
 
 .replay-button:hover {
-  color: white;
+  color: var(--customWhite);
   background-color: #00578f;
 }

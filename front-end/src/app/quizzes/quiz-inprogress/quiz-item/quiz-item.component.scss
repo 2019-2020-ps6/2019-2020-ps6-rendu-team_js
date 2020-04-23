@@ -25,7 +25,7 @@ $cornerRadius: 25px;
 .top-button {
   padding-left: 2vmin;
   padding-right: 2vmin;
-  color: white;
+  color: var(--customWhite);
   font-family: "Segoe UI Black", sans-serif;
   width: 100%;
   display: flex;
@@ -89,7 +89,7 @@ $cornerRadius: 25px;
   font-size: 0.8rem;
   padding: 1vmin;
   margin: 2vmin;
-  color: white;
+  color: var(--customWhite);
 }
 
 .play-quiz-button:hover, .quit-quiz-button:hover {
@@ -102,6 +102,6 @@ $cornerRadius: 25px;
 
 .quit-quiz-button {
   flex: 1;
-  background-color: #800000;
+  background-color: var(--customDarkRed);
 }
 

@@ -66,11 +66,11 @@ router-outlet {
 
   font-size: 0.8rem;
   font-family: "Segoe UI Black", serif;
-  color: white;
+  color: var(--customWhite);
   text-align: center;
-  background-color: #6ba800;
+  background-color: var(--customGreen);
 
-  border: 0 solid white;
+  border: 0 solid var(--customWhite);
   border-bottom-left-radius: 2vmin;
   border-bottom-right-radius: 2vmin;
 

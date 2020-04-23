@@ -9,9 +9,9 @@
   justify-content: center;
   text-align: center;
 
-  color: white;
-  background-color: #8d0000;
-  border: #8d0000 solid 0 ;
+  color: var(--customWhite);
+  background-color: var(--customDarkRed);
+  border: var(--customDarkRed) solid 0 ;
   border-radius: 3vmin;
 
 
@@ -22,7 +22,7 @@
 }
 
 .reset-button:hover{
-  color: white;
+  color: var(--customWhite);
   background-color: #b40000;
 }
 

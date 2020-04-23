@@ -8,7 +8,7 @@
   background-color: #3396FF;
 
   text-align: center;
-  color: white;
+  color: var(--customWhite);
   font-family: "Segoe UI", sans-serif;
   font-size: 0.8rem;
   font-weight: bold;
@@ -26,13 +26,13 @@
 }
 
 .deletePart{
-  background-color: red;
+  background-color: var(--customRed);
   border-radius: 50px;
 }
 
 .leftPart{
   background-color: rgb(255, 255, 255, 0);
   border-color: rgb(255, 255, 255, 0);
-  color: white;
+  color: var(--customWhite);
 }
 

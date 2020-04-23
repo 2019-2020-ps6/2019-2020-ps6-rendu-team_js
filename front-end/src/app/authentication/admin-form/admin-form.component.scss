@@ -19,7 +19,7 @@
 
 .text-connexion {
   text-align: center;
-  color: white;
+  color: var(--customWhite);
   font-size: 2.4rem;
   padding: 3vmin;
   font-family: "Segoe UI Black", sans-serif;
@@ -34,7 +34,7 @@
 .input-custom {
   padding: 2vmin;
   margin: 2vmin;
-  border: #FFFFFF 0 solid;
+  border: var(--customWhite) 0 solid;
   border-radius: 2vmin;
   font-family: "Segoe UI Black", sans-serif;
   font-size: 1rem;
@@ -44,10 +44,10 @@
 .button-card {
   padding: 2vmin;
   margin: 2vmin;
-  border: #FFFFFF 0 solid;
+  border: var(--customWhite) 0 solid;
   border-radius: 2vmin;
-  background-color: #3D3D3D;
-  color: white;
+  background-color: var(--customGray);
+  color: var(--customWhite);
   font-family: "Segoe UI Black", sans-serif;
   font-size: 1rem;
 }
@@ -67,7 +67,7 @@
 }
 .error-text{
   font-size: xx-large;
-  color: red;
+  color: var(--customRed);
   text-align: center;
   font-family: "Segoe UI Black", sans-serif;
 }

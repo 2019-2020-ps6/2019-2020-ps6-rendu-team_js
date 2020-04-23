@@ -13,7 +13,7 @@ $buttonColor: #d650ec;
   justify-content: center;
   text-align: center;
 
-  color: white;
+  color: var(--customWhite);
   background-color: #3CABC2;
   border: #3CABC2 solid 0 ;
   border-radius: 3vmin;
@@ -27,7 +27,7 @@ $buttonColor: #d650ec;
 }
 
 .button-stats:hover{
-  color: white;
+  color: var(--customWhite);
   background-color: #47c5dc;
 }
 

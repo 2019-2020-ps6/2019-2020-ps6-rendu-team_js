@@ -2,9 +2,9 @@
   justify-content: center;
   text-align: center;
 
-  color: white;
-  background-color: #cd0500;
-  border: #cd0500 solid 0 ;
+  color: var(--customWhite);
+  background-color: var(--customRed);
+  border: var(--customRed) solid 0 ;
   border-radius: 3vmin;
 
   margin: 2vmin;
@@ -14,7 +14,7 @@
 }
 
 .button-stats:hover{
-  color: white;
+  color: var(--customWhite);
   background-color: #ed5855;
 }
 
