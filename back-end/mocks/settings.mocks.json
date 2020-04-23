@@ -56,8 +56,8 @@
   {
     "handicapVisuel": false,
     "handicapMoteur": false,
-    "contraste": 2,
-    "fontSize": 2,
+    "contraste": 1,
+    "fontSize": 1,
     "font": "Segoe UI",
     "tailleSelection": 2,
     "id": 1585366302574

@@ -312,7 +312,7 @@
     "id": 5000000000003
   },
   {
-    "value": "Maron",
+    "value": "Marron",
     "isCorrect": false,
     "questionId": 3100000000000,
     "id": 5000000000004
@@ -360,7 +360,7 @@
     "id": 5100000000003
   },
   {
-    "value": "Maron",
+    "value": "Marron",
     "isCorrect": false,
     "questionId": 3100000000001,
     "id": 5100000000004
@@ -408,7 +408,7 @@
     "id": 5200000000003
   },
   {
-    "value": "Maron",
+    "value": "Marron",
     "isCorrect": false,
     "questionId": 3100000000002,
     "id": 5200000000004
@@ -672,7 +672,7 @@
     "id": 5700000000007
   },
   {
-    "value": "Jaue",
+    "value": "Jaune",
     "isCorrect": true,
     "questionId": 3100000000008,
     "id": 5800000000000

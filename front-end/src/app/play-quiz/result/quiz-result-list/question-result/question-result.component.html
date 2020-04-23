@@ -1,18 +1,20 @@
 <div class="main-container">
 
-    <div id="questionNumber" class="itemData" [ngClass]="isPair? 'numero-color' : 'numero-color-faded'"> {{index}} </div>
+  <div id="questionNumber" class="itemData" [ngClass]="isPair? 'numero-color' : 'numero-color-faded'"> {{index}} </div>
 
-    <div id="questionAndResponse" class="itemData"  [ngClass]="isPair? 'question-reponses-color' : 'question-reponses-color-faded'">
-      <div id="question"> {{question.label}} </div>
+  <div id="questionAndResponse" class="itemData"
+       [ngClass]="isPair? 'question-reponses-color' : 'question-reponses-color-faded'">
+    <div id="question"> {{question.label}} </div>
 
-      <div class="reponses-container">
-          <div class="correctResponse" *ngIf="!isAnswerChosenCorrect()">Bonne réponse : <b> {{userAnswer.value}} </b></div>
-          <div class="correctResponse" *ngIf="isAnswerChosenCorrect()">Bonne réponse choisi : <b> {{userAnswer.value}} </b></div>
-          <div id="incorrectResponse" class="item-down" *ngIf='correctAnswer !== undefined' >Réponse choisi : <b> {{correctAnswer.value}} </b></div>
-      </div>
+    <div class="reponses-container">
+      <div class="correctResponse" *ngIf='correctAnswer !== undefined'>Bonne réponse : <b> {{correctAnswer.value}} </b></div>
+      <div class="correctResponse" *ngIf="isAnswerChosenCorrect()">Bonne réponse choisi : <b> {{userAnswer.value}} </b> </div>
+      <div id="incorrectResponse" *ngIf="!isAnswerChosenCorrect()"> Réponse choisi : <b> {{userAnswer.value}} </b></div>
     </div>
+  </div>
 
-    <div id="questionScore" class="itemData"  [ngClass]="isPair? 'score-color' : 'score-color-faded'"> {{questionScore}} </div>
+  <div id="questionScore" class="itemData"
+       [ngClass]="isPair? 'score-color' : 'score-color-faded'"> {{questionScore}} </div>
 
 </div>
 
