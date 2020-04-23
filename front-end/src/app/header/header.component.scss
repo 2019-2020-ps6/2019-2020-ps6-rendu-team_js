@@ -12,7 +12,7 @@
   visibility: visible;
   display: flex;
   justify-content: space-between;
-  background-color: #3D3D3D;
+  background-color: var(--headerBG);
 }
 
 .box-shadow {

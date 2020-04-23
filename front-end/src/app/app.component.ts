@@ -17,8 +17,8 @@ export class AppComponent {
   private message: string;
 
   constructor(private toasterService: ToasterService,
-              private settingsService: SettingsService,
-              private helpService: HelpService) {
+              private helpService: HelpService,
+              private settingsService: SettingsService) {
 
     /* TOASTER */
     toasterService.isErrorMessage$.subscribe((isErrorMessage) => {
