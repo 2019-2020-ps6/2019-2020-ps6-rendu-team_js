@@ -1,45 +1,52 @@
-<h1>Création d'un quiz</h1>
-<hr class="blackLine">
-<div class="col-6" style="position: center; margin: auto;">
-  <div class="card greencard">
-    <div class="card-header">Général</div>
-    <div class="card-body">
-      <form class="quiz-creation" [formGroup]="quizForm">
-        <label for="title">Nom du quiz</label>
-        <br>
-        <input class="input-custom" type="text" id="title" [formControlName]="'name'">
-        <br><br>
+<div  [ngClass]="isWindowOpen()? 'blur' : ''">
+  <h1>Création d'un quiz</h1>
+  <hr class="blackLine">
 
-        <label for="theme">Thème</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a routerLink="/theme-creation">Nouveau thème +</a>
-        <br>
-        <!--<input class="input-custom" type="text" id="theme" [formControlName]="'theme'">-->
+  <div class="col-6" style="position: center; margin: auto;">
+    <div class="card greencard">
+      <div class="card-header">Général</div>
+      <div class="card-body">
+        <form class="quiz-creation" [formGroup]="quizForm">
+          <label for="title">Nom du quiz</label>
+          <br>
+          <input class="input-custom" type="text" id="title" [formControlName]="'name'">
+          <br><br>
 
-        <select [(ngModel)]="themeList[0]" class="form-control form-control-lg" id="theme" [formControlName]="'theme'" *ngIf="themeList !== undefined">
-          <option *ngFor="let t of themeList" [ngValue]="t">{{t.name}}</option>
-        </select>
+          <label for="theme">Thème</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a
+          (click)="isCreateThemeOpen = !isCreateThemeOpen">Nouveau thème +</a>
+          <br>
+          <!--<input class="input-custom" type="text" id="theme" [formControlName]="'theme'">-->
 
-        <br>
+          <select [(ngModel)]="themeSelected" class="form-control form-control-lg" id="theme" [formControlName]="'theme'"
+                  *ngIf="themeSelected !== undefined">
+            <option *ngFor="let t of themeList" [ngValue]="t">{{t.name}}</option>
+          </select>
 
-        <label for="difficulty">Difficulté</label>
-        <br>
-        <select class="form-control form-control-md" id="difficulty" [formControlName]="'difficulty'" >
-          <option value="Facile">Facile</option>
-          <option value="Moyen">Moyen</option>
-          <option value="Difficile">Difficile</option>
-        </select>
-        <br>
+          <br>
+
+          <label for="difficulty">Difficulté</label>
+          <br>
+          <select class="form-control form-control-md" id="difficulty" [formControlName]="'difficulty'">
+            <option value="Facile">Facile</option>
+            <option value="Moyen">Moyen</option>
+            <option value="Difficile">Difficile</option>
+          </select>
+          <br>
 
 
-        <button type="submit" class="btn-lg btn-gris" id="cancel" (click)="backPressed()">Annuler</button>
-        &nbsp;
-        <button type="submit" class="btn-lg btn-blanc" id="create" (click)="addQuiz()">Suivant</button>
+          <button type="submit" class="btn-lg btn-gris" id="cancel" (click)="backPressed()">Annuler</button>
+          &nbsp;
+          <button type="submit" class="btn-lg btn-blanc" id="create" (click)="addQuiz()">Suivant</button>
 
-      </form>
+        </form>
+      </div>
+
     </div>
-
   </div>
 </div>
 
+<div *ngIf="isWindowOpen()" class="background"></div>
+<app-theme-creation (isBackPressed)="isCreateThemeOpen = !isCreateThemeOpen" *ngIf="isCreateThemeOpen" (themeSelected)="themeSelected = $event"></app-theme-creation>
 
 <!-- Uncomment below to see your form structure and how it changes-->
 <!-- <br><br>{{quizForm.getRawValue() | json}} -->

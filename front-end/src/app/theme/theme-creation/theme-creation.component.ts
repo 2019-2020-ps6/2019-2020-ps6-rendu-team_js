@@ -3,6 +3,7 @@ import {FormBuilder, FormGroup} from '@angular/forms';
 import {QuizService} from '../../../services/quiz.service';
 import {ThemesService} from '../../../services/themes.service';
 import {Theme} from '../../../models/theme.model';
+import {ToasterService} from '../../../services/toaster.service';
 
 @Component({
   selector: 'app-theme-creation',
@@ -18,8 +19,12 @@ export class ThemeCreationComponent implements OnInit {
   @Output()
   isBackPressed: EventEmitter<boolean> = new EventEmitter<boolean>();
 
+  @Output()
+  themeSelected: EventEmitter<Theme> = new EventEmitter<Theme>();
+
   constructor(private formBuilder: FormBuilder,
               private quizService: QuizService,
+              private toasterService: ToasterService,
               private themesService: ThemesService) {
 
     this.themeForm = this.formBuilder.group({
@@ -39,7 +44,26 @@ export class ThemeCreationComponent implements OnInit {
     const themeToCreate = {name, color, nbQuiz: 0} as Theme;
 
     console.log(themeToCreate);
-    this.themesService.addTheme(themeToCreate);
+    // this.themesService.addTheme(themeToCreate);
+
+    this.themesService.addTheme(themeToCreate).subscribe((response) => {
+      if (response.status === 200 || response.status === 201) {
+        this.themesService.themes.push(themeToCreate);
+        this.themesService.themes$.next(this.themesService.themes);
+        this.toasterService.activateToaster(false, 'Thème crée', 2000);
+        this.themeSelected.emit(themeToCreate);
+        this.backPressed();
+      }
+
+    }, error => {
+      if (error.status === 409) {
+        this.toasterService.activateToaster(true, 'Ce thème existe déjà !', 2000);
+
+      } else {
+        this.toasterService.activateToaster(true, 'Une erreur est survenue, réessayer plus tard...', 2000);
+
+      }
+    });
   }
 
   backPressed() {

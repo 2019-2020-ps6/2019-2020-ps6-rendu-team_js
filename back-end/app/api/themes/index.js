@@ -1,5 +1,6 @@
 const {Router} = require('express');
 const manageAllErrors = require('../../utils/routes/error-management');
+const {getCorrectFormatString} = require('../users/manager');
 const {Theme} = require('../../models');
 const router = new Router();
 
@@ -44,8 +45,25 @@ router.get('/:themeId', (req, res) => {
 
 router.post('/', (req, res) => {
     try {
-        const theme = Theme.create({ ...req.body })
-        res.status(201).json(theme)
+
+        let isThemeAlreadyExist = false;
+        console.log(req.body);
+        Theme.get().forEach((t) => {
+            if(req.body.name === t.name) {
+                isThemeAlreadyExist = true;
+            }
+        });
+
+        if (isThemeAlreadyExist) {
+            return res.status(409).json({'errors': 'Le thème existe déjà'});
+        }
+
+
+        const theme = Theme.create({...req.body});
+        theme.name = getCorrectFormatString(theme.name);
+
+        return res.status(201).json(theme);
+
     } catch (err) {
         manageAllErrors(res, err)
     }
@@ -54,7 +72,7 @@ router.post('/', (req, res) => {
 router.put('/:themeId', (req, res) => {
     try {
         const theme = Theme.getById(req.params.themeId);
-        const updatedTheme = Theme.update(req.params.themeId, { nbQuiz: req.params.nbQuiz});
+        const updatedTheme = Theme.update(req.params.themeId, {nbQuiz: req.params.nbQuiz});
         res.status(200).json(updatedTheme)
     } catch (err) {
         manageAllErrors(res, err)

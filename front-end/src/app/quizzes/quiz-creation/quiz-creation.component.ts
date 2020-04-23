@@ -14,15 +14,22 @@ import {BehaviorSubject, Observable} from 'rxjs';
 })
 export class QuizCreationComponent implements OnInit {
 
-  private themeList: Theme[];
+  themeList: Theme[];
+  isCreateThemeOpen: boolean;
+  themeSelected: Theme;
 
   constructor(private formBuilder: FormBuilder,
               private  quizService: QuizService,
               private themesService: ThemesService) {
 
+    this.isCreateThemeOpen = false;
+
     themesService.setThemes();
     this.themesService.themes$.subscribe((t) => {
       this.themeList = t;
+      if (t !== undefined && t.length > 0) {
+        this.themeSelected = t[0];
+      }
     });
 
     this.quizForm = this.formBuilder.group({
@@ -57,4 +64,7 @@ export class QuizCreationComponent implements OnInit {
     // this.themesService.increaseThemeQuizNumber(theme, quizToCreate.themeId);
   }
 
+  isWindowOpen() {
+    return this.isCreateThemeOpen;
+  }
 }

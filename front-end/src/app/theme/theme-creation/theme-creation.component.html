@@ -11,7 +11,7 @@
         </div>
 
         <div class="color-container" *ngIf="colors !== undefined">
-          <label for="color" class="text-for-input">Couleur du thème</label>
+          <div class="text-for-input">Couleur du thème</div>
           <select [(ngModel)]="selectedColor" [(style.backgroundColor)]="selectedColor" class="text-for-input" id="color" [formControlName]="'color'">
             <option *ngFor="let c of colors" [ngValue]="c" [style.backgroundColor]="c"></option>
           </select>

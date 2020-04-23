@@ -9,7 +9,7 @@ import {Theme} from '../models/theme.model';
 })
 export class ThemesService {
 
-  private themes: Theme[];
+  public themes: Theme[];
   /**
    * Observable which contains the list of the quiz.
    * Naming convention: Add '$' at the end of the variable name to highlight it as an Observable.
@@ -24,10 +24,12 @@ export class ThemesService {
   }
 
   addTheme(theme: Theme) {
-    this.http.post<Theme>(this.themeUrl, theme, this.httpOptions).subscribe(() => {
-      this.themes.push(theme);
-      this.themes$.next(this.themes);
-    });
+    // this.http.post<Theme>(this.themeUrl, theme, this.httpOptions).subscribe(() => {
+    //   this.themes.push(theme);
+    //   this.themes$.next(this.themes);
+    // });
+
+    return this.http.post<Theme>(this.themeUrl, theme, {...this.httpOptions, observe: 'response'});
   }
 
   setThemes() {
