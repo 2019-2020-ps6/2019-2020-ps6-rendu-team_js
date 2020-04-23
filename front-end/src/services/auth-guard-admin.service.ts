@@ -2,6 +2,7 @@ import {Injectable} from '@angular/core';
 import {Observable} from 'rxjs';
 import {Router} from '@angular/router';
 import {AuthService} from './auth.service';
+import {SettingsService} from './settings.service';
 
 @Injectable({
   providedIn: 'root'
@@ -9,7 +10,8 @@ import {AuthService} from './auth.service';
 export class AuthGuardAdminService {
 
   constructor(private router: Router,
-              public authService: AuthService) {
+              private settingsService: SettingsService,
+              private authService: AuthService) {
   }
 
   canActivate(): Observable<boolean> | Promise<boolean> | boolean {
@@ -20,8 +22,15 @@ export class AuthGuardAdminService {
         if (this.authService.getAuthLevel() > 0) {
           resolve(true);
         } else {
-          reject();
-          this.router.navigate(['/quiz-list']);
+          this.settingsService.setCurrentUserSettingsPromise().then((v) => {
+            if (v === true) {
+              reject();
+              this.router.navigate(['/quiz-list']);
+              console.log(this.settingsService.settings);
+            } else {
+              resolve(true);
+            }
+          });
         }
 
       } else {
@@ -29,7 +38,14 @@ export class AuthGuardAdminService {
         this.authService.getLogin().then(() => {
           if (this.authService.isAuth()) {
             if (this.authService.getAuthLevel() > 0) {
-              resolve(true);
+              this.settingsService.setCurrentUserSettingsPromise().then((v) => {
+                if (v === true) {
+                  resolve(true);
+                  console.log(this.settingsService.settings);
+                } else {
+                  reject('no settings found');
+                }
+              });
             } else {
               reject();
               this.router.navigate(['/quiz-list']);

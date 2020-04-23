@@ -1,6 +1,7 @@
 import {Component} from '@angular/core';
 import {ToasterService} from '../services/toaster.service';
 import {HelpService} from '../services/help.service';
+import {AuthService} from '../services/auth.service';
 import {SettingsService} from '../services/settings.service';
 
 @Component({
@@ -17,8 +18,7 @@ export class AppComponent {
   private message: string;
 
   constructor(private toasterService: ToasterService,
-              private helpService: HelpService,
-              private settingsService: SettingsService) {
+              private helpService: HelpService) {
 
     /* TOASTER */
     toasterService.isErrorMessage$.subscribe((isErrorMessage) => {
@@ -41,6 +41,7 @@ export class AppComponent {
     this.helpService.windowDisplayed$.subscribe((b) => {
       this.isHelpActive = b;
     });
+
   }
 
 

@@ -5,6 +5,7 @@ import {Quiz} from '../../../models/quiz.model';
 import {Theme} from '../../../models/theme.model';
 import {ThemesService} from '../../../services/themes.service';
 import {BehaviorSubject} from 'rxjs';
+import {take} from 'rxjs/operators';
 
 @Component({
   selector: 'app-quiz-list',
@@ -16,6 +17,7 @@ export class QuizListComponent implements OnInit {
   private theme: Theme = {name: ' '} as Theme;
   private quizList: Quiz[];
   private quizList$: BehaviorSubject<Quiz[]> = new BehaviorSubject(this.quizList);
+  private theme$: BehaviorSubject<Theme> = new BehaviorSubject(this.theme);
 
 
   private quizListFiltered: Quiz[];
@@ -32,14 +34,20 @@ export class QuizListComponent implements OnInit {
               private themesService: ThemesService,
               private quizService: QuizService) {
 
+    const themeId = this.route.snapshot.paramMap.get('id');
+    this.themesService.setThemeSelectedFromId(themeId);
+    this.quizList = [];
+    this.isFilterOpen = false;
+    this.quizListFiltered = [];
+    this.textFilter = 'Filtrer';
 
-    this.themesService.themeSelected$.subscribe((t) => {
+    this.themesService.themeSelected$.pipe(take(1)).subscribe((t) => {
       this.theme = t;
-      // this.quizService.setQuizzesFromThemeId(t.id);
+      this.theme$.next(this.theme);
 
-
-      this.quizService.getQuizzesFromThemeId(t.id).subscribe((q) => {
+      this.quizService.getQuizzesFromThemeId(this.theme.id).subscribe((q) => {
         this.quizList = q;
+        console.log(this.quizList);
         this.quizList$.next(this.quizList);
 
         this.quizListFiltered = q;
@@ -48,12 +56,8 @@ export class QuizListComponent implements OnInit {
   }
 
   ngOnInit() {
-    const themeId = this.route.snapshot.paramMap.get('id');
-    this.themesService.setThemeSelectedFromId(themeId);
-    this.quizList = [];
-    this.isFilterOpen = false;
-    this.quizListFiltered = [];
-    this.textFilter = 'Filtrer';
+
+
   }
 
   quizSelected(selected: boolean) {
@@ -87,9 +91,15 @@ export class QuizListComponent implements OnInit {
   getArrayOfActiveFilter(): string[] {
     const array = [];
 
-    if (this.isEasyActive) { array.push('Facile'); }
-    if (this.isMediumActive) { array.push('Moyen'); }
-    if (this.isHardActive) { array.push('Difficile'); }
+    if (this.isEasyActive) {
+      array.push('Facile');
+    }
+    if (this.isMediumActive) {
+      array.push('Moyen');
+    }
+    if (this.isHardActive) {
+      array.push('Difficile');
+    }
 
     return array;
   }

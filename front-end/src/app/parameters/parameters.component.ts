@@ -18,14 +18,19 @@ export class ParametersComponent implements OnInit {
               private settingsService: SettingsService,
               private toasterService: ToasterService,
               private auth: AuthService) {
+
     this.settingsService.settings$.subscribe((settings) => this.userSettings = settings);
   }
 
   ngOnInit() {
-    const userId = this.auth.user.id.toString();
-    this.settingsService.setSelectedSettings(userId);
+
   }
 
+  setCurrentParameters() {
+    const userId = this.auth.user.id.toString();
+    this.settingsService.setSelectedSettings(userId);
+    this.settingsService.settingsSelected$.subscribe((settings) => this.userSettings = settings);
+  }
 
   resetSettingsToDefault() {
     this.settingsService.resetSettings(this.userSettings, this.auth.user.id).subscribe((response) => {

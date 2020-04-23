@@ -20,7 +20,7 @@
     </div>
   </div>
 
-  <div class="quiz-list" *ngIf="quizList !== undefined">
+  <div class="quiz-list" *ngIf="quizListFiltered !== undefined">
     <div class="quiz" *ngFor="let quiz of quizListFiltered" >
       <app-quiz-info [quiz]="quiz" [theme]="theme"></app-quiz-info>
     </div>

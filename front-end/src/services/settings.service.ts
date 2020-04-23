@@ -21,12 +21,10 @@ export class SettingsService {
   private httpOptions = httpOptionsBase;
 
   constructor(private http: HttpClient,
-              private authServices: AuthService) {
-    this.setCurrentUserSettings();
-  }
+              private authServices: AuthService) {  }
 
   setCurrentUserSettings() {
-    if (this.authServices.user != null) {
+    if (this.authServices.user !== undefined && this.authServices.user !== null) {
       const uid = this.authServices.user.id;
 
       const urlWithId = this.settingsUrl + '/' + uid;
@@ -41,6 +39,10 @@ export class SettingsService {
   setCurrentUserSettingsPromise() {
     return new Promise((resolve, reject) => {
 
+      if (this.settings !== undefined) {
+        return resolve(true);
+      }
+
       if (this.authServices.user != null) {
         const uid = this.authServices.user.id;
 
@@ -49,11 +51,12 @@ export class SettingsService {
         this.http.get<Settings>(urlWithId).subscribe((settings) => {
           this.settings = settings;
           this.settings$.next(this.settings);
-          resolve();
+          resolve(true);
         });
-      }
 
-      reject();
+      } else {
+        resolve(false);
+      }
     });
   }
 
