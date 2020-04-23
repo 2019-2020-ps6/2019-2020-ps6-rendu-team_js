@@ -50,21 +50,33 @@ export class AppComponent {
   }
 
   applyCssFromSettings() {
-    if (this.settingsService.settings !== undefined && this.settingsService.settings !== null) {
-
       if (this.settingsService.settings.fontSize === 1) {
         document.getElementsByTagName('html')[0].style.setProperty('font-size', '5vmin');
       } else {
         document.getElementsByTagName('html')[0].style.setProperty('font-size', '9vmin');
       }
-    }
 
-    if (this.settingsService.settings.contraste !== undefined && this.settingsService.settings.contraste === 2) {
-      document.getElementsByTagName('html')[0].style.setProperty('--headerBG', 'black');
-    } else {
-      document.getElementsByTagName('html')[0].style.setProperty('--headerBG', '#3D3D3D');
-    }
-
+      if (this.settingsService.settings.contraste !== undefined && this.settingsService.settings.contraste === 2) {
+        document.getElementsByTagName('html')[0].style.setProperty('--customWhite', 'white');
+        document.getElementsByTagName('html')[0].style.setProperty('--customGray', '#363636');
+        document.getElementsByTagName('html')[0].style.setProperty('--customDarkGray', 'black');
+        document.getElementsByTagName('html')[0].style.setProperty('--customRed', '#650000');
+        document.getElementsByTagName('html')[0].style.setProperty('--customGreen', '#0B4F00');
+        document.getElementsByTagName('html')[0].style.setProperty('--customDarkBlue', '#001547');
+        document.getElementsByTagName('html')[0].style.setProperty('--customBlue', '#005B72');
+        document.getElementsByTagName('html')[0].style.setProperty('--customOrange', '#724100');
+        document.getElementsByTagName('html')[0].style.setProperty('--customPurple', '#44004C');
+      } else {
+        document.getElementsByTagName('html')[0].style.setProperty('--customWhite', 'white');
+        document.getElementsByTagName('html')[0].style.setProperty('--customGray', 'white');
+        document.getElementsByTagName('html')[0].style.setProperty('--customDarkGray', 'white');
+        document.getElementsByTagName('html')[0].style.setProperty('--customRed', 'white');
+        document.getElementsByTagName('html')[0].style.setProperty('--customGreen', 'white');
+        document.getElementsByTagName('html')[0].style.setProperty('--customDarkBlue', 'white');
+        document.getElementsByTagName('html')[0].style.setProperty('--customBlue', 'white');
+        document.getElementsByTagName('html')[0].style.setProperty('--customOrange', 'white');
+        document.getElementsByTagName('html')[0].style.setProperty('--customPurple', 'white');
+      }
   }
 
 }

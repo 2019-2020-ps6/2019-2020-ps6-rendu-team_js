@@ -2,11 +2,21 @@
 @import "../node_modules/bootstrap/scss/bootstrap";
 
 /* You can add global styles to this file, and also import other style files */
-html {
+html {  //:root is html (or xml in xml file, svg in svg file ...)
   font: 500   20px/32px Roboto, "Helvetica Neue", sans-serif;
 
-  --headerBG: #3D3D3D;
-  font-size: 5vmin;
+
+  --customWhite: white;
+  --customGray: white;
+  --customDarkGray: white;
+  --customRed: white;
+  --customGreen: white;
+  --customDarkBlue: white;
+  --customBlue: white;
+  --customOrange: white;
+  --customPurple: white;
+
+  font-size: 1rem;  //Default
 }
 
 body {
@@ -40,7 +50,7 @@ h1{
 h2{
   font-weight: 900;
   font-family: "Segoe UI Black", sans-serif;
-  font-size: 4vmin;
+  font-size: 0.8rem;
   line-height: 8vmin;
   margin-bottom: 0 !important;
   margin-top: 0 !important;

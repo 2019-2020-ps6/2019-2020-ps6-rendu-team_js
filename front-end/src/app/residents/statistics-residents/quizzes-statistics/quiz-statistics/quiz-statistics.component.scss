@@ -6,7 +6,8 @@ $cornerRadius: 12px;
 #container-quiz {
   font-weight: 500;
   background-color: $backgroundColor;
-  font-size: 3vmin;
+
+  font-size: 0.6rem;
   border-radius: $cornerRadius;
   margin-bottom: 12px;
   cursor: pointer;
@@ -23,7 +24,7 @@ $cornerRadius: 12px;
 }
 
 #successPercentage {
-  font-size: 4vmin;
+  font-size: 0.8rem;
   padding-top: 12px;
   padding-bottom: 12px;
   text-align: center;
