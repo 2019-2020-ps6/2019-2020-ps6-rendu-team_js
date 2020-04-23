@@ -1,6 +1,6 @@
 .theme-container {
   padding: 1vmin 8vmin 1vmin 8vmin ;
-  background-color: blueviolet;
+  background-color: var(--customPurple);
   border: 0 solid black;
   border-radius: 3vmin;
   margin: 2vmin;
@@ -17,7 +17,7 @@
 
 .theme-text {
   font-size: 1.2rem;
-  color: white;
+  color: var(--customWhite);
   display: flex;
   flex-direction: column;
   justify-content: center;

@@ -21,7 +21,7 @@
 .top-button {
   padding-left: 2vmin;
   padding-right: 2vmin;
-  color: white;
+  color: var(--customWhite);
   font-family: "Segoe UI Black", sans-serif;
   width: 100%;
   display: flex;
@@ -86,7 +86,7 @@
   padding: 1vmin;
   flex: 1;
   margin: 2vmin;
-  color: white;
+  color: var(--customWhite);
 }
 
 .play-quiz-button:hover, .edit-quiz-button:hover {
@@ -94,7 +94,7 @@
 }
 
 .edit-quiz-button {
-  background-color: #3D3D3D;
+  background-color: var(--customGray);
 }
 
 

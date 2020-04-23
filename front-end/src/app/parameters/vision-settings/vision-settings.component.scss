@@ -1,11 +1,11 @@
 
-$primaryColorDark: #2B7FD8;
-$primaryColor: #FFFFFF;
-$borderColor: #2B7FD8;
+$primaryColorDark: var(--customBlue);
+$primaryColor: var(--customWhite);
+$borderColor: var(--customBlue);
 $cornerRadius: 2vmin;
 
 .container-bg {
-  background-color: rgba(48, 152, 249, 0.14);
+  background-color: var(--customLiteBlue);
   padding-left: 2vmin;
   padding-right: 2vmin;
   border: 0 solid transparent;
@@ -52,7 +52,7 @@ $cornerRadius: 2vmin;
 
 .middleChoose {
   text-align: center;
-  color: $primaryColorDark;
+  color: var(--customExtraDarkBlue);
   background-color: $primaryColor;
   border: 0.3vmin solid $primaryColorDark;
   border-right: 0;
@@ -65,7 +65,7 @@ $cornerRadius: 2vmin;
 
 .lastChoose {
   text-align: center;
-  color: $primaryColorDark;
+  color: var(--customExtraDarkBlue);
   background-color: $primaryColor;
   border: 0.3vmin solid $primaryColorDark;
   border-top-right-radius: $cornerRadius;
@@ -92,11 +92,11 @@ label {
 @supports(-webkit-appearance: none) or (-moz-appearance: none) {
   input[type='checkbox'],
   input[type='radio'] {
-    --active: #2B7FD8;
+    --active: var(--customExtraDarkBlue);
     --active-inner: #fff;
     --focus: 0.5vmin rgba(39, 94, 254, .3);
     --border: #BBC1E1;
-    --border-hover: #2B7FD8;
+    --border-hover: var(--customBlue);
     --background: #fff;
     --disabled: #F6F8FF;
     --disabled-inner: #E1E6F9;

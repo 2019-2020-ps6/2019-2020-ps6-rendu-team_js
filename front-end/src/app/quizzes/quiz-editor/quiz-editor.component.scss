@@ -15,10 +15,10 @@ p{
 }
 
 .mybtn{
-  background-color: dimgrey;
+  background-color: dimvar(--customGray);
   padding: 30px;
   font-size: 0.6rem;
-  color: white;
+  color: var(--customWhite);
   font-family: "Segoe UI", sans-serif;
   font-weight: bold;
   border-radius: 25px;

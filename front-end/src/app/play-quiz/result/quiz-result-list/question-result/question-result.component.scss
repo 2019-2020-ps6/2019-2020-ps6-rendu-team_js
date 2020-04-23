@@ -65,7 +65,7 @@ $badResponseBackgroundColorLite: #FFB5B1;
 
 
 .correctResponse {
-  color: darkgreen;
+  color: var(--customDarkGreen);
   font-weight: 500;
 }
 
@@ -85,7 +85,7 @@ $badResponseBackgroundColorLite: #FFB5B1;
 }
 
 .numero-color-faded {
-  background-color: rgba(255, 213, 52, 0.76);
+  background-color: var(--customLiteOrange);
 }
 
 

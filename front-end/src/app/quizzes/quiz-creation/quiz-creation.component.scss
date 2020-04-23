@@ -6,9 +6,9 @@
   //float: none;
   position: center;
   border-radius: 25px;
-  background-color: green;
+  background-color: var(--customGreen);
   text-align : center;
-  color: white;
+  color: var(--customWhite);
   font-family: "Segoe UI", sans-serif;
   font-size: 0.6rem;
   font-weight: bold;
@@ -26,20 +26,20 @@
 }
 
 .btn-gris{
-  background-color: #3D3D3D;
-  color: white;
+  background-color: var(--customGray);
+  color: var(--customWhite);
 }
 
 .btn-blanc{
-  color: green;
-  background-color: white;
+  color: var(--customGreen);
+  background-color: var(--customWhite);
 }
 
 a{
   font-size: 0.4rem;
   font-style: italic;
   text-decoration: none;
-  color: white;
+  color: var(--customWhite);
   font-family: "Segoe UI", sans-serif;
 }
 
@@ -47,6 +47,6 @@ a{
   margin: 0;
   border-top-left-radius: 25px;
   border-top-right-radius: 25px;
-  background-color: darkgreen;
+  background-color: var(--customDarkGreen);
   font-size: 0.8rem;
 }

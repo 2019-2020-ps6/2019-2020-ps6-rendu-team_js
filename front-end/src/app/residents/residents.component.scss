@@ -10,7 +10,7 @@
   justify-content: center;
   text-align: center;
 
-  color: white;
+  color: var(--customWhite);
   background-color: #3CABC2;
   border: #3CABC2 solid 0 ;
   border-radius: 3vmin;
@@ -36,7 +36,7 @@
 
 
 .save-button {
-  background-color: #65a800;
+  background-color: var(--customGreen);
 }
 
 .save-button:hover{
@@ -61,7 +61,7 @@
 
 
 a:hover{
-  color: white;
+  color: var(--customWhite);
   cursor: pointer;
 }
 

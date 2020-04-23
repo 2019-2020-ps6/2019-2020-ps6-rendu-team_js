@@ -12,7 +12,7 @@
   visibility: visible;
   display: flex;
   justify-content: space-between;
-  background-color: #3D3D3D;
+  background-color: var(--customGray);
 }
 
 .box-shadow {
@@ -36,7 +36,7 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
-  background-color: #2A2A2A;
+  background-color: var(--customDarkGray);
   padding: 1vmin;
   height: 100%;
   font-family: "Segoe UI Black", sans-serif;
@@ -45,13 +45,13 @@
 .help-button{
   cursor: pointer;
   text-align: center;
-  color: white;
+  color: var(--customWhite);
   font-size: 1.5vw;
   display: flex;
   flex-direction: row;
   justify-content: space-around;
   align-items: center;
-  background-color: #65a800;
+  background-color: var(--customGreen);
   padding: 1vmin;
   height: 100%;
   font-family: "Segoe UI Black", sans-serif;
@@ -79,12 +79,12 @@
 .disconnect {
   cursor: pointer;
   text-align: center;
-  color: white;
+  color: var(--customWhite);
   font-size: 1.5vw;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  background-color: #800000;
+  background-color: var(--customDarkRed);
   padding: 1vmin;
   height: 100%;
   font-family: "Segoe UI Black", sans-serif;
@@ -97,12 +97,12 @@
 .quitter {
   cursor: pointer;
   text-align: center;
-  color: white;
+  color: var(--customWhite);
   font-size: 1.5vw;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  background-color: #800000;
+  background-color: var(--customDarkRed);
   padding: 1vmin;
   height: 100%;
   border-bottom-left-radius: 1vmin;
@@ -125,7 +125,7 @@ a:hover {
 .admin {
   cursor: pointer;
   text-align: center;
-  color: white;
+  color: var(--customWhite);
   font-size: 1.5vw;
   display: flex;
   flex-direction: row;
@@ -158,7 +158,7 @@ a:hover {
 .resident {
   cursor: pointer;
   text-align: center;
-  color: white;
+  color: var(--customWhite);
   font-size: 1.5vw;
   display: flex;
   flex-direction: row;

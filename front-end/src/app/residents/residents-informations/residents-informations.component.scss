@@ -42,7 +42,7 @@
 
 .input-custom {
   padding: 1vmin;
-  border: grey 0.1vmin solid;
+  border: var(--customGray) 0.1vmin solid;
   border-radius: 2vmin;
   font-family: "Segoe UI Black", sans-serif;
   font-size: 0.6rem;
@@ -58,9 +58,9 @@
 .button-card {
   padding: 1vmin;
   margin: 1vmin;
-  border: #FFFFFF 0 solid;
+  border: var(--customWhite) 0 solid;
   border-radius: 2vmin;
-  color: white;
+  color: var(--customWhite);
   text-align: center;
   font-family: "Segoe UI Black", sans-serif;
   font-size: 0.6rem;
@@ -70,9 +70,9 @@
 .link-card {
     padding: 1vmin;
     margin-bottom: 1vmin;
-    border: #FFFFFF 0 solid;
+    border: var(--customWhite) 0 solid;
     border-radius: 10vmin;
-    color: white;
+    color: var(--customWhite);
     text-align: center;
     font-family: "Segoe UI Black", sans-serif;
     font-size: 0.4rem;
@@ -101,7 +101,7 @@
 }
 
 .stats-button-bg {
-  background-color: #DCA409;
+  background-color: var(--customOrange);
 }
 
 .stats-button-bg:hover {
@@ -113,12 +113,12 @@
 }
 
 .delete-button-bg:hover {
-  background-color: #8d0000;
+  background-color: var(--customDarkRed);
 }
 
 
 .create-button-bg {
-  background-color: #6BA800;
+  background-color: var(--customGreen);
 }
 
 .create-button-bg:hover {
@@ -157,7 +157,7 @@
   border-radius: 10vmin;
   font-family: "Segoe UI Black", sans-serif;
   font-size: 0.6rem;
-  color: white;
+  color: var(--customWhite);
   opacity: 0.5;
   width: 100%;
 }
@@ -216,9 +216,9 @@
 .deletePressed {
   padding: 1vmin;
   margin-bottom: 1vmin;
-  border: #FFFFFF 0 solid;
+  border: var(--customWhite) 0 solid;
   border-radius: 2vmin;
-  color: white;
+  color: var(--customWhite);
   text-align: center;
   font-family: "Segoe UI Black", sans-serif;
   font-size: 1.2rem;

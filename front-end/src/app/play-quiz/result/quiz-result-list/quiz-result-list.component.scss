@@ -1,12 +1,12 @@
 
 #number {
-  background-color: #9c4f00;
+  background-color: var(--customOrange);
   border-top-left-radius: 3vmin;
   flex: 1;
 }
 
 #questionAndResponse {
-  background-color: #3D3D3D;
+  background-color: var(--customGray);
   flex: 8;
 }
 
@@ -17,7 +17,7 @@
 }
 
 .itemTitle {
-  color: #FFFFFF;
+  color: var(--customWhite);
   text-align: center;
   padding: 2vmin 1vmin;
   font-weight: 500;
@@ -38,7 +38,7 @@
 .end-container{
   height: 3vmin;
   border: 0 solid transparent;
-  background-color: #3D3D3D;
+  background-color: var(--customGray);
   border-bottom-left-radius: 3vmin;
   border-bottom-right-radius: 3vmin;
   margin-bottom: 3vmin;

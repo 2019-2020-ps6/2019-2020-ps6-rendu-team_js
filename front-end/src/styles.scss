@@ -7,14 +7,19 @@ html {  //:root is html (or xml in xml file, svg in svg file ...)
 
 
   --customWhite: white;
-  --customGray: white;
-  --customDarkGray: white;
-  --customRed: white;
-  --customGreen: white;
-  --customDarkBlue: white;
-  --customBlue: white;
-  --customOrange: white;
-  --customPurple: white;
+  --customGray: #3d3d3d;
+  --customDarkGray: #2a2a2a;
+  --customRed: #de5252;
+  --customDarkRed: #8d0000;
+  --customGreen: #65a800;
+  --customDarkGreen: #0c6600;
+  --customDarkBlue: #0058ca;
+  --customExtraDarkBlue: #2B7FD8;
+  --customBlue: #2B7FD8;
+  --customLiteBlue: rgba(48, 152, 249, 0.14);
+  --customOrange: #dca409;
+  --customLiteOrange: rgba(255, 213, 52, 0.76);
+  --customPurple: blueviolet;
 
   font-size: 1rem;  //Default
 }

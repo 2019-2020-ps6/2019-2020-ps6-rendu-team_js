@@ -8,7 +8,7 @@
 .dataDisplay {
   border-radius: 3vmin;
   padding: 1vmin;
-  color: #FFFFFF;
+  color: var(--customWhite);
   font-weight: 500;
   font-size: 0.6rem;
   text-align: center;
@@ -24,7 +24,7 @@
 }
 
 #quizName {
-  background-color: #DCA409;
+  background-color: #dca409;
 }
 
 #difficulty {
