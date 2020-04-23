@@ -13,52 +13,201 @@
   align-items: center;
 }
 
-.greencard{
-  margin: auto;
-  padding-bottom: 30pt;
-  position: center;
-  border-radius: 25px;
-  background-color: var(--customGreen);
-  text-align : center;
-  color: var(--customWhite);
+.table {
+  width: 80vmin;
+  border: 0 solid transparent;
+  border-radius: 5vmin;
+  background-color: #6BA800;
+}
+
+.input-container {
+  padding: 2vmin;
+}
+
+.title-container {
+  text-align: center;
+  font-size: 5vmin;
   font-family: "Segoe UI", sans-serif;
+  font-weight: 900;
+  color: white;
+  width: 100%;
+  padding: 3vmin;
+  background-color: #456C00;
+  border: 0 solid transparent;
+  border-top-left-radius: 5vmin;
+  border-top-right-radius: 5vmin;
+}
+
+.input-text-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: left;
+  width: 100%;
+  padding: 1vmin;
+}
+
+.text-input {
+  font-family: "Segoe UI", sans-serif;
+  font-weight: 600;
+  color: var(--customDarkGray);
+  text-align: center;
+  border: 0 solid transparent;
   font-size: 3vmin;
-  font-weight: bold;
+  padding: 1vmin;
+  border-radius: 3vmin;
 }
 
-.input-custom, .form-control, .btn-lg{
-  border-radius: 25px;
+.button-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  padding: 4vmin 4vmin 1vmin 4vmin;
 }
 
-.btn-gris, .btn-blanc{
-  text-align : center;
+.text-for-input {
   font-family: "Segoe UI", sans-serif;
+  font-weight: 600;
+  color: white;
+  padding-left: 2vmin;
+  margin-bottom: 0;
+  white-space: nowrap;
   font-size: 3vmin;
-  font-weight: bold;
 }
 
-.btn-gris{
-  background-color: var(--customGray);
-  color: var(--customWhite);
-}
+.button {
 
-.btn-blanc{
-  color: var(--customGreen);
-  background-color: var(--customWhite);
-}
+  text-align: center !important;
+  flex: 1 0 49%;
 
-a{
-  font-size: 2vmin;
-  font-style: italic;
-  text-decoration: none;
-  color: var(--customWhite);
-  font-family: "Segoe UI", sans-serif;
-}
+  color: var(--customDarkGray);
+  background-color: white;
+  border: transparent solid 0;
+  border-radius: 3vmin;
 
-.card-header{
-  margin: 0;
-  border-top-left-radius: 25px;
-  border-top-right-radius: 25px;
-  background-color: var(--customDarkGreen);
+  margin: 2vmin;
+  padding: 2vmin;
+  font-family: "Segoe UI Black";
   font-size: 4vmin;
 }
+
+.button:hover {
+  opacity: 0.8;
+}
+
+.back-bg {
+  color: var(--customDarkGray);
+
+}
+
+.create-bg {
+  color: #456C00;
+}
+
+.color-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 3vmin;
+}
+
+.color-container div {
+  padding-right: 3vmin;
+}
+
+select {
+  border: 0 solid transparent;
+  border-radius: 3vmin;
+  width: 100vmin;
+  margin: 0 1vmin 0 3vmin;
+  height: 6vmin;
+}
+
+//option:hover{
+//  //display: none;
+//  color: transparent;
+//}
+//
+//
+//option:focus {
+//  outline-color: transparent;
+//  outline-style: none;
+//  color: transparent;
+//}
+
+select:focus {
+  outline: none;
+}
+
+//
+//select {
+//  display: inline-block;
+//  border: 2px solid #bbb;
+//  padding: 4px 3px 3px 5px;
+//  margin: 0;
+//  font: inherit;
+//  outline:none; /* remove focus ring from Webkit */
+//  line-height: 1.2;
+//  background: #f8f8f8;
+//
+//  -webkit-appearance:none; /* remove the strong OSX influence from Webkit */
+//
+//  -webkit-border-radius: 6px;
+//  -moz-border-radius: 6px;
+//  border-radius: 6px;
+//}
+///* for Webkit's CSS-only solution */
+//@media screen and (-webkit-min-device-pixel-ratio:0) {
+//  select {
+//    padding-right:30px;
+//  }
+//}
+//
+///* Since we removed the default focus styles, we have to add our own */
+//select:focus {
+//  -webkit-box-shadow: 0 0 3px 1px #c00;
+//  -moz-box-shadow: 0 0 3px 1px #c00;
+//  box-shadow: 0 0 3px 1px #c00;
+//}
+//
+///* Select arrow styling */
+//select:after {
+//  content: "▼";
+//  position: absolute;
+//  top: 0;
+//  right: 0;
+//  bottom: 0;
+//  font-size: 60%;
+//  line-height: 30px;
+//  padding: 0 7px;
+//  background: #bbb;
+//  color: white;
+//
+//  pointer-events:none;
+//
+//  -webkit-border-radius: 0 6px 6px 0;
+//  -moz-border-radius: 0 6px 6px 0;
+//  border-radius: 0 6px 6px 0;
+//}
+//
+//option:hover {
+//  outline:0 !important;
+//  outline: none;
+//  background-color: transparent !important;
+//}
+//option:checked{
+//  outline-color: transparent;
+//}
+//
+//option {
+//  -webkit-appearance: none;
+//}
+//
+//select option:checked,
+//select option:hover {
+//  box-shadow: 0 0 10px 100px #000 inset;
+//}
+//
+//select:focus > option:checked {
+//  background: #000 !important;
+//}

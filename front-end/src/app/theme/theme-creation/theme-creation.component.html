@@ -1,23 +1,29 @@
-<h1>Création d'un quiz</h1>
-<hr class="blackLine">
 <div class="main-container">
-  <div class="title-container">Créer un thème</div>
-  <div class="input-container">
+  <div class="table">
+    <div class="title-container">Créer un thème</div>
+    <div class="input-container">
 
-    <form class="quiz-creation" [formGroup]="themeForm">
+      <form class="quiz-creation" [formGroup]="themeForm">
 
-      <label for="title">Nom du thème</label>
-      <input class="text-input" type="text" id="title" [formControlName]="'name'">
+        <div class="input-text-container">
+          <label for="name" class="text-for-input">Nom du thème</label>
+          <input class="text-input" type="text" id="name" [formControlName]="'name'">
+        </div>
 
-      <label for="theme">Couleur</label>
-      <input class="text-input" type="text" id="theme" [formControlName]="'color'">
+        <div class="color-container" *ngIf="colors !== undefined">
+          <label for="color" class="text-for-input">Couleur du thème</label>
+          <select [(ngModel)]="selectedColor" [(style.backgroundColor)]="selectedColor" class="text-for-input" id="color" [formControlName]="'color'">
+            <option *ngFor="let c of colors" [ngValue]="c" [style.backgroundColor]="c"></option>
+          </select>
+        </div>
 
-      <div class="button-container">
-        <button type="submit" class="button back-bg" id="cancel" (click)="backPressed()">Retour</button>
-        <button type="submit" class="button create-bg" id="create" (click)="addTheme()">Créer</button>
-      </div>
+        <div class="button-container">
+          <button type="submit" class="button back-bg" id="cancel" (click)="backPressed()">Retour</button>
+          <button type="submit" class="button create-bg" id="create" (click)="addTheme()">Créer</button>
+        </div>
 
-    </form>
+      </form>
 
+    </div>
   </div>
 </div>

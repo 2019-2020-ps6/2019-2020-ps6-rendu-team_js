@@ -11,19 +11,23 @@ import {Theme} from '../../../models/theme.model';
 })
 export class ThemeCreationComponent implements OnInit {
 
-  public themeForm: FormGroup;
+  themeForm: FormGroup;
+  colors = ['grey', 'orange', 'blue', 'green', 'yellow', 'brown', 'red'];
+  selectedColor = this.colors[0];
 
   @Output()
   isBackPressed: EventEmitter<boolean> = new EventEmitter<boolean>();
 
-  constructor(public formBuilder: FormBuilder, public quizService: QuizService, public themesService: ThemesService) {
+  constructor(private formBuilder: FormBuilder,
+              private quizService: QuizService,
+              private themesService: ThemesService) {
+
     this.themeForm = this.formBuilder.group({
       name: [''],
       color: ['']
     });
   }
 
-  // TODO (lara) initialiser nbquiz à 0
   ngOnInit() {
   }
 
