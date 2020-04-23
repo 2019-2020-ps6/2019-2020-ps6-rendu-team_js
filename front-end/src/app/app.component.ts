@@ -1,6 +1,7 @@
 import {Component} from '@angular/core';
 import {ToasterService} from '../services/toaster.service';
 import {HelpService} from '../services/help.service';
+import {SettingsService} from '../services/settings.service';
 
 @Component({
   selector: 'app-root',
@@ -16,7 +17,8 @@ export class AppComponent {
   private message: string;
 
   constructor(private toasterService: ToasterService,
-              private helpService: HelpService) {
+              private helpService: HelpService,
+              private settingsService: SettingsService) {
 
     /* TOASTER */
     toasterService.isErrorMessage$.subscribe((isErrorMessage) => {
