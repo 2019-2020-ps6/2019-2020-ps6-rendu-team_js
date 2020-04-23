@@ -1,7 +1,9 @@
 <!--<div class="main" [style]="{'background-color': this.colorBackground}">-->
-<div class="main" [style.background-color]="colorBackground">
+<div class="main">
 
-  {{applyCssFromSettings()}}
+  <ng-container *ngIf="settingsService.settings !== undefined && settingsService.settings !== null">
+    {{applyCssFromSettings()}}
+  </ng-container>
 
   <app-header></app-header>
 

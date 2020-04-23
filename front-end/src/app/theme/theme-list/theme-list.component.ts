@@ -13,9 +13,7 @@ export class ThemeListComponent implements OnInit {
 
   constructor(private themesService: ThemesService) {
     this.themesService.setThemes();
-  }
 
-  ngOnInit() {
     this.themesService.themes$.subscribe((t) => {
       if (t !== null && t !== undefined) {
         this.themes = t.filter((theme) => theme.nbQuiz > 0);
@@ -23,6 +21,10 @@ export class ThemeListComponent implements OnInit {
         this.themes = t;
       }
     });
+  }
+
+  ngOnInit() {
+
   }
 
 }
