@@ -5,7 +5,7 @@ import { QuizService } from '../../../services/quiz.service';
 import { Quiz } from '../../../models/quiz.model';
 import {Theme} from '../../../models/theme.model';
 import {ThemesService} from '../../../services/themes.service';
-import {BehaviorSubject} from 'rxjs';
+import {BehaviorSubject, Observable} from 'rxjs';
 
 @Component({
   selector: 'app-quiz-creation',
@@ -20,7 +20,7 @@ export class QuizCreationComponent implements OnInit {
   constructor(public formBuilder: FormBuilder, public quizService: QuizService, private themesService: ThemesService) {
     this.quizForm = this.formBuilder.group({
       name: [''],
-      theme: [],
+      themeId: [],
       difficulty: ['']
     });
   }
@@ -52,7 +52,8 @@ export class QuizCreationComponent implements OnInit {
     const quizToCreate: Quiz = this.quizForm.getRawValue() as Quiz;
     this.quizService.addQuiz(quizToCreate);
     console.log(quizToCreate);
-    this.themesService.increaseThemeQuizNumber(quizToCreate.theme, quizToCreate.themeId);
+    const theme: Observable<Theme> = this.themesService.getThemeSelectedFromId(quizToCreate.themeId);
+    this.themesService.increaseThemeQuizNumber(theme, quizToCreate.themeId);
   }
 
 }

@@ -14,8 +14,8 @@
         <br>
         <!--<input class="input-custom" type="text" id="theme" [formControlName]="'theme'">-->
 
-        <select class="form-control form-control-lg" id="theme" [formControlName]="'theme'">
-          <option *ngFor="let t of themeList" [value]=t>{{t.name}}</option>
+        <select class="form-control form-control-lg" id="theme" [formControlName]="'themeId'">
+          <option *ngFor="let t of themeList" [value]=t.id>{{t.name}}</option>
         </select>
 
         <br>
