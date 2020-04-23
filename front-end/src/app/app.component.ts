@@ -59,7 +59,7 @@ export class AppComponent {
       }
     }
 
-    if (this.settingsService.settings.contraste === 2) {
+    if (this.settingsService.settings.contraste !== undefined && this.settingsService.settings.contraste === 2) {
       document.getElementsByTagName('html')[0].style.setProperty('--headerBG', 'black');
     } else {
       document.getElementsByTagName('html')[0].style.setProperty('--headerBG', '#3D3D3D');
