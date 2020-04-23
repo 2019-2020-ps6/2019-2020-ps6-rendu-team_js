@@ -17,7 +17,6 @@ const buildQuizz = (quizId) => {
         let answers = [];
 
         if (answersList.length > 4) {
-            logger.info("MULTIPLE")
             answersList.forEach((answer) => {
                 if (answer.isCorrect) {
                     answers.push(answer);
@@ -33,9 +32,7 @@ const buildQuizz = (quizId) => {
                     answersList.splice(answersList.indexOf(answersList[rand]), 1);
                 }
             }
-            logger.info(answers)
         }else {
-            logger.info("OK")
             answers = answersList;
         }
 
@@ -44,6 +41,17 @@ const buildQuizz = (quizId) => {
         return {...question, answers}
     })
     return {...quiz, questions: questionWithAnswers}
+}
+
+
+const buildQuizzNoAnswers = (quizList) => {
+
+    let quiz = quizList.map((quiz) => {
+        const questions = filterQuestionsFromQuizz(quiz.id)
+        return {...quiz, questions}
+    })
+
+    return quiz;
 }
 
 function getRandomInt(max) {
@@ -73,4 +81,5 @@ const buildQuizzes = () => {
 module.exports = {
     buildQuizz,
     buildQuizzes,
+    buildQuizzNoAnswers,
 }
