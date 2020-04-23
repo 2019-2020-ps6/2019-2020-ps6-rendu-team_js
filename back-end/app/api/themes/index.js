@@ -59,6 +59,6 @@ router.put('/:themeId', (req, res) => {
     } catch (err) {
         manageAllErrors(res, err)
     }
-})
+});
 
 module.exports = router;
