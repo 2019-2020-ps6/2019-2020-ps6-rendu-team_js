@@ -12,14 +12,18 @@
 
         <div class="color-container" *ngIf="colors !== undefined">
           <div class="text-for-input">Couleur du thème</div>
-          <select [(ngModel)]="selectedColor" [(style.backgroundColor)]="selectedColor" class="text-for-input" id="color" [formControlName]="'color'">
+          <select [(ngModel)]="selectedColor" [(style.backgroundColor)]="selectedColor" class="text-for-input"
+                  id="color" [formControlName]="'color'" [disabled]="isLoading" [class.disable-button]="isLoading">
             <option *ngFor="let c of colors" [ngValue]="c" [style.backgroundColor]="c"></option>
           </select>
         </div>
 
         <div class="button-container">
-          <button type="submit" class="button back-bg" id="cancel" (click)="backPressed()">Retour</button>
-          <button type="submit" class="button create-bg" id="create" (click)="addTheme()">Créer</button>
+          <button type="submit" class="button back-bg hover-button" id="cancel" (click)="backPressed()">Retour</button>
+          <button type="submit" class="button create-bg" id="create" (click)="addTheme()" [disabled]="themeForm.invalid"
+                  [class.disable-button]="themeForm.invalid || isLoading"
+                  [ngClass]="!themeForm.invalid && !isLoading? 'hover-button' : ''">Créer
+          </button>
         </div>
 
       </form>

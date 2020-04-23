@@ -90,8 +90,12 @@
   font-size: 4vmin;
 }
 
-.button:hover {
-  opacity: 0.8;
+.hover-button:hover {
+  opacity: 0.9;
+}
+
+.disable-button {
+  opacity: 0.5;
 }
 
 .back-bg {

@@ -1,5 +1,5 @@
 import {Component, EventEmitter, OnInit, Output} from '@angular/core';
-import {FormBuilder, FormGroup} from '@angular/forms';
+import {FormBuilder, FormGroup, Validators} from '@angular/forms';
 import {QuizService} from '../../../services/quiz.service';
 import {ThemesService} from '../../../services/themes.service';
 import {Theme} from '../../../models/theme.model';
@@ -15,6 +15,7 @@ export class ThemeCreationComponent implements OnInit {
   themeForm: FormGroup;
   colors = ['grey', 'orange', 'blue', 'green', 'yellow', 'brown', 'red'];
   selectedColor = this.colors[0];
+  isLoading: boolean;
 
   @Output()
   isBackPressed: EventEmitter<boolean> = new EventEmitter<boolean>();
@@ -27,9 +28,11 @@ export class ThemeCreationComponent implements OnInit {
               private toasterService: ToasterService,
               private themesService: ThemesService) {
 
+    this.isLoading = false;
+
     this.themeForm = this.formBuilder.group({
-      name: [''],
-      color: ['']
+      name: ['', [Validators.required]],
+      color: ['', [Validators.required]],
     });
   }
 
@@ -46,7 +49,10 @@ export class ThemeCreationComponent implements OnInit {
     console.log(themeToCreate);
     // this.themesService.addTheme(themeToCreate);
 
+    this.isLoading = true;
+
     this.themesService.addTheme(themeToCreate).subscribe((response) => {
+      this.isLoading = false;
       if (response.status === 200 || response.status === 201) {
         this.themesService.themes.push(themeToCreate);
         this.themesService.themes$.next(this.themesService.themes);
@@ -56,6 +62,7 @@ export class ThemeCreationComponent implements OnInit {
       }
 
     }, error => {
+      this.isLoading = false;
       if (error.status === 409) {
         this.toasterService.activateToaster(true, 'Ce thème existe déjà !', 2000);
 
