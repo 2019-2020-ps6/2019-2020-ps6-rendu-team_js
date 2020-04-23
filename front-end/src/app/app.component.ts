@@ -1,7 +1,6 @@
 import {Component} from '@angular/core';
 import {ToasterService} from '../services/toaster.service';
 import {HelpService} from '../services/help.service';
-import {AuthService} from '../services/auth.service';
 import {SettingsService} from '../services/settings.service';
 
 @Component({
