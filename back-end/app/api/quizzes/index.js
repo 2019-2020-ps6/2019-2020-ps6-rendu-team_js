@@ -3,7 +3,8 @@ const { Router } = require('express');
 const { Quiz } = require('../../models');
 const manageAllErrors = require('../../utils/routes/error-management');
 const QuestionsRouter = require('./questions');
-const { buildQuizz, buildQuizzes } = require('./manager');
+const { buildQuizz, buildQuizzes, buildQuizzNoAnswers } = require('./manager');
+const logger = require('../../utils/logger.js')
 
 const router = new Router();
 
@@ -21,7 +22,7 @@ router.get('/', (req, res) => {
 router.get('/theme/:themeId', (req, res) => {
   try {
     const themeId = req.params.themeId;
-    const quizzes = Quiz.get().filter((q) => q.themeId === themeId);
+    const quizzes = buildQuizzNoAnswers(Quiz.get()).filter((q) => q.themeId === themeId);
     res.status(200).json(quizzes)
   } catch (err) {
     manageAllErrors(res, err)
