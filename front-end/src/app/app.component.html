@@ -8,7 +8,7 @@
   <app-header></app-header>
 
   <!-- TOASTER -->
-  <div [ngClass]="(message !== '')? 'info-text-visible' : ''" class="info-text" [style.background-color]="(isErrorMessage)? '#8d0000' : '#6ba800'">{{message}}</div>
+  <div [ngClass]="(message !== '')? 'info-text-visible' : ''" class="info-text" [style.background-color]="(isErrorMessage)? 'var(--customRed)' : 'var(--customGreen)'">{{message}}</div>
 
   <!-- HELP -->
   <app-help *ngIf="isHelpActive"> </app-help>

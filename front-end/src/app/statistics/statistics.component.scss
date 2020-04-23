@@ -1,8 +1,8 @@
 
-$primaryColorDark: #f2b0b0;
-$primaryColorDarkFaded: #f7cece;
-$primaryColor: #f7c9c9;
-$primaryColorFaded: #fadede;
+$primaryColorDark: var(--customDarkPink);
+$primaryColorDarkFaded: var(--customDarkPinkFaded);
+$primaryColor: var(--customPink);
+$primaryColorFaded: var(--customPinkFaded);
 $borderColor: grey;
 $cornerRadius: 3vmin;
 $borderSize: 0;
