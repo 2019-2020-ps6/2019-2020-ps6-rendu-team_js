@@ -12,6 +12,7 @@ export class ThemeListComponent implements OnInit {
   themes: Theme[];
 
   constructor(private themesService: ThemesService) {
+    this.themesService.setThemes();
   }
 
   ngOnInit() {

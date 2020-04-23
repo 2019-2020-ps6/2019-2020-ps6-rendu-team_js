@@ -21,7 +21,6 @@ export class ThemesService {
   private httpOptions = httpOptionsBase;
 
   constructor(private http: HttpClient) {
-    this.setThemes();
   }
 
   addTheme(theme: Theme) {

@@ -17,6 +17,7 @@ export class AppComponent {
   private message: string;
 
   constructor(private toasterService: ToasterService,
+              private settingsService: SettingsService,
               private helpService: HelpService) {
 
     /* TOASTER */
