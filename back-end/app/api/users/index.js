@@ -15,7 +15,6 @@ const SESSION_SECRET = 'wefaefwdgrv' /* generate a better one */
 const ERROR_NAME = 'error';
 
 var FileStore = require('session-file-store')(session);
-router.use(cors({credentials: true, origin: 'http://localhost:4200'}));
 
 // Add headers
 router.use(function (req, res, next) {

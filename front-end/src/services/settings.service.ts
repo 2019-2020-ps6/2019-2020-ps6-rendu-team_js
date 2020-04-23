@@ -95,6 +95,8 @@ export class SettingsService {
 
   }
 
+  // ------------------ play quiz ---------------------
+
   isSelectionHigh() {
     if (this.settings !== undefined) {
       return this.settings.tailleSelection !== 1;
@@ -102,4 +104,13 @@ export class SettingsService {
 
     return true;
   }
+
+  isFontHigh() {
+    if (this.settings !== undefined) {
+      return this.settings.fontSize !== 1;
+    }
+
+    return true;
+  }
+
 }

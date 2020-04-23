@@ -20,40 +20,11 @@ export class QuizResponseComponent implements OnInit {
   @Input()
   public color: string;
 
-  settings: Settings;
-
   constructor(private router: Router, public quizService: QuizService, private settingsService: SettingsService) {
-    this.settings = settingsService.settings;
-    console.log('user settings', this.settings);
   }
 
   ngOnInit() {
-    this.adaptCssToSettings();
     console.log(this.color);
-  }
-
-  adaptCssToSettings() {
-    if (this.settings != null) {
-      const buttons = document.getElementsByClassName('responseButton');
-      // tslint:disable-next-line:prefer-for-of
-      for (let i = 0; i < buttons.length; i++) {
-        if (this.settings.fontSize === 1) {
-          // @ts-ignore
-          buttons[i].style.setProperty('--fontSize', '5vmin');
-        } else {
-          // @ts-ignore
-          buttons[i].style.setProperty('--fontSize', '9vmin');
-        }
-
-        // TODO add condition and css vars for :
-        // document.documentElement.style.setProperty('--contraste', this.settings.contraste + '');
-        // // console.log('css property', document.documentElement.style.getPropertyValue('--contraste'));
-        // document.documentElement.style.setProperty('--fontSize', this.settings.fontSize + '');
-        // document.documentElement.style.setProperty('--moteur', this.settings.handicapMoteur + '');
-        // document.documentElement.style.setProperty('--visuel', this.settings.handicapVisuel + '');
-        // document.documentElement.style.setProperty('--tailleSelec', this.settings.tailleSelection + '');
-      }
-    }
   }
 
 

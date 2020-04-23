@@ -23,6 +23,7 @@ export class ThemeCreationComponent implements OnInit {
     });
   }
 
+  // TODO (lara) initialiser nbquiz à 0
   ngOnInit() {
   }
 

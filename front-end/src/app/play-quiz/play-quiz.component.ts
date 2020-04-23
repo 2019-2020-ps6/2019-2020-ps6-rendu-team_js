@@ -23,6 +23,7 @@ export class PlayQuizComponent implements OnInit {
   public beginDate: number;
   public endDate: number;
   private playTimeOld = 0;
+  private date;
 
   public resultId = -1;
 
@@ -40,6 +41,7 @@ export class PlayQuizComponent implements OnInit {
   ngOnInit() {
     const id = this.route.snapshot.paramMap.get('id');
     this.quizService.setSelectedQuiz(id);
+    this.date = Date.now();
 
     // this.questionNumber = +this.route.snapshot.paramMap.get('questionNumber');  // +in front of string cast string to int
 
@@ -131,7 +133,7 @@ export class PlayQuizComponent implements OnInit {
 
   public getCurrentGameTry() {
     return {
-      date: Date.now(),
+      date: this.date,
       quizId: this.quiz.id + '',
       answer: this.userAnswers[this.userAnswers.length - 1],
       userId: this.authService.user.id

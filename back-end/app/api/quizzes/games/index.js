@@ -59,7 +59,7 @@ router.put('/', (req, res) => {
             answers.push(req.body.answer);
 
             const result = Game.updateGame(req.body.userId, req.body.quizId, {date, playTime, quizId, userId, answers});
-            console.log(result);
+
             res.status(200).json(result)
 
         } else { //undefined
@@ -71,7 +71,7 @@ router.put('/', (req, res) => {
             answers.push(req.body.answer);
 
             const result = Game.createGame({date, playTime, quizId, userId, answers});
-            console.log(result);
+
             res.status(200).json(result)
         }
 
@@ -85,7 +85,7 @@ router.put('/', (req, res) => {
 router.put('/quizCompleted', (req, res) => {
     try {
         const game = Game.getGameByIdAndQuiz(req.body.userId, req.body.quizId);
-        console.log('game : ' + game);
+
         if (game) {
 
             let date = game.date;
@@ -139,7 +139,6 @@ router.put('/quizCompleted', (req, res) => {
             const result = Result.create({
                 ...userAnswers, maxScore, userId, userScore, quizSuccessPercentage
             });
-
             // Mise a jour des statistiques
             updateStatistics(userId, result.id, quizSuccessPercentage);
 
