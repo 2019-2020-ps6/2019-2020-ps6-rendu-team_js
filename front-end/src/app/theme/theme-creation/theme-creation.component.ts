@@ -28,8 +28,12 @@ export class ThemeCreationComponent implements OnInit {
 
   addTheme() {
     // We retrieve here the theme object from the themeForm and we cast the type "as Theme".
-    const themeToCreate: Theme = this.themeForm.getRawValue() as Theme;
+    const name = this.themeForm.get('name').value;
+    const color = this.themeForm.get('color').value;
 
+    const themeToCreate = {name, color, nbQuiz: 0} as Theme;
+
+    console.log(themeToCreate);
     this.themesService.addTheme(themeToCreate);
   }
 

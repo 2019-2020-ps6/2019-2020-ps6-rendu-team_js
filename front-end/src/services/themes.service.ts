@@ -1,7 +1,7 @@
-import { Injectable } from '@angular/core';
+import {Injectable} from '@angular/core';
 import {HttpClient, HttpResponse} from '@angular/common/http';
 import {BehaviorSubject, Observable, Subject, Subscription} from 'rxjs';
-import { serverUrl, httpOptionsBase } from '../configs/server.config';
+import {serverUrl, httpOptionsBase} from '../configs/server.config';
 import {Theme} from '../models/theme.model';
 import {Quiz} from '../models/quiz.model';
 
@@ -26,7 +26,10 @@ export class ThemesService {
   }
 
   addTheme(theme: Theme) {
-    this.http.post<Theme>(this.themeUrl, theme, this.httpOptions).subscribe(() => this.setThemes());
+    this.http.post<Theme>(this.themeUrl, theme, this.httpOptions).subscribe(() => {
+      this.themes.push(theme);
+      this.themes$.next(this.themes);
+    });
   }
 
   setThemes() {
@@ -52,6 +55,7 @@ export class ThemesService {
   getThemes() {
     return this.themes;
   }
+
   increaseThemeQuizNumber(theme: Theme, themeId: string): Observable<HttpResponse<any>> {
     const url = this.themeUrl + '/' + themeId + '/increase';
     theme.nbQuiz++;
