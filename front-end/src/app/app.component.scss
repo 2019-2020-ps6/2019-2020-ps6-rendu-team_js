@@ -6,7 +6,12 @@
   //height: 100%;
   z-index: 10;
   overflow-y: scroll;
-  height: 92.1vh;
+  height: 94vh;
+  -ms-overflow-style: none;
+}
+
+.main-content::-webkit-scrollbar{
+  display: none;
 }
 
 .main-page {
@@ -24,6 +29,7 @@
 
 app-header {
   z-index: 999;
+  height: 6vmin;
 }
 
 router-outlet {

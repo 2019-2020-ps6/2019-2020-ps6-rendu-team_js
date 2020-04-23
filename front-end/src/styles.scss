@@ -18,7 +18,10 @@ body {
   user-select: none; /* Non-prefixed version, currently supported by Chrome, Opera and Firefox */
 }
 
-html, body { height: 100%; }
+html, body {
+  height: 100%;
+  font-size: 5vmin;
+}
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 
 
@@ -26,8 +29,8 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 h1{
    font-weight: 900;
    font-family: "Segoe UI Black", sans-serif;
-   font-size: 10vmin;
-   line-height: 10vmin;
+   font-size: 2rem;
+   line-height: 2rem;
    margin-bottom: 3vmin !important;
    margin-top: 0 !important;
  }
