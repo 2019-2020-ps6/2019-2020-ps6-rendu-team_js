@@ -52,7 +52,7 @@ export class ThemesService {
   }
 
 
-  increaseThemeQuizNumber(theme: Observable<Theme>, themeId: string): Observable<HttpResponse<any>> {
+  increaseThemeQuizNumber(theme: Theme, themeId: string): Observable<HttpResponse<any>> {
     const url = this.themeUrl + '/' + themeId + '/increase';
     theme.nbQuiz++;
     return this.http.put(url, theme, {...this.httpOptions, observe: 'response'});

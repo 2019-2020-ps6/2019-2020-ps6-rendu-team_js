@@ -7,7 +7,7 @@ $cornerRadius: 12px;
   font-weight: 500;
   background-color: $backgroundColor;
 
-  font-size: 0.6rem;
+  font-size: 3vmin;
   border-radius: $cornerRadius;
   margin-bottom: 12px;
   cursor: pointer;
@@ -24,7 +24,7 @@ $cornerRadius: 12px;
 }
 
 #successPercentage {
-  font-size: 0.8rem;
+  font-size: 4vmin;
   padding-top: 12px;
   padding-bottom: 12px;
   text-align: center;
