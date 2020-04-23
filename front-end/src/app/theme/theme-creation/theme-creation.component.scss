@@ -1,5 +1,18 @@
 @import '../../../styles/card.scss';
 
+.main-container {
+  position: absolute;
+  top: 58%;
+  bottom: 42%;
+  left: 55vw;
+  right: 45vw;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
 .greencard{
   margin: auto;
   padding-bottom: 30pt;
