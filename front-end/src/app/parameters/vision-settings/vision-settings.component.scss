@@ -13,7 +13,7 @@ $cornerRadius: 2vmin;
 }
 
 .container-bg h2 {
-  font-size: 6vmin;
+  font-size: 1.2rem;
   padding-bottom: 2vmin;
   text-align: center;
 }
@@ -34,7 +34,7 @@ $cornerRadius: 2vmin;
 
 .row {
   font-weight: 600;
-  font-size: 4.5vmin;
+  font-size: 0.9rem;
 }
 
 .settingName {
@@ -43,7 +43,7 @@ $cornerRadius: 2vmin;
   background-color: $primaryColorDark;
   border-top-left-radius: $cornerRadius;
   border-bottom-left-radius: $cornerRadius;
-  font-size: 4vmin;
+  font-size: 0.8rem;
   font-family: "Segoe UI Black", sans-serif;
   border: 0.3vmin solid $primaryColorDark;
   padding: 1vmin;
@@ -56,7 +56,7 @@ $cornerRadius: 2vmin;
   background-color: $primaryColor;
   border: 0.3vmin solid $primaryColorDark;
   border-right: 0;
-  font-size: 4vmin;
+  font-size: 0.8rem;
   font-family: "Segoe UI", sans-serif;
   font-weight: 700;
   padding: 1vmin;
@@ -70,7 +70,7 @@ $cornerRadius: 2vmin;
   border: 0.3vmin solid $primaryColorDark;
   border-top-right-radius: $cornerRadius;
   border-bottom-right-radius: $cornerRadius;
-  font-size: 4vmin;
+  font-size: 0.8rem;
   font-family: "Segoe UI", sans-serif;
   font-weight: 700;
   padding: 1vmin;
@@ -78,7 +78,7 @@ $cornerRadius: 2vmin;
 }
 
 label {
-  font-size: 4vmin;
+  font-size: 0.8rem;
   padding-left: 2vmin;
 }
 

@@ -57,14 +57,14 @@ export class AppComponent {
       } else {
         document.getElementsByTagName('html')[0].style.setProperty('font-size', '9vmin');
       }
-    }
 
-    if (this.settingsService.settings.contraste === 2) {
-      document.getElementsByTagName('html')[0].style.setProperty('--headerBG', 'black');
-    } else {
-      document.getElementsByTagName('html')[0].style.setProperty('--headerBG', '#3D3D3D');
-    }
+      if (this.settingsService.settings.contraste === 2) {
+        document.getElementsByTagName('html')[0].style.setProperty('--headerBG', 'white');  //TODO CONSTRAST
+      } else {
+        document.getElementsByTagName('html')[0].style.setProperty('--headerBG', '#3D3D3D');
+      }
 
+    }
   }
 
 }

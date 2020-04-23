@@ -64,7 +64,7 @@ router-outlet {
   width: 80%;
 
 
-  font-size: 4vmin;
+  font-size: 0.8rem;
   font-family: "Segoe UI Black", serif;
   color: white;
   text-align: center;
@@ -86,14 +86,4 @@ app-help {
 
 .blur {
   filter: blur(1vmin);
-}
-
- //--------------
-
-.fontMedium {
-  font-size: 5vmin !important;
-}
-
-.fontHigh {
-  font-size: 9vmin !important;
 }
