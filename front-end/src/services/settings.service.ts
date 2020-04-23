@@ -108,6 +108,14 @@ export class SettingsService {
     return true;
   }
 
+  isContrastHigh() {
+    if (this.settings !== undefined) {
+      return this.settings.contraste !== 1;
+    }
+
+    return true;
+  }
+
   isFontHigh() {
     if (this.settings !== undefined) {
       return this.settings.fontSize !== 1;

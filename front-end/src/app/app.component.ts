@@ -71,6 +71,10 @@ export class AppComponent {
         document.getElementsByTagName('html')[0].style.setProperty('--customOrange', '#724100');
         document.getElementsByTagName('html')[0].style.setProperty('--customLiteOrange', 'rgba(252,220,97,0.5)');
         document.getElementsByTagName('html')[0].style.setProperty('--customPurple', '#44004C');
+        document.getElementsByTagName('html')[0].style.setProperty('--customDarkPink', '#a17e7e');
+        document.getElementsByTagName('html')[0].style.setProperty('--customDarkPinkFaded', '#c7a6a6');
+        document.getElementsByTagName('html')[0].style.setProperty('--customPink', '#c49f9f');
+        document.getElementsByTagName('html')[0].style.setProperty('--customPinkFaded', '#d7bfbf');
       } else {
         document.getElementsByTagName('html')[0].style.setProperty('--customWhite', 'white');
         document.getElementsByTagName('html')[0].style.setProperty('--customGray', '#3d3d3d');
@@ -86,6 +90,10 @@ export class AppComponent {
         document.getElementsByTagName('html')[0].style.setProperty('--customOrange', '#dca409');
         document.getElementsByTagName('html')[0].style.setProperty('--customLiteOrange', 'rgba(255, 213, 52, 0.76)');
         document.getElementsByTagName('html')[0].style.setProperty('--customPurple', 'blueviolet');
+        document.getElementsByTagName('html')[0].style.setProperty('--customDarkPink', '#f2b0b0');
+        document.getElementsByTagName('html')[0].style.setProperty('--customDarkPinkFaded', '#f7cece');
+        document.getElementsByTagName('html')[0].style.setProperty('--customPink', '#f7c9c9');
+        document.getElementsByTagName('html')[0].style.setProperty('--customPinkFaded', '#fadede');
       }
   }
 

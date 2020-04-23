@@ -1,4 +1,5 @@
 import {Component, Input, OnInit} from '@angular/core';
+import {SettingsService} from '../../../services/settings.service';
 
 @Component({
   selector: 'app-theme-item',
@@ -13,7 +14,7 @@ export class ThemeItemComponent implements OnInit {
   @Input()
   bgColor: string;
 
-  constructor() { }
+  constructor(private settingsService: SettingsService) { }
 
   ngOnInit() {
   }
