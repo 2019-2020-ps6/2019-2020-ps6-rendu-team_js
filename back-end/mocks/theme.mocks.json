@@ -12,9 +12,9 @@
     "id": 1000000000001
   },
   {
-    "name": "Voyage",
+    "name": "Pays",
     "color": "#a503fc",
-    "nbQuiz": 0,
+    "nbQuiz": 1,
     "id": 1000000000002
   },
   {

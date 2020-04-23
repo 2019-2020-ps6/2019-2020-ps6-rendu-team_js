@@ -123,8 +123,42 @@
     "label": "A quel hauteur est fixer le panier de basketball ?",
     "quizId": 2000000000002,
     "id": 3200000000006
+  },
+  {
+    "label": "L'Australie est un pays appartenant à l'Union européenne ?",
+    "quizId": 2000000000003,
+    "id": 3300000000000
+  },
+  {
+    "label": "Quelles sont les couleurs du drapeau de l'Union européenne ?",
+    "quizId": 2000000000003,
+    "id": 3300000000005
+  },
+  {
+    "label": "L'Union européenne est constitué de combien de pays ?",
+    "quizId": 2000000000003,
+    "id": 3300000000001
+  },
+  {
+    "label": "Quelle ville est la capitale de l'Union européenne ?",
+    "quizId": 2000000000003,
+    "id": 3300000000002
+  },
+  {
+    "label": "Quelle est la monnaie dominante en Europe ?",
+    "quizId": 2000000000003,
+    "id": 3300000000003
+  },
+  {
+    "label": "Combien d'étoiles composent le drapeau de l'Union européenne ?",
+    "quizId": 2000000000003,
+    "id": 3300000000004
+  },
+  {
+    "label": "Quel est le plus vaste (superficie) pays de l'Union européenne ?",
+    "quizId": 2000000000003,
+    "id": 3300000000006
   }
-
 
 
 ]
