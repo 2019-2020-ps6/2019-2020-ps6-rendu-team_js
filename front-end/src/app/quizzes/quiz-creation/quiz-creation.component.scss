@@ -11,147 +11,26 @@ h1 {
 
 .global-container {
   width: 100%;
-  height: calc(100% - 3vmin);
 }
 
+.background {
+  position: absolute;
+  background-color: #000000;
+  opacity: 0.5;
+
+  left: 10vw;
+  top: 0;
+
+  width: 90vw;
+  height: 100%;
+
+  filter:blur(20vmin);
+}
 
 .disable-button {
   opacity: 0.5;
 }
 
-.user-form {
-  display: flex;
-  flex-direction: column;
-}
-
-.input-custom {
-  padding: 2vmin;
-  margin: 2vmin;
-  border: var(--customWhite) 0 solid;
-  border-radius: 2vmin;
-  font-family: "Segoe UI Black", sans-serif;
-  font-size: 1rem;
-  text-align: center;
-}
-
-
-.button-card:hover {
-  background-color: #555555;
-}
-
-::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
-  opacity: 0.4;
-  text-align: center;
-}
-
-
-.create-table {
-  width: 80vmin;
-  border: 0 solid transparent;
-  border-radius: 5vmin;
-  background-color: #6BA800;
-  -webkit-box-shadow: 0 0 3vmin 1vmin rgba(0,0,0,0.31);
-  -moz-box-shadow: 0 0 3vmin 1vmin rgba(0,0,0,0.31);
-  box-shadow: 0 0 3vmin 1vmin rgba(0,0,0,0.31);
-  align-self: center;
-  margin: auto;
-
-}
-
-.input-container {
-  padding: 2vmin;
-}
-
-.title-container {
-  text-align: center;
-  font-size: 6vmin;
-  font-family: "Segoe UI", sans-serif;
-  font-weight: 900;
-  color: white;
-  width: 100%;
-  padding: 1vmin;
-  background-color: #456C00;
-  border: 0 solid transparent;
-  border-top-left-radius: 5vmin;
-  border-top-right-radius: 5vmin;
-}
-
-.input-text-container {
-  display: flex;
-  flex-direction: column;
-  justify-content: left;
-  width: 100%;
-  padding: 1vmin;
-}
-
-.text-input {
-  font-family: "Segoe UI", sans-serif;
-  font-weight: 600;
-  color: var(--customDarkGray);
-  text-align: center;
-  border: 0 solid transparent;
-  font-size: 3vmin;
-  padding: 1vmin;
-  border-radius: 3vmin;
-}
-
-.quiz-form {
-  padding: 0 2vmin;
-}
-
-.button-container {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  padding: 4vmin 2vmin 1vmin 2vmin;
-}
-
-.theme-container-labels {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-}
-
-.text-for-input {
-  font-family: "Segoe UI", sans-serif;
-  font-weight: 600;
-  color: white;
-  padding-left: 2vmin;
-  margin-bottom: 0;
-  white-space: nowrap;
-  font-size: 3vmin;
-}
-
-.new-theme {
-  //color: var(--customDarkGreen);
-  font-style: italic;
-  text-decoration: underline;
-  padding-right: 3vmin;
-  cursor: pointer;
-}
-
-.new-theme:hover {
-  color: white;
-  font-style: italic;
-  text-decoration: underline;
-  padding-right: 3vmin;
-}
-
-.button {
-
-  text-align: center !important;
-  flex: 1 0 49%;
-
-  color: var(--customDarkGray);
-  background-color: white;
-  border: transparent solid 0;
-  border-radius: 3vmin;
-
-  margin: 2vmin;
-  padding: 2vmin;
-  font-family: "Segoe UI Black";
-  font-size: 4vmin;
-}
 
 .hover-button:hover {
   opacity: 0.9;
@@ -171,46 +50,6 @@ h1 {
 
 .create-bg-selected {
   background-color: #2b4300 !important;
-}
-
-
-
-.color-container {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: center;
-  padding-top: 3vmin;
-}
-
-.color-container div {
-  padding-right: 3vmin;
-}
-
-select {
-  border: 0 solid transparent;
-  border-radius: 3vmin;
-  padding: 2vmin;
-  font-size: 3vmin;
-  text-align: center !important;
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  cursor: pointer;
-}
-
-.background {
-  position: absolute;
-  background-color: #000000;
-  opacity: 0.5;
-
-  left: 10vw;
-  top: 0;
-
-  width: 90vw;
-  height: 100%;
-
-  filter:blur(20vmin);
 }
 
 .blur{
@@ -260,5 +99,9 @@ select {
 
 .question-bg-selected {
   background-color: #205591;
+
+}
+
+app-general-creation {
 
 }
