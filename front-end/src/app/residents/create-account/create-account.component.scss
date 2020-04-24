@@ -29,7 +29,8 @@
   font-size: 5vmin;
   padding-bottom: 2vmin;
   display: inline-block;
-  font-family: "Segoe UI Black", sans-serif;
+  font-family: "Segoe UI", sans-serif;
+  font-weight: 900;
 }
 
 .disable-button {
@@ -47,7 +48,8 @@
   margin-bottom: 1vmin;
   border: var(--customGray) 0.3vmin solid;
   border-radius: 2vmin;
-  font-family: "Segoe UI Black", sans-serif;
+  font-family: "Segoe UI", sans-serif;
+  font-weight: 900;
   font-size: 3vmin;
   text-align: center;
   width: 100%;
@@ -65,7 +67,8 @@
   border-radius: 2vmin;
   color: var(--customWhite);
   text-align: center;
-  font-family: "Segoe UI Black", sans-serif;
+  font-family: "Segoe UI", sans-serif;
+  font-weight: 900;
   font-size: 3vmin;
   width: 100%;
 }
@@ -112,7 +115,8 @@
   padding: 1vmin;
   border: #5D5D5D 0 solid;
   border-radius: 10vmin;
-  font-family: "Segoe UI Black", sans-serif;
+  font-family: "Segoe UI", sans-serif;
+  font-weight: 900;
   font-size: 3vmin;
   color: var(--customWhite);
   opacity: 0.5;
@@ -150,7 +154,8 @@
 }
 
 .assistance-text {
-  font-family: "Segoe UI Black", sans-serif;
+  font-family: "Segoe UI", sans-serif;
+  font-weight: 900;
   font-size: 3vmin;
   text-align: center;
   color: #5D5D5D;
