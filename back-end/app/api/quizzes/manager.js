@@ -44,11 +44,11 @@ const buildQuizz = (quizId) => {
 }
 
 
-const buildQuizzNoAnswers = (quizList) => {
+const addnbOfQuestions = (quizList) => {
 
     let quiz = quizList.map((quiz) => {
         const questions = filterQuestionsFromQuizz(quiz.id)
-        return {...quiz, questions}
+        return {...quiz, nbQuestions: questions.length}
     })
 
     return quiz;
@@ -81,5 +81,5 @@ const buildQuizzes = () => {
 module.exports = {
     buildQuizz,
     buildQuizzes,
-    buildQuizzNoAnswers,
+    buildQuizzNoAnswers: addnbOfQuestions,
 }
