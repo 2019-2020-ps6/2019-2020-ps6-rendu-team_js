@@ -11,6 +11,10 @@ import { Question } from 'src/models/question.model';
 export class QuestionListComponent implements OnInit {
   @Input()
   quiz: Quiz;
+
+  private editingQuestion = false;
+  private questionToEdit: Question;
+
   constructor(private quizService: QuizService) { }
 
   ngOnInit() {
@@ -18,6 +22,11 @@ export class QuestionListComponent implements OnInit {
 
   deleteQuestion(question: Question) {
     this.quizService.deleteQuestion(this.quiz, question);
+  }
+
+  openQuestion(question: Question) {
+    this.editingQuestion = true;
+    this.questionToEdit = question;
   }
 
 }

@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
+import {Question} from '../../../models/question.model';
+import {FormBuilder, FormGroup, Validators} from '@angular/forms';
 
 @Component({
   selector: 'app-question-creation',
@@ -7,9 +9,23 @@ import { Component, OnInit } from '@angular/core';
 })
 export class QuestionCreationComponent implements OnInit {
 
-  constructor() { }
+  @Input() question: Question;
+  private isLoading = false;
+  public questionForm: FormGroup;
+  public addreponse = 0;
+
+  constructor(private formBuilder: FormBuilder) {
+
+    this.questionForm = this.formBuilder.group({
+      question: ['', [Validators.required]],
+      reponse: ['', [Validators.required]],
+    });
+  }
 
   ngOnInit() {
   }
 
+  addReponse() {
+    this.addreponse++;
+  }
 }

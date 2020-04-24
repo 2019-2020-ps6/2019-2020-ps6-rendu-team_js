@@ -1,8 +1,12 @@
+
+<div *ngIf="!editingQuestion">
 <div class="col-12">
     <div *ngFor="let question of quiz.questions">
         <!--Inputs & Output allow communication between parent & child components.-->
         <!--More information: https://angular.io/guide/component-interaction-->
-        <app-question [question]="question" (deleteQuestion)="deleteQuestion($event)"></app-question>
+        <app-question [question]="question" (deleteQuestion)="deleteQuestion($event)" (click)="openQuestion(question)"></app-question>
 
     </div>
   </div>
+</div>
+<app-question-creation *ngIf="editingQuestion" [question]="questionToEdit"></app-question-creation>

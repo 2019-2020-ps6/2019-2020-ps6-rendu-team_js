@@ -15,7 +15,6 @@ const buildQuizToPlay = (quizId) => {
         const answersList = filterAnswersFromQuestion(question.id)
 
         let answers = [];
-logger.info('8888')
         if (answersList.length > 4) {
             answersList.forEach((answer) => {
                 if (answer.isCorrect) {

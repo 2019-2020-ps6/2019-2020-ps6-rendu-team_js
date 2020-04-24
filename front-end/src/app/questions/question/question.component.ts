@@ -22,5 +22,4 @@ export class QuestionComponent implements OnInit {
   delete() {
     this.deleteQuestion.emit(this.question);
   }
-
 }
