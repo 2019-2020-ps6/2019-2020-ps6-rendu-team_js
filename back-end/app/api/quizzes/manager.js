@@ -8,14 +8,14 @@ const {filterAnswersFromQuestion} = require('./questions/answers/manager')
  * This function aggregates the questions and answers from the database to build a quizz with all the data needed by the clients.
  * @param quizId
  */
-const buildQuizz = (quizId) => {
+const buildQuizToPlay = (quizId) => {
     const quiz = Quiz.getById(quizId)
     const questions = filterQuestionsFromQuizz(quiz.id)
     const questionWithAnswers = questions.map((question) => {
         const answersList = filterAnswersFromQuestion(question.id)
 
         let answers = [];
-
+logger.info('8888')
         if (answersList.length > 4) {
             answersList.forEach((answer) => {
                 if (answer.isCorrect) {
@@ -44,7 +44,18 @@ const buildQuizz = (quizId) => {
 }
 
 
-const addnbOfQuestions = (quizList) => {
+const buildQuizz = (quizId) => {
+    const quiz = Quiz.getById(quizId)
+    const questions = filterQuestionsFromQuizz(quiz.id)
+    const questionWithAnswers = questions.map((question) => {
+        const answers = filterAnswersFromQuestion(question.id)
+        return {...question, answers}
+    })
+    return {...quiz, questions: questionWithAnswers}
+}
+
+
+const buildQuizNbQuestions = (quizList) => {
 
     let quiz = quizList.map((quiz) => {
         const questions = filterQuestionsFromQuizz(quiz.id)
@@ -81,5 +92,6 @@ const buildQuizzes = () => {
 module.exports = {
     buildQuizz,
     buildQuizzes,
-    buildQuizzNoAnswers: addnbOfQuestions,
+    buildQuizNbQuestions,
+    buildQuizToPlay,
 }
