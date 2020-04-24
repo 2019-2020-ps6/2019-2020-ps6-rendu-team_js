@@ -1,5 +1,5 @@
 import {Component, EventEmitter, OnInit, Output} from '@angular/core';
-import {FormBuilder, FormGroup} from '@angular/forms';
+import {FormBuilder, FormGroup, Validators} from '@angular/forms';
 
 import {QuizService} from '../../../services/quiz.service';
 import {Quiz} from '../../../models/quiz.model';
@@ -17,11 +17,13 @@ export class QuizCreationComponent implements OnInit {
   themeList: Theme[];
   isCreateThemeOpen: boolean;
   themeSelected: Theme;
+  isLoading: boolean;
 
   constructor(private formBuilder: FormBuilder,
               private  quizService: QuizService,
               private themesService: ThemesService) {
 
+    this.isLoading = false;
     this.isCreateThemeOpen = false;
 
     themesService.setThemes();
@@ -33,9 +35,9 @@ export class QuizCreationComponent implements OnInit {
     });
 
     this.quizForm = this.formBuilder.group({
-      name: [''],
-      theme: [{} as Theme],
-      difficulty: ['']
+      name: ['', [Validators.required]],
+      theme: [{} as Theme, [Validators.required]],
+      difficulty: ['', [Validators.required]]
     });
   }
 
@@ -66,5 +68,9 @@ export class QuizCreationComponent implements OnInit {
 
   isWindowOpen() {
     return this.isCreateThemeOpen;
+  }
+
+  resetValues() {
+
   }
 }

@@ -18,6 +18,9 @@
   border: 0 solid transparent;
   border-radius: 5vmin;
   background-color: #6BA800;
+  -webkit-box-shadow: 0 0 3vmin 1vmin rgba(0,0,0,0.31);
+  -moz-box-shadow: 0 0 3vmin 1vmin rgba(0,0,0,0.31);
+  box-shadow: 0 0 3vmin 1vmin rgba(0,0,0,0.31);
 }
 
 .input-container {

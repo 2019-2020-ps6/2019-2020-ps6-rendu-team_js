@@ -1,54 +1,185 @@
 @import '../../../styles/card.scss';
 
-.greencard{
-  margin: auto;
-  padding-bottom: 30pt;
-  //float: none;
-  position: center;
-  border-radius: 25px;
-  background-color: var(--customGreen);
-  text-align : center;
+.global-container {
+
+}
+
+.user-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+
+.user-table {
+  padding: 2vmin;
+  border: #5396EC 1vmin solid;
+  border-radius: 5vmin;
+  background-color: #5396EC;
+}
+
+.text-connexion {
+  text-align: center;
   color: var(--customWhite);
-  font-family: "Segoe UI", sans-serif;
-  font-size: 0.6rem;
-  font-weight: bold;
+  font-size: 2.4rem;
+  padding: 3vmin;
+  font-family: "Segoe UI Black", sans-serif;
+
 }
 
-.input-custom, .form-control, .btn-lg{
-  border-radius: 25px;
+.disable-button {
+  opacity: 0.5;
 }
 
-.btn-gris, .btn-blanc{
-  text-align : center;
-  font-family: "Segoe UI", sans-serif;
-  font-size: 0.6rem;
-  font-weight: bold;
+.user-form {
+  display: flex;
+  flex-direction: column;
 }
 
-.btn-gris{
+.input-custom {
+  padding: 2vmin;
+  margin: 2vmin;
+  border: var(--customWhite) 0 solid;
+  border-radius: 2vmin;
+  font-family: "Segoe UI Black", sans-serif;
+  font-size: 1rem;
+  text-align: center;
+}
+
+.button-card {
+  padding: 2vmin;
+  margin: 2vmin;
+  border: var(--customWhite) 0 solid;
+  border-radius: 2vmin;
   background-color: var(--customGray);
   color: var(--customWhite);
+  font-family: "Segoe UI Black", sans-serif;
+  font-size: 1rem;
 }
 
-.btn-blanc{
-  color: var(--customGreen);
-  background-color: var(--customWhite);
+.button-card:hover {
+  background-color: #555555;
 }
 
-a{
-  font-size: 0.4rem;
-  font-style: italic;
-  text-decoration: none;
-  color: var(--customWhite);
+::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+  opacity: 0.4;
+  text-align: center;
+}
+
+
+.create-table {
+  width: 80vmin;
+  border: 0 solid transparent;
+  border-radius: 5vmin;
+  background-color: #6BA800;
+}
+
+.input-container {
+  padding: 2vmin;
+}
+
+.title-container {
+  text-align: center;
+  font-size: 6vmin;
   font-family: "Segoe UI", sans-serif;
+  font-weight: 900;
+  color: white;
+  width: 100%;
+  padding: 3vmin;
+  background-color: #456C00;
+  border: 0 solid transparent;
+  border-top-left-radius: 5vmin;
+  border-top-right-radius: 5vmin;
 }
 
-.card-header{
-  margin: 0;
-  border-top-left-radius: 25px;
-  border-top-right-radius: 25px;
-  background-color: var(--customDarkGreen);
-  font-size: 0.8rem;
+.input-text-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: left;
+  width: 100%;
+  padding: 1vmin;
+}
+
+.text-input {
+  font-family: "Segoe UI", sans-serif;
+  font-weight: 600;
+  color: var(--customDarkGray);
+  text-align: center;
+  border: 0 solid transparent;
+  font-size: 3vmin;
+  padding: 1vmin;
+  border-radius: 3vmin;
+}
+
+.button-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  padding: 4vmin 4vmin 1vmin 4vmin;
+}
+
+.text-for-input {
+  font-family: "Segoe UI", sans-serif;
+  font-weight: 600;
+  color: white;
+  padding-left: 2vmin;
+  margin-bottom: 0;
+  white-space: nowrap;
+  font-size: 3vmin;
+}
+
+.button {
+
+  text-align: center !important;
+  flex: 1 0 49%;
+
+  color: var(--customDarkGray);
+  background-color: white;
+  border: transparent solid 0;
+  border-radius: 3vmin;
+
+  margin: 2vmin;
+  padding: 2vmin;
+  font-family: "Segoe UI Black";
+  font-size: 4vmin;
+}
+
+.hover-button:hover {
+  opacity: 0.9;
+}
+
+.disable-button {
+  opacity: 0.5;
+}
+
+.back-bg {
+  color: var(--customDarkGray);
+
+}
+
+.create-bg {
+  color: #456C00;
+}
+
+.color-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 3vmin;
+}
+
+.color-container div {
+  padding-right: 3vmin;
+}
+
+select {
+  border: 0 solid transparent;
+  border-radius: 3vmin;
+  width: 100vmin;
+  margin: 0 1vmin 0 3vmin;
+  height: 6vmin;
 }
 
 .background {

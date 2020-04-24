@@ -17,6 +17,9 @@
   border: #D8F8FF 0 solid;
   border-radius: 5vmin;
   background-color: #D8F8FF;
+  -webkit-box-shadow: 0 0 3vmin 1vmin rgba(0,0,0,0.31);
+  -moz-box-shadow: 0 0 3vmin 1vmin rgba(0,0,0,0.31);
+  box-shadow: 0 0 3vmin 1vmin rgba(0,0,0,0.31);
 }
 
 .text-create-account {
