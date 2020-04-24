@@ -9,7 +9,7 @@
     </div>
 
     <div class="bottom-part-container" *ngIf="isFullyDisplayed">
-      <div class="bottom-text" *ngIf="quiz.questions !== undefined">Ce quiz comporte {{quiz.questions.length}} questions</div>
+      <div class="bottom-text" *ngIf="quiz.questions !== undefined">Ce quiz comporte {{quiz.nbQuestions}} questions</div>
 
       <div class="bottom-part-button-container" style="text-align: center">
         <button type="button" class="bottom-button play-quiz-button" [ngStyle]="{backgroundColor: themeColor}" routerLink="/play/{{quiz.id}}"> Faire le quiz </button>

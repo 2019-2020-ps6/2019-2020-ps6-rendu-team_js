@@ -47,7 +47,6 @@ export class QuizListComponent implements OnInit {
 
       this.quizService.getQuizzesFromThemeId(this.theme.id).subscribe((q) => {
         this.quizList = q;
-        console.log(this.quizList);
         this.quizList$.next(this.quizList);
         this.quizListFiltered = q;
       });
