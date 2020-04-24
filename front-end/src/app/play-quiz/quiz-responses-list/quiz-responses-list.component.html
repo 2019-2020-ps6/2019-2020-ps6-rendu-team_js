@@ -1,5 +1,5 @@
 <div class="answers">
     <ng-container *ngFor="let answer of answers; let i=index">
-        <app-quiz-response [answer]="answer" (click)="submitAnswerOnClick(answer)" [color]="colors[i]"></app-quiz-response>
+        <app-quiz-response [answer]="answer" (answerClicked)="submitAnswerOnClick($event)" [color]="colors[i]"></app-quiz-response>
     </ng-container>
 </div>

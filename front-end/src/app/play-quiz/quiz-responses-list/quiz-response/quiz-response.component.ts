@@ -1,9 +1,7 @@
-import {Component, Input, OnInit, Output} from '@angular/core';
+import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
 import {Answer} from '../../../../models/question.model';
-import {Quiz} from '../../../../models/quiz.model';
 import {Router} from '@angular/router';
 import {QuizService} from '../../../../services/quiz.service';
-import {Settings} from '../../../../models/settings.model';
 import {SettingsService} from '../../../../services/settings.service';
 
 @Component({
@@ -14,11 +12,14 @@ import {SettingsService} from '../../../../services/settings.service';
 export class QuizResponseComponent implements OnInit {
 
   @Input()
-  public answer: Answer;
+  answer: Answer;
 
 
   @Input()
-  public color: string;
+  color: string;
+
+  @Output()
+  answerClicked: EventEmitter<Answer> = new EventEmitter<Answer>();
 
   constructor(private router: Router, public quizService: QuizService, private settingsService: SettingsService) {
   }
