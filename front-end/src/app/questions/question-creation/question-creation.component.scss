@@ -79,7 +79,7 @@ h1 {
 
 .input-text-container {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   justify-content: left;
   width: 100%;
   padding: 1vmin;
@@ -94,6 +94,7 @@ h1 {
   font-size: 3vmin;
   padding: 1vmin;
   border-radius: 3vmin;
+  width: 100%;
 }
 
 .quiz-form {
@@ -154,6 +155,20 @@ h1 {
   font-size: 4vmin;
 }
 
+.button-delete{
+  text-align: center !important;
+
+  color: var(--customDarkGray);
+  background-color: white;
+  border: transparent solid 0;
+  border-radius: 3vmin;
+  font-family: "Segoe UI Black";
+  font-size: 2.5vmin;
+  padding-left: 1vmin;
+  padding-right: 1vmin;
+  margin-left: 1vmin;
+}
+
 .hover-button:hover {
   opacity: 0.9;
 }
@@ -209,6 +224,26 @@ select {
 
   filter:blur(20vmin);
 }
+
+#correctAnswer {
+  margin-top: 2vmin;
+  background-color: #3BDF75;
+  border-radius: 2vmin;
+  margin-bottom: 2vmin;
+}
+
+#notCorrectAnswers {
+  background-color: #ed5855;
+  border-radius: 2vmin;
+  margin-bottom: 1vmin;
+}
+
+#question{
+  background-color: #005ED8;
+  border-radius: 2vmin;
+  margin-top: 2vmin;
+}
+
 
 .blur{
   filter: blur(1vmin);

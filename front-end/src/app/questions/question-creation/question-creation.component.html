@@ -4,33 +4,52 @@
     <form class="quiz-form" [formGroup]="questionForm">
 
 
+      <div id="question">
+        <label class="text-for-input">La question</label>
       <div class="input-text-container">
-
         <input class="text-input" type="text" [formControlName]="'question'" [disabled]="isLoading"
                [class.disable-button]="isLoading" placeholder="Nom de la Question" value="{{question.label}}">
       </div>
-      <div class="theme-container-labels">
-        <label class="text-for-input">Réponses</label>
       </div>
-      <div *ngFor="let ans of question.answers">
-        <div class="input-text-container">
-          <input class="text-input" type="text" [formControlName]="'reponse'" [disabled]="isLoading"
-                 [class.disable-button]="isLoading" placeholder="une réponse" value="{{ans.value}}">
-          <button type="submit" class="button delete-bg">Supprimer
-          </button>
+
+      <div id="correctAnswer">
+        <label class="text-for-input">La réponses juste</label>
+        <div *ngFor="let ans of question.answers">
+          <div *ngIf="ans.isCorrect">
+            <div class="input-text-container">
+
+              <input class="text-input" type="text" [formControlName]="'reponse'" [disabled]="isLoading"
+                     [class.disable-button]="isLoading" placeholder="une réponse" value="{{ans.value}}">
+            </div>
+          </div>
         </div>
       </div>
 
-      <div *ngFor="let i of [].constructor(addreponse)">
-        <div class="input-text-container">
-          <input class="text-input" type="text" [formControlName]="'reponse'" [disabled]="isLoading"
-                 [class.disable-button]="isLoading" placeholder="une réponse">
-          <button type="submit" class="button delete-bg">Supprimer
-          </button>
+
+      <div id="notCorrectAnswers">
+        <label class="text-for-input">Les réponses fausses</label>
+        <div *ngFor="let ans of question.answers let i=index">
+          <div *ngIf="!ans.isCorrect">
+            <div class="input-text-container">
+              <input class="text-input" type="text" [formControlName]="'reponse'" [disabled]="isLoading"
+                     [class.disable-button]="isLoading" placeholder="une réponse" value="{{ans.value}}">
+              <button *ngIf="i !== 1" type="submit" class="button-delete delete-bg">Supprimer
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <div *ngFor="let i of [].constructor(addreponse)">
+          <div class="input-text-container">
+            <input class="text-input" type="text" [formControlName]="'reponse'" [disabled]="isLoading"
+                   [class.disable-button]="isLoading" placeholder="une réponse">
+            <button type="submit" class="button-delete delete-bg">Supprimer
+            </button>
+          </div>
         </div>
       </div>
 
-      <a class="text-for-input new-theme" (click)="addReponse()">Nouvelle réponse +</a>
+      <a class="text-for-input new-theme" (click)="addReponse()">Nouvelle réponse fausse +</a>
 
 
       <div class="button-container">
