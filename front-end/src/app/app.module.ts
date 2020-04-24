@@ -50,6 +50,7 @@ import {YouTubePlayerModule} from '@angular/youtube-player';
 import { QuizItemComponent } from './quizzes/quiz-inprogress/quiz-item/quiz-item.component';
 import { ThemeCreationComponent } from './theme/theme-creation/theme-creation.component';
 import { QuestionCreationComponent } from './questions/question-creation/question-creation.component';
+import { GeneralCreationComponent } from './quizzes/quiz-creation/general-creation/general-creation.component';
 
 
 
@@ -98,7 +99,8 @@ import { QuestionCreationComponent } from './questions/question-creation/questio
     ConfirmParamCopyComponent,
     QuizItemComponent,
     ThemeCreationComponent,
-    QuestionCreationComponent
+    QuestionCreationComponent,
+    GeneralCreationComponent
   ],
     imports: [
         BrowserModule,

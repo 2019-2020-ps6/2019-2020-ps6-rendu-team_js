@@ -1,0 +1,54 @@
+<div class="create-table" [ngClass]="isCreateThemeOpen? 'blur' : ''">
+  <div class="title-container">Général</div>
+  <form class="quiz-form" [formGroup]="quizForm">
+
+
+    <div class="input-text-container">
+      <label for="title" class="text-for-input">Nom du quiz</label>
+
+      <input class="text-input" type="text" id="title" [formControlName]="'name'" [disabled]="isLoading"
+             [class.disable-button]="isLoading" placeholder="Mon quiz">
+    </div>
+
+
+    <div class="input-text-container">
+      <div class="theme-container-labels">
+        <label for="theme" class="text-for-input">Thème</label>
+        <a (click)="openWindowsCreateTheme(true)" class="text-for-input new-theme">Nouveau thème +</a>
+      </div>
+
+      <select class="" id="theme"
+              [formControlName]="'theme'"
+              *ngIf="themeSelected !== undefined">
+        <option *ngFor="let t of themeList" [ngValue]="t">{{t.name}}</option>
+      </select>
+    </div>
+
+    <div class="input-text-container">
+      <label for="difficulty" class="text-for-input">Difficulté</label>
+
+      <select class="" id="difficulty" [formControlName]="'difficulty'">
+        <option value="Facile">Facile</option>
+        <option value="Moyen">Moyen</option>
+        <option value="Difficile">Difficile</option>
+      </select>
+    </div>
+
+    <div class="button-container">
+      <button type="submit" class="button reset-bg hover-button" id="reset" (click)="resetValues()">Réinitialiser
+      </button>
+      <button type="submit" class="button create-bg" id="create" (click)="updatePartOfQuiz()"
+              [disabled]="quizForm.invalid"
+              [class.disable-button]="quizForm.invalid || isLoading"
+              [ngClass]="!quizForm.invalid && !isLoading? 'hover-button' : ''">Suivant
+      </button>
+    </div>
+
+
+  </form>
+</div>
+
+<div *ngIf="isWindowOpen()" class="background"></div>
+
+<app-theme-creation (isBackPressed)="openWindowsCreateTheme(false)" *ngIf="isCreateThemeOpen"
+                    (themeSelected)="themeSelected = $event"></app-theme-creation>
