@@ -7,5 +7,6 @@ export interface Quiz {
     themeId: string;
     theme?: Theme;
     questions?: Question[];
+    nbQuestions?: number;
     difficulty: string;
 }
