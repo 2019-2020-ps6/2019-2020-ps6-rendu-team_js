@@ -1,32 +1,19 @@
 @import '../../../styles/card.scss';
 
+h1 {
+  font-size: 6vmin !important;
+  margin-top: 0vmin !important;
+  margin-bottom: 0vmin !important;
+  margin-block-end: 3vmin !important;
+  margin-block-start: 3vmin !important;
+  line-height: 6vmin;
+}
+
 .global-container {
-
+  width: 100%;
+  height: calc(100% - 3vmin);
 }
 
-.user-container {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  height: 100%;
-}
-
-.user-table {
-  padding: 2vmin;
-  border: #5396EC 1vmin solid;
-  border-radius: 5vmin;
-  background-color: #5396EC;
-}
-
-.text-connexion {
-  text-align: center;
-  color: var(--customWhite);
-  font-size: 2.4rem;
-  padding: 3vmin;
-  font-family: "Segoe UI Black", sans-serif;
-
-}
 
 .disable-button {
   opacity: 0.5;
@@ -47,16 +34,6 @@
   text-align: center;
 }
 
-.button-card {
-  padding: 2vmin;
-  margin: 2vmin;
-  border: var(--customWhite) 0 solid;
-  border-radius: 2vmin;
-  background-color: var(--customGray);
-  color: var(--customWhite);
-  font-family: "Segoe UI Black", sans-serif;
-  font-size: 1rem;
-}
 
 .button-card:hover {
   background-color: #555555;
@@ -73,6 +50,12 @@
   border: 0 solid transparent;
   border-radius: 5vmin;
   background-color: #6BA800;
+  -webkit-box-shadow: 0 0 3vmin 1vmin rgba(0,0,0,0.31);
+  -moz-box-shadow: 0 0 3vmin 1vmin rgba(0,0,0,0.31);
+  box-shadow: 0 0 3vmin 1vmin rgba(0,0,0,0.31);
+  align-self: center;
+  margin: auto;
+
 }
 
 .input-container {
@@ -86,7 +69,7 @@
   font-weight: 900;
   color: white;
   width: 100%;
-  padding: 3vmin;
+  padding: 1vmin;
   background-color: #456C00;
   border: 0 solid transparent;
   border-top-left-radius: 5vmin;
@@ -112,11 +95,21 @@
   border-radius: 3vmin;
 }
 
+.quiz-form {
+  padding: 0 2vmin;
+}
+
 .button-container {
   display: flex;
   flex-direction: row;
   justify-content: center;
-  padding: 4vmin 4vmin 1vmin 4vmin;
+  padding: 4vmin 2vmin 1vmin 2vmin;
+}
+
+.theme-container-labels {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
 }
 
 .text-for-input {
@@ -127,6 +120,21 @@
   margin-bottom: 0;
   white-space: nowrap;
   font-size: 3vmin;
+}
+
+.new-theme {
+  //color: var(--customDarkGreen);
+  font-style: italic;
+  text-decoration: underline;
+  padding-right: 3vmin;
+  cursor: pointer;
+}
+
+.new-theme:hover {
+  color: white;
+  font-style: italic;
+  text-decoration: underline;
+  padding-right: 3vmin;
 }
 
 .button {
@@ -153,8 +161,8 @@
   opacity: 0.5;
 }
 
-.back-bg {
-  color: var(--customDarkGray);
+.reset-bg {
+  color: var(--customDarkRed);
 
 }
 
@@ -177,9 +185,10 @@
 select {
   border: 0 solid transparent;
   border-radius: 3vmin;
-  width: 100vmin;
-  margin: 0 1vmin 0 3vmin;
-  height: 6vmin;
+  padding: 2vmin;
+  font-size: 3vmin;
+  text-align: center;
+  cursor: pointer;
 }
 
 .background {
