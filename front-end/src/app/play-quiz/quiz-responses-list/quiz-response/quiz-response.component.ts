@@ -1,8 +1,8 @@
 import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
-import {Answer} from '../../../../models/question.model';
 import {Router} from '@angular/router';
 import {QuizService} from '../../../../services/quiz.service';
 import {SettingsService} from '../../../../services/settings.service';
+import {Answer} from '../../../../models/answer.model';
 
 @Component({
   selector: 'app-quiz-response',

@@ -11,4 +11,4 @@
 </div>
 
   <app-general-creation *ngIf="isGeneralOpen" (isCreateThemeOpened)="isWindowOpen = $event"></app-general-creation>
-  <app-question-list *ngIf="isQuestionListOpen"></app-question-list>
+  <app-question-list *ngIf="isQuestionListOpen" [quiz]="emptyQuiz"></app-question-list>

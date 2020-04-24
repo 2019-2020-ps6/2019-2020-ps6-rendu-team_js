@@ -2,11 +2,12 @@ import {Component, OnInit} from '@angular/core';
 import {Quiz} from '../../models/quiz.model';
 import {ActivatedRoute, Router} from '@angular/router';
 import {QuizService} from '../../services/quiz.service';
-import {Answer, Question} from '../../models/question.model';
+import {Question} from '../../models/question.model';
 import {ResultService} from '../../services/result.service';
 import {AuthService} from '../../services/auth.service';
 import {GamesService} from '../../services/games.service';
 import {Game} from '../../models/game.model';
+import {Answer} from '../../models/answer.model';
 
 @Component({
   selector: 'app-play-quiz',

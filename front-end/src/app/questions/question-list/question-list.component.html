@@ -1,5 +1,5 @@
 
-<div *ngIf="!editingQuestion">
+<div *ngIf="!editingQuestion && quiz">
 <div class="col-12">
     <div *ngFor="let question of quiz.questions">
         <!--Inputs & Output allow communication between parent & child components.-->
@@ -9,4 +9,5 @@
     </div>
   </div>
 </div>
-<app-question-creation *ngIf="editingQuestion" [question]="questionToEdit"></app-question-creation>
+
+<app-question-creation *ngIf="editingQuestion" [question]="questionToEdit" [questionNumber]="questionId(questionToEdit)"></app-question-creation>

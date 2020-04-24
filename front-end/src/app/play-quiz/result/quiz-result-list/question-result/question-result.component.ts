@@ -1,5 +1,6 @@
 import {Component, Input, OnInit} from '@angular/core';
-import {Answer, Question} from '../../../../../models/question.model';
+import {Question} from '../../../../../models/question.model';
+import {Answer} from '../../../../../models/answer.model';
 
 @Component({
   selector: 'app-question-result',

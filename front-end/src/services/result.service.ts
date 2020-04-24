@@ -3,9 +3,10 @@ import { HttpClient } from '@angular/common/http';
 import {BehaviorSubject, Observable, Subject} from 'rxjs';
 import { Quiz } from '../models/quiz.model';
 import { QUIZ_LIST } from '../mocks/quiz-list.mock';
-import {Answer, Question} from '../models/question.model';
+import {Question} from '../models/question.model';
 import { serverUrl, httpOptionsBase } from '../configs/server.config';
 import {Result} from '../models/result.model';
+import {Answer} from '../models/answer.model';
 
 @Injectable({
   providedIn: 'root'

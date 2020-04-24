@@ -1,11 +1,9 @@
-import {Component, EventEmitter, OnInit, Output} from '@angular/core';
-import {FormBuilder, FormGroup, Validators} from '@angular/forms';
+import {Component, EventEmitter, OnInit} from '@angular/core';
+import {FormBuilder} from '@angular/forms';
 
 import {QuizService} from '../../../services/quiz.service';
 import {Quiz} from '../../../models/quiz.model';
-import {Theme} from '../../../models/theme.model';
 import {ThemesService} from '../../../services/themes.service';
-
 @Component({
   selector: 'app-quiz-creation',
   templateUrl: './quiz-creation.component.html',
@@ -20,6 +18,15 @@ export class QuizCreationComponent implements OnInit {
   isLoading: boolean;
 
   quizToCreate: Quiz;
+
+  emptyQuiz = {
+    name: '',
+    themeId: '',
+    questions: [],
+    nbQuestions: 0,
+    difficulty: '',
+  } as Quiz;
+
   isWindowOpen: boolean;
 
   constructor(private formBuilder: FormBuilder,
@@ -29,12 +36,13 @@ export class QuizCreationComponent implements OnInit {
     this.isLoading = false;
     this.isQuestionListOpen = false;
     this.isGeneralOpen = true;
+
+
   }
 
   ngOnInit() {
 
   }
-
 
 
   openGeneral() {

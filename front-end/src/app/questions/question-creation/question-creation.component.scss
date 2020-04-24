@@ -95,6 +95,7 @@ h1 {
   padding: 1vmin;
   border-radius: 3vmin;
   width: 100%;
+  height: 100%;
 }
 
 .quiz-form {
@@ -130,6 +131,8 @@ h1 {
   text-decoration: underline;
   padding-right: 3vmin;
   cursor: pointer;
+  width: 100%;
+  align-items: center;
 }
 
 .new-theme:hover {
@@ -158,15 +161,34 @@ h1 {
 .button-delete{
   text-align: center !important;
 
-  color: var(--customDarkGray);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  color: var(--customDarkRed);
+  font-weight: 900;
   background-color: white;
   border: transparent solid 0;
   border-radius: 3vmin;
-  font-family: "Segoe UI Black";
-  font-size: 2.5vmin;
-  padding-left: 1vmin;
-  padding-right: 1vmin;
+  font-size: 3vmin;
+  padding: 2vmin;
   margin-left: 1vmin;
+  height: 6vmin;
+  margin-top: 0.8vmin;
+  cursor: pointer;
+  transition: color 0.2s ease-in-out, background-color 0.2s ease-in-out;
+}
+
+.button-delete:hover{
+  background-color: var(--customDarkRed);
+  color: white;
+}
+
+.wrong-answer-container{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .hover-button:hover {
@@ -227,7 +249,7 @@ select {
 
 #correctAnswer {
   margin-top: 2vmin;
-  background-color: #3BDF75;
+  background-color: var(--customGreen);
   border-radius: 2vmin;
   margin-bottom: 2vmin;
 }
@@ -239,7 +261,7 @@ select {
 }
 
 #question{
-  background-color: #005ED8;
+  background-color: #2b6273;
   border-radius: 2vmin;
   margin-top: 2vmin;
 }

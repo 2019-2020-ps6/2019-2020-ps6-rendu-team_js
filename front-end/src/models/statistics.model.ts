@@ -1,4 +1,3 @@
-
 export interface Statistics {
   currentWeek: number;
   successPercentage: number;
