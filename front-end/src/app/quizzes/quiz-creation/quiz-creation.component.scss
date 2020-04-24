@@ -50,7 +50,7 @@ h1 {
   width: 80vmin;
   border: 0 solid transparent;
   border-radius: 5vmin;
-  background-color: #6BA800;
+  background-color: var(--customGreen);
   -webkit-box-shadow: 0 0 3vmin 1vmin rgba(0,0,0,0.31);
   -moz-box-shadow: 0 0 3vmin 1vmin rgba(0,0,0,0.31);
   box-shadow: 0 0 3vmin 1vmin rgba(0,0,0,0.31);
@@ -68,10 +68,10 @@ h1 {
   font-size: 6vmin;
   font-family: "Segoe UI", sans-serif;
   font-weight: 900;
-  color: white;
+  color: var(--customWhite);
   width: 100%;
   padding: 1vmin;
-  background-color: #456C00;
+  background-color: var(--customDarkGreen);
   border: 0 solid transparent;
   border-top-left-radius: 5vmin;
   border-top-right-radius: 5vmin;
@@ -116,7 +116,7 @@ h1 {
 .text-for-input {
   font-family: "Segoe UI", sans-serif;
   font-weight: 600;
-  color: white;
+  color: var(--customWhite);
   padding-left: 2vmin;
   margin-bottom: 0;
   white-space: nowrap;
@@ -132,7 +132,7 @@ h1 {
 }
 
 .new-theme:hover {
-  color: white;
+  color: var(--customWhite);
   font-style: italic;
   text-decoration: underline;
   padding-right: 3vmin;
@@ -144,7 +144,7 @@ h1 {
   flex: 1 0 49%;
 
   color: var(--customDarkGray);
-  background-color: white;
+  background-color: $app-background-color;
   border: transparent solid 0;
   border-radius: 3vmin;
 
@@ -168,7 +168,7 @@ h1 {
 }
 
 .create-bg {
-  color: #456C00;
+  color: var(--customDarkGreen);
 }
 
 .color-container {

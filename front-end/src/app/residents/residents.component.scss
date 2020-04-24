@@ -11,8 +11,8 @@
   text-align: center;
 
   color: var(--customWhite);
-  background-color: #3CABC2;
-  border: #3CABC2 solid 0 ;
+  background-color: var(--customBlue);
+  border: var(--customBlue) solid 0 ;
   border-radius: 3vmin;
 
   margin: 2vmin;
@@ -27,7 +27,7 @@
 }
 
 .create-button {
-  background-color: #3CABC2;
+  background-color: var(--customBlue);
 }
 
 .create-button:hover{
