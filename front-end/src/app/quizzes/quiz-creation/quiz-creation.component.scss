@@ -163,12 +163,17 @@ h1 {
 
 .reset-bg {
   color: var(--customDarkRed);
-
 }
 
 .create-bg {
   color: #456C00;
 }
+
+.create-bg-selected {
+  background-color: #2b4300 !important;
+}
+
+
 
 .color-container {
   display: flex;
@@ -187,7 +192,10 @@ select {
   border-radius: 3vmin;
   padding: 2vmin;
   font-size: 3vmin;
-  text-align: center;
+  text-align: center !important;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
   cursor: pointer;
 }
 
@@ -207,4 +215,50 @@ select {
 
 .blur{
   filter: blur(1vmin);
+}
+
+.button-header-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+.button-header {
+  text-align: center !important;
+  //flex: 1 0 49%;
+
+  color: white;
+  background-color: white;
+  border: transparent solid 0;
+  border-radius: 3vmin;
+
+  padding: 1vmin 2vmin;
+  font-family: "Segoe UI";
+  font-weight: 900;
+  font-size: 3vmin;
+
+  cursor: pointer;
+}
+
+.header-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+
+}
+
+.bg-general {
+  background-color: var(--customGreen);
+  margin-right: 3vmin;
+}
+
+
+.bg-question {
+  background-color: var(--customBlue);
+}
+
+.question-bg-selected {
+  background-color: #205591;
+
 }

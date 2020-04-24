@@ -5,7 +5,6 @@ import {QuizService} from '../../../services/quiz.service';
 import {Quiz} from '../../../models/quiz.model';
 import {Theme} from '../../../models/theme.model';
 import {ThemesService} from '../../../services/themes.service';
-import {BehaviorSubject, Observable} from 'rxjs';
 
 @Component({
   selector: 'app-quiz-creation',
@@ -15,9 +14,15 @@ import {BehaviorSubject, Observable} from 'rxjs';
 export class QuizCreationComponent implements OnInit {
 
   themeList: Theme[];
+
   isCreateThemeOpen: boolean;
-  themeSelected: Theme;
+  isQuestionListOpen: boolean;
+  isGeneralOpen: boolean;
+
   isLoading: boolean;
+
+  themeSelected: Theme;
+  quizToCreate: Quiz;
 
   constructor(private formBuilder: FormBuilder,
               private  quizService: QuizService,
@@ -25,6 +30,8 @@ export class QuizCreationComponent implements OnInit {
 
     this.isLoading = false;
     this.isCreateThemeOpen = false;
+    this.isQuestionListOpen = false;
+    this.isGeneralOpen = true;
 
     themesService.setThemes();
     this.themesService.themes$.subscribe((t) => {
@@ -71,6 +78,41 @@ export class QuizCreationComponent implements OnInit {
   }
 
   resetValues() {
+    this.quizForm.reset();
+  }
 
+  updatePartOfQuiz() {
+    const quizName = this.quizForm.get('name').value;
+    const theme = this.quizForm.get('theme').value;
+    const diff = this.quizForm.get('difficulty').value;
+
+    const quiz = {
+      name: quizName,
+      themeId: theme.id,
+      theme: theme as Theme,
+      difficulty: diff,
+    } as Quiz;
+
+    if (this.quizToCreate === undefined) {
+      this.quizToCreate = quiz;
+
+    } else {
+      this.quizToCreate.name = quizName;
+      this.quizToCreate.themeId = theme.id;
+      this.quizToCreate.theme = theme;
+      this.quizToCreate.difficulty = diff;
+    }
+
+    console.log(this.quizToCreate);
+  }
+
+  openGeneral() {
+    this.isGeneralOpen = true;
+    this.isQuestionListOpen = false;
+  }
+
+  openQuestion() {
+    this.isGeneralOpen = false;
+    this.isQuestionListOpen = true;
   }
 }
