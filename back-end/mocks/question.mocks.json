@@ -45,6 +45,11 @@
     "id": 3100000000000
   },
   {
+    "label": "Quelle est la couleur d'une Mandarine ?",
+    "quizId": 2000000000001,
+    "id": 3100000000001
+  },
+  {
     "label": "Quelle est la couleur d'une Tomate ?",
     "quizId": 2000000000001,
     "id": 3100000000002

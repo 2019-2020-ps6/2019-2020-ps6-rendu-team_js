@@ -2,33 +2,6 @@
   {
     "handicapVisuel": true,
     "handicapMoteur": true,
-    "contraste": 2,
-    "fontSize": 2,
-    "font": "Segoe UI",
-    "tailleSelection": 2,
-    "id": 1585655522153
-  },
-  {
-    "handicapVisuel": true,
-    "handicapMoteur": true,
-    "contraste": 2,
-    "fontSize": 2,
-    "font": "Segoe UI",
-    "tailleSelection": 2,
-    "id": 1585654749401
-  },
-  {
-    "handicapVisuel": true,
-    "handicapMoteur": false,
-    "contraste": 2,
-    "fontSize": 2,
-    "font": "Segoe UI",
-    "tailleSelection": 1,
-    "id": 1585654807761
-  },
-  {
-    "handicapVisuel": true,
-    "handicapMoteur": true,
     "contraste": 1,
     "fontSize": 1,
     "font": "Segoe UI",
@@ -38,24 +11,6 @@
   {
     "handicapVisuel": true,
     "handicapMoteur": true,
-    "contraste": 2,
-    "fontSize": 2,
-    "font": "Segoe UI",
-    "tailleSelection": 2,
-    "id": 1585655010135
-  },
-  {
-    "handicapVisuel": true,
-    "handicapMoteur": true,
-    "contraste": 2,
-    "fontSize": 2,
-    "font": "Segoe UI",
-    "tailleSelection": 2,
-    "id": 1585655124575
-  },
-  {
-    "handicapVisuel": true,
-    "handicapMoteur": true,
     "contraste": 1,
     "fontSize": 2,
     "font": "Segoe UI",
@@ -63,31 +18,13 @@
     "id": 1585366302574
   },
   {
-    "handicapVisuel": true,
-    "handicapMoteur": false,
-    "contraste": 2,
-    "fontSize": 2,
-    "font": "Segoe UI",
-    "tailleSelection": 1,
-    "id": 1585655349618
-  },
-  {
-    "handicapVisuel": true,
+    "handicapVisuel": false,
     "handicapMoteur": true,
-    "contraste": 2,
-    "fontSize": 2,
-    "font": "Segoe UI",
-    "tailleSelection": 2,
-    "id": 1585655945443
-  },
-  {
-    "handicapVisuel": true,
-    "handicapMoteur": true,
-    "contraste": 2,
+    "contraste": 1,
     "fontSize": 1,
     "font": "Segoe UI",
-    "tailleSelection": 1,
-    "id": 1585366302574
+    "tailleSelection": 2,
+    "id": 1587855686838
   },
   {
     "handicapVisuel": true,
@@ -96,204 +33,15 @@
     "fontSize": 2,
     "font": "Segoe UI",
     "tailleSelection": 2,
-    "id": 1585669840713
+    "id": 1587855746458
   },
   {
     "handicapVisuel": true,
-    "handicapMoteur": true,
+    "handicapMoteur": false,
     "contraste": 2,
     "fontSize": 2,
     "font": "Segoe UI",
-    "tailleSelection": 2,
-    "id": 1585669944962
-  },
-  {
-    "handicapVisuel": true,
-    "handicapMoteur": true,
-    "contraste": 2,
-    "fontSize": 2,
-    "font": "Segoe UI",
-    "tailleSelection": 2,
-    "id": 1585674540749
-  },
-  {
-    "handicapVisuel": false,
-    "handicapMoteur": false,
-    "contraste": 1,
-    "fontSize": 1,
-    "font": "Segoe UI",
     "tailleSelection": 1,
-    "id": 1585674987550
-  },
-  {
-    "handicapVisuel": false,
-    "handicapMoteur": false,
-    "contraste": 1,
-    "fontSize": 1,
-    "font": "Segoe UI",
-    "tailleSelection": 1,
-    "id": 1585675101353
-  },
-  {
-    "handicapVisuel": false,
-    "handicapMoteur": false,
-    "contraste": 1,
-    "fontSize": 1,
-    "font": "Segoe UI",
-    "tailleSelection": 1,
-    "id": 1585676435030
-  },
-  {
-    "handicapVisuel": false,
-    "handicapMoteur": false,
-    "contraste": 1,
-    "fontSize": 1,
-    "font": "Segoe UI",
-    "tailleSelection": 1,
-    "id": 1585676590675
-  },
-  {
-    "handicapVisuel": false,
-    "handicapMoteur": false,
-    "contraste": 1,
-    "fontSize": 1,
-    "font": "Segoe UI",
-    "tailleSelection": 1,
-    "id": 1585676668740
-  },
-  {
-    "handicapVisuel": false,
-    "handicapMoteur": false,
-    "contraste": 1,
-    "fontSize": 1,
-    "font": "Segoe UI",
-    "tailleSelection": 1,
-    "id": 1585676746560
-  },
-  {
-    "handicapVisuel": false,
-    "handicapMoteur": false,
-    "contraste": 1,
-    "fontSize": 1,
-    "font": "Segoe UI",
-    "tailleSelection": 1,
-    "id": 1585678396461
-  },
-  {
-    "handicapVisuel": false,
-    "handicapMoteur": false,
-    "contraste": 1,
-    "fontSize": 1,
-    "font": "Segoe UI",
-    "tailleSelection": 1,
-    "id": 1585678598330
-  },
-  {
-    "handicapVisuel": false,
-    "handicapMoteur": false,
-    "contraste": 1,
-    "fontSize": 1,
-    "font": "Segoe UI",
-    "tailleSelection": 1,
-    "id": 1585678733909
-  },
-  {
-    "handicapVisuel": true,
-    "handicapMoteur": true,
-    "contraste": 2,
-    "fontSize": 2,
-    "font": "Segoe UI",
-    "tailleSelection": 2,
-    "id": 1585678984202
-  },
-  {
-    "handicapVisuel": true,
-    "handicapMoteur": true,
-    "contraste": 2,
-    "fontSize": 2,
-    "font": "Segoe UI",
-    "tailleSelection": 2,
-    "id": 1586811890420
-  },
-  {
-    "handicapVisuel": true,
-    "handicapMoteur": true,
-    "contraste": 2,
-    "fontSize": 2,
-    "font": "Segoe UI",
-    "tailleSelection": 2,
-    "id": 1586811905443
-  },
-  {
-    "handicapVisuel": false,
-    "handicapMoteur": true,
-    "contraste": 1,
-    "fontSize": 1,
-    "font": "Segoe UI",
-    "tailleSelection": 2,
-    "id": 1586811957915
-  },
-  {
-    "handicapVisuel": false,
-    "handicapMoteur": true,
-    "contraste": 1,
-    "fontSize": 1,
-    "font": "Segoe UI",
-    "tailleSelection": 2,
-    "id": 1586812091679
-  },
-  {
-    "handicapVisuel": true,
-    "handicapMoteur": true,
-    "contraste": 2,
-    "fontSize": 2,
-    "font": "Segoe UI",
-    "tailleSelection": 2,
-    "id": 1586812120116
-  },
-  {
-    "handicapVisuel": false,
-    "handicapMoteur": false,
-    "contraste": 1,
-    "fontSize": 1,
-    "font": "Segoe UI",
-    "tailleSelection": 1,
-    "id": 1586812187739
-  },
-  {
-    "handicapVisuel": true,
-    "handicapMoteur": true,
-    "contraste": 2,
-    "fontSize": 2,
-    "font": "Segoe UI",
-    "tailleSelection": 2,
-    "id": 1586812293230
-  },
-  {
-    "handicapVisuel": false,
-    "handicapMoteur": false,
-    "contraste": 1,
-    "fontSize": 1,
-    "font": "Segoe UI",
-    "tailleSelection": 1,
-    "id": 1586812301036
-  },
-  {
-    "handicapVisuel": true,
-    "handicapMoteur": true,
-    "contraste": 2,
-    "fontSize": 2,
-    "font": "Segoe UI",
-    "tailleSelection": 2,
-    "id": 1586984493737
-  },
-  {
-    "handicapVisuel": true,
-    "handicapMoteur": true,
-    "contraste": 2,
-    "fontSize": 1,
-    "font": "Segoe UI",
-    "tailleSelection": 1,
-    "id": 1585366302574
+    "id": 1587855769367
   }
 ]

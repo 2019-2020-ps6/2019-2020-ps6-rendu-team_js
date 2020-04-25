@@ -9,7 +9,13 @@
     "name": "Les couleurs des fruits et légumes",
     "themeId": "1000000000000",
     "difficulty": "Facile",
-    "id": 2000000000001
+    "id": 2000000000001,
+    "theme": {
+      "name": "Faune et Flore",
+      "color": "#0bfc03",
+      "nbQuiz": 2,
+      "id": 1000000000000
+    }
   },
   {
     "name": "Le basketball",
