@@ -1,22 +1,49 @@
 <ng-container *ngIf="quiz != null">
-<div class="main-container" [ngStyle]="{backgroundColor: bgColor}">
-  <div >
-    <div class="top-part-button-container"  (click)="isFullyDisplayed = !isFullyDisplayed">
-      <div class="top-button left-part" [ngStyle]="{backgroundColor: themeColor}" *ngIf="!isFullyDisplayed">⏷</div>
-      <div class="top-button left-part" [ngStyle]="{backgroundColor: themeColor}" *ngIf="isFullyDisplayed">⏶</div>
-      <div class="top-button middle-part" [ngStyle]="{backgroundColor: themeColor}"> {{quiz.name}} </div>
-      <div class="top-button right-part"  [ngStyle]="{backgroundColor: lvlColor}"> {{quiz.difficulty}} </div>
-    </div>
 
-    <div class="bottom-part-container" *ngIf="isFullyDisplayed">
-      <div class="bottom-text" *ngIf="quiz.questions !== undefined">Ce quiz comporte {{quiz.nbQuestions}} questions</div>
-
-      <div class="bottom-part-button-container" style="text-align: center">
-        <button type="button" class="bottom-button play-quiz-button" [ngStyle]="{backgroundColor: themeColor}" routerLink="/play/{{quiz.id}}"> Faire le quiz </button>
-        <button type="button" class="bottom-button edit-quiz-button" routerLink="/quiz-editor/{{quiz.id}}" *ngIf="authServices.getAuthLevel() > 0"> Editer </button>
+  <ng-container *ngIf="settingsService.isContrastHigh()">
+  <div class="main-container" [ngStyle]="{backgroundColor: '#9a9a9a'}">
+    <div >
+      <div class="top-part-button-container"  (click)="isFullyDisplayed = !isFullyDisplayed">
+        <div class="top-button left-part" [ngStyle]="{backgroundColor: 'dimgrey'}" *ngIf="!isFullyDisplayed">⏷</div>
+        <div class="top-button left-part" [ngStyle]="{backgroundColor: 'dimgrey'}" *ngIf="isFullyDisplayed">⏶</div>
+        <div class="top-button middle-part" [ngStyle]="{backgroundColor: 'dimgrey'}"> {{quiz.name}} </div>
+        <div class="top-button right-part"  [ngStyle]="{backgroundColor: 'dimgrey'}"> {{quiz.difficulty}} </div>
       </div>
 
+      <div class="bottom-part-container" *ngIf="isFullyDisplayed">
+        <div class="bottom-text" *ngIf="quiz.questions !== undefined">Ce quiz comporte {{quiz.nbQuestions}} questions</div>
+
+        <div class="bottom-part-button-container" style="text-align: center">
+          <button type="button" class="bottom-button play-quiz-button" [ngStyle]="{backgroundColor: 'dimgrey'}" routerLink="/play/{{quiz.id}}"> Faire le quiz </button>
+          <button type="button" class="bottom-button edit-quiz-button" routerLink="/quiz-editor/{{quiz.id}}" *ngIf="authServices.getAuthLevel() > 0"> Editer </button>
+        </div>
+
+      </div>
     </div>
   </div>
-</div>
+  </ng-container>
+
+  <ng-container *ngIf="!settingsService.isContrastHigh()">
+    <div class="main-container" [ngStyle]="{backgroundColor: bgColor}">
+      <div >
+        <div class="top-part-button-container"  (click)="isFullyDisplayed = !isFullyDisplayed">
+          <div class="top-button left-part" [ngStyle]="{backgroundColor: themeColor}" *ngIf="!isFullyDisplayed">⏷</div>
+          <div class="top-button left-part" [ngStyle]="{backgroundColor: themeColor}" *ngIf="isFullyDisplayed">⏶</div>
+          <div class="top-button middle-part" [ngStyle]="{backgroundColor: themeColor}"> {{quiz.name}} </div>
+          <div class="top-button right-part"  [ngStyle]="{backgroundColor: lvlColor}"> {{quiz.difficulty}} </div>
+        </div>
+
+        <div class="bottom-part-container" *ngIf="isFullyDisplayed">
+          <div class="bottom-text" *ngIf="quiz.questions !== undefined">Ce quiz comporte {{quiz.nbQuestions}} questions</div>
+
+          <div class="bottom-part-button-container" style="text-align: center">
+            <button type="button" class="bottom-button play-quiz-button" [ngStyle]="{backgroundColor: themeColor}" routerLink="/play/{{quiz.id}}"> Faire le quiz </button>
+            <button type="button" class="bottom-button edit-quiz-button" routerLink="/quiz-editor/{{quiz.id}}" *ngIf="authServices.getAuthLevel() > 0"> Editer </button>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </ng-container>
+
 </ng-container>

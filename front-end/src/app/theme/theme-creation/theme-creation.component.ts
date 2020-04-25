@@ -14,6 +14,8 @@ export class ThemeCreationComponent implements OnInit {
 
   themeForm: FormGroup;
   colors = ['grey', 'orange', 'blue', 'green', 'yellow', 'brown', 'red'];
+  // tslint:disable-next-line:max-line-length
+  // colors = ['var(--customGray)', 'var(--customPlayPink)', 'var(--customBlue)', 'var(--customGreen)', 'var(--customLiteOrange)', 'var(--customOrange)', 'var(--customRed)']
   selectedColor = this.colors[0];
   isLoading: boolean;
 
