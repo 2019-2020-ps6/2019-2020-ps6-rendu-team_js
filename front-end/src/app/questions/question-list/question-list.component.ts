@@ -54,19 +54,12 @@ export class QuestionListComponent implements OnInit {
   }
 
   addQuestion(q: Question) {
-    console.log('question emitted ==========================');
-    console.log(q);
-    console.log('q id : ' + this.indexQuestionBeingEdited);
-    console.log('quiz question length : ' + this.quiz.questions.length);
-
     if (this.indexQuestionBeingEdited !== undefined) {
 
       if (this.indexQuestionBeingEdited <= this.quiz.questions.length) {
-        console.log('replaaaaaaace');
         this.quiz.questions[this.indexQuestionBeingEdited] = q;
 
       } else {
-        console.log('pushhhhhhhhhhhhh');
         this.quiz.questions.push(q);
       }
 
@@ -74,7 +67,13 @@ export class QuestionListComponent implements OnInit {
       this.quiz.questions = [q];
     }
 
-
     this.editingQuestion = false;
   }
+
+  closeQuestionCreation(b: boolean) {
+    if (b) {
+      this.editingQuestion = false;
+    }
+  }
+
 }

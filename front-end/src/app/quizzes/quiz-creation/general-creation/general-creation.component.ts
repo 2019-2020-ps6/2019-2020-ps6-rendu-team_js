@@ -36,6 +36,13 @@ export class GeneralCreationComponent implements OnInit {
   constructor(private formBuilder: FormBuilder,
               private  quizService: QuizService,
               private themesService: ThemesService) {
+
+    this.themesService.themes$.subscribe((t) => {
+      this.themeList = t;
+    });
+
+    this.themesService.setThemes();
+
   }
 
   ngOnInit() {
@@ -48,19 +55,11 @@ export class GeneralCreationComponent implements OnInit {
       this.themeSelected = this.quiz.theme;
     }
 
-    this.themesService.setThemes();
-    this.themesService.themes$.subscribe((t) => {
-      this.themeList = t;
-    });
 
     this.quizForm = this.formBuilder.group({
       name: [this.name, [Validators.required]],
-      theme: ['', [Validators.required]],
+      theme: [this.themeSelected, [Validators.required]],
       difficulty: [this.difficulty, [Validators.required]]
-    });
-
-    this.themesService.themes$.subscribe((t) => {
-      this.themeList = t;
     });
   }
 

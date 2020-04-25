@@ -16,6 +16,8 @@ export class QuestionCreationComponent implements OnInit {
   @Output()
   questionEmitter: EventEmitter<Question> = new EventEmitter<Question>();
 
+  @Output()
+  backPressedEmitter: EventEmitter<boolean> = new EventEmitter<boolean>();
 
   private isLoading = false;
   private questionName = '';
@@ -136,5 +138,13 @@ export class QuestionCreationComponent implements OnInit {
 
   hasEnoughAnswers() {
     return this.answers.length > 1;
+  }
+
+  goToQuestionList() {
+    this.backPressedEmitter.emit(this.hasOneQuestionAlreadyCreated());
+  }
+
+  hasOneQuestionAlreadyCreated(): boolean {
+    return (this.question !== undefined) || (this.questionNumber > 1);
   }
 }

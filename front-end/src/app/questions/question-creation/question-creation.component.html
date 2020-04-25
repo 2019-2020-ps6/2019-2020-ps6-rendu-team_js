@@ -37,8 +37,8 @@
 
 
       <div class="button-container">
-        <button type="submit" class="button create-bg" id="create" (click)="addQuestion()">Enregistrer
-        </button>
+        <button class="button back-bg"  (click)="goToQuestionList()" *ngIf="hasOneQuestionAlreadyCreated()">Retour</button>
+        <button type="submit" class="button create-bg" id="create" (click)="addQuestion()">Enregistrer </button>
       </div>
     </form>
   </div>
