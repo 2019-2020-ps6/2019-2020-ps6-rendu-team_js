@@ -24,23 +24,23 @@
 }
 
 #quizName {
-  background-color: #dca409;
+  background-color: var(--customOrange);
 }
 
 #difficulty {
-  background-color: #00A928;
+  background-color: var(--customGreen);
 }
 
 #score {
-  background-color: #358DFF;
+  background-color: var(--customDarkBlue);
 }
 
 #date {
-  background-color: #00BDD2;
+  background-color: var(--customBlue);
 }
 
 #totalTime {
-  background-color: #B952DE;
+  background-color: var(--customPlayPink);
 }
 
 .container {

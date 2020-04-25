@@ -81,7 +81,7 @@ $badResponseBackgroundColorLite: #FFB5B1;
 
 
 .numero-color {
-  background-color: #fac536;
+  background-color: var(--customSemiLiteOrange);
 }
 
 .numero-color-faded {
@@ -92,21 +92,21 @@ $badResponseBackgroundColorLite: #FFB5B1;
 
 
 .question-reponses-color {
-  background-color: #b6fac4;
+  background-color: var(--customResultGreen);
 }
 
 .question-reponses-color-faded {
-  background-color: #c7f9cc;
+  background-color: var(--customResultGreenFaded);
 }
 
 
 
 
 .score-color {
-  background-color: #B9D1FF;
+  background-color: var(--customResultBlue);
 }
 
 .score-color-faded {
-  background-color: #c9daf8;
+  background-color: var(--customResultBlueFaded);
 }
 
