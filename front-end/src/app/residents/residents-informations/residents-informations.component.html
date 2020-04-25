@@ -1,6 +1,6 @@
 <div class="create-account-container user-container ">
 
-  <div class="table">
+  <div class="table-custom">
 
     <div class="text-create-account">{{user.firstName}} {{user.lastName.toUpperCase()}}</div>
     <hr class="blackLine">
@@ -28,7 +28,7 @@
     <button (click)="deleteButtonPressed()" [ngClass]="isDeleteButtonPressed ? 'deletePressed' : ''"
             class="link-card delete-button-bg">
       <div *ngIf="!isDeleteButtonPressed">Supprimer le compte</div>
-      <div *ngIf="isDeleteButtonPressed">Confirmer la suppression du compte</div>
+      <div *ngIf="isDeleteButtonPressed" style="line-height: 8vmin !important;">Confirmer la suppression du compte</div>
     </button>
 
     <hr class="blackLine margin-top">

@@ -10,17 +10,18 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  line-height: 5vmin !important;
 }
 
-.table {
+.table-custom {
   padding: 2vmin;
   width: 60vmin;
   border: var(--customResidentItemBlue) 0 solid;
   border-radius: 5vmin;
   background-color: var(--customResidentItemBlue);
-  -webkit-box-shadow: 0 0 3vmin 1vmin rgba(0,0,0,0.31);
-  -moz-box-shadow: 0 0 3vmin 1vmin rgba(0,0,0,0.31);
-  box-shadow: 0 0 3vmin 1vmin rgba(0,0,0,0.31);
+  -webkit-box-shadow: 0 0 3vmin 1vmin rgba(0, 0, 0, 0.31);
+  -moz-box-shadow: 0 0 3vmin 1vmin rgba(0, 0, 0, 0.31);
+  box-shadow: 0 0 3vmin 1vmin rgba(0, 0, 0, 0.31);
 }
 
 .text-create-account {
@@ -49,7 +50,7 @@
   border: var(--customGray) 0.1vmin solid;
   border-radius: 2vmin;
   font-family: "Segoe UI", sans-serif;
-  font-weight: 900;
+  font-weight: 600;
   font-size: 3vmin;
   text-align: center;
   width: 100%;
@@ -74,28 +75,28 @@
 }
 
 .link-card {
-    padding: 1vmin;
-    margin-bottom: 1vmin;
-    border: var(--customWhite) 0 solid;
-    border-radius: 10vmin;
-    color: var(--customWhite);
-    text-align: center;
-    font-family: "Segoe UI", sans-serif;
-  font-weight: 900;
-    font-size: 2vmin;
-    width: 100%;
+  padding: 1vmin;
+  margin-bottom: 1vmin;
+  border: var(--customWhite) 0 solid;
+  border-radius: 10vmin;
+  color: var(--customWhite);
+  text-align: center;
+  font-family: "Segoe UI", sans-serif;
+  font-weight: 600;
+  font-size: 3vmin;
+  width: 100%;
 }
 
-.margin-top{
+.margin-top {
   margin-top: 0.5vmin;
 }
 
 .back-button-bg {
-  background-color: #929292;
+  background-color: #606060;
 }
 
 .back-button-bg:hover {
-  background-color: #848484;
+  background-color: #565656;
 }
 
 
@@ -157,26 +158,26 @@
 .checkbox-container label {
   flex: 1;
   text-align: center;
-  background-color: var(--customBlue);
+  background-color: #2E7F90;
   margin: 0;
   padding: 1vmin;
   border: var(--customGray) 0 solid;
   border-radius: 10vmin;
   font-family: "Segoe UI", sans-serif;
-  font-weight: 900;
+  font-weight: 600;
   font-size: 3vmin;
   color: var(--customWhite);
   opacity: 0.5;
   width: 100%;
 }
 
-.checkbox-container input{
+.checkbox-container input {
   display: none;
 }
 
 .checkbox-container input:checked + label {
   opacity: 1;
-  background-color: var(--customDarkBlue);
+  background-color: #286d7c;
 }
 
 .checkbox-container input:checked + label:hover {
@@ -215,7 +216,6 @@
   flex-direction: row;
   margin-bottom: 1vmin;
 }
-
 
 
 .checkbox {
