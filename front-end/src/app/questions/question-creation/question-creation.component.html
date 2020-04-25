@@ -16,7 +16,7 @@
         <label class="text-for-input">La bonne réponse</label>
         <div class="input-text-container">
           <input class="text-input" type="text" [formControlName]="'rightAnswer'" [disabled]="isLoading" [(ngModel)]="rightAnswer.value"
-                 [class.disable-button]="isLoading" placeholder="une réponse" value="{{rightAnswer.value}}">
+                 [class.disable-button]="isLoading" placeholder="Une bonne réponse" value="{{rightAnswer.value}}">
         </div>
       </div>
 
@@ -27,7 +27,7 @@
         <div class="input-text-container wrong-answer-container" formArrayName="wrongAnswers" *ngFor="let address of answers.controls; let i=index">
 
             <div style="width: 100%; padding: 0" [formGroupName]="i">
-              <input class="text-input" type="text" [formControlName]="'answer'">
+              <input class="text-input" type="text" [formControlName]="'answer'" placeholder="Une mauvaise réponse">
             </div>
           <i class="far fa-trash-alt button-delete" *ngIf="hasEnoughAnswers()" (click)="removeWrongAnswer(i)"></i>
         </div>

@@ -53,7 +53,7 @@ export class AppComponent {
       if (this.settingsService.settings.fontSize === 1) {
         document.getElementsByTagName('html')[0].style.setProperty('font-size', '5vmin');
       } else {
-        document.getElementsByTagName('html')[0].style.setProperty('font-size', '9vmin');
+        document.getElementsByTagName('html')[0].style.setProperty('font-size', '8vmin');
       }
 
       if (this.settingsService.settings.contraste !== undefined && this.settingsService.settings.contraste === 2) {
