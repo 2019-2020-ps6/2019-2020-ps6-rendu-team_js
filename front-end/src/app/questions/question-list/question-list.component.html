@@ -1,19 +1,17 @@
 <div *ngIf="!editingQuestion && quiz">
   <div class="main-container">
     <div *ngFor="let question of quiz.questions; let i = index;">
-      <!--Inputs & Output allow communication between parent & child components.-->
-      <!--More information: https://angular.io/guide/component-interaction-->
       <app-question [question]="question" (deleteQuestion)="deleteQuestion($event)"
                     (click)="openQuestion(question, i)"></app-question>
 
     </div>
 
     <div class="new-question-container">
-      <a class="new-question">+</a>
+      <a class="new-question" (click)="openQuestion(undefined, this.quiz.questions.length+1)">+</a>
     </div>
   </div>
 </div>
 
 
 <app-question-creation *ngIf="editingQuestion" [question]="questionToEdit" [questionNumber]="questionId(questionToEdit)"
-                       (questionEmitter)="addQuestion($event)"></app-question-creation>
+                       (questionEmitter)="addQuestion($event)" (backPressedEmitter)="closeQuestionCreation($event)"></app-question-creation>

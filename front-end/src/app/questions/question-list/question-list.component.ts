@@ -35,24 +35,45 @@ export class QuestionListComponent implements OnInit {
     this.editingQuestion = true;
     this.questionToEdit = question;
     this.indexQuestionBeingEdited = index;
+
+    console.log(this.quiz.questions);
+    console.log(index);
   }
 
   questionId(q: Question) {
-    const index = this.quiz.questions.indexOf(q);
-    return (index > -1) ? index + 1 : 1;
+    let index = this.quiz.questions.indexOf(q);
+
+    if (!q) {
+      index = this.quiz.questions.length + 1;
+      console.log('question index = ' + index);
+      return index;
+
+    } else {
+      return (index > -1) ? index + 1 : 1;
+    }
   }
 
   addQuestion(q: Question) {
-    if (!this.quiz.questions) {
-      if (this.indexQuestionBeingEdited) {
+    if (this.indexQuestionBeingEdited !== undefined) {
+
+      if (this.indexQuestionBeingEdited <= this.quiz.questions.length) {
         this.quiz.questions[this.indexQuestionBeingEdited] = q;
+
       } else {
-        console.log('error index edit/create question !!!');
+        this.quiz.questions.push(q);
       }
+
     } else {
       this.quiz.questions = [q];
     }
 
     this.editingQuestion = false;
   }
+
+  closeQuestionCreation(b: boolean) {
+    if (b) {
+      this.editingQuestion = false;
+    }
+  }
+
 }

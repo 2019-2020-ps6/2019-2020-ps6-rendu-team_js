@@ -12,6 +12,7 @@ h1 {
 .global-container {
   width: 100%;
   height: calc(100% - 3vmin);
+  line-height: 5vmin;
 }
 
 
@@ -31,7 +32,7 @@ h1 {
   border-radius: 2vmin;
   font-family: "Segoe UI", sans-serif;
   font-weight: 900;
-  font-size: 1rem;
+  font-size: 5vmin;
   text-align: center;
 }
 
@@ -56,7 +57,7 @@ h1 {
   box-shadow: 0 0 3vmin 1vmin rgba(0,0,0,0.31);
   align-self: center;
   margin: auto;
-
+  margin-bottom: 3vmin;
 }
 
 .input-container {
@@ -66,6 +67,7 @@ h1 {
 .title-container {
   text-align: center;
   font-size: 6vmin;
+  line-height: 7vmin;
   font-family: "Segoe UI", sans-serif;
   font-weight: 900;
   color: white;

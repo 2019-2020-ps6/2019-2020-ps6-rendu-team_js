@@ -26,7 +26,7 @@
 }
 
 .right-Part{
-  flex: 3;
+  flex: 2;
   //background-color: var(--customGreen);
   background-color: #47a0ff;
   //border: 0.5vmin solid #3396FF;
@@ -35,7 +35,13 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
+  font-size: 3vmin;
+  font-weight: 600;
   //color: #2a2a2a;
+}
+
+.left-Part{
+  font-size: 3.5vmin;
 }
 
 .left-Part, .right-Part, .delete-Part{
