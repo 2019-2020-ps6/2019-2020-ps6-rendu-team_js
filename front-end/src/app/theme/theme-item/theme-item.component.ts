@@ -14,7 +14,7 @@ export class ThemeItemComponent implements OnInit {
   @Input()
   bgColor: string;
 
-  constructor(private settingsService: SettingsService) { }
+  constructor() { }
 
   ngOnInit() {
   }

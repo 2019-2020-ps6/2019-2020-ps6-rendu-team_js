@@ -29,8 +29,7 @@ export class QuizInfoComponent implements OnInit {
   constructor(private route: ActivatedRoute,
               private themesService: ThemesService,
               private authServices: AuthService,
-              private quizService: QuizService,
-              private settingsService: SettingsService) {}
+              private quizService: QuizService) {}
 
   ngOnInit() {
     this.quiz.questions = [];
