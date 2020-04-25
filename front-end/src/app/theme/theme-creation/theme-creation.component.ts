@@ -13,7 +13,7 @@ import {ToasterService} from '../../../services/toaster.service';
 export class ThemeCreationComponent implements OnInit {
 
   themeForm: FormGroup;
-  colors = ['grey', 'orange', 'blue', 'green', 'yellow', 'brown', 'red'];
+  colors = ['grey', '#d87500', '#00b3d5', '#1cc200', '#e1d600', '#8b6149', '#c10300'];
   // tslint:disable-next-line:max-line-length
   // colors = ['var(--customGray)', 'var(--customPlayPink)', 'var(--customBlue)', 'var(--customGreen)', 'var(--customLiteOrange)', 'var(--customOrange)', 'var(--customRed)']
   selectedColor = this.colors[0];

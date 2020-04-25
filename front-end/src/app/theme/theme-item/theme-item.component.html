@@ -1,11 +1,3 @@
-<ng-container *ngIf="!settingsService.isContrastHigh()">
-  <div class="theme-container" [ngStyle]="{backgroundColor: bgColor}">
-    <div class="theme-text">{{themeName}}</div>
-  </div>
-</ng-container>
-<ng-container *ngIf="settingsService.isContrastHigh()">
-  <div class="theme-container" [ngStyle]="{backgroundColor: 'dimgrey'}">
-    <div class="theme-text">{{themeName}}</div>
-  </div>
-</ng-container>
-
+<div class="theme-container" [ngStyle]="{backgroundColor: bgColor}">
+  <div class="theme-text">{{themeName}}</div>
+</div>
