@@ -5,7 +5,7 @@ import {QuizService} from '../../../services/quiz.service';
 import {Theme} from '../../../models/theme.model';
 import {ThemesService} from '../../../services/themes.service';
 import {AuthService} from '../../../services/auth.service';
-import {SettingsService} from "../../../services/settings.service";
+import {SettingsService} from '../../../services/settings.service';
 
 @Component({
   selector: 'app-quiz-info',

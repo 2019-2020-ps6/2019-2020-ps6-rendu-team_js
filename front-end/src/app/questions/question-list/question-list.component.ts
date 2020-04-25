@@ -28,7 +28,10 @@ export class QuestionListComponent implements OnInit {
   }
 
   deleteQuestion(question: Question) {
-    this.quizService.deleteQuestion(this.quiz, question);
+    const index = this.quiz.questions.indexOf(question);
+    if (index > -1) {
+      this.quiz.questions.splice(index, 1);
+    }
   }
 
   openQuestion(question: Question, index: number) {
