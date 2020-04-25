@@ -7,22 +7,23 @@
       <div id="question">
         <label class="text-for-input">La question</label>
         <div class="input-text-container">
-          <input class="text-input" type="text" [formControlName]="'question'" [disabled]="isLoading"
+          <input class="text-input" type="text" [formControlName]="'question'" [disabled]="isLoading" [(ngModel)]="questionName"
                  [class.disable-button]="isLoading" placeholder="Nom de la Question" value="{{questionName}}">
         </div>
       </div>
 
-      <div id="correctAnswer" *ngIf="this.rightAnswer !== undefined">
-        <label class="text-for-input">La réponses juste</label>
+      <div id="correctAnswer" *ngIf="this.rightAnswer">
+        <label class="text-for-input">La bonne réponse</label>
         <div class="input-text-container">
-          <input class="text-input" type="text" [formControlName]="'rightAnswer'" [disabled]="isLoading"
+          <input class="text-input" type="text" [formControlName]="'rightAnswer'" [disabled]="isLoading" [(ngModel)]="rightAnswer.value"
                  [class.disable-button]="isLoading" placeholder="une réponse" value="{{rightAnswer.value}}">
         </div>
       </div>
 
 
       <div id="notCorrectAnswers">
-        <label class="text-for-input">Les réponses fausses</label>
+        <label class="text-for-input" *ngIf="!hasEnoughAnswers()">La mauvaise réponse</label>
+        <label class="text-for-input" *ngIf="hasEnoughAnswers()">Les mauvaises réponses</label>
         <div class="input-text-container wrong-answer-container" formArrayName="wrongAnswers" *ngFor="let address of answers.controls; let i=index">
 
             <div style="width: 100%; padding: 0" [formGroupName]="i">

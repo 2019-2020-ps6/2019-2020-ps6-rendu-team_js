@@ -1,6 +1,6 @@
-import {Component, Input, OnInit} from '@angular/core';
+import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
 import {Question} from '../../../models/question.model';
-import {FormArray, FormBuilder, FormControl, FormGroup, Validators} from '@angular/forms';
+import {FormArray, FormBuilder, FormGroup, Validators} from '@angular/forms';
 import {Answer} from '../../../models/answer.model';
 
 @Component({
@@ -12,6 +12,9 @@ export class QuestionCreationComponent implements OnInit {
 
   @Input() question: Question;
   @Input() questionNumber: number;
+
+  @Output()
+  questionEmitter: EventEmitter<Question> = new EventEmitter<Question>();
 
 
   private isLoading = false;
@@ -55,6 +58,7 @@ export class QuestionCreationComponent implements OnInit {
           answers.push(this.createAnswer(a.value));
         }
       });
+
     } else {
       this.rightAnswer = this.emptyRightAnswer;
       answers.push(this.createAnswer(''));
@@ -87,10 +91,46 @@ export class QuestionCreationComponent implements OnInit {
   }
 
   addQuestion() {
-    const answer = this.questionForm.getRawValue();
-    console.log(answer);
+    const formValues = this.questionForm.getRawValue();
+    console.log(formValues);
+
+    const answersArray: Answer[] = [];
+
+
+    const rightAnswer = {
+      value: formValues.rightAnswer,
+      isCorrect: true,
+    } as Answer;
+
+    answersArray.push(rightAnswer);
+
+    formValues.wrongAnswers.forEach((r) => {
+      if (r.answer !== '') {
+        answersArray.push({
+          value: r.answer,
+          isCorrect: false,
+        } as Answer);
+      }
+    });
+
+    // ANSWER
+    // value?: string;
+    // isCorrect?: boolean;
+
+    // QUESTION
+    // label: string;
+    // answers: Answer[];
+
+    const question = {
+      label: formValues.question,
+      answers: answersArray
+    } as Question;
+
+    console.log(question);
+
+    this.questionEmitter.emit(question);
+
     if (this.questionForm.valid) {
-      // this.initializeAnswerForm();
     }
   }
 

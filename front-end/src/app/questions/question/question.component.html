@@ -1,25 +1,13 @@
-<!--<div class="lightbluecard">
-    <h2>
-        {{question.label}}
-    </h2>
-    <div class="answer" *ngFor="let answer of question.answers; let i=index">
-        {{i}} - {{answer.value}} <ng-container *ngIf="answer.isCorrect"><i class="far fa-check-square"></i></ng-container> <br>
-    </div>
-    <button class="btn-sm button-card" (click)="delete()">Supprimer</button>
-</div>-->
+<div class="question-Display">
 
-<div class="questionDisplay col-12">
-  <div class="row">
-    <div class="col-1 deletePart">
-      <i (click)="delete()" class="far fa-trash-alt btndelete" ></i>
-    </div>
-    <button class="col-8 leftPart">
-      {{question.label}}
-    </button>
-    <div class="col-3 rightPart">
-      {{question.answers.length}} réponses
-    </div>
+  <div class="right-Part"> {{question.answers.length}} réponses</div>
+
+  <div class="left-Part"> {{question.label}} </div>
+
+  <div class="delete-Part">
+    <i (click)="delete()" class="far fa-trash-alt trash"></i>
   </div>
+
 </div>
 
 

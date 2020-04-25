@@ -3,12 +3,12 @@
     <h1>Création d'un quiz</h1>
     <div class="button-header-container">
       <div class="button-header bg-general" [ngClass]="isGeneralOpen? 'create-bg-selected' : ''" (click)="openGeneral()">Général</div>
-      <div class="button-header bg-question" [ngClass]="isQuestionListOpen? 'question-bg-selected' : ''" (click)="openQuestion()">Questions</div>
+      <div class="button-header bg-question" [ngClass]="isQuestionListOpen? 'question-bg-selected' : (isQuestionWindowAllowed()? '' : 'disable-button')" (click)="openQuestion()">Questions</div>
     </div>
   </div>
 
   <hr class="blackLine">
 </div>
 
-  <app-general-creation *ngIf="isGeneralOpen" (isCreateThemeOpened)="isWindowOpen = $event"></app-general-creation>
-  <app-question-list *ngIf="isQuestionListOpen" [quiz]="emptyQuiz"></app-question-list>
+  <app-general-creation *ngIf="isGeneralOpen" (isCreateThemeOpened)="isWindowOpen = $event" (quizEmitter)="receiveQuiz($event)" [quiz]="quizToCreate"></app-general-creation>
+  <app-question-list *ngIf="isQuestionListOpen" [quiz]="emptyQuiz" ></app-question-list>

@@ -1,38 +1,70 @@
 @import '../../../styles/card.scss';
 
-.questionDisplay{
-  margin: 20pt;
+.question-Display{
+  margin: 1vmin 3vmin;
   padding-left: 0;
   float: none;
-  border-radius: 50px;
+  border-radius: 6vmin;
   background-color: #3396FF;
+  cursor: pointer;
 
   text-align: center;
   color: var(--customWhite);
   font-family: "Segoe UI", sans-serif;
-  font-size: 0.8rem;
   font-weight: bold;
+  font-size: 4vmin;
+
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
 }
 
-.rightPart{
-  background-color: lightblue;
-  border-radius: 50px;
+.question-Display:hover{
+  -webkit-box-shadow: 0 0 2vmin 1vmin rgba(0,0,0,0.2);
+  -moz-box-shadow: 0 0 2vmin 1vmin rgba(0,0,0,0.2);
+  box-shadow: 0 0 2vmin 1vmin rgba(0,0,0,0.2);
+}
+
+.right-Part{
+  flex: 3;
+  //background-color: var(--customGreen);
+  background-color: #47a0ff;
+  //border: 0.5vmin solid #3396FF;
+  border-radius: 6vmin;
   margin:0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  //color: #2a2a2a;
 }
 
-.leftPart, .rightPart, .deletePart{
-  padding-top: 10pt;
-  padding-bottom: 10pt;
+.left-Part, .right-Part, .delete-Part{
+  padding: 2vmin 0;
 }
 
-.deletePart{
+.delete-Part{
   background-color: var(--customRed);
-  border-radius: 50px;
+  border-radius: 6vmin;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  transition: background-color 0.2s ease-in-out;
 }
 
-.leftPart{
+.delete-Part:hover {
+  background-color: var(--customDarkRed);
+
+}
+
+.left-Part{
   background-color: rgb(255, 255, 255, 0);
   border-color: rgb(255, 255, 255, 0);
   color: var(--customWhite);
+  flex: 8;
+}
+
+.trash {
 }
 

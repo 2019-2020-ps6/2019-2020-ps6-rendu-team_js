@@ -4,6 +4,7 @@ import {FormBuilder} from '@angular/forms';
 import {QuizService} from '../../../services/quiz.service';
 import {Quiz} from '../../../models/quiz.model';
 import {ThemesService} from '../../../services/themes.service';
+
 @Component({
   selector: 'app-quiz-creation',
   templateUrl: './quiz-creation.component.html',
@@ -33,25 +34,45 @@ export class QuizCreationComponent implements OnInit {
               private  quizService: QuizService,
               private themesService: ThemesService) {
 
-    this.isLoading = false;
-    this.isQuestionListOpen = false;
-    this.isGeneralOpen = true;
-
-
   }
 
   ngOnInit() {
-
+    this.isLoading = false;
+    this.isQuestionListOpen = false;
+    this.isGeneralOpen = true;
   }
 
 
   openGeneral() {
     this.isGeneralOpen = true;
     this.isQuestionListOpen = false;
+    console.log(this.quizToCreate);
   }
 
   openQuestion() {
-    this.isGeneralOpen = false;
-    this.isQuestionListOpen = true;
+    if (this.isQuestionWindowAllowed()) {
+      this.isGeneralOpen = false;
+      this.isQuestionListOpen = true;
+    }
+
+    console.log(this.quizToCreate);
+  }
+
+  isQuestionWindowAllowed() {
+    return this.quizToCreate && this.quizToCreate.name !== '' && this.quizToCreate.difficulty !== ''
+      && this.quizToCreate.theme !== undefined;
+  }
+
+  receiveQuiz(quiz: Quiz) {
+    if (!this.quizToCreate) {
+      this.quizToCreate = this.emptyQuiz;
+    }
+    this.quizToCreate.theme = quiz.theme;
+    this.quizToCreate.themeId = quiz.themeId;
+    this.quizToCreate.name = quiz.name;
+    this.quizToCreate.difficulty = quiz.difficulty;
+
+    this.openQuestion();
+    console.log(this.quizToCreate);
   }
 }

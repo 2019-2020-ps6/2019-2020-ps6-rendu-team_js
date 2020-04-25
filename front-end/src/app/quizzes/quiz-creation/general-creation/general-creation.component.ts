@@ -1,4 +1,4 @@
-import {Component, EventEmitter, OnInit, Output} from '@angular/core';
+import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
 import {Theme} from '../../../../models/theme.model';
 import {FormBuilder, FormGroup, Validators} from '@angular/forms';
 import {QuizService} from '../../../../services/quiz.service';
@@ -14,10 +14,11 @@ export class GeneralCreationComponent implements OnInit {
 
   themeList: Theme[];
   themeSelected: Theme;
+  name = '';
+  difficulty = '';
   isCreateThemeOpen: boolean;
   isLoading: boolean;
   quizForm: FormGroup;
-  quizToCreate: Quiz;
 
   @Output()
   isBackPressed: EventEmitter<boolean> = new EventEmitter<boolean>();
@@ -25,28 +26,39 @@ export class GeneralCreationComponent implements OnInit {
   @Output()
   isCreateThemeOpened: EventEmitter<boolean> = new EventEmitter<boolean>();
 
+
+  @Input()
+  quiz: Quiz;
+
+  @Output()
+  quizEmitter: EventEmitter<Quiz> = new EventEmitter<Quiz>();
+
   constructor(private formBuilder: FormBuilder,
               private  quizService: QuizService,
               private themesService: ThemesService) {
-    this.isLoading = false;
-    this.isCreateThemeOpen = false;
-
-    themesService.setThemes();
-    this.themesService.themes$.subscribe((t) => {
-      this.themeList = t;
-      if (t !== undefined && t.length > 0) {
-        this.themeSelected = t[0];
-      }
-    });
-
-    this.quizForm = this.formBuilder.group({
-      name: ['', [Validators.required]],
-      theme: [{} as Theme, [Validators.required]],
-      difficulty: ['', [Validators.required]]
-    });
   }
 
   ngOnInit() {
+    this.isLoading = false;
+    this.isCreateThemeOpen = false;
+
+    if (this.quiz) {
+      this.name = this.quiz.name;
+      this.difficulty = this.quiz.difficulty;
+      this.themeSelected = this.quiz.theme;
+    }
+
+    this.themesService.setThemes();
+    this.themesService.themes$.subscribe((t) => {
+      this.themeList = t;
+    });
+
+    this.quizForm = this.formBuilder.group({
+      name: [this.name, [Validators.required]],
+      theme: ['', [Validators.required]],
+      difficulty: [this.difficulty, [Validators.required]]
+    });
+
     this.themesService.themes$.subscribe((t) => {
       this.themeList = t;
     });
@@ -58,6 +70,7 @@ export class GeneralCreationComponent implements OnInit {
 
   resetValues() {
     this.quizForm.reset();
+    this.quizEmitter.emit({} as Quiz);
   }
 
   updatePartOfQuiz() {
@@ -72,17 +85,18 @@ export class GeneralCreationComponent implements OnInit {
       difficulty: diff,
     } as Quiz;
 
-    if (this.quizToCreate === undefined) {
-      this.quizToCreate = quiz;
-
-    } else {
-      this.quizToCreate.name = quizName;
-      this.quizToCreate.themeId = theme.id;
-      this.quizToCreate.theme = theme;
-      this.quizToCreate.difficulty = diff;
+    if (this.quiz === undefined) {
+      this.quiz = quiz;
     }
 
-    console.log(this.quizToCreate);
+    this.quiz.name = quizName;
+    this.quiz.themeId = theme.id;
+    this.quiz.theme = theme;
+    this.quiz.difficulty = diff;
+
+
+    console.log(this.quiz);
+    this.quizEmitter.emit(quiz);
   }
 
   openWindowsCreateTheme(b: boolean) {
@@ -90,4 +104,8 @@ export class GeneralCreationComponent implements OnInit {
     this.isCreateThemeOpened.emit(b);
   }
 
+  setSelectedTheme(theme: Theme) {
+    this.themeSelected = theme;
+    console.log(this.themeSelected);
+  }
 }

@@ -54,10 +54,11 @@ export class ThemeCreationComponent implements OnInit {
     this.themesService.addTheme(themeToCreate).subscribe((response) => {
       this.isLoading = false;
       if (response.status === 200 || response.status === 201) {
-        this.themesService.themes.push(themeToCreate);
+        console.log(response.body);
+        this.themesService.themes.push(response.body);
         this.themesService.themes$.next(this.themesService.themes);
         this.toasterService.activateToaster(false, 'Thème crée', 2000);
-        this.themeSelected.emit(themeToCreate);
+        this.themeSelected.emit(response.body);
         this.backPressed();
       }
 
