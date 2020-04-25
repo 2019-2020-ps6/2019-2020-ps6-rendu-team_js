@@ -12,6 +12,12 @@ html {  //:root is html (or xml in xml file, svg in svg file ...)
   --customRed: #de5252;
   --customDarkRed: #8d0000;
   --customGreen: #65a800;
+
+  --customResultGreen: #b6fac4;
+  --customResultGreenFaded: #c7f9cc;
+  --customResultBlue: #B9D1FF;
+  --customResultBlueFaded: #c9daf8;
+
   --customDarkGreen: #0c6600;
   --customDarkBlue: #0058ca;
   --customExtraDarkBlue: #2B7FD8; //for settings
@@ -19,8 +25,10 @@ html {  //:root is html (or xml in xml file, svg in svg file ...)
   --customLiteBlue: rgba(48, 152, 249, 0.14);
   --customResidentItemBlue: #90D3E1;
   --customOrange: #dca409;
+  --customSemiLiteOrange: #fac536;
   --customLiteOrange: rgba(255, 213, 52, 0.76);
   --customPurple: blueviolet;
+  --customPlayPink: #B60092;
 
   --customDarkPink: #f2b0b0;
   --customDarkPinkFaded: #f7cece;

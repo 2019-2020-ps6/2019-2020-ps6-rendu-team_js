@@ -68,14 +68,20 @@ export class AppComponent {
         document.getElementsByTagName('html')[0].style.setProperty('--customDarkBlue', '#001547');
         document.getElementsByTagName('html')[0].style.setProperty('--customBlue', '#005B72');
         document.getElementsByTagName('html')[0].style.setProperty('--customLiteBlue', '#f2f2f2');
-        document.getElementsByTagName('html')[0].style.setProperty('--customResidentItemBlue', '#70a4af');
+        document.getElementsByTagName('html')[0].style.setProperty('--customResidentItemBlue', '#7cb3be');
         document.getElementsByTagName('html')[0].style.setProperty('--customOrange', '#724100');
-        document.getElementsByTagName('html')[0].style.setProperty('--customLiteOrange', 'rgba(252,220,97,0.5)');
+        document.getElementsByTagName('html')[0].style.setProperty('--customSemiLiteOrange', '#c59b2b');
+        document.getElementsByTagName('html')[0].style.setProperty('--customLiteOrange', 'rgba(178,150,67,0.5)');
         document.getElementsByTagName('html')[0].style.setProperty('--customPurple', '#44004C');
+        document.getElementsByTagName('html')[0].style.setProperty('--customPlayPink', '#8d0071');
         document.getElementsByTagName('html')[0].style.setProperty('--customDarkPink', '#a17e7e');
         document.getElementsByTagName('html')[0].style.setProperty('--customDarkPinkFaded', '#c7a6a6');
         document.getElementsByTagName('html')[0].style.setProperty('--customPink', '#c49f9f');
         document.getElementsByTagName('html')[0].style.setProperty('--customPinkFaded', '#d7bfbf');
+        document.getElementsByTagName('html')[0].style.setProperty('--customResultGreen', '#87b991');
+        document.getElementsByTagName('html')[0].style.setProperty('--customResultGreenFaded', '#a5cbab');
+        document.getElementsByTagName('html')[0].style.setProperty('--customResultBlue', '#a5b7e0');
+        document.getElementsByTagName('html')[0].style.setProperty('--customResultBlueFaded', '#b7c4e3');
       } else {
         document.getElementsByTagName('html')[0].style.setProperty('--customWhite', 'white');
         document.getElementsByTagName('html')[0].style.setProperty('--customGray', '#3d3d3d');
@@ -90,12 +96,18 @@ export class AppComponent {
         document.getElementsByTagName('html')[0].style.setProperty('--customLiteBlue', 'rgba(48, 152, 249, 0.14)');
         document.getElementsByTagName('html')[0].style.setProperty('--customResidentItemBlue', '#90D3E1');
         document.getElementsByTagName('html')[0].style.setProperty('--customOrange', '#dca409');
+        document.getElementsByTagName('html')[0].style.setProperty('--customSemiLiteOrange', '#fac536');
         document.getElementsByTagName('html')[0].style.setProperty('--customLiteOrange', 'rgba(255, 213, 52, 0.76)');
         document.getElementsByTagName('html')[0].style.setProperty('--customPurple', 'blueviolet');
+        document.getElementsByTagName('html')[0].style.setProperty('--customPlayPink', '#B60092');
         document.getElementsByTagName('html')[0].style.setProperty('--customDarkPink', '#f2b0b0');
         document.getElementsByTagName('html')[0].style.setProperty('--customDarkPinkFaded', '#f7cece');
         document.getElementsByTagName('html')[0].style.setProperty('--customPink', '#f7c9c9');
         document.getElementsByTagName('html')[0].style.setProperty('--customPinkFaded', '#fadede');
+        document.getElementsByTagName('html')[0].style.setProperty('--customResultGreen', '#b6fac4');
+        document.getElementsByTagName('html')[0].style.setProperty('--customResultGreenFaded', '#c7f9cc');
+        document.getElementsByTagName('html')[0].style.setProperty('--customResultBlue', '#B9D1FF');
+        document.getElementsByTagName('html')[0].style.setProperty('--customResultBlueFaded', '#c9daf8');
       }
   }
 
