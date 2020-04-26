@@ -2,7 +2,7 @@
   {
     "name": "Faune et Flore",
     "color": "#00653D",
-    "nbQuiz": 2,
+    "nbQuiz": 1,
     "id": 1000000000000
   },
   {
@@ -14,7 +14,7 @@
   {
     "name": "Pays",
     "color": "#600065",
-    "nbQuiz": 2,
+    "nbQuiz": 3,
     "id": 1000000000002
   },
   {

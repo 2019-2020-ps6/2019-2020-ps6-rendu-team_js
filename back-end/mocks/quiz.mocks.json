@@ -6,18 +6,6 @@
     "id": 2000000000000
   },
   {
-    "name": "Les couleurs des fruits et légumes",
-    "themeId": "1000000000000",
-    "difficulty": "Facile",
-    "id": 2000000000001,
-    "theme": {
-      "name": "Faune et Flore",
-      "color": "#0bfc03",
-      "nbQuiz": 2,
-      "id": 1000000000000
-    }
-  },
-  {
     "name": "Le basketball",
     "themeId": "1000000000001",
     "difficulty": "Moyen",
@@ -36,9 +24,15 @@
     "id": 2000000000004
   },
   {
-    "name": "Les capitales",
+    "name": "Les capitales - 2",
     "themeId": "1000000000002",
     "difficulty": "Difficile",
     "id": 1587859606729
+  },
+  {
+    "name": "Les capitales - 1",
+    "themeId": "1000000000002",
+    "difficulty": "Facile",
+    "id": 1587927509891
   }
 ]
