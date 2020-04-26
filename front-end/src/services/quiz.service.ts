@@ -19,7 +19,7 @@ export class QuizService {
    * The list of quiz.
    * The list is retrieved from the mock.
    */
-  private quizzes: Quiz[] = QUIZ_LIST;
+  quizzes: Quiz[] = QUIZ_LIST;
 
   /**
    * Observable which contains the list of the quiz.
@@ -59,7 +59,7 @@ export class QuizService {
   }
 
   addQuiz(quiz: Quiz) {
-    this.http.post<Quiz>(this.quizUrl, quiz, this.httpOptions).subscribe(() => this.setQuizzesFromUrl());
+    return this.http.post<Quiz>(this.quizUrl, quiz, {...this.httpOptions, observe: 'response'});
   }
 
   setSelectedQuizData(quizId: string) {
