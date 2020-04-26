@@ -34,5 +34,11 @@
     "themeId": "1000000000003",
     "difficulty": "Facile",
     "id": 2000000000004
+  },
+  {
+    "name": "Les capitales",
+    "themeId": "1000000000002",
+    "difficulty": "Difficile",
+    "id": 1587859606729
   }
 ]

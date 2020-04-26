@@ -1,1 +1,13 @@
-[]
+[
+  {
+    "currentWeek": 17,
+    "successPercentage": 100,
+    "totalQuizMade": 1,
+    "weekQuizMade": 1,
+    "quizzesResultIds": [
+      1587859713591
+    ],
+    "perfectQuiz": 1,
+    "id": 1585366302574
+  }
+]

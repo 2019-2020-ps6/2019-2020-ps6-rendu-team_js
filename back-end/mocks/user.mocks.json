@@ -38,5 +38,13 @@
     "password": "$2b$10$zLlGArTRqDJRVvHg7090COuaCUZOg81NAmgcQZllyqyak0dpNtkU6",
     "accountLevel": 0,
     "id": 1587855769367
+  },
+  {
+    "username": "Julie Gerard",
+    "firstName": "Julie",
+    "lastName": "Gerard",
+    "password": "$2b$10$zS7UMOZdwNviNi0su/brC.fG8RXJmEK2DXhtKloer2xDhwgZl6C2K",
+    "accountLevel": 1,
+    "id": 1587856448820
   }
 ]

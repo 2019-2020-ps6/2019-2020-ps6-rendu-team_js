@@ -3,6 +3,7 @@
   <div class="main-container">
     <h1 id="title">{{theme.name}}&nbsp;</h1>
     <div class="main-container">
+      <a class="button back-button" (click)="backPress()">Retour</a>
       <a class="button remove-filter-button" (click)="resetFilters()" *ngIf="isAnyFilterActive()">Supprimer les filtres</a>
       <a class="button filter-button" (click)="filterButtonClicked()" [ngClass]="isAnyFilterActive()? 'activated' : '' " >{{textFilter}}</a>
     </div>
