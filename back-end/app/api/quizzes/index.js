@@ -32,8 +32,8 @@ router.get('/theme/:themeId', (req, res) => {
 
 router.get('/:quizId', (req, res) => {
   try {
-    const quizz = buildQuizToPlay(req.params.quizId);
-    res.status(200).json(quizz)
+    const quiz = buildQuizToPlay(req.params.quizId);
+    res.status(200).json(quiz)
   } catch (err) {
     manageAllErrors(res, err)
   }
@@ -41,8 +41,11 @@ router.get('/:quizId', (req, res) => {
 
 router.get('/quizData/:quizId', (req, res) => {
   try {
-    const quizz = buildQuizz(req.params.quizId);
-    res.status(200).json(quizz)
+    const quiz = buildQuizz(req.params.quizId);
+    console.log(quiz);
+    const theme = Theme.getById(quiz.themeId);
+    console.log(theme);
+    res.status(200).json({...quiz, theme})
   } catch (err) {
     manageAllErrors(res, err)
   }

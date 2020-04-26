@@ -24,17 +24,11 @@ export class ThemesService {
   }
 
   addTheme(theme: Theme) {
-    // this.http.post<Theme>(this.themeUrl, theme, this.httpOptions).subscribe(() => {
-    //   this.themes.push(theme);
-    //   this.themes$.next(this.themes);
-    // });
-
     return this.http.post<Theme>(this.themeUrl, theme, {...this.httpOptions, observe: 'response'});
   }
 
   setThemes() {
     this.http.get<Theme[]>(this.themeUrl).subscribe((themes) => {
-      console.log(themes);
       this.themes = themes;
       this.themes$.next(this.themes);
     });
@@ -43,7 +37,6 @@ export class ThemesService {
   setThemeSelectedFromId(themeId: string) {
     const urlWithId = this.themeUrl + '/' + themeId;
     this.http.get<Theme>(urlWithId).subscribe((theme) => {
-      console.log(theme);
       this.themeSelected$.next(theme);
     });
   }
