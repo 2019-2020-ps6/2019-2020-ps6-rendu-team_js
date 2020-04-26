@@ -1,10 +1,11 @@
-import {Component, EventEmitter, Input, OnInit} from '@angular/core';
+import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
 import {FormBuilder} from '@angular/forms';
 
 import {QuizService} from '../../../services/quiz.service';
 import {Quiz} from '../../../models/quiz.model';
 import {ThemesService} from '../../../services/themes.service';
-import {ActivatedRoute} from '@angular/router';
+import {ActivatedRoute, Router} from '@angular/router';
+import {ToasterService} from '../../../services/toaster.service';
 
 @Component({
   selector: 'app-quiz-creation',
@@ -13,14 +14,14 @@ import {ActivatedRoute} from '@angular/router';
 })
 export class QuizCreationComponent implements OnInit {
 
-  updateMode: boolean;
-  updateModeValueReceived: boolean;
+  updateMode = false;
+  updateModeValueReceived = false;
 
   isQuestionListOpen = false;
-  isCreateQuestionOpen: boolean;
-  isGeneralOpen: boolean;
+  isCreateQuestionOpen = false;
+  isGeneralOpen = true;
 
-  isLoading: boolean;
+  isLoading = false;
 
   quizToCreate: Quiz;
 
@@ -36,7 +37,9 @@ export class QuizCreationComponent implements OnInit {
 
   constructor(private formBuilder: FormBuilder,
               private route: ActivatedRoute,
-              private  quizService: QuizService,
+              private router: Router,
+              private quizService: QuizService,
+              private toasterService: ToasterService,
               private themesService: ThemesService) {
 
     const id = this.route.snapshot.paramMap.get('id');
@@ -85,8 +88,8 @@ export class QuizCreationComponent implements OnInit {
     if (!this.quizToCreate) {
       this.quizToCreate = this.emptyQuiz;
     }
-    this.quizToCreate.theme = quiz.theme;
-    this.quizToCreate.themeId = quiz.themeId;
+    this.quizToCreate.theme =  quiz.theme;
+    this.quizToCreate.themeId = quiz.themeId.toString();
     this.quizToCreate.name = quiz.name;
     this.quizToCreate.difficulty = quiz.difficulty;
 
@@ -94,15 +97,63 @@ export class QuizCreationComponent implements OnInit {
     console.log(this.quizToCreate);
   }
 
-  deleteQuiz() {
+  createQuiz() {
+    console.log(this.quizToCreate);
+    this.isLoading = true;
+    this.quizService.addQuiz(this.quizToCreate).subscribe((response) => {
+      this.isLoading = false;
+      if (response.status === 200 || response.status === 201) {
+        console.log(response.body );
+        this.quizService.quizzes.push(response.body);
+        this.quizService.quizzes$.next(this.quizService.quizzes);
+        this.toasterService.activateToaster(false, 'quiz créé', 2000);
+        this.goToThemeMenu();
+      }
+    }, error => {
+      this.isLoading = false;
+      if (error.status === 409) {
+        this.toasterService.activateToaster(true, 'Ce quiz existe déjà !', 2000);
 
+      } else {
+        this.toasterService.activateToaster(true, 'Une erreur est survenue, réessayer plus tard...', 2000);
+      }
+      });
   }
 
-  createQuiz() {
+  goToThemeMenu() {
+    this.router.navigate(['/quiz-list/' + this.quizToCreate.themeId]);
+  }
 
+
+  deleteQuiz() {
+    for (const q of this.quizToCreate.questions) {
+      this.quizService.deleteQuestion(this.quizToCreate, q);
+    }
+    this.quizService.deleteQuiz(this.quizToCreate);
+    this.goToThemeMenu();
   }
 
   updateQuiz() {
 
+  }
+
+  isBottomContainerOpenEditMode(): boolean {
+
+    if (this.isQuestionListOpen !== undefined && this.isCreateQuestionOpen !== undefined && this.updateMode !== undefined) {
+      return this.isQuestionListOpen && !this.isCreateQuestionOpen && this.updateMode;
+
+    } else {
+      return false;
+    }
+  }
+
+  isBottomContainerOpenCreateMode(): boolean {
+    // tslint:disable-next-line:max-line-length
+    if (this.isQuestionListOpen !== undefined && this.isCreateQuestionOpen !== undefined && this.updateMode !== undefined && this.quizToCreate !== undefined && this.quizToCreate.questions !== undefined && this.quizToCreate.questions.length !== 0) {
+      return this.isQuestionListOpen && !this.isCreateQuestionOpen && !this.updateMode;
+
+    } else {
+      return false;
+    }
   }
 }

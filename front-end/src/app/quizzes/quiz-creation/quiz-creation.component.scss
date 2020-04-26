@@ -108,6 +108,18 @@ h1 {
 
 }
 
+.bottom-button {
+  border: 0 solid transparent;
+  border-radius: 1vmin;
+  font-family: "Segoe UI", sans-serif;
+  font-weight: 900;
+  font-size: 0.8rem;
+  padding: 1vmin;
+  flex: 1;
+  margin: 2vmin;
+  color: var(--customBlue);
+}
+
 app-general-creation {
 
 }

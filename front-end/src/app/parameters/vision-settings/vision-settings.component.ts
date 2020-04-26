@@ -1,4 +1,5 @@
 import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
+import {FormBuilder, FormGroup, Validators} from '@angular/forms';
 
 @Component({
   selector: 'app-vision-settings',
@@ -10,16 +11,18 @@ export class VisionSettingsComponent implements OnInit {
   @Input() contrast: number;
   @Input() fontSize: number;
   @Input() font: string;
+  private fontForm: FormGroup;
 
   @Output() contrastSelected = new EventEmitter<number>();
   @Output() fontSizeSelected = new EventEmitter<number>();
-  @Output() fontSelected = new EventEmitter<string>();
+  @Output() fontSelected = new EventEmitter<number>();
 
-  fonts = ['Arial', 'Times New Roman', 'Segoe UI'];
-
-  constructor() { }
+  constructor(private formBuilder: FormBuilder) { }
 
   ngOnInit() {
+    this.fontForm = this.formBuilder.group({
+      fontName: [this.font, [Validators.required]],
+    });
   }
 
   contrastSelectedEmit(valeur) {
@@ -30,9 +33,9 @@ export class VisionSettingsComponent implements OnInit {
     this.fontSizeSelected.emit(valeur);
   }
 
-  fontSelectedEmit(valeur) {
-    // console.log('FONT SELECTED', valeur);
-    this.fontSelected.emit(valeur);
+  fontSelectedEmit() {
+    if (this.font !== this.fontForm.get('fontName').value) {
+      this.fontSelected.emit(this.fontForm.get('fontName').value);
+    }
   }
-
 }
