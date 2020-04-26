@@ -91,7 +91,69 @@ router.post('/', (req, res) => {
 
 router.put('/:quizId', (req, res) => {
   try {
-    res.status(200).json(Quiz.update(req.params.quizId, req.body))
+
+
+    //Theme Update
+    const oldThemeId = Theme.getById((Quiz.getById(req.params.quizId)).themeId).id;
+
+    if (oldThemeId !== req.body.themeId) {
+      const oldtheme = Theme.getById(oldThemeId);
+      oldtheme.nbQuiz--;
+
+      Theme.update(oldThemeId, oldtheme);
+
+      const theme = Theme.getById(req.body.themeId);
+      theme.nbQuiz++;
+      Theme.update(req.body.themeId, theme);
+    }
+
+
+    const quiz = Quiz.update(req.params.quizId, { name: req.body.name, themeId: req.body.themeId, difficulty: req.body.difficulty });
+
+    const questions = [];
+    const answers = [];
+
+    req.body.questions.forEach((question) => {
+      question.quizId = quiz.id;
+      let questionCreated;
+      if (question.id !== undefined) {
+        if (question.deleted === true){
+          questionCreated = Question.update(question.id, {label: question.label, quizId: question.quizId, deleted: question.deleted});
+          questions.push(questionCreated);
+        }else {
+          questionCreated = Question.update(question.id, {label: question.label, quizId: question.quizId});
+          questions.push(questionCreated);
+        }
+      }else {
+        questionCreated = Question.create({label: question.label, quizId: question.quizId});
+        questions.push(questionCreated);
+      }
+
+      question.answers.forEach((answer) => {
+        answer.questionId = questionCreated.id;
+
+        if (answer.id !== undefined) {
+          if (answer.deleted === true){
+            const answerCreated = Answer.update(answer.id, { value: answer.value, isCorrect: answer.isCorrect, questionId: answer.questionId, deleted: answer.deleted});
+            answers.push(answerCreated);
+          }else {
+            const answerCreated = Answer.update(answer.id, { value: answer.value, isCorrect: answer.isCorrect, questionId: answer.questionId });
+            answers.push(answerCreated);
+          }
+        } else {
+          const answerCreated = Answer.create({ value: answer.value, isCorrect: answer.isCorrect, questionId: answer.questionId });
+          answers.push(answerCreated);
+        }
+
+      });
+
+    });
+
+    logger.info(quiz);
+    logger.info(questions);
+    logger.info(answers);
+
+    res.status(200).json(quiz)
   } catch (err) {
     manageAllErrors(res, err)
   }

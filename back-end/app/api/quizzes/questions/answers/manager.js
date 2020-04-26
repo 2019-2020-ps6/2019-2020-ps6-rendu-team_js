@@ -7,7 +7,7 @@ const { getQuestionFromQuiz } = require('../manager')
  * @param questionId 
  */
 const filterAnswersFromQuestion = (questionId) => {
-    return Answer.get().filter((answer) => (answer.questionId === questionId))
+    return Answer.get().filter((answer) => (answer.questionId === questionId && answer.deleted !== true))
 }
 
 /**

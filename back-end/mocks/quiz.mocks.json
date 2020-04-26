@@ -15,20 +15,7 @@
     "name": "L'Union européenne",
     "themeId": "1000000000002",
     "difficulty": "Moyen",
-    "id": 2000000000003,
-    "quizTries": [
-      {
-        "date": 1587907161565,
-        "quizResultId": 1587907164923,
-        "quizSuccessPercentage": 14.285714285714286
-      }
-    ],
-    "theme": {
-      "name": "Pays",
-      "color": "#600065",
-      "nbQuiz": 3,
-      "id": 1000000000002
-    }
+    "id": 2000000000003
   },
   {
     "name": "Le code de la route",
@@ -40,54 +27,13 @@
     "name": "Les capitales - 2",
     "themeId": "1000000000002",
     "difficulty": "Difficile",
-    "id": 1587859606729,
-    "quizTries": [
-      {
-        "date": 1587859682267,
-        "quizResultId": 1587859713591,
-        "quizSuccessPercentage": 100
-      },
-      {
-        "date": 1587860751209,
-        "quizResultId": 1587860812624,
-        "quizSuccessPercentage": 90.9090909090909
-      },
-      {
-        "date": 1587861252035,
-        "quizResultId": 1587861283379,
-        "quizSuccessPercentage": 100
-      },
-      {
-        "date": 1587861312656,
-        "quizResultId": 1587861331761,
-        "quizSuccessPercentage": 90.9090909090909
-      }
-    ],
-    "theme": {
-      "name": "Pays",
-      "color": "#600065",
-      "nbQuiz": 3,
-      "id": 1000000000002
-    }
+    "id": 1587859606729
   },
   {
     "name": "Les capitales - 1",
     "themeId": "1000000000002",
     "difficulty": "Facile",
-    "id": 1587927509891,
-    "quizTries": [
-      {
-        "date": 1587927564736,
-        "quizResultId": 1587927597650,
-        "quizSuccessPercentage": 90.9090909090909
-      }
-    ],
-    "theme": {
-      "name": "Pays",
-      "color": "#600065",
-      "nbQuiz": 3,
-      "id": 1000000000002
-    }
+    "id": 1587927509891
   },
   {
     "name": "Le Football",
