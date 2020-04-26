@@ -22,7 +22,7 @@
   color: var(--customWhite);
   font-size: 2.4rem;
   padding: 3vmin;
-  font-family: "Segoe UI", sans-serif;
+  font-family: var(--customFont), sans-serif;
   font-weight: 900;
 
 }
@@ -41,7 +41,7 @@
   margin: 2vmin;
   border: var(--customWhite) 0 solid;
   border-radius: 2vmin;
-  font-family: "Segoe UI", sans-serif;
+  font-family: var(--customFont), sans-serif;
   font-weight: 900;
   font-size: 1rem;
   text-align: center;
@@ -54,7 +54,7 @@
   border-radius: 2vmin;
   background-color: var(--customGray);
   color: var(--customWhite);
-  font-family: "Segoe UI", sans-serif;
+  font-family: var(--customFont), sans-serif;
   font-weight: 900;
   font-size: 1rem;
 }
@@ -72,6 +72,6 @@
   font-size: xx-large;
   color: var(--customRed);
   text-align: center;
-  font-family: "Segoe UI", sans-serif;
+  font-family: var(--customFont), sans-serif;
   font-weight: 900;
 }

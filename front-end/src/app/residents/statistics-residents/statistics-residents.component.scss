@@ -22,7 +22,7 @@ $buttonColor: #d650ec;
 
   margin: 2vmin;
   padding: 2vmin;
-  font-family: "Segoe UI Black";
+  font-family: var(--customFont);
   font-size: 3vmin;
 }
 
@@ -48,7 +48,7 @@ $buttonColor: #d650ec;
 
 #text{
   font-size: 3vmin;
-  font-family: "Segoe UI Black";
+  font-family: var(--customFont);
   text-align: center;
 }
 

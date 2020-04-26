@@ -65,7 +65,7 @@ router-outlet {
 
 
   font-size: 0.8rem;
-  font-family: "Segoe UI Black", serif;
+  font-family: var(--customFont), serif;
   color: var(--customWhite);
   text-align: center;
   background-color: var(--customGreen);

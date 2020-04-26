@@ -29,7 +29,7 @@
   font-size: 5vmin;
   padding-bottom: 2vmin;
   display: inline-block;
-  font-family: "Segoe UI", sans-serif;
+  font-family: var(--customFont), sans-serif;
   font-weight: 900;
 }
 
@@ -48,7 +48,7 @@
   margin-bottom: 1vmin;
   border: var(--customGray) 0.3vmin solid;
   border-radius: 2vmin;
-  font-family: "Segoe UI", sans-serif;
+  font-family: var(--customFont), sans-serif;
   font-weight: 900;
   font-size: 3vmin;
   text-align: center;
@@ -67,7 +67,7 @@
   border-radius: 2vmin;
   color: var(--customWhite);
   text-align: center;
-  font-family: "Segoe UI", sans-serif;
+  font-family: var(--customFont), sans-serif;
   font-weight: 900;
   font-size: 3vmin;
   width: 100%;
@@ -115,7 +115,7 @@
   padding: 1vmin;
   border: #5D5D5D 0 solid;
   border-radius: 10vmin;
-  font-family: "Segoe UI", sans-serif;
+  font-family: var(--customFont), sans-serif;
   font-weight: 900;
   font-size: 3vmin;
   color: var(--customWhite);
@@ -154,7 +154,7 @@
 }
 
 .assistance-text {
-  font-family: "Segoe UI", sans-serif;
+  font-family: var(--customFont), sans-serif;
   font-weight: 900;
   font-size: 3vmin;
   text-align: center;
@@ -175,7 +175,7 @@
   width: 100vmin;
   text-align: center;
   display: inline-block;
-  font-family: "Segoe UI Black", serif;
+  font-family: var(--customFont), serif;
 }
 
 .checkbox {

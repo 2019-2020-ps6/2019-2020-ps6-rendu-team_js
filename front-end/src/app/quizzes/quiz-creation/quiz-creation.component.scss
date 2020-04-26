@@ -79,7 +79,7 @@ h1 {
   border-radius: 3vmin;
 
   padding: 1vmin 2vmin;
-  font-family: "Segoe UI";
+  font-family: var(--customFont);
   font-weight: 900;
   font-size: 3vmin;
 
@@ -111,7 +111,7 @@ h1 {
 .bottom-button {
   border: 0 solid transparent;
   border-radius: 1vmin;
-  font-family: "Segoe UI", sans-serif;
+  font-family: var(--customFont), sans-serif;
   font-weight: 900;
   font-size: 0.8rem;
   padding: 1vmin;

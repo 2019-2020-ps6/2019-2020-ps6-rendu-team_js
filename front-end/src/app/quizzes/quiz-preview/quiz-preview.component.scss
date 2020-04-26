@@ -19,7 +19,7 @@
 
 #quizbtn, #themebtn, #arrow-btn{
   font-weight: 900;
-  font-family: "Segoe UI", sans-serif;
+  font-family: var(--customFont), sans-serif;
   font-weight: 900;
   font-size: 50pt;
 }

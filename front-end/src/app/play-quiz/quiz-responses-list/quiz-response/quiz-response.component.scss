@@ -1,5 +1,5 @@
 .responseButton {
-  font-family: "Segoe UI", serif;
+  font-family: var(--customFont), serif;
   color: #f2f2f2;
   padding: 3vmin;
   font-size: 1rem;  //rem is coef * settings val set in method applyCssFromSettings in app component

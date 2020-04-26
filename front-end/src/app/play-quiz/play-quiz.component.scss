@@ -2,7 +2,7 @@
   color: var(--customGray);
   font-size: 8vmin;
   font-weight: 900;
-  font-family: "Segoe UI Black", serif;
+  font-family: var(--customFont), serif;
   text-align: center;
 
   display: flex;

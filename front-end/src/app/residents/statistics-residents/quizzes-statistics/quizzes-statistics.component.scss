@@ -86,7 +86,7 @@ $cornerRadius: 25px;
   padding-left: 2vmin;
   padding-right: 2vmin;
   color: var(--customWhite);
-  font-family: "Segoe UI", sans-serif;
+  font-family: var(--customFont), sans-serif;
   font-weight: 900;
   width: 100%;
   display: flex;
@@ -131,7 +131,7 @@ $cornerRadius: 25px;
 .bottom-text {
   text-align: center;
   font-size: 4vmin;
-  font-family: "Segoe UI", sans-serif;
+  font-family: var(--customFont), sans-serif;
   font-weight: 900;
   color: #212529;
   padding: 2vmin 4vmin 2vmin 2vmin;
@@ -148,7 +148,7 @@ $cornerRadius: 25px;
 .bottom-button {
   border: 0 solid transparent;
   border-radius: 1vmin;
-  font-family: "Segoe UI", sans-serif;
+  font-family: var(--customFont), sans-serif;
   font-weight: 900;
   font-size: 4vmin;
   padding: 1vmin;

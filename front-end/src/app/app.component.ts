@@ -50,12 +50,18 @@ export class AppComponent {
   }
 
   applyCssFromSettings() {
+  // ############## CHANGE FONT SIZE ###################
       if (this.settingsService.settings.fontSize === 1) {
         document.getElementsByTagName('html')[0].style.setProperty('font-size', '5vmin');
       } else {
         document.getElementsByTagName('html')[0].style.setProperty('font-size', '8vmin');
       }
 
+  // ############## CHANGE FONT ###################
+      const fonName = this.settingsService.settings.font;
+      document.getElementsByTagName('html')[0].style.setProperty('--customFont', fonName);
+
+  // ############## CHANGE COLORS ###################
       if (this.settingsService.settings.contraste !== undefined && this.settingsService.settings.contraste === 2) {
         document.getElementsByTagName('html')[0].style.setProperty('--customWhite', 'white');
         document.getElementsByTagName('html')[0].style.setProperty('--customGray', '#363636');
