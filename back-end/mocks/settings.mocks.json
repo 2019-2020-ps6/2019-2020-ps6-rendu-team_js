@@ -2,9 +2,9 @@
   {
     "handicapVisuel": true,
     "handicapMoteur": true,
-    "contraste": 1,
+    "contraste": 2,
     "fontSize": 1,
-    "font": "Segoe UI",
+    "font": "Arial",
     "tailleSelection": 2,
     "id": 1585366302574
   },
@@ -45,11 +45,11 @@
     "id": 1587856448820
   },
   {
-    "handicapVisuel": false,
-    "handicapMoteur": false,
+    "handicapVisuel": true,
+    "handicapMoteur": true,
     "contraste": 1,
     "fontSize": 1,
-    "font": "Segoe UI",
+    "font": "Times New Roman",
     "tailleSelection": 1,
     "id": 1585360751986
   }
