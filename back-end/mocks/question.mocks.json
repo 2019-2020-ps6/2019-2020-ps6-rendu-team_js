@@ -253,5 +253,50 @@
     "label": "Quelle ville est la capitale des Etats-Unis",
     "quizId": 1587927509891,
     "id": 1587927510175
+  },
+  {
+    "label": "En quelles années l'équipe de France a gagner la Coupe du monde ?",
+    "quizId": 1587929841469,
+    "id": 1587929841475
+  },
+  {
+    "label": "Le football se joue avec combien de joueurs par équipe ?",
+    "quizId": 1587929841469,
+    "id": 1587929841497
+  },
+  {
+    "label": "Quelle équipe détient le plus de titre de champion du monde ?",
+    "quizId": 1587929841469,
+    "id": 1587929841512
+  },
+  {
+    "label": "Dans le temps réglementaire combien de changements sont possible ?",
+    "quizId": 1587929841469,
+    "id": 1587929841550
+  },
+  {
+    "label": "Combien d'années y a-t-il entre deux Coupe du monde ?",
+    "quizId": 1587929841469,
+    "id": 1587929841560
+  },
+  {
+    "label": "Quelle est la distance y a-t-il entre les deux cages sur un terrain professionnel ?",
+    "quizId": 1587929841469,
+    "id": 1587929841575
+  },
+  {
+    "label": "Combien d'équipes s'affrontent pour la Coupe du monde ? (équipes qualifiés)",
+    "quizId": 1587929841469,
+    "id": 1587929841587
+  },
+  {
+    "label": "Quels sont les deux pays les plus titrés en Coupe d'Europe ?",
+    "quizId": 1587929841469,
+    "id": 1587929841696
+  },
+  {
+    "label": "Comment s'appelle le championnat professionnel français ?",
+    "quizId": 1587929841469,
+    "id": 1587929841726
   }
 ]
