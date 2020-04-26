@@ -43,7 +43,6 @@ export class PlayQuizComponent implements OnInit {
     const id = this.route.snapshot.paramMap.get('id');
     this.quizService.setSelectedQuiz(id);
     this.date = Date.now();
-
     // this.questionNumber = +this.route.snapshot.paramMap.get('questionNumber');  // +in front of string cast string to int
 
     this.questionNumber = 0;  // initialize vars
@@ -78,6 +77,7 @@ export class PlayQuizComponent implements OnInit {
         } else {
           console.log('sauvegarde impossible !');
         }
+        this.date = Date.now();
       });
 
     } else {
