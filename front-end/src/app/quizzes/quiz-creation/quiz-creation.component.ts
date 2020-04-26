@@ -13,14 +13,14 @@ import {ActivatedRoute} from '@angular/router';
 })
 export class QuizCreationComponent implements OnInit {
 
-  updateMode: boolean;
-  updateModeValueReceived: boolean;
+  updateMode = false;
+  updateModeValueReceived = false;
 
   isQuestionListOpen = false;
-  isCreateQuestionOpen: boolean;
-  isGeneralOpen: boolean;
+  isCreateQuestionOpen = false;
+  isGeneralOpen = true;
 
-  isLoading: boolean;
+  isLoading = false;
 
   quizToCreate: Quiz;
 
@@ -104,5 +104,25 @@ export class QuizCreationComponent implements OnInit {
 
   updateQuiz() {
 
+  }
+
+  isBottomContainerOpenEditMode(): boolean {
+
+    if (this.isQuestionListOpen !== undefined && this.isCreateQuestionOpen !== undefined && this.updateMode !== undefined) {
+      return this.isQuestionListOpen && !this.isCreateQuestionOpen && this.updateMode;
+
+    } else {
+      return false;
+    }
+  }
+
+  isBottomContainerOpenCreateMode(): boolean {
+    // tslint:disable-next-line:max-line-length
+    if (this.isQuestionListOpen !== undefined && this.isCreateQuestionOpen !== undefined && this.updateMode !== undefined && this.quizToCreate !== undefined && this.quizToCreate.questions !== undefined && this.quizToCreate.questions.length !== 0) {
+      return this.isQuestionListOpen && !this.isCreateQuestionOpen && !this.updateMode;
+
+    } else {
+      return false;
+    }
   }
 }

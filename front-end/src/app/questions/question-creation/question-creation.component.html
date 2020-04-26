@@ -39,8 +39,7 @@
       <div class="button-container">
         <button class="button back-bg"  (click)="goToQuestionList()" *ngIf="hasOneQuestionAlreadyCreated()">Retour</button>
         <button type="submit" class="button create-bg" (click)="addQuestion()"
-                [disabled]="questionForm.invalid"
-                [class.disable-button]="questionForm.invalid || isLoading"
+                [disabled]="questionForm.invalid" [class.disable-button]="questionForm.invalid || isLoading"
                 [ngClass]="(!questionForm.invalid && !isLoading)? 'hover-button' : ''">Enregistrer </button>
       </div>
     </form>

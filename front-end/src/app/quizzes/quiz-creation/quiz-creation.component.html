@@ -18,13 +18,11 @@
   <app-question-list *ngIf="isQuestionListOpen && updateModeValueReceived" [quiz]="quizToCreate" (isCreateQuestionOpen)="isCreateQuestionOpen=$event" ></app-question-list>
 
 
-<div class="bottom-validation-container" *ngIf="isQuestionListOpen && !isCreateQuestionOpen">
-<!--  <div class="button-header bg-general"  (click)="createQuiz()">c :  {{isCreateQuestionOpen? 'true': 'false'}}</div>-->
-<!--  <div class="button-header bg-general"  (click)="createQuiz()">c :  {{isQuestionListOpen? 'true': 'false'}}</div>-->
-<!--  <div class="button-header bg-general"  (click)="createQuiz()">{{isQuestionListOpen &&  !isCreateQuestionOpen? 'true': 'false'}}</div>-->
+<div class="bottom-validation-container" *ngIf="isBottomContainerOpenEditMode() && true">
+  <div class="button-header delete-quiz-bg" (click)="deleteQuiz()" >Supprimer le quiz</div>
+  <div class="button-header bg-general" (click)="updateQuiz()">Mettre à jour le quiz</div>
+</div>
 
-
-  <div class="button-header delete-quiz-bg" (click)="deleteQuiz()" *ngIf="updateMode">Supprimer le quiz</div>
-  <div class="button-header bg-general"  (click)="createQuiz()" *ngIf="!updateMode">Créer le quiz</div>
-  <div class="button-header bg-general" (click)="updateQuiz()" *ngIf="updateMode">Mettre à jour le quiz</div>
+<div class="bottom-validation-container" *ngIf="isBottomContainerOpenCreateMode()  && true">
+  <div class="button-header bg-general"  (click)="createQuiz()" >Créer le quiz</div>
 </div>
