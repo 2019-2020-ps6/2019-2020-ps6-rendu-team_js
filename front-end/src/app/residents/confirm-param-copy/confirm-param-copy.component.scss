@@ -30,7 +30,7 @@
   font-size: 4vmin;
   padding-bottom: 2vmin;
   display: inline-block;
-  font-family: "Segoe UI", sans-serif;
+  font-family: var(--customFont), sans-serif;
   font-weight: 900;
 }
 
@@ -48,7 +48,7 @@
   padding: 1vmin;
   border: var(--customGray) 0.3vmin solid;
   border-radius: 2vmin;
-  font-family: "Segoe UI", sans-serif;
+  font-family: var(--customFont), sans-serif;
   font-weight: 900;
   font-size: 3vmin;
   text-align: center;
@@ -67,7 +67,7 @@
   border-radius: 2vmin;
   color: var(--customWhite);
   text-align: center;
-  font-family: "Segoe UI", sans-serif;
+  font-family: var(--customFont), sans-serif;
   font-weight: 900;
   font-size: 3vmin;
   width: 100%;
@@ -80,7 +80,7 @@
   border-radius: 10vmin;
   color: var(--customWhite);
   text-align: center;
-  font-family: "Segoe UI", sans-serif;
+  font-family: var(--customFont), sans-serif;
   font-weight: 900;
   font-size: 2vmin;
   width: 100%;
@@ -162,7 +162,7 @@
 
 .list-name div {
   font-weight: 600;
-  font-family: "Segoe UI", sans-serif;
+  font-family: var(--customFont), sans-serif;
   font-size: 3vmin;
   padding: 1.5vmin;
   margin: 1vmin;
@@ -180,7 +180,7 @@
   padding: 1vmin;
   border: #5D5D5D 0 solid;
   border-radius: 10vmin;
-  font-family: "Segoe UI", sans-serif;
+  font-family: var(--customFont), sans-serif;
   font-weight: 900;
   font-size: 3vmin;
   color: var(--customWhite);
@@ -217,7 +217,7 @@
 }
 
 .assistance-text {
-  font-family: "Segoe UI", sans-serif;
+  font-family: var(--customFont), sans-serif;
   font-weight: 900;
   font-size: 2vmin;
   display: flex;
@@ -246,7 +246,7 @@
   border-radius: 2vmin;
   color: var(--customWhite);
   text-align: center;
-  font-family: "Segoe UI", sans-serif;
+  font-family: var(--customFont), sans-serif;
   font-weight: 900;
   font-size: 6vmin;
   width: 100%;

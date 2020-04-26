@@ -44,7 +44,7 @@
   color: var(--customWhite);
 
   font-size: 0.8rem;
-  font-family: "Segoe UI", sans-serif;
+  font-family: var(--customFont), sans-serif;
   font-weight: 900;
 
   border: 0 solid transparent;
@@ -70,7 +70,7 @@
   border: 0 solid transparent;
   color: var(--customWhite);
   text-align: center;
-  font-family: "Segoe UI", sans-serif;
+  font-family: var(--customFont), sans-serif;
   font-weight: 900;
   font-size: 0.6rem;
   width: 100%;

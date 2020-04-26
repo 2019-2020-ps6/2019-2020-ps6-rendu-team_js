@@ -5,7 +5,7 @@ a{
   font-style: italic;
   text-decoration: none;
   color: #3396FF;
-  font-family: "Segoe UI", sans-serif;
+  font-family: var(--customFont), sans-serif;
   font-weight: bold;
 }
 
@@ -19,7 +19,7 @@ p{
   padding: 30px;
   font-size: 3vmin;
   color: var(--customWhite);
-  font-family: "Segoe UI", sans-serif;
+  font-family: var(--customFont), sans-serif;
   font-weight: bold;
   border-radius: 25px;
   margin:auto;

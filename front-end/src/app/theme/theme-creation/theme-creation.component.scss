@@ -30,7 +30,7 @@
 .title-container {
   text-align: center;
   font-size: 6vmin;
-  font-family: "Segoe UI", sans-serif;
+  font-family: var(--customFont), sans-serif;
   font-weight: 900;
   color: white;
   width: 100%;
@@ -50,7 +50,7 @@
 }
 
 .text-input {
-  font-family: "Segoe UI", sans-serif;
+  font-family: var(--customFont), sans-serif;
   font-weight: 600;
   color: var(--customDarkGray);
   text-align: center;
@@ -68,7 +68,7 @@
 }
 
 .text-for-input {
-  font-family: "Segoe UI", sans-serif;
+  font-family: var(--customFont), sans-serif;
   font-weight: 600;
   color: white;
   padding-left: 2vmin;
@@ -89,7 +89,7 @@
 
   margin: 2vmin;
   padding: 2vmin;
-  font-family: "Segoe UI Black";
+  font-family: var(--customFont);
   font-size: 4vmin;
 }
 

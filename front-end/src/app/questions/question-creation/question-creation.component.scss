@@ -30,7 +30,7 @@ h1 {
   margin: 2vmin;
   border: var(--customWhite) 0 solid;
   border-radius: 2vmin;
-  font-family: "Segoe UI", sans-serif;
+  font-family: var(--customFont), sans-serif;
   font-weight: 900;
   font-size: 5vmin;
   text-align: center;
@@ -68,7 +68,7 @@ h1 {
   text-align: center;
   font-size: 6vmin;
   line-height: 7vmin;
-  font-family: "Segoe UI", sans-serif;
+  font-family: var(--customFont), sans-serif;
   font-weight: 900;
   color: white;
   width: 100%;
@@ -88,7 +88,7 @@ h1 {
 }
 
 .text-input {
-  font-family: "Segoe UI", sans-serif;
+  font-family: var(--customFont), sans-serif;
   font-weight: 600;
   color: var(--customDarkGray);
   text-align: center;
@@ -118,7 +118,7 @@ h1 {
 }
 
 .text-for-input {
-  font-family: "Segoe UI", sans-serif;
+  font-family: var(--customFont), sans-serif;
   font-weight: 600;
   color: white;
   padding-left: 2vmin;
@@ -156,7 +156,7 @@ h1 {
 
   margin: 2vmin;
   padding: 2vmin;
-  font-family: "Segoe UI Black";
+  font-family: var(--customFont);
   font-size: 4vmin;
 }
 

@@ -28,7 +28,7 @@ a:link{
   width: 10vw;
   padding: 1vmin;
   text-align: center;
-  font-family: "Segoe UI", sans-serif;
+  font-family: var(--customFont), sans-serif;
   font-weight: 900;
   display: flex;
   flex-direction: column;
