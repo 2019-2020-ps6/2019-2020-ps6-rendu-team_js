@@ -174,10 +174,14 @@ h1 {
 }
 
 .reset-bg {
+  font-family: var(--customFont), sans-serif;
+  font-weight: 600;
   color: var(--customDarkRed);
 }
 
 .create-bg {
+  font-family: var(--customFont), sans-serif;
+  font-weight: 600;
   color: #456C00;
 }
 
