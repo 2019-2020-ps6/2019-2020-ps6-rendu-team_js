@@ -1,4 +1,4 @@
-import {Component, OnInit, Input} from '@angular/core';
+import {Component, OnInit, Input, Output, EventEmitter} from '@angular/core';
 import {Quiz} from 'src/models/quiz.model';
 import {QuizService} from 'src/services/quiz.service';
 import {Question} from 'src/models/question.model';
@@ -9,8 +9,12 @@ import {Question} from 'src/models/question.model';
   styleUrls: ['./question-list.component.scss']
 })
 export class QuestionListComponent implements OnInit {
+
   @Input()
   quiz: Quiz;
+
+  @Output()
+  isCreateQuestionOpen: EventEmitter<boolean> = new EventEmitter<boolean>();
 
   private editingQuestion = false;
   private questionToEdit: Question;
@@ -21,7 +25,7 @@ export class QuestionListComponent implements OnInit {
 
   ngOnInit() {
     if (this.quiz.questions.length === 0) {
-      this.editingQuestion = true;
+      this.closeQuestionCreation(false);
     }
   }
 
@@ -36,7 +40,7 @@ export class QuestionListComponent implements OnInit {
   }
 
   openQuestion(question: Question, index: number) {
-    this.editingQuestion = true;
+    this.closeQuestionCreation(false);
     this.questionToEdit = question;
     this.indexQuestionBeingEdited = index;
   }
@@ -67,13 +71,13 @@ export class QuestionListComponent implements OnInit {
       this.quiz.questions = [q];
     }
 
-    this.editingQuestion = false;
+    this.closeQuestionCreation(true);
   }
 
   closeQuestionCreation(b: boolean) {
-    if (b) {
-      this.editingQuestion = false;
-    }
+    this.editingQuestion = !b;
+    this.isCreateQuestionOpen.emit(this.editingQuestion);
+    console.log('is edit open : ' + this.editingQuestion);
   }
 
 }

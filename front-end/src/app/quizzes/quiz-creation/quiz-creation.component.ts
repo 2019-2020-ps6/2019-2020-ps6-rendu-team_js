@@ -16,7 +16,8 @@ export class QuizCreationComponent implements OnInit {
   updateMode: boolean;
   updateModeValueReceived: boolean;
 
-  isQuestionListOpen: boolean;
+  isQuestionListOpen = false;
+  isCreateQuestionOpen: boolean;
   isGeneralOpen: boolean;
 
   isLoading: boolean;
@@ -91,5 +92,17 @@ export class QuizCreationComponent implements OnInit {
 
     this.openQuestion();
     console.log(this.quizToCreate);
+  }
+
+  deleteQuiz() {
+
+  }
+
+  createQuiz() {
+
+  }
+
+  updateQuiz() {
+
   }
 }

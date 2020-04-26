@@ -12,7 +12,19 @@
 </div>
 
   <app-general-creation *ngIf="isGeneralOpen && !updateMode" (isCreateThemeOpened)="isWindowOpen = $event" (quizEmitter)="receiveQuiz($event)" [quiz]="quizToCreate"></app-general-creation>
-  <app-question-list *ngIf="isQuestionListOpen && !updateMode" [quiz]="emptyQuiz" ></app-question-list>
+  <app-question-list *ngIf="isQuestionListOpen && !updateMode" [quiz]="emptyQuiz" (isCreateQuestionOpen)="isCreateQuestionOpen=$event"></app-question-list>
 
   <app-general-creation *ngIf="isGeneralOpen && updateModeValueReceived" (isCreateThemeOpened)="isWindowOpen = $event" (quizEmitter)="receiveQuiz($event)" [quiz]="quizToCreate"></app-general-creation>
-  <app-question-list *ngIf="isQuestionListOpen && updateModeValueReceived" [quiz]="quizToCreate" ></app-question-list>
+  <app-question-list *ngIf="isQuestionListOpen && updateModeValueReceived" [quiz]="quizToCreate" (isCreateQuestionOpen)="isCreateQuestionOpen=$event" ></app-question-list>
+
+
+<div class="bottom-validation-container" *ngIf="isQuestionListOpen && !isCreateQuestionOpen">
+<!--  <div class="button-header bg-general"  (click)="createQuiz()">c :  {{isCreateQuestionOpen? 'true': 'false'}}</div>-->
+<!--  <div class="button-header bg-general"  (click)="createQuiz()">c :  {{isQuestionListOpen? 'true': 'false'}}</div>-->
+<!--  <div class="button-header bg-general"  (click)="createQuiz()">{{isQuestionListOpen &&  !isCreateQuestionOpen? 'true': 'false'}}</div>-->
+
+
+  <div class="button-header delete-quiz-bg" (click)="deleteQuiz()" *ngIf="updateMode">Supprimer le quiz</div>
+  <div class="button-header bg-general"  (click)="createQuiz()" *ngIf="!updateMode">Créer le quiz</div>
+  <div class="button-header bg-general" (click)="updateQuiz()" *ngIf="updateMode">Mettre à jour le quiz</div>
+</div>
