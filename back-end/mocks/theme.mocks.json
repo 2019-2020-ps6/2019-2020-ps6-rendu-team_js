@@ -1,25 +1,25 @@
 [
   {
     "name": "Faune et Flore",
-    "color": "#0bfc03",
+    "color": "#00653D",
     "nbQuiz": 2,
     "id": 1000000000000
   },
   {
     "name": "Sport",
-    "color": "#fc6f03",
+    "color": "#652200",
     "nbQuiz": 1,
     "id": 1000000000001
   },
   {
     "name": "Pays",
-    "color": "#a503fc",
+    "color": "#600065",
     "nbQuiz": 2,
     "id": 1000000000002
   },
   {
     "name": "Vie quotidienne",
-    "color": "#fcd303",
+    "color": "#003D65",
     "nbQuiz": 1,
     "id": 1000000000003
   },
