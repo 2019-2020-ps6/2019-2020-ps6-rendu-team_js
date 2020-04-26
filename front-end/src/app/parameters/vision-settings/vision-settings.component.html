@@ -34,10 +34,15 @@
         <label class="form-check-label" for="gridRadios4"> Grande </label>
       </div>
     </div>
-
+    <form class="quiz-form" [formGroup]="fontForm" (click)="fontSelectedEmit()">
     <div class="main-container">
       <div class="settingName" style="flex: 1"> Police</div>
-      <div class="lastChoose" style="flex: 2"> {{font}} </div>
+      <select class="lastChoose" id="fontName" [formControlName]="'fontName'" >
+        <option value="Arial">Arial</option>
+        <option value="Segoe UI">Segoe UI</option>
+        <option value="Times New Roman">Times New Roman</option>
+      </select>
     </div>
+    </form>
   </div>
 </div>
