@@ -33,7 +33,9 @@ module.exports = class BaseModel {
   }
 
   get() {
-    return this.items
+    if (this.items.deleted !== true) {
+      return this.items
+    }
   }
 
   getById(id) {

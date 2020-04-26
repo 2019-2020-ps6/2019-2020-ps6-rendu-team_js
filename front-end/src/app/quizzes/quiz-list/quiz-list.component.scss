@@ -46,6 +46,7 @@
 
 .remove-filter-button {
   background-color: #8b3231;
+  cursor: pointer;
 }
 
 .remove-filter-button:hover {
@@ -56,6 +57,7 @@
 
 .filter-button {
   background-color: #707070;
+  cursor: pointer;
 
 }
 
@@ -64,6 +66,16 @@
   color: var(--customWhite);
 }
 
+.back-button {
+  background-color: #2fdfff;
+  cursor: pointer;
+
+}
+
+.back-button:hover {
+  background-color: #1cd1ff;
+  color: var(--customWhite);
+}
 
 .activated {
   background-color: #FFA200;
@@ -78,6 +90,7 @@
 .difficulty-button-color {
   background-color: var(--customWhite);
   color: #e39100;
+  cursor: pointer;
   padding: 1vmin 2vmin 1vmin 2vmin;
 }
 

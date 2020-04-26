@@ -45,6 +45,11 @@
     "id": 3100000000000
   },
   {
+    "label": "Quelle est la couleur d'une Mandarine ?",
+    "quizId": 2000000000001,
+    "id": 3100000000001
+  },
+  {
     "label": "Quelle est la couleur d'une Tomate ?",
     "quizId": 2000000000001,
     "id": 3100000000002
@@ -188,5 +193,60 @@
     "label": "Combien de points y a-t-il sur un permis de conduire ?",
     "quizId": 2000000000004,
     "id": 3400000000006
+  },
+  {
+    "label": "Quelle ville est la capitale de l'Egypte",
+    "quizId": 1587859606729,
+    "id": 1587859606782
+  },
+  {
+    "label": "Quelle ville est la capitale du Pérou",
+    "quizId": 1587859606729,
+    "id": 1587859606852
+  },
+  {
+    "label": "Quelle ville est la capitale de la Roumanie",
+    "quizId": 1587859606729,
+    "id": 1587859606865
+  },
+  {
+    "label": "Quelle ville est la capitale de l'Inde",
+    "quizId": 1587859606729,
+    "id": 1587859606878
+  },
+  {
+    "label": "Quelle ville est la capitale de l'Australie",
+    "quizId": 1587859606729,
+    "id": 1587859606896
+  },
+  {
+    "label": "Quelle ville est la capitale du Canada",
+    "quizId": 1587859606729,
+    "id": 1587859606910
+  },
+  {
+    "label": "Quelle ville est la capitale de la Norvège",
+    "quizId": 1587859606729,
+    "id": 1587859606927
+  },
+  {
+    "label": "Quelle ville est la capitale du Portugal",
+    "quizId": 1587859606729,
+    "id": 1587859606969
+  },
+  {
+    "label": "Quelle ville est la capitale des Pays-Bas",
+    "quizId": 1587859606729,
+    "id": 1587859606980
+  },
+  {
+    "label": "Quelle ville est la capitale de la Belgique",
+    "quizId": 1587859606729,
+    "id": 1587859606993
+  },
+  {
+    "label": "Quelle ville est la capitale du Portugal",
+    "quizId": 1587859606729,
+    "id": 1587859607011
   }
 ]

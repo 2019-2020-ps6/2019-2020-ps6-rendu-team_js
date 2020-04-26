@@ -14,7 +14,7 @@
   {
     "name": "Pays",
     "color": "#a503fc",
-    "nbQuiz": 1,
+    "nbQuiz": 2,
     "id": 1000000000002
   },
   {
@@ -28,29 +28,5 @@
     "color": "#fc035a",
     "nbQuiz": 0,
     "id": 1000000000004
-  },
-  {
-    "name": "dfdfd",
-    "color": "grey",
-    "nbQuiz": 0,
-    "id": 1587818156672
-  },
-  {
-    "name": "drg",
-    "color": "grey",
-    "nbQuiz": 0,
-    "id": 1587818237272
-  },
-  {
-    "name": "zdaazdza",
-    "color": "grey",
-    "nbQuiz": 0,
-    "id": 1587826274251
-  },
-  {
-    "name": "laptop",
-    "color": "grey",
-    "nbQuiz": 0,
-    "id": 1587826285229
   }
 ]

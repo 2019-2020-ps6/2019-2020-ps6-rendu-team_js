@@ -141,4 +141,8 @@ export class QuizListComponent implements OnInit {
     this.updateTextFilter();
     this.updateQuizListFiltered();
   }
+
+  backPress() {
+    this.router.navigate(['/quiz-list']);
+  }
 }

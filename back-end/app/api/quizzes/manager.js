@@ -85,7 +85,12 @@ function shuffle(a) {
  */
 const buildQuizzes = () => {
     const quizzes = Quiz.get()
-    return quizzes.map((quiz) => buildQuizz(quiz.id))
+
+    return quizzes.map((quiz) => {
+        if (quiz.deleted !== true) {
+            return {...buildQuizz(quiz.id)}
+        }
+    })
 }
 
 module.exports = {
