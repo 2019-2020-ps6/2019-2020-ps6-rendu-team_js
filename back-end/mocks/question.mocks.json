@@ -40,57 +40,7 @@
     "id": 3000000000007
   },
   {
-    "label": "Quelle est la couleur d'une Pomme ?",
-    "quizId": 2000000000001,
-    "id": 3100000000000
-  },
-  {
-    "label": "Quelle est la couleur d'une Mandarine ?",
-    "quizId": 2000000000001,
-    "id": 3100000000001
-  },
-  {
-    "label": "Quelle est la couleur d'une Tomate ?",
-    "quizId": 2000000000001,
-    "id": 3100000000002
-  },
-  {
-    "label": "Quelle est la couleur d'une Poire ?",
-    "quizId": 2000000000001,
-    "id": 3100000000003
-  },
-  {
-    "label": "Quelle est la couleur d'un Conconbre ?",
-    "quizId": 2000000000001,
-    "id": 3100000000004
-  },
-  {
-    "label": "Quelle est la couleur d'un Ananas ?",
-    "quizId": 2000000000001,
-    "id": 3100000000005
-  },
-  {
-    "label": "Quelle est la couleur d'une Pastèque ?",
-    "quizId": 2000000000001,
-    "id": 3100000000006
-  },
-  {
-    "label": "Quelle est la couleur d'une Banane ?",
-    "quizId": 2000000000001,
-    "id": 3100000000007
-  },
-  {
-    "label": "Quelle est la couleur d'un Citron ?",
-    "quizId": 2000000000001,
-    "id": 3100000000008
-  },
-  {
-    "label": "Quelle est la couleur d'un Chou Fleur ?",
-    "quizId": 2000000000001,
-    "id": 3100000000009
-  },
-  {
-    "label": "Quelle est la couleur du ballon de basketball ?",
+    "label": "Avec quoi joue-t-on au basketball ?",
     "quizId": 2000000000002,
     "id": 3200000000000
   },
@@ -165,7 +115,7 @@
     "id": 3400000000000
   },
   {
-    "label": "Le volant des voitures sont placé de quel côté ?",
+    "label": "Le volant des voitures sont placé du coté droit ?",
     "quizId": 2000000000004,
     "id": 3400000000005
   },
@@ -185,7 +135,7 @@
     "id": 3400000000003
   },
   {
-    "label": "En France on roule à ... ?",
+    "label": "En France on roule à droite ?",
     "quizId": 2000000000004,
     "id": 3400000000004
   },
@@ -248,5 +198,105 @@
     "label": "Quelle ville est la capitale du Portugal",
     "quizId": 1587859606729,
     "id": 1587859607011
+  },
+  {
+    "label": "Quelle ville est la capitale de l'espagne",
+    "quizId": 1587927509891,
+    "id": 1587927509965
+  },
+  {
+    "label": "Quelle ville est la capitale de la Suisse",
+    "quizId": 1587927509891,
+    "id": 1587927510013
+  },
+  {
+    "label": "Quelle ville est la capitale du Royaume-Uni",
+    "quizId": 1587927509891,
+    "id": 1587927510050
+  },
+  {
+    "label": "Quelle ville est la capitale de la Russie",
+    "quizId": 1587927509891,
+    "id": 1587927510062
+  },
+  {
+    "label": "Quelle ville est la capitale du Brésil",
+    "quizId": 1587927509891,
+    "id": 1587927510078
+  },
+  {
+    "label": "Quelle ville est la capitale du Mexique",
+    "quizId": 1587927509891,
+    "id": 1587927510094
+  },
+  {
+    "label": "Quelle ville est la capitale de la Chine",
+    "quizId": 1587927509891,
+    "id": 1587927510116
+  },
+  {
+    "label": "Quelle ville est la capitale de l'Algérie",
+    "quizId": 1587927509891,
+    "id": 1587927510129
+  },
+  {
+    "label": "Quelle ville est la capitale de l'Autriche",
+    "quizId": 1587927509891,
+    "id": 1587927510150
+  },
+  {
+    "label": "Quelle ville est la capitale de la Belgique",
+    "quizId": 1587927509891,
+    "id": 1587927510164
+  },
+  {
+    "label": "Quelle ville est la capitale des Etats-Unis",
+    "quizId": 1587927509891,
+    "id": 1587927510175
+  },
+  {
+    "label": "En quelles années l'équipe de France a gagner la Coupe du monde ?",
+    "quizId": 1587929841469,
+    "id": 1587929841475
+  },
+  {
+    "label": "Le football se joue avec combien de joueurs par équipe ?",
+    "quizId": 1587929841469,
+    "id": 1587929841497
+  },
+  {
+    "label": "Quelle équipe détient le plus de titre de champion du monde ?",
+    "quizId": 1587929841469,
+    "id": 1587929841512
+  },
+  {
+    "label": "Dans le temps réglementaire combien de changements sont possible ?",
+    "quizId": 1587929841469,
+    "id": 1587929841550
+  },
+  {
+    "label": "Combien d'années y a-t-il entre deux Coupe du monde ?",
+    "quizId": 1587929841469,
+    "id": 1587929841560
+  },
+  {
+    "label": "Quelle est la distance y a-t-il entre les deux cages sur un terrain professionnel ?",
+    "quizId": 1587929841469,
+    "id": 1587929841575
+  },
+  {
+    "label": "Combien d'équipes s'affrontent pour la Coupe du monde ? (équipes qualifiés)",
+    "quizId": 1587929841469,
+    "id": 1587929841587
+  },
+  {
+    "label": "Quels sont les deux pays les plus titrés en Coupe d'Europe ?",
+    "quizId": 1587929841469,
+    "id": 1587929841696
+  },
+  {
+    "label": "Comment s'appelle le championnat professionnel français ?",
+    "quizId": 1587929841469,
+    "id": 1587929841726
   }
 ]

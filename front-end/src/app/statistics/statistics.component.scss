@@ -28,11 +28,13 @@ $borderSize: 0;
   text-align: left;
   padding: 2vmin 2vmin 2vmin 4vmin;
   border-right: solid $borderSize $borderColor;
+  font-family: var(--customFont);
 }
 
 .right-part {
   flex: 1;
   padding: 2vmin;
+  font-family: var(--customFont);
 }
 
 
