@@ -19,10 +19,10 @@
 
 .text-connexion {
   text-align: center;
-  color: var(--customWhite);
-  font-size: 2.4rem;
+  color: white;
+  font-size: 12vmin;
   padding: 3vmin;
-  font-family: var(--customFont), sans-serif;
+  font-family: "Segoe UI", sans-serif;
   font-weight: 900;
 
 }
@@ -35,24 +35,24 @@
 .input-custom {
   padding: 2vmin;
   margin: 2vmin;
-  border: var(--customWhite) 0 solid;
+  border: white 0 solid;
   border-radius: 2vmin;
-  font-family: var(--customFont), sans-serif;
+  font-family: "Segoe UI", sans-serif;
   font-weight: 900;
-  font-size: 1rem;
+  font-size: 5vmin;
   text-align: center;
 }
 
 .button-card {
   padding: 2vmin;
   margin: 2vmin;
-  border: var(--customWhite) 0 solid;
+  border: white 0 solid;
   border-radius: 2vmin;
-  background-color: var(--customGray);
-  color: var(--customWhite);
-  font-family: var(--customFont), sans-serif;
+  background-color: #3d3d3d;
+  color: white;
+  font-family: "Segoe UI", sans-serif;
   font-weight: 900;
-  font-size: 1rem;
+  font-size: 5vmin;
 }
 
 .button-card:hover {
@@ -70,8 +70,8 @@
 }
 .error-text{
   font-size: xx-large;
-  color: var(--customRed);
+  color: #b80000;
   text-align: center;
-  font-family: var(--customFont), sans-serif;
+  font-family: "Segoe UI", sans-serif;
   font-weight: 900;
 }
