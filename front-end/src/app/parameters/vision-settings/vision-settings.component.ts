@@ -13,6 +13,9 @@ export class VisionSettingsComponent implements OnInit {
 
   @Output() contrastSelected = new EventEmitter<number>();
   @Output() fontSizeSelected = new EventEmitter<number>();
+  @Output() fontSelected = new EventEmitter<string>();
+
+  fonts = ['Arial', 'Times New Roman', 'Segoe UI'];
 
   constructor() { }
 
@@ -25,6 +28,11 @@ export class VisionSettingsComponent implements OnInit {
 
   fontSizeSelectedEmit(valeur) {
     this.fontSizeSelected.emit(valeur);
+  }
+
+  fontSelectedEmit(valeur) {
+    // console.log('FONT SELECTED', valeur);
+    this.fontSelected.emit(valeur);
   }
 
 }

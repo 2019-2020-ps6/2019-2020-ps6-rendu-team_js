@@ -38,6 +38,10 @@
     <div class="main-container">
       <div class="settingName" style="flex: 1"> Police</div>
       <div class="lastChoose" style="flex: 2"> {{font}} </div>
+      <select [ngModel]="font | json" (ngModelChange)="fontSelectedEmit($event)">
+        <option value="" selected disabled>{{font}}</option>
+        <option [value]="i | json" *ngFor="let i of fonts">{{i}}</option>
+      </select>
     </div>
   </div>
 </div>

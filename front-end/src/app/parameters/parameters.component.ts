@@ -80,4 +80,17 @@ export class ParametersComponent implements OnInit {
     });
   }
 
+  fontEvent($event) {
+    this.userSettings.font = $event;
+    // console.log('FONT SELECTED', $event);
+    this.settingsService.updateSettings(this.userSettings, this.auth.user.id).subscribe((response) => {
+      if (response.status === 200) {
+        this.toasterService.activateToaster(false, 'Police enregistrée !', 1000);
+
+      } else {
+        this.toasterService.activateToaster(true, 'Une erreur est survenue, réessayer plus tard...', 2000);
+      }
+    });
+  }
+
 }
