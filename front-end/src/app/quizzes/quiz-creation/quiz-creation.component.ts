@@ -1,9 +1,10 @@
-import {Component, EventEmitter, OnInit} from '@angular/core';
+import {Component, EventEmitter, Input, OnInit} from '@angular/core';
 import {FormBuilder} from '@angular/forms';
 
 import {QuizService} from '../../../services/quiz.service';
 import {Quiz} from '../../../models/quiz.model';
 import {ThemesService} from '../../../services/themes.service';
+import {ActivatedRoute} from '@angular/router';
 
 @Component({
   selector: 'app-quiz-creation',
@@ -12,6 +13,8 @@ import {ThemesService} from '../../../services/themes.service';
 })
 export class QuizCreationComponent implements OnInit {
 
+  updateMode: boolean;
+  updateModeValueReceived: boolean;
 
   isQuestionListOpen: boolean;
   isGeneralOpen: boolean;
@@ -31,15 +34,29 @@ export class QuizCreationComponent implements OnInit {
   isWindowOpen: boolean;
 
   constructor(private formBuilder: FormBuilder,
+              private route: ActivatedRoute,
               private  quizService: QuizService,
               private themesService: ThemesService) {
 
+    const id = this.route.snapshot.paramMap.get('id');
+
+    console.log(id);
+
+    if (id !== undefined && id !== null) {
+      this.updateMode = true;
+      this.quizService.getQuizData(id).subscribe((q) => {
+        this.updateModeValueReceived = true;
+        this.quizToCreate = q;
+        console.log(this.quizToCreate);
+      });
+    }
   }
 
   ngOnInit() {
     this.isLoading = false;
     this.isQuestionListOpen = false;
     this.isGeneralOpen = true;
+
   }
 
 

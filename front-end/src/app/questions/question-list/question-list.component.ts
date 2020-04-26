@@ -20,8 +20,6 @@ export class QuestionListComponent implements OnInit {
   }
 
   ngOnInit() {
-    console.log(this.quiz.questions.length);
-
     if (this.quiz.questions.length === 0) {
       this.editingQuestion = true;
     }
@@ -41,9 +39,6 @@ export class QuestionListComponent implements OnInit {
     this.editingQuestion = true;
     this.questionToEdit = question;
     this.indexQuestionBeingEdited = index;
-
-    console.log(this.quiz.questions);
-    console.log(index);
   }
 
   questionId(q: Question) {
@@ -51,7 +46,6 @@ export class QuestionListComponent implements OnInit {
 
     if (!q) {
       index = this.quiz.questions.length + 1;
-      console.log('question index = ' + index);
       return index;
 
     } else {

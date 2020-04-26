@@ -41,8 +41,6 @@ export class QuestionCreationComponent implements OnInit {
     }
 
     private initializeAnswerForm() {
-
-
         this.questionForm = this.formBuilder.group({
             question: [this.questionName, Validators.required],
             rightAnswer: [this.rightAnswer, Validators.required],

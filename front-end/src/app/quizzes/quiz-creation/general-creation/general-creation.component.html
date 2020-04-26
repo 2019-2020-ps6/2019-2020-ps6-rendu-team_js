@@ -18,7 +18,7 @@
       </div>
 
 
-      <select class="" id="theme" [(ngModel)]="themeSelected"  [formControlName]="'theme'" *ngIf="themeList" >
+      <select class="" id="theme" [(ngModel)]="themeSelected"  [formControlName]="'theme'" *ngIf="themeList !== undefined" >
         <option *ngFor="let t of themeList" [ngValue]="t">{{t.name}}</option>
       </select>
     </div>

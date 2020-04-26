@@ -35,7 +35,7 @@ const routes: Routes = [
   {path: 'question-edit/:id', canActivate: [AuthGuardAdminService], component: QuestionFormComponent},
   {path: 'residents', canActivate: [AuthGuardAdminService], component: ResidentsComponent},
   {path: 'admin/:id/stats', canActivate: [AuthGuardAdminService], component: StatisticsResidentsComponent},
-  {path: 'quiz-editor/:id', canActivate: [AuthGuardService], component: QuizEditorComponent},
+  {path: 'quiz-editor/:id', canActivate: [AuthGuardService], component: QuizCreationComponent},
   {path: 'quiz-info/:id', canActivate: [AuthGuardService], component: QuizInfoComponent},
   {path: 'login/user', canActivate: [NotAuthGuardService], component: UserFormComponent},
   {path: 'login/admin', canActivate: [NotAuthGuardService], component: AdminFormComponent},

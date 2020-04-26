@@ -1,10 +1,10 @@
-import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
-import { BehaviorSubject, Subject } from 'rxjs';
-import { Quiz } from '../models/quiz.model';
-import { QUIZ_LIST } from '../mocks/quiz-list.mock';
+import {Injectable} from '@angular/core';
+import {HttpClient} from '@angular/common/http';
+import {BehaviorSubject, Subject} from 'rxjs';
+import {Quiz} from '../models/quiz.model';
+import {QUIZ_LIST} from '../mocks/quiz-list.mock';
 import {Question} from '../models/question.model';
-import { serverUrl, httpOptionsBase } from '../configs/server.config';
+import {serverUrl, httpOptionsBase} from '../configs/server.config';
 
 @Injectable({
   providedIn: 'root'
@@ -25,8 +25,7 @@ export class QuizService {
    * Observable which contains the list of the quiz.
    * Naming convention: Add '$' at the end of the variable name to highlight it as an Observable.
    */
-  public quizzes$: BehaviorSubject<Quiz[]>
-    = new BehaviorSubject(this.quizzes);
+  public quizzes$: BehaviorSubject<Quiz[]> = new BehaviorSubject(this.quizzes);
 
   public quizSelected$: Subject<Quiz> = new Subject();
 
@@ -68,6 +67,11 @@ export class QuizService {
     this.http.get<Quiz>(urlWithId).subscribe((quiz) => {
       this.quizSelected$.next(quiz);
     });
+  }
+
+  getQuizData(quizId: string) {
+    const urlWithId = this.quizUrl + '/quizData/' + quizId;
+    return this.http.get<Quiz>(urlWithId);
   }
 
   setSelectedQuiz(quizId: string) {

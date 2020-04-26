@@ -1,6 +1,7 @@
 <div class="global-container" [ngClass]="isWindowOpen? 'blur' : ''">
   <div class="header-container">
-    <h1>Création d'un quiz</h1>
+    <h1 *ngIf="!updateMode">Création d'un quiz</h1>
+    <h1 *ngIf="updateMode">Edition d'un quiz</h1>
     <div class="button-header-container">
       <div class="button-header bg-general" [ngClass]="isGeneralOpen? 'create-bg-selected' : ''" (click)="openGeneral()">Général</div>
       <div class="button-header bg-question" [ngClass]="isQuestionListOpen? 'question-bg-selected' : (isQuestionWindowAllowed()? '' : 'disable-button')" (click)="openQuestion()">Questions</div>
@@ -10,5 +11,8 @@
   <hr class="blackLine">
 </div>
 
-  <app-general-creation *ngIf="isGeneralOpen" (isCreateThemeOpened)="isWindowOpen = $event" (quizEmitter)="receiveQuiz($event)" [quiz]="quizToCreate"></app-general-creation>
-  <app-question-list *ngIf="isQuestionListOpen" [quiz]="emptyQuiz" ></app-question-list>
+  <app-general-creation *ngIf="isGeneralOpen && !updateMode" (isCreateThemeOpened)="isWindowOpen = $event" (quizEmitter)="receiveQuiz($event)" [quiz]="quizToCreate"></app-general-creation>
+  <app-question-list *ngIf="isQuestionListOpen && !updateMode" [quiz]="emptyQuiz" ></app-question-list>
+
+  <app-general-creation *ngIf="isGeneralOpen && updateModeValueReceived" (isCreateThemeOpened)="isWindowOpen = $event" (quizEmitter)="receiveQuiz($event)" [quiz]="quizToCreate"></app-general-creation>
+  <app-question-list *ngIf="isQuestionListOpen && updateModeValueReceived" [quiz]="quizToCreate" ></app-question-list>
