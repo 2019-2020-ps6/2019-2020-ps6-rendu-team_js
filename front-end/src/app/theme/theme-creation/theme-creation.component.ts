@@ -13,9 +13,22 @@ import {ToasterService} from '../../../services/toaster.service';
 export class ThemeCreationComponent implements OnInit {
 
   themeForm: FormGroup;
-  colors = ['grey', '#d87500', '#00b3d5', '#1cc200', '#e1d600', '#8b6149', '#c10300'];
-  // tslint:disable-next-line:max-line-length
-  // colors = ['var(--customGray)', 'var(--customPlayPink)', 'var(--customBlue)', 'var(--customGreen)', 'var(--customLiteOrange)', 'var(--customOrange)', 'var(--customRed)']
+  colors = [
+    '#650000', '#651400', '#652200',
+    '#654600', '#655700', '#656500', '#596500',
+    '#456500', '#376500', '#236500', '#006515', '#006528', '#00653D',
+    '#006551', '#006565', '#005165', '#003D65',
+    '#002E65', '#001865', '#170065', '#250065',
+    '#370065', '#480065', '#600065', '#65005A',
+    '#1B2631', '#17202A'];
+
+  // colors = [
+  //   '#641E16', '#78281F', '#512E5F', '#4A235A',
+  //   '#154360', '#1B4F72', '#0E6251', '#0B5345',
+  //   '#145A32', '#186A3B', '#7D6608',
+  //   '#7E5109', '#784212', '#6E2C00',
+  //   '#424949', '#1B2631', '#17202A'];
+
   selectedColor = this.colors[0];
   isLoading: boolean;
 

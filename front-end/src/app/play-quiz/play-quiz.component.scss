@@ -1,6 +1,6 @@
 .question {
   color: var(--customGray);
-  font-size: 1.6rem;
+  font-size: 8vmin;
   font-weight: 900;
   font-family: "Segoe UI Black", serif;
   text-align: center;
@@ -13,6 +13,7 @@
   height: 25vh;
   left: 0;
   right: 0;
+  line-height: 7vmin;
   top: 5vh;
 }
 

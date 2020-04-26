@@ -2,11 +2,11 @@
   {
     "handicapVisuel": true,
     "handicapMoteur": true,
-    "contraste": 1,
+    "contraste": 2,
     "fontSize": 1,
     "font": "Segoe UI",
-    "tailleSelection": 1,
-    "id": 1585360751986
+    "tailleSelection": 2,
+    "id": 1585366302574
   },
   {
     "handicapVisuel": true,

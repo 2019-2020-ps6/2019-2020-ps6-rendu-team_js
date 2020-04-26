@@ -15,10 +15,10 @@ export class QuizResponsesListComponent implements OnInit {
   @Output()
   answerSelected: EventEmitter<Answer> = new EventEmitter<Answer>();  // answer selected by user
 
-  color1 = 'var(--customOrange)';
-  color2 = 'var(--customPlayPink)';
-  color3 = 'var(--customGreen)';
-  color4 = 'var(--customBlue)';
+  color1 = 'var(--customGreen)';
+  color2 = 'var(--customBlue)';
+  color3 = 'var(--customOrange)';
+  color4 = 'var(--customPlayPink)';
 
   colors = [this.color1, this.color2, this.color3, this.color4];
 
