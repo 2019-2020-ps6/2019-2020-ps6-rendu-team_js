@@ -54,7 +54,12 @@ export class GeneralCreationComponent implements OnInit {
         if (this.quiz) {
             this.name = this.quiz.name;
             this.difficulty = this.quiz.difficulty;
-            this.themeSelected = this.quiz.theme;
+
+            this.themeList.forEach((t) => {
+                if (t.name === this.quiz.theme.name) {
+                    this.themeSelected = t;
+                }
+            });
         }
 
 
