@@ -186,7 +186,7 @@
     "id": 4500000000000
   },
   {
-    "value": "Une elan",
+    "value": "Un elan",
     "isCorrect": false,
     "questionId": 3000000000005,
     "id": 4500000000001
@@ -222,7 +222,7 @@
     "id": 4600000000000
   },
   {
-    "value": "Une cafard",
+    "value": "Un cafard",
     "isCorrect": false,
     "questionId": 3000000000006,
     "id": 4600000000001
@@ -234,7 +234,7 @@
     "id": 4600000000002
   },
   {
-    "value": "Un flament rose",
+    "value": "Un flamant rose",
     "isCorrect": false,
     "questionId": 3000000000006,
     "id": 4600000000003
@@ -324,7 +324,7 @@
     "id": 6100000000001
   },
   {
-    "value": "Kobe Brayant",
+    "value": "Kobe Bryant",
     "isCorrect": false,
     "questionId": 3200000000001,
     "id": 6100000000002
