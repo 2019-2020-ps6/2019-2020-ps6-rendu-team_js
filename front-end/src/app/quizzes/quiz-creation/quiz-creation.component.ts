@@ -137,6 +137,7 @@ export class QuizCreationComponent implements OnInit {
   }
 
   updateQuiz() {
+    console.log('UPDATE :');
     console.log(this.quizToCreate);
     this.quizService.updateQuiz(this.quizToCreate).subscribe((response) => {
       this.isLoading = false;
