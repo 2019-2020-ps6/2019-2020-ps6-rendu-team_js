@@ -86,6 +86,11 @@ export class QuizService {
     this.http.delete<Quiz>(urlWithId, this.httpOptions).subscribe(() => this.setQuizzesFromUrl());
   }
 
+  updateQuiz(quiz: Quiz) {
+    const urlWithId = this.quizUrl + '/' + quiz.id;
+    return this.http.put<Quiz>(urlWithId, quiz, {...this.httpOptions, observe: 'response'});
+  }
+
   addQuestion(quiz: Quiz, question: Question) {
     const questionUrl = this.quizUrl + '/' + quiz.id + '/' + this.questionsPath;
     this.http.post<Question>(questionUrl, question, this.httpOptions).subscribe(() => this.setSelectedQuiz(quiz.id));

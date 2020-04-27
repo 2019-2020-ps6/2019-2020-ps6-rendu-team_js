@@ -131,7 +131,20 @@ export class QuizCreationComponent implements OnInit {
   }
 
   updateQuiz() {
-
+    this.quizService.updateQuiz(this.quizToCreate).subscribe((response) => {
+      this.isLoading = false;
+      if (response.status === 200 || response.status === 201) {
+        console.log(response.body );
+        this.quizService.quizzes.push(response.body);
+        this.quizService.quizzes$.next(this.quizService.quizzes);
+        this.toasterService.activateToaster(false, 'quiz mis à jour', 2000);
+        this.goToThemeMenu();
+      }
+    }, error => {
+      this.isLoading = false;
+      this.toasterService.activateToaster(true, 'Une erreur est survenue, réessayer plus tard...', 2000);
+    });
+    this.goToThemeMenu();
   }
 
   isBottomContainerOpenEditMode(): boolean {
