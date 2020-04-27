@@ -5,7 +5,7 @@
     <div class="text-create-account">{{user.firstName}} {{user.lastName.toUpperCase()}}</div>
     <hr class="blackLine">
 
-    <div class="assistance-container" *ngIf="!isDeleteButtonPressed">
+    <div class="assistance-container">
       <div class="assistance-text">Assistance :<br>(modifiable)</div>
       <div class="checkbox-container">
         <div class="checkbox" *ngFor="let assistance of assistanceArray">
@@ -17,28 +17,21 @@
     </div>
 
 
-    <hr class="blackLine" *ngIf="!isDeleteButtonPressed">
+    <hr class="blackLine">
 
-    <button (click)="shareButtonPressed()" *ngIf="!isDeleteButtonPressed" class="link-card share-button-bg">Partager les
+    <button (click)="shareButtonPressed()" class="link-card share-button-bg">Partager les
       paramètres du compte
     </button>
-    <button (click)="statsButtonPressed()" *ngIf="!isDeleteButtonPressed" class="link-card stats-button-bg">
+    <button (click)="statsButtonPressed()" class="link-card stats-button-bg">
       Statistiques
     </button>
-    <button (click)="deleteButtonPressed()" [ngClass]="isDeleteButtonPressed ? 'deletePressed' : ''"
-            class="link-card delete-button-bg">
-      <div *ngIf="!isDeleteButtonPressed">Supprimer le compte</div>
-      <div *ngIf="isDeleteButtonPressed" style="line-height: 8vmin !important;">Confirmer la suppression du compte</div>
-    </button>
+    <button (click)="deleteButtonPressed()" class="link-card delete-button-bg"> <div >Supprimer le compte</div> </button>
 
     <hr class="blackLine margin-top">
 
     <div class="button-container">
       <button (click)="backPressed()" class="button-card back-button-bg">Retour</button>
-      <button (click)="saveButtonPressed()" class="button-card create-button-bg" *ngIf="!isDeleteButtonPressed" [disabled]="!hasChangeBeenDone()" [class.disable-button]="!hasChangeBeenDone()" >Enregistrer</button>
-      <button (click)="confirmDeletionPressed()" class="button-card delete-button-bg" *ngIf="isDeleteButtonPressed">
-        Supprimer
-      </button>
+      <button (click)="saveButtonPressed()" class="button-card create-button-bg" [disabled]="!hasChangeBeenDone()" [class.disable-button]="!hasChangeBeenDone()" >Enregistrer</button>
     </div>
 
   </div>

@@ -73,10 +73,12 @@ export class ResidentsInformationsComponent implements OnInit {
   }
 
   deleteButtonPressed() {
-    if (this.isDeleteButtonPressed === true) {
-      this.isDeleteButtonPressed = false;
-    } else {
-      this.isDeleteButtonPressed = true;
+    if (confirm('Etes-vous sur de vouloir supprimer ce compte ?')) {
+      this.authServices.deleteResidentAccount(this.user).subscribe(() => {
+        this.isModifyingEventHappened.emit(true);
+        this.toasterService.activateToaster(false, 'Compte supprimé !', 2000);
+        this.backPressed();
+      });
     }
   }
 
@@ -104,11 +106,7 @@ export class ResidentsInformationsComponent implements OnInit {
   }
 
   confirmDeletionPressed() {
-    this.authServices.deleteResidentAccount(this.user).subscribe(() => {
-      this.isModifyingEventHappened.emit(true);
-      this.toasterService.activateToaster(false, 'Compte supprimé !', 2000);
-      this.backPressed();
-    });
+
   }
 
 
