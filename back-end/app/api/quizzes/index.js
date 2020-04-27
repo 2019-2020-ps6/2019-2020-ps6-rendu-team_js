@@ -125,8 +125,10 @@ router.put('/:quizId', (req, res) => {
           questions.push(questionCreated);
         }
       }else {
-        questionCreated = Question.create({label: question.label, quizId: question.quizId});
-        questions.push(questionCreated);
+        if (question.deleted !== true) {
+          questionCreated = Question.create({label: question.label, quizId: question.quizId});
+          questions.push(questionCreated);
+        }
       }
 
       question.answers.forEach((answer) => {
@@ -141,8 +143,10 @@ router.put('/:quizId', (req, res) => {
             answers.push(answerCreated);
           }
         } else {
-          const answerCreated = Answer.create({ value: answer.value, isCorrect: answer.isCorrect, questionId: answer.questionId });
-          answers.push(answerCreated);
+          if (answer.deleted !== true) {
+            const answerCreated = Answer.create({ value: answer.value, isCorrect: answer.isCorrect, questionId: answer.questionId });
+            answers.push(answerCreated);
+          }
         }
 
       });
