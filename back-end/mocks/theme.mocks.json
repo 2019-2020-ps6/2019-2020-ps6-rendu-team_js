@@ -1,20 +1,20 @@
 [
   {
     "name": "Faune et flore",
-    "color": "#00653D",
+    "color": "#656500",
     "nbQuiz": 1,
     "id": 1000000000000
   },
   {
     "name": "Sports",
-    "color": "#652200",
-    "nbQuiz": 3,
+    "color": "#250065",
+    "nbQuiz": 2,
     "id": 1000000000001
   },
   {
     "name": "Pays",
-    "color": "#600065",
-    "nbQuiz": 4,
+    "color": "#652200",
+    "nbQuiz": 3,
     "id": 1000000000002
   },
   {
@@ -26,37 +26,37 @@
   {
     "name": "Cuisine",
     "color": "#c40e08",
-    "nbQuiz": 1,
+    "nbQuiz": 0,
     "id": 1000000000004
   },
   {
     "name": "Personnalités",
-    "color": "#b8b800",
-    "nbQuiz": 1,
+    "color": "#1B2631",
+    "nbQuiz": 0,
     "id": 1000000000005
   },
   {
     "name": "Chansons / Musiques",
     "color": "#600065",
-    "nbQuiz": 1,
+    "nbQuiz": 0,
     "id": 1000000000006
   },
   {
     "name": "Histoire",
     "color": "#00653D",
-    "nbQuiz": 3,
+    "nbQuiz": 2,
     "id": 1000000000007
   },
   {
     "name": "Mathématiques",
-    "color": "#003D65",
-    "nbQuiz": 1,
+    "color": "#650000",
+    "nbQuiz": 0,
     "id": 1000000000008
   },
   {
     "name": "Grammaire",
-    "color": "#c98600",
-    "nbQuiz": 2,
+    "color": "#1B2631",
+    "nbQuiz": 1,
     "id": 1000000000009
   }
 ]
