@@ -136,9 +136,21 @@ export class QuizCreationComponent implements OnInit {
     }
   }
 
+  nbQuestions() {
+    let nb = 0;
+
+    this.quizToCreate.questions.forEach((question) => {
+      if (question.deleted !== true) {
+        nb++;
+      }
+    });
+
+    return nb;
+  }
+
   updateQuiz() {
-    console.log('UPDATE :');
-    console.log(this.quizToCreate);
+    // console.log('UPDATE :');
+    // console.log(this.quizToCreate);
     this.quizService.updateQuiz(this.quizToCreate).subscribe((response) => {
       this.isLoading = false;
       if (response.status === 200 || response.status === 201) {
