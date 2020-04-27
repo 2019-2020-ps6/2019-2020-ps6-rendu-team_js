@@ -46,7 +46,17 @@ export class QuestionListComponent implements OnInit {
   }
 
   questionId(q: Question) {
-    let index = this.quiz.questions.indexOf(q);
+    // let index = this.quiz.questions.indexOf(q);
+    let index = 0;
+    let find = false;
+    this.quiz.questions.forEach((question) => {
+      if (question === q) {
+        find = true;
+      }
+      if (!find && question.deleted !== true) {
+        index++;
+      }
+    });
 
     if (!q) {
       index = this.quiz.questions.length + 1;
