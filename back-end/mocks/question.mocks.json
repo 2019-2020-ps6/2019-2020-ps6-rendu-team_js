@@ -370,13 +370,28 @@
     "id": 1587997541941
   },
   {
-    "label": "aa",
-    "quizId": 1587999036815,
-    "id": 1587999036824
+    "label": "Quelle racine?: refroidissement",
+    "quizId": 1587998502594,
+    "id": 1587998502602
   },
   {
-    "label": "ss",
-    "quizId": 1587999036815,
-    "id": 1587999036828
+    "label": "Quelle racine ? : dentifrice",
+    "quizId": 1587998502594,
+    "id": 1587998502622
+  },
+  {
+    "label": "Quelle racine ?: canin",
+    "quizId": 1587998502594,
+    "id": 1587998502638
+  },
+  {
+    "label": "Quelle racine ?: embouteiller",
+    "quizId": 1587998502594,
+    "id": 1587998502655
+  },
+  {
+    "label": "Trouve un mot de la même famille: garage",
+    "quizId": 1587998502594,
+    "id": 1587998502680
   }
 ]
