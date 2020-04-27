@@ -20,7 +20,7 @@ export class QuestionComponent implements OnInit {
   }
 
   delete() {
-    this.deleteQuestion.emit(this.question);
     this.question.deleted = true;
+    this.deleteQuestion.emit(this.question);
   }
 }
