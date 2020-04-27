@@ -4,4 +4,5 @@ export interface Answer {
     isCorrect?: boolean;
     questionId?: number;
     id?: number;
+    deleted?: boolean;
 }

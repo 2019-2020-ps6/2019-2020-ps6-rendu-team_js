@@ -9,4 +9,5 @@ export interface Quiz {
     questions?: Question[];
     nbQuestions?: number;
     difficulty: string;
+    deleted?: boolean;
 }

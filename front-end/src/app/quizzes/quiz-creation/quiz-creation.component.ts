@@ -126,9 +126,6 @@ export class QuizCreationComponent implements OnInit {
 
 
   deleteQuiz() {
-    for (const q of this.quizToCreate.questions) {
-      this.quizService.deleteQuestion(this.quizToCreate, q);
-    }
     this.quizService.deleteQuiz(this.quizToCreate);
     this.goToThemeMenu();
   }
