@@ -40,5 +40,17 @@
     "themeId": "1000000000001",
     "difficulty": "Moyen",
     "id": 1587929841469
+  },
+  {
+    "name": "Les Francs",
+    "themeId": "1000000000007",
+    "difficulty": "Difficile",
+    "id": 1587996615012
+  },
+  {
+    "name": "La révolution Française",
+    "themeId": "1000000000007",
+    "difficulty": "Moyen",
+    "id": 1587997541774
   }
 ]
