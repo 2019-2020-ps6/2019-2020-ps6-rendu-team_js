@@ -30,13 +30,13 @@ export class QuestionListComponent implements OnInit {
   }
 
   deleteQuestion(question: Question) {
-    const index = this.quiz.questions.indexOf(question);
-    if (index > -1) {
-      this.quiz.questions.splice(index, 1);
-      if (this.quiz.questions.length === 0) {
-        this.openQuestion(undefined, undefined);
-      }
-    }
+    // const index = this.quiz.questions.indexOf(question);
+    // if (index > -1) {
+     // this.quiz.questions.splice(index, 1);
+      // if (this.quiz.questions.length === 0) {
+        // this.openQuestion(undefined, undefined);
+      // }
+    // }
   }
 
   openQuestion(question: Question, index: number) {
