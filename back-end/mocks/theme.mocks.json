@@ -8,13 +8,13 @@
   {
     "name": "Sports",
     "color": "#652200",
-    "nbQuiz": 3,
+    "nbQuiz": 2,
     "id": 1000000000001
   },
   {
     "name": "Pays",
     "color": "#600065",
-    "nbQuiz": 3,
+    "nbQuiz": 4,
     "id": 1000000000002
   },
   {

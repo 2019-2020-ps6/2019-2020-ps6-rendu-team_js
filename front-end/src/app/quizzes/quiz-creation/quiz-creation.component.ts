@@ -126,15 +126,17 @@ export class QuizCreationComponent implements OnInit {
 
 
   deleteQuiz() {
+    console.log(this.quizToCreate);
     this.quizService.deleteQuiz(this.quizToCreate);
     this.goToThemeMenu();
   }
 
   updateQuiz() {
+    console.log(this.quizToCreate);
     this.quizService.updateQuiz(this.quizToCreate).subscribe((response) => {
       this.isLoading = false;
       if (response.status === 200 || response.status === 201) {
-        console.log(response.body );
+        console.log(response.body);
         this.quizService.quizzes.push(response.body);
         this.quizService.quizzes$.next(this.quizService.quizzes);
         this.toasterService.activateToaster(false, 'quiz mis à jour', 2000);
