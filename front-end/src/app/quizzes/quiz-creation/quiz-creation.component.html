@@ -23,6 +23,10 @@
   <div class="button-header bg-general" (click)="updateQuiz()">Mettre à jour le quiz</div>
 </div>
 
-<div class="bottom-validation-container" *ngIf="isBottomContainerOpenCreateMode()  && true">
-  <div class="button-header bg-general"  (click)="createQuiz()" >Créer le quiz</div>
+<div class="bottom-validation-container" *ngIf="isBottomContainerOpenCreateMode() && true">
+  <button class="button-header bg-general"
+       [disabled]="quizToCreate.questions.length < 2"
+       [class.disable-button]="quizToCreate.questions.length < 2"
+       [ngClass]="quizToCreate.questions.length < 2 ? 'button-header' : ''"
+       (click)="createQuiz()" >Créer le quiz</button>
 </div>
