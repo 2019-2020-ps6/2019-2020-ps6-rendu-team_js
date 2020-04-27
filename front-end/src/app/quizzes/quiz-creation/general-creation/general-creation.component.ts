@@ -64,7 +64,7 @@ export class GeneralCreationComponent implements OnInit {
 
 
         this.quizForm = this.formBuilder.group({
-            name: [this.name, [Validators.required]],
+            name: [this.name, [Validators.maxLength(35), Validators.required]],
             theme: [this.themeSelected, [Validators.required]],
             difficulty: [this.difficulty, [Validators.required]]
         });

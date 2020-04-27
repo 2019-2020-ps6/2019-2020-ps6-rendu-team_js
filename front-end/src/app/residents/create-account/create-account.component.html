@@ -10,8 +10,8 @@
       <hr class="blackLine">
 
       <div class="text-input-container">
-        <input class="input-custom" placeholder="Prénom" type="text" id="lastName" [formControlName]="'firstName'"  [class.disable-button]="isLoading">
-        <input class="input-custom" placeholder="Nom" type="text" id="firstName" [formControlName]="'lastName'"  [class.disable-button]="isLoading">
+        <input class="input-custom" placeholder="Prénom" type="text" id="lastName"  maxlength="20" [formControlName]="'firstName'"  [class.disable-button]="isLoading">
+        <input class="input-custom" placeholder="Nom" type="text" id="firstName"  maxlength="20" [formControlName]="'lastName'"  [class.disable-button]="isLoading">
       </div>
 
       <hr class="blackLine">

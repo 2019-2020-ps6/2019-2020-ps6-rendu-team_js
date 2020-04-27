@@ -34,8 +34,8 @@ export class CreateAccountComponent implements OnInit {
 
   ngOnInit() {
     this.createForm = this.formBuilder.group({
-      firstName: ['', [Validators.required]],
-      lastName: ['', [Validators.required]],
+      firstName: ['', [Validators.maxLength(20), Validators.required]],
+      lastName: ['', [Validators.maxLength(20), Validators.required]],
       assistanceArray: new FormArray([]),
     });
   }

@@ -46,7 +46,7 @@ export class ThemeCreationComponent implements OnInit {
     this.isLoading = false;
 
     this.themeForm = this.formBuilder.group({
-      name: ['', [Validators.required]],
+      name: ['', [Validators.maxLength(15), Validators.required]],
       color: ['', [Validators.required]],
     });
   }
