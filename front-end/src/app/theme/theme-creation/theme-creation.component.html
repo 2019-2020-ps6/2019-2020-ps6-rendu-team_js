@@ -7,7 +7,7 @@
 
         <div class="input-text-container">
           <label for="name" class="text-for-input" >Nom du thème</label>
-          <input class="text-input" type="text" id="name" [formControlName]="'name'" placeholder="Mon thème">
+          <input class="text-input" type="text" id="name" maxlength="20" [formControlName]="'name'"  placeholder="Mon thème">
         </div>
 
         <div class="color-container" *ngIf="colors !== undefined">

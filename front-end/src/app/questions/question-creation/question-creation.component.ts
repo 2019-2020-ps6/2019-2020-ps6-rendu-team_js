@@ -55,8 +55,8 @@ export class QuestionCreationComponent implements OnInit {
 
     private initializeAnswerForm() {
         this.questionForm = this.formBuilder.group({
-            question: [this.questionName, Validators.required],
-            rightAnswer: [this.rightAnswer, Validators.required],
+            question: [this.questionName, [Validators.maxLength(100), Validators.required]],
+            rightAnswer: [this.rightAnswer, [Validators.maxLength(50), Validators.required]],
             wrongAnswers: this.formBuilder.array([])
         });
 
@@ -94,7 +94,7 @@ export class QuestionCreationComponent implements OnInit {
 
     private createAnswer(value: string, id: number) {
         return this.formBuilder.group({
-            answer: value,
+            answer: [value, [Validators.maxLength(50), Validators.required]],
             answerId: id,
         });
     }
@@ -170,7 +170,7 @@ export class QuestionCreationComponent implements OnInit {
 
         // Check if enough answers to create the question, otherwise doesn't create it!
         if (!this.updateMode) {
-          if (answersArray.length < 2) {
+          if (answersArray.length <= 2) {
             this.toasterService.activateToaster(true, 'Entrer au moins une mauvaise réponse', 3000);
             return;
           }

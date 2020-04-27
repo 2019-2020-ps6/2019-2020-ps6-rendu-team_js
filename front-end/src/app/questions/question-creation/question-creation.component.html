@@ -8,7 +8,7 @@
         <label class="text-for-input">La question</label>
         <div class="input-text-container">
           <input class="text-input" type="text" [formControlName]="'question'" [disabled]="isLoading" [(ngModel)]="questionName"
-                 [class.disable-button]="isLoading" placeholder="Nom de la Question" value="{{questionName}}">
+                 [class.disable-button]="isLoading" placeholder="Nom de la Question" value="{{questionName}}" maxlength="100">
         </div>
       </div>
 
@@ -16,7 +16,7 @@
         <label class="text-for-input">La bonne réponse</label>
         <div class="input-text-container">
           <input class="text-input" type="text" [formControlName]="'rightAnswer'" [disabled]="isLoading" [(ngModel)]="rightAnswer.value"
-                 [class.disable-button]="isLoading" placeholder="Une bonne réponse" value="{{rightAnswer.value}}">
+                 [class.disable-button]="isLoading" placeholder="Une bonne réponse" value="{{rightAnswer.value}}" maxlength="50">
         </div>
       </div>
 
@@ -26,7 +26,7 @@
         <label class="text-for-input" *ngIf="hasEnoughAnswers()">Les mauvaises réponses</label>
         <div class="input-text-container wrong-answer-container" formArrayName="wrongAnswers" *ngFor="let address of answers.controls; let i=index">
             <div style="width: 100%; padding: 0" [formGroupName]="i">
-              <input class="text-input" type="text" [formControlName]="'answer'" placeholder="Une mauvaise réponse">
+              <input class="text-input" type="text" [formControlName]="'answer'" placeholder="Une mauvaise réponse" maxlength="50">
             </div>
           <i class="far fa-trash-alt button-delete" *ngIf="hasEnoughAnswers()" (click)="removeWrongAnswer(i)"></i>
         </div>
