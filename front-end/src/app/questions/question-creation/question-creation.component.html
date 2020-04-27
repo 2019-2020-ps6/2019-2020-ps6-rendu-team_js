@@ -25,7 +25,6 @@
         <label class="text-for-input" *ngIf="!hasEnoughAnswers()">La mauvaise réponse</label>
         <label class="text-for-input" *ngIf="hasEnoughAnswers()">Les mauvaises réponses</label>
         <div class="input-text-container wrong-answer-container" formArrayName="wrongAnswers" *ngFor="let address of answers.controls; let i=index">
-
             <div style="width: 100%; padding: 0" [formGroupName]="i">
               <input class="text-input" type="text" [formControlName]="'answer'" placeholder="Une mauvaise réponse">
             </div>

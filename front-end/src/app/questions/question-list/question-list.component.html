@@ -1,11 +1,12 @@
 <div *ngIf="!editingQuestion && quiz">
   <div class="main-container">
     <div *ngFor="let question of quiz.questions; let i = index;">
-      <app-question [question]="question" (deleteQuestion)="deleteQuestion($event)"
-                    (click)="openQuestion(question, i)"></app-question>
+      <div *ngIf="question.deleted !== true">
+        <app-question [question]="question" (deleteQuestion)="deleteQuestion($event)"
+                      (click)="openQuestion(question, i)"></app-question>
 
+      </div>
     </div>
-
     <div class="new-question-container">
       <a class="new-question" (click)="openQuestion(undefined, this.quiz.questions.length+1)">+</a>
     </div>

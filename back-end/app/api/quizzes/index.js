@@ -131,25 +131,27 @@ router.put('/:quizId', (req, res) => {
         }
       }
 
-      question.answers.forEach((answer) => {
-        answer.questionId = questionCreated.id;
+      if (question.deleted !== true && question.id !== undefined){
+        question.answers.forEach((answer) => {
+          answer.questionId = questionCreated.id;
 
-        if (answer.id !== undefined) {
-          if (answer.deleted === true){
-            const answerCreated = Answer.update(answer.id, { value: answer.value, isCorrect: answer.isCorrect, questionId: answer.questionId, deleted: answer.deleted});
-            answers.push(answerCreated);
-          }else {
-            const answerCreated = Answer.update(answer.id, { value: answer.value, isCorrect: answer.isCorrect, questionId: answer.questionId });
-            answers.push(answerCreated);
+          if (answer.id !== undefined) {
+            if (answer.deleted === true){
+              const answerCreated = Answer.update(answer.id, { value: answer.value, isCorrect: answer.isCorrect, questionId: answer.questionId, deleted: answer.deleted});
+              answers.push(answerCreated);
+            }else {
+              const answerCreated = Answer.update(answer.id, { value: answer.value, isCorrect: answer.isCorrect, questionId: answer.questionId });
+              answers.push(answerCreated);
+            }
+          } else {
+            if (answer.deleted !== true) {
+              const answerCreated = Answer.create({ value: answer.value, isCorrect: answer.isCorrect, questionId: answer.questionId });
+              answers.push(answerCreated);
+            }
           }
-        } else {
-          if (answer.deleted !== true) {
-            const answerCreated = Answer.create({ value: answer.value, isCorrect: answer.isCorrect, questionId: answer.questionId });
-            answers.push(answerCreated);
-          }
-        }
 
-      });
+        });
+      }
 
     });
 
