@@ -88,7 +88,7 @@ export class QuizCreationComponent implements OnInit {
     if (!this.quizToCreate) {
       this.quizToCreate = this.emptyQuiz;
     }
-    this.quizToCreate.theme =  quiz.theme;
+    this.quizToCreate.theme = quiz.theme;
     this.quizToCreate.themeId = quiz.themeId.toString();
     this.quizToCreate.name = quiz.name;
     this.quizToCreate.difficulty = quiz.difficulty;
@@ -103,7 +103,7 @@ export class QuizCreationComponent implements OnInit {
     this.quizService.addQuiz(this.quizToCreate).subscribe((response) => {
       this.isLoading = false;
       if (response.status === 200 || response.status === 201) {
-        console.log(response.body );
+        console.log(response.body);
         this.quizService.quizzes.push(response.body);
         this.quizService.quizzes$.next(this.quizService.quizzes);
         this.toasterService.activateToaster(false, 'quiz créé', 2000);
@@ -117,18 +117,23 @@ export class QuizCreationComponent implements OnInit {
       } else {
         this.toasterService.activateToaster(true, 'Une erreur est survenue, réessayer plus tard...', 2000);
       }
-      });
+    });
   }
 
   goToThemeMenu() {
-    this.router.navigate(['/quiz-list/' + this.quizToCreate.themeId]);
+    if (this.quizToCreate.themeId !== undefined) {
+      this.router.navigate(['/themes/' + this.quizToCreate.themeId]);
+    }
+
+    this.router.navigate(['/themes']);
   }
 
 
   deleteQuiz() {
-    console.log(this.quizToCreate);
-    this.quizService.deleteQuiz(this.quizToCreate);
-    this.goToThemeMenu();
+    if (confirm('Etes-vous sur de vouloir supprimer ce quiz ?')) {
+      this.quizService.deleteQuiz(this.quizToCreate);
+      this.goToThemeMenu();
+    }
   }
 
   updateQuiz() {

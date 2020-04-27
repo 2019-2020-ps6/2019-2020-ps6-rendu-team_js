@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {AuthService} from '../../services/auth.service';
 import {Router} from '@angular/router';
 import {Location} from '@angular/common';
@@ -16,7 +16,8 @@ export class HeaderComponent implements OnInit {
   constructor(private authService: AuthService,
               private router: Router,
               private helpService: HelpService,
-              private location: Location) { }
+              private location: Location) {
+  }
 
   ngOnInit() {
     // this.authService.user$.subscribe((b: boolean) => { this.authService.auth = b; });
@@ -30,8 +31,9 @@ export class HeaderComponent implements OnInit {
   }
 
   logout() {
-    this.authService.logout();
-    // this.router.navigate(['/welcome']);
+    if (confirm('Etes-vous sur de vouloir vous déconnecter ?')) {
+      this.authService.logout();
+    }
   }
 
   quitQuiz() {
@@ -45,13 +47,13 @@ export class HeaderComponent implements OnInit {
 
   isDisconnectDisplayed(): boolean {
     const path = this.getCurrentPathSpliced();
-    return this.authService.isAuth() && path.length > 0 && path[1] !== 'play' ;
+    return this.authService.isAuth() && path.length > 0 && path[1] !== 'play';
   }
 
 
   isPolyQuizDisplayed(): boolean {
     const path = this.getCurrentPathSpliced();
-    return path.length > 0 && path[1] !== 'play' ;
+    return path.length > 0 && path[1] !== 'play';
   }
 
 
