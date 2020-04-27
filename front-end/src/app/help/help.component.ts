@@ -47,40 +47,40 @@ export class HelpComponent implements OnInit {
       switch (path[1]) {
         case 'login' : // ======================================== LOGIN
           if (this.isBigFontActive()) { // Big font size
-            return 'V-_O7nl0Ii0';
+            return '3A15iKkrN1s';
           } else {  // Medium
-            return 'AyPkrf74ras';
+            return '3A15iKkrN1s';
           }
 
         case 'themes' : // ======================================= THEMES
           if (this.isBigFontActive()) { // Big font size
-            return 'dQw4w9WgXcQ';
+            return 'qsKXGl5R6S0';
           } else { // Medium
-            return 'AyPkrf74ras';
+            return 'qsKXGl5R6S0';
           }
 
         case 'stats' : // ======================================== STATS
           if (this.isBigFontActive()) { // Big font size
-            return 'dQw4w9WgXcQ';
+            return 'Am_4K3Eze6M';
           } else { // Medium
-            return 'AyPkrf74ras';
+            return 'Am_4K3Eze6M';
           }
 
         case 'parameters' : // =================================== SETTINGS
           if (this.isBigFontActive()) { // Big font size
-            return 'dQw4w9WgXcQ';
+            return 'iITEA3TAN1c';
           } else { // Medium
-            return 'AyPkrf74ras';
+            return 'iITEA3TAN1c';
           }
 
         case 'residents' : // ==================================== RESIDENTS
-          return 'AyPkrf74ras';
+          return 'EhZQADzAfb4';
 
         case 'quiz-creation' : // ================================ QUIZ CREATION
-          return 'dQw4w9WgXcQ';
+          return '691RR-lJyDs';
 
         default: // ============================================== DEFAULT
-          return 'dQw4w9WgXcQ';
+          return 'qsKXGl5R6S0';
       }
     } else {
       return '';

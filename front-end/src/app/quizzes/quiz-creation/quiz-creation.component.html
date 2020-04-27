@@ -20,9 +20,17 @@
 
 <div class="bottom-validation-container" *ngIf="isBottomContainerOpenEditMode() && true">
   <div class="button-header delete-quiz-bg" (click)="deleteQuiz()" >Supprimer le quiz</div>
-  <div class="button-header bg-general" (click)="updateQuiz()">Mettre à jour le quiz</div>
+  <button class="button-header bg-general"
+       [disabled]="nbQuestions() < 2"
+       [class.disable-button]="nbQuestions() < 2"
+       [ngClass]="nbQuestions() < 2 ? 'button-header' : ''"
+       (click)="updateQuiz()">Mettre à jour le quiz</button>
 </div>
 
-<div class="bottom-validation-container" *ngIf="isBottomContainerOpenCreateMode()  && true">
-  <div class="button-header bg-general"  (click)="createQuiz()" >Créer le quiz</div>
+<div class="bottom-validation-container" *ngIf="isBottomContainerOpenCreateMode() && true">
+  <button class="button-header bg-general"
+       [disabled]="quizToCreate.questions.length < 2"
+       [class.disable-button]="quizToCreate.questions.length < 2"
+       [ngClass]="quizToCreate.questions.length < 2 ? 'button-header' : ''"
+       (click)="createQuiz()" >Créer le quiz</button>
 </div>
