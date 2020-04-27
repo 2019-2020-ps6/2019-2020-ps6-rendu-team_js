@@ -45,7 +45,7 @@
     "id": 3200000000000
   },
   {
-    "label": "Le quelle de ces joueurs est Français ?",
+    "label": "Lequel de ces joueurs est Français ?",
     "quizId": 2000000000002,
     "id": 3200000000001
   },
@@ -55,12 +55,12 @@
     "id": 3200000000002
   },
   {
-    "label": "Au basketball il y a des panier a 1, 2 et 3 points ?",
+    "label": "Au basketball il y a des paniers valant 1, 2 et 3 points ?",
     "quizId": 2000000000002,
     "id": 3200000000003
   },
   {
-    "label": "Dans quelle équipe NBA a joué Michael Jordan ?",
+    "label": "Dans quelle équipe de NBA a joué Michael Jordan ?",
     "quizId": 2000000000002,
     "id": 3200000000004
   },
@@ -70,7 +70,7 @@
     "id": 3200000000005
   },
   {
-    "label": "A quel hauteur est fixer le panier de basketball ?",
+    "label": "A quel hauteur est fixé le panier de basketball ?",
     "quizId": 2000000000002,
     "id": 3200000000006
   },
@@ -85,12 +85,12 @@
     "id": 3300000000005
   },
   {
-    "label": "L'Union européenne est constitué de combien de pays ?",
+    "label": "De combien de pays est constituée l'Union Européenne ?",
     "quizId": 2000000000003,
     "id": 3300000000001
   },
   {
-    "label": "Quelle ville est la capitale de l'Union européenne ?",
+    "label": "Quelle ville est la capitale de l'Union Européenne ?",
     "quizId": 2000000000003,
     "id": 3300000000002
   },
@@ -110,17 +110,17 @@
     "id": 3300000000006
   },
   {
-    "label": "Quelle est la vitesse maximale autorisé sur les Autoroutes Françaises",
+    "label": "Quelle est la vitesse maximale autorisée sur les Autoroutes Françaises ?",
     "quizId": 2000000000004,
     "id": 3400000000000
   },
   {
-    "label": "Le volant des voitures sont placé du coté droit ?",
+    "label": "Le volant des voitures est placé du coté droit ?",
     "quizId": 2000000000004,
     "id": 3400000000005
   },
   {
-    "label": "Combien de coter a le panneau STOP ?",
+    "label": "Combien de cotés a le panneau STOP ?",
     "quizId": 2000000000004,
     "id": 3400000000001
   },
@@ -145,107 +145,107 @@
     "id": 3400000000006
   },
   {
-    "label": "Quelle ville est la capitale de l'Egypte",
+    "label": "Quelle ville est la capitale de l'Egypte ?",
     "quizId": 1587859606729,
     "id": 1587859606782
   },
   {
-    "label": "Quelle ville est la capitale du Pérou",
+    "label": "Quelle ville est la capitale du Pérou ?",
     "quizId": 1587859606729,
     "id": 1587859606852
   },
   {
-    "label": "Quelle ville est la capitale de la Roumanie",
+    "label": "Quelle ville est la capitale de la Roumanie ?",
     "quizId": 1587859606729,
     "id": 1587859606865
   },
   {
-    "label": "Quelle ville est la capitale de l'Inde",
+    "label": "Quelle ville est la capitale de l'Inde ?",
     "quizId": 1587859606729,
     "id": 1587859606878
   },
   {
-    "label": "Quelle ville est la capitale de l'Australie",
+    "label": "Quelle ville est la capitale de l'Australie ?",
     "quizId": 1587859606729,
     "id": 1587859606896
   },
   {
-    "label": "Quelle ville est la capitale du Canada",
+    "label": "Quelle ville est la capitale du Canada ?",
     "quizId": 1587859606729,
     "id": 1587859606910
   },
   {
-    "label": "Quelle ville est la capitale de la Norvège",
+    "label": "Quelle ville est la capitale de la Norvège ?",
     "quizId": 1587859606729,
     "id": 1587859606927
   },
   {
-    "label": "Quelle ville est la capitale du Portugal",
+    "label": "Quelle ville est la capitale du Portugal ?",
     "quizId": 1587859606729,
     "id": 1587859606969
   },
   {
-    "label": "Quelle ville est la capitale des Pays-Bas",
+    "label": "Quelle ville est la capitale des Pays-Bas ?",
     "quizId": 1587859606729,
     "id": 1587859606980
   },
   {
-    "label": "Quelle ville est la capitale de la Belgique",
+    "label": "Quelle ville est la capitale de la Belgique ?",
     "quizId": 1587859606729,
     "id": 1587859606993
   },
   {
-    "label": "Quelle ville est la capitale du Portugal",
+    "label": "Quelle ville est la capitale du Portugal ?",
     "quizId": 1587859606729,
     "id": 1587859607011
   },
   {
-    "label": "Quelle ville est la capitale de l'espagne",
+    "label": "Quelle ville est la capitale de l'Espagne ?",
     "quizId": 1587927509891,
     "id": 1587927509965
   },
   {
-    "label": "Quelle ville est la capitale de la Suisse",
+    "label": "Quelle ville est la capitale de la Suisse ?",
     "quizId": 1587927509891,
     "id": 1587927510013
   },
   {
-    "label": "Quelle ville est la capitale du Royaume-Uni",
+    "label": "Quelle ville est la capitale du Royaume-Uni ?",
     "quizId": 1587927509891,
     "id": 1587927510050
   },
   {
-    "label": "Quelle ville est la capitale de la Russie",
+    "label": "Quelle ville est la capitale de la Russie ?",
     "quizId": 1587927509891,
     "id": 1587927510062
   },
   {
-    "label": "Quelle ville est la capitale du Brésil",
+    "label": "Quelle ville est la capitale du Brésil ?",
     "quizId": 1587927509891,
     "id": 1587927510078
   },
   {
-    "label": "Quelle ville est la capitale du Mexique",
+    "label": "Quelle ville est la capitale du Mexique ?",
     "quizId": 1587927509891,
     "id": 1587927510094
   },
   {
-    "label": "Quelle ville est la capitale de la Chine",
+    "label": "Quelle ville est la capitale de la Chine ?",
     "quizId": 1587927509891,
     "id": 1587927510116
   },
   {
-    "label": "Quelle ville est la capitale de l'Algérie",
+    "label": "Quelle ville est la capitale de l'Algérie ?",
     "quizId": 1587927509891,
     "id": 1587927510129
   },
   {
-    "label": "Quelle ville est la capitale de l'Autriche",
+    "label": "Quelle ville est la capitale de l'Autriche ?",
     "quizId": 1587927509891,
     "id": 1587927510150
   },
   {
-    "label": "Quelle ville est la capitale de la Belgique",
+    "label": "Quelle ville est la capitale de la Belgique ?",
     "quizId": 1587927509891,
     "id": 1587927510164
   },
@@ -255,7 +255,7 @@
     "id": 1587927510175
   },
   {
-    "label": "En quelles années l'équipe de France a gagner la Coupe du monde ?",
+    "label": "En quelle année l'équipe de France a-t-elle gagné la Coupe du monde ?",
     "quizId": 1587929841469,
     "id": 1587929841475
   },
@@ -280,12 +280,12 @@
     "id": 1587929841560
   },
   {
-    "label": "Quelle est la distance y a-t-il entre les deux cages sur un terrain professionnel ?",
+    "label": "Quelle distance y a-t-il entre les deux cages sur un terrain professionnel ?",
     "quizId": 1587929841469,
     "id": 1587929841575
   },
   {
-    "label": "Combien d'équipes s'affrontent pour la Coupe du monde ? (équipes qualifiés)",
+    "label": "Combien d'équipes s'affrontent pour la Coupe du monde ? (équipes qualifiées)",
     "quizId": 1587929841469,
     "id": 1587929841587
   },
@@ -320,7 +320,7 @@
     "id": 1587996615056
   },
   {
-    "label": "Quel est leur chef ?",
+    "label": "Qui est leur chef ?",
     "quizId": 1587996615012,
     "id": 1587996615067
   },
@@ -330,7 +330,7 @@
     "id": 1587996615077
   },
   {
-    "label": "Où Clovis devient -il roi ?",
+    "label": "Où Clovis devient-il roi ?",
     "quizId": 1587996615012,
     "id": 1587996615086
   },
@@ -340,32 +340,32 @@
     "id": 1587997541782
   },
   {
-    "label": "Que se passe t il le 14 juillet 1789 ?",
+    "label": "Que se passe-t-il le 14 juillet 1789 ?",
     "quizId": 1587997541774,
     "id": 1587997541800
   },
   {
-    "label": "Que se passe t il le 4 aout 1789 ?",
+    "label": "Que se passe-t-il le 4 aout 1789 ?",
     "quizId": 1587997541774,
     "id": 1587997541811
   },
   {
-    "label": "Que se passe t il le 26 aout 1789 ?",
+    "label": "Que se passe-t-il le 26 aout 1789 ?",
     "quizId": 1587997541774,
     "id": 1587997541821
   },
   {
-    "label": "Que se passe t il en Juin 1791 ?",
+    "label": "Que se passe-t-il en Juin 1791 ?",
     "quizId": 1587997541774,
     "id": 1587997541830
   },
   {
-    "label": "Que se passe t il en Avril 1792 ?",
+    "label": "Que se passe-t-il en Avril 1792 ?",
     "quizId": 1587997541774,
     "id": 1587997541848
   },
   {
-    "label": "Que se passe t il le 21 janvier 1793 ?",
+    "label": "Que se passe-t-il le 21 janvier 1793 ?",
     "quizId": 1587997541774,
     "id": 1587997541941
   },
