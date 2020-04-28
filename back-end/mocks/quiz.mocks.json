@@ -3,20 +3,7 @@
     "name": "Les animaux domestiques",
     "themeId": "1000000000000",
     "difficulty": "Facile",
-    "id": 2000000000000,
-    "quizTries": [
-      {
-        "date": 1588016867982,
-        "quizResultId": 1588016941604,
-        "quizSuccessPercentage": 100
-      }
-    ],
-    "theme": {
-      "name": "Faune et flore",
-      "color": "#656500",
-      "nbQuiz": 1,
-      "id": 1000000000000
-    }
+    "id": 2000000000000
   },
   {
     "name": "Le basketball",
@@ -28,20 +15,7 @@
     "name": "L'Union européenne",
     "themeId": "1000000000002",
     "difficulty": "Moyen",
-    "id": 2000000000003,
-    "quizTries": [
-      {
-        "date": 1587907161565,
-        "quizResultId": 1587907164923,
-        "quizSuccessPercentage": 14.285714285714286
-      }
-    ],
-    "theme": {
-      "name": "Géographie",
-      "color": "#600065",
-      "nbQuiz": 6,
-      "id": 1000000000002
-    }
+    "id": 2000000000003
   },
   {
     "name": "Le code de la route",
@@ -53,159 +27,44 @@
     "name": "Les capitales - 2",
     "themeId": "1000000000002",
     "difficulty": "Difficile",
-    "id": 1587859606729,
-    "quizTries": [
-      {
-        "date": 1587859682267,
-        "quizResultId": 1587859713591,
-        "quizSuccessPercentage": 100
-      },
-      {
-        "date": 1587860751209,
-        "quizResultId": 1587860812624,
-        "quizSuccessPercentage": 90.9090909090909
-      },
-      {
-        "date": 1587861252035,
-        "quizResultId": 1587861283379,
-        "quizSuccessPercentage": 100
-      },
-      {
-        "date": 1587861312656,
-        "quizResultId": 1587861331761,
-        "quizSuccessPercentage": 90.9090909090909
-      },
-      {
-        "date": 1588017443323,
-        "quizResultId": 1588017482784,
-        "quizSuccessPercentage": 81.81818181818181
-      }
-    ],
-    "theme": {
-      "name": "Géographie",
-      "color": "#600065",
-      "nbQuiz": 6,
-      "id": 1000000000002
-    }
+    "id": 1587859606729
   },
   {
     "name": "Les capitales - 1",
     "themeId": "1000000000002",
     "difficulty": "Facile",
     "id": 1587927509891,
-    "quizTries": [
-      {
-        "date": 1587927564736,
-        "quizResultId": 1587927597650,
-        "quizSuccessPercentage": 90.9090909090909
-      },
-      {
-        "date": 1588017293273,
-        "quizResultId": 1588017358560,
-        "quizSuccessPercentage": 100
-      }
-    ],
-    "theme": {
-      "name": "Géographie",
-      "color": "#600065",
-      "nbQuiz": 6,
-      "id": 1000000000002
-    }
+    "deleted": true
   },
   {
     "name": "Le Football",
     "themeId": "1000000000001",
     "difficulty": "Moyen",
-    "id": 1587929841469,
-    "quizTries": [
-      {
-        "date": 1588016952659,
-        "quizResultId": 1588017011186,
-        "quizSuccessPercentage": 77.77777777777777
-      }
-    ],
-    "theme": {
-      "name": "Sports",
-      "color": "#250065",
-      "nbQuiz": 2,
-      "id": 1000000000001
-    }
+    "id": 1587929841469
   },
   {
     "name": "Les Francs",
     "themeId": "1000000000007",
     "difficulty": "Difficile",
-    "id": 1587996615012,
-    "quizTries": [
-      {
-        "date": 1588017029852,
-        "quizResultId": 1588017107060,
-        "quizSuccessPercentage": 100
-      }
-    ],
-    "theme": {
-      "name": "Histoire",
-      "color": "#00653D",
-      "nbQuiz": 2,
-      "id": 1000000000007
-    }
+    "id": 1587996615012
   },
   {
     "name": "La révolution Française",
     "themeId": "1000000000007",
     "difficulty": "Moyen",
-    "id": 1587997541774,
-    "quizTries": [
-      {
-        "date": 1588017137385,
-        "quizResultId": 1588017188620,
-        "quizSuccessPercentage": 85.71428571428571
-      }
-    ],
-    "theme": {
-      "name": "Histoire",
-      "color": "#00653D",
-      "nbQuiz": 2,
-      "id": 1000000000007
-    }
+    "id": 1587997541774
   },
   {
     "name": "Les familles de mots",
     "themeId": "1000000000009",
     "difficulty": "Moyen",
-    "id": 1587998502594,
-    "quizTries": [
-      {
-        "date": 1588017222808,
-        "quizResultId": 1588017252505,
-        "quizSuccessPercentage": 80
-      }
-    ],
-    "theme": {
-      "name": "Grammaire",
-      "color": "#1B2631",
-      "nbQuiz": 1,
-      "id": 1000000000009
-    }
+    "id": 1587998502594
   },
   {
     "name": "Les départements Français",
     "themeId": "1000000000002",
     "difficulty": "Difficile",
-    "id": 1588019076716,
-    "quizTries": [
-      {
-        "date": 1588019080776,
-        "quizResultId": 1588019113141,
-        "quizSuccessPercentage": 100
-      }
-    ],
-    "theme": {
-      "name": "Géographie",
-      "color": "#600065",
-      "nbQuiz": 6,
-      "id": 1000000000002
-    }
+    "id": 1588019076716
   },
   {
     "name": "Les numéros des départements Français",
@@ -217,58 +76,19 @@
     "name": "La cuisine du monde",
     "themeId": "1000000000004",
     "difficulty": "Facile",
-    "id": 1588020329017,
-    "quizTries": [
-      {
-        "date": 1588020334338,
-        "quizResultId": 1588020354249,
-        "quizSuccessPercentage": 100
-      }
-    ],
-    "theme": {
-      "name": "Cuisine",
-      "color": "#c40e08",
-      "nbQuiz": 3,
-      "id": 1000000000004
-    }
+    "id": 1588020329017
   },
   {
     "name": "Les fromages",
     "themeId": "1000000000004",
     "difficulty": "Moyen",
-    "id": 1588021765402,
-    "quizTries": [
-      {
-        "date": 1588021768813,
-        "quizResultId": 1588021803721,
-        "quizSuccessPercentage": 100
-      }
-    ],
-    "theme": {
-      "name": "Cuisine",
-      "color": "#c40e08",
-      "nbQuiz": 3,
-      "id": 1000000000004
-    }
+    "id": 1588021765402
   },
   {
     "name": "La chanson française",
     "themeId": "1000000000006",
     "difficulty": "Facile",
-    "id": 1588023098563,
-    "quizTries": [
-      {
-        "date": 1588023103133,
-        "quizResultId": 1588023132781,
-        "quizSuccessPercentage": 100
-      }
-    ],
-    "theme": {
-      "name": "Chansons / Musiques",
-      "color": "#600065",
-      "nbQuiz": 2,
-      "id": 1000000000006
-    }
+    "id": 1588023098563
   },
   {
     "name": "Johnny Hallyday",
@@ -281,5 +101,19 @@
     "themeId": "1000000000001",
     "difficulty": "Difficile",
     "id": 1588025249606
+  },
+  {
+    "name": "g",
+    "themeId": "1588060987116",
+    "difficulty": "Moyen",
+    "id": 1588061060437,
+    "deleted": true
+  },
+  {
+    "name": "lllllllllll",
+    "themeId": "1000000000009",
+    "difficulty": "Moyen",
+    "id": 1588063654888,
+    "deleted": true
   }
 ]
