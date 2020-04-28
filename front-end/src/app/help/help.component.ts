@@ -24,7 +24,7 @@ export class HelpComponent implements OnInit {
               private settingsService: SettingsService,
               private sanitizer: DomSanitizer) {
 
-    this.videoId = 'dQw4w9WgXcQ';
+    this.videoId = 'qsKXGl5R6S0';
     this.settingsService.settings$.subscribe((s) => {
       this.settings = s;
       console.log(s);
