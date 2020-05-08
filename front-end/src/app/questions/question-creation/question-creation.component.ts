@@ -170,7 +170,7 @@ export class QuestionCreationComponent implements OnInit {
 
         // Check if enough answers to create the question, otherwise doesn't create it!
         if (!this.updateMode) {
-          if (answersArray.length <= 2) {
+          if (answersArray.length < 2) {
             this.toasterService.activateToaster(true, 'Entrer au moins une mauvaise réponse', 3000);
             return;
           }
