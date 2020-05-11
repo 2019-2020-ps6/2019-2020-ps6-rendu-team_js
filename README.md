@@ -29,7 +29,7 @@ npm install
 npm install -g @angular/cli
 ```
 > Launch the server:
-- Front end & Back end
+- Front-end & Back-end
 ```
 npm run start
 ```
@@ -44,7 +44,7 @@ npm run start
 npm run dev
 ```
 
-You can now access to the server on http://127.0.0.1:4200/.
+You can now access the server on http://127.0.0.1:4200/.
 
 # Useful links
 > Documentation Angular: 
