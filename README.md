@@ -19,7 +19,7 @@ Google chrome / Firefox (recommended)
 
 # How to install
 ## _Instructions_
-> Open **command prompt** in the directory **"front-end"** and follow the procedure bellow. When it's over, start again in the repertory **"back-end"**
+> Open **command prompt** in the directory **"front-end"** and follow the procedure below. When it's over, start again in the repertory **"back-end"**
 - Then, **install dependencies** _(need an internet connection)_ by running:
 ```
 npm install
@@ -44,7 +44,7 @@ npm run start
 npm run dev
 ```
 
-You can now access to the server on http://127.0.0.1:4200/.
+You can now access to the server on http://IP_OF_YOUR_SERVER:4200/.
 
 # Useful links
 > Documentation Angular: 
