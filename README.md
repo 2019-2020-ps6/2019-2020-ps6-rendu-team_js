@@ -8,13 +8,16 @@
 - [Anton van der Tuijn](https://github.com/Anton-vanderTuijn)
 > FISE group
 
+# Test our project
+You can test our product without installing it on: _http://polyquiz.me/_
+
 # Requirements
 ```
-Node.js
+node.js
 ```
 
 # How to install
-## _Patron version_
+## _Instructions_
 > Open **command prompt** in the directory **"front-end"** and follow the procedure bellow. When it's over, start again in the repertory **"back-end"**
 - Then, **install dependencies** _(need an internet connection)_ by running:
 ```
@@ -24,12 +27,13 @@ npm install
 ```
 npm install -g @angular/cli
 ```
-- Launch server:
+> Launch the server:
+- Front end & Back end
 ```
-npm start
+npm run start
 ```
-## _Developer version_
-> Follow the abose procedure but launch the server with:
+
+>For developers, you can debug the program using:
 - Front end
 ```
 npm run start
@@ -38,6 +42,8 @@ npm run start
 ```
 npm run dev
 ```
+
+You can now access to the server on http://127.0.0.1:4200/.
 
 # Useful links
 > Documentation Angular: 
