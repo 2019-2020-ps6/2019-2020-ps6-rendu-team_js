@@ -14,6 +14,7 @@ You can test our product without installing it on: _http://polyquiz.me/_
 # Requirements
 ```
 node.js
+Google chrome / Firefox (prefered)
 ```
 
 # How to install
