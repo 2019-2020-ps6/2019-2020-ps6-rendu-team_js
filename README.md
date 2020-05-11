@@ -44,7 +44,7 @@ npm run start
 npm run dev
 ```
 
-You can now access the server on http://IP_OF_YOUR_SERVER:4200/.
+You can now access the server on http://localhost:4200/.
 
 # Useful links
 > Documentation Angular: 
