@@ -33,7 +33,7 @@ npm install -g @angular/cli
 npm run start
 ```
 
->For developers, you can debug the program using:
+>For developers ONLY, you can debug the program using:
 - Front end
 ```
 npm run start
