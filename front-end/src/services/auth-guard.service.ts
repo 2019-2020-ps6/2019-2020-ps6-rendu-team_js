@@ -18,15 +18,13 @@ export class AuthGuardService {
 
     return new Promise(((resolve, reject) => {
 
-      // TODO check if a cookie exist before asking the server
-
       if (this.authService.isAuth()) {
         this.settingsService.setCurrentUserSettingsPromise().then((v) => {
           if (v === true) {
             resolve(true);
             console.log(this.settingsService.settings);
           } else {
-            reject('no settings found');
+            resolve(false);
           }
         });
         resolve(true);
@@ -40,12 +38,12 @@ export class AuthGuardService {
                 resolve(true);
                 console.log(this.settingsService.settings);
               } else {
-                reject('no settings found');
+                resolve(false);
               }
             });
             resolve(true);
           } else {
-            reject();
+            resolve(false);
             this.router.navigate(['/welcome']);
           }
 

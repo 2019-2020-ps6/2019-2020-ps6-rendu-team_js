@@ -116,19 +116,25 @@ export class QuizListComponent implements OnInit {
 
   easyButtonPressed() {
     this.isEasyActive = !this.isEasyActive;
+    this.isMediumActive = false;
+    this.isHardActive = false;
     this.updateTextFilter();
     this.updateQuizListFiltered();
   }
 
 
   mediumButtonPressed() {
+    this.isEasyActive = false;
     this.isMediumActive = !this.isMediumActive;
+    this.isHardActive = false;
     this.updateTextFilter();
     this.updateQuizListFiltered();
   }
 
 
   hardButtonPressed() {
+    this.isEasyActive = false;
+    this.isMediumActive = false;
     this.isHardActive = !this.isHardActive;
     this.updateTextFilter();
     this.updateQuizListFiltered();
@@ -144,5 +150,13 @@ export class QuizListComponent implements OnInit {
 
   backPress() {
     this.router.navigate(['/quiz-list']);
+  }
+
+  noQuizAvailable(): boolean {
+    if (this.quizListFiltered === undefined) {
+      return true;
+    } else {
+      return this.quizListFiltered.length === 0;
+    }
   }
 }

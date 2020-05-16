@@ -29,7 +29,7 @@ export class NotAuthGuardService {
 
         this.authService.getLogin().then(() => {
           if (this.authService.isAuth()) {
-            reject();
+            resolve(false);
             this.router.navigate(['/quiz-list']);
           } else {
             this.settingsService.settings = undefined;

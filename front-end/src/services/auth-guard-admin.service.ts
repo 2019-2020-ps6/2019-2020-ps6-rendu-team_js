@@ -24,7 +24,7 @@ export class AuthGuardAdminService {
         } else {
           this.settingsService.setCurrentUserSettingsPromise().then((v) => {
             if (v === true) {
-              reject();
+              resolve(false);
               this.router.navigate(['/quiz-list']);
               console.log(this.settingsService.settings);
             } else {
@@ -43,15 +43,15 @@ export class AuthGuardAdminService {
                   resolve(true);
                   console.log(this.settingsService.settings);
                 } else {
-                  reject('no settings found');
+                  resolve(false);
                 }
               });
             } else {
-              reject();
+              resolve(false);
               this.router.navigate(['/quiz-list']);
             }
           } else {
-            reject();
+            resolve(false);
             this.router.navigate(['/welcome']);
           }
 

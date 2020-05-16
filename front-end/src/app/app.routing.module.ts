@@ -24,7 +24,6 @@ import {QuestionCreationComponent} from './questions/question-creation/question-
 const routes: Routes = [
   // add the AuthGuardService if the user can go to the page if he's connected
   // add the NotAuthGuardService if the user can go to the page if he's not connected
-  {path: 'welcome', canActivate: [NotAuthGuardService], component: WelcomeComponent},
   {path: 'play/:id', canActivate: [AuthGuardService], component: PlayQuizComponent},
   {path: 'stats', canActivate: [AuthGuardService], component: StatisticsComponent},
   {path: 'result/:resId', canActivate: [AuthGuardService], component: ResultComponent},
@@ -33,13 +32,14 @@ const routes: Routes = [
   {path: 'theme-creation', canActivate: [AuthGuardAdminService], component: ThemeCreationComponent},
   {path: 'question-creation/:id', canActivate: [AuthGuardAdminService], component: QuestionCreationComponent},
   {path: 'question-edit/:id', canActivate: [AuthGuardAdminService], component: QuestionFormComponent},
-  {path: 'residents', canActivate: [AuthGuardAdminService], component: ResidentsComponent},
   {path: 'admin/:id/stats', canActivate: [AuthGuardAdminService], component: StatisticsResidentsComponent},
+  {path: 'themes', canActivate: [AuthGuardService], component: ThemeComponent},
+  {path: 'residents', canActivate: [AuthGuardAdminService], component: ResidentsComponent},
+  {path: 'welcome', canActivate: [NotAuthGuardService], component: WelcomeComponent},
   {path: 'quiz-editor/:id', canActivate: [AuthGuardService], component: QuizCreationComponent},
   {path: 'quiz-info/:id', canActivate: [AuthGuardService], component: QuizInfoComponent},
   {path: 'login/user', canActivate: [NotAuthGuardService], component: UserFormComponent},
   {path: 'login/admin', canActivate: [NotAuthGuardService], component: AdminFormComponent},
-  {path: 'themes', canActivate: [AuthGuardService], component: ThemeComponent},
   {path: 'themes/:id', canActivate: [AuthGuardService], component: QuizListComponent},
   {path: '**', redirectTo: '/themes', canActivate: [NotAuthGuardService], pathMatch: 'full'}, // path ** means every page
   {path: '', redirectTo: '/themes', canActivate: [NotAuthGuardService], pathMatch: 'full'}, // path empty means nothing

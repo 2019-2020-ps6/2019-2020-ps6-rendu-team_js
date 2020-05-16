@@ -26,5 +26,6 @@
       <app-quiz-info [quiz]="quiz" [theme]="theme"></app-quiz-info>
     </div>
   </div>
+  <div class="item-center-no-quiz" *ngIf="noQuizAvailable()">Aucun quiz n'est présent dans cette difficultée ...</div>
 </div>
 
