@@ -1,6 +1,7 @@
 import {Component, Input, OnInit} from '@angular/core';
 import {Router} from '@angular/router';
 import {Location} from '@angular/common';
+import {QuizCreationStatusService} from '../../../services/quiz-creation-status.service';
 
 @Component({
   selector: 'app-menu-button',
@@ -15,9 +16,14 @@ export class MenuButtonComponent implements OnInit {
   @Input() bgColor: string;
 
   imagePath: string;
+  isQuizCreationPageEmpty = true;
 
-  constructor(public location: Location,
+  constructor(private location: Location,
+              private quizCreationStatusService: QuizCreationStatusService,
               private router: Router) {
+    quizCreationStatusService.isQuizCreatedEmpty$.subscribe((b) => {
+      this.isQuizCreationPageEmpty = b;
+    });
   }
 
   ngOnInit() {
@@ -27,7 +33,7 @@ export class MenuButtonComponent implements OnInit {
 
   goTo() {
     // tslint:disable-next-line:max-line-length
-    if ((this.router.url.includes('/quiz-creation') || this.router.url.includes('/quiz-editor')) && confirm('Etes-vous sûr de vouloir retourner dans général, Attention votre création de quiz ne sera pas enregistrée ?')) {
+    if (this.isQuizCreationPageEmpty || ((this.router.url.includes('/quiz-creation') || this.router.url.includes('/quiz-editor')) && confirm('Attention votre création/édition de quiz n\'est enregistrée !\nEtes-vous sûr de vouloir changer de page ?'))) {
       if (this.routerPath !== '') {
         const pathsDisplayed = this.routerPath.split(' ');
         this.router.navigate([pathsDisplayed[0]]);

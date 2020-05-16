@@ -1,9 +1,9 @@
 <div class="menu" *ngIf="isMenuDisplayed()">
-  <app-menu-button *ngIf="isUserItemDisplayed()"  name="Quiz"       imageName="question_mark.svg" routerPath="quiz-list quiz-info result themes"    bgColor="var(--customOrange)" ></app-menu-button>
-  <app-menu-button *ngIf="isUserItemDisplayed()"  name="Stats"      imageName="stats.svg"         routerPath="stats "                               bgColor="var(--customRed)"></app-menu-button>
-  <app-menu-button *ngIf="isAdminItemDisplayed()" name="Création Quiz"   imageName="pen.svg"           routerPath="quiz-creation quiz-editor theme-creation"            bgColor="var(--customGreen)"></app-menu-button>
-  <app-menu-button *ngIf="isAdminItemDisplayed()" name="Résidents"  imageName="user.svg"          routerPath="residents admin"                      bgColor="var(--customBlue)"></app-menu-button>
-  <app-menu-button *ngIf="isUserItemDisplayed()"  name="Paramètres" imageName="settings.svg"      routerPath="parameters "                          bgColor="var(--customDarkBlue)"></app-menu-button>
-  <app-menu-button *ngIf="isBackItemDisplayed()"  name="Retour"     imageName="arrow-back.svg"    routerPath="login/user "                          bgColor="#EA4343"></app-menu-button>
-  <app-menu-button *ngIf="isEmptyMenuDisplayed()" name=""           imageName=""                  routerPath=""                                     bgColor="grey" style="flex: 5"></app-menu-button>
+  <app-menu-button *ngIf="isUserItemDisplayed()"  name="Quiz"             imageName="question_mark.svg" routerPath="quiz-list quiz-info result themes"         bgColor="var(--customOrange)" ></app-menu-button>
+  <app-menu-button *ngIf="isUserItemDisplayed()"  name="Stats"            imageName="stats.svg"         routerPath="stats "                                    bgColor="var(--customRed)"></app-menu-button>
+  <app-menu-button *ngIf="isAdminItemDisplayed()" name="Création Quiz"    imageName="pen.svg"           routerPath="quiz-creation quiz-editor theme-creation"  bgColor="var(--customGreen)"></app-menu-button>
+  <app-menu-button *ngIf="isAdminItemDisplayed()" name="Résidents"        imageName="user.svg"          routerPath="residents admin"                           bgColor="var(--customBlue)"></app-menu-button>
+  <app-menu-button *ngIf="isUserItemDisplayed()"  name="Paramètres"       imageName="settings.svg"      routerPath="parameters "                               bgColor="var(--customDarkBlue)"></app-menu-button>
+  <app-menu-button *ngIf="isBackItemDisplayed()"  name="Retour"           imageName="arrow-back.svg"    routerPath="login/user "                               bgColor="#EA4343"></app-menu-button>
+  <app-menu-button *ngIf="isEmptyMenuDisplayed()" name=""                 imageName=""                  routerPath=""                                          bgColor="grey" style="flex: 5"></app-menu-button>
 </div>

@@ -6,6 +6,7 @@ import {Quiz} from '../../../models/quiz.model';
 import {ThemesService} from '../../../services/themes.service';
 import {ActivatedRoute, Router} from '@angular/router';
 import {ToasterService} from '../../../services/toaster.service';
+import {QuizCreationStatusService} from '../../../services/quiz-creation-status.service';
 
 @Component({
   selector: 'app-quiz-creation',
@@ -40,6 +41,7 @@ export class QuizCreationComponent implements OnInit {
               private router: Router,
               private quizService: QuizService,
               private toasterService: ToasterService,
+              private quizCreationStatusService: QuizCreationStatusService,
               private themesService: ThemesService) {
 
     const id = this.route.snapshot.paramMap.get('id');
@@ -51,6 +53,7 @@ export class QuizCreationComponent implements OnInit {
       this.quizService.getQuizData(id).subscribe((q) => {
         this.updateModeValueReceived = true;
         this.quizToCreate = q;
+        quizCreationStatusService.isQuizCreatedEmpty$.next(false);
         console.log(this.quizToCreate);
       });
     }
@@ -67,10 +70,16 @@ export class QuizCreationComponent implements OnInit {
   openGeneral() {
 
     // tslint:disable-next-line:max-line-length
-    if (this.isQuestionListOpen && confirm('Etes-vous sûr de vouloir retourner dans général, Attention votre progression ne sera pas enregistrée ?')) {
+    if (this.isQuestionListOpen && this.isCreateQuestionOpen && confirm('Attention votre question n\'est pas enregistrée !\nEtes-vous sûr de vouloir retourner dans général ?')) {
       this.isGeneralOpen = true;
       this.isQuestionListOpen = false;
       console.log(this.quizToCreate);
+
+    } else if (this.isQuestionListOpen && !this.isCreateQuestionOpen) {
+      this.isGeneralOpen = true;
+      this.isQuestionListOpen = false;
+      console.log(this.quizToCreate);
+
     } else if (!this.isQuestionListOpen) {
       this.isGeneralOpen = true;
       this.isQuestionListOpen = false;

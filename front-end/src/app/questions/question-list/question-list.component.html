@@ -2,7 +2,7 @@
   <div class="main-container">
     <div *ngFor="let question of quiz.questions; let i = index;">
       <div *ngIf="question.deleted !== true">
-        <app-question [question]="question" (deleteQuestion)="deleteQuestion($event)"
+        <app-question [question]="question"
                       (click)="openQuestion(question, i)"></app-question>
 
       </div>
