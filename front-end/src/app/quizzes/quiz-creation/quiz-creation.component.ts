@@ -65,9 +65,17 @@ export class QuizCreationComponent implements OnInit {
 
 
   openGeneral() {
-    this.isGeneralOpen = true;
-    this.isQuestionListOpen = false;
-    console.log(this.quizToCreate);
+
+    // tslint:disable-next-line:max-line-length
+    if (this.isQuestionListOpen && confirm('Etes-vous sûr de vouloir retourner dans général, Attention votre progression ne sera pas enregistré ?')) {
+      this.isGeneralOpen = true;
+      this.isQuestionListOpen = false;
+      console.log(this.quizToCreate);
+    } else if (!this.isQuestionListOpen) {
+      this.isGeneralOpen = true;
+      this.isQuestionListOpen = false;
+      console.log(this.quizToCreate);
+    }
   }
 
   openQuestion() {
