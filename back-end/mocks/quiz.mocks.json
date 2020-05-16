@@ -166,5 +166,26 @@
     "difficulty": "Moyen",
     "id": 1589645869102,
     "deleted": true
+  },
+  {
+    "name": "dfcxb",
+    "themeId": "1000000000009",
+    "difficulty": "Moyen",
+    "id": 1589647700219,
+    "deleted": true
+  },
+  {
+    "name": "srgrs",
+    "themeId": "1588059453375",
+    "difficulty": "Facile",
+    "id": 1589648414156,
+    "deleted": true
+  },
+  {
+    "name": "segseg",
+    "themeId": "1588060987116",
+    "difficulty": "Moyen",
+    "id": 1589648934219,
+    "deleted": true
   }
 ]

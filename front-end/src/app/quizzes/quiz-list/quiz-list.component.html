@@ -23,9 +23,10 @@
 
   <div class="quiz-list" *ngIf="quizListFiltered !== undefined">
     <div class="quiz" *ngFor="let quiz of quizListFiltered">
-      <app-quiz-info [quiz]="quiz" [theme]="theme"></app-quiz-info>
+      <app-quiz-info [quiz]="quiz" [theme]="theme" (quizDeleted)="updateQuizDeleted($event)"></app-quiz-info>
     </div>
   </div>
-  <div class="item-center-no-quiz" *ngIf="noQuizAvailable()">Aucun quiz n'est présent dans cette difficultée ...</div>
+  <div class="item-center-no-quiz" *ngIf="noQuizAvailableInDifficulty()">Aucun quiz n'est présent dans cette difficultée ...</div>
+  <div class="item-center-no-quiz" *ngIf="noQuizAvailableAtAll()">Il n'y a aucun quiz dans ce thème ...</div>
 </div>
 

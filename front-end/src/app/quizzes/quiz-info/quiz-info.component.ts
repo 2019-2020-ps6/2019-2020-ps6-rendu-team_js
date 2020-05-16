@@ -1,11 +1,12 @@
-import {Component, Input, OnInit} from '@angular/core';
+import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
 import {Quiz} from '../../../models/quiz.model';
 import {ActivatedRoute, Router} from '@angular/router';
 import {QuizService} from '../../../services/quiz.service';
 import {Theme} from '../../../models/theme.model';
 import {ThemesService} from '../../../services/themes.service';
 import {AuthService} from '../../../services/auth.service';
-import {SettingsService} from '../../../services/settings.service';
+import {ToasterService} from '../../../services/toaster.service';
+import {BehaviorSubject} from 'rxjs';
 
 @Component({
   selector: 'app-quiz-info',
@@ -26,8 +27,12 @@ export class QuizInfoComponent implements OnInit {
   private lvlColor: string;
   private bgColor: string;
 
+  @Output()
+  private quizDeleted = new EventEmitter<Quiz>();
+
   constructor(private route: ActivatedRoute,
               private themesService: ThemesService,
+              private toasterService: ToasterService,
               private authServices: AuthService,
               private quizService: QuizService) {}
 
@@ -42,7 +47,15 @@ export class QuizInfoComponent implements OnInit {
 
   deleteQuiz() {
     if (confirm('Etes-vous sur de vouloir supprimer ce quiz ?')) {
-      this.quizService.deleteQuiz(this.quiz);
+      this.quizService.deleteQuizObservable(this.quiz).subscribe((response) => {
+        if (response.status === 204) {
+          this.quizService.setQuizzesFromUrl();
+          this.toasterService.activateToaster(false, 'Le quiz a bien été supprimé !', 3000);
+          this.quizDeleted.emit(this.quiz);
+        }
+      }, error => {
+        this.toasterService.activateToaster(true, 'Une erreur est survenue, réessayer plus tard...', 2000);
+      });
     }
   }
 }

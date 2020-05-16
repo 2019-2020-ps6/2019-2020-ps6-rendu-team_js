@@ -152,7 +152,30 @@ export class QuizListComponent implements OnInit {
     this.router.navigate(['/quiz-list']);
   }
 
-  noQuizAvailable(): boolean {
+  updateQuizDeleted(quiz: Quiz) {
+    const indexListBasic = this.quizList.indexOf(quiz);
+    const indexListFiltered = this.quizListFiltered.indexOf(quiz);
+
+    this.quizList.splice(indexListBasic, 1);
+    this.quizListFiltered.splice(indexListFiltered, 1);
+  }
+
+  noQuizAvailableAtAll(): boolean {
+    if (this.quizList === undefined) {
+      return true;
+    }
+
+    return this.quizList.length === 0;
+  }
+
+  noQuizAvailableInDifficulty(): boolean {
+    if (this.quizList === undefined) {
+      return false;
+    }
+    if (this.quizList.length === 0) {
+      return false;
+    }
+
     if (this.quizListFiltered === undefined) {
       return true;
     } else {
