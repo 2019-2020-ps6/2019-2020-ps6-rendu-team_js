@@ -27,7 +27,7 @@ export class MenuButtonComponent implements OnInit {
 
   goTo() {
     // tslint:disable-next-line:max-line-length
-    if ((this.router.url.includes('/quiz-creation') || this.router.url.includes('/quiz-editor')) && confirm('Etes-vous sûr de vouloir retourner dans général, Attention votre création de quiz ne sera pas enregistré ?')) {
+    if ((this.router.url.includes('/quiz-creation') || this.router.url.includes('/quiz-editor')) && confirm('Etes-vous sûr de vouloir retourner dans général, Attention votre création de quiz ne sera pas enregistrée ?')) {
       if (this.routerPath !== '') {
         const pathsDisplayed = this.routerPath.split(' ');
         this.router.navigate([pathsDisplayed[0]]);
