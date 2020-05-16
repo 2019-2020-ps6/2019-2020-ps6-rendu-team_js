@@ -81,7 +81,7 @@ h1 {
   padding: 1vmin 2vmin;
   font-family: var(--customFont);
   font-weight: 900;
-  font-size: 3vmin;
+  font-size: 3.5vmin;
 
   cursor: pointer;
 }
@@ -130,11 +130,26 @@ app-general-creation {
   left: 10vw;
   right: 0;
   width: 90%;
-  height: 10vmin;
-  background-color: rgba(242, 242, 242, 0.7);
+  height: 15vmin;
+  background-color: rgba(242, 242, 242, 1);
 
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
+}
+
+
+.txtinfoquestions{
+  text-align: center !important;
+  //flex: 1 0 49%;
+
+  font-family: var(--customFont);
+  font-weight: 900;
+  font-size: 3vmin;
+
+}
+
+.row {
+  flex-direction: row;
 }
