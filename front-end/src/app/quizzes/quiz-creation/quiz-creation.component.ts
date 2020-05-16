@@ -124,6 +124,7 @@ export class QuizCreationComponent implements OnInit {
         this.quizService.quizzes.push(response.body);
         this.quizService.quizzes$.next(this.quizService.quizzes);
         this.toasterService.activateToaster(false, 'quiz créé', 2000);
+        this.themesService.setThemes();
         this.goToThemeMenu();
       }
     }, error => {
@@ -175,6 +176,7 @@ export class QuizCreationComponent implements OnInit {
         this.quizService.quizzes.push(response.body);
         this.quizService.quizzes$.next(this.quizService.quizzes);
         this.toasterService.activateToaster(false, 'quiz mis à jour', 2000);
+        this.themesService.setThemes();
         this.goToThemeMenu();
       }
     }, error => {

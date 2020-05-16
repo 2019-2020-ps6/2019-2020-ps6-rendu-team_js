@@ -74,6 +74,7 @@ export class ThemeCreationComponent implements OnInit {
         this.themesService.themes$.next(this.themesService.themes);
         this.toasterService.activateToaster(false, 'Thème crée', 2000);
         this.themeSelected.emit(response.body);
+        this.themesService.setThemes();
         this.backPressed();
       }
 
