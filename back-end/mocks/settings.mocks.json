@@ -9,12 +9,12 @@
     "id": 1585366302574
   },
   {
-    "handicapVisuel": false,
-    "handicapMoteur": true,
-    "contraste": 1,
-    "fontSize": 1,
+    "handicapVisuel": true,
+    "handicapMoteur": false,
+    "contraste": 2,
+    "fontSize": 2,
     "font": "Segoe UI",
-    "tailleSelection": 2,
+    "tailleSelection": 1,
     "id": 1587855686838
   },
   {
@@ -45,12 +45,30 @@
     "id": 1587856448820
   },
   {
-    "handicapVisuel": false,
-    "handicapMoteur": false,
+    "handicapVisuel": true,
+    "handicapMoteur": true,
     "contraste": 1,
     "fontSize": 1,
     "font": "Segoe UI",
-    "tailleSelection": 1,
+    "tailleSelection": 2,
     "id": 1585360751986
+  },
+  {
+    "handicapVisuel": true,
+    "handicapMoteur": false,
+    "contraste": 2,
+    "fontSize": 2,
+    "font": "Segoe UI",
+    "tailleSelection": 1,
+    "id": 1588059917743
+  },
+  {
+    "handicapVisuel": true,
+    "handicapMoteur": false,
+    "contraste": 2,
+    "fontSize": 2,
+    "font": "Segoe UI",
+    "tailleSelection": 1,
+    "id": 1588060882536
   }
 ]

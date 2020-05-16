@@ -4,7 +4,7 @@
   <div class="user-table">
     <div class="text-connexion">Connexion</div>
     <form class="user-form" [formGroup]="userForm">
-      <input class="input-custom" placeholder="Nom Prénom" type="text" id="username" [formControlName]="'username'"
+      <input class="input-custom" placeholder="Prénom Nom" type="text" id="username" [formControlName]="'username'"
              [disabled]="isLoading" [class.disable-button]="isLoading">
       <button type="submit" class="button-card"  [disabled]="userForm.invalid" [class.disable-button]="userForm.invalid || isLoading" (click)="connexion()">Se connecter</button>
     </form>

@@ -40,4 +40,9 @@ export class QuizInfoComponent implements OnInit {
     this.lvlColor = this.themeColor + 'D0';
   }
 
+  deleteQuiz() {
+    if (confirm('Etes-vous sur de vouloir supprimer ce quiz ?')) {
+      this.quizService.deleteQuiz(this.quiz);
+    }
+  }
 }

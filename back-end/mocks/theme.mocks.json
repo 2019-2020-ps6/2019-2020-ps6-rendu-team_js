@@ -14,7 +14,7 @@
   {
     "name": "Géographie",
     "color": "#600065",
-    "nbQuiz": 5,
+    "nbQuiz": 4,
     "id": 1000000000002
   },
   {
@@ -26,7 +26,7 @@
   {
     "name": "Cuisine",
     "color": "#c40e08",
-    "nbQuiz": 3,
+    "nbQuiz": 2,
     "id": 1000000000004
   },
   {
@@ -50,13 +50,13 @@
   {
     "name": "Mathématiques",
     "color": "#650000",
-    "nbQuiz": 1,
+    "nbQuiz": 0,
     "id": 1000000000008
   },
   {
     "name": "Grammaire",
     "color": "#1B2631",
-    "nbQuiz": 2,
+    "nbQuiz": 1,
     "id": 1000000000009
   },
   {

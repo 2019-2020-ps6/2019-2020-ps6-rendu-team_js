@@ -1,7 +1,7 @@
 <!-- <app-quiz-creation></app-quiz-creation> -->
 <div class="container-quiz">
   <div class="main-container">
-    <h1 id="title">{{theme.name}}&nbsp;</h1>
+    <h1 id="title">{{theme.name}}&nbsp;- Quiz</h1>
     <div class="main-container">
       <a class="button back-button" (click)="backPress()">Retour</a>
       <a class="button remove-filter-button" (click)="resetFilters()" *ngIf="isAnyFilterActive()">Supprimer les filtres</a>
@@ -22,7 +22,7 @@
   </div>
 
   <div class="quiz-list" *ngIf="quizListFiltered !== undefined">
-    <div class="quiz" *ngFor="let quiz of quizListFiltered" >
+    <div class="quiz" *ngFor="let quiz of quizListFiltered">
       <app-quiz-info [quiz]="quiz" [theme]="theme"></app-quiz-info>
     </div>
   </div>

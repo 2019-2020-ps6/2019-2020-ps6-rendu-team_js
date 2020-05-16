@@ -1,40 +1,44 @@
 [
   {
     "currentWeek": 18,
-    "successPercentage": 88.96019013666074,
-    "totalQuizMade": 17,
-    "weekQuizMade": 11,
+    "successPercentage": 39.88095238095238,
+    "totalQuizMade": 3,
+    "weekQuizMade": 3,
     "quizzesResultIds": [
-      1587859713591,
-      1587860812624,
-      1587861283379,
-      1587861331761,
-      1587907164923,
-      1587927597650,
-      1588016941604,
-      1588017011186,
-      1588017107060,
-      1588017188620,
-      1588017252505,
-      1588017358560,
-      1588017482784,
-      1588019113141,
-      1588020354249,
-      1588021803721,
-      1588023132781
-    ],
-    "perfectQuiz": 9,
-    "id": 1585366302574
-  },
-  {
-    "currentWeek": 17,
-    "successPercentage": 40,
-    "totalQuizMade": 1,
-    "weekQuizMade": 1,
-    "quizzesResultIds": [
-      1587864096453
+      1588057966690,
+      1588060434886,
+      1588060463951
     ],
     "perfectQuiz": 0,
     "id": 1585360751986
+  },
+  {
+    "currentWeek": 18,
+    "successPercentage": 50,
+    "totalQuizMade": 4,
+    "weekQuizMade": 4,
+    "quizzesResultIds": [
+      1588058173656,
+      1588058284756,
+      1588059171758,
+      1588061324625
+    ],
+    "perfectQuiz": 0,
+    "id": 1585366302574
+  },
+  {
+    "currentWeek": 18,
+    "successPercentage": 25.454545454545457,
+    "totalQuizMade": 5,
+    "weekQuizMade": 5,
+    "quizzesResultIds": [
+      1588060064328,
+      1588060088819,
+      1588060095714,
+      1588060101457,
+      1588060664070
+    ],
+    "perfectQuiz": 0,
+    "id": 1587855746458
   }
 ]

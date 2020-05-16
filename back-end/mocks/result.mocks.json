@@ -1045,5 +1045,731 @@
     "userScore": 800,
     "quizSuccessPercentage": 100,
     "id": 1588023132781
+  },
+  {
+    "date": 1588057917831,
+    "playTime": 1936,
+    "quizId": "2000000000000",
+    "userId": 1585360751986,
+    "answers": [
+      {
+        "questionId": 3000000000000,
+        "answerId": 4000000000002,
+        "correctAnswerId": 4000000000000,
+        "questionScore": 50
+      },
+      {
+        "questionId": 3000000000001,
+        "answerId": 4100000000003,
+        "correctAnswerId": 4100000000000,
+        "questionScore": 50
+      },
+      {
+        "questionId": 3000000000002,
+        "answerId": 4200000000000,
+        "questionScore": 100
+      },
+      {
+        "questionId": 3000000000003,
+        "answerId": 4300000000003,
+        "correctAnswerId": 4300000000000,
+        "questionScore": 50
+      },
+      {
+        "questionId": 3000000000004,
+        "answerId": 4400000000001,
+        "correctAnswerId": 4400000000000,
+        "questionScore": 50
+      },
+      {
+        "questionId": 3000000000005,
+        "answerId": 4500000000004,
+        "correctAnswerId": 4500000000000,
+        "questionScore": 50
+      },
+      {
+        "questionId": 3000000000006,
+        "answerId": 4600000000005,
+        "correctAnswerId": 4600000000000,
+        "questionScore": 50
+      },
+      {
+        "questionId": 3000000000007,
+        "answerId": 4700000000004,
+        "correctAnswerId": 4700000000000,
+        "questionScore": 50
+      }
+    ],
+    "maxScore": 800,
+    "userScore": 450,
+    "quizSuccessPercentage": 12.5,
+    "id": 1588057919818
+  },
+  {
+    "date": 1588057964872,
+    "playTime": 1779,
+    "quizId": "2000000000000",
+    "userId": 1585360751986,
+    "answers": [
+      {
+        "questionId": 3000000000000,
+        "answerId": 4000000000000,
+        "questionScore": 100
+      },
+      {
+        "questionId": 3000000000001,
+        "answerId": 4100000000000,
+        "questionScore": 100
+      },
+      {
+        "questionId": 3000000000002,
+        "answerId": 4200000000000,
+        "questionScore": 100
+      },
+      {
+        "questionId": 3000000000003,
+        "answerId": 4300000000000,
+        "questionScore": 100
+      },
+      {
+        "questionId": 3000000000004,
+        "answerId": 4400000000002,
+        "correctAnswerId": 4400000000000,
+        "questionScore": 50
+      },
+      {
+        "questionId": 3000000000005,
+        "answerId": 4500000000001,
+        "correctAnswerId": 4500000000000,
+        "questionScore": 50
+      },
+      {
+        "questionId": 3000000000006,
+        "answerId": 4600000000000,
+        "questionScore": 100
+      },
+      {
+        "questionId": 3000000000007,
+        "answerId": 4700000000003,
+        "correctAnswerId": 4700000000000,
+        "questionScore": 50
+      }
+    ],
+    "maxScore": 800,
+    "userScore": 650,
+    "quizSuccessPercentage": 62.5,
+    "id": 1588057966690
+  },
+  {
+    "date": 1588058074117,
+    "playTime": 99471,
+    "quizId": "1588024466092",
+    "userId": 1585366302574,
+    "answers": [
+      {
+        "questionId": 1588024466093,
+        "answerId": 1588024466093,
+        "questionScore": 100
+      },
+      {
+        "questionId": 1588024466103,
+        "answerId": 1588024466103,
+        "questionScore": 100
+      },
+      {
+        "questionId": 1588024466107,
+        "answerId": 1588024466111,
+        "correctAnswerId": 1588024466108,
+        "questionScore": 50
+      },
+      {
+        "questionId": 1588024466112,
+        "answerId": 1588024466112,
+        "questionScore": 100
+      },
+      {
+        "questionId": 1588024466116,
+        "answerId": 1588024466116,
+        "questionScore": 100
+      },
+      {
+        "questionId": 1588024466119,
+        "answerId": 1588024466120,
+        "questionScore": 100
+      },
+      {
+        "questionId": 1588024466123,
+        "answerId": 1588024466126,
+        "correctAnswerId": 1588024466123,
+        "questionScore": 50
+      },
+      {
+        "questionId": 1588024466127,
+        "answerId": 1588024466128,
+        "questionScore": 100
+      }
+    ],
+    "maxScore": 800,
+    "userScore": 700,
+    "quizSuccessPercentage": 75,
+    "id": 1588058173656
+  },
+  {
+    "date": 1588058189667,
+    "playTime": 95035,
+    "quizId": "1588023098563",
+    "userId": 1585366302574,
+    "answers": [
+      {
+        "questionId": 1588023098564,
+        "answerId": 1588023098572,
+        "correctAnswerId": 1588023098564,
+        "questionScore": 50
+      },
+      {
+        "questionId": 1588023098573,
+        "answerId": 1588023098574,
+        "questionScore": 100
+      },
+      {
+        "questionId": 1588023098577,
+        "answerId": 1588023098581,
+        "correctAnswerId": 1588023098577,
+        "questionScore": 50
+      },
+      {
+        "questionId": 1588023098582,
+        "answerId": 1588023098582,
+        "questionScore": 100
+      },
+      {
+        "questionId": 1588023098586,
+        "answerId": 1588023098586,
+        "questionScore": 100
+      },
+      {
+        "questionId": 1588023098590,
+        "answerId": 1588023098590,
+        "questionScore": 100
+      },
+      {
+        "questionId": 1588023098594,
+        "answerId": 1588023098594,
+        "questionScore": 100
+      },
+      {
+        "questionId": 1588023098598,
+        "answerId": 1588023098598,
+        "questionScore": 100
+      }
+    ],
+    "maxScore": 800,
+    "userScore": 700,
+    "quizSuccessPercentage": 75,
+    "id": 1588058284756
+  },
+  {
+    "date": 1588059164435,
+    "playTime": 7278,
+    "quizId": "2000000000000",
+    "userId": 1585366302574,
+    "answers": [
+      {
+        "questionId": 3000000000000,
+        "answerId": 4000000000005,
+        "correctAnswerId": 4000000000000,
+        "questionScore": 50
+      },
+      {
+        "questionId": 3000000000001,
+        "answerId": 4100000000001,
+        "correctAnswerId": 4100000000000,
+        "questionScore": 50
+      },
+      {
+        "questionId": 3000000000002,
+        "answerId": 4200000000000,
+        "questionScore": 100
+      },
+      {
+        "questionId": 3000000000003,
+        "answerId": 4300000000004,
+        "correctAnswerId": 4300000000000,
+        "questionScore": 50
+      },
+      {
+        "questionId": 3000000000004,
+        "answerId": 4400000000005,
+        "correctAnswerId": 4400000000000,
+        "questionScore": 50
+      },
+      {
+        "questionId": 3000000000005,
+        "answerId": 4500000000003,
+        "correctAnswerId": 4500000000000,
+        "questionScore": 50
+      },
+      {
+        "questionId": 3000000000006,
+        "answerId": 4600000000000,
+        "questionScore": 100
+      },
+      {
+        "questionId": 3000000000007,
+        "answerId": 4700000000001,
+        "correctAnswerId": 4700000000000,
+        "questionScore": 50
+      }
+    ],
+    "maxScore": 800,
+    "userScore": 500,
+    "quizSuccessPercentage": 25,
+    "id": 1588059171758
+  },
+  {
+    "date": 1588060061046,
+    "playTime": 3244,
+    "quizId": "2000000000002",
+    "userId": 1587855746458,
+    "answers": [
+      {
+        "questionId": 3200000000000,
+        "answerId": 6000000000003,
+        "correctAnswerId": 6000000000000,
+        "questionScore": 50
+      },
+      {
+        "questionId": 3200000000001,
+        "answerId": 6100000000001,
+        "correctAnswerId": 6100000000000,
+        "questionScore": 50
+      },
+      {
+        "questionId": 3200000000002,
+        "answerId": 6200000000001,
+        "correctAnswerId": 6200000000000,
+        "questionScore": 50
+      },
+      {
+        "questionId": 3200000000003,
+        "answerId": 6300000000000,
+        "questionScore": 100
+      },
+      {
+        "questionId": 3200000000004,
+        "answerId": 6400000000001,
+        "correctAnswerId": 6400000000000,
+        "questionScore": 50
+      },
+      {
+        "questionId": 3200000000005,
+        "answerId": 6500000000001,
+        "correctAnswerId": 6500000000000,
+        "questionScore": 50
+      },
+      {
+        "questionId": 3200000000006,
+        "answerId": 6600000000003,
+        "correctAnswerId": 6600000000000,
+        "questionScore": 50
+      }
+    ],
+    "maxScore": 700,
+    "userScore": 400,
+    "quizSuccessPercentage": 14.285714285714286,
+    "id": 1588060064328
+  },
+  {
+    "date": 1588060084909,
+    "playTime": 3880,
+    "quizId": "1587997541774",
+    "userId": 1587855746458,
+    "answers": [
+      {
+        "questionId": 1587997541782,
+        "answerId": 1587997541797,
+        "correctAnswerId": 1587997541792,
+        "questionScore": 50
+      },
+      {
+        "questionId": 1587997541800,
+        "answerId": 1587997541808,
+        "correctAnswerId": 1587997541801,
+        "questionScore": 50
+      },
+      {
+        "questionId": 1587997541811,
+        "answerId": 1587997541819,
+        "correctAnswerId": 1587997541812,
+        "questionScore": 50
+      },
+      {
+        "questionId": 1587997541821,
+        "answerId": 1587997541822,
+        "questionScore": 100
+      },
+      {
+        "questionId": 1587997541830,
+        "answerId": 1587997541843,
+        "correctAnswerId": 1587997541833,
+        "questionScore": 50
+      },
+      {
+        "questionId": 1587997541848,
+        "answerId": 1587997541937,
+        "correctAnswerId": 1587997541850,
+        "questionScore": 50
+      },
+      {
+        "questionId": 1587997541941,
+        "answerId": 1587997541951,
+        "correctAnswerId": 1587997541942,
+        "questionScore": 50
+      }
+    ],
+    "maxScore": 700,
+    "userScore": 400,
+    "quizSuccessPercentage": 14.285714285714286,
+    "id": 1588060088819
+  },
+  {
+    "date": 1588060092591,
+    "playTime": 3064,
+    "quizId": "1587859606729",
+    "userId": 1587855746458,
+    "answers": [
+      {
+        "questionId": 1587859606782,
+        "answerId": 1587859606849,
+        "correctAnswerId": 1587859606784,
+        "questionScore": 50
+      },
+      {
+        "questionId": 1587859606852,
+        "answerId": 1587859606863,
+        "correctAnswerId": 1587859606853,
+        "questionScore": 50
+      },
+      {
+        "questionId": 1587859606865,
+        "answerId": 1587859606867,
+        "questionScore": 100
+      },
+      {
+        "questionId": 1587859606878,
+        "answerId": 1587859606887,
+        "correctAnswerId": 1587859606880,
+        "questionScore": 50
+      },
+      {
+        "questionId": 1587859606896,
+        "answerId": 1587859606898,
+        "questionScore": 100
+      },
+      {
+        "questionId": 1587859606910,
+        "answerId": 1587859606916,
+        "correctAnswerId": 1587859606911,
+        "questionScore": 50
+      },
+      {
+        "questionId": 1587859606927,
+        "answerId": 1587859606955,
+        "questionScore": 100
+      },
+      {
+        "questionId": 1587859606969,
+        "answerId": 1587859606973,
+        "correctAnswerId": 1587859606971,
+        "questionScore": 50
+      },
+      {
+        "questionId": 1587859606980,
+        "answerId": 1587859606988,
+        "correctAnswerId": 1587859606982,
+        "questionScore": 50
+      },
+      {
+        "questionId": 1587859606993,
+        "answerId": 1587859607004,
+        "correctAnswerId": 1587859606994,
+        "questionScore": 50
+      },
+      {
+        "questionId": 1587859607011,
+        "answerId": 1587859607022,
+        "correctAnswerId": 1587859607012,
+        "questionScore": 50
+      }
+    ],
+    "maxScore": 1100,
+    "userScore": 700,
+    "quizSuccessPercentage": 27.272727272727273,
+    "id": 1588060095714
+  },
+  {
+    "date": 1588060098990,
+    "playTime": 2429,
+    "quizId": "2000000000004",
+    "userId": 1587855746458,
+    "answers": [
+      {
+        "questionId": 3400000000000,
+        "answerId": 8000000000003,
+        "correctAnswerId": 8000000000000,
+        "questionScore": 50
+      },
+      {
+        "questionId": 3400000000005,
+        "answerId": 8100000000000,
+        "questionScore": 100
+      },
+      {
+        "questionId": 3400000000001,
+        "answerId": 8200000000001,
+        "correctAnswerId": 8200000000000,
+        "questionScore": 50
+      },
+      {
+        "questionId": 3400000000002,
+        "answerId": 8300000000004,
+        "correctAnswerId": 8300000000000,
+        "questionScore": 50
+      },
+      {
+        "questionId": 3400000000003,
+        "answerId": 8400000000005,
+        "correctAnswerId": 8400000000000,
+        "questionScore": 50
+      },
+      {
+        "questionId": 3400000000004,
+        "answerId": 8500000000000,
+        "questionScore": 100
+      },
+      {
+        "questionId": 3400000000006,
+        "answerId": 8600000000003,
+        "correctAnswerId": 8600000000000,
+        "questionScore": 50
+      }
+    ],
+    "maxScore": 700,
+    "userScore": 450,
+    "quizSuccessPercentage": 28.571428571428573,
+    "id": 1588060101457
+  },
+  {
+    "date": 1588060424814,
+    "playTime": 10039,
+    "quizId": "1587996615012",
+    "userId": 1585360751986,
+    "answers": [
+      {
+        "questionId": 1587996615017,
+        "answerId": 1587996615022,
+        "correctAnswerId": 1587996615019,
+        "questionScore": 50
+      },
+      {
+        "questionId": 1587996615030,
+        "answerId": 1587996615031,
+        "questionScore": 100
+      },
+      {
+        "questionId": 1587996615040,
+        "answerId": 1587996615045,
+        "correctAnswerId": 1587996615041,
+        "questionScore": 50
+      },
+      {
+        "questionId": 1587996615056,
+        "answerId": 1587996615066,
+        "correctAnswerId": 1587996615057,
+        "questionScore": 50
+      },
+      {
+        "questionId": 1587996615067,
+        "answerId": 1587996615070,
+        "correctAnswerId": 1587996615069,
+        "questionScore": 50
+      },
+      {
+        "questionId": 1587996615077,
+        "answerId": 1587996615078,
+        "questionScore": 100
+      },
+      {
+        "questionId": 1587996615086,
+        "answerId": 1587996615094,
+        "correctAnswerId": 1587996615088,
+        "questionScore": 50
+      }
+    ],
+    "maxScore": 700,
+    "userScore": 450,
+    "quizSuccessPercentage": 28.571428571428573,
+    "id": 1588060434886
+  },
+  {
+    "date": 1588060441830,
+    "playTime": 6461,
+    "quizId": "1587997541774",
+    "userId": 1585360751986,
+    "answers": [
+      {
+        "questionId": 1587997541782,
+        "answerId": 1587997541798,
+        "correctAnswerId": 1587997541792,
+        "questionScore": 50
+      },
+      {
+        "questionId": 1587997541800,
+        "answerId": 1587997541803,
+        "correctAnswerId": 1587997541801,
+        "questionScore": 50
+      },
+      {
+        "questionId": 1587997541811,
+        "answerId": 1587997541816,
+        "correctAnswerId": 1587997541812,
+        "questionScore": 50
+      },
+      {
+        "questionId": 1587997541821,
+        "answerId": 1587997541822,
+        "questionScore": 100
+      },
+      {
+        "questionId": 1587997541830,
+        "answerId": 1587997541843,
+        "correctAnswerId": 1587997541833,
+        "questionScore": 50
+      },
+      {
+        "questionId": 1587997541848,
+        "answerId": 1587997541850,
+        "questionScore": 100
+      },
+      {
+        "questionId": 1587997541941,
+        "answerId": 1587997541944,
+        "correctAnswerId": 1587997541942,
+        "questionScore": 50
+      }
+    ],
+    "maxScore": 700,
+    "userScore": 450,
+    "quizSuccessPercentage": 28.571428571428573,
+    "id": 1588060463951
+  },
+  {
+    "date": 1588060638045,
+    "playTime": 25986,
+    "quizId": "2000000000002",
+    "userId": 1587855746458,
+    "answers": [
+      {
+        "questionId": 3200000000000,
+        "answerId": 6000000000001,
+        "correctAnswerId": 6000000000000,
+        "questionScore": 50
+      },
+      {
+        "questionId": 3200000000001,
+        "answerId": 6100000000002,
+        "correctAnswerId": 6100000000000,
+        "questionScore": 50
+      },
+      {
+        "questionId": 3200000000002,
+        "answerId": 6200000000000,
+        "questionScore": 100
+      },
+      {
+        "questionId": 3200000000003,
+        "answerId": 6300000000001,
+        "correctAnswerId": 6300000000000,
+        "questionScore": 50
+      },
+      {
+        "questionId": 3200000000004,
+        "answerId": 6400000000000,
+        "questionScore": 100
+      },
+      {
+        "questionId": 3200000000005,
+        "answerId": 6500000000003,
+        "correctAnswerId": 6500000000000,
+        "questionScore": 50
+      },
+      {
+        "questionId": 3200000000006,
+        "answerId": 6600000000000,
+        "questionScore": 100
+      }
+    ],
+    "maxScore": 700,
+    "userScore": 500,
+    "quizSuccessPercentage": 42.857142857142854,
+    "id": 1588060664070
+  },
+  {
+    "date": 1588061317256,
+    "playTime": 7326,
+    "quizId": "2000000000000",
+    "userId": 1585366302574,
+    "answers": [
+      {
+        "questionId": 3000000000000,
+        "answerId": 4000000000005,
+        "correctAnswerId": 4000000000000,
+        "questionScore": 50
+      },
+      {
+        "questionId": 3000000000001,
+        "answerId": 4100000000000,
+        "questionScore": 100
+      },
+      {
+        "questionId": 3000000000002,
+        "answerId": 4200000000002,
+        "correctAnswerId": 4200000000000,
+        "questionScore": 50
+      },
+      {
+        "questionId": 3000000000003,
+        "answerId": 4300000000004,
+        "correctAnswerId": 4300000000000,
+        "questionScore": 50
+      },
+      {
+        "questionId": 3000000000004,
+        "answerId": 4400000000003,
+        "correctAnswerId": 4400000000000,
+        "questionScore": 50
+      },
+      {
+        "questionId": 3000000000005,
+        "answerId": 4500000000003,
+        "correctAnswerId": 4500000000000,
+        "questionScore": 50
+      },
+      {
+        "questionId": 3000000000006,
+        "answerId": 4600000000004,
+        "correctAnswerId": 4600000000000,
+        "questionScore": 50
+      },
+      {
+        "questionId": 3000000000007,
+        "answerId": 4700000000000,
+        "questionScore": 100
+      }
+    ],
+    "maxScore": 800,
+    "userScore": 500,
+    "quizSuccessPercentage": 25,
+    "id": 1588061324625
   }
 ]
