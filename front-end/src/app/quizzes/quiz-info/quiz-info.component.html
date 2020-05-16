@@ -1,7 +1,7 @@
 <ng-container *ngIf="quiz != null">
   <div class="main-container" [ngStyle]="{backgroundColor: bgColor}">
     <div >
-      <div class="top-part-button-container"  (click)="isFullyDisplayed = !isFullyDisplayed">
+      <div class="top-part-button-container"  (click)="openQuiz()">
         <div class="top-button left-part" [ngStyle]="{backgroundColor: themeColor}" *ngIf="!isFullyDisplayed">⏷</div>
         <div class="top-button left-part" [ngStyle]="{backgroundColor: themeColor}" *ngIf="isFullyDisplayed">⏶</div>
         <div class="top-button middle-part" [ngStyle]="{backgroundColor: themeColor}"> {{quiz.name}} </div>

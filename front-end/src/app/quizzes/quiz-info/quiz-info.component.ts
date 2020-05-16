@@ -6,7 +6,7 @@ import {Theme} from '../../../models/theme.model';
 import {ThemesService} from '../../../services/themes.service';
 import {AuthService} from '../../../services/auth.service';
 import {ToasterService} from '../../../services/toaster.service';
-import {BehaviorSubject} from 'rxjs';
+import {QuizListStatusService} from '../../../services/quiz-list-status.service';
 
 @Component({
   selector: 'app-quiz-info',
@@ -21,6 +21,8 @@ export class QuizInfoComponent implements OnInit {
   @Input()
   private quiz: Quiz;
 
+  private quizIdOpened: string;
+
   private isFullyDisplayed = false;
 
   private themeColor: string;
@@ -34,7 +36,17 @@ export class QuizInfoComponent implements OnInit {
               private themesService: ThemesService,
               private toasterService: ToasterService,
               private authServices: AuthService,
-              private quizService: QuizService) {}
+              private quizListStatusService: QuizListStatusService,
+              private quizService: QuizService) {
+    this.quizIdOpened = '';
+
+    this.quizListStatusService.quizIdOpened$.subscribe((quizId) => {
+      if (quizId !== undefined && this.quiz !== undefined) {
+        this.quizIdOpened = quizId;
+        this.isFullyDisplayed = this.quizIdOpened === this.quiz.id;
+      }
+    });
+  }
 
   ngOnInit() {
     this.quiz.questions = [];
@@ -56,6 +68,14 @@ export class QuizInfoComponent implements OnInit {
       }, error => {
         this.toasterService.activateToaster(true, 'Une erreur est survenue, réessayer plus tard...', 2000);
       });
+    }
+  }
+
+  openQuiz() {
+    if (this.quizIdOpened === this.quiz.id && this.isFullyDisplayed) {
+      this.isFullyDisplayed = false;
+    } else {
+      this.quizListStatusService.quizIdOpened$.next(this.quiz.id);
     }
   }
 }
