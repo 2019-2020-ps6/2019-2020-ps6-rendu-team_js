@@ -18,8 +18,9 @@
 .text {
   text-decoration: none;
   color: var(--customWhite);
-  font-size: 1.5vw;
-  line-height: 2.5vmin;
+  font-size: 0.5rem;
+  //font-size: 1.5vw;
+  line-height: var(--customMenuLineHeight);
   padding-top: 1vmin;
 }
 
@@ -28,7 +29,7 @@ a:link{
 }
 
 .div-inside {
-  width: 10vw;
+  width: var(--customMenuWidth);
   padding: 1vmin;
   text-align: center;
   font-family: var(--customFont), sans-serif;
