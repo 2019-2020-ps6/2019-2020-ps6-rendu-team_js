@@ -86,3 +86,31 @@ hr.blackLine {
   border-top: 0.3vmin solid grey;
   margin-bottom: 3vmin !important
 }
+
+.swal-overlay {
+  background-color: rgba(141, 141, 141, 0.8);
+}
+
+.swal-button--confirm {
+  background-color: #4962B3;
+  margin-left: 5vmin;
+}
+
+.swal-button {
+  font-size: 10vmin;
+}
+
+.swal-footer {
+  text-align: center;
+  padding-top: 30px;
+  padding-bottom: 30px;
+}
+
+.swal-title {
+  font-size: 6vmin;
+}
+
+.swal-wide {
+  width:75% !important;
+}
+

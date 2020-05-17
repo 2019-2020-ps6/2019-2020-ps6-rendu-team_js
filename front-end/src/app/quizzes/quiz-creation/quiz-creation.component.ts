@@ -7,6 +7,7 @@ import {ThemesService} from '../../../services/themes.service';
 import {ActivatedRoute, Router} from '@angular/router';
 import {ToasterService} from '../../../services/toaster.service';
 import {QuizCreationStatusService} from '../../../services/quiz-creation-status.service';
+import swal from 'sweetalert';
 
 @Component({
   selector: 'app-quiz-creation',
@@ -70,10 +71,24 @@ export class QuizCreationComponent implements OnInit {
   openGeneral() {
 
     // tslint:disable-next-line:max-line-length
-    if (this.isQuestionListOpen && this.isCreateQuestionOpen && confirm('Attention votre question n\'est pas enregistrée !\nEtes-vous sûr de vouloir retourner dans général ?')) {
-      this.isGeneralOpen = true;
-      this.isQuestionListOpen = false;
-      console.log(this.quizToCreate);
+    if (this.isQuestionListOpen && this.isCreateQuestionOpen) {
+
+      swal({
+        className: 'swal-wide',
+        title: 'Attention votre question n\'est pas enregistrée !\nEtes-vous sûr de vouloir retourner dans général ?',
+        icon: '../../../assets/images/warn.svg',
+        buttons: ['Annuler', 'Confirmer'],
+        dangerMode: false,
+        closeOnClickOutside: false,
+      })
+        .then((willContinue) => {
+          if (willContinue) {
+
+            this.isGeneralOpen = true;
+            this.isQuestionListOpen = false;
+            console.log(this.quizToCreate);
+          }
+        });
 
     } else if (this.isQuestionListOpen && !this.isCreateQuestionOpen) {
       this.isGeneralOpen = true;
@@ -148,10 +163,21 @@ export class QuizCreationComponent implements OnInit {
 
 
   deleteQuiz() {
-    if (confirm('Etes-vous sur de vouloir supprimer ce quiz ?')) {
-      this.quizService.deleteQuiz(this.quizToCreate);
-      this.goToThemeMenu();
-    }
+
+    swal({
+      className: 'swal-wide',
+      title: 'Etes-vous sur de vouloir supprimer ce quiz ?',
+      icon: '../../../assets/images/warn.svg',
+      buttons: ['Annuler', 'Confirmer'],
+      dangerMode: false,
+      closeOnClickOutside: false,
+    })
+      .then((willContinue) => {
+        if (willContinue) {
+          this.quizService.deleteQuiz(this.quizToCreate);
+          this.goToThemeMenu();
+        }
+      });
   }
 
   nbQuestions() {

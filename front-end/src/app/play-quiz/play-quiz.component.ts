@@ -8,6 +8,7 @@ import {AuthService} from '../../services/auth.service';
 import {GamesService} from '../../services/games.service';
 import {Game} from '../../models/game.model';
 import {Answer} from '../../models/answer.model';
+import swal from 'sweetalert';
 
 @Component({
   selector: 'app-play-quiz',
@@ -61,29 +62,69 @@ export class PlayQuizComponent implements OnInit {
   }
 
   addToUserAnswers(answer: Answer) {
-    // console.log('Last answer', answer);
-    const answerConformWithBack = {questionId: answer.questionId, answerId: answer.id};
-    this.userAnswers.push(answerConformWithBack);
-    // console.log('user answers array', this.userAnswers);
 
-    this.questionNumber++;
 
-    // save user answer in back
-    if (!this.isOver()) {
-      this.gameService.updateGame(this.getCurrentGameTry()).subscribe(response => {
-        if (response.status === 200) {
-          console.log('sauvegarde reussit !');
+    swal({
+      className: 'swal-wide',
+      title: 'Votre réponse est bien "' + answer.value + '" ?',
+      icon: '../../../assets/images/round.svg',
+      buttons: ['Annuler', 'Confirmer'],
+      dangerMode: false,
+      closeOnClickOutside: false,
+    })
+      .then((willContinue) => {
 
+        if (willContinue) {
+
+          this.questionNumber++;
+          // console.log('Last answer', answer);
+          const answerConformWithBack = {questionId: answer.questionId, answerId: answer.id};
+          this.userAnswers.push(answerConformWithBack);
+          // console.log('user answers array', this.userAnswers);
+
+          if (this.isOver()) {
+              this.setEndDateToCurrent();
+              this.redirectToResult();
+          } else {
+              this.gameService.updateGame(this.getCurrentGameTry()).subscribe(response => {
+                if (response.status === 200) {
+                  console.log('sauvegarde reussit !');
+                } else {
+                  console.log('sauvegarde impossible !');
+                }
+                this.date = Date.now();
+              });
+          }
+
+          // setTimeout(() => {
+          //     // console.log('Last answer', answer);
+          //     const answerConformWithBack = {questionId: answer.questionId, answerId: answer.id};
+          //     this.userAnswers.push(answerConformWithBack);
+          //     // console.log('user answers array', this.userAnswers);
+          //
+          //     // save user answer in back
+          //     if (!this.isOver()) {
+          //       this.gameService.updateGame(this.getCurrentGameTry()).subscribe(response => {
+          //         if (response.status === 200) {
+          //           console.log('sauvegarde reussit !');
+          //
+          //         } else {
+          //           console.log('sauvegarde impossible !');
+          //         }
+          //         this.date = Date.now();
+          //       });
+          //
+          //     } else {
+          //       this.setEndDateToCurrent();
+          //       this.redirectToResult();
+          //     }
+          // },
+          // 1200);
         } else {
-          console.log('sauvegarde impossible !');
-        }
-        this.date = Date.now();
-      });
 
-    } else {
-      this.setEndDateToCurrent();
-      this.redirectToResult();
-    }
+        }
+
+      });
   }
 
   isOver() {

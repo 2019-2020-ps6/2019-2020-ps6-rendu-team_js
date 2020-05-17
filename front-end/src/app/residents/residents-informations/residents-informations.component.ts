@@ -6,6 +6,7 @@ import {Settings} from '../../../models/settings.model';
 import {SettingsService} from '../../../services/settings.service';
 import {ToasterService} from '../../../services/toaster.service';
 import {FormArray, FormBuilder, FormGroup, Validators} from '@angular/forms';
+import swal from 'sweetalert';
 
 @Component({
   selector: 'app-residents-informations',
@@ -85,13 +86,24 @@ export class ResidentsInformationsComponent implements OnInit {
   }
 
   deleteButtonPressed() {
-    if (confirm('Etes-vous sur de vouloir supprimer ce compte ?')) {
-      this.authServices.deleteResidentAccount(this.user).subscribe(() => {
-        this.isModifyingEventHappened.emit(true);
-        this.toasterService.activateToaster(false, 'Compte supprimé !', 2000);
-        this.backPressed();
+
+    swal({
+      className: 'swal-wide',
+      title: 'Etes-vous sur de vouloir supprimer ce compte ?',
+      icon: '../../../assets/images/warn.svg',
+      buttons: ['Annuler', 'Confirmer'],
+      dangerMode: false,
+      closeOnClickOutside: false,
+    })
+      .then((willContinue) => {
+        if (willContinue) {
+          this.authServices.deleteResidentAccount(this.user).subscribe(() => {
+            this.isModifyingEventHappened.emit(true);
+            this.toasterService.activateToaster(false, 'Compte supprimé !', 2000);
+            this.backPressed();
+          });
+        }
       });
-    }
   }
 
   statsButtonPressed() {

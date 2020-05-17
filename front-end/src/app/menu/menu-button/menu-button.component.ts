@@ -2,6 +2,7 @@ import {Component, Input, OnInit} from '@angular/core';
 import {Router} from '@angular/router';
 import {Location} from '@angular/common';
 import {QuizCreationStatusService} from '../../../services/quiz-creation-status.service';
+import swal from 'sweetalert';
 
 @Component({
   selector: 'app-menu-button',
@@ -33,10 +34,32 @@ export class MenuButtonComponent implements OnInit {
 
   goTo() {
     // tslint:disable-next-line:max-line-length
-    if (this.isQuizCreationPageEmpty || ((this.router.url.includes('/quiz-creation') || this.router.url.includes('/quiz-editor')) && confirm('Attention votre création/édition de quiz n\'est enregistrée !\nEtes-vous sûr de vouloir changer de page ?'))) {
-      if (this.routerPath !== '') {
-        const pathsDisplayed = this.routerPath.split(' ');
-        this.router.navigate([pathsDisplayed[0]]);
+    if (((this.router.url.includes('/quiz-creation') || this.router.url.includes('/quiz-editor')))) {
+      if (!this.isQuizCreationPageEmpty) {
+        swal({
+          className: 'swal-wide',
+          title: 'Attention votre question n\'est pas enregistrée !\nEtes-vous sûr de vouloir quitter ?',
+          icon: '../../../assets/images/warn.svg',
+          buttons: ['Annuler', 'Confirmer'],
+          dangerMode: false,
+          closeOnClickOutside: false,
+        })
+          .then((willContinue) => {
+            if (willContinue) {
+              this.isQuizCreationPageEmpty = false;
+
+              if (this.routerPath !== '') {
+                const pathsDisplayed = this.routerPath.split(' ');
+                this.router.navigate([pathsDisplayed[0]]);
+              }
+
+            }
+          });
+      } else {
+        if (this.routerPath !== '') {
+          const pathsDisplayed = this.routerPath.split(' ');
+          this.router.navigate([pathsDisplayed[0]]);
+        }
       }
     } else if ((!this.router.url.includes('/quiz-creation') && !this.router.url.includes('/quiz-editor'))) {
       if (this.routerPath !== '') {

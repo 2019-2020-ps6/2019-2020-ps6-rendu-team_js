@@ -3,6 +3,7 @@ import {AuthService} from '../../services/auth.service';
 import {Router} from '@angular/router';
 import {Location} from '@angular/common';
 import {HelpService} from '../../services/help.service';
+import swal from 'sweetalert';
 
 @Component({
   selector: 'app-header',
@@ -31,13 +32,39 @@ export class HeaderComponent implements OnInit {
   }
 
   logout() {
-    if (confirm('Etes-vous sur de vouloir vous déconnecter ?')) {
-      this.authService.logout();
-    }
+
+    swal({
+      className: 'swal-wide',
+      title: 'Etes-vous sur de vouloir vous déconnecter ?',
+      icon: '../../../assets/images/warn.svg',
+      buttons: ['Annuler', 'Confirmer'],
+      dangerMode: false,
+      closeOnClickOutside: false,
+    })
+      .then((willContinue) => {
+        if (willContinue) {
+          this.authService.logout();
+        }
+      });
   }
 
   quitQuiz() {
-    this.router.navigate(['/quiz-list']);
+
+    swal({
+      className: 'swal-wide',
+      title: 'Etes-vous sur de vouloir quitter le quiz ? \n(votre progression est enregistrée)',
+      icon: '../../../assets/images/warn.svg',
+      buttons: ['Annuler', 'Confirmer'],
+      dangerMode: false,
+      closeOnClickOutside: false,
+    })
+      .then((willContinue) => {
+
+        if (willContinue) {
+
+          this.router.navigate(['/quiz-list']);
+        }
+      });
   }
 
   displayHeader() {

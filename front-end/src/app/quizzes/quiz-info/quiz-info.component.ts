@@ -7,6 +7,7 @@ import {ThemesService} from '../../../services/themes.service';
 import {AuthService} from '../../../services/auth.service';
 import {ToasterService} from '../../../services/toaster.service';
 import {QuizListStatusService} from '../../../services/quiz-list-status.service';
+import swal from 'sweetalert';
 
 @Component({
   selector: 'app-quiz-info',
@@ -58,17 +59,28 @@ export class QuizInfoComponent implements OnInit {
   }
 
   deleteQuiz() {
-    if (confirm('Etes-vous sur de vouloir supprimer ce quiz ?')) {
-      this.quizService.deleteQuizObservable(this.quiz).subscribe((response) => {
-        if (response.status === 204) {
-          this.quizService.setQuizzesFromUrl();
-          this.toasterService.activateToaster(false, 'Le quiz a bien été supprimé !', 3000);
-          this.quizDeleted.emit(this.quiz);
+
+    swal({
+      className: 'swal-wide',
+      title: 'Etes-vous sur de vouloir supprimer ce quiz ?',
+      icon: '../../../assets/images/warn.svg',
+      buttons: ['Annuler', 'Confirmer'],
+      dangerMode: false,
+      closeOnClickOutside: false,
+    })
+      .then((willContinue) => {
+        if (willContinue) {
+          this.quizService.deleteQuizObservable(this.quiz).subscribe((response) => {
+            if (response.status === 204) {
+              this.quizService.setQuizzesFromUrl();
+              this.toasterService.activateToaster(false, 'Le quiz a bien été supprimé !', 3000);
+              this.quizDeleted.emit(this.quiz);
+            }
+          }, error => {
+            this.toasterService.activateToaster(true, 'Une erreur est survenue, réessayer plus tard...', 2000);
+          });
         }
-      }, error => {
-        this.toasterService.activateToaster(true, 'Une erreur est survenue, réessayer plus tard...', 2000);
       });
-    }
   }
 
   openQuiz() {

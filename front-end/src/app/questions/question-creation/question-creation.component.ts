@@ -4,6 +4,7 @@ import {FormArray, FormBuilder, FormGroup, Validators} from '@angular/forms';
 import {Answer} from '../../../models/answer.model';
 import {ToasterService} from '../../../services/toaster.service';
 import {ActivatedRoute, Router} from '@angular/router';
+import swal from 'sweetalert';
 
 @Component({
   selector: 'app-question-creation',
@@ -103,18 +104,29 @@ export class QuestionCreationComponent implements OnInit {
   }
 
   removeWrongAnswer(id: number) {
-    if (confirm('Etes-vous sur de vouloir supprimer cette réponse ?')) {
-      const answerFind = this.answers.at(id).value;
 
-      if (this.updateMode) {
-        this.question.answers.forEach((answer) => {
-          if (answer.id === answerFind.answerId) {
-            answer.deleted = true;
+    swal({
+      className: 'swal-wide',
+      title: 'Etes-vous sur de vouloir supprimer cette réponse ?',
+      icon: '../../../assets/images/warn.svg',
+      buttons: ['Annuler', 'Confirmer'],
+      dangerMode: false,
+      closeOnClickOutside: false,
+    })
+      .then((willContinue) => {
+        if (willContinue) {
+          const answerFind = this.answers.at(id).value;
+
+          if (this.updateMode) {
+            this.question.answers.forEach((answer) => {
+              if (answer.id === answerFind.answerId) {
+                answer.deleted = true;
+              }
+            });
           }
-        });
-      }
-      this.answers.removeAt(id);
-    }
+          this.answers.removeAt(id);
+        }
+      });
   }
 
   addQuestion() {
@@ -197,8 +209,20 @@ export class QuestionCreationComponent implements OnInit {
 
   goToQuestionList() {
     // tslint:disable-next-line:max-line-length
-    if (!this.isEmpty() && confirm('Cette question n\'est pas pas enregistrée !\nEtes-vous sur de vouloir revenir sur la liste des questions ?')) {
-      this.backPressedEmitter.emit(this.hasOneQuestionAlreadyCreated());
+    if (!this.isEmpty()) {
+      swal({
+        className: 'swal-wide',
+        title: 'Cette question n\'est pas pas enregistrée !\nEtes-vous sur de vouloir revenir sur la liste des questions ?',
+        icon: '../../../assets/images/warn.svg',
+        buttons: ['Annuler', 'Confirmer'],
+        dangerMode: false,
+        closeOnClickOutside: false,
+      })
+        .then((willContinue) => {
+          if (willContinue) {
+            this.backPressedEmitter.emit(this.hasOneQuestionAlreadyCreated());
+          }
+        });
     } else if (this.isEmpty()) {
       this.backPressedEmitter.emit(this.hasOneQuestionAlreadyCreated());
     }

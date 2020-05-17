@@ -8,6 +8,7 @@ import {ToasterService} from '../../../services/toaster.service';
 import {Router} from '@angular/router';
 import {Theme} from '../../../models/theme.model';
 import {ThemesService} from '../../../services/themes.service';
+import swal from 'sweetalert';
 
 @Component({
   selector: 'app-theme-edit',
@@ -83,23 +84,33 @@ export class ThemeEditComponent implements OnInit {
       this.isLoading = false;
     } else {
 
-      if (confirm('Etes-vous sur de vouloir supprimer ce thème ?')) {
-        this.themeService.delete(this.theme).subscribe((response) => {
-          if (response.status === 204) {
-            this.toasterService.activateToaster(false, 'Thème supprimé !', 2000);
-            this.themeService.setThemes();
-            this.backPressed();
+      swal({
+        className: 'swal-wide',
+        title: 'Etes-vous sur de vouloir supprimer ce thème ?',
+        icon: '../../../assets/images/warn.svg',
+        buttons: ['Annuler', 'Confirmer'],
+        dangerMode: false,
+        closeOnClickOutside: false,
+      })
+        .then((willContinue) => {
+          if (willContinue) {
+            this.themeService.delete(this.theme).subscribe((response) => {
+              if (response.status === 204) {
+                this.toasterService.activateToaster(false, 'Thème supprimé !', 2000);
+                this.themeService.setThemes();
+                this.backPressed();
 
-            this.isLoading = false;
-          } else {
-            this.toasterService.activateToaster(true, 'Une erreur est survenue, réessayer plus tard...', 2000);
-            this.isLoading = false;
+                this.isLoading = false;
+              } else {
+                this.toasterService.activateToaster(true, 'Une erreur est survenue, réessayer plus tard...', 2000);
+                this.isLoading = false;
+              }
+            }, error => {
+              this.toasterService.activateToaster(true, 'Une erreur est survenue, réessayer plus tard...', 2000);
+              this.isLoading = false;
+            });
           }
-        }, error => {
-          this.toasterService.activateToaster(true, 'Une erreur est survenue, réessayer plus tard...', 2000);
-          this.isLoading = false;
         });
-      }
     }
   }
 
