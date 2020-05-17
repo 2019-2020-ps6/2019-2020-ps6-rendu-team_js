@@ -2,11 +2,28 @@
 
   <div class="table-custom">
 
-    <div class="text-create-account">{{user.firstName}} {{user.lastName.toUpperCase()}}</div>
+    <div class="name-container" *ngIf="!isEditNameOpen">
+      <div class="text-create-account">{{user.firstName}} {{user.lastName.toUpperCase()}}</div>
+      <img class="image-edit" src="assets/images/edit.svg" (click)="isEditNameOpen = true"/>
+    </div>
+
+    <div class="name-container" *ngIf="isEditNameOpen">
+      <div class="text-input-container">
+        <form class="form" [formGroup]="nameForm">
+          <input class="input-custom" placeholder="Prénom" type="text" id="lastName"  maxlength="20" [formControlName]="'firstName'" >
+          <input class="input-custom" placeholder="Nom" type="text" id="firstName"  maxlength="20" [formControlName]="'lastName'">
+          <img class="image-edit" src="assets/images/clear.svg" (click)="closeNameEdit()"/>
+        </form>
+      </div>
+    </div>
+
     <hr class="blackLine">
 
     <div class="assistance-container">
-      <div class="assistance-text">Assistance :<br>(modifiable)</div>
+      <div class="assistance-text">
+        <div style="white-space: nowrap;">Assistance :</div>
+        (modifiable)
+      </div>
       <div class="checkbox-container">
         <div class="checkbox" *ngFor="let assistance of assistanceArray">
           <input type="checkbox" name="assistance" value="{{assistance.value}}" id="{{assistance.value}}"
@@ -25,13 +42,17 @@
     <button (click)="statsButtonPressed()" class="link-card stats-button-bg">
       Statistiques
     </button>
-    <button (click)="deleteButtonPressed()" class="link-card delete-button-bg"> <div >Supprimer le compte</div> </button>
+    <button (click)="deleteButtonPressed()" class="link-card delete-button-bg">
+      <div>Supprimer le compte</div>
+    </button>
 
     <hr class="blackLine margin-top">
 
     <div class="button-container">
       <button (click)="backPressed()" class="button-card back-button-bg">Retour</button>
-      <button (click)="saveButtonPressed()" class="button-card create-button-bg" [disabled]="!hasChangeBeenDone()" [class.disable-button]="!hasChangeBeenDone()" >Enregistrer</button>
+      <button (click)="saveButtonPressed()" class="button-card create-button-bg" [disabled]="!hasChangeBeenDone()"
+              [class.disable-button]="!hasChangeBeenDone()">Enregistrer
+      </button>
     </div>
 
   </div>

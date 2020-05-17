@@ -2,8 +2,8 @@
   <div class="main-container" [ngStyle]="{backgroundColor: bgColor}">
     <div >
       <div class="top-part-button-container"  (click)="isShow = !isShow">
-        <div class="top-button left-part" [ngStyle]="{backgroundColor: themeColor}" *ngIf="!isShow">⏷</div>
-        <div class="top-button left-part" [ngStyle]="{backgroundColor: themeColor}" *ngIf="isShow">⏶</div>
+        <img class="top-button left-part" [ngStyle]="{backgroundColor: themeColor}" *ngIf="!isShow" src="assets/images/arrow_up.svg "/>
+        <img class="top-button left-part" [ngStyle]="{backgroundColor: themeColor}" *ngIf="isShow" src="assets/images/arrow_down.svg" />
         <div class="top-button middle-part" [ngStyle]="{backgroundColor: themeColor}"> {{quizResult.name}} </div>
         <div class="top-button right-part"  [ngStyle]="{backgroundColor: lvlColor}"> {{quizResult.difficulty}} </div>
       </div>

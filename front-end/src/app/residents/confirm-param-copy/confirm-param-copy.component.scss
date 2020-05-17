@@ -46,7 +46,7 @@
 
 .input-custom {
   padding: 1vmin;
-  border: var(--customGray) 0.3vmin solid;
+  border: #3D3D3D 0.3vmin solid;
   border-radius: 2vmin;
   font-family: var(--customFont), sans-serif;
   font-weight: 900;
@@ -63,9 +63,9 @@
 .button-card {
   padding: 1vmin;
   margin: 1vmin;
-  border: var(--customWhite) 0 solid;
+  border: #FFFFFF 0 solid;
   border-radius: 2vmin;
-  color: var(--customWhite);
+  color: #FFFFFF;
   text-align: center;
   font-family: var(--customFont), sans-serif;
   font-weight: 900;
@@ -76,9 +76,9 @@
 .link-card {
   padding: 1vmin;
   margin-bottom: 1vmin;
-  border: var(--customWhite) 0 solid;
+  border: #FFFFFF 0 solid;
   border-radius: 10vmin;
-  color: var(--customWhite);
+  color: #FFFFFF;
   text-align: center;
   font-family: var(--customFont), sans-serif;
   font-weight: 900;
@@ -108,7 +108,7 @@
 }
 
 .stats-button-bg {
-  background-color: var(--customOrange);
+  background-color: #DCA409;
 }
 
 .stats-button-bg:hover {
@@ -120,12 +120,12 @@
 }
 
 .delete-button-bg:hover {
-  background-color: var(--customDarkRed);
+  background-color: #8D0000;
 }
 
 
 .create-button-bg {
-  background-color: var(--customGreen);
+  background-color: #65A800;
 }
 
 .create-button-bg:hover {
@@ -183,7 +183,7 @@
   font-family: var(--customFont), sans-serif;
   font-weight: 900;
   font-size: 3vmin;
-  color: var(--customWhite);
+  color: #FFFFFF;
   opacity: 0.5;
   width: 100%;
 }
@@ -242,9 +242,9 @@
 .deletePressed {
   padding: 1vmin;
   margin-bottom: 1vmin;
-  border: var(--customWhite) 0 solid;
+  border: #FFFFFF 0 solid;
   border-radius: 2vmin;
-  color: var(--customWhite);
+  color: #FFFFFF;
   text-align: center;
   font-family: var(--customFont), sans-serif;
   font-weight: 900;

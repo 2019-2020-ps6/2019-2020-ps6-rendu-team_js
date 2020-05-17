@@ -85,7 +85,7 @@ $cornerRadius: 25px;
 .top-button {
   padding-left: 2vmin;
   padding-right: 2vmin;
-  color: var(--customWhite);
+  color: #FFFFFF;
   font-family: var(--customFont), sans-serif;
   font-weight: 900;
   width: 100%;
@@ -99,8 +99,10 @@ $cornerRadius: 25px;
   border: 1vmin solid transparent;
   border-bottom-left-radius: 2vmin;
   border-top-left-radius: 2vmin;
-  font-size: 6vmin !important;
-  width: 10vmin;
+  padding-left: 1vmin !important;
+  padding-right: 1vmin !important;
+  font-size: 8vmin !important;
+  width: 12vmin;
 }
 
 .middle-part {
@@ -154,7 +156,7 @@ $cornerRadius: 25px;
   padding: 1vmin;
   flex: 1;
   margin: 2vmin;
-  color: var(--customWhite);
+  color: #FFFFFF;
 }
 
 .play-quiz-button:hover, .edit-quiz-button:hover {
@@ -162,7 +164,7 @@ $cornerRadius: 25px;
 }
 
 .edit-quiz-button {
-  background-color: var(--customGray);
+  background-color: #3D3D3D;
 }
 
 

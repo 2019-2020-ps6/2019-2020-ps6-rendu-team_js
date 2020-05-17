@@ -22,6 +22,8 @@ export class AuthService {
   private ERROR_ACCOUNT_LEVEL = -1;
   private DEFAULT_RESIDENT_PASSWORD = 'resident';
 
+  private httpOptions = httpOptionsBase;
+
   public user: User;
   public user$: BehaviorSubject<User> = new BehaviorSubject<User>(this.user);
 
@@ -133,5 +135,13 @@ export class AuthService {
   deleteResidentAccount(user: User) {
     const urlWithId = this.authUrl + '/' + user.id;
     return this.http.delete<User>(urlWithId, httpOptionsBase);
+  }
+
+
+  updateUserName(user: User, firstName: string, lastName: string) {
+    const updateNameUrl = this.authUrl + '/updateName/' + user.id;
+    user.firstName = firstName;
+    user.lastName = lastName;
+    return this.http.put<User>(updateNameUrl, user, {...this.httpOptions, observe: 'response'});
   }
 }

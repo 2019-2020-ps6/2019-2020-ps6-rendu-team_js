@@ -193,15 +193,24 @@ router.get('/logout', (req, res) => {
 });
 
 
-// router.put('/:userId', (req, res) => {
-//     try {
-//         const question = getQuestionFromQuiz(req.params.quizId, req.params.questionId)
-//         const updatedQuestion = Question.update(req.params.questionId, { label: req.body.label, quizId: question.quizId })
-//         res.status(200).json(updatedQuestion)
-//     } catch (err) {
-//         manageAllErrors(res, err)
-//     }
-// })
+router.put('/updateName/:userId', (req, res) => {
+    try {
+        const user = User.getById(req.params.userId);
+
+        firstName = getCorrectFormatString(req.body.firstName);
+        lastName = getCorrectFormatString(req.body.lastName);
+        username = firstName + ' ' + lastName;
+
+        user.firstName = firstName;
+        user.lastName = lastName;
+        user.username = username;
+
+        const updatedUser = User.update(req.params.userId, user);
+        res.status(200).json(updatedUser)
+    } catch (err) {
+        manageAllErrors(res, err)
+    }
+})
 
 router.delete('/:userId', (req, res) => {
     try {

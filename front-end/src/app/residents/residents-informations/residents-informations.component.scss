@@ -16,9 +16,9 @@
 .table-custom {
   padding: 2vmin;
   width: 60vmin;
-  border: var(--customResidentItemBlue) 0 solid;
+  border: transparent 0 solid;
   border-radius: 5vmin;
-  background-color: var(--customResidentItemBlue);
+  background-color: #9ddcea;
   -webkit-box-shadow: 0 0 3vmin 1vmin rgba(0, 0, 0, 0.31);
   -moz-box-shadow: 0 0 3vmin 1vmin rgba(0, 0, 0, 0.31);
   box-shadow: 0 0 3vmin 1vmin rgba(0, 0, 0, 0.31);
@@ -41,19 +41,21 @@
 
 .form {
   display: flex;
-  flex-direction: column;
-  width: 60vmin;
+  flex-direction: row;
+  padding-bottom: 2vmin;
 }
 
 .input-custom {
   padding: 1vmin;
   border: var(--customGray) 0.1vmin solid;
   border-radius: 2vmin;
+  margin-right: 0.5vmin;
   font-family: var(--customFont), sans-serif;
   font-weight: 600;
   font-size: 3vmin;
   text-align: center;
   width: 100%;
+  flex: 1;
 }
 
 .input-custom::placeholder {
@@ -204,6 +206,8 @@
   font-weight: 900;
   font-size: 2vmin;
   display: flex;
+  line-height: 3vmin;
+
   flex-direction: column;
   justify-content: center;
   text-align: center;
@@ -235,3 +239,20 @@
   width: 100%;
 }
 
+
+.name-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.image-edit {
+  width: 5vmin;
+  color: black;
+  fill: black;
+  cursor: pointer;
+}
+
+.image-edit:hover {
+  opacity: 0.8;
+}

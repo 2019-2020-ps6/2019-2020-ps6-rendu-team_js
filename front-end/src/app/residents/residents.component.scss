@@ -10,9 +10,9 @@
   justify-content: center;
   text-align: center;
 
-  color: var(--customWhite);
-  background-color: var(--customBlue);
-  border: var(--customBlue) solid 0 ;
+  color: #FFFFFF;
+  background-color: #2B7FD8;
+  border: #2B7FD8 solid 0 ;
   border-radius: 3vmin;
 
   margin: 2vmin;
@@ -27,16 +27,16 @@
 }
 
 .create-button {
-  background-color: var(--customBlue);
+  background-color:  #2b6273;
 }
 
 .create-button:hover{
-  background-color: #2b6273 !important;
+  background-color: #377e94 !important;
 }
 
 
 .save-button {
-  background-color: var(--customGreen);
+  background-color: #65A800;
 }
 
 .save-button:hover{
@@ -61,7 +61,7 @@
 
 
 a:hover{
-  color: var(--customWhite);
+  color: #FFFFFF;
   cursor: pointer;
 }
 

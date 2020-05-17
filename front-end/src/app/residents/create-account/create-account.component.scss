@@ -46,7 +46,7 @@
 .input-custom {
   padding: 1vmin;
   margin-bottom: 1vmin;
-  border: var(--customGray) 0.3vmin solid;
+  border: #3D3D3D 0.3vmin solid;
   border-radius: 2vmin;
   font-family: var(--customFont), sans-serif;
   font-weight: 900;
@@ -63,9 +63,9 @@
 .button-card {
   padding: 1vmin;
   margin: 1vmin;
-  border: var(--customWhite) 0 solid;
+  border: #FFFFFF 0 solid;
   border-radius: 2vmin;
-  color: var(--customWhite);
+  color: #FFFFFF;
   text-align: center;
   font-family: var(--customFont), sans-serif;
   font-weight: 900;
@@ -78,7 +78,7 @@
 }
 
 .create-button-bg {
-  background-color: var(--customGreen);
+  background-color: #65A800;
 }
 
 
@@ -92,7 +92,7 @@
 
 .text-input-container {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   justify-content: center;
   margin-top: 3vmin;
   margin-bottom: 2vmin;
@@ -118,7 +118,7 @@
   font-family: var(--customFont), sans-serif;
   font-weight: 900;
   font-size: 3vmin;
-  color: var(--customWhite);
+  color: #FFFFFF;
   opacity: 0.5;
 }
 

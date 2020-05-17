@@ -5,6 +5,7 @@ import {Router} from '@angular/router';
 import {Settings} from '../../../models/settings.model';
 import {SettingsService} from '../../../services/settings.service';
 import {ToasterService} from '../../../services/toaster.service';
+import {FormArray, FormBuilder, FormGroup, Validators} from '@angular/forms';
 
 @Component({
   selector: 'app-residents-informations',
@@ -29,15 +30,18 @@ export class ResidentsInformationsComponent implements OnInit {
   @Output()
   isModifyingEventHappened: EventEmitter<boolean> = new EventEmitter<boolean>(); // emit to update the resident list;
 
-
   @Output()
   userSharingHisParameters: EventEmitter<User> = new EventEmitter<User>();
+
+  private isEditNameOpen: boolean;
 
   private isDeleteButtonPressed: boolean;
   private hasModificationsBeenMade: boolean;
 
   private message: string;
   private isErrorMessage: boolean;
+
+  public nameForm: FormGroup;
 
   @Input()
   user: User;
@@ -46,8 +50,10 @@ export class ResidentsInformationsComponent implements OnInit {
 
   constructor(private authServices: AuthService,
               private settingsService: SettingsService,
+              private formBuilder: FormBuilder,
               private toasterService: ToasterService,
               private router: Router) {
+    this.isEditNameOpen = false;
   }
 
   ngOnInit() {
@@ -60,6 +66,12 @@ export class ResidentsInformationsComponent implements OnInit {
 
       this.assistanceArrayOriginal[0].checked = this.settings.handicapVisuel;
       this.assistanceArrayOriginal[1].checked = this.settings.handicapMoteur;
+    });
+
+    this.nameForm = this.formBuilder.group({
+      firstName: [this.user.firstName, [Validators.maxLength(20), Validators.required]],
+      lastName: [this.user.lastName, [Validators.maxLength(20), Validators.required]],
+      assistanceArray: new FormArray([]),
     });
 
     this.hasModificationsBeenMade = false;
@@ -98,6 +110,10 @@ export class ResidentsInformationsComponent implements OnInit {
       }
     }
 
+    if (this.isEditNameOpen) {
+      return this.nameForm.valid;
+    }
+
     return false;
   }
 
@@ -126,5 +142,24 @@ export class ResidentsInformationsComponent implements OnInit {
         this.toasterService.activateToaster(true, 'Une erreur est survenue, réessayer plus tard...', 2000);
       }
     }));
+
+    if (this.isEditNameOpen) {
+      const firstName = this.nameForm.get('firstName').value;
+      const lastName = this.nameForm.get('lastName').value;
+
+      this.authServices.updateUserName(this.user, firstName, lastName).subscribe((response => {
+        if (response.status === 200) {
+          this.isEditNameOpen = false;
+          this.toasterService.activateToaster(false, 'Paramètres enregistrés !', 2000);
+
+        } else {
+          this.toasterService.activateToaster(true, 'Une erreur est survenue, réessayer plus tard...', 2000);
+        }
+      }));
+    }
+  }
+
+  closeNameEdit() {
+    this.isEditNameOpen = false;
   }
 }
