@@ -53,8 +53,12 @@ export class AppComponent {
   // ############## CHANGE FONT SIZE ###################
       if (this.settingsService.settings.fontSize === 1) {
         document.getElementsByTagName('html')[0].style.setProperty('font-size', '5vmin');
+        document.getElementsByTagName('html')[0].style.setProperty('--customMenuWidth', '10vw');
+        document.getElementsByTagName('html')[0].style.setProperty('--customMenuLineHeight', '2.5vmin');
       } else {
         document.getElementsByTagName('html')[0].style.setProperty('font-size', '8vmin');
+        document.getElementsByTagName('html')[0].style.setProperty('--customMenuWidth', '17vw');
+        document.getElementsByTagName('html')[0].style.setProperty('--customMenuLineHeight', '6vmin');
       }
 
   // ############## CHANGE FONT ###################
