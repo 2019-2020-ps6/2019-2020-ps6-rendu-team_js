@@ -65,12 +65,17 @@ export class PlayQuizComponent implements OnInit {
 
 
     Swal.fire({
+      reverseButtons: true,
       icon: 'question',
       title: 'Votre réponse est bien "' + answer.value + '" ?',
+      confirmButtonText: 'Oui',
+      confirmButtonColor: '#1261a2',
+      cancelButtonText: 'Non',
+      showCancelButton: true
     })
-      .then((willContinue) => {
+      .then((result) => {
 
-        if (willContinue) {
+        if (result.value) {
 
           this.questionNumber++;
           // console.log('Last answer', answer);

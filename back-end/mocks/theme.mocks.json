@@ -51,7 +51,8 @@
     "name": "Mathématiques",
     "color": "#650000",
     "nbQuiz": 0,
-    "id": 1000000000008
+    "id": 1000000000008,
+    "deleted": true
   },
   {
     "name": "Grammaire",

@@ -15,20 +15,13 @@
 
   <div class="main-page">
 
-
-
-
+    <!-- LEFT MENU -->
     <app-menu (bodyBackgroundColor)="setBackgroundColor($event)"></app-menu>
+
+    <!-- MAIN CONTENT -->
     <div class="main-content"  [ngClass]="isHelpActive? 'blur' : ''">
-
-
-
       <router-outlet></router-outlet>
     </div>
-
-
-
-<!--    <div class="bottom-shadow"></div>-->
 
   </div>
 </div>

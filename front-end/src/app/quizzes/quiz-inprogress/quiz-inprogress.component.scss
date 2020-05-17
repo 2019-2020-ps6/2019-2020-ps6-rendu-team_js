@@ -1,5 +1,7 @@
 .button-stats {
   justify-content: center;
+  display: flex;
+  flex-direction: column;
   text-align: center;
 
   color: var(--customWhite);
@@ -7,11 +9,11 @@
   border: var(--customRed) solid 0 ;
   border-radius: 3vmin;
 
-  margin: auto 2vmin auto auto;
+  margin: 2vmin;
   padding: 2vmin;
   font-family: var(--customFont);
   font-size: 3vmin;
-  height: 10vmin;
+  height: 8vmin;
 }
 
 .button-stats:hover{

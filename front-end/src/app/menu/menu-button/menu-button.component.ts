@@ -37,11 +37,16 @@ export class MenuButtonComponent implements OnInit {
     if (((this.router.url.includes('/quiz-creation') || this.router.url.includes('/quiz-editor')))) {
       if (!this.isQuizCreationPageEmpty) {
         Swal.fire({
-          icon: 'question',
+          reverseButtons: true,
+          icon: 'warning',
           title: 'Attention votre question n\'est pas enregistrée !\nEtes-vous sûr de vouloir quitter ?',
+          confirmButtonText: 'Quitter',
+          confirmButtonColor: '#a20000',
+          cancelButtonText: 'Retour',
+          showCancelButton: true
         })
-          .then((willContinue) => {
-            if (willContinue) {
+          .then((result) => {
+            if (result.value) {
               this.isQuizCreationPageEmpty = false;
 
               if (this.routerPath !== '') {

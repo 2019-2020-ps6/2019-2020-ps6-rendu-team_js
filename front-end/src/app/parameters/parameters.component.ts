@@ -4,7 +4,7 @@ import {AuthService} from '../../services/auth.service';
 import {SettingsService} from '../../services/settings.service';
 import {Settings} from '../../models/settings.model';
 import {ToasterService} from '../../services/toaster.service';
-import Swal from "sweetalert2";
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-parameters',
@@ -35,11 +35,12 @@ export class ParametersComponent implements OnInit {
 
   resetSettingsToDefault() {
     Swal.fire({
+      reverseButtons: true,
       icon: 'warning',
-      title: 'Vous êtes sur le point de réinitialiser aux paramètres d\'usine ?',
-      confirmButtonText: 'Oui',
+      title: 'Etes-vous sur de vouloir réinitialiser les paramètres ?',
+      confirmButtonText: 'Réinitialiser',
       confirmButtonColor: '#a20000',
-      cancelButtonText: 'Non',
+      cancelButtonText: 'Retour',
       showCancelButton: true
     })
       .then((result) => {

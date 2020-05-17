@@ -85,29 +85,34 @@ export class ThemeEditComponent implements OnInit {
     } else {
 
       Swal.fire({
+        reverseButtons: true,
         icon: 'warning',
         title: 'Etes-vous sur de vouloir supprimer ce thème ?',
+        confirmButtonText: 'Supprimer',
+        confirmButtonColor: '#a20000',
+        cancelButtonText: 'Retour',
+        showCancelButton: true
+      }).then((result) => {
+        if (result.value) {
+          this.themeService.delete(this.theme).subscribe((response) => {
+            if (response.status === 204) {
+              this.toasterService.activateToaster(false, 'Thème supprimé !', 2000);
+              this.themeService.setThemes();
+              this.backPressed();
 
-      })
-        .then((willContinue) => {
-          if (willContinue) {
-            this.themeService.delete(this.theme).subscribe((response) => {
-              if (response.status === 204) {
-                this.toasterService.activateToaster(false, 'Thème supprimé !', 2000);
-                this.themeService.setThemes();
-                this.backPressed();
-
-                this.isLoading = false;
-              } else {
-                this.toasterService.activateToaster(true, 'Une erreur est survenue, réessayer plus tard...', 2000);
-                this.isLoading = false;
-              }
-            }, error => {
+              this.isLoading = false;
+            } else {
               this.toasterService.activateToaster(true, 'Une erreur est survenue, réessayer plus tard...', 2000);
               this.isLoading = false;
-            });
-          }
-        });
+            }
+          }, error => {
+            this.toasterService.activateToaster(true, 'Une erreur est survenue, réessayer plus tard...', 2000);
+            this.isLoading = false;
+          });
+        } else {
+          this.isLoading = false;
+        }
+      });
     }
   }
 

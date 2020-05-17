@@ -23,10 +23,16 @@ export class QuestionComponent implements OnInit {
   delete() {
 
     Swal.fire({
+      reverseButtons: true,
+      icon: 'warning',
       title: 'Etes-vous sur de vouloir supprimer cette question ?',
+      confirmButtonText: 'Supprimer',
+      confirmButtonColor: '#a20000',
+      cancelButtonText: 'Retour',
+      showCancelButton: true
 
-    }).then((willContinue) => {
-        if (willContinue) {
+    }).then((result) => {
+        if (result.value) {
           this.question.deleted = true;
         }
       });

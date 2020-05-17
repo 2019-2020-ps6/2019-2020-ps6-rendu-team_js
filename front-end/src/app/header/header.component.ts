@@ -34,14 +34,14 @@ export class HeaderComponent implements OnInit {
   logout() {
 
     Swal.fire({
+      reverseButtons: true,
       icon: 'warning',
       title: 'Etes-vous sur de vouloir vous déconnecter ?',
       confirmButtonText: 'Se déconnecter',
       confirmButtonColor: '#a20000',
       cancelButtonText: 'Retour',
       showCancelButton: true
-    })
-      .then((result) => {
+    }).then((result) => {
         if (result.value) {
           this.authService.logout();
         }
@@ -51,12 +51,15 @@ export class HeaderComponent implements OnInit {
   quitQuiz() {
 
     Swal.fire({
+      reverseButtons: true,
+      icon: 'warning',
       title: 'Etes-vous sur de vouloir quitter le quiz ? \n(votre progression est enregistrée)',
-    })
-      .then((willContinue) => {
-
-        if (willContinue) {
-
+      confirmButtonText: 'Quitter',
+      confirmButtonColor: '#a20000',
+      cancelButtonText: 'Retour',
+      showCancelButton: true
+    }).then((result) => {
+        if (result.value) {
           this.router.navigate(['/quiz-list']);
         }
       });

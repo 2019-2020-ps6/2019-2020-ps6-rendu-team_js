@@ -60,23 +60,27 @@ export class QuizInfoComponent implements OnInit {
 
   deleteQuiz() {
 
-      Swal.fire({
-        title: 'Etes-vous sur de vouloir supprimer ce quiz ?',
-
-      })
-      .then((willContinue) => {
-        if (willContinue) {
-          this.quizService.deleteQuizObservable(this.quiz).subscribe((response) => {
-            if (response.status === 204) {
-              this.quizService.setQuizzesFromUrl();
-              this.toasterService.activateToaster(false, 'Le quiz a bien été supprimé !', 3000);
-              this.quizDeleted.emit(this.quiz);
-            }
-          }, error => {
-            this.toasterService.activateToaster(true, 'Une erreur est survenue, réessayer plus tard...', 2000);
-          });
-        }
-      });
+    Swal.fire({
+      reverseButtons: true,
+      icon: 'warning',
+      title: 'Etes-vous sur de vouloir supprimer ce quiz ?',
+      confirmButtonText: 'Supprimer',
+      confirmButtonColor: '#a20000',
+      cancelButtonText: 'Retour',
+      showCancelButton: true
+    }).then((result) => {
+      if (result.value) {
+        this.quizService.deleteQuizObservable(this.quiz).subscribe((response) => {
+          if (response.status === 204) {
+            this.quizService.setQuizzesFromUrl();
+            this.toasterService.activateToaster(false, 'Le quiz a bien été supprimé !', 3000);
+            this.quizDeleted.emit(this.quiz);
+          }
+        }, error => {
+          this.toasterService.activateToaster(true, 'Une erreur est survenue, réessayer plus tard...', 2000);
+        });
+      }
+    });
   }
 
   openQuiz() {

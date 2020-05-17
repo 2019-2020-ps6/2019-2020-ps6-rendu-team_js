@@ -106,10 +106,16 @@ export class QuestionCreationComponent implements OnInit {
   removeWrongAnswer(id: number) {
 
     Swal.fire({
+      reverseButtons: true,
+      icon: 'warning',
       title: 'Etes-vous sur de vouloir supprimer cette réponse ?',
+      confirmButtonText: 'Supprimer',
+      confirmButtonColor: '#a20000',
+      cancelButtonText: 'Retour',
+      showCancelButton: true
     })
-      .then((willContinue) => {
-        if (willContinue) {
+      .then((result) => {
+        if (result.value) {
           const answerFind = this.answers.at(id).value;
 
           if (this.updateMode) {
@@ -206,11 +212,16 @@ export class QuestionCreationComponent implements OnInit {
     // tslint:disable-next-line:max-line-length
     if (!this.isEmpty()) {
       Swal.fire({
+        reverseButtons: true,
         icon: 'warning',
         title: 'Cette question n\'est pas pas enregistrée !\nEtes-vous sur de vouloir revenir sur la liste des questions ?',
+        confirmButtonText: 'Revenir à la liste',
+        confirmButtonColor: '#a20000',
+        cancelButtonText: 'Retour',
+        showCancelButton: true
       })
-        .then((willContinue) => {
-          if (willContinue) {
+        .then((result) => {
+          if (result.value) {
             this.backPressedEmitter.emit(this.hasOneQuestionAlreadyCreated());
           }
         });

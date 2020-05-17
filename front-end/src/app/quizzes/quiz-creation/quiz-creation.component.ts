@@ -74,10 +74,16 @@ export class QuizCreationComponent implements OnInit {
     if (this.isQuestionListOpen && this.isCreateQuestionOpen) {
 
       Swal.fire({
+        reverseButtons: true,
+        icon: 'warning',
         title: 'Attention votre question n\'est pas enregistrée !\nEtes-vous sûr de vouloir retourner dans général ?',
+        confirmButtonText: 'Aller dans général',
+        confirmButtonColor: '#a20000',
+        cancelButtonText: 'Retour',
+        showCancelButton: true
       })
-        .then((willContinue) => {
-          if (willContinue) {
+        .then((result) => {
+          if (result.value) {
 
             this.isGeneralOpen = true;
             this.isQuestionListOpen = false;
@@ -160,10 +166,16 @@ export class QuizCreationComponent implements OnInit {
   deleteQuiz() {
 
     Swal.fire({
+      reverseButtons: true,
+      icon: 'warning',
       title: 'Etes-vous sur de vouloir supprimer ce quiz ?',
+      confirmButtonText: 'Supprimer',
+      confirmButtonColor: '#a20000',
+      cancelButtonText: 'Retour',
+      showCancelButton: true
     })
-      .then((willContinue) => {
-        if (willContinue) {
+      .then((result) => {
+        if (result.value) {
           this.quizService.deleteQuiz(this.quizToCreate);
           this.goToThemeMenu();
         }

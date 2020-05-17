@@ -76,11 +76,6 @@ export class GeneralCreationComponent implements OnInit {
     return this.isCreateThemeOpen;
   }
 
-  resetValues() {
-    this.quizForm.reset();
-    this.quizEmitter.emit({} as Quiz);
-  }
-
   updatePartOfQuiz() {
     const quizName = this.quizForm.get('name').value;
     const theme = this.quizForm.get('theme').value;
@@ -125,13 +120,6 @@ export class GeneralCreationComponent implements OnInit {
     const isQuizNameEmpty = (quizName === undefined || quizName === '');
     const isThemeEmpty = (theme === undefined || theme === '');
     const isDifficultyEmpty = (diff === undefined || diff === '');
-
-    console.log('quizEmpty : ' + isQuizNameEmpty);
-    console.log('themeEmpty : ' + isThemeEmpty);
-    console.log('diffEmpty : ' + isDifficultyEmpty);
-    console.log('quizEmpty : ' + quizName);
-    console.log('themeEmpty : ' + theme);
-    console.log('diffEmpty : ' + diff);
 
     if (isQuizNameEmpty && isThemeEmpty && isDifficultyEmpty) {
       this.quizCreationStatusService.isQuizCreatedEmpty$.next(true);

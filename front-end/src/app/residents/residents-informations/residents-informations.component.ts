@@ -88,11 +88,15 @@ export class ResidentsInformationsComponent implements OnInit {
   deleteButtonPressed() {
 
     Swal.fire({
+      reverseButtons: true,
       icon: 'warning',
       title: 'Etes-vous sur de vouloir supprimer ce compte ?',
-
-    }).then((willContinue) => {
-      if (willContinue) {
+      confirmButtonText: 'Supprimer',
+      confirmButtonColor: '#a20000',
+      cancelButtonText: 'Retour',
+      showCancelButton: true
+    }).then((result) => {
+      if (result.value) {
         this.authServices.deleteResidentAccount(this.user).subscribe(() => {
           this.isModifyingEventHappened.emit(true);
           this.toasterService.activateToaster(false, 'Compte supprimé !', 2000);

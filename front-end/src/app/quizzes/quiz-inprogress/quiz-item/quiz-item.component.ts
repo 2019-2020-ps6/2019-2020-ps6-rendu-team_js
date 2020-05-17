@@ -5,6 +5,7 @@ import {GamesService} from '../../../../services/games.service';
 import {Router} from '@angular/router';
 import {Game} from '../../../../models/game.model';
 import {ToasterService} from '../../../../services/toaster.service';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-quiz-item',
@@ -38,19 +39,27 @@ export class QuizItemComponent implements OnInit {
   deleteGame() {
     const id = this.auth.user.id;
 
-    this.gamesService.deleteGame(id.toString(), this.quiz.id.toString()).subscribe(response => {
-      if (response.status === 204) {
-        this.toasterService.activateToaster(false, 'Essaie supprimé !', 2000);
-        this.gamesService.setSelectedGameQuizInfo(id.toString());
-      } else {
-        this.toasterService.activateToaster(true, 'Une erreur est survenue, réessayer plus tard...', 2000);
+    Swal.fire({
+      reverseButtons: true,
+      icon: 'warning',
+      title: 'Etes-vous sur de vouloir supprimer cette tentative ?',
+      confirmButtonText: 'Supprimer',
+      confirmButtonColor: '#a20000',
+      cancelButtonText: 'Retour',
+      showCancelButton: true
+
+    }).then((result) => {
+      if (result.value) {
+        this.gamesService.deleteGame(id.toString(), this.quiz.id.toString()).subscribe(response => {
+          if (response.status === 204) {
+            this.toasterService.activateToaster(false, 'Essaie supprimé !', 2000);
+            this.gamesService.setSelectedGameQuizInfo(id.toString());
+          } else {
+            this.toasterService.activateToaster(true, 'Une erreur est survenue, réessayer plus tard...', 2000);
+          }
+        });
       }
     });
-
-    // this.gamesService.deleteGame(id.toString(), this.quiz.id).subscribe(() => {
-    //   this.toasterService.activateToaster(false, 'Essaie supprimé !', 2000);
-    //   this.gamesService.setSelectedGameQuizInfo(id);
-    // });
   }
 
 }
