@@ -57,7 +57,7 @@ export class AppComponent {
         document.getElementsByTagName('html')[0].style.setProperty('--customMenuLineHeight', '2.5vmin');
       } else {
         document.getElementsByTagName('html')[0].style.setProperty('font-size', '8vmin');
-        document.getElementsByTagName('html')[0].style.setProperty('--customMenuWidth', '17vw');
+        document.getElementsByTagName('html')[0].style.setProperty('--customMenuWidth', '18vw');
         document.getElementsByTagName('html')[0].style.setProperty('--customMenuLineHeight', '6vmin');
       }
 
