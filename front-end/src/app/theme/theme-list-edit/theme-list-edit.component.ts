@@ -24,7 +24,11 @@ export class ThemeListEditComponent implements OnInit {
     this.themesService.setThemes();
 
     this.themesService.themes$.subscribe((t) => {
-      this.themes = t;
+      if (t !== null && t !== undefined) {
+        this.themes = t.filter((theme) =>  !theme.deleted);
+      } else {
+        this.themes = t;
+      }
     });
   }
 

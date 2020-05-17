@@ -14,25 +14,39 @@
 }
 
 .table-custom {
-  padding: 2vmin;
   width: 60vmin;
   border: transparent 0 solid;
   border-radius: 5vmin;
-  background-color: #d8ffb2;
+  background-color: #ffffff;
   -webkit-box-shadow: 0 0 3vmin 1vmin rgba(0, 0, 0, 0.31);
   -moz-box-shadow: 0 0 3vmin 1vmin rgba(0, 0, 0, 0.31);
   box-shadow: 0 0 3vmin 1vmin rgba(0, 0, 0, 0.31);
 }
 
+.main-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 2vmin;
+  border-bottom-left-radius: 5vmin;
+  border-bottom-right-radius: 5vmin;
+}
+
 .text-create-account {
   text-align: center;
   width: 100%;
-  color: black;
+  color: white;
   font-size: 5vmin;
-  padding-bottom: 2vmin;
   display: inline-block;
   font-family: var(--customFont), sans-serif;
   font-weight: 900;
+}
+
+.form-edit-name {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  width: 100%;
 }
 
 .info-nb-quiz {
@@ -50,11 +64,12 @@
   display: flex;
   flex-direction: row;
   padding-bottom: 2vmin;
+  width: 100%;
 }
 
 .input-custom {
   padding: 1vmin;
-  border: var(--customGray) 0.1vmin solid;
+  border: #3D3D3D 0.1vmin solid;
   border-radius: 2vmin;
   margin-right: 0.5vmin;
   font-family: var(--customFont), sans-serif;
@@ -77,9 +92,10 @@
 select {
   border: 0 solid transparent;
   border-radius: 3vmin;
-  width: 100vmin;
-  margin: 0 1vmin 3vmin 0;
+  margin: 0 0 3vmin 0;
   height: 6vmin;
+  color: white;
+  flex: 1;
 }
 
 
@@ -87,6 +103,10 @@ select {
   color: #b4b4b4;
 }
 
+.color-edit-container {
+  display: flex;
+  flex-direction: row;
+}
 
 .button-card {
   padding: 1vmin;
@@ -280,4 +300,18 @@ select {
 
 .image-edit:hover {
   opacity: 0.8;
+}
+
+.title-container {
+  text-align: center;
+  font-size: 6vmin;
+  font-family: var(--customFont), sans-serif;
+  font-weight: 900;
+  color: white;
+  width: 100%;
+  padding: 3vmin;
+  background-color: #456C00;
+  border: 0 solid transparent;
+  border-top-left-radius: 5vmin;
+  border-top-right-radius: 5vmin;
 }

@@ -30,7 +30,7 @@ export class ThemesService {
   setThemes() {
     this.http.get<Theme[]>(this.themeUrl).subscribe((themes) => {
       this.themes = themes;
-      this.themes$.next(this.themes);
+      this.themes$.next(this.themes.filter((t) => !t.deleted));
     });
   }
 

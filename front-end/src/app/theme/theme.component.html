@@ -5,8 +5,8 @@
     <h1 *ngIf="!editModeActive()" id="title">Thèmes</h1>
     <h1 *ngIf="editModeActive()">Edition de Thèmes</h1>
     <div class="button-container" *ngIf="authServices.getAuthLevel() > 0">
-      <a class="button quit-edit-button" *ngIf="editModeActive()" (click)="this.editModeActivated = false" >Quiter l'edition</a>
-      <a class="button edit-button"  *ngIf="!editModeActive()"  (click)="this.editModeActivated = true" >Editer</a>
+      <a class="button quit-edit-button" *ngIf="editModeActive()" (click)="this.editModeActivated = false" >Quitter l'édition</a>
+      <a class="button edit-button"  *ngIf="!editModeActive()"  (click)="this.editModeActivated = true" >Éditer</a>
     </div>
   </div>
   <hr class="blackLine">
