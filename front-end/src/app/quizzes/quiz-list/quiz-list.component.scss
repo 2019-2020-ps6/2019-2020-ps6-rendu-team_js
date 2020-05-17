@@ -38,10 +38,11 @@
   border: #3CABC2 solid 0;
   border-radius: 3vmin;
 
-  margin: 2vmin;
+  margin: auto 2vmin auto auto;
   padding: 2vmin;
   font-family: var(--customFont);
-  font-size: 0.6rem;
+  font-size: 3vmin;
+  height: 8vmin;
 }
 
 .remove-filter-button {

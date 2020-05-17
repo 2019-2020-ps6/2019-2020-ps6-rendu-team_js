@@ -107,7 +107,7 @@ hr.blackLine {
 }
 
 .swal2-title {
-  font-size: 6vmin;
+  font-size: 6vmin !important;
 }
 
 .swal2-wide {
@@ -115,5 +115,47 @@ hr.blackLine {
 }
 
 .swal2-icon {
-  width: 10vmin;
+  width: 20vmin !important;
+  height: 20vmin !important;
+  margin: 0 !important;
+  margin-right: 3vmin !important;
+}
+
+.swal2-icon .swal2-icon-content{
+  font-size: 20vmin !important;
+}
+
+.swal2-icon-content{
+  //width: 10vmin !important;
+  //height: 10vmin !important;
+  //font-size: 10vmin !important;
+  //padding-left: 3.6vmin !important;
+  //text-align: center !important;
+}
+
+.swal2-header {
+  display: flex;
+  flex-direction: column !important;
+  justify-content: center;
+}
+
+.swal2-confirm{
+  font-size: 6vmin !important;
+}
+
+.swal2-cancel{
+  font-size: 6vmin !important;
+}
+
+.swal2-styled{
+  margin: 2vmin !important;
+  padding: 3vmin 6vmin !important;
+}
+
+.swal2-container {
+  padding: 6vmin 12vmin !important;
+}
+
+.swal2-popup{
+  padding: 6vmin !important;
 }
