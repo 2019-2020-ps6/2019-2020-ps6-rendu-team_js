@@ -16,7 +16,7 @@ export class ThemeListComponent implements OnInit {
 
     this.themesService.themes$.subscribe((t) => {
       if (t !== null && t !== undefined) {
-        this.themes = t.filter((theme) => theme.nbQuiz > 0);
+        this.themes = t.filter((theme) => (theme.nbQuiz > 0) && !theme.deleted);
       } else {
         this.themes = t;
       }

@@ -29,7 +29,7 @@ router.post('/', (req, res) => {
         let isThemeAlreadyExist = false;
         console.log(req.body);
         Theme.get().forEach((t) => {
-            if(req.body.name === t.name) {
+            if(req.body.name === t.name && !t.deleted) {
                 isThemeAlreadyExist = true;
             }
         });
@@ -74,7 +74,10 @@ router.put('/edit/:themeId', (req, res) => {
 
 router.delete('/:themeId', (req, res) => {
     try {
-        Theme.delete(req.params.themeId);
+        // Theme.delete(req.params.themeId);
+        let deletedTheme = Theme.getById(req.params.themeId);
+        deletedTheme.deleted = true;
+        Theme.update(req.params.themeId, deletedTheme);
         res.status(204).end()
     } catch (err) {
         manageAllErrors(res, err)

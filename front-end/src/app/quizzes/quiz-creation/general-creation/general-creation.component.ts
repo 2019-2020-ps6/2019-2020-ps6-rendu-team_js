@@ -40,7 +40,7 @@ export class GeneralCreationComponent implements OnInit {
               private themesService: ThemesService) {
 
     this.themesService.themes$.subscribe((t) => {
-      this.themeList = t;
+      this.themeList = t.filter((theme) =>  !theme.deleted);
     });
 
     if (this.themesService.themes === undefined || this.themesService.themes === null) {

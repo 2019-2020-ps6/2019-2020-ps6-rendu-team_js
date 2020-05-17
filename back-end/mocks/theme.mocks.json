@@ -13,7 +13,7 @@
   },
   {
     "name": "Géographie",
-    "color": "#376500",
+    "color": "#006515",
     "nbQuiz": 4,
     "id": 1000000000002
   },
@@ -62,7 +62,15 @@
   {
     "name": "Hello !",
     "color": "#370065",
-    "nbQuiz": 1,
-    "id": 1588060987116
+    "nbQuiz": 0,
+    "id": 1588060987116,
+    "deleted": true
+  },
+  {
+    "name": "Hello !",
+    "color": "#650000",
+    "nbQuiz": 0,
+    "id": 1589719283602,
+    "deleted": true
   }
 ]
