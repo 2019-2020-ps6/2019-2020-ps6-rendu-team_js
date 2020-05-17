@@ -17,6 +17,23 @@
   top: 5vh;
 }
 
+.questionnumber {
+  color: var(--customGray);
+  font-size: 5vmin;
+  font-weight: 900;
+  font-family: var(--customFont), serif;
+  text-align: center;
+  justify-content: center;
+  display: flex;
+  position: absolute;
+  width: 100vw;
+  height: 25vh;
+  left: 0;
+  right: 0;
+  line-height: 7vmin;
+  top: 0vh;
+}
+
 .answers{
   position: absolute;
   left: 0;

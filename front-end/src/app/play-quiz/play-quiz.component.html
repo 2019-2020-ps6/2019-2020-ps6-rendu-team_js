@@ -1,6 +1,7 @@
 <div>
   <ng-container *ngIf="quiz !== undefined && isOver() === false && quiz.questions !== undefined">
 
+    <div class="questionnumber">Question {{questionNumber+1}} sur {{quiz.questions.length}}</div>
       <div class="question">{{quiz.questions[questionNumber].label}}</div>
       <app-quiz-responses-list class="answers" [answers]="quiz.questions[questionNumber].answers" (answerSelected)="addToUserAnswers($event)"></app-quiz-responses-list>
       <ng-container *ngIf="questionNumber==0"> {{setBeginDateToCurrent()}} </ng-container>
