@@ -7,9 +7,7 @@ import {ThemesService} from '../../../services/themes.service';
 import {ActivatedRoute, Router} from '@angular/router';
 import {ToasterService} from '../../../services/toaster.service';
 import {QuizCreationStatusService} from '../../../services/quiz-creation-status.service';
-import * as _swal from 'sweetalert';
-import { SweetAlert } from 'sweetalert/typings/core';
-const swal: SweetAlert = _swal as any;
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-quiz-creation',
@@ -75,13 +73,8 @@ export class QuizCreationComponent implements OnInit {
     // tslint:disable-next-line:max-line-length
     if (this.isQuestionListOpen && this.isCreateQuestionOpen) {
 
-      swal({
-        className: 'swal-wide',
+      Swal.fire({
         title: 'Attention votre question n\'est pas enregistrée !\nEtes-vous sûr de vouloir retourner dans général ?',
-        icon: '../../../assets/images/warn.svg',
-        buttons: ['Annuler', 'Confirmer'],
-        dangerMode: false,
-        closeOnClickOutside: false,
       })
         .then((willContinue) => {
           if (willContinue) {
@@ -166,13 +159,8 @@ export class QuizCreationComponent implements OnInit {
 
   deleteQuiz() {
 
-    swal({
-      className: 'swal-wide',
+    Swal.fire({
       title: 'Etes-vous sur de vouloir supprimer ce quiz ?',
-      icon: '../../../assets/images/warn.svg',
-      buttons: ['Annuler', 'Confirmer'],
-      dangerMode: false,
-      closeOnClickOutside: false,
     })
       .then((willContinue) => {
         if (willContinue) {

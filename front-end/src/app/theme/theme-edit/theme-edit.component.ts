@@ -8,9 +8,7 @@ import {ToasterService} from '../../../services/toaster.service';
 import {Router} from '@angular/router';
 import {Theme} from '../../../models/theme.model';
 import {ThemesService} from '../../../services/themes.service';
-import * as _swal from 'sweetalert';
-import { SweetAlert } from 'sweetalert/typings/core';
-const swal: SweetAlert = _swal as any;
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-theme-edit',
@@ -86,13 +84,10 @@ export class ThemeEditComponent implements OnInit {
       this.isLoading = false;
     } else {
 
-      swal({
-        className: 'swal-wide',
+      Swal.fire({
+        icon: 'warning',
         title: 'Etes-vous sur de vouloir supprimer ce thème ?',
-        icon: '../../../assets/images/warn.svg',
-        buttons: ['Annuler', 'Confirmer'],
-        dangerMode: false,
-        closeOnClickOutside: false,
+
       })
         .then((willContinue) => {
           if (willContinue) {

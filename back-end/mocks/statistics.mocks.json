@@ -13,15 +13,16 @@
     "id": 1585360751986
   },
   {
-    "currentWeek": 18,
-    "successPercentage": 50,
-    "totalQuizMade": 4,
-    "weekQuizMade": 4,
+    "currentWeek": 20,
+    "successPercentage": 42.5,
+    "totalQuizMade": 5,
+    "weekQuizMade": 1,
     "quizzesResultIds": [
       1588058173656,
       1588058284756,
       1588059171758,
-      1588061324625
+      1588061324625,
+      1589725692087
     ],
     "perfectQuiz": 0,
     "id": 1585366302574

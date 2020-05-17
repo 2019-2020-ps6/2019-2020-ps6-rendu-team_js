@@ -30,7 +30,7 @@
     "hammerjs": "^2.0.8",
     "rxjs": "~6.4.0",
     "session-file-store": "^1.4.0",
-    "sweetalert": "^2.1.2",
+    "sweetalert2": "^9.10.13",
     "tslib": "^1.10.0",
     "zone.js": "~0.9.1"
   },

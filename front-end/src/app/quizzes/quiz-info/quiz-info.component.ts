@@ -7,9 +7,7 @@ import {ThemesService} from '../../../services/themes.service';
 import {AuthService} from '../../../services/auth.service';
 import {ToasterService} from '../../../services/toaster.service';
 import {QuizListStatusService} from '../../../services/quiz-list-status.service';
-import * as _swal from 'sweetalert';
-import { SweetAlert } from 'sweetalert/typings/core';
-const swal: SweetAlert = _swal as any;
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-quiz-info',
@@ -62,14 +60,10 @@ export class QuizInfoComponent implements OnInit {
 
   deleteQuiz() {
 
-    swal({
-      className: 'swal-wide',
-      title: 'Etes-vous sur de vouloir supprimer ce quiz ?',
-      icon: '../../../assets/images/warn.svg',
-      buttons: ['Annuler', 'Confirmer'],
-      dangerMode: false,
-      closeOnClickOutside: false,
-    })
+      Swal.fire({
+        title: 'Etes-vous sur de vouloir supprimer ce quiz ?',
+
+      })
       .then((willContinue) => {
         if (willContinue) {
           this.quizService.deleteQuizObservable(this.quiz).subscribe((response) => {

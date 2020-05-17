@@ -87,30 +87,33 @@ hr.blackLine {
   margin-bottom: 3vmin !important
 }
 
-.swal-overlay {
+.swal2-overlay {
   background-color: rgba(141, 141, 141, 0.8);
 }
 
-.swal-button--confirm {
+.swal2-button--confirm {
   background-color: #4962B3;
   margin-left: 5vmin;
 }
 
-.swal-button {
+.swal2-button {
   font-size: 10vmin;
 }
 
-.swal-footer {
+.swal2-footer {
   text-align: center;
-  padding-top: 30px;
-  padding-bottom: 30px;
+  padding-top: 5vmin;
+  padding-bottom: 5vmin;
 }
 
-.swal-title {
+.swal2-title {
   font-size: 6vmin;
 }
 
-.swal-wide {
+.swal2-wide {
   width:75% !important;
 }
 
+.swal2-icon {
+  width: 10vmin;
+}

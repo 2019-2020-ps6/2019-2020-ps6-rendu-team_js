@@ -3,9 +3,7 @@ import {AuthService} from '../../services/auth.service';
 import {Router} from '@angular/router';
 import {Location} from '@angular/common';
 import {HelpService} from '../../services/help.service';
-import * as _swal from 'sweetalert';
-import { SweetAlert } from 'sweetalert/typings/core';
-const swal: SweetAlert = _swal as any;
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-header',
@@ -35,16 +33,16 @@ export class HeaderComponent implements OnInit {
 
   logout() {
 
-    swal({
-      className: 'swal-wide',
+    Swal.fire({
+      icon: 'warning',
       title: 'Etes-vous sur de vouloir vous déconnecter ?',
-      icon: '../../../assets/images/warn.svg',
-      buttons: ['Annuler', 'Confirmer'],
-      dangerMode: false,
-      closeOnClickOutside: false,
+      confirmButtonText: 'Se déconnecter',
+      confirmButtonColor: '#a20000',
+      cancelButtonText: 'Retour',
+      showCancelButton: true
     })
-      .then((willContinue) => {
-        if (willContinue) {
+      .then((result) => {
+        if (result.value) {
           this.authService.logout();
         }
       });
@@ -52,13 +50,8 @@ export class HeaderComponent implements OnInit {
 
   quitQuiz() {
 
-    swal({
-      className: 'swal-wide',
+    Swal.fire({
       title: 'Etes-vous sur de vouloir quitter le quiz ? \n(votre progression est enregistrée)',
-      icon: '../../../assets/images/warn.svg',
-      buttons: ['Annuler', 'Confirmer'],
-      dangerMode: false,
-      closeOnClickOutside: false,
     })
       .then((willContinue) => {
 

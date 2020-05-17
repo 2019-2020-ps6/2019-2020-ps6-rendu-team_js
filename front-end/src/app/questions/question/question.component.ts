@@ -1,8 +1,6 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { Question } from '../../../models/question.model';
-import * as _swal from 'sweetalert';
-import { SweetAlert } from 'sweetalert/typings/core';
-const swal: SweetAlert = _swal as any;
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-question',
@@ -24,15 +22,10 @@ export class QuestionComponent implements OnInit {
 
   delete() {
 
-    swal({
-      className: 'swal-wide',
+    Swal.fire({
       title: 'Etes-vous sur de vouloir supprimer cette question ?',
-      icon: '../../../assets/images/warn.svg',
-      buttons: ['Annuler', 'Confirmer'],
-      dangerMode: false,
-      closeOnClickOutside: false,
-    })
-      .then((willContinue) => {
+
+    }).then((willContinue) => {
         if (willContinue) {
           this.question.deleted = true;
         }

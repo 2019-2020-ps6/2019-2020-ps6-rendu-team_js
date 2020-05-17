@@ -2,9 +2,7 @@ import {Component, Input, OnInit} from '@angular/core';
 import {Router} from '@angular/router';
 import {Location} from '@angular/common';
 import {QuizCreationStatusService} from '../../../services/quiz-creation-status.service';
-import * as _swal from 'sweetalert';
-import { SweetAlert } from 'sweetalert/typings/core';
-const swal: SweetAlert = _swal as any;
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-menu-button',
@@ -38,13 +36,9 @@ export class MenuButtonComponent implements OnInit {
     // tslint:disable-next-line:max-line-length
     if (((this.router.url.includes('/quiz-creation') || this.router.url.includes('/quiz-editor')))) {
       if (!this.isQuizCreationPageEmpty) {
-        swal({
-          className: 'swal-wide',
+        Swal.fire({
+          icon: 'question',
           title: 'Attention votre question n\'est pas enregistrée !\nEtes-vous sûr de vouloir quitter ?',
-          icon: '../../../assets/images/warn.svg',
-          buttons: ['Annuler', 'Confirmer'],
-          dangerMode: false,
-          closeOnClickOutside: false,
         })
           .then((willContinue) => {
             if (willContinue) {

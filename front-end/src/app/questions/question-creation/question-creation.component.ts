@@ -4,9 +4,7 @@ import {FormArray, FormBuilder, FormGroup, Validators} from '@angular/forms';
 import {Answer} from '../../../models/answer.model';
 import {ToasterService} from '../../../services/toaster.service';
 import {ActivatedRoute, Router} from '@angular/router';
-import * as _swal from 'sweetalert';
-import { SweetAlert } from 'sweetalert/typings/core';
-const swal: SweetAlert = _swal as any;
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-question-creation',
@@ -107,13 +105,8 @@ export class QuestionCreationComponent implements OnInit {
 
   removeWrongAnswer(id: number) {
 
-    swal({
-      className: 'swal-wide',
+    Swal.fire({
       title: 'Etes-vous sur de vouloir supprimer cette réponse ?',
-      icon: '../../../assets/images/warn.svg',
-      buttons: ['Annuler', 'Confirmer'],
-      dangerMode: false,
-      closeOnClickOutside: false,
     })
       .then((willContinue) => {
         if (willContinue) {
@@ -212,13 +205,9 @@ export class QuestionCreationComponent implements OnInit {
   goToQuestionList() {
     // tslint:disable-next-line:max-line-length
     if (!this.isEmpty()) {
-      swal({
-        className: 'swal-wide',
+      Swal.fire({
+        icon: 'warning',
         title: 'Cette question n\'est pas pas enregistrée !\nEtes-vous sur de vouloir revenir sur la liste des questions ?',
-        icon: '../../../assets/images/warn.svg',
-        buttons: ['Annuler', 'Confirmer'],
-        dangerMode: false,
-        closeOnClickOutside: false,
       })
         .then((willContinue) => {
           if (willContinue) {

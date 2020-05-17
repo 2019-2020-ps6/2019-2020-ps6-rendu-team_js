@@ -8,9 +8,7 @@ import {AuthService} from '../../services/auth.service';
 import {GamesService} from '../../services/games.service';
 import {Game} from '../../models/game.model';
 import {Answer} from '../../models/answer.model';
-import * as _swal from 'sweetalert';
-import { SweetAlert } from 'sweetalert/typings/core';
-const swal: SweetAlert = _swal as any;
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-play-quiz',
@@ -66,13 +64,9 @@ export class PlayQuizComponent implements OnInit {
   addToUserAnswers(answer: Answer) {
 
 
-    swal({
-      className: 'swal-wide',
+    Swal.fire({
+      icon: 'question',
       title: 'Votre réponse est bien "' + answer.value + '" ?',
-      icon: '../../../assets/images/round.svg',
-      buttons: ['Annuler', 'Confirmer'],
-      dangerMode: false,
-      closeOnClickOutside: false,
     })
       .then((willContinue) => {
 
@@ -85,17 +79,17 @@ export class PlayQuizComponent implements OnInit {
           // console.log('user answers array', this.userAnswers);
 
           if (this.isOver()) {
-              this.setEndDateToCurrent();
-              this.redirectToResult();
+            this.setEndDateToCurrent();
+            this.redirectToResult();
           } else {
-              this.gameService.updateGame(this.getCurrentGameTry()).subscribe(response => {
-                if (response.status === 200) {
-                  console.log('sauvegarde reussit !');
-                } else {
-                  console.log('sauvegarde impossible !');
-                }
-                this.date = Date.now();
-              });
+            this.gameService.updateGame(this.getCurrentGameTry()).subscribe(response => {
+              if (response.status === 200) {
+                console.log('sauvegarde reussit !');
+              } else {
+                console.log('sauvegarde impossible !');
+              }
+              this.date = Date.now();
+            });
           }
 
           // setTimeout(() => {
@@ -162,16 +156,16 @@ export class PlayQuizComponent implements OnInit {
 
   sendFinalAnswerToServiceAndSetResponseId(completeAnswer) {
 
-      // delete last try & update stats
-      const game = this.getCurrentGameTry();
-      this.gameService.finishGame(game).subscribe((response) => {
-        if (response.status === 200 || response.status === 201) {
-          this.router.navigate(['/result/' + response.body]);
+    // delete last try & update stats
+    const game = this.getCurrentGameTry();
+    this.gameService.finishGame(game).subscribe((response) => {
+      if (response.status === 200 || response.status === 201) {
+        this.router.navigate(['/result/' + response.body]);
 
-        } else {
-          this.router.navigate(['/']);
-        }
-      });
+      } else {
+        this.router.navigate(['/']);
+      }
+    });
 
   }
 
