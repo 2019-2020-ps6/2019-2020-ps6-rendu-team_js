@@ -11,7 +11,7 @@
     </div>
 
     <div class="weekQuiz row-container">
-      <div class="left-part"> Quiz faits cette semaine </div>
+      <div class="left-part"> Faits cette semaine </div>
       <div class="right-part weekQuizValue">
         <div *ngIf="userStatistics == undefined;else definedQuizValue"> - </div>
         <ng-template #definedQuizValue> {{userStatistics.weekQuizMade}} </ng-template>
