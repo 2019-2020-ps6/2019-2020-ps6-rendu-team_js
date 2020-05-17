@@ -7,7 +7,9 @@ import {ThemesService} from '../../../services/themes.service';
 import {AuthService} from '../../../services/auth.service';
 import {ToasterService} from '../../../services/toaster.service';
 import {QuizListStatusService} from '../../../services/quiz-list-status.service';
-import swal from 'sweetalert';
+import * as _swal from 'sweetalert';
+import { SweetAlert } from 'sweetalert/typings/core';
+const swal: SweetAlert = _swal as any;
 
 @Component({
   selector: 'app-quiz-info',

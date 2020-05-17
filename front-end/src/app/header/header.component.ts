@@ -3,7 +3,9 @@ import {AuthService} from '../../services/auth.service';
 import {Router} from '@angular/router';
 import {Location} from '@angular/common';
 import {HelpService} from '../../services/help.service';
-import swal from 'sweetalert';
+import * as _swal from 'sweetalert';
+import { SweetAlert } from 'sweetalert/typings/core';
+const swal: SweetAlert = _swal as any;
 
 @Component({
   selector: 'app-header',

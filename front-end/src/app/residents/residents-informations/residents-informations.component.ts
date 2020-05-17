@@ -6,7 +6,9 @@ import {Settings} from '../../../models/settings.model';
 import {SettingsService} from '../../../services/settings.service';
 import {ToasterService} from '../../../services/toaster.service';
 import {FormArray, FormBuilder, FormGroup, Validators} from '@angular/forms';
-import swal from 'sweetalert';
+import * as _swal from 'sweetalert';
+import { SweetAlert } from 'sweetalert/typings/core';
+const swal: SweetAlert = _swal as any;
 
 @Component({
   selector: 'app-residents-informations',

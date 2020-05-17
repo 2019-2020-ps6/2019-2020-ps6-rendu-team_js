@@ -8,7 +8,9 @@ import {ToasterService} from '../../../services/toaster.service';
 import {Router} from '@angular/router';
 import {Theme} from '../../../models/theme.model';
 import {ThemesService} from '../../../services/themes.service';
-import swal from 'sweetalert';
+import * as _swal from 'sweetalert';
+import { SweetAlert } from 'sweetalert/typings/core';
+const swal: SweetAlert = _swal as any;
 
 @Component({
   selector: 'app-theme-edit',

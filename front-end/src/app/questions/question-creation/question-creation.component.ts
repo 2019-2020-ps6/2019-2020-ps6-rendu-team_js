@@ -4,7 +4,9 @@ import {FormArray, FormBuilder, FormGroup, Validators} from '@angular/forms';
 import {Answer} from '../../../models/answer.model';
 import {ToasterService} from '../../../services/toaster.service';
 import {ActivatedRoute, Router} from '@angular/router';
-import swal from 'sweetalert';
+import * as _swal from 'sweetalert';
+import { SweetAlert } from 'sweetalert/typings/core';
+const swal: SweetAlert = _swal as any;
 
 @Component({
   selector: 'app-question-creation',

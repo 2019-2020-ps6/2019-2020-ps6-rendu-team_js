@@ -7,7 +7,9 @@ import {ThemesService} from '../../../services/themes.service';
 import {ActivatedRoute, Router} from '@angular/router';
 import {ToasterService} from '../../../services/toaster.service';
 import {QuizCreationStatusService} from '../../../services/quiz-creation-status.service';
-import swal from 'sweetalert';
+import * as _swal from 'sweetalert';
+import { SweetAlert } from 'sweetalert/typings/core';
+const swal: SweetAlert = _swal as any;
 
 @Component({
   selector: 'app-quiz-creation',

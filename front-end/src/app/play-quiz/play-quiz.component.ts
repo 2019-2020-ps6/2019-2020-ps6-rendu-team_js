@@ -8,7 +8,9 @@ import {AuthService} from '../../services/auth.service';
 import {GamesService} from '../../services/games.service';
 import {Game} from '../../models/game.model';
 import {Answer} from '../../models/answer.model';
-import swal from 'sweetalert';
+import * as _swal from 'sweetalert';
+import { SweetAlert } from 'sweetalert/typings/core';
+const swal: SweetAlert = _swal as any;
 
 @Component({
   selector: 'app-play-quiz',
