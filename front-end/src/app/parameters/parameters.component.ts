@@ -4,6 +4,7 @@ import {AuthService} from '../../services/auth.service';
 import {SettingsService} from '../../services/settings.service';
 import {Settings} from '../../models/settings.model';
 import {ToasterService} from '../../services/toaster.service';
+import Swal from "sweetalert2";
 
 @Component({
   selector: 'app-parameters',
@@ -33,15 +34,27 @@ export class ParametersComponent implements OnInit {
   }
 
   resetSettingsToDefault() {
-    this.settingsService.resetSettings(this.userSettings, this.auth.user.id).subscribe((response) => {
-      if (response.status === 200) {
-        this.settingsService.setCurrentUserSettings();
-        this.toasterService.activateToaster(false, 'Les paramètres ont été remis à zeros', 2000);
+    Swal.fire({
+      icon: 'warning',
+      title: 'Vous êtes sur le point de réinitialiser aux paramètres d\'usine ?',
+      confirmButtonText: 'Oui',
+      confirmButtonColor: '#a20000',
+      cancelButtonText: 'Non',
+      showCancelButton: true
+    })
+      .then((result) => {
+        if (result.value) {
+          this.settingsService.resetSettings(this.userSettings, this.auth.user.id).subscribe((response) => {
+            if (response.status === 200) {
+              this.settingsService.setCurrentUserSettings();
+              this.toasterService.activateToaster(false, 'Les paramètres ont été remis à zeros', 2000);
 
-      } else {
-        this.toasterService.activateToaster(true, 'Une erreur est survenue, réessayer plus tard...', 2000);
-      }
-    });
+            } else {
+              this.toasterService.activateToaster(true, 'Une erreur est survenue, réessayer plus tard...', 2000);
+            }
+          });
+        }
+      });
   }
 
   selectionSizeEvent($event) {
