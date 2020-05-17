@@ -154,10 +154,11 @@ h1 {
   border: transparent solid 0;
   border-radius: 3vmin;
 
-  margin: 2vmin;
+  margin: auto 2vmin auto auto;
   padding: 2vmin;
   font-family: var(--customFont);
   font-size: 4vmin;
+  height: 10vmin;
 }
 
 .button-delete{

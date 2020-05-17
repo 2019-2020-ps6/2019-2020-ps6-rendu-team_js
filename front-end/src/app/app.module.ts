@@ -51,6 +51,8 @@ import { QuizItemComponent } from './quizzes/quiz-inprogress/quiz-item/quiz-item
 import { ThemeCreationComponent } from './theme/theme-creation/theme-creation.component';
 import { QuestionCreationComponent } from './questions/question-creation/question-creation.component';
 import { GeneralCreationComponent } from './quizzes/quiz-creation/general-creation/general-creation.component';
+import { ThemeListEditComponent } from './theme/theme-list-edit/theme-list-edit.component';
+import { ThemeEditComponent } from './theme/theme-edit/theme-edit.component';
 
 
 
@@ -100,7 +102,9 @@ import { GeneralCreationComponent } from './quizzes/quiz-creation/general-creati
     QuizItemComponent,
     ThemeCreationComponent,
     QuestionCreationComponent,
-    GeneralCreationComponent
+    GeneralCreationComponent,
+    ThemeListEditComponent,
+    ThemeEditComponent
   ],
     imports: [
         BrowserModule,

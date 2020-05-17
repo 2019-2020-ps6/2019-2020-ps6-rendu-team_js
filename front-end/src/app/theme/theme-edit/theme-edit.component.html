@@ -1,0 +1,49 @@
+<div class="create-account-container user-container ">
+
+  <div class="table-custom">
+
+    <div class="name-container" *ngIf="!isEditNameOpen && theme !== undefined">
+      <div class="text-create-account">{{theme.name}}</div>
+      <img *ngIf="!isLoading" class="image-edit" src="assets/images/edit.svg" (click)="isEditNameOpen = true"/>
+    </div>
+
+    <div class="name-container" *ngIf="isEditNameOpen">
+      <div class="text-input-container">
+        <form class="form" [formGroup]="nameForm">
+          <input class="input-custom" placeholder="Thème" type="text" id="lastName" maxlength="20"
+                 [formControlName]="'themeName'" [disabled]="isLoading">
+          <img *ngIf="!isLoading" class="image-edit" src="assets/images/clear.svg" (click)="closeNameEdit()"/>
+        </form>
+      </div>
+    </div>
+
+    <hr class="blackLine">
+
+    <div class="info-nb-quiz">Ce thème comporte {{theme.nbQuiz}} quiz</div>
+
+    <div class="text-for-input">Couleur du thème</div>
+    <form  class="form" [formGroup]="colorForm">
+      <select [(ngModel)]="selectedColor" [(style.backgroundColor)]="selectedColor" class="text-for-input"
+              id="color" [formControlName]="'color'" [disabled]="isLoading" [class.disable-button]="isLoading">
+        <option *ngFor="let c of colors" [ngValue]="c" [style.backgroundColor]="c" [selected]="theme.color === c"></option>
+      </select>
+    </form>
+
+    <hr class="blackLine margin-top">
+
+    <button (click)="deleteButtonPressed()" [disabled]="isLoading"  [class.disable-button]="isLoading" class="link-card delete-button-bg">
+      <div>Supprimer le thème</div>
+    </button>
+
+    <hr class="blackLine margin-top">
+
+
+    <div class="button-container">
+      <button (click)="backPressed()" class="button-card back-button-bg">Retour</button>
+      <button (click)="saveButtonPressed()" class="button-card create-button-bg" [disabled]="!hasChangeBeenDone()"
+              [class.disable-button]="!hasChangeBeenDone()">Enregistrer
+      </button>
+    </div>
+
+  </div>
+</div>

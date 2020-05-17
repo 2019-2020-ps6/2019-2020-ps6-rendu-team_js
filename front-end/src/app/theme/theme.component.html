@@ -1,9 +1,19 @@
-<div class="container-theme">
+<div class="container-theme"  [ngClass]="isWindowOpen()? 'blur' : ''" >
 
   <app-quiz-inprogress></app-quiz-inprogress>
-
-  <h1 id="title">Thèmes</h1>
+  <div class="main-container">
+    <h1 *ngIf="!editModeActive()" id="title">Thèmes</h1>
+    <h1 *ngIf="editModeActive()">Edition de Thèmes</h1>
+    <div class="button-container" *ngIf="authServices.getAuthLevel() > 0">
+      <a class="button quit-edit-button" *ngIf="editModeActive()" (click)="this.editModeActivated = false" >Quiter l'edition</a>
+      <a class="button edit-button"  *ngIf="!editModeActive()"  (click)="this.editModeActivated = true" >Editer</a>
+    </div>
+  </div>
   <hr class="blackLine">
-  <app-theme-list></app-theme-list>
+  <app-theme-list *ngIf="!editModeActive()"></app-theme-list>
+  <app-theme-list-edit *ngIf="editModeActive()" (windowOpened)="isWindowOpened = $event" (themeSelectedEmitter)="themeSelected = $event"></app-theme-list-edit>
 </div>
 
+
+<div *ngIf="isWindowOpen()" class="background"></div>
+<app-theme-edit *ngIf="isWindowOpen()" (isBackPressed)="isWindowOpened=false" [theme]="themeSelected"></app-theme-edit>

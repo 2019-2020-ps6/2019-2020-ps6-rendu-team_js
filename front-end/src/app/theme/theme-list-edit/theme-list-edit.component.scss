@@ -1,0 +1,18 @@
+.themes-container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  width: 100%;
+}
+
+app-theme-item {
+  text-align: center;
+  flex: 1 0 33%;
+  display: flex;
+  flex-direction: column;
+  align-self: center;
+  align-content: stretch;
+
+}
+

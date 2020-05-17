@@ -58,4 +58,16 @@ export class ThemesService {
     theme.nbQuiz--;
     return this.http.put(url, theme, {...this.httpOptions, observe: 'response'});
   }
+
+  updateThemeName(theme: Theme, themeName: string, color: string) {
+    const url = this.themeUrl + '/edit/' + theme.id ;
+    theme.name = themeName;
+    theme.color = color;
+    return this.http.put(url, theme, {...this.httpOptions, observe: 'response'});
+  }
+
+  delete(theme: Theme) {
+    const url = this.themeUrl + '/' + theme.id ;
+    return this.http.delete<Theme>(url, {...this.httpOptions, observe: 'response'});
+  }
 }

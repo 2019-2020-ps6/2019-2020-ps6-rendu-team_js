@@ -23,3 +23,57 @@ app-theme-list {
   height: 100%;
 }
 
+.main-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.button {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+
+  color: #FFFFFF;
+  background-color: #2B7FD8;
+  border: #2B7FD8 solid 0 ;
+  border-radius: 3vmin;
+  font-weight: 900;
+
+  margin: auto 2vmin auto auto;
+  padding: 2vmin;
+  font-family: var(--customFont);
+  font-size: 3vmin;
+  height: 10vmin;
+}
+
+.button:hover{
+  color: #FFFFFF;
+}
+
+.button-container {
+  display: flex;
+  flex-direction: row;
+}
+
+.edit-button {
+  background-color:  #2b6273;
+}
+
+.edit-button:hover{
+  background-color: #377e94 !important;
+}
+
+.quit-edit-button {
+  background-color: darkred !important;
+}
+
+.quit-edit-button:hover {
+  background-color: #b00000 !important;
+
+}
+
+.blur{
+  filter: blur(1vmin);
+}

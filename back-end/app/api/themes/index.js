@@ -5,26 +5,6 @@ const {Theme} = require('../../models');
 const router = new Router();
 
 
-// // Add headers
-// router.use(function (req, res, next) {
-//
-//     // Website you wish to allow to connect
-//     res.setHeader('Access-Control-Allow-Origin', 'http://localhost:4200');
-//
-//     // Request methods you wish to allow
-//     res.setHeader('Access-Control-Allow-Methods', 'GET, POST, OPTIONS, PUT, PATCH, DELETE');
-//
-//     // Request headers you wish to allow
-//     res.setHeader('Access-Control-Allow-Headers', 'X-Requested-With,content-type');
-//
-//     // Set to true if you need the website to include cookies in the requests sent
-//     // to the API (e.g. in case you use sessions)
-//     res.setHeader('Access-Control-Allow-Credentials', true);
-//
-//     // Pass to next layer of middleware
-//     next();
-// });
-
 router.get('/', (req, res) => {
     try {
         console.log("get theme");
@@ -74,6 +54,28 @@ router.put('/:themeId', (req, res) => {
         const theme = Theme.getById(req.params.themeId);
         const updatedTheme = Theme.update(req.params.themeId, {nbQuiz: req.params.nbQuiz});
         res.status(200).json(updatedTheme)
+    } catch (err) {
+        manageAllErrors(res, err)
+    }
+});
+
+router.put('/edit/:themeId', (req, res) => {
+    try {
+        const theme = Theme.getById(req.params.themeId);
+        theme.name = req.body.name;
+        theme.color = req.body.color;
+
+        const updatedTheme = Theme.update(req.params.themeId, theme);
+        res.status(200).json(updatedTheme)
+    } catch (err) {
+        manageAllErrors(res, err)
+    }
+});
+
+router.delete('/:themeId', (req, res) => {
+    try {
+        Theme.delete(req.params.themeId);
+        res.status(204).end()
     } catch (err) {
         manageAllErrors(res, err)
     }

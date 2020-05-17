@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import {AuthService} from '../../services/auth.service';
+import {Theme} from '../../models/theme.model';
 
 @Component({
   selector: 'app-theme',
@@ -7,10 +9,21 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ThemeComponent implements OnInit {
 
+  private editModeActivated = false;
+  private isWindowOpened = false;
 
-  constructor() { }
+  private themeSelected: Theme;
+
+  constructor(private authServices: AuthService) { }
 
   ngOnInit() {
   }
 
+  editModeActive(): boolean {
+    return this.editModeActivated;
+  }
+
+  isWindowOpen() {
+    return this.isWindowOpened;
+  }
 }

@@ -7,13 +7,13 @@
   },
   {
     "name": "Sports",
-    "color": "#250065",
+    "color": "#001865",
     "nbQuiz": 3,
     "id": 1000000000001
   },
   {
     "name": "Géographie",
-    "color": "#600065",
+    "color": "#376500",
     "nbQuiz": 4,
     "id": 1000000000002
   },
@@ -31,7 +31,7 @@
   },
   {
     "name": "Personnalités",
-    "color": "#1B2631",
+    "color": "#006565",
     "nbQuiz": 0,
     "id": 1000000000005
   },
@@ -60,21 +60,9 @@
     "id": 1000000000009
   },
   {
-    "name": "hihv",
-    "color": "#006551",
-    "nbQuiz": 0,
-    "id": 1588059453375
-  },
-  {
-    "name": "dfgfd",
-    "color": "#600065",
+    "name": "Hello !",
+    "color": "#370065",
     "nbQuiz": 1,
     "id": 1588060987116
-  },
-  {
-    "name": "aaaaaaaaa",
-    "color": "#006551",
-    "nbQuiz": 1,
-    "id": 1589664114767
   }
 ]

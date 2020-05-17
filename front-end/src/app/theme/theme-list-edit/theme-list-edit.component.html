@@ -1,0 +1,5 @@
+<div class="themes-container" *ngIf="themes !== undefined">
+  <ng-container *ngFor="let theme of themes">
+    <app-theme-item [themeName]="theme.name" [bgColor]="theme.color" (click)="openWindowThemeEdit(theme)"></app-theme-item>
+  </ng-container>
+</div>

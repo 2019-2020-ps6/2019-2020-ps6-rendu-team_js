@@ -198,6 +198,7 @@
     "name": "az",
     "themeId": "1589664114767",
     "difficulty": "Moyen",
-    "id": 1589664124350
+    "id": 1589664124350,
+    "deleted": true
   }
 ]

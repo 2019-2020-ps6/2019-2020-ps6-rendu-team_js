@@ -15,11 +15,12 @@
   border-radius: 3vmin;
 
 
-  margin: 2vmin;
+  margin: auto 2vmin auto auto;
   padding: 2vmin;
-  font-family: var(--customFont), sans-serif;
+  font-family: var(--customFont);
+  font-size: 3vmin;
   font-weight: 900;
-  font-size: 0.6rem;
+  height: 10vmin;
 }
 
 .reset-button:hover{
