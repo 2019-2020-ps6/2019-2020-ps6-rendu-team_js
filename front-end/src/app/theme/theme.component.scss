@@ -78,3 +78,18 @@ app-theme-list {
 .blur{
   filter: blur(1vmin);
 }
+
+
+.background {
+  position: absolute;
+  background-color: #000000;
+  opacity: 0.5;
+
+  left: 10vw;
+  top: 0;
+
+  width: 90vw;
+  height: 100%;
+
+  filter:blur(20vmin);
+}
