@@ -44,7 +44,7 @@ export class QuizInprogressComponent implements OnInit {
       if (result.value) {
         this.gamesService.deleteGames(id.toString()).subscribe(response => {
           if (response.status === 204) {
-            this.toasterService.activateToaster(false, 'Tous les essaie ont été supprimés !', 2000);
+            this.toasterService.activateToaster(false, 'Tous les essaies ont été supprimés !', 2000);
             this.gamesService.setSelectedGameQuizInfo(id.toString());
           } else {
             this.toasterService.activateToaster(true, 'Une erreur est survenue, réessayer plus tard...', 2000);

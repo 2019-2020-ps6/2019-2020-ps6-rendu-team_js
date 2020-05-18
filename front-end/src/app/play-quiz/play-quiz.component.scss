@@ -18,20 +18,20 @@
 }
 
 .questionnumber {
-  color: var(--customGray);
   font-size: 5vmin;
   font-weight: 900;
   font-family: var(--customFont), serif;
   text-align: center;
   justify-content: center;
   display: flex;
+  color: #2A2A2A;
   position: absolute;
   width: 100vw;
   height: 25vh;
   left: 0;
   right: 0;
   line-height: 7vmin;
-  top: 0vh;
+  top: 0;
 }
 
 .answers{
@@ -40,4 +40,8 @@
   right: 0;
   top: 30vh;
   height: 70vh;
+}
+
+.big-button {
+  font-size: 8vmin !important;
 }

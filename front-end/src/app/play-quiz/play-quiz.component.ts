@@ -71,61 +71,62 @@ export class PlayQuizComponent implements OnInit {
       confirmButtonText: 'Oui',
       confirmButtonColor: '#1261a2',
       cancelButtonText: 'Non',
-      showCancelButton: true
-    })
-      .then((result) => {
+      cancelButtonColor: 'rgba(46,46,46,0.83)',
+      showCancelButton: true,
+      customClass: {
+        confirmButton: 'big-button',
+        cancelButton: 'big-button',
+        actions: 'swal2-actions-customs',
+        icon: 'swal2-icon-customs',
+        title: 'swal2-title-customs'
+      },
+    }).then((result) => {
 
-        if (result.value) {
+      if (result.value) {
 
-          this.questionNumber++;
-          // console.log('Last answer', answer);
-          const answerConformWithBack = {questionId: answer.questionId, answerId: answer.id};
-          this.userAnswers.push(answerConformWithBack);
-          // console.log('user answers array', this.userAnswers);
+        this.questionNumber++;
+        // console.log('Last answer', answer);
+        const answerConformWithBack = {questionId: answer.questionId, answerId: answer.id};
+        this.userAnswers.push(answerConformWithBack);
+        // console.log('user answers array', this.userAnswers);
 
-          if (this.isOver()) {
-            this.setEndDateToCurrent();
-            this.redirectToResult();
-          } else {
-            this.gameService.updateGame(this.getCurrentGameTry()).subscribe(response => {
-              if (response.status === 200) {
-                console.log('sauvegarde reussit !');
-              } else {
-                console.log('sauvegarde impossible !');
-              }
-              this.date = Date.now();
-            });
-          }
-
-          // setTimeout(() => {
-          //     // console.log('Last answer', answer);
-          //     const answerConformWithBack = {questionId: answer.questionId, answerId: answer.id};
-          //     this.userAnswers.push(answerConformWithBack);
-          //     // console.log('user answers array', this.userAnswers);
-          //
-          //     // save user answer in back
-          //     if (!this.isOver()) {
-          //       this.gameService.updateGame(this.getCurrentGameTry()).subscribe(response => {
-          //         if (response.status === 200) {
-          //           console.log('sauvegarde reussit !');
-          //
-          //         } else {
-          //           console.log('sauvegarde impossible !');
-          //         }
-          //         this.date = Date.now();
-          //       });
-          //
-          //     } else {
-          //       this.setEndDateToCurrent();
-          //       this.redirectToResult();
-          //     }
-          // },
-          // 1200);
+        if (this.isOver()) {
+          this.setEndDateToCurrent();
+          this.redirectToResult();
+          Swal.fire({
+            title: 'Quiz fini !',
+            icon: 'success',
+            reverseButtons: true,
+            confirmButtonText: 'Voir les résultats',
+            confirmButtonColor: '#20a228',
+            cancelButtonText: 'Refaire le quiz',
+            cancelButtonColor: '#1261a2',
+            showCancelButton: true,
+            customClass: {
+              confirmButton: 'big-button',
+              cancelButton: 'big-button',
+              actions: 'swal2-actions-customs',
+              icon: 'swal2-icon-customs',
+              title: 'title-custom',
+              popup: 'popup-custom'
+            },
+          }).then((result2) => {
+            if (!result2.value) {
+              this.router.navigate(['/play/' + this.quiz.id]);
+            }
+          });
         } else {
-
+          this.gameService.updateGame(this.getCurrentGameTry()).subscribe(response => {
+            if (response.status === 200) {
+              console.log('sauvegarde reussit !');
+            } else {
+              console.log('sauvegarde impossible !');
+            }
+            this.date = Date.now();
+          });
         }
-
-      });
+      }
+    });
   }
 
   isOver() {
