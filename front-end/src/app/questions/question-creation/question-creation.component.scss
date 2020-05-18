@@ -242,10 +242,10 @@ select {
   background-color: #000000;
   opacity: 0.5;
 
-  left: 10vw;
+  left: var(--customMenuWidth);
+  width: calc(100vw - var(--customMenuWidth));
   top: 0;
 
-  width: 90vw;
   height: 100%;
 
   filter:blur(20vmin);

@@ -18,10 +18,9 @@ h1 {
   background-color: #000000;
   opacity: 0.5;
 
-  left: 10vw;
   top: 0;
-
-  width: 90vw;
+  left: var(--customMenuWidth);
+  width: calc(100vw - var(--customMenuWidth));
   height: 100%;
 
   filter:blur(20vmin);

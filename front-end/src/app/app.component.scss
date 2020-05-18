@@ -7,7 +7,7 @@
   //height: 100%;
   z-index: 10;
   overflow-y: scroll;
-  height: 94vh;
+  height: calc(100vh - var(--customHeaderHeight));
   -ms-overflow-style: none;
 }
 
@@ -30,7 +30,7 @@
 
 app-header {
   z-index: 999;
-  height: 6vmin;
+  height: var(--customHeaderHeight);
 }
 
 router-outlet {
@@ -38,19 +38,8 @@ router-outlet {
   height: 100%;
 }
 
-.bottom-shadow {
-  position: absolute;
-  height: 0;
-  top: 100%;
-  bottom: 0;
-  width: 86%;
-  left: 12%;
-  right: 2%;
-
-  z-index: 100;
-  -webkit-box-shadow: 0 0 1vmin 1vmin $app-background-color;
-  -moz-box-shadow: 0 0 1vmin 1vmin $app-background-color;
-  box-shadow: 0 0 1vmin 1vmin $app-background-color;
+app-menu{
+  top: var(--customHeaderHeight);
 }
 
 .info-text-visible {
@@ -60,9 +49,9 @@ router-outlet {
 
 .info-text {
   position: absolute;
-  left: 15vw;
-  top: 6vmin;
-  width: 80%;
+  left: calc(var(--customMenuWidth) * 1.5);
+  width: calc(100% - 2 * var(--customMenuWidth));
+  top: var(--customHeaderHeight);
 
 
   font-size: 0.8rem;

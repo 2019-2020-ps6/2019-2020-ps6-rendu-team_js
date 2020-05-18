@@ -71,11 +71,11 @@ a:hover{
   background-color: #000000;
   opacity: 0.5;
 
-  left: 10vw;
   top: 0;
-
-  width: 90vw;
   height: 100%;
+
+  left: var(--customMenuWidth);
+  width: calc(100vw - var(--customMenuWidth));
 
   filter:blur(20vmin);
 }

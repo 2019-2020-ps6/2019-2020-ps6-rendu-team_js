@@ -76,8 +76,6 @@ export class PlayQuizComponent implements OnInit {
       customClass: {
         confirmButton: 'big-button',
         cancelButton: 'big-button',
-        actions: 'swal2-actions-customs',
-        icon: 'swal2-icon-customs',
         title: 'swal2-title-customs'
       },
     }).then((result) => {
@@ -106,8 +104,6 @@ export class PlayQuizComponent implements OnInit {
               confirmButton: 'big-button',
               cancelButton: 'big-button',
               actions: 'swal2-actions-customs',
-              icon: 'swal2-icon-customs',
-              title: 'title-custom',
               popup: 'popup-custom'
             },
           }).then((result2) => {

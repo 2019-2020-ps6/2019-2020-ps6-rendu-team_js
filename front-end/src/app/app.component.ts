@@ -54,11 +54,15 @@ export class AppComponent {
       if (this.settingsService.settings.fontSize === 1) {
         document.getElementsByTagName('html')[0].style.setProperty('font-size', '5vmin');
         document.getElementsByTagName('html')[0].style.setProperty('--customMenuWidth', '10vw');
+        document.getElementsByTagName('html')[0].style.setProperty('--customMenuFontSize', '1.5vw');
         document.getElementsByTagName('html')[0].style.setProperty('--customMenuLineHeight', '2.5vmin');
+        document.getElementsByTagName('html')[0].style.setProperty('--customHeaderHeight', '6vh');
       } else {
         document.getElementsByTagName('html')[0].style.setProperty('font-size', '8vmin');
         document.getElementsByTagName('html')[0].style.setProperty('--customMenuWidth', '18vw');
-        document.getElementsByTagName('html')[0].style.setProperty('--customMenuLineHeight', '6vmin');
+        document.getElementsByTagName('html')[0].style.setProperty('--customMenuFontSize', '2.5vw');
+        document.getElementsByTagName('html')[0].style.setProperty('--customMenuLineHeight', '3.5vmin');
+        document.getElementsByTagName('html')[0].style.setProperty('--customHeaderHeight', '8vh');
       }
 
   // ############## CHANGE FONT ###################
