@@ -39,7 +39,7 @@ export class MenuButtonComponent implements OnInit {
         Swal.fire({
           reverseButtons: true,
           icon: 'warning',
-          title: 'Attention si votre quiz n\'est pas créer ou mis à jour il ne sera pas enregistré !\nEtes-vous sûr de vouloir quitter ?',
+          title: 'Attention si votre quiz n\'est pas créé ou mis à jour il ne sera pas enregistré !\nEtes-vous sûr de vouloir quitter ?',
           confirmButtonText: 'Quitter',
           confirmButtonColor: '#a20000',
           cancelButtonText: 'Retour',

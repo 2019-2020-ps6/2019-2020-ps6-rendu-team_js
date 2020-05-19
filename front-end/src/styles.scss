@@ -122,18 +122,20 @@ hr.blackLine {
 .swal2-icon {
   //width: 15vmin !important;
   //height: 15vmin !important;
-  //margin: 0 auto 3vmin auto !important;
+  margin-top: 3vmin !important;
+  margin-bottom: 3vmin !important;
   //margin-right: 3vmin !important;
+
 }
 
 .swal2-icon .swal2-icon-content{
-  //font-size: 15vmin !important;
+  //font-size: 10vmin !important;
 }
 
 .swal2-icon-content{
   //width: 15vmin !important;
   //height: 15vmin !important;
-  //font-size: 15vmin !important;
+  font-size: 15vmin !important;
 }
 
 .swal2-header {
@@ -201,3 +203,13 @@ hr.blackLine {
   width: 100% !important;
   position: absolute !important;
 }
+
+.swal2-warning, .swal2-question {
+  width: 15vmin !important;
+  height: 15vmin !important;
+}
+
+.swal2-success{
+  font-size: 5vmin;
+}
+
